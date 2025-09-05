@@ -1,13 +1,8 @@
+// simpel søgning (placeholder – skift til rigtig søgning når du har data)
+window.siteSearch = function(){
+  const q = (document.getElementById('q')?.value || '').trim();
+  if(!q){ alert('skriv hvad du søger 😊'); return; }
+  alert('søger efter: ' + q + '\n(implementér rigtig søgning senere)');
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('#newsletter');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = form.querySelector('input[type="email"]').value.trim();
-      if (!email) { alert('skriv din e-mail 🤗'); return; }
-      alert('tak! du bliver tilmeldt når vi går live.');
-      form.reset();
-    });
-  }
-});
+// fold-ud kategorier er native <details> – ingen JS nødvendigt
