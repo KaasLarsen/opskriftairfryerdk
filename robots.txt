@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://opskrift-airfryer.dk/sitemap.xml
