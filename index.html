@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="da">
 <head>
@@ -12,9 +11,10 @@
   <meta property="og:image" content="/img/og.png">
   <meta property="og:type" content="website">
   <link rel="icon" href="/img/favicon.ico">
-  <link rel="preload" href="/assets/styles.css" as="style">
   <link rel="stylesheet" href="/assets/styles.css">
-  <script defer src="/assets/script.js"></script>
+
+  <!-- adsense: indsæt dit publisher id -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
   <header class="header">
@@ -31,106 +31,54 @@
   <main class="container">
     <section class="hero">
       <div>
-        <h1 class="h1">airfryer opskrifter – nemt, sprødt og hurtigt</h1>
-        <p class="p">velkommen til danmarks samlingssted for <strong>airfryer opskrifter</strong>. her finder du hverdagsretter, snacks og søde sager – alt testet til airfryer, med præcise tider og temperaturer. ingen støj. kun opskrifter, der virker.</p>
-        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        <span class="kicker">nyt · danske airfryer opskrifter</span>
+        <h1 class="h1">airfryer opskrifter – let, sprødt og hurtigt</h1>
+        <p class="p">her får du veltestede <strong>airfryer opskrifter</strong> med tider, temperaturer og nemme trin. mindre opvask, mere sprødhed – på 15–30 minutter.</p>
+        <div class="btns">
           <a class="btn" href="#populaere">se populære</a>
           <a class="btn secondary" href="#nyeste">se nyeste</a>
         </div>
       </div>
+
       <div class="card">
-        <h2 class="h2">hvad får du her?</h2>
-        <ul class="list small">
-          <li>trin for trin med tydelige billeder</li>
-          <li>tider & temperaturer (alle modeller)</li>
-          <li>serveringsforslag + indkøbsliste</li>
+        <h2 style="margin:0 0 8px 0;font-size:20px">hvad får du her?</h2>
+        <ul class="small" style="padding-left:18px;margin:10px 0">
+          <li>tydelige trin med billeder</li>
+          <li>præcise tider & temperaturer</li>
+          <li>serveringsforslag og indkøbslister</li>
           <li>printvenlige opskrifter</li>
         </ul>
+        <div class="hr"></div>
+        <div class="small">tip: gem siden – vi lægger nye opskrifter ud hver uge.</div>
       </div>
     </section>
 
-    <section id="populaere" style="margin-top:40px">
-      <h2 class="h2">populære opskrifter</h2>
+    <section id="populaere" class="section">
+      <h2>populære opskrifter</h2>
+      <p class="lede">hurtige hverdagsfavoritter, der bare virker.</p>
       <div class="grid grid-3">
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>stegt flæsk i airfryer – sprød svær og nem aftensmad</strong></div>
-            <div class="small">klar på 20–30 minutter · nem hverdagsmad</div>
+        <a class="tile" href="#">
+          <div class="thumb"></div>
+          <div class="content">
+            <div class="title">stegt flæsk i airfryer – sprød svær og nem aftensmad</div>
+            <div class="meta">20–30 min · nemt</div>
           </div>
         </a>
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>kyllingespyd i airfryer – saftige og hurtige</strong></div>
-            <div class="small">klar på 15–20 minutter · familiefavorit</div>
+        <a class="tile" href="#">
+          <div class="thumb"></div>
+          <div class="content">
+            <div class="title">kyllingespyd i airfryer – saftige og hurtige</div>
+            <div class="meta">15–20 min · familiehit</div>
           </div>
         </a>
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>hasselbagte kartofler i airfryer – sprøde og gyldne</strong></div>
-            <div class="small">sprøde uden besvær · perfekt tilbehør</div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section id="nyeste" style="margin-top:40px">
-      <h2 class="h2">nyeste opskrifter</h2>
-      <div class="grid grid-3">
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>grøntsagsfrikadeller i airfryer – sprøde og grønne</strong></div>
-            <div class="small">trin-for-trin · tider og temperaturer</div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>bananbrød i airfryer – saftigt og hurtigt</strong></div>
-            <div class="small">klar på ~30 minutter · snack</div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="aspect-video"></div>
-          <div style="margin-top:10px">
-            <div><strong>vitello tonnato i airfryer – nemt twist</strong></div>
-            <div class="small">nyt take · lækkert og nemt</div>
+        <a class="tile" href="#">
+          <div class="thumb"></div>
+          <div class="content">
+            <div class="title">hasselbagte kartofler i airfryer – sprøde og gyldne</div>
+            <div class="meta">tilbehør · sprød</div>
           </div>
         </a>
       </div>
     </section>
 
-    <section id="kategorier" style="margin-top:40px">
-      <h2 class="h2">kategorier</h2>
-      <div>
-        <span class="badge">aftensmad</span>
-        <span class="badge">kylling</span>
-        <span class="badge">oksekød</span>
-        <span class="badge">svinekød</span>
-        <span class="badge">grønt</span>
-        <span class="badge">snacks</span>
-        <span class="badge">morgenmad</span>
-        <span class="badge">dessert</span>
-        <span class="badge">tilbehør</span>
-      </div>
-    </section>
-
-    <section style="margin-top:40px">
-      <h2 class="h2">nyhedsbrev</h2>
-      <p class="small">få nye airfryer opskrifter én gang om ugen. ingen spam.</p>
-      <form id="newsletter" class="subscribe">
-        <input type="email" placeholder="din e-mail">
-        <button class="btn">tilmeld</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">© <span id="y"></span> opskrift-airfryer.dk · alle rettigheder forbeholdes</div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-  </footer>
-</body>
-</html>
+    <section id="nyeste" class="se
