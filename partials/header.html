@@ -1,30 +1,36 @@
 <header class="site-header">
   <div class="container nav">
-    <a href="/" class="brand">opskrift-airfryer.dk</a>
+    <a href="/" class="brand">Opskrift-Airfryer.dk</a>
 
-    <div class="nav-right">
-      <form class="search" onsubmit="return false;">
-        <input id="q" type="search" placeholder="søg opskrifter…" />
-        <button aria-label="søg" onclick="window.siteSearch()">🔎</button>
-      </form>
+    <!-- Burger menu -->
+    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">
+      ☰
+    </button>
 
-      <details class="categories">
-        <summary>kategorier</summary>
-        <div class="cat-grid">
-          <a href="/kategori/aftensmad.html">aftensmad</a>
-          <a href="/kategori/kylling.html">kylling</a>
-          <a href="/kategori/oksekoed.html">oksekød</a>
-          <a href="/kategori/svinekoed.html">svinekød</a>
-          <a href="/kategori/groent.html">grønt</a>
-          <a href="/kategori/snacks.html">snacks</a>
-          <a href="/kategori/morgenmad.html">morgenmad</a>
-          <a href="/kategori/dessert.html">dessert</a>
-          <a href="/kategori/tilbehoer.html">tilbehør</a>
-        </div>
-      </details>
+    <!-- Desktop nav -->
+    <nav class="nav-right">
+      <a class="nav-link" href="/#populaere">Populære</a>
+      <a class="nav-link" href="/#seneste">Seneste</a>
+      <a class="cta btn primary" href="/#nyhedsbrev">Nyhedsbrev</a>
+    </nav>
+  </div>
 
-      <a class="nav-link" href="/om.html">om</a>
-      <a class="cta btn primary" href="/#nyhedsbrev">nyhedsbrev</a>
+  <!-- Overlay menu (kategorier) -->
+  <div class="menu-overlay">
+    <div class="menu-panel">
+      <button class="menu-close" aria-label="Luk" onclick="document.body.classList.remove('menu-open')">✕</button>
+      <h2>Kategorier</h2>
+      <ul class="menu-categories">
+        <li><a href="/kategori/aftensmad.html">Aftensmad</a></li>
+        <li><a href="/kategori/kylling.html">Kylling</a></li>
+        <li><a href="/kategori/oksekoed.html">Oksekød</a></li>
+        <li><a href="/kategori/svinekoed.html">Svinekød</a></li>
+        <li><a href="/kategori/groent.html">Grønt</a></li>
+        <li><a href="/kategori/snacks.html">Snacks</a></li>
+        <li><a href="/kategori/morgenmad.html">Morgenmad</a></li>
+        <li><a href="/kategori/dessert.html">Dessert</a></li>
+        <li><a href="/kategori/tilbehoer.html">Tilbehør</a></li>
+      </ul>
     </div>
   </div>
 </header>
