@@ -1,117 +1,70 @@
-:root{
-  --bg:#ffffff;
-  --text:#0f172a;      /* næsten sort */
-  --muted:#475569;     /* dæmpet blågrå */
-  --border:#e2e8f0;    /* lys grå kant */
-  --accent:#334155;    /* mørk skifer */
-  --brand:#1d4ed8;     /* rolig blå (dæmpet) */
-  --radius:16px;
-  --shadow:0 10px 30px rgba(2,8,23,.06);
+/* Burger menu */
+.burger {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family:ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,"Noto Sans",sans-serif;
-  color:var(--text); background:var(--bg);
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+@media (max-width: 768px) {
+  .burger { display: block; }
+  .nav-right { display: none; }
 }
 
-/* Sikkerhedsnet: store begyndelsesbogstaver */
-h1, h2, h3, .btn, nav a, .brand, .more, .kicker, .hero-bullets li, .cat-grid a, .newsletter-form input::placeholder {
-  text-transform: capitalize;
+/* Overlay menu */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,.85);
+  display: none;
+  z-index: 1000;
+  transition: opacity .3s ease;
+}
+body.menu-open .menu-overlay { display: block; }
+
+.menu-panel {
+  background: #fff;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.25);
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+}
+body.menu-open .menu-panel {
+  transform: translateX(0);
 }
 
-/* Container */
-.container{max-width:1200px;margin:0 auto;padding:20px}
-
-/* Header kommer fra partial, men vi giver base-styles her */
-.site-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:saturate(160%) blur(6px);
-  border-bottom:1px solid var(--border);
+.menu-close {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  float: right;
 }
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-weight:800;letter-spacing:.2px;text-decoration:none;color:var(--text)}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-link{color:var(--text);text-decoration:none;font-size:14px}
-.nav-link:hover{color:var(--brand)}
 
-/* Søgning */
-.search{display:flex;align-items:center;border:1px solid var(--border);border-radius:999px;padding:4px 6px;background:#fff}
-.search input{border:none;outline:none;padding:8px 10px;min-width:220px}
-.search button{border:none;background:transparent;cursor:pointer;font-size:16px}
+.menu-panel h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
 
-/* Kategorier (fold-ud) */
-.categories{border:1px solid var(--border);border-radius:12px;padding:6px 10px;background:#fff}
-.categories summary{cursor:pointer;font-weight:600}
-.cat-grid{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.cat-grid a{display:block;text-decoration:none;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px;background:#fff}
-.cat-grid a:hover{border-color:#cbd5e1}
-
-/* Hero (rolig – ingen pangfarver) */
-.hero{border:1px solid var(--border);border-radius:20px;padding:24px;margin-top:20px;background:#f8fafc}
-.hero--calm{background:linear-gradient(180deg,#f8fafc 0%, #ffffff 100%)}
-.hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;align-items:center}
-@media (max-width:960px){.hero-inner{grid-template-columns:1fr}}
-.kicker{display:inline-flex;align-items:center;gap:8px;background:#eef2ff;border:1px solid #e0e7ff;color:#1e3a8a;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
-.hero h1{margin:10px 0 8px 0;font-size:40px;line-height:1.15;font-weight:900}
-.hero p{margin:0;color:var(--muted);font-size:18px;max-width:60ch}
-.hero-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:12px 16px;text-decoration:none;font-weight:700}
-.btn.primary{background:var(--brand);color:#fff;box-shadow:var(--shadow)}
-.btn.ghost{background:#fff;border:1px solid var(--border);color:var(--accent)}
-.btn:hover{transform:translateY(-1px)}
-.hero-bullets{margin:18px 0 0 0;padding-left:20px;color:var(--muted)}
-.hero-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-.hero-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#f1f5f9,#eef2f7)}
-.hero-card-body{padding:16px}
-.hero-card-body p{margin:6px 0 0}
-
-/* Sektioner */
-.section{padding:32px 0}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.section h2{margin:0;font-size:26px}
-.more{text-decoration:none;color:var(--accent);font-weight:700}
-.more:hover{color:var(--brand)}
-
-/* Cards */
-.grid{display:grid;gap:18px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-@media (max-width:960px){.grid-3{grid-template-columns:1fr}}
-.cards .card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
-.cards .card:hover{transform:translateY(-2px)}
-.thumb{aspect-ratio:16/9;background:#f1f5f9}
-.calm-a{background:linear-gradient(135deg,#f8fafc,#eef2f7)}
-.calm-b{background:linear-gradient(135deg,#f8fafc,#f1f5f9)}
-.calm-c{background:linear-gradient(135deg,#f8fafc,#eaeef5)}
-.card-body{padding:14px}
-.card-body h3{margin:0 0 6px 0;font-size:18px;line-height:1.3}
-.meta{color:var(--muted);font-size:13px}
-
-/* Nyhedsbrev */
-.newsletter{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--border);border-radius:16px;padding:18px;background:#fff;box-shadow:var(--shadow)}
-.newsletter-form{display:flex;gap:10px;flex-wrap:wrap}
-.newsletter-form input{border:1px solid var(--border);border-radius:12px;padding:12px;min-width:260px}
-.newsletter-form .btn{border:none}
-
-/* Annoncer (afstand og min-højde) */
-.ad{min-height:90px;margin:10px 0}
-.ad--leaderboard{min-height:90px}
-.ad--infeed{min-height:250px}
-
-/* Footer (fra partial – basestyles) */
-.site-footer{margin-top:40px;border-top:1px solid var(--border);background:#fff}
-.footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:20px;padding:26px 0}
-@media (max-width:960px){.footer-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.footer-grid{grid-template-columns:1fr}}
-.site-footer h4{margin:0 0 10px 0}
-.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.site-footer a{text-decoration:none;color:var(--text)}
-.site-footer a:hover{color:var(--brand)}
-.muted{color:var(--muted)}
-.footer-bottom{border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-size:14px}
-
-/* Placeholder for include-kroppen så siden ikke hopper */
-[data-include]{display:block;min-height:60px}
+.menu-categories {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: grid;
+  gap: 12px;
+}
+.menu-categories a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.menu-categories a:hover {
+  color: var(--brand);
+}
