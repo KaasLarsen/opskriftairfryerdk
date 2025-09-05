@@ -1,85 +1,231 @@
 <!doctype html>
 <html lang="da">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>opskrift-airfryer.dk – airfryer opskrifter</title>
-  <meta name="description" content="nemme, sprøde og hurtige airfryer opskrifter på dansk – samlet ét sted.">
-  <meta name="keywords" content="airfryer, opskrifter, airfryer opskrifter, nem mad, sprød">
-  <meta property="og:title" content="opskrift-airfryer.dk – airfryer opskrifter">
-  <meta property="og:description" content="nemme, sprøde og hurtige airfryer opskrifter på dansk – samlet ét sted.">
-  <meta property="og:image" content="/img/og.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <meta name="description" content="nemme, sprøde og hurtige airfryer opskrifter på dansk – samlet ét sted." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css?v=3" />
 
-  <!-- adsense: global loader -->
+  <!-- adsense global loader -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="header">
+  <!-- topbar / nav -->
+  <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="/">opskrift-airfryer.dk</a>
-      <nav>
-        <a href="#populaere">populære</a>
-        <a href="#kategorier">kategorier</a>
-        <a href="/om.html">om</a>
-      </nav>
+      <a href="/" class="brand">opskrift-airfryer.dk</a>
+
+      <div class="nav-right">
+        <form class="search" onsubmit="return false;">
+          <input id="q" type="search" placeholder="søg opskrifter…" />
+          <button aria-label="søg" onclick="window.siteSearch()">
+            🔎
+          </button>
+        </form>
+
+        <!-- fold-ud kategorier -->
+        <details class="categories">
+          <summary>kategorier</summary>
+          <div class="cat-grid">
+            <a href="#">aftensmad</a>
+            <a href="#">kylling</a>
+            <a href="#">oksekød</a>
+            <a href="#">svinekød</a>
+            <a href="#">grønt</a>
+            <a href="#">snacks</a>
+            <a href="#">morgenmad</a>
+            <a href="#">dessert</a>
+            <a href="#">tilbehør</a>
+          </div>
+        </details>
+
+        <a class="nav-link" href="/om.html">om</a>
+        <a class="cta" href="#nyhedsbrev">nyhedsbrev</a>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
+  <!-- hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
         <span class="kicker">nyt · danske airfryer opskrifter</span>
-        <h1 class="h1">airfryer opskrifter – let, sprødt og hurtigt</h1>
-        <p class="p">her får du veltestede <strong>airfryer opskrifter</strong> med tider, temperaturer og nemme trin. mindre opvask, mere sprødhed – på 15–30 minutter.</p>
-        <div class="btns">
-          <a class="btn" href="#populaere">se populære</a>
-          <a class="btn secondary" href="#nyeste">se nyeste</a>
+        <h1>sprøde airfryer opskrifter – nemt og hurtigt</h1>
+        <p>veltestede opskrifter med **tider & temperaturer** – mindre opvask, mere sprødhed. klar på 15–30 minutter.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#populaere">se populære</a>
+          <a class="btn ghost" href="#seneste">se seneste</a>
         </div>
-      </div>
 
-      <div class="card">
-        <h2 style="margin:0 0 8px 0;font-size:20px">hvad får du her?</h2>
-        <ul class="small" style="padding-left:18px;margin:10px 0">
-          <li>tydelige trin med billeder</li>
-          <li>præcise tider & temperaturer</li>
-          <li>serveringsforslag og indkøbslister</li>
+        <ul class="hero-bullets">
+          <li>trin-for-trin med billeder</li>
+          <li>tips, serveringsforslag og indkøbslister</li>
           <li>printvenlige opskrifter</li>
         </ul>
-        <div class="hr"></div>
-        <div class="small">tip: gem siden – vi lægger nye opskrifter ud hver uge.</div>
       </div>
-    </section>
 
-    <!-- leaderboard annonce under hero -->
-    <ins class="adsbygoogle ad ad--leaderboard"
+      <div class="hero-card">
+        <div class="hero-thumb"></div>
+        <div class="hero-card-body">
+          <b>ugens tip</b>
+          <p>forvarm kurven 3–5 min og giv kartofler et hurtigt olie-spray for ekstra sprødhed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ads: leaderboard -->
+  <div class="container ad ad--leaderboard">
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-7373148222153531"
          data-ad-slot="1234567890"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
 
-    <section id="populaere" class="section">
+  <!-- populære -->
+  <section id="populaere" class="section container">
+    <div class="section-head">
       <h2>populære opskrifter</h2>
-      <p class="lede">hurtige hverdagsfavoritter, der bare virker.</p>
-      <div class="grid grid-3">
-        <!-- ... opskrift tiles ... -->
-      </div>
-    </section>
+      <a class="more" href="#">se alle</a>
+    </div>
 
-    <!-- in-feed annonce -->
-    <ins class="adsbygoogle ad ad--infeed"
+    <div class="grid grid-3 cards" id="popular-list">
+      <!-- eksempler – udskift href + titler når du har rigtige sider -->
+      <a class="card" href="#">
+        <div class="thumb gradient-a"></div>
+        <div class="card-body">
+          <h3>stegt flæsk i airfryer – sprød svær og nem aftensmad</h3>
+          <p class="meta">20–30 min · nemt</p>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="thumb gradient-b"></div>
+        <div class="card-body">
+          <h3>kyllingespyd i airfryer – saftige og hurtige</h3>
+          <p class="meta">15–20 min · familiehit</p>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="thumb gradient-c"></div>
+        <div class="card-body">
+          <h3>hasselbagte kartofler i airfryer – sprøde og gyldne</h3>
+          <p class="meta">tilbehør · sprød</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ad in-feed -->
+  <div class="container ad ad--infeed">
+    <ins class="adsbygoogle"
          style="display:block"
          data-ad-client="ca-pub-7373148222153531"
          data-ad-slot="0987654321"
          data-ad-format="fluid"
          data-ad-layout="in-article"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
 
-    <!-- resten af dine sektioner (nyeste, kategorier, nyhedsbrev, footer) -->
-  </main>
+  <!-- seneste -->
+  <section id="seneste" class="section container">
+    <div class="section-head">
+      <h2>seneste opskrifter</h2>
+      <a class="more" href="#">se alle</a>
+    </div>
+
+    <div class="grid grid-3 cards" id="latest-list">
+      <a class="card" href="#">
+        <div class="thumb gradient-b"></div>
+        <div class="card-body">
+          <h3>grøntsagsfrikadeller i airfryer – sprøde og grønne</h3>
+          <p class="meta">trin-for-trin · tider & temperaturer</p>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="thumb gradient-c"></div>
+        <div class="card-body">
+          <h3>bananbrød i airfryer – saftigt og hurtigt</h3>
+          <p class="meta">~30 min · snack</p>
+        </div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="thumb gradient-a"></div>
+        <div class="card-body">
+          <h3>vitello tonnato i airfryer – nemt twist</h3>
+          <p class="meta">nyt take · lækkert</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- newsletter -->
+  <section id="nyhedsbrev" class="section container">
+    <div class="newsletter">
+      <div>
+        <h2>nyhedsbrev</h2>
+        <p>få nye opskrifter hver uge – ingen spam.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('tak! du bliver tilmeldt når vi går live.'); this.reset();">
+        <input type="email" placeholder="din e-mail" required />
+        <button type="submit" class="btn primary">tilmeld</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">opskrift-airfryer.dk</div>
+        <p class="muted">sprøde og nemme airfryer opskrifter på dansk.</p>
+      </div>
+
+      <div>
+        <h4>om os</h4>
+        <ul>
+          <li><a href="/om.html">hvem er vi?</a></li>
+          <li><a href="#">retningslinjer</a></li>
+          <li><a href="#">cookies & privatliv</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>kontakt</h4>
+        <ul>
+          <li><a href="mailto:hej@opskrift-airfryer.dk">hej@opskrift-airfryer.dk</a></li>
+          <li><a href="#">instagram</a></li>
+          <li><a href="#">facebook</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>kategorier</h4>
+        <ul class="cols">
+          <li><a href="#">aftensmad</a></li>
+          <li><a href="#">kylling</a></li>
+          <li><a href="#">grønt</a></li>
+          <li><a href="#">dessert</a></li>
+          <li><a href="#">snacks</a></li>
+          <li><a href="#">tilbehør</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="y"></span> opskrift-airfryer.dk – alle rettigheder forbeholdes</span>
+      <a href="/ads.txt">ads.txt</a>
+    </div>
+  </footer>
+
+  <script src="/assets/script.js?v=3"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
 </body>
 </html>
