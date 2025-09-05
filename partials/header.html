@@ -2,22 +2,20 @@
   <div class="container nav">
     <a href="/" class="brand">Opskrift-Airfryer.dk</a>
 
-    <!-- Burger menu -->
-    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">
-      ☰
-    </button>
+    <!-- Burger (mobil) -->
+    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
 
-    <!-- Desktop nav -->
+    <!-- Desktop navigation -->
     <nav class="nav-right">
       <a class="nav-link" href="/#populaere">Populære</a>
       <a class="nav-link" href="/#seneste">Seneste</a>
-      <a class="cta btn primary" href="/#nyhedsbrev">Nyhedsbrev</a>
+      <a class="btn primary" href="/#nyhedsbrev">Nyhedsbrev</a>
     </nav>
   </div>
 
-  <!-- Overlay menu (kategorier) -->
-  <div class="menu-overlay">
-    <div class="menu-panel">
+  <!-- Overlay menu (mobil-kategorier) -->
+  <div class="menu-overlay" onclick="document.body.classList.remove('menu-open')">
+    <div class="menu-panel" onclick="event.stopPropagation()">
       <button class="menu-close" aria-label="Luk" onclick="document.body.classList.remove('menu-open')">✕</button>
       <h2>Kategorier</h2>
       <ul class="menu-categories">
