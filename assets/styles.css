@@ -183,3 +183,21 @@ body.menu-open .menu-panel { transform: translateX(0); }
 /* Recipe hero-billeder fylder hele bredden pænt */
 .recipe-hero img { object-fit: cover; max-height: 420px; width: 100%; }
 
+/* Ikon-baseret hero/card */
+.thumb-icon, .hero-icon {
+  display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(180deg,#f8fafc, #ffffff);
+  border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
+}
+.thumb-icon { aspect-ratio: 16/9; }
+.hero-icon { width:100%; min-height:320px; }
+
+.ico {
+  width: 96px; height: 96px; color: var(--accent);
+}
+.ico-lg { width: 140px; height: 140px; color: var(--accent); }
+
+.meta-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.badge .ico { width:16px; height:16px; margin-right:6px; }
+
+
