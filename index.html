@@ -1,134 +1,211 @@
 <!doctype html>
 <html lang="da">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Opskrift-Airfryer.dk – Airfryer Opskrifter</title>
-  <meta name="description" content="Nemme, sprøde og hurtige airfryer opskrifter på dansk – samlet ét sted." />
-  <link rel="icon" href="/img/favicon.ico" />
-  <link rel="stylesheet" href="/assets/styles.css?v=9" />
-
-  <!-- AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Opskrift-Airfryer.dk – Sprøde Airfryer Opskrifter</title>
+<meta name="description" content="Nemme, sprøde og hurtige airfryer opskrifter på dansk – tydelige tider og temperaturer." />
+<link rel="icon" href="/img/favicon.ico" />
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+<style>
+/* ====== Clean One-File Theme (Forside) ====== */
+*,*::before,*::after{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+/* Header */
+.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;color:#0ea5e9;font-size:20px}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{font-size:15px;color:var(--text)}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:26px 0}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.15;margin:6px 0 8px}
+.hero p{margin:0;color:var(--muted)}
+.hero-actions{display:flex;gap:10px;margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:999px;font-weight:600;border:1px solid var(--line);background:#fff}
+.btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+.hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.hero-ico{width:120px;height:120px;color:var(--accent)}
+/* Section */
+.section{margin:28px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.section-head h2{font-size:22px;margin:0}
+.more{font-size:14px;color:var(--muted);text-decoration:underline}
+/* Cards */
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
+.card:hover{transform:translateY(-2px)}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:54px;height:54px;color:var(--accent)}
+.card-body{padding:12px 14px}
+.card-body h3{font-size:15px;line-height:1.35;margin:0}
+.meta{font-size:13px;color:var(--muted);margin-top:4px}
+/* Newsletter */
+.news{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+@media(max-width:700px){.news{grid-template-columns:1fr}}
+.news input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%}
+/* Footer */
+.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:36px}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
+.footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
+.copy{color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
+/* Tiny SVG sprite (inline so page is self-contained) */
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+</style>
 </head>
 <body>
-  <!-- Fælles header -->
-  <div data-include="/partials/header.html"></div>
+<!-- Inline ikon-sprite (kun de få vi bruger) -->
+<svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="airfryer" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3" fill="currentColor"/><rect x="8" y="7" width="8" height="4" rx="1" fill="#fff"/><circle cx="12" cy="16" r="2.5" fill="#fff"/></symbol>
+  <symbol id="pig" viewBox="0 0 24 24"><path d="M5 11c0-3 3-6 7-6s7 2 7 5c0 4-3 7-9 7S5 14 5 11Z" fill="currentColor"/><circle cx="10" cy="11" r="1" fill="#fff"/></symbol>
+  <symbol id="chicken" viewBox="0 0 24 24"><path d="M6 13c0-3 2.5-5 6-5 3 0 6 2 6 5s-3 5-6 5-6-2-6-5z" fill="currentColor"/><circle cx="18.5" cy="8.5" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
+</svg>
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero hero--calm">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="kicker">Danske Airfryer Opskrifter</span>
-          <h1>Sprøde Airfryer Opskrifter – Nemt Og Hurtigt</h1>
-          <p>Veltestede opskrifter med <strong>Tider &amp; Temperaturer</strong>. Mindre opvask, mere sprødhed – klar på 15–30 minutter.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#populaere">Se Populære</a>
-            <a class="btn ghost" href="#seneste">Se Seneste</a>
-          </div>
-          <ul class="hero-bullets">
-            <li>Trin-For-Trin Med Billeder</li>
-            <li>Tips, Serveringsforslag Og Indkøbslister</li>
-            <li>Printvenlige Opskrifter</li>
-          </ul>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-thumb"></div>
-          <div class="hero-card-body">
-            <b>Ugens Tip</b>
-            <p>Forvarm Kurven 3–5 Minutter, Og Giv Kartofler Et Let Olie-Spray For Ekstra Sprødhed.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leaderboard annonce -->
-    <div class="ad ad--leaderboard">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7373148222153531"
-           data-ad-slot="1234567890"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-    </div>
-
-    <!-- Populære Opskrifter -->
-    <section id="populaere" class="section">
-      <div class="section-head">
-        <h2>Populære Opskrifter</h2>
-        <a class="more" href="#seneste">Se Alle</a>
-      </div>
-      <div class="grid grid-3 cards">
-        <a class="card" href="/opskrifter/stegt-flaesk-i-airfryer.html">
-          <div class="thumb calm-a"></div>
-          <div class="card-body">
-            <h3>Stegt Flæsk I Airfryer – Sprød Svær Og Nem Aftensmad</h3>
-            <p class="meta">20–30 Min · Nemt</p>
-          </div>
-        </a>
-        <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
-          <div class="thumb calm-b"></div>
-          <div class="card-body">
-            <h3>Kyllingespyd I Airfryer – Saftige Og Hurtige</h3>
-            <p class="meta">15–20 Min · Familiehit</p>
-          </div>
-        </a>
-        <a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
-          <div class="thumb calm-c"></div>
-          <div class="card-body">
-            <h3>Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne</h3>
-            <p class="meta">Tilbehør · Sprød</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- In-feed annonce -->
-    <div class="ad ad--infeed">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-7373148222153531"
-           data-ad-slot="0987654321"
-           data-ad-format="fluid"
-           data-ad-layout="in-article"></ins>
-      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-    </div>
-
-    <!-- Seneste Opskrifter -->
-    <!-- Seneste Opskrifter (Dynamic) -->
-<section id="seneste" class="section">
-  <div class="section-head">
-    <h2>Seneste Opskrifter</h2>
-    <a class="more" href="/kategori.html">Se Alle</a>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="/">Opskrift Airfryer</a>
+    <nav class="nav">
+      <a href="/">Forside</a>
+      <a href="#populaere">Populære</a>
+      <a href="#seneste">Seneste</a>
+      <a href="/kontakt.html">Kontakt</a>
+    </nav>
   </div>
-  <div id="latest-list" class="grid grid-3 cards">
-    <!-- udfyldes automatisk af /assets/script.js -->
-  </div>
-</section>
+</header>
 
-    <!-- Nyhedsbrev -->
-    <section id="nyhedsbrev" class="section">
-      <div class="newsletter">
-        <div>
-          <h2>Nyhedsbrev</h2>
-          <p>Få Nye Opskrifter Hver Uge – Ingen Spam.</p>
-        </div>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Tak! Du Bliver Tilmeldt Når Vi Går Live.'); this.reset();">
-          <input type="email" placeholder="Din E-Mail" required />
-          <button type="submit" class="btn primary">Tilmeld</button>
-        </form>
+<main class="container">
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <span class="kicker">Danske Airfryer Opskrifter</span>
+      <h1>Sprøde Airfryer Opskrifter – Nemt Og Hurtigt</h1>
+      <p>Tydelige Tider, Temperaturer Og Trin-For-Trin. Mindre Opvask, Mere Sprødhed.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#populaere">Se Populære</a>
+        <a class="btn" href="#seneste">Se Seneste</a>
       </div>
-    </section>
-  </main>
+    </div>
+    <div class="hero-box">
+      <svg class="hero-ico"><use href="#airfryer"/></svg>
+    </div>
+  </section>
 
-  <!-- Fælles footer -->
-  <div data-include="/partials/footer.html"></div>
+  <!-- Annonce (valgfrit) -->
+  <div style="margin:8px 0 18px">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7373148222153531"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
 
-  <!-- JS -->
-  <script src="/assets/include.js?v=1"></script>
-  <script src="/assets/script.js?v=3"></script>
+  <!-- Populære -->
+  <section id="populaere" class="section">
+    <div class="section-head">
+      <h2>Populære Opskrifter</h2>
+      <a class="more" href="#seneste">Se Seneste</a>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="card-body">
+          <h3>Flæskesteg I Airfryer – Sprød Svær</h3>
+          <p class="meta">45–60 Min · Nemt</p>
+        </div>
+      </a>
+      <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="card-body">
+          <h3>Frikadeller I Airfryer – Klassikeren</h3>
+          <p class="meta">25 Min · Familiehit</p>
+        </div>
+      </a>
+      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#chicken"/></svg></div>
+        <div class="card-body">
+          <h3>Kyllingespyd I Airfryer – Saftige</h3>
+          <p class="meta">18 Min · Protein</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Seneste (manuelt – vi kan gøre det dynamisk senere) -->
+  <section id="seneste" class="section">
+    <div class="section-head">
+      <h2>Seneste Opskrifter</h2>
+      <a class="more" href="/kategori.html">Se Alle</a>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="card-body">
+          <h3>Flæskesteg I Airfryer – Sprød Svær</h3>
+          <p class="meta">Ny · 45–60 Min</p>
+        </div>
+      </a>
+      <a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
+        <div class="card-body">
+          <h3>Hasselbagte Kartofler I Airfryer</h3>
+          <p class="meta">Tilbehør · 30 Min</p>
+        </div>
+      </a>
+      <a class="card" href="/opskrifter/groentsagsfrikadeller-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
+        <div class="card-body">
+          <h3>Grøntsagsfrikadeller I Airfryer</h3>
+          <p class="meta">Grønt · 25 Min</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Nyhedsbrev -->
+  <section class="section">
+    <div class="news">
+      <div>
+        <h2 style="margin:0 0 6px">Nyhedsbrev</h2>
+        <p style="margin:0;color:var(--muted)">Få Nye Opskrifter En Gang Om Ugen – Ingen Spam.</p>
+      </div>
+      <form onsubmit="event.preventDefault();alert('Tak! Du Bliver Tilmeldt.');this.reset();">
+        <input type="email" required placeholder="Din E-Mail" />
+        <button class="btn primary" type="submit" style="margin-left:8px">Tilmeld</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div>
+        <h3 style="margin:0 0 8px">Om Os</h3>
+        <p>Opskrift-Airfryer.dk samler de bedste airfryer opskrifter på dansk – med tider, temperaturer og enkle trin.</p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px">Kategorier</h3>
+        <p><a href="/kategori.html?navn=Svinekød">Svinekød</a> · <a href="/kategori.html?navn=Kylling">Kylling</a> · <a href="/kategori.html?navn=Grønt">Grønt</a></p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px">Kontakt</h3>
+        <p><a href="/kontakt.html">Skriv til os</a></p>
+      </div>
+    </div>
+    <p class="copy">© 2025 Opskrift-Airfryer.dk</p>
+  </div>
+</footer>
 </body>
 </html>
