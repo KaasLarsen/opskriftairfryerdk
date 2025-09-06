@@ -1,34 +1,23 @@
 <header class="site-header">
-  <div class="container nav">
-    <a href="/" class="brand">Opskrift-Airfryer.dk</a>
+  <div class="site-header-inner">
+    <a href="/" class="logo">Opskrift Airfryer</a>
 
-    <!-- Burger (mobil) -->
-    <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
-
-    <!-- Desktop navigation -->
-    <nav class="nav-right">
-      <a class="nav-link" href="/#populaere">Populære</a>
-      <a class="nav-link" href="/#seneste">Seneste</a>
-      <a class="btn primary" href="/#nyhedsbrev">Nyhedsbrev</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/">Forside</a></li>
+        <li><a href="/seneste.html">Seneste</a></li>
+        <li class="has-submenu">
+          <a href="#">Kategorier ▾</a>
+          <ul class="submenu">
+            <li><a href="/kategori/koed.html">Kød</a></li>
+            <li><a href="/kategori/fjerkrae.html">Fjerkræ</a></li>
+            <li><a href="/kategori/fisk.html">Fisk</a></li>
+            <li><a href="/kategori/gront.html">Grønt</a></li>
+            <li><a href="/kategori/dessert.html">Dessert</a></li>
+          </ul>
+        </li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+      </ul>
     </nav>
-  </div>
-
-  <!-- Overlay menu (mobil-kategorier) -->
-  <div class="menu-overlay" onclick="document.body.classList.remove('menu-open')">
-    <div class="menu-panel" onclick="event.stopPropagation()">
-      <button class="menu-close" aria-label="Luk" onclick="document.body.classList.remove('menu-open')">✕</button>
-      <h2>Kategorier</h2>
-      <ul class="menu-categories">
-  <li><a href="/kategori.html?navn=Aftensmad">Aftensmad</a></li>
-  <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
-  <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
-  <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
-  <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
-  <li><a href="/kategori.html?navn=Snacks">Snacks</a></li>
-  <li><a href="/kategori.html?navn=Morgenmad">Morgenmad</a></li>
-  <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
-  <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
-</ul>
-    </div>
   </div>
 </header>
