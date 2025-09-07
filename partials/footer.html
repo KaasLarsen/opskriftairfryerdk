@@ -1,30 +1,28 @@
 <!-- PARTIAL: /partials/footer.html -->
 <style>
-  /* Minimal, selvstændig styling til footer (kun her) */
   :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --muted:#475569; }
   .footer{background:#f8fafc; border-top:1px solid var(--line); margin-top:36px;}
   .footer-inner{max-width:var(--max); margin:0 auto; padding:28px var(--pad);}
-  .footer-cols{display:grid; grid-template-columns:2fr 1fr 1fr; gap:24px; margin-bottom:16px;}
+  .footer-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:16px;}
   .footer h3{margin:0 0 8px; font-size:16px;}
-  .footer p, .footer a, .footer li{color:var(--muted); font-size:14px; text-decoration:none;}
-  .footer ul{list-style:none; margin:0; padding:0;}
+  .footer a, .footer p, .footer li{color:var(--muted); font-size:14px; text-decoration:none;}
+  .footer ul{list-style:none; margin:0; padding:0; display:grid; gap:6px;}
   .copy{color:#64748b; font-size:13px; text-align:center; margin:8px 0 0;}
-  @media(max-width:900px){ .footer-cols{grid-template-columns:1fr;} }
+  @media(max-width:800px){ .footer-cols{grid-template-columns:1fr} }
 </style>
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-cols">
       <div>
-        <h3>Om Os</h3>
-        <p>Opskrift-Airfryer.dk samler sprøde og nemme airfryer-opskrifter med klare tider og temperaturer.</p>
-      </div>
-      <div>
         <h3>Kategorier</h3>
         <ul>
           <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
           <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
+          <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
+          <li><a href="/kategori.html?navn=Fisk">Fisk</a></li>
           <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
+          <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
           <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
         </ul>
       </div>
