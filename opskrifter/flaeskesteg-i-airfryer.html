@@ -4,24 +4,52 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød</title>
-<meta name="description" content="Flæskesteg i airfryer med sprød svær og saftigt kød. Tydelige tider og temperaturer, tips og servering." />
+<meta name="description" content="Flæskesteg i airfryer – få sprød svær og saftigt kød på under en time. Nem opskrift med tider og temperaturer, tips og serveringsforslag." />
 <link rel="icon" href="/img/favicon.ico" />
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+
+<!-- Structured data: Recipe schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Flæskesteg i airfryer – sprød svær og saftigt kød",
+  "image": "/img/recipes/flaeskesteg.png",
+  "description": "Nem opskrift på flæskesteg i airfryer. Sprød svær, saftigt kød, tydelige tider og temperaturer. Perfekt til julemad og hverdag.",
+  "author": { "@type": "Organization", "name": "Opskrift Airfryer" },
+  "prepTime": "PT10M",
+  "cookTime": "PT50M",
+  "totalTime": "PT1H",
+  "recipeYield": "4 portioner",
+  "recipeCategory": "Hovedret",
+  "recipeCuisine": "Dansk",
+  "keywords": "flæskesteg i airfryer, sprød svær, julemad, nem opskrift",
+  "recipeIngredient": [
+    "1 Flæskesteg (1,2–1,5 kg), ridset svær",
+    "1 spsk olie",
+    "Groft salt og friskkværnet peber",
+    "Evt. laurbærblade"
+  ],
+  "recipeInstructions": [
+    { "@type": "HowToStep", "text": "Rids sværen helt ned til kødet uden at skære igennem. Dup stegen tør." },
+    { "@type": "HowToStep", "text": "Gnid sværen med olie og salt. Krydr med peber. Læg evt. laurbær i rillerne." },
+    { "@type": "HowToStep", "text": "Forvarm airfryeren i 5 min ved 200 °C." },
+    { "@type": "HowToStep", "text": "Læg stegen i kurven med sværen opad. Tilbered 35–40 min ved 200 °C." },
+    { "@type": "HowToStep", "text": "Mål kernetemperatur (65–68 °C). Giv evt. 5–15 min ekstra efter størrelse." },
+    { "@type": "HowToStep", "text": "Hvis sværen ikke er sprød, giv 3–5 min ekstra ved høj varme. Lad hvile 10 min før udskæring." }
+  ]
+}
+</script>
+
 <style>
-/* ====== Clean One-File Theme (Opskrift) ====== */
+/* beholdt samme styling som før */
 *,*::before,*::after{box-sizing:border-box}html,body{height:100%}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-/* Header/Navigation – styler dine partials */
-.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
-.header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:800;color:#0ea5e9;font-size:20px}
-.nav{display:flex;gap:18px;flex-wrap:wrap}.nav a{font-size:15px;color:var(--text)}
-/* Hero */
-.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center; padding:12px 0 6px} /* strammet padding */
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;padding:12px 0 6px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
 .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:260px;display:grid;place-items:center;box-shadow:var(--shadow)}
 .hero-ico{width:120px;height:120px;color:var(--accent)}
@@ -29,8 +57,7 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:0 0 8px}
 p.lead{margin:0;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:#fff}
-/* Blocks */
-.section{ margin:18px 0 } /* strammere spacing */
+.section{margin:18px 0}
 .block{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:16px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:900px){.two{grid-template-columns:1fr}}
@@ -46,37 +73,28 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px
 .thumb-icon svg{width:48px;height:48px;color:var(--accent)}
 .card-body{padding:12px 14px}.card-body h3{font-size:15px;line-height:1.35;margin:0}
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
-/* Inline sprite container */
-svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
-/* Skjul tom annonce-plads */
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 </style>
 </head>
 <body>
 
-<!-- Inline ikon-sprite – med en TYDELIG "steg" (#roast) -->
-<svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <!-- Roast/Steg: afrundet steg med snit og ben-knop -->
+<!-- Ikon-sprite -->
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg">
   <symbol id="roast" viewBox="0 0 24 24">
-    <!-- Kødets krop -->
-    <path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z"
-          fill="currentColor"/>
-    <!-- Snit i sværen -->
+    <path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z" fill="currentColor"/>
     <path d="M7.5 11.5h9M7.5 13.5h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-    <!-- Lille "ben-knop" til højre -->
     <circle cx="20.5" cy="12.5" r="1.4" fill="currentColor"/>
   </symbol>
   <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 10v3l2 2" stroke="currentColor" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="2" rx="1" fill="currentColor"/></symbol>
   <symbol id="thermo" viewBox="0 0 24 24"><path d="M14 14.5V6a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
   <symbol id="star" viewBox="0 0 24 24"><path d="m12 17-5.5 3 1.5-6.2L3 9.5l6.3-.6L12 3l2.7 5.9 6.3.6-5 4.3L17.5 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
-  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
 </svg>
 
-<!-- Header via partial -->
 <div data-include="/partials/header.html"></div>
 
 <main class="container">
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
     <div>
       <h1>Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød</h1>
@@ -89,22 +107,18 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
       </div>
     </div>
     <div class="hero-box" aria-hidden="true">
-      <!-- HERO-IKON = STEG -->
       <svg class="hero-ico"><use href="#roast"/></svg>
     </div>
   </section>
 
-  <!-- Annonce (valgfrit) -->
-  <div style="margin:6px 0 10px">
-    <ins class="adsbygoogle" style="display:block"
-         data-ad-client="ca-pub-7373148222153531"
-         data-ad-slot="0987654321"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-  </div>
+  <!-- Intro tekst -->
+  <section class="section block">
+    <h2>Hvorfor Lave Flæskesteg I Airfryer?</h2>
+    <p>Flæskesteg er en klassiker i det danske køkken – især til jul, men også til søndagsmiddagen. Med en airfryer får du sprød svær og saftigt kød på kortere tid og med mindre besvær end i ovnen. Luftcirkulationen i airfryeren gør, at sværen bobler perfekt uden, at kødet bliver tørt. Opskriften er nem at følge, og du slipper for at vente i halvanden time på en traditionel ovn.</p>
+    <p>Her guider vi dig til den bedste flæskesteg i airfryer – med tydelige tider, temperaturer, tips og serveringsforslag, så du altid får succes.</p>
+  </section>
 
-  <!-- Indhold -->
+  <!-- Ingredienser og trin -->
   <section class="section block two">
     <div>
       <h2>Ingredienser</h2>
@@ -121,45 +135,55 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
         <li>Stegetermometer</li>
         <li>Skarp Kniv</li>
       </ul>
-
-      <h2 style="margin-top:12px">Nøgletal</h2>
-      <ul class="list">
-        <li>Kernetemperatur: 65–68 °C</li>
-        <li>Hviletid: 10 Min</li>
-      </ul>
     </div>
 
     <div>
       <h2>Sådan Gør Du</h2>
       <ol class="steps">
         <li>Rids Sværen Helt Ned Til Kødet Uden At Skære Igennem. Dup Stegen Tør.</li>
-        <li>Gnid Sværen Med Olie. Massér Groft Salt Ned Mellem Rillerne. Krydr Med Peber. Evt. Laurbær I Rillerne.</li>
+        <li>Gnid Sværen Med Olie Og Groft Salt. Krydr Med Peber. Evt. Laurbær I Rillerne.</li>
         <li>Forvarm Airfryeren 5 Min Ved 200 °C.</li>
         <li>Læg Stegen I Kurven Med Sværen Opad. Tilbered 35–40 Min Ved 200 °C.</li>
-        <li>Mål Kernetemperatur (Sigte: 65–68 °C). Giv Yderligere 5–15 Min Efter Størrelse.</li>
-        <li>Mangler Sværen Sprødhed? Giv 3–5 Min Ekstra Ved Høj Varme. Hold Øje.</li>
-        <li>Tag Stegen Ud Og Lad Hvile 10 Min Før Udskæring.</li>
+        <li>Mål Kernetemperatur (65–68 °C). Giv 5–15 Min Ekstra Efter Størrelse.</li>
+        <li>Hvis Sværen Ikke Er Sprød: Giv 3–5 Min Ekstra Ved Høj Varme. Hold Øje.</li>
+        <li>Lad Hvile 10 Min Før Udskæring.</li>
       </ol>
     </div>
   </section>
 
-  <!-- Tips / Alternativer / Servering -->
+  <!-- Tips og alternativer -->
   <section class="section block">
-    <h2>Tips</h2>
+    <h2>Tips Til Perfekt Svær</h2>
     <ul class="list">
-      <li>Læg En Strimmel Folie Over Sværen, Hvis Den Får For Meget Farve Før Kødet Er Færdigt.</li>
-      <li>Vend Ikke Stegen – Luftcirkulationen Giver Sprød Svær Ovenfra.</li>
-      <li>Salt Sværen 30 Min Før Tilberedning For Ekstra Sprødhed.</li>
+      <li>Læg Et Stykke Folie Over Sværen, Hvis Den Får For Meget Farve.</li>
+      <li>Sørg For At Salt Kommer Helt Ned I Rillerne.</li>
+      <li>Lad Stegen Hvile 10 Min, Så Saften Fordeler Sig.</li>
     </ul>
 
-    <h2 style="margin-top:12px">Alternative Tilberedninger</h2>
+    <h2 style="margin-top:12px">Andre Tilberedningsmetoder</h2>
     <ul class="list">
       <li><b>Ovn:</b> 200 °C Varmluft, 60–90 Min.</li>
-      <li><b>Grill:</b> Indirekte Varme Til Sværen Er Sprød. Mål Kernetemperatur.</li>
+      <li><b>Grill:</b> Indirekte Varme, Til Sværen Er Sprød Og Kødet Er Mørt.</li>
     </ul>
+  </section>
 
-    <h2 style="margin-top:12px">Serveringsforslag</h2>
-    <p>Klassisk Med Brunede Kartofler, Rødkål Og Brun Sovs – Eller Let Med Kålsalat Og Små Ovnkartofler.</p>
+  <!-- Servering -->
+  <section class="section block">
+    <h2>Serveringsforslag</h2>
+    <p>Klassisk julemiddag med brunede kartofler, rødkål og brun sovs – eller en lettere udgave med kålsalat og små ovnkartofler. Flæskesteg er også lækker i sandwiches dagen derpå, fx i en frisk flæskestegssandwich med syltede agurker.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section block">
+    <h2>Ofte Stillede Spørgsmål</h2>
+    <h3>Kan jeg lave flæskesteg i en lille airfryer?</h3>
+    <p>Ja, men vælg en mindre steg (1–1,2 kg), så den kan være i kurven. Husk altid sværen skal vende opad.</p>
+
+    <h3>Hvordan undgår jeg blød svær?</h3>
+    <p>Dup stegen helt tør, og sørg for at salten kommer ned i rillerne. Slut evt. af med 3–5 min ekstra ved høj varme.</p>
+
+    <h3>Kan jeg lave sauce i airfryeren?</h3>
+    <p>Nej, airfryeren er kun til stegen. Brug i stedet stegesky og svinefond i en gryde på komfuret til en lækker sovs.</p>
   </section>
 
   <!-- Relaterede -->
@@ -187,19 +211,4 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
     <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
     <div style="display:inline-block">
-      <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
-        <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
-          Annonce I Samarbejde Med <span style="font-weight:bold">PriceRunner</span>
-        </p>
-      </a>
-    </div>
-  </section>
-</main>
-
-<!-- Footer via partial -->
-<div data-include="/partials/footer.html"></div>
-
-<!-- Loader til partials -->
-<script src="/assets/include.js?v=1"></script>
-</body>
-</html>
+      <a href="https://www.pricerunner.dk/pl/81-3200256729/Frit
