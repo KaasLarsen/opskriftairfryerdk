@@ -15,14 +15,21 @@ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-/* Header */
+
+/* Header (matches opskrift-sider) */
 .header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
 .header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-weight:800;color:#0ea5e9;font-size:20px}
 .nav{display:flex;gap:18px;flex-wrap:wrap}
 .nav a{font-size:15px;color:var(--text)}
-/* Hero */
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:26px 0}
+/* optional dropdown styles if din header-partial bruger <details> til Kategorier */
+.nav details.dropdown summary{list-style:none;cursor:pointer}
+.nav details.dropdown[open] summary{opacity:.9}
+.nav details .menu{position:absolute;margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 10px}
+.nav details .menu a{display:block;padding:6px 8px;white-space:nowrap}
+
+/* Hero – strammet padding for at fjerne ekstra mellemrum nedefter */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:12px 0 6px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
 .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.15;margin:6px 0 8px}
@@ -32,11 +39,13 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
 .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
 .hero-ico{width:120px;height:120px;color:var(--accent)}
-/* Section */
-.section{margin:28px 0}
+
+/* Section – strammet margin som opskrift-sider (18px) */
+.section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .section-head h2{font-size:22px;margin:0}
 .more{font-size:14px;color:var(--muted);text-decoration:underline}
+
 /* Cards */
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -49,18 +58,26 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
-/* Newsletter */
+
+/* Newsletter – input og knap på samme linje (flex) */
 .news{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
 @media(max-width:700px){.news{grid-template-columns:1fr}}
-.news input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%}
-/* Footer */
-.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:36px}
+.news form{display:flex;align-items:center;gap:8px}
+.news input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;flex:1 1 auto}
+.news button.btn{white-space:nowrap}
+
+/* Footer (matches opskrift-sider) */
+.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:24px}
 .footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
 .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
 .copy{color:var(--muted);font-size:13px;text-align:center}
 @media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
+
 /* Tiny SVG sprite (inline so page is self-contained) */
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+
+/* Ads – skjul tom plads hvis ingen annonce */
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 </style>
 </head>
 <body>
@@ -72,17 +89,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
 </svg>
 
-<header class="header">
-  <div class="header-inner">
-    <a class="logo" href="/">Opskrift Airfryer</a>
-    <nav class="nav">
-      <a href="/">Forside</a>
-      <a href="#populaere">Populære</a>
-      <a href="#seneste">Seneste</a>
-      <a href="/kontakt.html">Kontakt</a>
-    </nav>
-  </div>
-</header>
+<!-- Header via partial (samme som opskrift-sider) -->
+<div data-include="/partials/header.html"></div>
 
 <main class="container">
   <!-- HERO -->
@@ -132,17 +140,17 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
           <p class="meta">25 Min · Familiehit</p>
         </div>
       </a>
-      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
+      <a class="card" href="/opskrifter/kyllingelaar-i-airfryer.html">
         <div class="thumb-icon"><svg><use href="#chicken"/></svg></div>
         <div class="card-body">
-          <h3>Kyllingespyd I Airfryer – Saftige</h3>
-          <p class="meta">18 Min · Protein</p>
+          <h3>Kyllingelår I Airfryer – Saftige</h3>
+          <p class="meta">22–28 Min · Protein</p>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- Seneste (manuelt – vi kan gøre det dynamisk senere) -->
+  <!-- Seneste -->
   <section id="seneste" class="section">
     <div class="section-head">
       <h2>Seneste Opskrifter</h2>
@@ -182,30 +190,16 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
       </div>
       <form onsubmit="event.preventDefault();alert('Tak! Du Bliver Tilmeldt.');this.reset();">
         <input type="email" required placeholder="Din E-Mail" />
-        <button class="btn primary" type="submit" style="margin-left:8px">Tilmeld</button>
+        <button class="btn primary" type="submit">Tilmeld</button>
       </form>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-cols">
-      <div>
-        <h3 style="margin:0 0 8px">Om Os</h3>
-        <p>Opskrift-Airfryer.dk samler de bedste airfryer opskrifter på dansk – med tider, temperaturer og enkle trin.</p>
-      </div>
-      <div>
-        <h3 style="margin:0 0 8px">Kategorier</h3>
-        <p><a href="/kategori.html?navn=Svinekød">Svinekød</a> · <a href="/kategori.html?navn=Kylling">Kylling</a> · <a href="/kategori.html?navn=Grønt">Grønt</a></p>
-      </div>
-      <div>
-        <h3 style="margin:0 0 8px">Kontakt</h3>
-        <p><a href="/kontakt.html">Skriv til os</a></p>
-      </div>
-    </div>
-    <p class="copy">© 2025 Opskrift-Airfryer.dk</p>
-  </div>
-</footer>
+<!-- Footer via partial (samme som opskrift-sider) -->
+<div data-include="/partials/footer.html"></div>
+
+<!-- Loader til partials -->
+<script src="/assets/include.js?v=1"></script>
 </body>
 </html>
