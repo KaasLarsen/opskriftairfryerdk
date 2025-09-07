@@ -15,7 +15,7 @@ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-/* Header simple (indbygget) */
+/* Header/Navigation – styler dine partials */
 .header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
 .header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between}
 .logo{font-weight:800;color:#0ea5e9;font-size:20px}
@@ -46,19 +46,25 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px
 .thumb-icon svg{width:48px;height:48px;color:var(--accent)}
 .card-body{padding:12px 14px}.card-body h3{font-size:15px;line-height:1.35;margin:0}
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
-/* Inline sprite */
+/* Inline sprite container */
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 /* Skjul tom annonce-plads */
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 </style>
 </head>
 <body>
-<!-- Inline ikon-sprite (nu MED #roast) -->
+
+<!-- Inline ikon-sprite – med en TYDELIG "steg" (#roast) -->
 <svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="pig" viewBox="0 0 24 24"><path d="M5 11c0-3 3-6 7-6s7 2 7 5c0 4-3 7-9 7S5 14 5 11Z" fill="currentColor"/><circle cx="10" cy="11" r="1" fill="#fff"/></symbol>
+  <!-- Roast/Steg: afrundet steg med snit og ben-knop -->
   <symbol id="roast" viewBox="0 0 24 24">
-    <rect x="3" y="8" width="18" height="10" rx="2" fill="currentColor"/>
-    <path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2"/>
+    <!-- Kødets krop -->
+    <path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z"
+          fill="currentColor"/>
+    <!-- Snit i sværen -->
+    <path d="M7.5 11.5h9M7.5 13.5h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+    <!-- Lille "ben-knop" til højre -->
+    <circle cx="20.5" cy="12.5" r="1.4" fill="currentColor"/>
   </symbol>
   <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 10v3l2 2" stroke="currentColor" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="2" rx="1" fill="currentColor"/></symbol>
   <symbol id="thermo" viewBox="0 0 24 24"><path d="M14 14.5V6a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
@@ -66,17 +72,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
 </svg>
 
-<!-- HEADER (indbygget) -->
-<header class="header">
-  <div class="header-inner">
-    <a class="logo" href="/">Opskrift Airfryer</a>
-    <nav class="nav">
-      <a href="/">Forside</a>
-      <a href="/#seneste">Seneste</a>
-      <a href="/kontakt.html">Kontakt</a>
-    </nav>
-  </div>
-</header>
+<!-- Header via partial -->
+<div data-include="/partials/header.html"></div>
 
 <main class="container">
   <!-- HERO -->
@@ -170,11 +167,11 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <h2>Relaterede Opskrifter</h2>
     <div class="grid-3">
       <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
-        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="thumb-icon"><svg><use href="#roast"/></svg></div>
         <div class="card-body"><h3>Frikadeller I Airfryer – Klassiske Og Nemme</h3></div>
       </a>
       <a class="card" href="/opskrifter/svinekam-i-airfryer.html">
-        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="thumb-icon"><svg><use href="#roast"/></svg></div>
         <div class="card-body"><h3>Svinekam I Airfryer – Sprød Svær Og Mør Kerne</h3></div>
       </a>
       <a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
@@ -199,9 +196,10 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 </main>
 
-<!-- FOOTER (indbygget) -->
-<footer class="container">
-  <p class="copy">© 2025 Opskrift-Airfryer.dk</p>
-</footer>
+<!-- Footer via partial -->
+<div data-include="/partials/footer.html"></div>
+
+<!-- Loader til partials -->
+<script src="/assets/include.js?v=1"></script>
 </body>
 </html>
