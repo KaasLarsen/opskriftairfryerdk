@@ -21,7 +21,9 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .logo{font-weight:800;color:#0ea5e9;font-size:20px}
 .nav{display:flex;gap:18px;flex-wrap:wrap}.nav a{font-size:15px;color:var(--text)}
 /* Hero */
-.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;padding:24px 0}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;
+/* 👇 justeret padding for mindre luft */
+padding:12px 0 6px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
 .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:260px;display:grid;place-items:center;box-shadow:var(--shadow)}
 .hero-ico{width:120px;height:120px;color:var(--accent)}
@@ -30,7 +32,9 @@ p.lead{margin:0;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:#fff}
 /* Blocks */
-.section{margin:26px 0}
+.section{
+/* 👇 mindre margin for strammere spacing */
+margin:18px 0}
 .block{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:16px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:900px){.two{grid-template-columns:1fr}}
@@ -48,6 +52,8 @@ ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
 /* Inline sprite */
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+/* 👇 skjul tom annonce-plads */
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 </style>
 </head>
 <body>
@@ -90,7 +96,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 
   <!-- Annonce (valgfrit) -->
-  <div style="margin:8px 0 18px">
+  <div style="margin:6px 0 10px"><!-- 👆 mindre margin -->
     <ins class="adsbygoogle" style="display:block"
          data-ad-client="ca-pub-7373148222153531"
          data-ad-slot="0987654321"
