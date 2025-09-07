@@ -16,19 +16,17 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 
-/* Header (matches opskrift-sider) */
+/* Header (via partials – matcher opskrift-sider) */
 .header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
 .header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{font-weight:800;color:#0ea5e9;font-size:20px}
 .nav{display:flex;gap:18px;flex-wrap:wrap}
 .nav a{font-size:15px;color:var(--text)}
-/* optional dropdown styles if din header-partial bruger <details> til Kategorier */
 .nav details.dropdown summary{list-style:none;cursor:pointer}
-.nav details.dropdown[open] summary{opacity:.9}
 .nav details .menu{position:absolute;margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 10px}
 .nav details .menu a{display:block;padding:6px 8px;white-space:nowrap}
 
-/* Hero – strammet padding for at fjerne ekstra mellemrum nedefter */
+/* Hero – strammet padding */
 .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:12px 0 6px}
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
 .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
@@ -40,17 +38,18 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
 .hero-ico{width:120px;height:120px;color:var(--accent)}
 
-/* Section – strammet margin som opskrift-sider (18px) */
+/* Section */
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .section-head h2{font-size:22px;margin:0}
 .more{font-size:14px;color:var(--muted);text-decoration:underline}
 
-/* Cards */
+/* Cards & grids */
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}.grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3,.grid-4{grid-template-columns:1fr}}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
 .card:hover{transform:translateY(-2px)}
 .thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
@@ -59,37 +58,47 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
 
-/* Newsletter – input og knap på samme linje (flex) */
+/* Category tiles */
+.cat{display:grid;place-items:center;text-align:center;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
+.cat svg{width:38px;height:38px;color:var(--accent);margin-bottom:8px}
+.cat span{font-weight:600}
+
+/* Guides (små artikler) */
+.guide{display:block;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:14px}
+.guide h3{margin:0 0 6px;font-size:16px}
+.guide p{margin:0;color:var(--muted);font-size:14px}
+
+/* Newsletter – input og knap på samme linje */
 .news{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
 @media(max-width:700px){.news{grid-template-columns:1fr}}
 .news form{display:flex;align-items:center;gap:8px}
 .news input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;flex:1 1 auto}
 .news button.btn{white-space:nowrap}
 
-/* Footer (matches opskrift-sider) */
+/* Footer (via partials – matcher opskrift-sider) */
 .footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:24px}
 .footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
 .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
-.copy{color:var(--muted);font-size:13px;text-align:center}
+.copy{color:#64748b;font-size:13px;text-align:center}
 @media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
 
-/* Tiny SVG sprite (inline so page is self-contained) */
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
-
-/* Ads – skjul tom plads hvis ingen annonce */
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 </style>
 </head>
 <body>
-<!-- Inline ikon-sprite (kun de få vi bruger) -->
+<!-- Inline ikon-sprite -->
 <svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
   <symbol id="airfryer" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="3" fill="currentColor"/><rect x="8" y="7" width="8" height="4" rx="1" fill="#fff"/><circle cx="12" cy="16" r="2.5" fill="#fff"/></symbol>
   <symbol id="pig" viewBox="0 0 24 24"><path d="M5 11c0-3 3-6 7-6s7 2 7 5c0 4-3 7-9 7S5 14 5 11Z" fill="currentColor"/><circle cx="10" cy="11" r="1" fill="#fff"/></symbol>
   <symbol id="chicken" viewBox="0 0 24 24"><path d="M6 13c0-3 2.5-5 6-5 3 0 6 2 6 5s-3 5-6 5-6-2-6-5z" fill="currentColor"/><circle cx="18.5" cy="8.5" r="1.3" fill="currentColor"/></symbol>
   <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="m12 17-5.5 3 1.5-6.2L3 9.5l6.3-.6L12 3l2.7 5.9 6.3.6-5 4.3L17.5 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="book" viewBox="0 0 24 24"><path d="M5 5h10a3 3 0 0 1 3 3v11H8a3 3 0 0 1-3-3V5z" fill="currentColor"/><path d="M8 5v14" stroke="#fff" stroke-width="2"/></symbol>
+  <symbol id="cart" viewBox="0 0 24 24"><path d="M3 5h2l2 12h10l2-8H7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
 </svg>
 
-<!-- Header via partial (samme som opskrift-sider) -->
+<!-- Header via partial -->
 <div data-include="/partials/header.html"></div>
 
 <main class="container">
@@ -123,7 +132,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <section id="populaere" class="section">
     <div class="section-head">
       <h2>Populære Opskrifter</h2>
-      <a class="more" href="#seneste">Se Seneste</a>
+      <a class="more" href="/#seneste">Se Seneste</a>
     </div>
     <div class="grid grid-3">
       <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
@@ -150,11 +159,33 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     </div>
   </section>
 
+  <!-- Kategorier (nyt) -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Kategorier</h2>
+      <a class="more" href="/kategori.html">Se Alle</a>
+    </div>
+    <div class="grid grid-4">
+      <a class="cat" href="/kategori/svinekoed.html">
+        <svg><use href="#pig"/></svg><span>Svinekød</span>
+      </a>
+      <a class="cat" href="/kategori/kylling.html">
+        <svg><use href="#chicken"/></svg><span>Kylling</span>
+      </a>
+      <a class="cat" href="/kategori/groent.html">
+        <svg><use href="#leaf"/></svg><span>Grønt</span>
+      </a>
+      <a class="cat" href="/kategori/tilbehoer.html">
+        <svg><use href="#star"/></svg><span>Tilbehør</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Seneste -->
   <section id="seneste" class="section">
     <div class="section-head">
       <h2>Seneste Opskrifter</h2>
-      <a class="more" href="/kategori.html">Se Alle</a>
+      <a class="more" href="/seneste.html">Se Alle</a>
     </div>
     <div class="grid grid-3">
       <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
@@ -181,6 +212,47 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     </div>
   </section>
 
+  <!-- Guides & Tips (nyt) -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Guides & Tips</h2>
+      <a class="more" href="/guides.html">Se Alle</a>
+    </div>
+    <div class="grid grid-3">
+      <a class="guide" href="/guides/airfryer-tider.html">
+        <h3>Airfryer Tider & Temperaturer (Cheat Sheet)</h3>
+        <p>Hvor længe skal kylling, kartofler og grønt have? Få overblik.</p>
+      </a>
+      <a class="guide" href="/guides/valg-af-airfryer.html">
+        <h3>Vælg Den Rigtige Airfryer</h3>
+        <p>Størrelse, effekt, kurv vs. skuffe, og hvilket tilbehør du bør have.</p>
+      </a>
+      <a class="guide" href="/guides/airfryer-fejl-og-fix.html">
+        <h3>Fejl & Fix: Sprød Svær Hver Gang</h3>
+        <p>Undgå blød svær og tør kylling med disse simple greb.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Airfryer Anbefaling (nyt – PriceRunner) -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Anbefalet Airfryer</h2>
+      <a class="more" href="/udstyr.html">Se Mere Udstyr</a>
+    </div>
+    <div class="card" style="padding:12px">
+      <div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
+      <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
+      <div style="display:inline-block">
+        <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
+          <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Nyhedsbrev -->
   <section class="section">
     <div class="news">
@@ -196,7 +268,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 </main>
 
-<!-- Footer via partial (samme som opskrift-sider) -->
+<!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
 
 <!-- Loader til partials -->
