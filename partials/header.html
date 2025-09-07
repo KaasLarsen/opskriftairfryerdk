@@ -1,21 +1,40 @@
 <!-- PARTIAL: /partials/header.html -->
 <style>
-  /* Minimal, selvstændig styling til header (kun her) */
   :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --text:#0f172a; --accent:#0ea5e9; }
   .header{position:relative; z-index:50; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
   .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:12px;}
   .logo{font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
-  .nav{display:flex; gap:18px; flex-wrap:wrap;}
-  .nav a{color:var(--text); font-size:15px; text-decoration:none;}
-  /* Burger */
-  .nav-toggle{display:none}
-  .nav-btn{display:none; cursor:pointer; width:34px; height:28px; align-items:center; justify-content:center}
-  .nav-btn span{display:block; width:22px; height:2px; background:var(--text); border-radius:2px; box-shadow:0 6px 0 var(--text), 0 -6px 0 var(--text);}
-  @media (max-width:860px){
-    .nav-btn{display:inline-flex}
-    .nav{display:none; position:absolute; left:0; right:0; top:58px; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 8px 18px rgba(2,8,23,.06); padding:12px var(--pad);}
-    .nav ul{list-style:none; display:grid; gap:10px; margin:0; padding:0;}
-    #nav-open:checked ~ .nav{display:block}
+
+  /* Nav: 3 punkter på én linje */
+  .nav{display:flex; align-items:center; gap:22px;}
+  .nav > a{color:var(--text); font-size:15px; text-decoration:none; padding:6px 2px; position:relative;}
+  .nav > a:hover{color:#0b1220}
+
+  /* Dropdown (klikbar, virker på mobil) */
+  .drop{position:relative}
+  .drop > summary{
+    list-style:none; cursor:pointer; user-select:none;
+    color:var(--text); font-size:15px; padding:6px 2px; display:flex; align-items:center; gap:6px;
+  }
+  .drop > summary::-webkit-details-marker{display:none}
+  .drop > summary::after{content:"▾"; font-size:12px; opacity:.75}
+  .menu{
+    position:absolute; left:0; top:calc(100% + 8px);
+    background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 22px rgba(2,8,23,.08);
+    padding:8px; min-width:200px; display:grid; gap:6px;
+  }
+  .menu a{color:var(--text); text-decoration:none; font-size:14px; padding:8px 10px; border-radius:8px;}
+  .menu a:hover{background:#f8fafc}
+
+  /* Klik udenfor lukker (simple hack) */
+  .drop[open]::before{
+    content:""; position:fixed; inset:0; background:transparent; /* klik-fanger */
+  }
+
+  /* Responsiv: behold 3 i række, dropdown fylder bredde ved små skærme */
+  @media (max-width:720px){
+    .nav{gap:14px}
+    .menu{min-width:240px}
   }
 </style>
 
@@ -23,19 +42,22 @@
   <div class="header-inner">
     <a class="logo" href="/">Opskrift Airfryer</a>
 
-    <!-- Burger toggle (mobil) -->
-    <input id="nav-open" class="nav-toggle" type="checkbox" hidden>
-    <label for="nav-open" class="nav-btn" aria-label="Åbn menu"><span></span></label>
-
     <nav class="nav" role="navigation" aria-label="Hovednavigation">
-      <ul>
-        <li><a href="/">Forside</a></li>
-        <li><a href="/#seneste">Seneste</a></li>
-        <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
-        <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
-        <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
-        <li><a href="/kontakt.html">Kontakt</a></li>
-      </ul>
+      <a href="/">Forside</a>
+      <a href="/seneste.html">Seneste</a>
+
+      <details class="drop">
+        <summary>Kategorier</summary>
+        <div class="menu" role="menu">
+          <a href="/kategori.html?navn=Svinekød" role="menuitem">Svinekød</a>
+          <a href="/kategori.html?navn=Kylling" role="menuitem">Kylling</a>
+          <a href="/kategori.html?navn=Oksekød" role="menuitem">Oksekød</a>
+          <a href="/kategori.html?navn=Fisk" role="menuitem">Fisk</a>
+          <a href="/kategori.html?navn=Grønt" role="menuitem">Grønt</a>
+          <a href="/kategori.html?navn=Tilbehør" role="menuitem">Tilbehør</a>
+          <a href="/kategori.html?navn=Dessert" role="menuitem">Dessert</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
