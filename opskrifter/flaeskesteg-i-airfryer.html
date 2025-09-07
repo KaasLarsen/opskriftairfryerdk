@@ -53,7 +53,7 @@ img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 16px}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center;padding:12px 0 6px}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center; padding:12px 0 6px} /* strammet padding */
 @media(max-width:900px){.hero{grid-template-columns:1fr}}
 .hero-box{background:linear-gradient(180deg,#fff,#f8fafc);border:1px solid #e2e8f0;border-radius:18px;min-height:260px;display:grid;place-items:center;box-shadow:0 8px 22px rgba(2,8,23,.06)}
 .hero-ico{width:120px;height:120px;color:#0ea5e9}
@@ -219,23 +219,10 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <p>Nej, airfryeren er kun til stegen. Brug i stedet stegesky og fond i en gryde på komfuret til en lækker sovs.</p>
   </section>
 
-  <!-- Relaterede -->
+  <!-- Relaterede (automatisk) -->
   <section class="section">
-    <h2>Relaterede Opskrifter</h2>
-    <div class="grid-3">
-      <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
-        <div class="thumb-icon"><svg><use href="#roast"/></svg></div>
-        <div class="card-body"><h3>Frikadeller I Airfryer – Klassiske Og Nemme</h3></div>
-      </a>
-      <a class="card" href="/opskrifter/svinekam-i-airfryer.html">
-        <div class="thumb-icon"><svg><use href="#roast"/></svg></div>
-        <div class="card-body"><h3>Svinekam I Airfryer – Sprød Svær Og Mør Kerne</h3></div>
-      </a>
-      <a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
-        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
-        <div class="card-body"><h3>Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne</h3></div>
-      </a>
-    </div>
+    <h2 id="related-heading">Relaterede Opskrifter</h2>
+    <div id="related-grid" class="grid-3"></div>
   </section>
 
   <!-- PriceRunner i bunden -->
@@ -256,7 +243,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
 
-<!-- Loader til partials -->
+<!-- Loader til partials + relaterede -->
 <script src="/assets/include.js?v=1"></script>
+<script src="/assets/related.js?v=1"></script>
 </body>
 </html>
