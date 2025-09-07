@@ -1,31 +1,41 @@
-<div class="site-header-wrap">
-  <header class="site-header">
+<!-- PARTIAL: /partials/header.html -->
+<style>
+  /* Minimal, selvstændig styling til header (kun her) */
+  :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --text:#0f172a; --accent:#0ea5e9; }
+  .header{position:relative; z-index:50; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
+  .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:12px;}
+  .logo{font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
+  .nav{display:flex; gap:18px; flex-wrap:wrap;}
+  .nav a{color:var(--text); font-size:15px; text-decoration:none;}
+  /* Burger */
+  .nav-toggle{display:none}
+  .nav-btn{display:none; cursor:pointer; width:34px; height:28px; align-items:center; justify-content:center}
+  .nav-btn span{display:block; width:22px; height:2px; background:var(--text); border-radius:2px; box-shadow:0 6px 0 var(--text), 0 -6px 0 var(--text);}
+  @media (max-width:860px){
+    .nav-btn{display:inline-flex}
+    .nav{display:none; position:absolute; left:0; right:0; top:58px; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 8px 18px rgba(2,8,23,.06); padding:12px var(--pad);}
+    .nav ul{list-style:none; display:grid; gap:10px; margin:0; padding:0;}
+    #nav-open:checked ~ .nav{display:block}
+  }
+</style>
+
+<header class="header" role="banner">
+  <div class="header-inner">
     <a class="logo" href="/">Opskrift Airfryer</a>
 
     <!-- Burger toggle (mobil) -->
-    <input id="nav-toggle" class="burger" type="checkbox" hidden>
-    <label for="nav-toggle" class="burger-btn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </label>
+    <input id="nav-open" class="nav-toggle" type="checkbox" hidden>
+    <label for="nav-open" class="nav-btn" aria-label="Åbn menu"><span></span></label>
 
-    <nav class="nav">
-      <ul style="list-style:none;display:flex;gap:18px;margin:0;padding:0;flex-wrap:wrap">
+    <nav class="nav" role="navigation" aria-label="Hovednavigation">
+      <ul>
         <li><a href="/">Forside</a></li>
-        <li><a href="/kategori.html">Seneste</a></li>
-        <li class="has-sub">
-          <a href="#">Kategorier ▾</a>
-          <ul class="submenu">
-            <li><a href="/kategori.html?navn=Aftensmad">Aftensmad</a></li>
-            <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
-            <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
-            <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
-            <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
-            <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
-            <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
-          </ul>
-        </li>
+        <li><a href="/#seneste">Seneste</a></li>
+        <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
+        <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
+        <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
         <li><a href="/kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
-  </header>
-</div>
+  </div>
+</header>
