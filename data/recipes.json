@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "/opskrifter/flaeskesteg-i-airfryer.html",
+    "title": "Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød",
+    "category": "Svinekød",
+    "icon": "roast",
+    "date": "2025-09-07"
+  },
+  {
+    "slug": "/opskrifter/frikadeller-i-airfryer.html",
+    "title": "Frikadeller I Airfryer – Klassiske Og Nemme",
+    "category": "Svinekød",
+    "icon": "roast",
+    "date": "2025-09-05"
+  },
+  {
+    "slug": "/opskrifter/svinekam-i-airfryer.html",
+    "title": "Svinekam I Airfryer – Sprød Svær Og Mør Kerne",
+    "category": "Svinekød",
+    "icon": "roast",
+    "date": "2025-09-04"
+  },
+  {
+    "slug": "/opskrifter/hasselbagte-kartofler-i-airfryer.html",
+    "title": "Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne",
+    "category": "Tilbehør",
+    "icon": "leaf",
+    "date": "2025-09-03"
+  },
+  {
+    "slug": "/opskrifter/groentsagsfrikadeller-i-airfryer.html",
+    "title": "Grøntsagsfrikadeller I Airfryer",
+    "category": "Grønt",
+    "icon": "leaf",
+    "date": "2025-09-02"
+  }
+]
