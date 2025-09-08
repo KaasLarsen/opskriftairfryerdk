@@ -179,14 +179,19 @@ html{scroll-behavior:smooth}
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
-  <!-- Søgefelt -->
-  <section class="section">
-    <div style="max-width:600px;margin:0 auto">
+  
+   <!-- Søgefelt -->
+  <section class="section" style="margin:36px 0">
+    <div style="max-width:700px;margin:0 auto">
       <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
-            style="display:flex;align-items:center;gap:8px">
+            style="display:flex;align-items:center;gap:8px;
+                   background:#fff0f5;padding:16px 18px;
+                   border:1px solid var(--line);border-radius:14px;
+                   box-shadow:var(--shadow)">
         <input id="search-input" type="text" 
-               placeholder="Søg efter opskrifter..." 
-               style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+               placeholder="🔍 Søg efter opskrifter..." 
+               style="flex:1;padding:10px 14px;border:1px solid var(--line);
+                      border-radius:10px;font-size:15px" />
         <button class="btn primary" type="submit">Søg</button>
       </form>
     </div>
