@@ -3,23 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Seneste Airfryer Opskrifter – Opskrift-Airfryer.dk</title>
-<meta name="description" content="Se de nyeste airfryer opskrifter på dansk. Sprøde, nemme og hurtige retter med tider og temperaturer." />
+<title>Seneste Opskrifter – Opskrift-Airfryer.dk</title>
+<meta name="description" content="Alle de nyeste airfryer opskrifter samlet ét sted. Nemt, sprødt og hurtigt – med tider og temperaturer." />
 <link rel="icon" href="/img/favicon.ico" />
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 <style>
-/* ====== Clean One-File Theme (Seneste side) ====== */
-*,*::before,*::after{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
-a{text-decoration:none;color:inherit}
-:root{--max:1200px;--pad:16px;--line:#e2e8f0;--muted:#475569;--soft:#f8fafc;--accent:#0ea5e9;--shadow:0 8px 22px rgba(2,8,23,.06)}
+/* Clean list page */
+*,*::before,*::after{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-
-.section{margin:18px 0}
+.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
+.hero{padding:22px 0 12px}
+.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
+.lead{margin:0;color:var(--muted)}
+.section{margin:24px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.section-head h1{font-size:26px;margin:0}
+.section-head h2{font-size:22px;margin:0}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
@@ -27,68 +30,57 @@ a{text-decoration:none;color:inherit}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
 .card:hover{transform:translateY(-2px)}
 .thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
-.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
+.thumb-icon svg{width:54px;height:54px;color:var(--accent)}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
-.copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 </style>
 </head>
 <body>
 
-<!-- Inline ikoner (samme som forsiden) -->
-<svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="pig" viewBox="0 0 24 24"><path d="M5 11c0-3 3-6 7-6s7 2 7 5c0 4-3 7-9 7S5 14 5 11Z" fill="currentColor"/><circle cx="10" cy="11" r="1" fill="#fff"/></symbol>
-  <symbol id="chicken" viewBox="0 0 24 24"><path d="M6 13c0-3 2.5-5 6-5 3 0 6 2 6 5s-3 5-6 5-6-2-6-5z" fill="currentColor"/><circle cx="18.5" cy="8.5" r="1.3" fill="currentColor"/></symbol>
-  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
-  <symbol id="roast" viewBox="0 0 24 24"><path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z" fill="currentColor"/><path d="M7.5 11.5h9M7.5 13.5h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></symbol>
-</svg>
-
-<!-- Header via partial -->
+<!-- Ikoner + header -->
+<div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
 
 <main class="container">
+  <!-- HERO -->
+  <section class="hero">
+    <span class="kicker">Overblik</span>
+    <h1>Seneste Opskrifter</h1>
+    <p class="lead">De nyeste airfryer opskrifter – altid med tider og temperaturer.</p>
+  </section>
+
+  <!-- Annonce -->
+  <div style="margin:8px 0 18px">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7373148222153531"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- Liste over alle (seneste først) -->
   <section class="section">
     <div class="section-head">
-      <h1>Seneste Opskrifter</h1>
+      <h2>Alle</h2>
     </div>
-    <div id="latest-grid" class="grid grid-3"></div>
+    <div id="alle-grid" class="grid grid-3"></div>
   </section>
 </main>
 
-<!-- Footer via partial -->
+<!-- Footer -->
 <div data-include="/partials/footer.html"></div>
+<script src="/assets/include.js?v=4"></script>
 
-<!-- Loader til partials -->
-<script src="/assets/include.js?v=1"></script>
-
-<!-- Dynamisk indlæsning af opskrifter fra recipes.json -->
+<!-- Auto-render -->
+<script src="/assets/recipes.js?v=1"></script>
+<script src="/assets/render-recipes.js?v=1"></script>
 <script>
-(async () => {
-  try {
-    const res = await fetch('/data/recipes.json', {cache:'no-store'});
-    const all = await res.json();
-    // sorter nyeste først
-    const sorted = all.sort((a,b) => (b.date||'').localeCompare(a.date||''));
-    const latest = sorted.slice(0,9); // vis fx de 9 seneste
-    const grid = document.getElementById('latest-grid');
-    grid.innerHTML = latest.map(r => {
-      const icon = (r.icon || 'roast').replace(/[^a-z0-9_-]/gi, '');
-      return `
-        <a class="card" href="${r.slug}">
-          <div class="thumb-icon"><svg><use href="#${icon}"/></svg></div>
-          <div class="card-body">
-            <h3>${r.title}</h3>
-            <p class="meta">${r.category}</p>
-          </div>
-        </a>
-      `;
-    }).join('');
-  } catch (err) {
-    console.error(err);
-  }
-})();
+  // udfyld hele listen, seneste først
+  AFO.renderAll('alle-grid');
 </script>
 </body>
 </html>
