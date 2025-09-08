@@ -77,7 +77,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <!-- Kontaktformular (Formspree) -->
   <section class="section block">
     <h2>Kontaktformular</h2>
-    <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST" style="display:grid;gap:12px;max-width:560px">
+    <form id="contact-form" action="https://formspree.io/f/mgvlrrjy" method="POST" style="display:grid;gap:12px;max-width:560px">
       <input type="text" name="name" placeholder="Dit navn" required
              style="padding:10px;border:1px solid var(--line);border-radius:10px">
       <input type="email" name="_replyto" placeholder="Din e-mail" required
@@ -88,13 +88,12 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
       <!-- Honeypot (skjult felt mod spam) -->
       <input type="text" name="_honey" style="display:none">
 
-      <!-- (Valgfrit) emne & redirect -->
+      <!-- (Valgfrit) emne -->
       <input type="hidden" name="_subject" value="Kontakt fra Opskrift-Airfryer.dk">
-      <!-- <input type="hidden" name="_next" value="https://ditdomæne.dk/tak.html"> -->
 
       <button class="btn primary" type="submit" id="sendBtn">Send</button>
 
-      <div id="msg-ok" class="success">Tak! Din besked er sendt. Vi vender tilbage hurtigst muligt.</div>
+      <div id="msg-ok" class="success">Tak! Din besked er sendt. Du bliver om lidt sendt videre.</div>
       <div id="msg-err" class="error">Ups! Noget gik galt. Prøv igen om lidt eller skriv på e-mail.</div>
     </form>
     <p class="note">Vi gemmer ikke dine oplysninger på websitet. Beskeden sendes sikkert via Formspree til vores indbakke.</p>
@@ -126,7 +125,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- Formspree AJAX -->
+<!-- Formspree AJAX + redirect -->
 <script>
 (function(){
   const form = document.getElementById('contact-form');
@@ -150,7 +149,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
       if(res.ok){
         ok.style.display = 'block';
-        form.reset();
+        setTimeout(()=>{ window.location.href = '/tak.html'; }, 800);
       }else{
         err.style.display = 'block';
       }
