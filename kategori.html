@@ -1,31 +1,158 @@
 <!doctype html>
 <html lang="da">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kategori | Opskrift-Airfryer.dk</title>
-  <meta name="description" content="Opskrifter i valgt kategori." />
-  <link rel="icon" href="/img/favicon.ico" />
-  <link rel="stylesheet" href="/assets/styles.css?v=12" />
-
-  <!-- AdSense global loader (valgfrit her) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kategori – Opskrift-Airfryer.dk</title>
+<meta name="description" content="Gennemse airfryer opskrifter efter kategori." />
+<link rel="icon" href="/img/favicon.ico" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+:root{--max:1200px;--pad:16px;--line:#e2e8f0;--muted:#475569;--accent:#0ea5e9;--shadow:0 8px 22px rgba(2,8,23,.06)}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.section{margin:18px 0}
+.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;color:#0ea5e9;font-size:20px}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{font-size:15px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:18px 0 10px}
+.section-head h1{font-size:26px;margin:0}
+.filter{display:flex;gap:8px;flex-wrap:wrap}
+.filter a{padding:6px 10px;border:1px solid var(--line);border-radius:999px}
+.filter a.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
+.card-body{padding:12px 14px}
+.card-body h3{font-size:15px;line-height:1.35;margin:0}
+.meta{font-size:13px;color:var(--muted);margin-top:4px}
+.copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+</style>
 </head>
 <body>
-  <div data-include="/partials/header.html"></div>
 
-  <main class="container">
-    <section class="section">
-      <h1 id="category-title">Kategori</h1>
-      <div class="grid grid-3 cards" id="category-list">
-        <!-- Dynamisk indhold fra /assets/script.js -->
-      </div>
-    </section>
-  </main>
+<!-- Ikoner via partial (så #pig, #leaf osv. findes) -->
+<div data-include="/partials/icons.html"></div>
 
-  <div data-include="/partials/footer.html"></div>
+<!-- Header via partial -->
+<div data-include="/partials/header.html"></div>
 
-  <script src="/assets/include.js?v=1"></script>
-  <script src="/assets/script.js?v=12"></script>
+<main class="container">
+  <section class="section">
+    <div class="section-head">
+      <h1 id="kat-title">Kategori</h1>
+      <nav class="filter" aria-label="Hurtigskift">
+        <a href="/kategori.html?navn=Svinekød" data-kat="Svinekød">Svinekød</a>
+        <a href="/kategori.html?navn=Kylling"  data-kat="Kylling">Kylling</a>
+        <a href="/kategori.html?navn=Grønt"    data-kat="Grønt">Grønt</a>
+        <a href="/kategori.html?navn=Tilbehør" data-kat="Tilbehør">Tilbehør</a>
+      </nav>
+    </div>
+
+    <!-- Annonce -->
+    <div style="margin:8px 0 18px">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-7373148222153531"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <div id="kat-grid" class="grid grid-3" aria-live="polite"></div>
+    <p id="kat-empty" class="copy" style="display:none">Ingen opskrifter fundet i denne kategori endnu.</p>
+  </section>
+</main>
+
+<!-- Footer via partial -->
+<div data-include="/partials/footer.html"></div>
+
+<!-- Loader til partials -->
+<script src="/assets/include.js?v=3"></script>
+
+<script>
+// Læs ?navn= fra URL'en (fx 'Svinekød')
+function getCategoryFromURL(){
+  const p = new URLSearchParams(location.search);
+  // decodeURIComponent håndteres af URLSearchParams, men vi sikrer trimming
+  return (p.get('navn') || '').trim();
+}
+
+function iconForCategory(cat){
+  switch(cat){
+    case 'Svinekød': return 'pig';
+    case 'Kylling':  return 'chicken';
+    case 'Grønt':    return 'leaf';
+    case 'Tilbehør': return 'fries';
+    default:         return 'star';
+  }
+}
+
+(async () => {
+  const titleEl = document.getElementById('kat-title');
+  const grid = document.getElementById('kat-grid');
+  const empty = document.getElementById('kat-empty');
+  const current = getCategoryFromURL() || 'Svinekød'; // fallback
+
+  // Sæt titel og aktiv filter-chip
+  titleEl.textContent = `Kategori: ${current}`;
+  document.querySelectorAll('.filter a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.kat === current);
+  });
+
+  try {
+    const res = await fetch('/data/recipes.json', {cache:'no-store'});
+    if(!res.ok) throw new Error('Kunne ikke hente recipes.json');
+    const all = await res.json();
+
+    // Filtrer på kategori (EXAKT match som i recipes.json)
+    const items = all
+      .filter(r => (r.category || '') === current)
+      .sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+
+    if(items.length === 0){
+      grid.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+
+    // Render kort
+    const cards = items.map(r => {
+      const icon = iconForCategory(r.category);
+      const title = (r.title || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      const slug  = r.slug || '#';
+      const meta  = r.category || '';
+      return `
+        <a class="card" href="${slug}">
+          <div class="thumb-icon"><svg><use href="#${icon}"/></svg></div>
+          <div class="card-body">
+            <h3>${title}</h3>
+            <p class="meta">${meta}</p>
+          </div>
+        </a>
+      `;
+    }).join('');
+
+    grid.innerHTML = cards;
+    empty.style.display = 'none';
+  } catch (e) {
+    console.error(e);
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    empty.textContent = 'Der opstod en fejl. Prøv at genindlæse siden.';
+  }
+})();
+</script>
 </body>
 </html>
