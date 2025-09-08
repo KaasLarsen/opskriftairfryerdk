@@ -351,19 +351,33 @@ html{scroll-behavior:smooth}
 </section>
 
   <!-- Nyhedsbrev -->
-  <section class="section">
-    <div class="news">
-      <div>
-        <h2 style="margin:0 0 6px">Nyhedsbrev</h2>
-        <p style="margin:0;color:var(--muted)">Få Nye Opskrifter En Gang Om Ugen – Ingen Spam.</p>
-      </div>
-      <form onsubmit="event.preventDefault();alert('Tak! Du bliver tilmeldt.');this.reset();">
-        <input type="email" required placeholder="Din E-Mail" />
-        <button class="btn primary" type="submit">Tilmeld</button>
-      </form>
+<section class="section">
+  <div class="news">
+    <div>
+      <h2 style="margin:0 0 6px">Nyhedsbrev</h2>
+      <p style="margin:0;color:var(--muted)">Få Nye Opskrifter En Gang Om Ugen – Ingen Spam.</p>
     </div>
-  </section>
-</main>
+
+    <!-- Mailchimp form -->
+    <form action="https://opskrift-airfryer.us11.list-manage.com/subscribe/post?u=f6ab0fde45d5e004200f9379a&amp;id=d5331a9187&amp;f_id=003710e1f0" 
+          method="post" target="_blank" novalidate
+          style="display:flex;align-items:center;flex-wrap:wrap;gap:8px">
+
+      <!-- Email -->
+      <input type="email" name="EMAIL" id="mce-EMAIL" required 
+             placeholder="Din e-mail"
+             style="padding:10px 12px;border:1px solid var(--line);border-radius:10px;min-width:220px;flex:1" />
+
+      <!-- Honeypot -->
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="text" name="b_f6ab0fde45d5e004200f9379a_d5331a9187" tabindex="-1" value="">
+      </div>
+
+      <!-- Submit -->
+      <button class="btn primary" type="submit">Tilmeld</button>
+    </form>
+  </div>
+</section>
 
 <!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
