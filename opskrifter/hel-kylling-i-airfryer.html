@@ -4,78 +4,186 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne</title>
-<meta name="description" content="Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne" />
+<meta name="description" content="Hel kylling i airfryer med sprødt skind og saftig kerne. Tydelige tider og temperaturer, tips, alternativer og servering." />
 <link rel="icon" href="/img/favicon.ico" />
+<!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 <style>
-body{font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:#fff;color:#0f172a;margin:0;line-height:1.65}
-.container{max-width:900px;margin:0 auto;padding:0 16px}
-.section{margin:24px 0}
-.block{border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(2,8,23,.06);padding:16px}
-h1{font-size:28px;margin:0 0 12px}
+*,*::before,*::after{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.section{margin:22px 0}
+.block{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:16px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:16px 0 12px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
+.lead{margin:0;color:var(--muted)}
+.hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:200px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.hero-ico{width:110px;height:110px;color:var(--accent)}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.badge{padding:6px 10px;border:1px solid #e2e8f0;border-radius:999px;font-size:13px;background:#fff}
-ul.list{margin:0;padding-left:20px}ul.list li{margin:6px 0}
-ol.steps{counter-reset:s;list-style:none;padding:0}
-ol.steps li{counter-increment:s;margin:8px 0;padding-left:28px;position:relative}
-ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-size:12px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+ul.list{margin:0;padding-left:18px;list-style:disc}ul.list li{margin:6px 0}
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+ol.steps li{counter-increment:s;position:relative;margin:10px 0;padding-left:34px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:600 13px/1 ui-sans-serif}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 4px 12px rgba(2,8,23,.06);padding:12px;display:block;text-align:center}
-.card h3{font-size:15px;margin:0}
-.copy{color:#64748b;font-size:13px;text-align:center;margin:24px 0 0}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block}
+.card-body{padding:12px 14px}.card-body h3{font-size:15px;line-height:1.35;margin:0}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 </style>
 </head>
 <body>
+
+<!-- Ikoner + header -->
+<div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
+
 <main class="container">
+  <!-- HERO -->
   <section class="hero">
-    <h1>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne</h1>
-    <p class="lead">Nemt og sprødt med airfryer.</p>
-    <div class="badges">
-      <span class="badge">⏱ 60–75 Min</span>
-      <span class="badge">🌡 185–195 °C</span>
-      <span class="badge">⭐ Mellem</span>
-      <span class="badge">4–6 Portioner</span>
+    <div>
+      <span class="kicker">Opskrift · Kød, Kylling, Hovedret</span>
+      <h1>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne</h1>
+      <p class="lead">Tydelige Tider Og Temperaturer. Mindre Bøvl – Mere Sprødhed.</p>
+      <div class="badges">
+        <span class="badge">⏱ 60–75 Min</span>
+        <span class="badge">🌡 185–195 °C</span>
+        <span class="badge">⭐ Mellem</span>
+        <span class="badge">4–6 Portioner</span>
+      </div>
+    </div>
+    <div class="hero-box"><svg class="hero-ico"><use href="#chicken"></use></svg></div>
+  </section>
+
+  <!-- Annonce -->
+  <div style="margin:8px 0 18px">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7373148222153531"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- Introduktion (lang) -->
+  <section class="section block">
+    <h2>Introduktion</h2>
+    <p>Hel kylling i airfryer er en af de retter, hvor den kompakte varmluftovn virkelig skinner. Du får sprødt skind, saftig kerne og en tilberedningstid, der ofte er 10–20 % kortere end i en traditionel ovn. Samtidig bruger du minimalt med fedt, og rengøringen er nem: kurven i opvaskeren, og så er du videre. I denne opskrift guider vi dig sikkert igennem alle trin – fra krydring og forvarmning til kernetemperatur og hviletid – så resultatet bliver stabilt hver gang.</p>
+    <p>Nøglen til succes ligger i to ting: ensartet varme og kontrolleret eftervarme. Airfryeren leverer det første, men du står for det andet ved at lade kyllingen hvile mindst 10 minutter efter tilberedning. Hviletiden gør, at saften sætter sig i fibrene i stedet for at løbe ud på skærebrættet. Vi anbefaler at bruge et simpelt stegetermometer; det fjerner gætværk og sikrer dig netop den saftighed, du foretrækker. Sig efter 72–75 °C i bryst/tykkeste lår.</p>
+    <p>Alle airfryere varmer lidt forskelligt, og størrelsen på kyllingen varierer. Derfor giver vi et tidsspænd og opfordrer dig til at bruge farve, duft og temperatur som dine bedste indikatorer. Får skindet ikke helt den sprødhed, du drømmer om? Giv 3–5 minutter ekstra ved 200 °C til sidst, men hold øje – det går stærkt. Omvendt, hvis farven er perfekt, før kernetemperaturen er der, kan du lægge en løs strimmel folie over brystet, så varmen fortsat når ind til ben/led uden at skindet bliver for mørkt.</p>
+    <p>Smagsmæssigt kan du gå klassisk med salt, peber og paprika – eller du kan tage retten i en citron/urteretning med timian, rosmarin og hvidløg. En smule olie hjælper krydderierne med at hæfte og forhindrer tørre pletter på skindet. Har du tid, så krydr gerne 30–60 minutter før tilberedning; det giver en mere gennemtrængende smag. Til servering rammer du hele vejen rundt med bagte kartofler, en frisk kålsalat og en syrlig dressing eller skysovs.</p>
+    <p>Kort sagt: følg grundtrinene første gang, lær hvordan netop din model opfører sig, og justér de sidste minutter efter resultatet på øjemål og termometer. Så har du en hverdagsklassiker, der både er hurtig, økonomisk og virkelig lækker.</p>
+  </section>
+
+  <!-- Indhold -->
+  <section class="section block two">
+    <div>
+      <h2>Ingredienser</h2>
+      <ul class="list">
+        <li>1 Hel Kylling (1,2–1,6 kg)</li>
+        <li>1 Spsk Olie</li>
+        <li>2 Tsk Groft Salt</li>
+        <li>Peber, Paprika, Hvidløgspulver</li>
+      </ul>
+
+      <h2 style="margin-top:12px">Udstyr</h2>
+      <ul class="list">
+        <li>Airfryer (5 L+)</li>
+        <li>Stegetermometer</li>
+        <li>Pensel eller spraysmørelse</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sådan Gør Du</h2>
+      <ol class="steps">
+        <li>Dup kyllingen tør og gnid hele overfladen med olie, salt og krydderier.</li>
+        <li>Forvarm airfryeren 5 min ved 190 °C.</li>
+        <li>Læg kyllingen i kurven med brystet nedad. Tilbered 30 min ved 190 °C.</li>
+        <li>Vend kyllingen, fortsæt 25–35 min, til kernetemperatur ved bryst/tyk lår er 72–75 °C.</li>
+        <li>Lad hvile 10 min før udskæring, så saften sætter sig.</li>
+      </ol>
+
+      <h2 style="margin-top:12px">Tips</h2>
+      <ul class="list">
+        <li>Bind benene let for mere kompakt form og jævn varmefordeling.</li>
+        <li>Mangler skindet sprødhed? Giv 3–5 min ekstra ved 200 °C – hold øje.</li>
+        <li>Pensl med smør og citronsaft lige inden servering for glans og friskhed.</li>
+      </ul>
     </div>
   </section>
 
-<section class="section block">
-<h2>Introduktion</h2>
-<p>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne er en klassiker i airfryeren. Den bliver sprød uden friture og nem at lave. Med den rette temperatur og tid opnår du perfekt resultat. Opskriften er udførlig og skrevet til at give dig tryghed i processen – med tips til både begyndere og erfarne. Husk at hver airfryer er forskellig, så brug tiderne som pejlemærker. Et stegetermometer kan være en stor hjælp for at undgå tørhed.</p><p>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne er en klassiker i airfryeren. Den bliver sprød uden friture og nem at lave. Med den rette temperatur og tid opnår du perfekt resultat. Opskriften er udførlig og skrevet til at give dig tryghed i processen – med tips til både begyndere og erfarne. Husk at hver airfryer er forskellig, så brug tiderne som pejlemærker. Et stegetermometer kan være en stor hjælp for at undgå tørhed.</p><p>Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne er en klassiker i airfryeren. Den bliver sprød uden friture og nem at lave. Med den rette temperatur og tid opnår du perfekt resultat. Opskriften er udførlig og skrevet til at give dig tryghed i processen – med tips til både begyndere og erfarne. Husk at hver airfryer er forskellig, så brug tiderne som pejlemærker. Et stegetermometer kan være en stor hjælp for at undgå tørhed.</p>
-</section>
-<section class="section block"><h2>Ingredienser</h2><ul class='list'><li>1 Hel Kylling (1,2–1,6 kg)</li><li>1 Spsk Olie</li><li>2 Tsk Groft Salt</li><li>Peber, Paprika</li></ul></section><section class="section block"><h2>Udstyr</h2><ul class='list'><li>Airfryer (5 L+)</li><li>Stegetermometer</li></ul></section><section class="section block"><h2>Sådan Gør Du</h2><ol class='steps'><li>Dup kyllingen tør, gnid med olie og krydderier.</li><li>Forvarm airfryeren 5 min ved 190 °C.</li><li>Steg 30 min bryst nedad, vend og steg 25–35 min til kernetemp 72–75 °C.</li><li>Hvile 10 min før udskæring.</li></ol></section>
-<section class="section block">
-<h2>Tips</h2>
-<ul class='list'><li>Bind benene for jævn form.</li><li>Giv 3–5 min ekstra på høj varme for ekstra sprødt skind.</li></ul>
-</section>
+  <section class="section block">
+    <h2>Alternative Tilberedninger</h2>
+    <ul class="list">
+      <li><b>Ovn:</b> 190 °C varmluft i 70–90 min (mål kernetemperatur).</li>
+      <li><b>Grill:</b> Indirekte varme til kernetemperatur, kort direkte varme til sidst for skind.</li>
+    </ul>
+  </section>
 
-<section class="section block">
-<h2>Alternative Tilberedninger</h2>
-<ul class='list'><li>Ovn: 190 °C varmluft 70–90 min.</li><li>Grill: indirekte varme, afslut direkte varme.</li></ul>
-</section>
+  <section class="section block">
+    <h2>Serveringsforslag</h2>
+    <ul class="list">
+      <li>Bagt kartoffel, coleslaw og skysovs.</li>
+      <li>Grøn salat med sprød bacon og krutoner.</li>
+      <li>Restekylling i sandwiches eller salater dagen efter.</li>
+    </ul>
+  </section>
 
-<section class="section block">
-<h2>Serveringsforslag</h2>
-<ul class='list'><li>Server med bagte kartofler og coleslaw.</li></ul>
-</section>
+  <!-- Relaterede (indenfor batch 1) -->
+  <section class="section">
+    <h2>Relaterede Opskrifter</h2>
+    <div class="grid-3">
+      <a class="card" href="/opskrifter/bagt-kartoffel-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
+        <div class="card-body"><h3>Bagt Kartoffel I Airfryer – Fluffy Indre</h3></div>
+      </a>
+      <a class="card" href="/opskrifter/majskolber-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
+        <div class="card-body"><h3>Majskolber I Airfryer – Smørmøre</h3></div>
+      </a>
+      <a class="card" href="/opskrifter/pulled-pork-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
+        <div class="card-body"><h3>Pulled Pork I Airfryer – Mørt</h3></div>
+      </a>
+    </div>
+  </section>
 
-<section class="section block">
-<h2>Annonce · Airfryer Brugt I Opskriften</h2>
-<div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
-<script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
-<div style="display:inline-block">
-<a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
-<p style="font:14px Helvetica,Arial,sans-serif;font-style:italic;color:#334155;text-decoration:underline">
-Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
-</p></a></div>
-</section>
+  <!-- PriceRunner i bunden -->
+  <section class="section block">
+    <h2>Annonce · Airfryer Brugt I Opskriften</h2>
+    <div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
+    <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
+    <div style="display:inline-block">
+      <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
+        <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
+          Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+        </p>
+      </a>
+    </div>
+  </section>
 
-<section class="section block">
-<h2>FAQ</h2>
-<ul class='list'><li>Kan tiderne variere mellem modeller? Ja, justér de sidste minutter efter farve og kernetemperatur.</li><li>Skal jeg forvarme? Ja, 3–5 min anbefales til kød og kartofler.</li><li>Hvordan undgår jeg tørhed? Brug termometer og lad hvile 5–10 min.</li></ul>
-</section>
-
+  <section class="section block">
+    <h2>FAQ</h2>
+    <ul class="list">
+      <li><b>Kan tiderne variere mellem modeller?</b> Ja – justér de sidste minutter efter farve og kernetemperatur.</li>
+      <li><b>Skal jeg forvarme?</b> Til kød og kartofler anbefaler vi 3–5 minutter.</li>
+      <li><b>Hvordan undgår jeg tørhed?</b> Brug termometer og lad hvile 5–10 minutter.</li>
+    </ul>
+  </section>
 </main>
+
+<!-- Footer -->
 <div data-include="/partials/footer.html"></div>
+<script src="/assets/include.js?v=4"></script>
 </body>
 </html>
