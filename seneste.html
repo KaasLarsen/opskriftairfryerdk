@@ -75,17 +75,69 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- Auto-render -->
-<script src="/assets/recipes.js?v=2"></script>
-<script src="/assets/render-recipes.js?v=2"></script>
+<!-- Auto-render + søgning -->
+<script src="/assets/recipes.js?v=3"></script>
+<script src="/assets/render-recipes.js?v=3"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    if (window.AFO && window.RECIPES) {
-      AFO.renderAll('alle-grid');
-    } else {
-      console.warn('AFO/RECIPES mangler. Tjek at /assets/recipes.js og /assets/render-recipes.js er ren JS uden <script>-tags, og at paths er korrekte.');
+(function(){
+  const params = new URLSearchParams(location.search);
+  const qRaw = params.get('soeg');
+  const mount = document.getElementById('alle-grid');
+  const h2 = document.querySelector('.section-head h2');
+
+  // pæn kort-markup (samme stil som AFO)
+  function iconSvg(id){ return '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>'; }
+  function cardHTML(rec){
+    return [
+      '<a class="card" href="/opskrifter/'+rec.slug+'.html">',
+        iconSvg(rec.icon),
+        '<div class="card-body">',
+          '<h3>'+rec.title+'</h3>',
+          rec.meta ? '<p class="meta">'+rec.meta+'</p>' : '',
+        '</div>',
+      '</a>'
+    ].join('');
+  }
+
+  // normalisering til søgning (case, diakritik + æ/ø/å → ae/oe/aa)
+  function norm(s){
+    return (s||'').toLowerCase()
+      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // fjern accent-tegn
+      .trim();
+  }
+  function matches(rec, q){
+    const nq = norm(q);
+    const fields = [
+      rec.title,
+      rec.meta,
+      (rec.categories||[]).join(' ')
+    ].map(norm);
+    return fields.some(f => f.includes(nq));
+  }
+
+  if (qRaw && qRaw.trim()){
+    // filtrer
+    const results = (window.RECIPES||[])
+      .filter(r => matches(r, qRaw))
+      .sort((a,b)=> new Date(b.date) - new Date(a.date));
+
+    // sæt overskrift + render
+    h2.textContent = `Søgeresultater (${results.length})`;
+    mount.innerHTML = results.length
+      ? results.map(cardHTML).join('')
+      : '<p class="meta">Ingen opskrifter matcher din søgning.</p>';
+
+    // scroll til listen hvis man kom fra forsiden
+    if (results.length) {
+      setTimeout(()=>window.scrollTo({top: mount.offsetTop - 20, behavior:'smooth'}), 50);
     }
-  });
+  } else {
+    // ingen q => vis alt som før
+    AFO.renderAll('alle-grid');
+  }
+})();
 </script>
+
 </body>
 </html>
