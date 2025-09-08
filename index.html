@@ -179,6 +179,28 @@ html{scroll-behavior:smooth}
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
+  <!-- Søgefelt -->
+  <section class="section">
+    <div style="max-width:600px;margin:0 auto">
+      <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
+            style="display:flex;align-items:center;gap:8px">
+        <input id="search-input" type="text" 
+               placeholder="Søg efter opskrifter..." 
+               style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+        <button class="btn primary" type="submit">Søg</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function doSearch(){
+      const q = document.getElementById('search-input').value.trim();
+      if(q){
+        // redirect til seneste.html med søgeparameter
+        window.location.href = "/seneste.html?soeg=" + encodeURIComponent(q);
+      }
+    }
+  </script>
 
   <!-- Populære -->
   <section id="populaere" class="section">
