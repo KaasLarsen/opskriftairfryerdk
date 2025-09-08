@@ -76,11 +76,16 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 
 <!-- Auto-render -->
-<script src="/assets/recipes.js?v=1"></script>
-<script src="/assets/render-recipes.js?v=1"></script>
+<script src="/assets/recipes.js?v=2"></script>
+<script src="/assets/render-recipes.js?v=2"></script>
 <script>
-  // udfyld hele listen, seneste først
-  AFO.renderAll('alle-grid');
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.AFO && window.RECIPES) {
+      AFO.renderAll('alle-grid');
+    } else {
+      console.warn('AFO/RECIPES mangler. Tjek at /assets/recipes.js og /assets/render-recipes.js er ren JS uden <script>-tags, og at paths er korrekte.');
+    }
+  });
 </script>
 </body>
 </html>
