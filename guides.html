@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Guides & Tips – Opskrift-Airfryer.dk</title>
+<meta name="description" content="Guides til airfryer: tider & temperaturer, valg af model, rengøring, sikkerhed, energi og mere." />
+<link rel="icon" href="/img/favicon.ico" />
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
+.header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;color:#0ea5e9;font-size:20px}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{font-size:15px;color:var(--text)}
+.section{margin:18px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.section-head h1{font-size:26px;margin:0}
+.tools{display:flex;gap:10px;flex-wrap:wrap}
+.input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;min-width:240px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips button{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer}
+.chips button.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
+.card:hover{transform:translateY(-2px)}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
+.card-body{padding:12px 14px}
+.card-body h3{font-size:15px;line-height:1.35;margin:0}
+.meta{font-size:13px;color:var(--muted);margin-top:4px}
+.copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+</style>
+</head>
+<body>
+
+<!-- Ikoner + header via partials -->
+<div data-include="/partials/icons.html"></div>
+<div data-include="/partials/header.html"></div>
+
+<main class="container">
+  <section class="section">
+    <div class="section-head">
+      <h1>Guides & Tips</h1>
+      <div class="tools">
+        <input id="q" class="input" type="search" placeholder="Søg i guides..." />
+      </div>
+    </div>
+
+    <!-- filtre -->
+    <div class="chips" role="tablist" aria-label="Filtrer">
+      <button data-tag="alle" class="active" role="tab" aria-selected="true">Alle</button>
+      <button data-tag="tider" role="tab" aria-selected="false">Tider & Temperaturer</button>
+      <button data-tag="valg" role="tab" aria-selected="false">Valg Af Airfryer</button>
+      <button data-tag="vedligehold" role="tab" aria-selected="false">Rengøring & Sikkerhed</button>
+      <button data-tag="energi" role="tab" aria-selected="false">Energi</button>
+      <button data-tag="sammenligning" role="tab" aria-selected="false">Sammenligning</button>
+      <button data-tag="opbevaring" role="tab" aria-selected="false">Opbevaring</button>
+    </div>
+
+    <!-- Annonce -->
+    <div style="margin:8px 0 18px">
+      <ins class="adsbygoogle" style="display:block"
+           data-ad-client="ca-pub-7373148222153531"
+           data-ad-slot="1234567890"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+
+    <div id="grid" class="grid grid-3" aria-live="polite"></div>
+    <p id="empty" class="copy" style="display:none">Ingen guides matcher din søgning/filtrering.</p>
+  </section>
+</main>
+
+<!-- Footer via partial -->
+<div data-include="/partials/footer.html"></div>
+
+<script src="/assets/include.js?v=4"></script>
+<script>
+// Kilde: dine 10 sider under /guides/
+const GUIDES = [
+  { title:"Airfryer Tider & Temperaturer – Komplet Cheat Sheet", slug:"/guides/airfryer-tider.html",        tag:["tider"] , blurb:"Komplet oversigt over tider, temperaturer og kernetemperaturer." },
+  { title:"Vælg Den Rigtige Airfryer – Størrelse, Effekt & Kurv vs. Skuffe", slug:"/guides/valg-af-airfryer.html", tag:["valg"], blurb:"Størrelse, effekt og funktioner – uden salgsgas." },
+  { title:"Airfryer: De 12 Mest Almindelige Fejl – Og Sådan Fixer Du Dem",   slug:"/guides/airfryer-fejl-og-fix.html", tag:["vedligehold"], blurb:"Blød svær? Tør kylling? Her er løsningene." },
+  { title:"Airfryer Tilbehør – Hvad Er Værd At Købe (Og Hvad Er Spild)?",     slug:"/guides/airfryer-tilbehoer.html", tag:["valg"], blurb:"Tilbehør der virker i hverdagen – og hvad du kan undvære." },
+  { title:"Airfryer & Energiforbrug – Billigere End Ovn?",                    slug:"/guides/airfryer-energi.html", tag:["energi"], blurb:"Sådan bruger du mindst strøm uden at gå på kompromis." },
+  { title:"Airfryer Vs. Ovn – Hvornår Giver Hvad Mest Mening?",              slug:"/guides/airfryer-vs-ovn.html", tag:["sammenligning"], blurb:"Hurtighed & sprødhed vs. kapacitet – fuldt overblik." },
+  { title:"Sikkerhed I Airfryer – Fedthåndtering, Røg & Materialer",         slug:"/guides/airfryer-sikkerhed.html", tag:["vedligehold"], blurb:"Sikkerhed i daglig brug – simple regler der holder." },
+  { title:"Rengøring Af Airfryer – Trin For Trin (Uden At Ødelægge Noget)",  slug:"/guides/airfryer-rengoering.html", tag:["vedligehold"], blurb:"Skånsom rengøring af kurv, rist og varmelegeme." },
+  { title:"Hvilken Størrelse Airfryer Skal Jeg Vælge? (Mål & Kapacitet)",    slug:"/guides/airfryer-maal-og-stoerrelse.html", tag:["valg"], blurb:"Konkrete literanbefalinger til 1–2, familie og gæster." },
+  { title:"Opbevaring I Airfryer – Rester, Genopvarmning & Meal Prep",       slug:"/guides/airfryer-opbevaring.html", tag:["opbevaring"], blurb:"Giv rester sprødhed igen – uden at udtørre." }
+];
+
+const grid  = document.getElementById('grid');
+const empty = document.getElementById('empty');
+const q     = document.getElementById('q');
+const chips = Array.from(document.querySelectorAll('.chips button'));
+
+function card(g){
+  return `
+    <a class="card" href="${g.slug}">
+      <div class="thumb-icon"><svg><use href="#book" xlink:href="#book"></use></svg></div>
+      <div class="card-body">
+        <h3>${g.title}</h3>
+        <p class="meta">${g.blurb}</p>
+      </div>
+    </a>`;
+}
+
+function render(){
+  const term = (q.value || '').toLowerCase().trim();
+  const activeChip = (chips.find(c=>c.classList.contains('active'))?.dataset.tag) || 'alle';
+  let list = GUIDES.slice();
+
+  if(activeChip !== 'alle'){
+    list = list.filter(g => g.tag.includes(activeChip));
+  }
+  if(term){
+    list = list.filter(g => g.title.toLowerCase().includes(term) || g.blurb.toLowerCase().includes(term));
+  }
+
+  if(list.length === 0){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  }else{
+    grid.innerHTML = list.map(card).join('');
+    empty.style.display = 'none';
+  }
+}
+
+q.addEventListener('input', render);
+chips.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    chips.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  });
+});
+
+// init
+render();
+</script>
+</body>
+</html>
