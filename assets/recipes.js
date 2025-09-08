@@ -1,7 +1,6 @@
-<!-- /assets/recipes.js -->
-<script>
+// Liste over opskrifter (udvid løbende)
 window.RECIPES = [
-  /* EKSISTERENDE (eksempler — ret hvis titler/slug afviger) */
+  // EKSEMPLER (ret titler/slug hvis nødvendigt)
   {
     title: "Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød",
     slug: "flaeskesteg-i-airfryer",
@@ -19,7 +18,7 @@ window.RECIPES = [
     meta: "30 Min · Tilbehør"
   },
 
-  /* NYE (batch 1 – de 5) */
+  // NYE (batch 1 – 5 stk)
   {
     title: "Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne",
     slug: "hel-kylling-i-airfryer",
@@ -61,4 +60,3 @@ window.RECIPES = [
     meta: "12–16 Min · Nemt"
   }
 ];
-</script>
