@@ -78,20 +78,30 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 
 <!-- Auto-render -->
-<script src="/assets/recipes.js?v=1"></script>
-<script src="/assets/render-recipes.js?v=1"></script>
+<script src="/assets/recipes.js?v=2"></script>
+<script src="/assets/render-recipes.js?v=2"></script>
 <script>
   // Læs ?navn= fra URL og render
   const params = new URLSearchParams(location.search);
-  const name = params.get('navn') || 'Alle';
-  const nice = name.replace(/-/g,' ').replace(/\b\w/g, s => s.toUpperCase());
+
+  // 1) Rå værdi fra URL (kan være “SvinekøD”, “svinekød”, “SVINEKØD”, “svinekoed”, osv.)
+  const raw = params.get('navn') || 'Alle';
+
+  // 2) Normalisér for pæn visning: decode, erstat bindestreger med mellemrum, lav lowercase
+  const normalized = decodeURIComponent(raw).replace(/-/g, ' ').toLowerCase().trim();
+
+  // 3) Titlecase (inkl. æ/ø/å med \p{L})
+  const nice = normalized.replace(/\b\p{L}/gu, ch => ch.toUpperCase());
+
+  // Tekster
   document.getElementById('kat-title').textContent = 'Kategori: ' + nice;
   document.getElementById('kat-h2').textContent = nice + ' – Opskrifter';
   const badge = document.getElementById('kat-badge');
-  badge.textContent = nice; badge.style.display = 'inline-block';
+  badge.textContent = nice; 
+  badge.style.display = 'inline-block';
 
-  // Render kategorien
-  AFO.renderCategory(name, 'kategori-grid');
+  // Render kategorien (AFO matcher case-insensitivt, så vi kan godt sende raw)
+  AFO.renderCategory(raw, 'kategori-grid');
 </script>
 </body>
 </html>
