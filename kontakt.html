@@ -34,6 +34,8 @@ ul.list li{margin:6px 0}
 .copy{color:#64748b;font-size:13px;text-align:center}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+.success{color:#065f46;background:#ecfdf5;border:1px solid #a7f3d0;padding:10px 12px;border-radius:10px;margin-top:10px;display:none}
+.error{color:#991b1b;background:#fef2f2;border:1px solid #fecaca;padding:10px 12px;border-radius:10px;margin-top:10px;display:none}
 </style>
 </head>
 <body>
@@ -68,20 +70,34 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <!-- Kontaktinfo -->
   <section class="section block">
     <h2>Skriv Til Os</h2>
-    <p>Du kan kontakte os direkte på e-mail: <a href="mailto:kontakt@opskrift-airfryer.dk">kontakt@opskrift-airfryer.dk</a></p>
-    <p class="note">Vi svarer normalt inden for 1-2 hverdage.</p>
+    <p>Du kan altid skrive direkte: <a href="mailto:kontakt@opskrift-airfryer.dk">kontakt@opskrift-airfryer.dk</a></p>
+    <p class="note">Vi svarer normalt inden for 1–2 hverdage.</p>
   </section>
 
-  <!-- Simpelt formular (via mailto:) -->
+  <!-- Kontaktformular (Formspree) -->
   <section class="section block">
     <h2>Kontaktformular</h2>
-    <form action="mailto:kontakt@opskrift-airfryer.dk" method="post" enctype="text/plain" style="display:grid;gap:12px;max-width:500px">
-      <input type="text" name="Navn" placeholder="Dit navn" required style="padding:10px;border:1px solid var(--line);border-radius:10px">
-      <input type="email" name="Email" placeholder="Din e-mail" required style="padding:10px;border:1px solid var(--line);border-radius:10px">
-      <textarea name="Besked" rows="5" placeholder="Din besked" required style="padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
-      <button class="btn primary" type="submit">Send</button>
+    <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST" style="display:grid;gap:12px;max-width:560px">
+      <input type="text" name="name" placeholder="Dit navn" required
+             style="padding:10px;border:1px solid var(--line);border-radius:10px">
+      <input type="email" name="_replyto" placeholder="Din e-mail" required
+             style="padding:10px;border:1px solid var(--line);border-radius:10px">
+      <textarea name="message" rows="5" placeholder="Din besked" required
+                style="padding:10px;border:1px solid var(--line);border-radius:10px"></textarea>
+
+      <!-- Honeypot (skjult felt mod spam) -->
+      <input type="text" name="_honey" style="display:none">
+
+      <!-- (Valgfrit) emne & redirect -->
+      <input type="hidden" name="_subject" value="Kontakt fra Opskrift-Airfryer.dk">
+      <!-- <input type="hidden" name="_next" value="https://ditdomæne.dk/tak.html"> -->
+
+      <button class="btn primary" type="submit" id="sendBtn">Send</button>
+
+      <div id="msg-ok" class="success">Tak! Din besked er sendt. Vi vender tilbage hurtigst muligt.</div>
+      <div id="msg-err" class="error">Ups! Noget gik galt. Prøv igen om lidt eller skriv på e-mail.</div>
     </form>
-    <p class="note">OBS: Formularen åbner din mailklient – vi anbefaler at skrive direkte til e-mailen ovenfor.</p>
+    <p class="note">Vi gemmer ikke dine oplysninger på websitet. Beskeden sendes sikkert via Formspree til vores indbakke.</p>
   </section>
 
   <!-- Nyhedsbrev -->
@@ -109,5 +125,42 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <!-- Footer -->
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
+
+<!-- Formspree AJAX -->
+<script>
+(function(){
+  const form = document.getElementById('contact-form');
+  const ok   = document.getElementById('msg-ok');
+  const err  = document.getElementById('msg-err');
+  const btn  = document.getElementById('sendBtn');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    ok.style.display = 'none';
+    err.style.display = 'none';
+    btn.disabled = true;
+
+    try{
+      const formData = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+
+      if(res.ok){
+        ok.style.display = 'block';
+        form.reset();
+      }else{
+        err.style.display = 'block';
+      }
+    }catch(_){
+      err.style.display = 'block';
+    }finally{
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
 </body>
 </html>
