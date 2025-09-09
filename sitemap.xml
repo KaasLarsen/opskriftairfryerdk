@@ -1,14 +1,37 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Forside -->
   <url>
     <loc>https://opskrift-airfryer.dk/</loc>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://opskrift-airfryer.dk/om.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
+
+  <!-- Statiske sider -->
+  <url><loc>https://opskrift-airfryer.dk/seneste.html</loc><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/guides.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/om.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kontakt.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/udstyr.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Kategori-URL’er (standard) -->
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Svinekød</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Kylling</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Oksekød</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Fisk</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Grønt</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Tilbehør</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/kategori.html?navn=Dessert</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+
+  <!-- Guides (tilføj evt. flere) -->
+  <url><loc>https://opskrift-airfryer.dk/guides/airfryer-tider.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/guides/valg-af-airfryer.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/guides/airfryer-rengoering.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Opskrifter indsættes her, når du kører sitemap-builder.html -->
+  <!-- Eksempler (må gerne blive):
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/flaeskesteg-i-airfryer.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://opskrift-airfryer.dk/opskrifter/hel-kylling-i-airfryer.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  -->
 </urlset>
