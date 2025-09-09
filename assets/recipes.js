@@ -59,4 +59,14 @@ window.RECIPES = [
     icon: "leaf",
     meta: "12–16 Min · Nemt"
   }
+  AFO.register({
+  slug: "burger-i-airfryer",
+  url: "/opskrifter/burger-i-airfryer.html",
+  title: "Burger I Airfryer – Saftig, Nem Og Hurtig",
+  categories: ["Oksekød","Aftensmad"],   // brug samme stavning som i kategori-siden
+  minutes: "20–25",
+  difficulty: "Nemt",
+  date: "2025-09-09" // YYYY-MM-DD
+});
+
 ];
