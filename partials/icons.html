@@ -1,117 +1,54 @@
-<!-- PARTIAL: /partials/icons.html -->
 <svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-  <!-- ========= Fælles UI ========= -->
-  <symbol id="star" viewBox="0 0 24 24">
-    <path d="m12 17-5.5 3 1.5-6.2L3 9.5l6.3-.6L12 3l2.7 5.9 6.3.6-5 4.3L17.5 20z"
-          fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-  </symbol>
-  <symbol id="timer" viewBox="0 0 24 24">
-    <circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-    <path d="M12 10v3l2 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <rect x="9" y="3" width="6" height="2" rx="1" fill="currentColor"/>
-  </symbol>
-  <symbol id="thermo" viewBox="0 0 24 24">
-    <path d="M14 14.5V6a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0z" fill="none" stroke="currentColor" stroke-width="2"/>
-  </symbol>
-  <symbol id="book" viewBox="0 0 24 24">
-    <path d="M5 5h10a3 3 0 0 1 3 3v11H8a3 3 0 0 1-3-3V5z" fill="currentColor"/>
-    <path d="M8 5v14" stroke="#fff" stroke-width="2"/>
-  </symbol>
-  <symbol id="cart" viewBox="0 0 24 24">
-    <path d="M3 5h2l2 12h10l2-8H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  </symbol>
 
-  <!-- ========= Udstyr ========= -->
-  <!-- Mere “levende” airfryer (display, håndtag, perforering) -->
+  <!-- Airfryer -->
   <symbol id="airfryer" viewBox="0 0 24 24">
-    <rect x="5" y="3" width="14" height="18" rx="3" fill="currentColor"/>
-    <rect x="7.8" y="6.2" width="8.4" height="4" rx="1.2" fill="#fff"/>
-    <rect x="10.2" y="11.6" width="3.6" height="6.4" rx="1" fill="#fff"/>
-    <circle cx="9.2" cy="5.1" r=".55" fill="#fff"/>
-    <circle cx="12"  cy="5.1" r=".55" fill="#fff"/>
-    <circle cx="14.8" cy="5.1" r=".55" fill="#fff"/>
+    <rect x="6" y="3" width="12" height="18" rx="3" fill="#0ea5e9"/>
+    <circle cx="12" cy="16" r="2.5" fill="#fff"/>
+    <rect x="9" y="7" width="6" height="3" rx="1" fill="#fff"/>
   </symbol>
 
-  <!-- ========= Kategorier (mere figurative) ========= -->
-
-  <!-- Kylling: hel kylling i profil (krop, vinge, ben, næb, kam) -->
-  <symbol id="chicken" viewBox="0 0 24 24">
-    <!-- krop -->
-    <path d="M5 13c0-3.8 3.7-6.8 8-6.8 1.6 0 2.9.4 4.6 1.4-1 4.9-4.3 8.7-9 8.7-2.2 0-3.6-1.1-3.6-3.3z" fill="currentColor"/>
-    <!-- vinge -->
-    <path d="M9 12.2c1.8-1.2 4.6-1 6 .2" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-    <!-- ben -->
-    <path d="M10.2 16.8v3M13.8 16.6v3" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
-    <!-- hoved -->
-    <circle cx="13.2" cy="7.3" r="2" fill="currentColor"/>
-    <!-- kam -->
-    <path d="M12.2 5.3c.6-.8 1.4-.9 2.1-.2M13 4.7c.4-.6 1-.7 1.6-.2" stroke="currentColor" stroke-width="1" fill="none" stroke-linecap="round"/>
-    <!-- næb -->
-    <path d="M15 7.2l1.8-.9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-    <!-- øje -->
-    <circle cx="12.6" cy="7.3" r=".6" fill="#fff"/>
-    <!-- hale-fjer -->
-    <path d="M6.2 9.4c-1.1-1.4-1-2.8.6-3.6M7.5 9c-.8-1.1-.6-2.2.7-2.9" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-  </symbol>
-
-  <!-- Svinekød: gris i profil (snude, øre, ben, krøllet hale) -->
+  <!-- Svinekød -->
   <symbol id="pig" viewBox="0 0 24 24">
-    <!-- krop -->
-    <path d="M3.5 12.2c0-3.6 3.8-6.5 8.7-6.5 2.2 0 4 .4 5.9 1.6.8 2.4.5 5.2-1.3 6.9-1.5 1.5-3.8 2.4-6.7 2.4-4 0-6.6-1.9-6.6-4.4z" fill="currentColor"/>
-    <!-- snude -->
-    <ellipse cx="18" cy="10.6" rx="1.6" ry="1.2" fill="#fff"/>
-    <circle cx="17.5" cy="10.6" r=".25" fill="currentColor"/>
-    <circle cx="18.5" cy="10.6" r=".25" fill="currentColor"/>
-    <!-- øre -->
-    <path d="M16 7.2l1.6-1.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    <!-- ben -->
-    <path d="M9.6 15.8v2.4M12.6 15.8v2.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-    <!-- hale -->
-    <path d="M5.2 11.6c-.9.2-1.4.8-1.1 1.4.2.5.9.6 1.6.2" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-    <!-- lys “fedtkant” -->
-    <path d="M7.2 9.6c2.2-1.6 6.2-1.4 8 .2" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M4 12c0-3.5 3-6.5 8-6.5s8 3 8 6.5-3 6.5-8 6.5S4 15.5 4 12Z" fill="#f472b6"/>
+    <circle cx="9" cy="12" r="1" fill="#fff"/>
+    <circle cx="15" cy="12" r="1" fill="#fff"/>
   </symbol>
 
-  <!-- Fisk: klar fiskesilhuet med halefinne og øje -->
+  <!-- Kylling -->
+  <symbol id="chicken" viewBox="0 0 24 24">
+    <path d="M6 14c0-3.5 3-6 6-6s6 2.5 6 6-3 6-6 6-6-2.5-6-6Z" fill="#facc15"/>
+    <path d="M12 8l2-3 2 2" stroke="#f87171" stroke-width="2" fill="none"/>
+    <circle cx="14" cy="13" r="1" fill="#000"/>
+  </symbol>
+
+  <!-- Oksekød -->
+  <symbol id="cow" viewBox="0 0 24 24">
+    <rect x="5" y="8" width="14" height="9" rx="4" fill="#a855f7"/>
+    <circle cx="9" cy="12.5" r="1" fill="#fff"/>
+    <circle cx="15" cy="12.5" r="1" fill="#fff"/>
+  </symbol>
+
+  <!-- Fisk -->
   <symbol id="fish" viewBox="0 0 24 24">
-    <path d="M2.5 12s3.5-4.2 8.8-4.2S22 12 22 12s-6.2 4.2-10.7 4.2S2.5 12 2.5 12Z" fill="currentColor"/>
-    <path d="M2.5 12l-2 2.4M2.5 12l-2-2.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-    <circle cx="16.7" cy="12" r="1.1" fill="#fff"/>
-    <!-- rygfinne -->
-    <path d="M9.2 8.8c.8-.5 1.8-.6 2.6 0" stroke="#fff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M3 12s4-4 9-4 9 4 9 4-4 4-9 4-9-4-9-4Z" fill="#38bdf8"/>
+    <circle cx="17" cy="12" r="1" fill="#fff"/>
   </symbol>
 
-  <!-- Grønt: salathoved/broccoli-lignende krone + stilk -->
-  <symbol id="leaf" viewBox="0 0 24 24">
-    <path d="M5.6 10.2c0-3.7 3.6-6.8 8-6.8 2.1 0 3.7.6 5.7 1.8-.7 7-6.2 10.7-10.6 10.7-2.2 0-3.1-1.4-3.1-2.9z" fill="currentColor"/>
-    <path d="M10 9.2c1.6-1 4.6-.8 6 .3M9.2 11c1.9-1.1 5.3-.9 6.8.3" stroke="#fff" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-    <path d="M9.4 16c0 1.8.7 3.3 2.4 3.3S14.2 17.8 14.2 16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Grønt -->
+  <symbol id="veg" viewBox="0 0 24 24">
+    <path d="M12 2c-2 3-5 5-5 9 0 4 3 7 5 11 2-4 5-7 5-11 0-4-3-6-5-9Z" fill="#4ade80"/>
   </symbol>
 
-  <!-- Tilbehør: pommes frites i bæger -->
+  <!-- Tilbehør (pommes frites) -->
   <symbol id="fries" viewBox="0 0 24 24">
-    <path d="M5 9h14l-2 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 9Z" fill="currentColor"/>
-    <path d="M7 9 8 4m3 5 1-5m3 5 1-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5 9h14l-2 9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 9Z" fill="#fbbf24"/>
+    <path d="M7 9 8 4m4 5 1-5m3 5 1-4" stroke="#f87171" stroke-width="2" stroke-linecap="round"/>
   </symbol>
 
-  <!-- Dessert: kage -->
+  <!-- Dessert (kage/is) -->
   <symbol id="cake" viewBox="0 0 24 24">
-    <path d="M4 12h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7Z" fill="currentColor"/>
-    <path d="M4 15c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2" stroke="#fff" stroke-width="1.5" fill="none"/>
-    <path d="M11.5 6.5c0-.8.7-1.5 1.5-1.5s1.5.7 1.5 1.5-1.5 3-1.5 3-1.5-2.2-1.5-3Z" fill="currentColor"/>
+    <path d="M4 12h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7Z" fill="#f9a8d4"/>
+    <path d="M12 6a1.5 1.5 0 1 1 3 0c0 1.5-1.5 3-1.5 3S12 7.5 12 6Z" fill="#f87171"/>
   </symbol>
 
-  <!-- Steak (oksekød) -->
-  <symbol id="steak" viewBox="0 0 24 24">
-    <path d="M6 7c3-2 9-2 12 1s1 8-3 9-8 0-10-3 0-5 1-7Z" fill="currentColor"/>
-    <circle cx="15.5" cy="11.5" r="1.7" fill="#fff"/>
-    <path d="M7.8 9.2c2-1.5 6.8-1.2 8.2.6" stroke="#fff" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-  </symbol>
-
-  <!-- Roast (steg) til badges i opskrifter -->
-  <symbol id="roast" viewBox="0 0 24 24">
-    <path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z" fill="currentColor"/>
-    <path d="M7.5 11.5h9M7.5 13.5h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-    <circle cx="20.5" cy="12.5" r="1.4" fill="currentColor"/>
-  </symbol>
 </svg>
