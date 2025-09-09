@@ -3,34 +3,60 @@
   :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --muted:#475569; }
   .footer{background:#f8fafc; border-top:1px solid var(--line); margin-top:36px;}
   .footer-inner{max-width:var(--max); margin:0 auto; padding:28px var(--pad);}
-  .footer-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:16px;}
+  .footer-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:16px;}
   .footer h3{margin:0 0 8px; font-size:16px;}
   .footer a, .footer p, .footer li{color:var(--muted); font-size:14px; text-decoration:none;}
   .footer ul{list-style:none; margin:0; padding:0; display:grid; gap:6px;}
   .copy{color:#64748b; font-size:13px; text-align:center; margin:8px 0 0;}
-  @media(max-width:800px){ .footer-cols{grid-template-columns:1fr} }
+  @media(max-width:900px){ .footer-cols{grid-template-columns:1fr 1fr} }
+  @media(max-width:600px){ .footer-cols{grid-template-columns:1fr} }
 </style>
 
 <footer class="footer" role="contentinfo">
   <div class="footer-inner">
     <div class="footer-cols">
+      
+      <!-- Kategorier dropdown -->
       <div>
         <h3>Kategorier</h3>
+        <details>
+          <summary style="cursor:pointer; color:var(--muted); font-size:14px;">Se alle</summary>
+          <ul>
+            <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
+            <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
+            <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
+            <li><a href="/kategori.html?navn=Fisk">Fisk</a></li>
+            <li><a href="/kategori.html?navn=Lam">Lam</a></li>
+            <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
+            <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
+            <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
+            <li><a href="/kategori.html?navn=Vegetar">Vegetar</a></li>
+            <li><a href="/kategori.html?navn=Snack">Snacks</a></li>
+          </ul>
+        </details>
+      </div>
+      
+      <!-- Guides & Tips -->
+      <div>
+        <h3>Guides & Tips</h3>
         <ul>
-          <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
-          <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
-          <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
-          <li><a href="/kategori.html?navn=Fisk">Fisk</a></li>
-          <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
-          <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
-          <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
+          <li><a href="/guides.html">Se alle guides</a></li>
+          <li><a href="/guides/airfryer-tider.html">Airfryer tider</a></li>
+          <li><a href="/guides/valg-af-airfryer.html">Vælg airfryer</a></li>
+          <li><a href="/guides/airfryer-rengoering.html">Rengøring</a></li>
         </ul>
       </div>
+      
+      <!-- Om os & Kontakt -->
       <div>
-        <h3>Kontakt</h3>
-        <p><a href="/kontakt.html">Skriv til os</a></p>
+        <h3>Om os</h3>
+        <ul>
+          <li><a href="/om-os.html">Om Opskrift-Airfryer.dk</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+        </ul>
       </div>
+      
     </div>
-    <p class="copy">© 2025 Opskrift-Airfryer.dk</p>
+    <p class="copy">© 2025 Opskrift-Airfryer.dk – Nemme opskrifter til din airfryer</p>
   </div>
 </footer>
