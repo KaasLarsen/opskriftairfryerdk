@@ -3,129 +3,166 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Burger I Airfryer – Saftig Og Hurtig</title>
-<meta name="description" content="Burger I Airfryer – Saftig Og Hurtig" />
+<title>Burger I Airfryer – Saftig, Nem Og Hurtig</title>
+<meta name="description" content="Burger i airfryer – saftige bøffer med flot stegeskorpe. Tider, temperaturer, tips, trin-for-trin og serveringsforslag." />
 <link rel="icon" href="/img/favicon.ico" />
+
+<!-- AFO metadata til lister/kategorier -->
+<meta name="afo:category" content="Oksekød, Aftensmad" />
+<meta name="afo:minutes" content="20-25" />
+<meta name="afo:difficulty" content="Nemt" />
+<meta name="afo:date" content="2025-09-09" />
+
+<!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+
+<!-- Global styling -->
 <link rel="stylesheet" href="/assets/styles.css?v=17" />
 </head>
 <body>
+
+<!-- Ikoner + header via partials (ens på alle sider) -->
+<div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
+
 <main class="container">
+  <!-- HERO -->
   <section class="hero">
-    <h1>Burger I Airfryer – Saftig Og Hurtig</h1>
-    <p class="lead">Nemt og sprødt med airfryer.</p>
-    <div class="badges">
-      <span class="badge">⏱ 20–60 Min</span>
-      <span class="badge">🌡 180–200 °C</span>
-      <span class="badge">⭐ Nemt</span>
-      <span class="badge">2–4 Portioner</span>
+    <div>
+      <h1>Burger I Airfryer – Saftig, Nem Og Hurtig</h1>
+      <p class="lead">Saftige bøffer med flot stegeskorpe – minimal opvask og stabilt resultat hver gang.</p>
+      <div class="badges">
+        <span class="badge">⏱ 20–25 Min</span>
+        <span class="badge">🌡 200 °C</span>
+        <span class="badge">⭐ Nemt</span>
+        <span class="badge">2–4 Portioner</span>
+      </div>
+    </div>
+    <div class="hero-box" aria-hidden="true">
+      <!-- Brug okse/”steak”-ikonet -->
+      <svg class="hero-ico"><use href="#steak"/></svg>
     </div>
   </section>
 
-  <section class="section block">
+  <!-- INTRO -->
+  <section class="section tight-top block">
     <h2>Introduktion</h2>
-    <p>Burger I Airfryer – Saftig Og Hurtig er en populær ret i airfryeren. Den bliver sprød og lækker uden friture og er nem at lave. 
-    Med den rette temperatur og tid opnår du perfekt resultat. Opskriften er udførlig og skrevet til at give dig tryghed i processen – 
-    med tips til både begyndere og erfarne. Husk at hver airfryer er forskellig, så brug tiderne som pejlemærker. 
-    Et stegetermometer kan være en stor hjælp, især ved kød, for at undgå tørhed.</p>
-    <p>Burger I Airfryer – Saftig Og Hurtig giver dig et hurtigt, sundere og mindst lige så sprødt resultat som i ovn eller på pande. 
-    Perfekt til både hverdage og weekender.</p>
+    <p>Airfryeren gør burger-bøffer super nemme: jævn varme, minimal røg og en skøn stegeskorpe. Du behøver ikke stegeos i køkkenet, og temperaturen er let at styre – perfekt til hverdagsburger eller fredagsmenu.</p>
+    <p>Med en kort forvarmning, den rigtige krydring og en kort hviletid får du en saftig burger, der ikke smuldrer. Brug gerne en fedtmarmoreret hakkeprocent (12–18 %) for ekstra saftighed, og mål kernetemperatur, hvis du vil være helt sikker.</p>
   </section>
 
-  <section class="section block">
-    <h2>Ingredienser</h2>
-    <ul class="list">
-      <li>Hovedingrediens (kød, fisk, dej eller kartofler)</li>
-      <li>1 spsk olie</li>
-      <li>1 tsk salt</li>
-      <li>Friskkværnet peber</li>
-      <li>Krydderier efter smag</li>
-    </ul>
+  <!-- TO-KOLONNE: ingredienser/udstyr/nøgletal + trin -->
+  <section class="section two">
+    <div class="block">
+      <h2>Ingredienser</h2>
+      <ul class="list">
+        <li>400–500 G Hakket Oksekød (12–18 % Fedt)</li>
+        <li>1 Tsk Salt · ½ Tsk Peber</li>
+        <li>1 Tsk Løg- Eller Hvidløgspulver (Valgfrit)</li>
+        <li>4 Skiver Cheddar (Valgfrit)</li>
+        <li>2–4 Burgerboller</li>
+        <li>Salat, Tomat, Syltede Agurker, Rå Løg</li>
+        <li>Din Favoritsauce (Mayo, Ketchup, Sennep, Burgerdressing)</li>
+        <li>1 Tsk Olie (Til Kurv/Pen­sling, Valgfrit)</li>
+      </ul>
+
+      <h2 style="margin-top:12px">Udstyr</h2>
+      <ul class="list">
+        <li>Airfryer (4–5 L+)</li>
+        <li>Stegetermometer (Anbefales)</li>
+        <li>Spatel/Tang</li>
+      </ul>
+
+      <h2 style="margin-top:12px">Nøgletal</h2>
+      <ul class="list">
+        <li>Tid: 20–25 Min (Heraf 10–12 Min Bøffer)</li>
+        <li>Temperatur: 200 °C</li>
+        <li>Sværhedsgrad: Nemt</li>
+        <li>Hviletid: 3–5 Min</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h2>Sådan Gør Du</h2>
+      <ol class="steps">
+        <li><b>Form bøffer:</b> Del kødet i 2–4 lige store kugler. Pres til 1,5–2 cm tykke bøffer. Lav en lille fordybning i midten (så buler de ikke op).</li>
+        <li><b>Krydr:</b> Salt, peber og evt. løg-/hvidløgspulver på begge sider. Lad stå 5–10 min ved stuetemperatur.</li>
+        <li><b>Forvarm:</b> Airfryer 5 min ved 200 °C. Pensl kurven let med olie (valgfrit).</li>
+        <li><b>Steg:</b> Læg bøfferne i ét lag. Tilbered 6–7 min, vend, giv 4–6 min mere (tykkelse afgør tiden). Tilføj ost det sidste minut.</li>
+        <li><b>Kernetemperatur:</b> Sigte 60–65 °C for medium. Tag ud og <b>lad hvile 3–5 min</b>.</li>
+        <li><b>Rist boller:</b> Del boller og rist 1–2 min i airfryerens varme kurv.</li>
+        <li><b>Samling:</b> Smør boller med dressing, top med salat, bøf, tomat, agurker og løg.</li>
+      </ol>
+    </div>
   </section>
 
-  <section class="section block">
-    <h2>Udstyr</h2>
-    <ul class="list">
-      <li>Airfryer (5 L+ anbefales)</li>
-      <li>Evt. stegetermometer</li>
-      <li>Bagepapir eller lille form (til bagværk)</li>
-    </ul>
-  </section>
-
-  <section class="section block">
-    <h2>Sådan gør du</h2>
-    <ol class="steps">
-      <li>Klargør ingredienserne og krydr efter smag.</li>
-      <li>Forvarm airfryeren i 3–5 min.</li>
-      <li>Læg maden i kurven eller på risten.</li>
-      <li>Steg ved 180–200 °C i den angivne tid, vend halvvejs.</li>
-      <li>Tjek kernetemperatur eller sprødhed og tilpas tiden.</li>
-      <li>Lad hvile et par minutter inden servering.</li>
-    </ol>
-  </section>
-
+  <!-- TIPS / ALTERNATIVER / SERVERING -->
   <section class="section block">
     <h2>Tips</h2>
     <ul class="list">
-      <li>Brug lidt olie for ekstra sprødhed.</li>
-      <li>Vend undervejs for jævn tilberedning.</li>
-      <li>Brug bagepapir ved bagværk for nem rengøring.</li>
+      <li>Brug høj fedtprocent for mest saft (min. 12 %).</li>
+      <li>Pres ikke saften ud af bøffen under tilberedning – vend blot én gang.</li>
+      <li>Tricket med fordybning i midten giver en fladere, pænere bøf.</li>
     </ul>
-  </section>
 
-  <section class="section block">
-    <h2>Alternative tilberedninger</h2>
+    <h2 style="margin-top:12px">Alternative Tilberedninger</h2>
     <ul class="list">
-      <li>Ovn: 200 °C varmluft, tid justeres.</li>
-      <li>Pande eller grill, alt efter retten.</li>
+      <li><b>Pande:</b> Hård varme 2–3 min pr. side, sænk varmen og færdiggør til ønsket kernetemperatur.</li>
+      <li><b>Grill:</b> Direkte varme 6–8 min totalt for 2 cm tykke bøffer (afhænger af grill og bøfstørrelse).</li>
     </ul>
+
+    <h2 style="margin-top:12px">Serveringsforslag</h2>
+    <p>Klassisk med <a href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">sprøde kartofler</a> eller coleslaw. Top med bacon, karamelliserede løg eller jalapeños for ekstra smag.</p>
   </section>
 
-  <section class="section block">
-    <h2>Serveringsforslag</h2>
-    <ul class="list">
-      <li>Server med klassisk tilbehør som salat, kartofler eller brød.</li>
-    </ul>
+  <!-- RELATEREDE -->
+  <section class="section">
+    <h2>Relaterede Opskrifter</h2>
+    <div class="grid-3">
+      <a class="card" href="/opskrifter/boeffer-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#steak"/></svg></div>
+        <div class="card-body"><h3>Bøffer I Airfryer – Perfekt Stegt</h3></div>
+      </a>
+      <a class="card" href="/opskrifter/broccoli-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
+        <div class="card-body"><h3>Broccoli I Airfryer – Sprød Og Grøn</h3></div>
+      </a>
+      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#chicken"/></svg></div>
+        <div class="card-body"><h3>Kyllingespyd I Airfryer – Saftige</h3></div>
+      </a>
+    </div>
   </section>
 
+  <!-- PRICERUNNER WIDGET I BUNDEN -->
   <section class="section block">
-    <h2>Annonce · Airfryer brugt i opskriften</h2>
+    <h2>Annonce · Airfryer Bruges I Opskriften</h2>
     <div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
     <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
     <div style="display:inline-block">
       <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
-        <p style="font:14px Helvetica,Arial,sans-serif;font-style:italic;color:#334155;text-decoration:underline">
-          Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+        <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
+          Annonce I Samarbejde Med <span style="font-weight:bold">PriceRunner</span>
         </p>
       </a>
     </div>
   </section>
 
+  <!-- FAQ -->
   <section class="section block">
     <h2>FAQ</h2>
     <ul class="list">
-      <li>Kan tiderne variere mellem modeller? Ja, justér de sidste minutter efter farve og kernetemperatur.</li>
-      <li>Skal jeg forvarme? Ja, 3–5 min anbefales til de fleste retter.</li>
-      <li>Hvordan undgår jeg tørhed? Brug termometer og lad hvile 5–10 min.</li>
+      <li><b>Hvilken tykkelse bøf?</b> 1,5–2 cm er let at styre i airfryer.</li>
+      <li><b>Kan jeg lave smash-burgere?</b> Ja – pres meget fladt (<1 cm) og tilbered 5–7 min total ved 200 °C.</li>
+      <li><b>Hvordan holder jeg bøffen saftig?</b> Brug god fedtprocent, overtilbered ikke og lad hvile 3–5 min.</li>
     </ul>
   </section>
-
-  <section class="section block">
-    <h2>Relaterede opskrifter</h2>
-    <div class="grid-3">
-      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
-        <div class="card-body"><h3>Flæskesteg i airfryer</h3></div>
-      </a>
-      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
-        <div class="card-body"><h3>Kyllingespyd i airfryer</h3></div>
-      </a>
-      <a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
-        <div class="card-body"><h3>Hasselbagte kartofler i airfryer</h3></div>
-      </a>
-    </div>
-  </section>
 </main>
+
+<!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
+
+<!-- Loader til partials -->
+<script src="/assets/include.js?v=4"></script>
 </body>
 </html>
