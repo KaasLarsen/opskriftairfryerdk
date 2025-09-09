@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sitemap Builder – Opskrift-Airfryer.dk</title>
+<style>
+body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;color:#0f172a}
+.box{border:1px solid #e2e8f0;border-radius:12px;padding:16px}
+button{padding:10px 14px;border-radius:999px;border:1px solid #e2e8f0;background:#0ea5e9;color:#fff;font-weight:600;cursor:pointer}
+textarea{width:100%;height:60vh;border:1px solid #e2e8f0;border-radius:10px;padding:12px;font-family:ui-monospace,Consolas,monospace}
+small{color:#475569}
+</style>
+</head>
+<body>
+<h1>Sitemap Builder</h1>
+<p>Tryk “Generér” for at lave en komplet <code>sitemap.xml</code> ud fra dine opskrifter i <code>/assets/recipes.js</code>. Kopiér resultatet og erstat din nuværende <code>/sitemap.xml</code>.</p>
+
+<div class="box" style="margin:12px 0">
+  <button id="go">Generér sitemap.xml</button>
+  <small id="status" style="margin-left:10px"></small>
+</div>
+
+<div class="box">
+  <textarea id="out" placeholder="Output kommer her..."></textarea>
+</div>
+
+<!-- Henter dine recipes -->
+<script src="/assets/recipes.js?v=1"></script>
+<script>
+(function(){
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function urlTag(loc, changefreq, priority){
+    return `  <url>\n    <loc>${esc(loc)}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+  }
+
+  const STATIC_URLS = [
+    {loc:'https://opskrift-airfryer.dk/', cf:'daily', pr:'1.0'},
+    {loc:'https://opskrift-airfryer.dk/seneste.html', cf:'hourly', pr:'0.9'},
+    {loc:'https://opskrift-airfryer.dk/kategori.html', cf:'daily', pr:'0.8'},
+    {loc:'https://opskrift-airfryer.dk/guides.html', cf:'weekly', pr:'0.6'},
+    {loc:'https://opskrift-airfryer.dk/om.html', cf:'monthly', pr:'0.5'},
+    {loc:'https://opskrift-airfryer.dk/kontakt.html', cf:'yearly', pr:'0.4'},
+    {loc:'https://opskrift-airfryer.dk/udstyr.html', cf:'weekly', pr:'0.6'},
+
+    // Kendte guides – tilføj gerne flere her
+    {loc:'https://opskrift-airfryer.dk/guides/airfryer-tider.html', cf:'monthly', pr:'0.5'},
+    {loc:'https://opskrift-airfryer.dk/guides/valg-af-airfryer.html', cf:'monthly', pr:'0.5'},
+    {loc:'https://opskrift-airfryer.dk/guides/airfryer-rengoering.html', cf:'monthly', pr:'0.5'},
+  ];
+
+  // Kendte basis-kategorier – disse bliver suppleret med ALLE kategorier fundet i RECIPES:
+  const BASE_CATS = ['Svinekød','Kylling','Oksekød','Fisk','Grønt','Tilbehør','Dessert'];
+
+  function build(){
+    const status = document.getElementById('status');
+    const out = document.getElementById('out');
+    status.textContent = '';
+
+    const urls = [];
+    STATIC_URLS.forEach(u => urls.push(urlTag(u.loc, u.cf, u.pr)));
+
+    // Kategori-URL’er
+    const catSet = new Set(BASE_CATS);
+    if (Array.isArray(window.RECIPES)) {
+      window.RECIPES.forEach(r=>{
+        (r.categories||[]).forEach(c=>{
+          if(c && typeof c === 'string') catSet.add(c);
+        });
+      });
+    }
+    [...catSet].sort((a,b)=>a.localeCompare(b,'da')).forEach(name=>{
+      const loc = `https://opskrift-airfryer.dk/kategori.html?navn=${encodeURIComponent(name)}`;
+      urls.push(urlTag(loc,'daily','0.7'));
+    });
+
+    // Opskrifter
+    if (!Array.isArray(window.RECIPES) || !window.RECIPES.length){
+      status.textContent = 'Kunne ikke finde RECIPES – tjek at /assets/recipes.js loader.';
+    } else {
+      const items = [...window.RECIPES].sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+      items.forEach(r=>{
+        const slug = r.slug || '';
+        if(!slug) return;
+        const loc = `https://opskrift-airfryer.dk/opskrifter/${slug}.html`;
+        urls.push(urlTag(loc, 'monthly', '0.7'));
+      });
+      status.textContent = `OK – tilføjede ${items.length} opskrifter og ${catSet.size} kategorier.`;
+    }
+
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+urls.join('\n') + '\n</urlset>\n';
+
+    out.value = xml;
+  }
+
+  document.getElementById('go').addEventListener('click', build);
+})();
+</script>
+</body>
+</html>
