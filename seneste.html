@@ -76,14 +76,12 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 
 <!-- Auto-render + søgning -->
-<script src="/assets/recipes.js?v=3"></script>
-<script src="/assets/render-recipes.js?v=3"></script>
+<!-- seneste.html -->
+<script src="/assets/recipes.js?v=2"></script>
+<script src="/assets/render-recipes.js?v=1"></script>
 <script>
-(function(){
-  const params = new URLSearchParams(location.search);
-  const qRaw = params.get('soeg');
-  const mount = document.getElementById('alle-grid');
-  const h2 = document.querySelector('.section-head h2');
+  AFO.ready.then(() => AFO.renderAll('alle-grid')); // eller søg / filtrér
+</script>
 
   // pæn kort-markup (samme stil som AFO)
   function iconSvg(id){ return '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>'; }
