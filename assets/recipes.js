@@ -1,14 +1,17 @@
 <script>
 /* =======================================================================
-   /assets/recipes.js  —  Enkel, stabil opskrifts-indeksering
-   - Base seed (manuelt)
-   - Læser /sitemap.xml (urlset, ikke index)
-   - Henter <h1> (+ fallback til <title>) og let kategorigæt
-   - Eksporterer: AFO.ready, AFO.getAll, AFO.search, AFO.latest, AFO.byCategory
+   /assets/recipes.js — Robust indeksering af opskrifter til AFO
+   - Læser /sitemap.xml (både <urlset> og <sitemapindex>)
+   - Følger yderligere sitemaps når der er <sitemapindex>
+   - Normaliserer www/non-www -> same-origin fetch
+   - Fallback: /assets/recipes-extra.json  (array af slugs)
+   - Eksporterer: AFO.ready (Promise), AFO.getAll(), AFO.search(), AFO.latest(), AFO.byCategory()
    ======================================================================= */
+
 window.AFO = window.AFO || {};
+
 (function () {
-  // -------- 1) Base seed (ret/udvid frit) --------
+  // ------------------ Base seed (kan udvides) ------------------
   const base = [
     { title:"Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød", slug:"flaeskesteg-i-airfryer", date:"2025-09-06", categories:["Kød","Svinekød","Hovedret"], icon:"pig",   meta:"45–60 Min · Nemt" },
     { title:"Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne", slug:"hasselbagte-kartofler-i-airfryer", date:"2025-09-05", categories:["Grønt","Tilbehør"], icon:"leaf", meta:"30 Min · Tilbehør" },
@@ -20,24 +23,25 @@ window.AFO = window.AFO || {};
     { title:"Burger I Airfryer – Saftig Og Hurtig", slug:"burger-i-airfryer", date:"2025-09-09", categories:["Oksekød","Aftensmad"], icon:"burger", meta:"20–25 Min · Nemt" },
   ];
 
-  // -------- 2) Hjælpere --------
+  // ------------------ Hjælpere ------------------
   const bySlug = (arr) => Object.fromEntries(arr.map(r => [r.slug, r]));
   const map = bySlug(base);
 
   function sameOriginPath(u){
     try {
       const url = u.startsWith('http') ? new URL(u) : new URL(u, location.origin);
-      // tving www/non-www over på current origin
+      // smid origin, behold path+query for same-origin fetch
       return url.pathname + url.search;
     } catch { return u; }
   }
+
   function slugFromPath(p){
     const m = (p||"").match(/\/opskrifter\/([^\/]+)\.html$/i);
     return m ? m[1] : null;
   }
+
   function capWords(s){ return (s||"").replace(/[^\s]+/g, w => w[0]?.toUpperCase()+w.slice(1)); }
 
-  // forsigtigt gæt på ikon/kategori ud fra titel
   function guessMeta(title){
     const s = (title||"").toLowerCase();
     let icon = "book", cats = ["Opskrift"];
@@ -52,28 +56,49 @@ window.AFO = window.AFO || {};
     return { icon, categories: cats };
   }
 
-  async function fetchSitemapPaths(){
-    try {
-      const r = await fetch('/sitemap.xml', { cache: 'no-store' });
-      if (!r.ok) return [];
-      const xml = await r.text();
-      // kun urlset (ikke index) – simpelt parse
-      const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m=>m[1]);
-      const locs = blocks.map(b => (b.match(/<loc>([^<]+)<\/loc>/)||[])[1]).filter(Boolean);
-      const recPaths = locs
-        .filter(loc => /\/opskrifter\/.+\.html$/i.test(loc))
-        .map(sameOriginPath);
-      return Array.from(new Set(recPaths)); // unik
-    } catch {
-      return [];
+  async function fetchText(path){
+    const r = await fetch(path, { cache:'no-store' });
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.text();
+  }
+
+  // ------------------ Sitemap parser ------------------
+  async function collectSitemapPaths(entry = '/sitemap.xml', seen = new Set()){
+    // Returnerer liste af same-origin paths til opskrifter
+    const out = [];
+    const key = entry;
+    if (seen.has(key)) return out;
+    seen.add(key);
+
+    let xml = '';
+    try { xml = await fetchText(entry); }
+    catch { return out; }
+
+    // Tjek om det er sitemapindex
+    const isIndex = /<sitemapindex[\s>]/i.test(xml);
+    if (isIndex){
+      const smaps = [...xml.matchAll(/<sitemap>([\s\S]*?)<\/sitemap>/g)].map(m=>m[1]);
+      const locs = smaps.map(b => (b.match(/<loc>([^<]+)<\/loc>/)||[])[1]).filter(Boolean);
+      for (const loc of locs){
+        const next = sameOriginPath(loc);
+        const sub = await collectSitemapPaths(next, seen);
+        out.push(...sub);
+      }
+      return Array.from(new Set(out));
     }
+
+    // Ellers urlset
+    const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m=>m[1]);
+    const locs = blocks.map(b => (b.match(/<loc>([^<]+)<\/loc>/)||[])[1]).filter(Boolean);
+    const recs = locs
+      .filter(loc => /\/opskrifter\/.+\.html$/i.test(loc))
+      .map(sameOriginPath);
+    return Array.from(new Set(recs));
   }
 
   async function scrapeMeta(path){
     try{
-      const r = await fetch(path, { cache:'no-store' });
-      if(!r.ok) return null;
-      const html = await r.text();
+      const html = await fetchText(path);
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const h1 = doc.querySelector('h1')?.textContent?.trim();
       const title = h1 || doc.title || "Airfryer Opskrift";
@@ -90,22 +115,41 @@ window.AFO = window.AFO || {};
     }catch{ return null; }
   }
 
-  // -------- 3) Build --------
+  async function readExtraSlugs(){
+    // Valgfri fil: /assets/recipes-extra.json  -> ["slug-a","slug-b",...]
+    try{
+      const r = await fetch('/assets/recipes-extra.json', { cache:'no-store' });
+      if(!r.ok) return [];
+      const arr = await r.json();
+      return Array.isArray(arr) ? arr.filter(Boolean) : [];
+    }catch{ return []; }
+  }
+
+  // ------------------ Build ------------------
   let _resolveReady; AFO.ready = new Promise(r => (_resolveReady = r));
 
   (async ()=>{
-    const paths = await fetchSitemapPaths();         // kandidat-URL’er fra sitemap
+    // 1) Saml alle opskrift-URL’er fra sitemap(s)
+    const paths = await collectSitemapPaths('/sitemap.xml');
+
+    // 2) Fallback: ekstra slugs tvinges med (kræver at filerne findes på /opskrifter/*.html)
+    const extraSlugs = await readExtraSlugs();
+    extraSlugs.forEach(sl => paths.push(`/opskrifter/${sl}.html`));
+
+    const uniquePaths = Array.from(new Set(paths));
+
+    // 3) Scrape alt vi ikke har i base
     const jobs = [];
-    for (const p of paths){
+    for (const p of uniquePaths){
       const slug = slugFromPath(p);
-      if (!slug || map[slug]) continue;              // spring eksisterende over
+      if (!slug || map[slug]) continue;
       jobs.push((async ()=>{
         const m = await scrapeMeta(p);
         if(!m) return;
         map[slug] = {
           title: m.title,
           slug,
-          date: new Date().toISOString().slice(0,10), // ukendt → i det mindste “ny”
+          date: new Date().toISOString().slice(0,10),
           categories: m.categories,
           icon: m.icon,
           meta: m.meta
@@ -114,7 +158,7 @@ window.AFO = window.AFO || {};
     }
     await Promise.all(jobs);
 
-    // eksporter sorteret liste
+    // 4) Eksporter sorteret liste
     window.RECIPES = Object.values(map)
       .filter(x => x && x.slug)
       .sort((a,b) => (b.date||"").localeCompare(a.date||""));
@@ -122,7 +166,7 @@ window.AFO = window.AFO || {};
     _resolveReady();
   })();
 
-  // -------- 4) Public API --------
+  // ------------------ Public API ------------------
   AFO.getAll = () => (window.RECIPES || []);
   AFO.search = (q) => {
     const s = (q||"").toLowerCase();
