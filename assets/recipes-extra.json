@@ -1,1 +1,29 @@
-["burger-i-airfryer","kyllingelaar-i-airfryer","fiskefileter-i-airfryer"]
+[
+  "fiskefileter-i-airfryer",
+  "poelsehorn-i-airfryer",
+  "buffalo-wings-i-airfryer",
+  "hakkeboef-i-airfryer",
+  "kyllingenuggets-i-airfryer",
+  "groentsagsfrikadeller-i-airfryer",
+  "halloumi-i-airfryer",
+  "roastbeef-i-airfryer",
+  "kanelsnegle-i-airfryer",
+  "spejlaeg-i-airfryer",
+  "mozzarella-sticks-i-airfryer",
+  "broed-i-airfryer",
+  "aeg-i-airfryer",
+  "kyllingebryst-i-airfryer",
+  "asparges-i-airfryer",
+  "boef-i-airfryer",
+  "rejer-i-airfryer",
+  "soede-kartofler-i-airfryer",
+  "tofu-nuggets-i-airfryer",
+  "falafel-i-airfryer",
+  "laksefilet-i-airfryer",
+  "rugbroedschips-i-airfryer",
+  "blomkaal-vinger-i-airfryer",
+  "brownies-i-airfryer",
+  "svinekam-i-airfryer",
+  "spareribs-i-airfryer"
+  /* + alle de øvrige som ikke er i sitemap.xml endnu */
+]
