@@ -1,31 +1,20 @@
-<script>
 /* =========================================================================
-   /assets/recipes.js — Hent ALT fra sitemap (kun /opskrifter/*.html)
-   - Læser /sitemap.xml via DOMParser (XML, ikke regex)
-   - Normaliserer www/non-www til same-origin paths (undgår CORS)
-   - Scraper <h1> / <title> for pæn titel, gætter ikon/kategorier
-   - Eksporterer: AFO.ready, AFO.getAll(), AFO.search(), AFO.latest(), AFO.byCategory()
+   /assets/recipes.js — Hent ALT fra sitemap (index + urlset, robust)
    ======================================================================= */
 window.AFO = window.AFO || {};
-
 (function () {
-  // ---------- Helpers ----------
+  // ------------ Utils ------------
   function toPath(u){
-    // Lav ALT til en same-origin path (/opskrifter/xxx.html)
     try{
       const url = u.startsWith('http') ? new URL(u) : new URL(u, location.origin);
       return url.pathname + url.search;
-    }catch{
-      return u;
-    }
+    }catch{ return u; }
   }
   function slugFromPath(p){
     const m = (p||"").match(/\/opskrifter\/([^\/]+)\.html$/i);
     return m ? m[1] : null;
   }
-  function capWords(s){
-    return (s||"").replace(/[^\s]+/g, w => w.charAt(0).toUpperCase() + w.slice(1));
-  }
+  function capWords(s){ return (s||"").replace(/[^\s]+/g, w => w.charAt(0).toUpperCase() + w.slice(1)); }
   function guessMeta(title){
     const s = (title||"").toLowerCase();
     let icon = "book", cats = ["Opskrift"];
@@ -39,8 +28,7 @@ window.AFO = window.AFO || {};
     else if (/\btilbehør|pommes|fritter|chips|majskolbe\b/.test(s))     { icon="fries"; cats=["Tilbehør"]; }
     return { icon, categories: cats };
   }
-
-  async function fetchText(url, timeoutMs=8000){
+  async function fetchText(url, timeoutMs=9000){
     const ctrl = new AbortController(); const t = setTimeout(()=>ctrl.abort(), timeoutMs);
     try{
       const r = await fetch(url, { cache:'no-store', signal: ctrl.signal });
@@ -49,46 +37,96 @@ window.AFO = window.AFO || {};
     }finally{ clearTimeout(t); }
   }
 
-  // ---------- 1) Læs sitemap.xml → paths ----------
-  async function readSitemap(){
-    try{
-      const xmlTxt = await fetchText('/sitemap.xml', 8000);
-      const doc = new DOMParser().parseFromString(xmlTxt, 'application/xml');
-
-      // sikring mod parsefejl
-      const parserErr = doc.getElementsByTagName('parsererror')[0];
-      if (parserErr) throw new Error('XML parse error');
-
-      const urlNodes = Array.from(doc.getElementsByTagName('url')); // håndterer namespaces fint i de fleste browsere
-      const items = [];
-      for (const node of urlNodes){
-        const locNode = node.getElementsByTagName('loc')[0] || node.getElementsByTagNameNS('*','loc')[0];
-        if (!locNode) continue;
-        const loc = (locNode.textContent || '').trim();
-        if (!/\/opskrifter\/[^\/]+\.html$/i.test(loc)) continue; // kun opskrift-sider
-        const lastNode = node.getElementsByTagName('lastmod')[0] || node.getElementsByTagNameNS('*','lastmod')[0];
-        items.push({
-          path: toPath(loc),
-          lastmod: (lastNode?.textContent || '').slice(0,10) // YYYY-MM-DD
-        });
+  // ------------ XML parsere (tolerant) ------------
+  function parseXml(xmlStr){
+    const doc = new DOMParser().parseFromString(xmlStr, 'application/xml');
+    // Tjek for parsererror
+    if (doc.getElementsByTagName('parsererror').length) return null;
+    return doc;
+  }
+  // udtræk <loc> fra urlset/sitemapindex med både DOM og regex fallback
+  function extractLocsFromUrlset(doc){
+    let urls = [];
+    // Prøv DOM først
+    const urlNodes = doc.getElementsByTagName('url');
+    if (urlNodes.length){
+      for (const n of urlNodes){
+        const loc = (n.getElementsByTagName('loc')[0] || n.getElementsByTagNameNS('*','loc')[0])?.textContent?.trim();
+        const last = (n.getElementsByTagName('lastmod')[0] || n.getElementsByTagNameNS('*','lastmod')[0])?.textContent?.trim() || '';
+        if (loc) urls.push({ loc, lastmod: last.slice(0,10) });
       }
-      // unique på path
-      const seen = new Set(); const out = [];
-      for (const it of items){
-        if (seen.has(it.path)) continue;
-        seen.add(it.path); out.push(it);
-      }
-      return out;
-    }catch(e){
-      console.error('[AFO] Kunne ikke læse sitemap:', e);
-      return []; // ingen fallback – præcis som du ønsker
+      return urls;
     }
+    // Fallback: regex
+    const locs = [...doc.documentElement?.outerHTML.matchAll(/<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?(?:<lastmod>([^<]+)<\/lastmod>)?[\s\S]*?<\/url>/gi)];
+    urls = locs.map(m => ({ loc: m[1], lastmod: (m[2]||'').slice(0,10) }));
+    return urls;
+  }
+  function extractSitemapsFromIndex(doc){
+    let maps = [];
+    const smNodes = doc.getElementsByTagName('sitemap');
+    if (smNodes.length){
+      for (const n of smNodes){
+        const loc = (n.getElementsByTagName('loc')[0] || n.getElementsByTagNameNS('*','loc')[0])?.textContent?.trim();
+        if (loc) maps.push(loc);
+      }
+      return maps;
+    }
+    // regex fallback
+    maps = [...doc.documentElement?.outerHTML.matchAll(/<sitemap>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<\/sitemap>/gi)].map(m=>m[1]);
+    return maps;
   }
 
-  // ---------- 2) Hent meta fra hver opskrift ----------
+  // ------------ Sitemap læser ------------
+  async function readAllRecipePaths(){
+    // Prøv sitemap.xml og sitemap_index.xml
+    const entryCandidates = ['/sitemap.xml', '/sitemap_index.xml'];
+    const seenPaths = new Set();
+    const queue = [];
+
+    for (const entry of entryCandidates){
+      try{
+        const txt = await fetchText(entry);
+        const doc = parseXml(txt);
+        if (!doc) continue;
+        const root = doc.documentElement?.nodeName?.toLowerCase() || '';
+        if (root.includes('urlset')){
+          const urls = extractLocsFromUrlset(doc);
+          urls.forEach(u => {
+            if (/\/opskrifter\/[^\/]+\.html$/i.test(u.loc)){
+              const p = toPath(u.loc);
+              if (!seenPaths.has(p)){ seenPaths.add(p); queue.push({ path:p, lastmod:u.lastmod }); }
+            }
+          });
+        } else if (root.includes('sitemapindex')){
+          const sitemaps = extractSitemapsFromIndex(doc);
+          // Hent HVER sitemap i index’et
+          for (const smUrl of sitemaps){
+            try{
+              const smTxt = await fetchText(toPath(smUrl)); // same-origin path (kræver at sitemappene også ligger her)
+              const smDoc = parseXml(smTxt);
+              if (!smDoc) continue;
+              const urls = extractLocsFromUrlset(smDoc);
+              urls.forEach(u => {
+                if (/\/opskrifter\/[^\/]+\.html$/i.test(u.loc)){
+                  const p = toPath(u.loc);
+                  if (!seenPaths.has(p)){ seenPaths.add(p); queue.push({ path:p, lastmod:u.lastmod }); }
+                }
+              });
+            }catch(e){ console.warn('[AFO] kunne ikke hente undersitemap:', smUrl, e); }
+          }
+        }
+      }catch(e){
+        // bare prøv næste kandidat
+      }
+    }
+    return queue; // [{path,lastmod}]
+  }
+
+  // ------------ HTML meta-scrape ------------
   async function scrapeMeta(path){
     try{
-      const html = await fetchText(path, 8000);
+      const html = await fetchText(path, 9000);
       const doc  = new DOMParser().parseFromString(html, 'text/html');
       const h1   = doc.querySelector('h1')?.textContent?.trim();
       const ttl  = capWords(h1 || doc.title || 'Airfryer Opskrift');
@@ -102,20 +140,16 @@ window.AFO = window.AFO || {};
         icon: metaIcon || g.icon,
         meta: metaMeta || ""
       };
-    }catch(e){
-      console.warn('[AFO] Meta-scrape fejlede for', path, e);
-      return null;
-    }
+    }catch{ return null; }
   }
 
-  // ---------- 3) Build + eksport ----------
+  // ------------ Build + eksport ------------
   let _resolve; AFO.ready = new Promise(r => (_resolve = r));
 
   (async ()=>{
-    const sitemapItems = await readSitemap(); // [{path,lastmod}]
+    const items = await readAllRecipePaths(); // [{path,lastmod}]
     const map = {};
-
-    const jobs = sitemapItems.map(async (it) => {
+    await Promise.all(items.map(async (it)=>{
       const slug = slugFromPath(it.path);
       if (!slug) return;
       const m = await scrapeMeta(it.path);
@@ -128,8 +162,7 @@ window.AFO = window.AFO || {};
         icon: m.icon,
         meta: m.meta
       };
-    });
-    await Promise.all(jobs);
+    }));
 
     window.RECIPES = Object.values(map)
       .sort((a,b)=> (b.date||"").localeCompare(a.date||""));
@@ -137,7 +170,7 @@ window.AFO = window.AFO || {};
     _resolve();
   })();
 
-  // ---------- 4) Public API ----------
+  // Public API
   AFO.getAll = () => (window.RECIPES || []);
   AFO.search = (q) => {
     const s = (q||"").toLowerCase();
@@ -155,4 +188,3 @@ window.AFO = window.AFO || {};
     return AFO.getAll().filter(r => (r.categories||[]).some(c => (c||"").toLowerCase() === s));
   };
 })();
-</script>
