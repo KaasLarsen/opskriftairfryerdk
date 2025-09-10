@@ -34,8 +34,19 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
-.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+
+/* Filter-bar */
+.filterbar{display:grid;grid-template-columns:1fr 240px;gap:10px;
+  border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  background:#fff0f5;padding:12px 14px;margin:8px 0 18px}
+@media(max-width:700px){.filterbar{grid-template-columns:1fr}}
+.filterbar input,.filterbar select{
+  padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;width:100%
+}
+.filter-meta{font-size:13px;color:var(--muted);margin-top:6px}
+.clear-link{font-size:13px;color:var(--muted);text-decoration:underline;cursor:pointer}
 </style>
 </head>
 <body>
@@ -62,9 +73,22 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
-  <!-- Liste over alle (seneste først) -->
+  <!-- Filter-bar -->
+  <section class="section" aria-label="Filtrér opskrifter">
+    <div class="filterbar">
+      <input id="q" type="search" placeholder="🔍 Søg i titel eller kategori…" />
+      <select id="cat">
+        <option value="">Alle kategorier</option>
+      </select>
+      <div class="filter-meta" id="filter-meta"></div>
+    </div>
+  </section>
+
+  <!-- Liste -->
   <section class="section">
-    <div class="section-head"><h2>Alle</h2></div>
+    <div class="section-head"><h2 id="list-title">Alle</h2>
+      <a id="clear" class="clear-link" style="display:none">Nulstil filtre</a>
+    </div>
     <div id="alle-grid" class="grid grid-3"></div>
   </section>
 </main>
@@ -72,53 +96,158 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <!-- Footer -->
 <div data-include="/partials/footer.html"></div>
 
-<!-- Indlæs partials -->
+<!-- Partials loader -->
 <script src="/assets/include.js?v=4"></script>
 
-<!-- DATA + RENDER (rækkefølgen er vigtig) -->
+<!-- Data -->
 <script src="/assets/recipes.js?v=3"></script>
-<script>
-  // Fail-safe placeholder mens vi loader
-  (function(){
-    const mount = document.getElementById('alle-grid');
-    if (mount) mount.innerHTML = '<p class="meta">Indlæser opskrifter…</p>';
-  })();
 
-  // Vent på AFO.ready og render – robust mod fejl
-  (function(){
-    function draw(){
-      try{
-        if (window.AFO && typeof AFO.renderAll === 'function') {
-          AFO.renderAll('alle-grid');
-        } else {
-          // fallback hvis renderAll ikke findes
-          const list = (AFO && AFO.getAll) ? AFO.getAll() : (window.RECIPES || []);
-          const icon = id => `<div class="thumb-icon"><svg><use href="#${id||'star'}"/></svg></div>`;
-          const card = r => [
-            `<a class="card" href="/opskrifter/${r.slug}.html">`,
-              icon(r.icon), `<div class="card-body"><h3>${r.title}</h3>`,
-              r.meta ? `<p class="meta">${r.meta}</p>` : '',
-              `</div>`,
-            `</a>`
-          ].join('');
-          const mount = document.getElementById('alle-grid');
-          mount.innerHTML = list.map(card).join('');
-        }
-      }catch(e){
-        const mount = document.getElementById('alle-grid');
-        if (mount) mount.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
-      }
+<script>
+(function(){
+  // Dom refs
+  const $q    = document.getElementById('q');
+  const $cat  = document.getElementById('cat');
+  const $meta = document.getElementById('filter-meta');
+  const $grid = document.getElementById('alle-grid');
+  const $title = document.getElementById('list-title');
+  const $clear = document.getElementById('clear');
+
+  // UI helpers
+  const iconSvg = id => '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>';
+  const card = r => [
+    '<a class="card" href="/opskrifter/'+r.slug+'.html">',
+      iconSvg(r.icon),
+      '<div class="card-body">',
+        '<h3>'+r.title+'</h3>',
+        r.meta ? '<p class="meta">'+r.meta+'</p>' : '',
+      '</div>',
+    '</a>'
+  ].join('');
+
+  function norm(s){
+    return (s||'').toLowerCase()
+      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  }
+
+  function applyFilters(list, q, cat){
+    const nq = norm(q);
+    const ncat = norm(cat);
+    let filtered = list;
+
+    if (nq){
+      filtered = filtered.filter(r =>
+        norm(r.title).includes(nq) ||
+        norm(r.slug).includes(nq) ||
+        (r.categories||[]).some(c => norm(c).includes(nq))
+      );
     }
-    if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function') {
-      AFO.ready.then(draw).catch(()=> {
-        const mount = document.getElementById('alle-grid');
-        if (mount) mount.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
-      });
-    } else {
-      // Hvis AFO.ready ikke findes (gammel recipes.js), prøv efter load
-      window.addEventListener('load', draw);
+    if (ncat){
+      filtered = filtered.filter(r =>
+        (r.categories||[]).some(c => norm(c) === ncat)
+      );
     }
-  })();
+    return filtered;
+  }
+
+  // Debounce
+  let t;
+  function debounced(fn){ clearTimeout(t); t = setTimeout(fn, 180); }
+
+  // Sync URL (?soeg=&kategori=)
+  function readParams(){
+    const p = new URLSearchParams(location.search);
+    return { soeg: p.get('soeg') || '', kategori: p.get('kategori') || '' };
+  }
+  function writeParams(q, cat){
+    const p = new URLSearchParams();
+    if (q) p.set('soeg', q);
+    if (cat) p.set('kategori', cat);
+    const newUrl = location.pathname + (p.toString()? '?'+p.toString() : '');
+    history.replaceState(null, '', newUrl);
+  }
+
+  // Populate kategori dropdown ud fra data
+  function populateCats(list){
+    const set = new Set();
+    list.forEach(r => (r.categories||[]).forEach(c => c && set.add(c)));
+    const cats = Array.from(set).sort((a,b)=> a.localeCompare(b,'da'));
+    // behold første option (Alle)
+    $cat.innerHTML = '<option value="">Alle kategorier</option>' +
+      cats.map(c => '<option value="'+c+'">'+c+'</option>').join('');
+  }
+
+  function render(list){
+    if (!list || !list.length){
+      $grid.innerHTML = '<p class="meta">Ingen opskrifter matcher dine filtre.</p>';
+      return;
+    }
+    $grid.innerHTML = list.map(card).join('');
+  }
+
+  function updateTitle(q, cat, count){
+    const parts = [];
+    if (cat) parts.push(cat);
+    if (q) parts.push('“'+q+'”');
+    $title.textContent = parts.length ? parts.join(' · ') + ' ('+count+')' : 'Alle';
+    $clear.style.display = (q || cat) ? 'inline' : 'none';
+    $meta.textContent = count ? count + ' opskrift' + (count>1?'er':'') : '';
+  }
+
+  function boot(all){
+    // 1) Dropdown
+    populateCats(all);
+
+    // 2) Prefill fra URL
+    const { soeg, kategori } = readParams();
+    if (soeg) $q.value = soeg;
+    if (kategori) $cat.value = kategori;
+
+    // 3) Første render
+    const start = applyFilters(all, soeg, kategori);
+    render(start);
+    updateTitle(soeg, kategori, start.length);
+
+    // 4) Events
+    $q.addEventListener('input', () => debounced(()=>{
+      const q = $q.value.trim();
+      const cat = $cat.value.trim();
+      const res = applyFilters(all, q, cat);
+      render(res);
+      updateTitle(q, cat, res.length);
+      writeParams(q, cat);
+    }));
+    $cat.addEventListener('change', ()=>{
+      const q = $q.value.trim();
+      const cat = $cat.value.trim();
+      const res = applyFilters(all, q, cat);
+      render(res);
+      updateTitle(q, cat, res.length);
+      writeParams(q, cat);
+    });
+    $clear.addEventListener('click', ()=>{
+      $q.value = ''; $cat.value = '';
+      render(all);
+      updateTitle('', '', all.length);
+      writeParams('', '');
+    });
+  }
+
+  // Start når data er klar
+  // Først en lille placeholder:
+  document.getElementById('alle-grid').innerHTML = '<p class="meta">Indlæser opskrifter…</p>';
+
+  if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
+    AFO.ready.then(()=> boot(AFO.getAll()))
+             .catch(()=> document.getElementById('alle-grid').innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>');
+  } else {
+    // ældre recipes.js – brug fallback efter load
+    window.addEventListener('load', ()=>{
+      const list = (window.AFO && AFO.getAll) ? AFO.getAll() : (window.RECIPES || []);
+      boot(list);
+    });
+  }
+})();
 </script>
 </body>
 </html>
