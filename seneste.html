@@ -48,8 +48,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <!-- HERO -->
   <section class="hero">
     <span class="kicker">Overblik</span>
-    <h1>Seneste Opskrifter</h1>
-    <p class="lead">De nyeste airfryer opskrifter – altid med tider og temperaturer.</p>
+    <h1 id="page-title">Seneste Opskrifter</h1>
+    <p class="lead" id="page-lead">De nyeste airfryer opskrifter – altid med tider og temperaturer.</p>
   </section>
 
   <!-- Annonce -->
@@ -62,10 +62,10 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
-  <!-- Liste over alle (seneste først) -->
+  <!-- Liste (seneste først eller søg) -->
   <section class="section">
     <div class="section-head">
-      <h2>Alle</h2>
+      <h2 id="list-title">Alle</h2>
     </div>
     <div id="alle-grid" class="grid grid-3"></div>
   </section>
@@ -75,67 +75,75 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- Auto-render + søgning -->
-<!-- seneste.html -->
+<!-- Data + rendering -->
 <script src="/assets/recipes.js?v=2"></script>
-<script src="/assets/render-recipes.js?v=1"></script>
 <script>
-  AFO.ready.then(() => AFO.renderAll('alle-grid')); // eller søg / filtrér
-</script>
+/* Minimal renderer som matcher kort-designet på tværs af siden */
+function iconSvg(id){ return '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>'; }
+function cardHTML(rec){
+  return [
+    '<a class="card" href="/opskrifter/'+rec.slug+'.html">',
+      iconSvg(rec.icon),
+      '<div class="card-body">',
+        '<h3>'+rec.title+'</h3>',
+        rec.meta ? '<p class="meta">'+rec.meta+'</p>' : '',
+      '</div>',
+    '</a>'
+  ].join('');
+}
+function renderList(list, mountId){
+  const el = document.getElementById(mountId);
+  if(!el) return;
+  el.innerHTML = list.map(cardHTML).join('');
+}
 
-  // pæn kort-markup (samme stil som AFO)
-  function iconSvg(id){ return '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>'; }
-  function cardHTML(rec){
-    return [
-      '<a class="card" href="/opskrifter/'+rec.slug+'.html">',
-        iconSvg(rec.icon),
-        '<div class="card-body">',
-          '<h3>'+rec.title+'</h3>',
-          rec.meta ? '<p class="meta">'+rec.meta+'</p>' : '',
-        '</div>',
-      '</a>'
-    ].join('');
-  }
+/* Søg-normalisering (æ/ø/å osv.) */
+function norm(s){
+  return (s||'').toLowerCase()
+    .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+}
+function matches(rec, q){
+  const nq = norm(q);
+  const fields = [
+    rec.title,
+    rec.meta,
+    (rec.categories||[]).join(' ')
+  ].map(norm);
+  return fields.some(f => f.includes(nq));
+}
 
-  // normalisering til søgning (case, diakritik + æ/ø/å → ae/oe/aa)
-  function norm(s){
-    return (s||'').toLowerCase()
-      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
-      .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // fjern accent-tegn
-      .trim();
-  }
-  function matches(rec, q){
-    const nq = norm(q);
-    const fields = [
-      rec.title,
-      rec.meta,
-      (rec.categories||[]).join(' ')
-    ].map(norm);
-    return fields.some(f => f.includes(nq));
-  }
+/* Boot: vent på AFO.ready, håndtér ?soeg=, og render */
+(function(){
+  const params = new URLSearchParams(location.search);
+  const qRaw = params.get('soeg') || '';
+  const h2 = document.getElementById('list-title');
+  const lead = document.getElementById('page-lead');
 
-  if (qRaw && qRaw.trim()){
-    // filtrer
-    const results = (window.RECIPES||[])
-      .filter(r => matches(r, qRaw))
-      .sort((a,b)=> new Date(b.date) - new Date(a.date));
-
-    // sæt overskrift + render
-    h2.textContent = `Søgeresultater (${results.length})`;
-    mount.innerHTML = results.length
-      ? results.map(cardHTML).join('')
-      : '<p class="meta">Ingen opskrifter matcher din søgning.</p>';
-
-    // scroll til listen hvis man kom fra forsiden
-    if (results.length) {
-      setTimeout(()=>window.scrollTo({top: mount.offsetTop - 20, behavior:'smooth'}), 50);
-    }
+  if (window.AFO && AFO.ready) {
+    AFO.ready.then(() => {
+      const all = (window.RECIPES || []);
+      if (qRaw && qRaw.trim()){
+        const results = all
+          .filter(r => matches(r, qRaw))
+          .sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+        h2.textContent = `Søgeresultater (${results.length})`;
+        lead.textContent = `Viser opskrifter der matcher “${qRaw}”.`;
+        renderList(results, 'alle-grid');
+        if (results.length) {
+          setTimeout(()=>window.scrollTo({top: document.getElementById('alle-grid').offsetTop - 20, behavior:'smooth'}), 50);
+        }
+      } else {
+        h2.textContent = 'Alle';
+        const latest = all.sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+        renderList(latest, 'alle-grid');
+      }
+    });
   } else {
-    // ingen q => vis alt som før
-    AFO.renderAll('alle-grid');
+    // fallback: hvis AFO ikke er loaded af en eller anden grund
+    document.getElementById('alle-grid').innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
   }
 })();
 </script>
-
 </body>
 </html>
