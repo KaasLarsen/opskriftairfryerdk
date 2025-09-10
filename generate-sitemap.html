@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<title>Generate Sitemap</title>
+</head>
+<body>
+<h1>Generate sitemap.xml</h1>
+<button onclick="generate()">Generér sitemap</button>
+<pre id="output" style="white-space:pre-wrap;background:#f9f9f9;padding:12px;border:1px solid #ccc"></pre>
+
+<script src="/assets/recipes.js?v=1"></script>
+<script>
+function generate(){
+  const base = "https://opskrift-airfryer.dk";
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+  // Forside + faste sider
+  const staticPages = [
+    "/", "/seneste.html", "/kategori.html", "/guides.html",
+    "/om.html", "/kontakt.html", "/udstyr.html"
+  ];
+  staticPages.forEach(path => {
+    xml += `  <url><loc>${base}${path}</loc></url>\n`;
+  });
+
+  // Alle kategorier (unikke fra recipes)
+  const cats = new Set();
+  window.RECIPES.forEach(r => r.categories.forEach(c => cats.add(c)));
+  cats.forEach(c => {
+    const safe = encodeURIComponent(c);
+    xml += `  <url><loc>${base}/kategori.html?navn=${safe}</loc></url>\n`;
+  });
+
+  // Alle opskrifter
+  window.RECIPES.forEach(r => {
+    xml += `  <url><loc>${base}/opskrifter/${r.slug}.html</loc></url>\n`;
+  });
+
+  xml += `</urlset>`;
+  document.getElementById("output").textContent = xml;
+
+  // Download som fil
+  const blob = new Blob([xml], {type:"application/xml"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "sitemap.xml";
+  a.click();
+}
+</script>
+</body>
+</html>
