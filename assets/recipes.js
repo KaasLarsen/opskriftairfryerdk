@@ -1,12 +1,12 @@
-<script>
 /* =======================================================================
-   /assets/recipes.js  —  Auto-indexer opskrifter fra /sitemap.xml
-   - Normaliserer host (undgår CORS på www vs. non-www)
-   - Eksporterer AFO.ready (Promise)
+   /assets/recipes.js — Auto-indexer opskrifter fra /sitemap.xml
+   - Ingen <script>-tags i denne fil!
+   - Eksporterer AFO.ready (Promise) og AFO.renderAll (compat)
    ======================================================================= */
 window.AFO = window.AFO || {};
+
 (function () {
-  // -------- 1) Basis (manuelt seed) --------
+  // -------- 1) Basis seed (manuelt) --------
   const base = [
     {
       title: "Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød",
@@ -37,7 +37,6 @@ window.AFO = window.AFO || {};
   const map = bySlug(base);
 
   function slugFromUrlish(u) {
-    // accepter både absolutte URLs og paths – returnér slug eller null
     try {
       const url = u.startsWith('http') ? new URL(u) : new URL(u, location.origin);
       const m = url.pathname.match(/\/opskrifter\/([^\/]+)\.html$/i);
@@ -46,7 +45,6 @@ window.AFO = window.AFO || {};
   }
 
   function toSameOriginPath(u) {
-    // returner altid kun pathname+search (samme origin)
     try {
       const url = u.startsWith('http') ? new URL(u) : new URL(u, location.origin);
       return url.pathname + url.search;
@@ -84,14 +82,13 @@ window.AFO = window.AFO || {};
     return { icon, categories: cats };
   }
 
-  // -------- 3) Hent sitemap og lav kandidat-liste --------
+  // -------- 3) Hent sitemap og lav kandidater --------
   async function fetchSitemapUrls() {
     try {
       const res = await fetch('/sitemap.xml', { cache: 'no-store' });
       if (!res.ok) return [];
       const xml = await res.text();
 
-      // parse <url> blokke med loc + (evt) lastmod
       const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
       const out = [];
       for (const b of blocks) {
@@ -100,16 +97,14 @@ window.AFO = window.AFO || {};
         if (!/\/opskrifter\/.+\.html$/i.test(loc)) continue;
 
         const last = (b.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1] || "";
-        const path = toSameOriginPath(loc); // **kritisk**: gør same-origin
-        out.push({ path, url: path, lastmod: last });
+        const path = toSameOriginPath(loc); // normaliser til same-origin
+        out.push({ path, lastmod: last });
       }
       return out;
-    } catch {
-      return [];
-    }
+    } catch { return []; }
   }
 
-  // -------- 4) Scrape meta fra HTML (same-origin) --------
+  // -------- 4) Scrape meta fra HTML --------
   async function scrapeRecipeMeta(path) {
     try {
       const res = await fetch(path, { cache: 'no-store' });
@@ -136,9 +131,12 @@ window.AFO = window.AFO || {};
 
   // -------- 5) Byg katalog --------
   async function buildAll() {
+    // start med basen så der ALTID er noget at vise
+    window.RECIPES = base.slice();
+
     const sitemap = await fetchSitemapUrls();
 
-    // valgfri whitelist (slugs) – hvis du vil tvinge ekstra med
+    // valgfri whitelist (slugs) — tving ekstra med
     let extra = [];
     try {
       const r = await fetch('/assets/recipes-extra.json', { cache: 'no-store' });
@@ -151,7 +149,6 @@ window.AFO = window.AFO || {};
       )
     );
 
-    // Scrape kandidater vi ikke har i base
     const jobs = [];
     for (const p of candidatePaths) {
       const slug = slugFromUrlish(p);
@@ -159,11 +156,11 @@ window.AFO = window.AFO || {};
       jobs.push((async () => {
         const meta = await scrapeRecipeMeta(p);
         if (!meta) return;
-        const last = sitemap.find(x => x.path === p)?.lastmod || new Date().toISOString();
+        const last = (sitemap.find(x => x.path === p)?.lastmod || new Date().toISOString()).slice(0,10);
         map[slug] = {
           title: meta.title,
           slug,
-          date: last.slice(0,10),
+          date: last,
           categories: meta.categories,
           icon: meta.icon,
           meta: meta.meta || ""
@@ -172,14 +169,15 @@ window.AFO = window.AFO || {};
     }
     await Promise.all(jobs);
 
-    // Eksponer sorteret liste (nyeste først)
+    // Eksponer samlet liste sorteret nyeste først
     window.RECIPES = Object.values(map)
       .filter(r => r && r.slug)
       .sort((a,b) => (b.date||"").localeCompare(a.date||""));
   }
 
-  // -------- 6) Public API + Ready --------
+  // -------- 6) Public API + Ready + (compat) renderAll --------
   let _resolveReady; AFO.ready = new Promise(r => (_resolveReady = r));
+
   AFO.getAll = () => (window.RECIPES || []);
   AFO.search = (q) => {
     const s = (q||"").toLowerCase();
@@ -197,8 +195,24 @@ window.AFO = window.AFO || {};
     return AFO.getAll().filter(r => (r.categories||[]).some(c => (c||"").toLowerCase() === s));
   };
 
+  // Enkel renderer (back-compat med gamle sider)
+  AFO.renderAll = function mountAll(targetId){
+    const el = document.getElementById(targetId);
+    if(!el) return;
+    const list = AFO.getAll();
+    const iconSvg = (id)=> `<div class="thumb-icon"><svg><use href="#${id||'star'}"/></svg></div>`;
+    const card = (rec)=>[
+      `<a class="card" href="/opskrifter/${rec.slug}.html">`,
+        iconSvg(rec.icon),
+        `<div class="card-body"><h3>${rec.title}</h3>`,
+        rec.meta ? `<p class="meta">${rec.meta}</p>` : '',
+        `</div>`,
+      `</a>`
+    ].join('');
+    el.innerHTML = list.map(card).join('');
+  };
+
   // -------- 7) Boot --------
   (async ()=>{ await buildAll(); _resolveReady(); })();
 
 })();
-</script>
