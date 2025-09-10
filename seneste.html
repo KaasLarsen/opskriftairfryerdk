@@ -75,10 +75,11 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- Data + rendering -->
+<!-- Data -->
 <script src="/assets/recipes.js?v=2"></script>
+
+<!-- Renderer + robust boot -->
 <script>
-/* Minimal renderer som matcher kort-designet på tværs af siden */
 function iconSvg(id){ return '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>'; }
 function cardHTML(rec){
   return [
@@ -96,8 +97,6 @@ function renderList(list, mountId){
   if(!el) return;
   el.innerHTML = list.map(cardHTML).join('');
 }
-
-/* Søg-normalisering (æ/ø/å osv.) */
 function norm(s){
   return (s||'').toLowerCase()
     .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
@@ -105,43 +104,61 @@ function norm(s){
 }
 function matches(rec, q){
   const nq = norm(q);
-  const fields = [
-    rec.title,
-    rec.meta,
-    (rec.categories||[]).join(' ')
-  ].map(norm);
+  const fields = [rec.title, rec.meta, (rec.categories||[]).join(' ')].map(norm);
   return fields.some(f => f.includes(nq));
 }
 
-/* Boot: vent på AFO.ready, håndtér ?soeg=, og render */
-(function(){
+/* Vent robust på data – virker med eller uden AFO.ready */
+function waitForRecipes(maxMs=4000){
+  return new Promise(resolve=>{
+    if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
+      AFO.ready.then(()=>resolve(window.RECIPES||[])).catch(()=>resolve(window.RECIPES||[]));
+      // safety timeout
+      setTimeout(()=>resolve(window.RECIPES||[]), maxMs);
+      return;
+    }
+    // Poll hvert 100ms
+    const started = Date.now();
+    (function poll(){
+      if (Array.isArray(window.RECIPES) && window.RECIPES.length){
+        resolve(window.RECIPES); return;
+      }
+      if (Date.now() - started > maxMs){
+        resolve(window.RECIPES||[]); return;
+      }
+      setTimeout(poll, 100);
+    })();
+  });
+}
+
+(async function boot(){
   const params = new URLSearchParams(location.search);
   const qRaw = params.get('soeg') || '';
   const h2 = document.getElementById('list-title');
   const lead = document.getElementById('page-lead');
 
-  if (window.AFO && AFO.ready) {
-    AFO.ready.then(() => {
-      const all = (window.RECIPES || []);
-      if (qRaw && qRaw.trim()){
-        const results = all
-          .filter(r => matches(r, qRaw))
-          .sort((a,b)=> (b.date||'').localeCompare(a.date||''));
-        h2.textContent = `Søgeresultater (${results.length})`;
-        lead.textContent = `Viser opskrifter der matcher “${qRaw}”.`;
-        renderList(results, 'alle-grid');
-        if (results.length) {
-          setTimeout(()=>window.scrollTo({top: document.getElementById('alle-grid').offsetTop - 20, behavior:'smooth'}), 50);
-        }
-      } else {
-        h2.textContent = 'Alle';
-        const latest = all.sort((a,b)=> (b.date||'').localeCompare(a.date||''));
-        renderList(latest, 'alle-grid');
-      }
-    });
+  const all = await waitForRecipes(5000);
+
+  if (!all || !all.length){
+    document.getElementById('alle-grid').innerHTML =
+      '<p class="meta">Kunne ikke hente opskrifter.</p>';
+    return;
+  }
+
+  if (qRaw && qRaw.trim()){
+    const results = all
+      .filter(r => matches(r, qRaw))
+      .sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+    h2.textContent = `Søgeresultater (${results.length})`;
+    lead.textContent = `Viser opskrifter der matcher “${qRaw}”.`;
+    renderList(results, 'alle-grid');
+    if (results.length) {
+      setTimeout(()=>window.scrollTo({top: document.getElementById('alle-grid').offsetTop - 20, behavior:'smooth'}), 50);
+    }
   } else {
-    // fallback: hvis AFO ikke er loaded af en eller anden grund
-    document.getElementById('alle-grid').innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
+    h2.textContent = 'Alle';
+    const latest = all.slice().sort((a,b)=> (b.date||'').localeCompare(a.date||''));
+    renderList(latest, 'alle-grid');
   }
 })();
 </script>
