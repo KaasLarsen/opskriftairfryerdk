@@ -1,29 +1,16 @@
+<script>
 /* =======================================================================
-   /assets/recipes.js — Auto-indexer opskrifter fra /sitemap.xml
-   - Ingen <script>-tags i denne fil!
-   - Eksporterer AFO.ready (Promise) og AFO.renderAll (compat)
+   /assets/recipes.js  —  Auto-indexer opskrifter fra /sitemap.xml (+ index)
+   - Henter /sitemap.xml
+   - Hvis <sitemapindex> → henter alle child <sitemap><loc>
+   - Ekstra whitelist: /assets/recipes-extra.json  (["slug-1","slug-2",...])
    ======================================================================= */
 window.AFO = window.AFO || {};
-
 (function () {
-  // -------- 1) Basis seed (manuelt) --------
+  // -------- 1) Basis seed (bevar og udvid frit) --------
   const base = [
-    {
-      title: "Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød",
-      slug: "flaeskesteg-i-airfryer",
-      date: "2025-09-06",
-      categories: ["Kød","Svinekød","Hovedret"],
-      icon: "pig",
-      meta: "45–60 Min · Nemt"
-    },
-    {
-      title: "Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne",
-      slug: "hasselbagte-kartofler-i-airfryer",
-      date: "2025-09-05",
-      categories: ["Grønt","Tilbehør"],
-      icon: "leaf",
-      meta: "30 Min · Tilbehør"
-    },
+    { title:"Flæskesteg I Airfryer – Sprød Svær Og Saftigt Kød", slug:"flaeskesteg-i-airfryer", date:"2025-09-06", categories:["Kød","Svinekød","Hovedret"], icon:"pig",   meta:"45–60 Min · Nemt" },
+    { title:"Hasselbagte Kartofler I Airfryer – Sprøde Og Gyldne", slug:"hasselbagte-kartofler-i-airfryer", date:"2025-09-05", categories:["Grønt","Tilbehør"], icon:"leaf", meta:"30 Min · Tilbehør" },
     { title:"Hel Kylling I Airfryer – Sprødt Skind Og Saftig Kerne", slug:"hel-kylling-i-airfryer", date:"2025-09-08", categories:["Kød","Kylling","Hovedret"], icon:"chicken", meta:"60–75 Min · Mellem" },
     { title:"Torskefileter I Airfryer – Saftige Og Smørmøre",        slug:"torskefileter-i-airfryer", date:"2025-09-08", categories:["Fisk","Hovedret"], icon:"fish", meta:"10–12 Min · Nemt" },
     { title:"Pulled Pork I Airfryer – Mørt På En Eftermiddag",      slug:"pulled-pork-i-airfryer", date:"2025-09-08", categories:["Kød","Svinekød","Hovedret"], icon:"pig", meta:"90–120 Min · Mellem" },
@@ -43,18 +30,15 @@ window.AFO = window.AFO || {};
       return m ? m[1] : null;
     } catch { return null; }
   }
-
   function toSameOriginPath(u) {
     try {
       const url = u.startsWith('http') ? new URL(u) : new URL(u, location.origin);
       return url.pathname + url.search;
     } catch { return u; }
   }
-
   function capitalizeWords(str){
     return (str||"").replace(/[^\s]+/g, w => w.charAt(0).toUpperCase() + w.slice(1));
   }
-
   function guessFromTitle(t) {
     const s = (t||"").toLowerCase();
     let icon = "book";
@@ -68,7 +52,6 @@ window.AFO = window.AFO || {};
     else if (/\bkartoffel|kartofler|grøntsag|salat|aubergine|gulerod|svampe|champignon|veg\b/.test(s)) icon = "leaf";
     else if (/\bkage|dessert|cupcake|brownie|cheesecake\b/.test(s)) icon = "cake";
     else if (/\bpommes|fritter|tilbehør|chips\b/.test(s))        icon = "fries";
-
     let cats = ["Opskrift"];
     if (/\bsvin|flæsk|ribben|kam|medister\b/.test(s)) cats = ["Kød","Svinekød"];
     else if (/\bokse|bøf\b/.test(s))                  cats = ["Kød","Oksekød"];
@@ -82,29 +65,51 @@ window.AFO = window.AFO || {};
     return { icon, categories: cats };
   }
 
-  // -------- 3) Hent sitemap og lav kandidater --------
-  async function fetchSitemapUrls() {
-    try {
-      const res = await fetch('/sitemap.xml', { cache: 'no-store' });
-      if (!res.ok) return [];
-      const xml = await res.text();
-
-      const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
-      const out = [];
-      for (const b of blocks) {
-        const loc = (b.match(/<loc>([^<]+)<\/loc>/) || [])[1];
-        if (!loc) continue;
-        if (!/\/opskrifter\/.+\.html$/i.test(loc)) continue;
-
-        const last = (b.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1] || "";
-        const path = toSameOriginPath(loc); // normaliser til same-origin
-        out.push({ path, lastmod: last });
-      }
-      return out;
-    } catch { return []; }
+  // -------- 3) Sitemap fetch (supports <sitemapindex>) --------
+  async function fetchText(url){ try{ const r=await fetch(url,{cache:'no-store'}); return r.ok? await r.text(): null; }catch{ return null; } }
+  function parseLocsFromUrlset(xml){
+    // returnerer array af {loc,lastmod}
+    const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(m => m[1]);
+    return blocks.map(b=>{
+      const loc=(b.match(/<loc>([^<]+)<\/loc>/)||[])[1];
+      if(!loc) return null;
+      const last=(b.match(/<lastmod>([^<]+)<\/lastmod>/)||[])[1]||"";
+      return { loc, last };
+    }).filter(Boolean);
+  }
+  function parseSitemapIndex(xml){
+    // returnerer array af child sitemap <loc>
+    return [...xml.matchAll(/<sitemap>([\s\S]*?)<\/sitemap>/g)]
+      .map(m=> (m[1].match(/<loc>([^<]+)<\/loc>/)||[])[1])
+      .filter(Boolean);
   }
 
-  // -------- 4) Scrape meta fra HTML --------
+  async function gatherRecipePaths(){
+    const root = await fetchText('/sitemap.xml');
+    if(!root) return [];
+    const isIndex = /<sitemapindex/i.test(root);
+
+    let urlEntries = [];
+    if (isIndex){
+      const children = parseSitemapIndex(root);
+      const texts = await Promise.allSettled(children.map(u => fetchText(toSameOriginPath(u))));
+      texts.forEach(it=>{
+        const xml = it.status==='fulfilled' ? it.value : null;
+        if(xml && /<urlset/i.test(xml)){
+          urlEntries = urlEntries.concat(parseLocsFromUrlset(xml));
+        }
+      });
+    } else {
+      urlEntries = parseLocsFromUrlset(root);
+    }
+
+    // Filtrér til /opskrifter/*.html og gør same-origin paths
+    return urlEntries
+      .filter(x => x && /\/opskrifter\/.+\.html$/i.test(x.loc))
+      .map(x => ({ path: toSameOriginPath(x.loc), lastmod: x.last }));
+  }
+
+  // -------- 4) Scrape meta fra recipe HTML --------
   async function scrapeRecipeMeta(path) {
     try {
       const res = await fetch(path, { cache: 'no-store' });
@@ -117,12 +122,11 @@ window.AFO = window.AFO || {};
       const metaCats = doc.querySelector('meta[name="afo:categories"]')?.getAttribute('content');
       const metaIcon = doc.querySelector('meta[name="afo:icon"]')?.getAttribute('content');
       const metaMeta = doc.querySelector('meta[name="afo:meta"]')?.getAttribute('content');
-
       const guessed = guessFromTitle(title);
       return {
         title: capitalizeWords(title),
         description: desc,
-        categories: metaCats ? metaCats.split(',').map(s => s.trim()).filter(Boolean) : guessed.categories,
+        categories: metaCats ? metaCats.split(',').map(s=>s.trim()).filter(Boolean) : guessed.categories,
         icon: metaIcon || guessed.icon,
         meta: metaMeta || ""
       };
@@ -131,20 +135,18 @@ window.AFO = window.AFO || {};
 
   // -------- 5) Byg katalog --------
   async function buildAll() {
-    // start med basen så der ALTID er noget at vise
-    window.RECIPES = base.slice();
+    console.info('[AFO] bygger opskriftsindeks …');
+    const sitemapPaths = await gatherRecipePaths();
 
-    const sitemap = await fetchSitemapUrls();
-
-    // valgfri whitelist (slugs) — tving ekstra med
+    // valgfri whitelist (slugs) – tving ekstra med hvis sitemap mangler dem
     let extra = [];
     try {
-      const r = await fetch('/assets/recipes-extra.json', { cache: 'no-store' });
+      const r = await fetch('/assets/recipes-extra.json', { cache:'no-store' });
       if (r.ok) extra = await r.json(); // ["slug1","slug2"]
     } catch {}
 
     const candidatePaths = new Set(
-      sitemap.map(x => x.path).concat(
+      sitemapPaths.map(x => x.path).concat(
         extra.map(sl => `/opskrifter/${sl}.html`)
       )
     );
@@ -156,11 +158,11 @@ window.AFO = window.AFO || {};
       jobs.push((async () => {
         const meta = await scrapeRecipeMeta(p);
         if (!meta) return;
-        const last = (sitemap.find(x => x.path === p)?.lastmod || new Date().toISOString()).slice(0,10);
+        const last = (sitemapPaths.find(x => x.path === p)?.lastmod) || new Date().toISOString();
         map[slug] = {
           title: meta.title,
           slug,
-          date: last,
+          date: last.slice(0,10),
           categories: meta.categories,
           icon: meta.icon,
           meta: meta.meta || ""
@@ -169,15 +171,16 @@ window.AFO = window.AFO || {};
     }
     await Promise.all(jobs);
 
-    // Eksponer samlet liste sorteret nyeste først
-    window.RECIPES = Object.values(map)
+    const all = Object.values(map)
       .filter(r => r && r.slug)
       .sort((a,b) => (b.date||"").localeCompare(a.date||""));
+
+    window.RECIPES = all;
+    console.info(`[AFO] base:${base.length} sitemap:${sitemapPaths.length} extra:${extra.length} → total:${all.length}`);
   }
 
-  // -------- 6) Public API + Ready + (compat) renderAll --------
+  // -------- 6) Public API + Ready --------
   let _resolveReady; AFO.ready = new Promise(r => (_resolveReady = r));
-
   AFO.getAll = () => (window.RECIPES || []);
   AFO.search = (q) => {
     const s = (q||"").toLowerCase();
@@ -191,28 +194,11 @@ window.AFO = window.AFO || {};
   AFO.latest = (n=6) => AFO.getAll().slice(0, n);
   AFO.byCategory = (cat) => {
     if (!cat) return AFO.getAll();
-    const s = cat.toLowerCase();
+    const s = (cat||'').toLowerCase();
     return AFO.getAll().filter(r => (r.categories||[]).some(c => (c||"").toLowerCase() === s));
-  };
-
-  // Enkel renderer (back-compat med gamle sider)
-  AFO.renderAll = function mountAll(targetId){
-    const el = document.getElementById(targetId);
-    if(!el) return;
-    const list = AFO.getAll();
-    const iconSvg = (id)=> `<div class="thumb-icon"><svg><use href="#${id||'star'}"/></svg></div>`;
-    const card = (rec)=>[
-      `<a class="card" href="/opskrifter/${rec.slug}.html">`,
-        iconSvg(rec.icon),
-        `<div class="card-body"><h3>${rec.title}</h3>`,
-        rec.meta ? `<p class="meta">${rec.meta}</p>` : '',
-        `</div>`,
-      `</a>`
-    ].join('');
-    el.innerHTML = list.map(card).join('');
   };
 
   // -------- 7) Boot --------
   (async ()=>{ await buildAll(); _resolveReady(); })();
-
 })();
+</script>
