@@ -2,9 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ====== Grundsider ====== -->
-  <url><loc>https://www.opskrift-airfryer.dk/</loc><priority>1.00</priority></url>
-  <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc><priority>0.90</priority></url>
-  <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc><priority>0.80</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc></url>
+
+  <!-- Kategorier (oversigt + direkte deep-links) -->
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Svinek%C3%B8d</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Oksek%C3%B8d</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Kylling</loc></url>
@@ -13,6 +15,7 @@
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Tilbeh%C3%B8r</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Dessert</loc></url>
 
+  <!-- Guides -->
   <url><loc>https://www.opskrift-airfryer.dk/guides.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/guides/airfryer-tider.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/guides/valg-af-airfryer.html</loc></url>
@@ -24,11 +27,12 @@
   <url><loc>https://www.opskrift-airfryer.dk/guides/airfryer-vs-ovn.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/guides/airfryer-maal-og-stoerrelse.html</loc></url>
 
+  <!-- Øvrige -->
   <url><loc>https://www.opskrift-airfryer.dk/udstyr.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/om.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kontakt.html</loc></url>
 
-  <!-- ====== Opskrifter (fra dine mapper/screenshots) ====== -->
+  <!-- ====== Opskrifter ====== -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/aebleskiver-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/aebletaerte-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/aeg-i-airfryer.html</loc></url>
@@ -46,9 +50,7 @@
 
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/baconchips-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/bagt-feta-i-airfryer.html</loc></url>
-
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/bagt-kartoffel-i-airfryer.html</loc></url>
-  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/bagt-kartoffel-i-airfryer.html</loc></url> <!-- (behold kun én hvis du har dublet) -->
 
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/blomkaal-vinger-i-airfryer.html</loc></url>
 
@@ -126,7 +128,7 @@
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/kikaerter-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/koedboller-i-airfryer.html</loc></url>
 
-  <!-- Kylling* varianter -->
+  <!-- Kylling-varianter -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/kylling-med-oregano-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/kylling-med-rosmarin-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/kylling-med-soja-i-airfryer.html</loc></url>
@@ -183,7 +185,7 @@
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/spareribs-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/char-siu-svin-i-airfryer.html</loc></url>
 
-  <!-- Kartofler/Grønt/Brød mm. -->
+  <!-- Kartofler/Grønt/Brød -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/majskolber-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/morgenboller-i-airfryer.html</loc></url>
 
@@ -193,28 +195,26 @@
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/soede-kartoffelfritter-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/soede-kartofler-i-airfryer.html</loc></url>
 
-  <!-- “Småretter/snacks” mm. -->
+  <!-- Snacks/Småretter -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/mac-and-cheese-bites-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/meatloaf-minis-i-airfryer.html</loc></url>
-  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/mozarella-sticks-i-airfryer.html</loc></url>
-  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/mozzarella-sticks-i-airfryer.html</loc></url> <!-- (behold kun den rigtige stavning) -->
+  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/mozzarella-sticks-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/poelsehorn-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/spicy-wings-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/spejlaeg-i-airfryer.html</loc></url>
 
   <!-- Vegetar/Vegan -->
-  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/mexicansk-kylling-i-airfryer.html</loc></url> <!-- (kylling; ikke veg – men behold) -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/portobello-fyldte-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/ratatouille-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/tempeh-bites-bbq-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/tofu-nuggets-i-airfryer.html</loc></url>
 
-  <!-- Kylling – flere varianter -->
+  <!-- Flere kylling -->
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/tandoori-kylling-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/teriyaki-kylling-i-airfryer.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/opskrifter/lime-kylling-i-airfryer.html</loc></url>
 
-  <!-- Diverse der også fremgik -->
-  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/roedbedeboede-i-airfryer.html</loc></url> <!-- (dobbel-bøf? bekræft filnavn) -->
+  <!-- Diverse (navn bekræft) -->
+  <url><loc>https://www.opskrift-airfryer.dk/opskrifter/roedbedeboede-i-airfryer.html</loc></url>
 
 </urlset>
