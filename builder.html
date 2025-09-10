@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Opskrift-Airfryer · Sitemap & recipes.js Builder</title>
+<style>
+  :root{--line:#e2e8f0;--muted:#475569;--accent:#0ea5e9;--max:980px}
+  body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#fff;color:#0f172a}
+  .wrap{max-width:var(--max);margin:24px auto;padding:0 16px}
+  h1{font-size:24px;margin:0 0 10px}
+  p{color:var(--muted);margin:0 0 14px}
+  .card{border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0}
+  label{display:block;font-weight:600;margin:8px 0 6px}
+  input[type=text],input[type=password]{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:800px){.row{grid-template-columns:1fr}}
+  button{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer}
+  button.secondary{background:#fff;color:#0f172a;border:1px solid var(--line)}
+  .cols{display:grid;grid-template-columns:1fr;gap:14px}
+  textarea{width:100%;min-height:320px;border:1px solid var(--line);border-radius:10px;padding:10px;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:13px;white-space:pre}
+  .muted{color:var(--muted);font-size:13px}
+  .ok{color:#10b981;font-weight:700}
+  .err{color:#ef4444;font-weight:700}
+  .badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:12px;margin-left:6px}
+  details{border:1px dashed var(--line);border-radius:10px;padding:10px}
+  summary{cursor:pointer;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Byg <code>sitemap.xml</code> + <code>assets/recipes.js</code></h1>
+  <p>Indsæt dit offentlige GitHub repo (owner + repo), og din live base-URL. Klik “Hent & byg”.</p>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>GitHub Owner</label>
+        <input id="owner" type="text" placeholder="fx: opskrift-airfryer" />
+      </div>
+      <div>
+        <label>GitHub Repo</label>
+        <input id="repo" type="text" placeholder="fx: opskrift-airfryer.dk" />
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label>Base URL (din live side)</label>
+        <input id="base" type="text" placeholder="https://opskrift-airfryer.dk" />
+      </div>
+      <div>
+        <label>Valgfrit: GitHub Token (øger grænser)</label>
+        <input id="token" type="password" placeholder="PAT (ikke påkrævet for public repos)" />
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label>Opskrifter mappe (repo-path)</label>
+        <input id="pathRecipes" type="text" value="opskrifter" />
+      </div>
+      <div>
+        <label>Guides mappe (repo-path)</label>
+        <input id="pathGuides" type="text" value="guides" />
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+      <button id="run">Hent & byg</button>
+      <span id="status" class="muted"></span>
+    </div>
+  </div>
+
+  <details>
+    <summary>Hvad laver denne builder?</summary>
+    <ul class="muted">
+      <li>Fetcher alle <code>.html</code> i <code>/opskrifter</code> og <code>/guides</code> via GitHub API</li>
+      <li>Laver en fuld <code>sitemap.xml</code> med forside, faste sider, kategorier, guides og alle opskrifter</li>
+      <li>Genererer <code>assets/recipes.js</code> ud fra filnavne (heuristik for titel, kategorier, ikon, meta)</li>
+      <li>Giv Base URL præcis som sitet (fx med/uden www), så URLs matcher 1:1</li>
+    </ul>
+  </details>
+
+  <div class="cols">
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <h2 style="margin:0">sitemap.xml</h2>
+        <div>
+          <button class="secondary" id="copySite">Kopiér</button>
+          <button id="dlSite">Download sitemap.xml</button>
+        </div>
+      </div>
+      <textarea id="sitemapOut" spellcheck="false" placeholder="Resultat kommer her…"></textarea>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <h2 style="margin:0">assets/recipes.js</h2>
+        <div>
+          <button class="secondary" id="copyRec">Kopiér</button>
+          <button id="dlRec">Download recipes.js</button>
+        </div>
+      </div>
+      <textarea id="recipesOut" spellcheck="false" placeholder="Resultat kommer her…"></textarea>
+      <p class="muted">Bemærk: ikoner & kategorier er gættet fra slug. Du kan fint rette senere.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+const KAT_RULES = [
+  { test: /(svin|flaesk|flæsk|kam|ribben|nakke)/i, cat: "Svinekød", icon:"pig" },
+  { test: /(okse|hakket-okse|bøf|boef|burger|steak)/i, cat: "Oksekød", icon:"steak" },
+  { test: /(kylling|chicken|laar|lår|spyd|bryst|vinger)/i, cat: "Kylling", icon:"chicken" },
+  { test: /(and|duck)/i, cat: "And", icon:"duck" },
+  { test: /(kalkun|turkey)/i, cat: "Kalkun", icon:"chicken" },
+  { test: /(torsk|laks|fisk|tun|sej|kuller)/i, cat: "Fisk", icon:"fish" },
+  { test: /(kartoffel|kartofler|majs|aubergine|svampe|champignon|gulerod|grønt|salat|feta|ost)/i, cat: "Grønt", icon:"leaf" },
+  { test: /(tilbeh|pomfrit|fries|chips|rösti|rosti|hasselbagte)/i, cat: "Tilbehør", icon:"fries" },
+  { test: /(kage|brownie|cookie|dessert|cheesecake|kanelsnegl|muffin)/i, cat: "Dessert", icon:"cake" },
+];
+
+function guessTitleFromSlug(slug){
+  return slug
+    .replace(/-/g,' ')
+    .replace(/\b[a-zæøå]/g, s => s.toUpperCase())
+    .trim();
+}
+
+function guessCats(slug){
+  let cats = [];
+  for (const r of KAT_RULES) if (r.test(slug)) {
+    cats.push(r.cat);
+  }
+  if (cats.length===0) cats = ["Hovedret"];
+  // dedup
+  return [...new Set(cats)];
+}
+
+function guessIcon(slug){
+  for (const r of KAT_RULES) if (r.test(slug)) return r.icon;
+  return "star";
+}
+
+function guessMeta(slug){
+  // super simple – du kan finjustere bagefter
+  if (/burger|frikadel/i.test(slug)) return "20–25 Min · Nemt";
+  if (/kartoffel|pomfrit|fries|chips|hassel/i.test(slug)) return "20–35 Min · Tilbehør";
+  if (/kylling|and|kalkun/i.test(slug)) return "20–45 Min · Mellem";
+  if (/fisk|torsk|laks/i.test(slug)) return "10–15 Min · Nemt";
+  if (/kage|brownie|cookie|muffin|cheesecake/i.test(slug)) return "20–40 Min · Dessert";
+  return "25–35 Min · Nemt";
+}
+
+async function ghList(owner, repo, path, token){
+  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(path)}`;
+  const res = await fetch(url, {
+    headers: token ? {Authorization:`Bearer ${token}`} : {}
+  });
+  if (!res.ok) throw new Error(`GitHub API ${res.status} – ${await res.text()}`);
+  return res.json();
+}
+
+function toWebPath(path){ // "opskrifter/burger-i-airfryer.html" -> "/opskrifter/burger-i-airfryer.html"
+  return path.startsWith('/') ? path : ('/' + path);
+}
+
+function buildSitemapXML(base, recipeFiles, guideFiles){
+  const today = new Date().toISOString().slice(0,10);
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  const head = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+  const tail = `</urlset>`;
+
+  const nodes = [];
+
+  // Core pages
+  const core = [
+    {loc:`${base}/`, changefreq:"daily", priority:"1.0"},
+    {loc:`${base}/seneste.html`, changefreq:"hourly", priority:"0.9"},
+    {loc:`${base}/kategori.html`, changefreq:"daily", priority:"0.8"},
+    {loc:`${base}/guides.html`, changefreq:"weekly", priority:"0.6"},
+    {loc:`${base}/om.html`, changefreq:"monthly", priority:"0.5"},
+    {loc:`${base}/kontakt.html`, changefreq:"yearly", priority:"0.4"},
+    {loc:`${base}/udstyr.html`, changefreq:"weekly", priority:"0.6"},
+  ];
+  core.forEach(u => nodes.push(
+    `  <url><loc>${esc(u.loc)}</loc><lastmod>${today}</lastmod><changefreq>${u.changefreq}</changefreq><priority>${u.priority}</priority></url>`
+  ));
+
+  // Categories
+  const cats = ["Svinekød","Kylling","Oksekød","Fisk","Grønt","Tilbehør","Dessert","And","Kalkun"];
+  cats.forEach(c => {
+    const loc = `${base}/kategori.html?navn=${encodeURIComponent(c)}`;
+    nodes.push(`  <url><loc>${esc(loc)}</loc><changefreq>daily</changefreq><priority>0.7</priority></url>`);
+  });
+
+  // Guides
+  guideFiles
+    .filter(f => f.name.toLowerCase().endsWith(".html"))
+    .sort((a,b)=> a.name.localeCompare(b.name))
+    .forEach(f => {
+      nodes.push(`  <url><loc>${esc(base + toWebPath(f.path))}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>`);
+    });
+
+  // Recipes
+  recipeFiles
+    .filter(f => f.name.toLowerCase().endsWith(".html"))
+    .sort((a,b)=> a.name.localeCompare(b.name))
+    .forEach(f => {
+      nodes.push(`  <url><loc>${esc(base + toWebPath(f.path))}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>`);
+    });
+
+  return [head, ...nodes, tail].join("\n");
+}
+
+function buildRecipesJS(base, recipeFiles){
+  const today = new Date().toISOString().slice(0,10);
+  const rows = recipeFiles
+    .filter(f => f.name.toLowerCase().endsWith(".html"))
+    .map(f => {
+      const slug = f.name.replace(/\.html$/i,'');
+      const title = guessTitleFromSlug(slug.replace(/-/g,' ')) + " I Airfryer";
+      const cats = guessCats(slug);
+      const icon = guessIcon(slug);
+      const meta = guessMeta(slug);
+      return `  { title: "${title}", slug: "${slug}", date: "${today}", categories: ${JSON.stringify(cats)}, icon: "${icon}", meta: "${meta}" }`;
+    });
+
+  return `// AUTO-GENERERET fra repo-mappecrawl – ret gerne manuelt efter behov\nwindow.RECIPES = [\n${rows.join(",\n")}\n];\n`;
+}
+
+function download(name, text){
+  const blob = new Blob([text], {type: name.endsWith('.xml') ? 'application/xml' : 'text/javascript'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+$('run').addEventListener('click', async ()=>{
+  const owner = $('owner').value.trim();
+  const repo = $('repo').value.trim();
+  const base = $('base').value.trim().replace(/\/+$/,'');
+  const token = $('token').value.trim();
+  const pathRecipes = $('pathRecipes').value.trim() || 'opskrifter';
+  const pathGuides = $('pathGuides').value.trim() || 'guides';
+
+  $('status').textContent = 'Henter fra GitHub…';
+
+  try{
+    const [recipes, guides] = await Promise.all([
+      ghList(owner, repo, pathRecipes, token),
+      ghList(owner, repo, pathGuides, token).catch(()=>[])
+    ]);
+
+    $('status').innerHTML = `OK <span class="ok">(${recipes.length} opskrifter${guides?.length?`, ${guides.length} guides`:''})</span>`;
+
+    const siteXML = buildSitemapXML(base, recipes, guides||[]);
+    const recJS = buildRecipesJS(base, recipes);
+
+    $('sitemapOut').value = siteXML;
+    $('recipesOut').value = recJS;
+  }catch(err){
+    $('status').innerHTML = `<span class="err">Fejl:</span> ${err.message}`;
+  }
+});
+
+$('copySite').addEventListener('click', ()=>{ $('sitemapOut').select(); document.execCommand('copy'); });
+$('copyRec').addEventListener('click', ()=>{ $('recipesOut').select(); document.execCommand('copy'); });
+
+$('dlSite').addEventListener('click', ()=> download('sitemap.xml', $('sitemapOut').value||''));
+$('dlRec').addEventListener('click', ()=> download('recipes.js', $('recipesOut').value||''));
+</script>
+</body>
+</html>
