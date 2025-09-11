@@ -27,11 +27,21 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
 .card:hover{transform:translateY(-2px)}
 .thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
-.thumb-icon svg{width:54px;height:54px;color:var(--accent)}
+.thumb-icon svg{width:54px;height:54px;color:#0ea5e9}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+/* Filter-bar */
+.filterbar{display:grid;grid-template-columns:1fr 240px;gap:10px;
+  border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+  background:#fff0f5;padding:12px 14px;margin:8px 0 18px}
+@media(max-width:700px){.filterbar{grid-template-columns:1fr}}
+.filterbar input,.filterbar select{
+  padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;width:100%
+}
+.filter-meta{font-size:13px;color:var(--muted);margin-top:6px}
+.clear-link{font-size:13px;color:var(--muted);text-decoration:underline;cursor:pointer}
 </style>
 </head>
 <body>
@@ -55,8 +65,21 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
+  <!-- FILTER-BAR -->
+  <section class="section" aria-label="Filtrér opskrifter">
+    <div class="filterbar">
+      <input id="q" type="search" placeholder="🔍 Søg i titel eller kategori…" />
+      <select id="cat"><option value="">Alle kategorier</option></select>
+      <div class="filter-meta" id="filter-meta"></div>
+    </div>
+  </section>
+
+  <!-- LISTE -->
   <section class="section">
-    <div class="section-head"><h2>Alle</h2></div>
+    <div class="section-head">
+      <h2 id="list-title">Alle</h2>
+      <a id="clear" class="clear-link" style="display:none">Nulstil filtre</a>
+    </div>
     <div id="alle-grid" class="grid grid-3">
       <p class="meta">Indlæser opskrifter…</p>
     </div>
@@ -66,39 +89,111 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- HENTER ALT FRA SITEMAP -->
+<!-- DATA -->
 <script src="/assets/recipes.js?v=20"></script>
+
 <script>
 (function(){
-  const mount = document.getElementById('alle-grid');
+  const $q = document.getElementById('q');
+  const $cat = document.getElementById('cat');
+  const $meta = document.getElementById('filter-meta');
+  const $grid = document.getElementById('alle-grid');
+  const $title = document.getElementById('list-title');
+  const $clear = document.getElementById('clear');
 
-  const iconSvg = (id) => '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"/></svg></div>';
-  const card = (r) => [
+  const iconSvg = id => '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"></use></svg></div>';
+  const card = r => [
     '<a class="card" href="/opskrifter/'+r.slug+'.html">',
       iconSvg(r.icon),
-      '<div class="card-body">',
-        '<h3>'+r.title+'</h3>',
+      '<div class="card-body"><h3>'+r.title+'</h3>',
         r.meta ? '<p class="meta">'+r.meta+'</p>' : '',
       '</div>',
     '</a>'
   ].join('');
 
-  function renderAll(list){
-    if (!list || !list.length){
-      mount.innerHTML = '<p class="meta">Ingen opskrifter fundet (tjek at sitemap.xml indeholder alle /opskrifter/*.html).</p>';
-      return;
+  function norm(s){
+    return (s||'').toLowerCase()
+      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+  }
+
+  function applyFilters(list, q, cat){
+    const nq = norm(q), ncat = norm(cat);
+    let out = list;
+    if (nq){
+      out = out.filter(r =>
+        norm(r.title).includes(nq) ||
+        norm(r.slug).includes(nq) ||
+        (r.categories||[]).some(c => norm(c).includes(nq))
+      );
     }
-    mount.innerHTML = list.map(card).join('');
+    if (ncat){
+      out = out.filter(r => (r.categories||[]).some(c => norm(c) === ncat));
+    }
+    return out;
+  }
+
+  function populateCats(list){
+    const set = new Set();
+    list.forEach(r => (r.categories||[]).forEach(c => c && set.add(c)));
+    const cats = Array.from(set).sort((a,b)=> a.localeCompare(b,'da'));
+    $cat.innerHTML = '<option value="">Alle kategorier</option>' + cats.map(c=>'<option>'+c+'</option>').join('');
+  }
+
+  function render(list){
+    $grid.innerHTML = (list && list.length) ? list.map(card).join('') : '<p class="meta">Ingen opskrifter matcher dine filtre.</p>';
+  }
+
+  function updateTitle(q, cat, count){
+    const parts = [];
+    if (cat) parts.push(cat);
+    if (q) parts.push('“'+q+'”');
+    $title.textContent = parts.length ? parts.join(' · ') + ' ('+count+')' : 'Alle';
+    $clear.style.display = (q || cat) ? 'inline' : 'none';
+    $meta.textContent = count ? (count + ' opskrift' + (count>1?'er':'')) : '';
+  }
+
+  function readParams(){
+    const p = new URLSearchParams(location.search);
+    return { soeg: p.get('soeg') || '', kategori: p.get('kategori') || '' };
+  }
+  function writeParams(q, cat){
+    const p = new URLSearchParams();
+    if (q) p.set('soeg', q);
+    if (cat) p.set('kategori', cat);
+    const newUrl = location.pathname + (p.toString()? '?'+p.toString() : '');
+    history.replaceState(null, '', newUrl);
+  }
+
+  let t; const debounced = fn => { clearTimeout(t); t = setTimeout(fn, 180); };
+
+  function boot(all){
+    populateCats(all);
+    const { soeg, kategori } = readParams();
+    if (soeg) $q.value = soeg;
+    if (kategori) $cat.value = kategori;
+
+    const first = applyFilters(all, soeg, kategori);
+    render(first); updateTitle(soeg, kategori, first.length);
+
+    $q.addEventListener('input', ()=> debounced(()=>{
+      const q = $q.value.trim(); const c = $cat.value.trim();
+      const res = applyFilters(all, q, c); render(res); updateTitle(q,c,res.length); writeParams(q,c);
+    }));
+    $cat.addEventListener('change', ()=>{
+      const q = $q.value.trim(); const c = $cat.value.trim();
+      const res = applyFilters(all, q, c); render(res); updateTitle(q,c,res.length); writeParams(q,c);
+    });
+    $clear.addEventListener('click', ()=>{
+      $q.value=''; $cat.value=''; render(all); updateTitle('', '', all.length); writeParams('', '');
+    });
   }
 
   if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
-    AFO.ready.then(()=> renderAll(AFO.getAll()))
-             .catch(()=> mount.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>');
+    AFO.ready.then(()=> boot(AFO.getAll()))
+             .catch(()=> $grid.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>');
   } else {
-    window.addEventListener('load', ()=>{
-      const list = (window.AFO && AFO.getAll) ? AFO.getAll() : (window.RECIPES || []);
-      renderAll(list);
-    });
+    window.addEventListener('load', ()=> boot(window.RECIPES||[]));
   }
 })();
 </script>
