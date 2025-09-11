@@ -10,6 +10,42 @@
   .copy{color:#64748b; font-size:13px; text-align:center; margin:8px 0 0;}
   @media(max-width:900px){ .footer-cols{grid-template-columns:1fr 1fr} }
   @media(max-width:600px){ .footer-cols{grid-template-columns:1fr} }
+
+  /* Cookie banner styling */
+  #cookie-banner {
+    display:none; 
+    position:fixed; 
+    bottom:20px; 
+    left:20px; 
+    right:20px; 
+    background:#fff; 
+    color:#333; 
+    border:1px solid #ddd; 
+    border-radius:12px; 
+    padding:15px; 
+    box-shadow:0 4px 12px rgba(0,0,0,0.1); 
+    z-index:9999; 
+    max-width:600px; 
+    margin:0 auto; 
+    font-family:Arial,sans-serif; 
+    font-size:14px;
+  }
+  #cookie-banner p {
+    margin:0 0 10px 0;
+  }
+  #cookie-banner a {
+    color:#0073e6; 
+    text-decoration:none;
+  }
+  #cookie-accept {
+    background:#0073e6; 
+    color:#fff; 
+    border:none; 
+    padding:8px 16px; 
+    border-radius:6px; 
+    cursor:pointer; 
+    font-size:14px;
+  }
 </style>
 
 <footer class="footer" role="contentinfo">
@@ -53,6 +89,7 @@
         <ul>
           <li><a href="/om-os.html">Om Opskrift-Airfryer.dk</a></li>
           <li><a href="/kontakt.html">Kontakt</a></li>
+          <li><a href="/cookiepolitik.html">Cookiepolitik</a></li>
         </ul>
       </div>
       
@@ -60,3 +97,26 @@
     <p class="copy">© 2025 Opskrift-Airfryer.dk – Nemme opskrifter til din airfryer</p>
   </div>
 </footer>
+
+<!-- Cookies Banner -->
+<div id="cookie-banner">
+  <p>
+    🍪 Vi bruger cookies for at forbedre din oplevelse på Opskrift-Airfryer.dk. 
+    Ved at fortsætte accepterer du vores brug af cookies. 
+    <a href="/cookiepolitik.html">Læs mere</a>
+  </p>
+  <button id="cookie-accept">Accepter</button>
+</div>
+
+<script>
+  // Check if user already accepted cookies
+  if (!localStorage.getItem("cookieAccepted")) {
+    document.getElementById("cookie-banner").style.display = "block";
+  }
+
+  // Handle accept click
+  document.getElementById("cookie-accept").addEventListener("click", function() {
+    localStorage.setItem("cookieAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+  });
+</script>
