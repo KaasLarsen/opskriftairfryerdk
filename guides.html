@@ -41,6 +41,7 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
@@ -54,6 +55,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <div class="section-head">
       <h1>Guides & Tips</h1>
       <div class="tools">
+        <label class="sr-only" for="q">Søg i guides</label>
         <input id="q" class="input" type="search" placeholder="Søg i guides..." />
       </div>
     </div>
@@ -89,25 +91,34 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
 <script src="/assets/include.js?v=4"></script>
 <script>
-// Kilde: dine 10 sider under /guides/
-const GUIDES = [
-  { title:"Airfryer Tider & Temperaturer – Komplet Cheat Sheet", slug:"/guides/airfryer-tider.html",        tag:["tider"] , blurb:"Komplet oversigt over tider, temperaturer og kernetemperaturer." },
-  { title:"Vælg Den Rigtige Airfryer – Størrelse, Effekt & Kurv vs. Skuffe", slug:"/guides/valg-af-airfryer.html", tag:["valg"], blurb:"Størrelse, effekt og funktioner – uden salgsgas." },
-  { title:"Airfryer: De 12 Mest Almindelige Fejl – Og Sådan Fixer Du Dem",   slug:"/guides/airfryer-fejl-og-fix.html", tag:["vedligehold"], blurb:"Blød svær? Tør kylling? Her er løsningene." },
-  { title:"Airfryer Tilbehør – Hvad Er Værd At Købe (Og Hvad Er Spild)?",     slug:"/guides/airfryer-tilbehoer.html", tag:["valg"], blurb:"Tilbehør der virker i hverdagen – og hvad du kan undvære." },
-  { title:"Airfryer & Energiforbrug – Billigere End Ovn?",                    slug:"/guides/airfryer-energi.html", tag:["energi"], blurb:"Sådan bruger du mindst strøm uden at gå på kompromis." },
-  { title:"Airfryer Vs. Ovn – Hvornår Giver Hvad Mest Mening?",              slug:"/guides/airfryer-vs-ovn.html", tag:["sammenligning"], blurb:"Hurtighed & sprødhed vs. kapacitet – fuldt overblik." },
-  { title:"Sikkerhed I Airfryer – Fedthåndtering, Røg & Materialer",         slug:"/guides/airfryer-sikkerhed.html", tag:["vedligehold"], blurb:"Sikkerhed i daglig brug – simple regler der holder." },
-  { title:"Rengøring Af Airfryer – Trin For Trin (Uden At Ødelægge Noget)",  slug:"/guides/airfryer-rengoering.html", tag:["vedligehold"], blurb:"Skånsom rengøring af kurv, rist og varmelegeme." },
-  { title:"Hvilken Størrelse Airfryer Skal Jeg Vælge? (Mål & Kapacitet)",    slug:"/guides/airfryer-maal-og-stoerrelse.html", tag:["valg"], blurb:"Konkrete literanbefalinger til 1–2, familie og gæster." },
-  { title:"Opbevaring I Airfryer – Rester, Genopvarmning & Meal Prep",       slug:"/guides/airfryer-opbevaring.html", tag:["opbevaring"], blurb:"Giv rester sprødhed igen – uden at udtørre." }
-];
+// === indstillinger ===
+const GUIDES_SITEMAP_URL = '/sitemap.xml'; // skift til fx '/guides-sitemap.xml' hvis du laver et dedikeret sitemap
+const CACHE_KEY = 'GUIDES_CACHE_V1';
+const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 timer
 
 const grid  = document.getElementById('grid');
 const empty = document.getElementById('empty');
 const q     = document.getElementById('q');
 const chips = Array.from(document.querySelectorAll('.chips button'));
 
+// heuristik: afled tags ud fra slug
+function tagsFromSlug(slug){
+  const s = slug.toLowerCase();
+  const tags = new Set();
+  if (s.includes('tider') || s.includes('temperatur')) tags.add('tider');
+  if (s.includes('valg') || s.includes('vaelg') || s.includes('maal') || s.includes('stoerrelse') || s.includes('budget') || s.includes('premium') || s.includes('dual-zone') || s.includes('kollegie') || s.includes('camping')) tags.add('valg');
+  if (s.includes('rengoering') || s.includes('vedligehold') || s.includes('sikkerhed') || s.includes('fejl') || s.includes('fejlretning')) tags.add('vedligehold');
+  if (s.includes('energi') || s.includes('stroem')) tags.add('energi');
+  if (s.includes('vs-') || s.includes('sammenligning') || s.includes('til-1-2') || s.includes('til-familien')) tags.add('sammenligning');
+  if (s.includes('opbevaring') || s.includes('genopvarmning') || s.includes('meal-prep')) tags.add('opbevaring');
+  if (tags.size === 0) {
+    if (s.includes('guide') || s.includes('black-friday') || s.includes('jule')) tags.add('valg');
+    else tags.add('vedligehold');
+  }
+  return Array.from(tags);
+}
+
+// kort
 function card(g){
   return `
     <a class="card" href="${g.slug}">
@@ -119,38 +130,114 @@ function card(g){
     </a>`;
 }
 
-function render(){
+// render
+function render(list){
   const term = (q.value || '').toLowerCase().trim();
   const activeChip = (chips.find(c=>c.classList.contains('active'))?.dataset.tag) || 'alle';
-  let list = GUIDES.slice();
+  let out = list.slice();
 
   if(activeChip !== 'alle'){
-    list = list.filter(g => g.tag.includes(activeChip));
+    out = out.filter(g => g.tag.includes(activeChip));
   }
   if(term){
-    list = list.filter(g => g.title.toLowerCase().includes(term) || g.blurb.toLowerCase().includes(term));
+    out = out.filter(g => (g.title||'').toLowerCase().includes(term) || (g.blurb||'').toLowerCase().includes(term));
   }
 
-  if(list.length === 0){
+  if(out.length === 0){
     grid.innerHTML = '';
     empty.style.display = 'block';
   }else{
-    grid.innerHTML = list.map(card).join('');
+    grid.innerHTML = out.map(card).join('');
     empty.style.display = 'none';
   }
 }
 
-q.addEventListener('input', render);
+// xml parser
+function parseXML(text){
+  const parser = new DOMParser();
+  return parser.parseFromString(text, 'application/xml');
+}
+
+// hent title + meta description fra en guide
+async function fetchGuideMeta(url){
+  try{
+    const res = await fetch(url, { credentials: 'same-origin' });
+    if(!res.ok) throw new Error('http '+res.status);
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const h1 = doc.querySelector('h1')?.textContent?.trim();
+    const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
+    const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Læs guiden';
+    return { title, blurb };
+  }catch(e){
+    const fallbackTitle = url.split('/').pop().replace('.html','').replace(/-/g,' ');
+    return { title: fallbackTitle, blurb: 'Læs guiden' };
+  }
+}
+
+// hent sitemap -> filtrér -> hent meta
+async function loadGuides(){
+  // cache?
+  try{
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) {
+      return cached.items;
+    }
+  }catch(_) {}
+
+  const res = await fetch(GUIDES_SITEMAP_URL, { credentials: 'same-origin' });
+  const xmlText = await res.text();
+  const xml = parseXML(xmlText);
+  const locs = Array.from(xml.querySelectorAll('url > loc')).map(n => n.textContent.trim());
+
+  const guideUrls = locs
+    .filter(href => href.includes('/guides/') && href.endsWith('.html'))
+    .filter(href => !href.endsWith('/guides.html'));
+
+  const items = [];
+  const concurrency = 12;
+  let i = 0;
+
+  async function worker(){
+    while(i < guideUrls.length){
+      const href = guideUrls[i++];
+      const u = new URL(href, location.origin);
+      const slug = u.pathname;
+      const meta = await fetchGuideMeta(slug);
+      items.push({ title: meta.title, slug, blurb: meta.blurb, tag: tagsFromSlug(slug) });
+    }
+  }
+  const workers = Array.from({length: concurrency}, worker);
+  await Promise.all(workers);
+
+  items.sort((a,b)=> a.title.localeCompare(b.title, 'da'));
+  try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch(_){}
+
+  return items;
+}
+
+// ui bindings
+let ALL_GUIDES = [];
+
+q.addEventListener('input', ()=>render(ALL_GUIDES));
 chips.forEach(btn=>{
   btn.addEventListener('click', ()=>{
     chips.forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    render();
+    render(ALL_GUIDES);
   });
 });
 
 // init
-render();
+(async function(){
+  try{
+    ALL_GUIDES = await loadGuides();
+  }catch(e){
+    console.error('kunne ikke indlæse sitemap', e);
+    ALL_GUIDES = [];
+  }
+  render(ALL_GUIDES);
+})();
 </script>
 </body>
 </html>
