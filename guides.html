@@ -12,19 +12,20 @@
 *,*::before,*::after{box-sizing:border-box}html,body{height:100%}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
-:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#ec4899;--accent-soft:#fce7f3;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
 .section-head h1{font-size:26px;margin:0}
-.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;min-width:260px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%}
+.input{
+  padding:14px 16px;border:2px solid var(--accent);
+  border-radius:14px;min-width:260px;width:min(720px,100%);
+  background:var(--accent-soft);font-size:18px;outline:none;
+}
+.input:focus{box-shadow:0 0 0 4px rgba(236,72,153,.15)}
 .btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
 .btn:hover{background:#f8fafc}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.chips button{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer}
-.chips button.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-.count{font-size:12px;color:#64748b;margin-left:6px}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
@@ -37,7 +38,6 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
-.badge{display:inline-block;min-width:18px;padding:0 6px;border-radius:999px;background:#e2e8f0;color:#334155;font-size:12px;margin-left:6px;text-align:center}
 .skel{height:110px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(90deg,#f8fafc 25%,#eef2f7 37%,#f8fafc 63%);background-size:400% 100%;animation:shimmer 1.2s infinite}
 @keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
@@ -55,24 +55,12 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
 <main class="container">
   <section class="section">
-    <div class="section-head">
+    <div class="section-head" style="flex-direction:column;align-items:flex-start">
       <h1>Guides & Tips</h1>
       <div class="tools" role="search">
         <label class="sr-only" for="q">Søg i guides</label>
-        <input id="q" class="input" type="search" placeholder="Søg i guides..." autocomplete="off" />
-        <button id="clear" class="btn" aria-label="Ryd søgning">Ryd</button>
+        <input id="q" class="input" type="search" placeholder="Søg i guides… (fx rengøring, tider, bacon)" autocomplete="off" />
       </div>
-    </div>
-
-    <!-- filtre -->
-    <div class="chips" role="tablist" aria-label="Filtrer">
-      <button data-tag="alle" class="active" role="tab" aria-selected="true">Alle <span class="badge" data-count="alle">0</span></button>
-      <button data-tag="tider" role="tab" aria-selected="false">Tider & Temperaturer <span class="badge" data-count="tider">0</span></button>
-      <button data-tag="valg" role="tab" aria-selected="false">Valg Af Airfryer <span class="badge" data-count="valg">0</span></button>
-      <button data-tag="vedligehold" role="tab" aria-selected="false">Rengøring & Sikkerhed <span class="badge" data-count="vedligehold">0</span></button>
-      <button data-tag="energi" role="tab" aria-selected="false">Energi <span class="badge" data-count="energi">0</span></button>
-      <button data-tag="sammenligning" role="tab" aria-selected="false">Sammenligning <span class="badge" data-count="sammenligning">0</span></button>
-      <button data-tag="opbevaring" role="tab" aria-selected="false">Opbevaring <span class="badge" data-count="opbevaring">0</span></button>
     </div>
 
     <!-- Annonce -->
@@ -91,7 +79,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     </div>
 
     <div class="toolbar-bottom">
-      <p id="empty" class="copy" style="display:none">Ingen guides matcher din søgning/filtrering.</p>
+      <p id="empty" class="copy" style="display:none">Ingen guides matcher din søgning.</p>
       <div class="results" id="results">Indlæser…</div>
     </div>
   </section>
@@ -102,54 +90,25 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
 <script src="/assets/include.js?v=4"></script>
 <script>
-/* === konfiguration === */
-const GUIDES_SITEMAP_URL = '/sitemap.xml'; // brug evt. et dedikeret guides-sitemap
-const CACHE_KEY = 'GUIDES_CACHE_V2';
+/* ========== konfiguration ========== */
+const GUIDES_SITEMAP_URL = '/guides-sitemap.xml'; // <-- HENTER FRA DEN NYE SITEMAP
+const CACHE_KEY = 'GUIDES_CACHE_v3';
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 timer
-const grid  = document.getElementById('grid');
+
+/* ========== elementer ========== */
+const grid = document.getElementById('grid');
 const empty = document.getElementById('empty');
 const resultsEl = document.getElementById('results');
-const q     = document.getElementById('q');
-const clearBtn = document.getElementById('clear');
-const chips = Array.from(document.querySelectorAll('.chips button'));
-const badges = Object.fromEntries(Array.from(document.querySelectorAll('[data-count]')).map(el => [el.dataset.count, el]));
+const q = document.getElementById('q');
 
-/* === hjælpefunktioner === */
-const debounce = (fn, ms=200) => {
-  let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); };
-};
+/* ========== utils ========== */
+const debounce = (fn, ms=200) => { let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); }; };
 
-function setURLState(term, tag){
-  const url = new URL(location.href);
-  if (term) url.searchParams.set('q', term); else url.searchParams.delete('q');
-  if (tag && tag !== 'alle') url.searchParams.set('tag', tag); else url.searchParams.delete('tag');
-  history.replaceState(null, '', url.toString());
-}
-
-function getURLState(){
-  const url = new URL(location.href);
-  return {
-    term: (url.searchParams.get('q') || '').trim(),
-    tag: (url.searchParams.get('tag') || 'alle')
-  };
-}
-
-// heuristik: afled tags ud fra slug
-function tagsFromSlug(slug){
-  const s = slug.toLowerCase();
-  const tags = new Set();
-  if (s.includes('tider') || s.includes('temperatur')) tags.add('tider');
-  if (s.includes('valg') || s.includes('vaelg') || s.includes('maal') || s.includes('stoerrelse') || s.includes('budget') || s.includes('premium') || s.includes('dual-zone') || s.includes('kollegie') || s.includes('camping') || s.includes('guide')) tags.add('valg');
-  if (s.includes('rengoering') || s.includes('vedligehold') || s.includes('sikkerhed') || s.includes('fejl') || s.includes('fejlretning') || s.includes('lugt') || s.includes('roeg')) tags.add('vedligehold');
-  if (s.includes('energi') || s.includes('stroem')) tags.add('energi');
-  if (s.includes('vs-') || s.includes('sammenligning') || s.includes('til-1-2') || s.includes('til-familien')) tags.add('sammenligning');
-  if (s.includes('opbevaring') || s.includes('genopvarmning') || s.includes('meal-prep') || s.includes('batch')) tags.add('opbevaring');
-  if (tags.size === 0) tags.add('vedligehold');
-  return Array.from(tags);
+function parseXML(text){
+  return new DOMParser().parseFromString(text, 'application/xml');
 }
 
 function card(g){
-  // note: g.slug er full path ("/guides/xxx.html")
   return `
     <a class="card" href="${g.slug}">
       <div class="thumb-icon"><svg><use href="#book" xlink:href="#book"></use></svg></div>
@@ -158,39 +117,6 @@ function card(g){
         <p class="meta">${g.blurb}</p>
       </div>
     </a>`;
-}
-
-function render(list){
-  const term = (q.value || '').toLowerCase().trim();
-  const activeChip = (chips.find(c=>c.classList.contains('active'))?.dataset.tag) || 'alle';
-  let out = list.slice();
-
-  if(activeChip !== 'alle'){ out = out.filter(g => g.tag.includes(activeChip)); }
-  if(term){
-    out = out.filter(g =>
-      (g.title||'').toLowerCase().includes(term) ||
-      (g.blurb||'').toLowerCase().includes(term)
-    );
-  }
-
-  // counts pr. chip
-  const counts = { alle: list.length, tider:0, valg:0, vedligehold:0, energi:0, sammenligning:0, opbevaring:0 };
-  list.forEach(g => g.tag.forEach(t=>{ if(counts[t]!=null) counts[t]++; }));
-  Object.entries(counts).forEach(([k,v])=>{ if(badges[k]) badges[k].textContent = v; });
-
-  resultsEl.textContent = `${out.length} resultat${out.length===1?'':'er'}`;
-  if(out.length === 0){
-    grid.innerHTML = '';
-    empty.style.display = 'block';
-  }else{
-    grid.innerHTML = out.map(card).join('');
-    empty.style.display = 'none';
-  }
-}
-
-function parseXML(text){
-  const parser = new DOMParser();
-  return parser.parseFromString(text, 'application/xml');
 }
 
 async function fetchGuideMeta(url){
@@ -217,10 +143,12 @@ async function loadGuides(){
   }catch(_) {}
 
   const res = await fetch(GUIDES_SITEMAP_URL, { credentials: 'same-origin' });
+  if(!res.ok){ throw new Error('kunne ikke hente guides-sitemap.xml'); }
   const xmlText = await res.text();
   const xml = parseXML(xmlText);
   const locs = Array.from(xml.querySelectorAll('url > loc')).map(n => n.textContent.trim());
 
+  // Kun html-guides under /guides/
   const guideUrls = locs
     .filter(href => href.includes('/guides/') && href.endsWith('.html'))
     .filter(href => !href.endsWith('/guides.html'));
@@ -234,7 +162,7 @@ async function loadGuides(){
       const u = new URL(href, location.origin);
       const slug = u.pathname; // "/guides/xxx.html"
       const meta = await fetchGuideMeta(slug);
-      items.push({ title: meta.title, slug, blurb: meta.blurb, tag: tagsFromSlug(slug) });
+      items.push({ title: meta.title, slug, blurb: meta.blurb });
     }
   }
   await Promise.all(Array.from({length: concurrency}, worker));
@@ -243,41 +171,39 @@ async function loadGuides(){
   return items;
 }
 
-/* === UI bindings === */
-let ALL_GUIDES = [];
+function render(list){
+  const term = (q.value || '').toLowerCase().trim();
+  let out = list;
+  if(term){
+    out = out.filter(g =>
+      (g.title||'').toLowerCase().includes(term) ||
+      (g.blurb||'').toLowerCase().includes(term)
+    );
+  }
+  resultsEl.textContent = `${out.length} resultat${out.length===1?'':'er'}`;
+  if(out.length === 0){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  }else{
+    grid.innerHTML = out.map(card).join('');
+    empty.style.display = 'none';
+  }
+}
 
-const onSearch = debounce(()=>{
-  setURLState(q.value, chips.find(c=>c.classList.contains('active'))?.dataset.tag || 'alle');
-  render(ALL_GUIDES);
-}, 200);
-
+/* ========== init ========== */
+let ALL = [];
+const onSearch = debounce(()=>render(ALL), 150);
 q.addEventListener('input', onSearch);
 q.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
-clearBtn.addEventListener('click', ()=>{ q.value=''; onSearch(); q.focus(); });
 
-chips.forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    chips.forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-    btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-    setURLState(q.value, btn.dataset.tag);
-    render(ALL_GUIDES);
-  });
-});
-
-/* === init === */
 (async function(){
-  const state = getURLState();
-  if(state.term) q.value = state.term;
-  const chip = chips.find(c => c.dataset.tag === state.tag);
-  if(chip){ chips.forEach(b=>b.classList.remove('active')); chip.classList.add('active'); chip.setAttribute('aria-selected','true'); }
-
   try{
-    ALL_GUIDES = await loadGuides();
+    ALL = await loadGuides();
   }catch(e){
-    console.error('kunne ikke indlæse sitemap', e);
-    ALL_GUIDES = [];
+    console.error(e);
+    ALL = [];
   }
-  render(ALL_GUIDES);
+  render(ALL);
 })();
 </script>
 </body>
