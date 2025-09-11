@@ -4,15 +4,23 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
 
-/** <<< TILPAS DISSE TO, hvis dine filer ligger et andet sted >>> **/
-const PUBLIC_DIR = path.resolve(__dirname, "..", "public");      // din public-rod
-const RECIPES_DIR = path.join(PUBLIC_DIR, "opskrifter");         // mappe med opskrift-HTML
-const OUT_FILE    = path.join(PUBLIC_DIR, "recipes-sitemap.xml");
-/*******************************************************************/
+// kandidatmapper hvor opskrifter kan ligge (første der findes, bruges)
+const CANDIDATES = [
+  "public/opskrifter",
+  "opskrifter",
+  "static/opskrifter",
+  "site/opskrifter",
+].map(p => path.join(ROOT, p));
+
+const PUBLIC_CANDIDATES = [
+  "public",
+  ".",
+  "static",
+].map(p => path.join(ROOT, p));
 
 function normalizeKey(p) {
-  // robust dedupe: små bogstaver, fjern accenter, kollapsér bindestreger
   return p
     .toLowerCase()
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -20,28 +28,53 @@ function normalizeKey(p) {
     .replace(/\/+/g, "/");
 }
 
-async function listHtml(dir, base = "/opskrifter") {
+async function pickExisting(paths) {
+  for (const p of paths) {
+    try {
+      const st = await fs.stat(p);
+      if (st.isDirectory()) return p;
+    } catch {_}
+  }
+  return null;
+}
+
+async function listHtml(dir, baseHref) {
   const out = [];
   const entries = await fs.readdir(dir, { withFileTypes: true });
   for (const e of entries) {
     if (e.name.startsWith(".")) continue;
     const full = path.join(dir, e.name);
     if (e.isDirectory()) {
-      out.push(...await listHtml(full, base + "/" + e.name));
+      out.push(...await listHtml(full, baseHref + "/" + e.name));
     } else if (e.isFile() && e.name.endsWith(".html")) {
-      // skip skabeloner/kladder hvis du har dem
       if (/^(index|template|_draft)/i.test(e.name)) continue;
-      out.push(`${base}/${e.name}`);
+      out.push(`${baseHref}/${e.name}`);
     }
   }
   return out;
 }
 
 (async () => {
-  // 1) find alle opskriftsider
-  const relPaths = await listHtml(RECIPES_DIR);
+  const RECIPES_DIR = await pickExisting(CANDIDATES);
+  if (!RECIPES_DIR) {
+    console.error("❌ fandt ikke opskriftsmappen. prøvede:", CANDIDATES.join(", "));
+    process.exit(1);
+  }
+  // find public-rod der matcher URL-roden
+  const PUBLIC_DIR = await pickExisting(PUBLIC_CANDIDATES);
+  if (!PUBLIC_DIR) {
+    console.error("❌ fandt ikke public-rod. prøvede:", PUBLIC_CANDIDATES.join(", "));
+    process.exit(1);
+  }
+  const baseHref = "/opskrifter"; // URL-sti
+  const OUT_FILE = path.join(PUBLIC_DIR, "recipes-sitemap.xml");
 
-  // 2) dedupe
+  console.log("📂 læser fra:", RECIPES_DIR);
+  console.log("📝 skriver til:", OUT_FILE);
+
+  const relPaths = await listHtml(RECIPES_DIR, baseHref);
+
+  // dedupe
   const seen = new Set();
   const unique = [];
   for (const rel of relPaths) {
@@ -51,19 +84,14 @@ async function listHtml(dir, base = "/opskrifter") {
     unique.push(rel);
   }
 
-  // 3) sortér pænt (dansk)
-  unique.sort((a, b) => a.localeCompare(b, "da"));
+  if (unique.length === 0) {
+    console.error("❌ fandt 0 html-filer. sitemap genereres ikke.");
+    process.exit(2);
+  }
 
-  // 4) skriv sitemap
-  const urls = unique.map(u => `  <url><loc>https://www.opskrift-airfryer.dk${u}</loc></url>`);
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.join("\n")}
-</urlset>
-`;
+  unique.sort((a, b) => a.localeCompare(b, "da"));
+  const lines = unique.map(u => `  <url><loc>https://www.opskrift-airfryer.dk${u}</loc></url>`);
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${lines.join("\n")}\n</urlset>\n`;
   await fs.writeFile(OUT_FILE, xml, "utf8");
-  console.log(`✔ Skrev ${unique.length} URL'er til ${OUT_FILE}`);
-})().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+  console.log(`✔ ${unique.length} URLs skrevet.`);
+})();
