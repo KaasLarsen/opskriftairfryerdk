@@ -5,36 +5,37 @@
   .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad); display:flex; align-items:center; justify-content:space-between; gap:12px;}
   .logo{font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
 
-  /* Nav: 3 punkter på én linje */
+  /* nav */
   .nav{display:flex; align-items:center; gap:22px;}
   .nav > a{color:var(--text); font-size:15px; text-decoration:none; padding:6px 2px; position:relative;}
   .nav > a:hover{color:#0b1220}
 
-  /* Dropdown (klikbar, virker på mobil) */
+  /* dropdown */
   .drop{position:relative}
   .drop > summary{
     list-style:none; cursor:pointer; user-select:none;
     color:var(--text); font-size:15px; padding:6px 2px; display:flex; align-items:center; gap:6px;
   }
   .drop > summary::-webkit-details-marker{display:none}
-  .drop > summary::after{content:"▾"; font-size:12px; opacity:.75}
+  .drop > summary::after{content:"▾"; font-size:12px; opacity:.75; transition:transform .12s ease}
+  .drop[open] > summary::after{transform:rotate(180deg)}
   .menu{
     position:absolute; left:0; top:calc(100% + 8px);
     background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 22px rgba(2,8,23,.08);
-    padding:8px; min-width:200px; display:grid; gap:6px;
+    padding:8px; min-width:240px; display:grid; gap:6px;
   }
-  .menu a{color:var(--text); text-decoration:none; font-size:14px; padding:8px 10px; border-radius:8px;}
+  .menu a{color:var(--text); text-decoration:none; font-size:14px; padding:8px 10px; border-radius:8px; display:flex; align-items:center; justify-content:space-between;}
   .menu a:hover{background:#f8fafc}
 
-  /* Klik udenfor lukker (simple hack) */
+  /* klik-område til at fange klik udenfor (visuelt usynlig) */
   .drop[open]::before{
-    content:""; position:fixed; inset:0; background:transparent; /* klik-fanger */
+    content:""; position:fixed; inset:0; background:transparent;
   }
 
-  /* Responsiv: behold 3 i række, dropdown fylder bredde ved små skærme */
+  /* responsiv */
   @media (max-width:720px){
     .nav{gap:14px}
-    .menu{min-width:240px}
+    .menu{min-width:85vw}
   }
 </style>
 
@@ -45,19 +46,80 @@
     <nav class="nav" role="navigation" aria-label="Hovednavigation">
       <a href="/">Forside</a>
       <a href="/seneste.html">Seneste</a>
+      <!-- ny: guides -->
+      <a href="/guides.html">Guides</a>
 
-      <details class="drop">
-        <summary>Kategorier</summary>
-        <div class="menu" role="menu">
-          <a href="/kategori.html?navn=Svinekød" role="menuitem">Svinekød</a>
+      <details class="drop" id="catDrop">
+        <summary aria-haspopup="menu" aria-expanded="false">Kategorier</summary>
+        <div class="menu" role="menu" aria-label="Opskriftskategorier">
+          <!-- klassiske -->
+          <a href="/kategori.html?navn=Svinek%C3%B8d" role="menuitem">Svinekød</a>
           <a href="/kategori.html?navn=Kylling" role="menuitem">Kylling</a>
-          <a href="/kategori.html?navn=Oksekød" role="menuitem">Oksekød</a>
+          <a href="/kategori.html?navn=Oksek%C3%B8d" role="menuitem">Oksekød</a>
           <a href="/kategori.html?navn=Fisk" role="menuitem">Fisk</a>
-          <a href="/kategori.html?navn=Grønt" role="menuitem">Grønt</a>
-          <a href="/kategori.html?navn=Tilbehør" role="menuitem">Tilbehør</a>
+          <a href="/kategori.html?navn=Gr%C3%B8nt" role="menuitem">Grønt</a>
+          <a href="/kategori.html?navn=Tilbeh%C3%B8r" role="menuitem">Tilbehør</a>
           <a href="/kategori.html?navn=Dessert" role="menuitem">Dessert</a>
+          <!-- ekstra ønskede -->
+          <a href="/kategori.html?navn=Lam" role="menuitem">Lam</a>
+          <a href="/kategori.html?navn=And" role="menuitem">And</a>
+          <a href="/kategori.html?navn=Kalkun" role="menuitem">Kalkun</a>
+          <a href="/kategori.html?navn=Snacks" role="menuitem">Snacks</a>
+          <a href="/kategori.html?navn=Bagning" role="menuitem">Bagning</a>
+          <a href="/kategori.html?navn=Morgenmad" role="menuitem">Morgenmad</a>
         </div>
       </details>
     </nav>
   </div>
 </header>
+
+<script>
+  // tilgængelig & robust dropdown-adfærd
+  (function(){
+    const drop = document.getElementById('catDrop');
+    const summary = drop?.querySelector('summary');
+    if(!drop || !summary) return;
+
+    // toggle aria
+    const syncAria = () => summary.setAttribute('aria-expanded', drop.hasAttribute('open') ? 'true' : 'false');
+
+    summary.addEventListener('click', (e)=>{
+      // native <details> håndterer toggle; vi sync'er aria lige bagefter
+      setTimeout(syncAria, 0);
+    });
+
+    // klik udenfor lukker
+    document.addEventListener('click', (e)=>{
+      if(!drop.hasAttribute('open')) return;
+      // hvis klikket er inde i dropdown (summary eller menu), gør intet
+      if (drop.contains(e.target)) return;
+      drop.removeAttribute('open');
+      syncAria();
+    });
+
+    // esc lukker
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && drop.hasAttribute('open')){
+        drop.removeAttribute('open');
+        summary.focus();
+        syncAria();
+      }
+    });
+
+    // luk efter aktivering af et menupunkt (hvis SPA eller samme side)
+    drop.querySelectorAll('.menu a').forEach(a=>{
+      a.addEventListener('click', ()=>{
+        // lader navigation ske, men hvis siden ikke skifter, lukker vi
+        setTimeout(()=>{
+          if (drop.hasAttribute('open')) {
+            drop.removeAttribute('open');
+            syncAria();
+          }
+        }, 0);
+      });
+    });
+
+    // init
+    syncAria();
+  })();
+</script>
