@@ -233,6 +233,38 @@ html{scroll-behavior:smooth}
         </a>
       </div>
     </div>
+    <script>
+(function(){
+  const root = document.getElementById('pr-carousel');
+  if(!root) return;
+  const slides = Array.from(root.querySelectorAll('.pr-slide'));
+  const prev = root.querySelector('.pr-prev');
+  const next = root.querySelector('.pr-next');
+  const dotsWrap = document.getElementById('pr-dots');
+  let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
+
+  function show(n){
+    slides.forEach(s=>s.classList.remove('is-active'));
+    slides[n].classList.add('is-active');
+    if (dotsWrap){
+      dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active', k===n));
+    }
+    i = n;
+  }
+
+  function makeDots(){
+    if(!dotsWrap) return;
+    dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="Slide ${k+1}"></button>`).join('');
+    dotsWrap.querySelectorAll('.pr-dot').forEach((btn,k)=>btn.addEventListener('click', ()=>show(k)));
+  }
+
+  makeDots();
+  prev && prev.addEventListener('click', ()=>show((i-1+slides.length)%slides.length));
+  next && next.addEventListener('click', ()=>show((i+1)%slides.length));
+  show(i);
+})();
+</script>
+
 
     <!-- SLIDE 2 -->
     <div class="pr-slide">
