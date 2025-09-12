@@ -213,7 +213,8 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Anbefalede (carousel) + Nyhedsbrev -->
-  <section class="section" id="anbefalede">
+  <!-- Anbefalede (carousel) -->
+<section class="section" id="anbefalede">
   <div class="section-head">
     <h2>Anbefalede tilbud</h2>
   </div>
@@ -263,6 +264,79 @@ html{scroll-behavior:smooth}
         </a>
       </div>
     </div>
+
+    <!-- Navigation -->
+    <button class="pr-nav pr-prev" aria-label="Forrige">‹</button>
+    <button class="pr-nav pr-next" aria-label="Næste">›</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="pr-dots" id="pr-dots"></div>
+</section>
+
+<!-- Slider logik med autoplay -->
+<script>
+(function(){
+  const root = document.getElementById('pr-carousel');
+  if(!root) return;
+  const slides = Array.from(root.querySelectorAll('.pr-slide'));
+  const prev = root.querySelector('.pr-prev');
+  const next = root.querySelector('.pr-next');
+  const dotsWrap = document.getElementById('pr-dots');
+
+  if (slides.length <= 1) return;
+
+  let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
+  let timer = null;
+  const INTERVAL = 6000; // 6 sek
+
+  function show(n){
+    slides.forEach(s=>s.classList.remove('is-active'));
+    slides[n].classList.add('is-active');
+    if (dotsWrap){
+      dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active', k===n));
+    }
+    i = n;
+  }
+
+  function makeDots(){
+    if(!dotsWrap) return;
+    dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="Slide ${k+1}"></button>`).join('');
+    dotsWrap.querySelectorAll('.pr-dot').forEach((btn,k)=>btn.addEventListener('click', ()=>{
+      stop(); show(k); start();
+    }));
+  }
+
+  function nextSlide(){ show((i+1) % slides.length); }
+  function prevSlide(){ show((i-1+slides.length) % slides.length); }
+
+  function start(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stop();
+    timer = setInterval(nextSlide, INTERVAL);
+  }
+  function stop(){
+    if (timer){ clearInterval(timer); timer = null; }
+  }
+
+  prev && prev.addEventListener('click', ()=>{ stop(); prevSlide(); start(); });
+  next && next.addEventListener('click', ()=>{ stop(); nextSlide(); start(); });
+
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  document.addEventListener('visibilitychange', ()=>{
+    if (document.hidden) stop(); else start();
+  });
+
+  makeDots();
+  show(i);
+  start();
+})();
+</script>
+
 
     <!-- Navigation -->
     <button class="pr-nav pr-prev" aria-label="Forrige">‹</button>
