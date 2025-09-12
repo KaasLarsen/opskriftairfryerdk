@@ -223,7 +223,7 @@ html{scroll-behavior:smooth}
     <div class="pr-slide is-active">
       <div style="min-height:220px">
         <div id="pr-product-widget-e0348930" style="display:block;width:100%"></div>
-        <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3280146314&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-e0348930" async></script>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3280146314&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-e0348930" async></script>
       </div>
       <div style="display:inline-block;margin-top:6px">
         <a href="https://www.pricerunner.dk/pl/81-3280146314/Frituregryder/Ninja-Double-Stack-XL-2-Level-Air-Fryer-9.5L-Sammenlign-Priser" rel="nofollow">
@@ -233,7 +233,48 @@ html{scroll-behavior:smooth}
         </a>
       </div>
     </div>
-    <script>
+
+    <!-- SLIDE 2 -->
+    <div class="pr-slide">
+      <div style="min-height:220px">
+        <div id="pr-product-widget-f262c590" style="display:block;width:100%"></div>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-f262c590" async></script>
+      </div>
+      <div style="display:inline-block;margin-top:6px">
+        <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
+          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="pr-slide">
+      <div style="min-height:220px">
+        <div id="pr-product-widget-0a362ae0" style="display:block;width:100%"></div>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3231353404&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-0a362ae0" async></script>
+      </div>
+      <div style="display:inline-block;margin-top:6px">
+        <a href="https://www.pricerunner.dk/pl/81-3231353404/Frituregryder/Philips-3000-Series-NA352-00-Sammenlign-Priser" rel="nofollow">
+          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <button class="pr-nav pr-prev" aria-label="Forrige">‹</button>
+    <button class="pr-nav pr-next" aria-label="Næste">›</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="pr-dots" id="pr-dots"></div>
+</section>
+
+<!-- INIT: læg ALTID dette EFTER hele sektionen ovenfor -->
+<script>
 (function(){
   const root = document.getElementById('pr-carousel');
   if(!root) return;
@@ -241,6 +282,7 @@ html{scroll-behavior:smooth}
   const prev = root.querySelector('.pr-prev');
   const next = root.querySelector('.pr-next');
   const dotsWrap = document.getElementById('pr-dots');
+
   let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
 
   function show(n){
@@ -264,6 +306,7 @@ html{scroll-behavior:smooth}
   show(i);
 })();
 </script>
+
 
 
     <!-- SLIDE 2 -->
