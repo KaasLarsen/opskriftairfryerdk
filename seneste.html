@@ -11,13 +11,13 @@
 *,*::before,*::after{box-sizing:border-box}html,body{height:100%}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
-:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#ec4899;--accent-soft:#fce7f3;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#ec4899;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
-.section-head h1{font-size:26px;margin:0}
+.section-head h1{font-size:26px;margin:0;text-transform:lowercase}
 .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%}
-.input{padding:14px 16px;border:2px solid var(--accent);border-radius:14px;min-width:260px;width:min(720px,100%);background:var(--accent-soft);font-size:18px;outline:none}
+.input{padding:14px 16px;border:2px solid var(--accent);border-radius:14px;min-width:260px;width:min(720px,100%);background:#fce7f3;font-size:18px;outline:none}
 .input:focus{box-shadow:0 0 0 4px rgba(236,72,153,.15)}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -25,13 +25,13 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 @media(max-width:560px){.grid-3{grid-template-columns:1fr}}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
 .card:hover{transform:translateY(-2px)}
-.thumb{aspect-ratio:16/9;background:linear-gradient(180deg,#f8fafc,#fff);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:#64748b;margin-top:4px}
 .copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
-.skel{height:180px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(90deg,#f8fafc 25%,#eef2f7 37%,#f8fafc 63%);background-size:400% 100%;animation:shimmer 1.2s infinite}
+.skel{height:110px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(90deg,#f8fafc 25%,#eef2f7 37%,#f8fafc 63%);background-size:400% 100%;animation:shimmer 1.2s infinite}
 @keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
@@ -78,7 +78,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 <script>
 const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';
-const CACHE_KEY = 'RECIPES_CACHE_v2';
+const CACHE_KEY = 'RECIPES_CACHE_v4'; // bump for at rydde gammel cache
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
 const grid = document.getElementById('grid');
@@ -89,10 +89,76 @@ const q = document.getElementById('q');
 const debounce = (fn, ms=200) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
 const parseXML = t => new DOMParser().parseFromString(t,'application/xml');
 
+/* === ikonvalg ud fra slug === */
+function iconFromSlug(slug){
+  const s = slug.toLowerCase();
+
+  // kød
+  if (s.includes('kylling') || s.includes('chicken')) return 'chicken';
+  if (s.includes('okse') || s.includes('boef') || s.includes('bøf') || s.includes('koed') || s.includes('kød')) return 'cow';
+  if (s.includes('svin') || s.includes('flaesk') || s.includes('flæsk') || s.includes('medister') || s.includes('moerbrad') || s.includes('mørbrad')) return 'pig';
+  if (s.includes('lam')) return 'meatball';     // alternativt eget lamme-ikon
+  if (s.includes('and')) return 'duck';
+  if (s.includes('kalkun') || s.includes('turkey')) return 'turkey';
+  if (s.includes('rib') || s.includes('ribbensteg')) return 'ribs';
+  if (s.includes('bacon')) return 'bacon';
+  if (s.includes('drumstick') || s.includes('vinger')) return 'drumstick';
+
+  // fisk & skaldyr
+  if (s.includes('fisk') || s.includes('laks') || s.includes('torsk') || s.includes('roedspaette') || s.includes('rødspætte') || s.includes('tun') || s.includes('sej') || s.includes('roedfisk') || s.includes('rødfisk')) return 'fish';
+  if (s.includes('reje') || s.includes('kammusling') || s.includes('musling') || s.includes('calamari')) return 'shrimp';
+
+  // grønt/veg
+  if (s.includes('broccoli') || s.includes('groen') || s.includes('grøn') || s.includes('salat') || s.includes('groentsag') || s.includes('grøntsag')) return 'leaf';
+  if (s.includes('aubergine') || s.includes('squash')) return 'eggplant';
+  if (s.includes('svamp') || s.includes('champignon') || s.includes('portobello')) return 'mushroom';
+  if (s.includes('gulerod')) return 'carrot';
+  if (s.includes('kartoffel') || s.includes('pommes') || s.includes('roesti') || s.includes('rösti')) return 'potato';
+  if (s.includes('tomat')) return 'tomato';
+  if (s.includes('tofu')) return 'tofu';
+  if (s.includes('falafel') || s.includes('veg')) return 'falafel';
+
+  // brød/tilbehør/snacks
+  if (s.includes('toast') || s.includes('broed') || s.includes('brød') || s.includes('naan') || s.includes('focaccia') || s.includes('panini') || s.includes('bolle')) return 'bread';
+  if (s.includes('vafel') || s.includes('vaffel') || s.includes('vafler')) return 'waffle';
+  if (s.includes('croissant')) return 'croissant';
+  if (s.includes('chips') || s.includes('tortilla')) return 'chips';
+  if (s.includes('fries') || s.includes('pommes')) return 'fries';
+  if (s.includes('nugget')) return 'nuggets';
+  if (s.includes('skewer') || s.includes('spyd') || s.includes('souvlaki')) return 'skewer';
+  if (s.includes('pita')) return 'wrap';
+
+  // retter/verdenskøkken
+  if (s.includes('pizza')) return 'pizza';
+  if (s.includes('burger')) return 'burger';
+  if (s.includes('taco')) return 'taco';
+  if (s.includes('wrap') || s.includes('quesadilla')) return 'wrap';
+  if (s.includes('sushi')) return 'sushi';
+  if (s.includes('ris') || s.includes('risotto')) return 'rice-bowl';
+  if (s.includes('noodle') || s.includes('nudel')) return 'noodles';
+  if (s.includes('gryde') || s.includes('stew') || s.includes('suppe')) return 'pot';
+  if (s.includes('pande') || s.includes('steg') || s.includes('stir-fry')) return 'pan';
+
+  // smag/ingredienser
+  if (s.includes('hvidloeg') || s.includes('hvidløg')) return 'garlic';
+  if (s.includes('citron') || s.includes('lemon')) return 'lemon';
+  if (s.includes('chili') || s.includes('spicy')) return 'chili';
+  if (s.includes('smor') || s.includes('smør') || s.includes('butter')) return 'butter';
+  if (s.includes('ost') || s.includes('cheese') || s.includes('mozzarella') || s.includes('parmesan') || s.includes('feta')) return 'cheese';
+
+  // sødt
+  if (s.includes('kage') || s.includes('brownie') || s.includes('donut') || s.includes('cookie') || s.includes('scone') || s.includes('tærte') || s.includes('taerte') || s.includes('crumble')) return 'cake';
+
+  // fallback
+  return 'book';
+}
+
+/* === UI === */
 function card(r){
+  const icon = iconFromSlug(r.slug);
   return `
     <a class="card" href="${r.slug}">
-      <div class="thumb">${r.img ? `<img src="${r.img}" alt="" loading="lazy">` : ''}</div>
+      <div class="thumb-icon"><svg><use href="#${icon}" xlink:href="#${icon}"></use></svg></div>
       <div class="card-body">
         <h3>${r.title}</h3>
         <p class="meta">${r.blurb}</p>
@@ -100,8 +166,7 @@ function card(r){
     </a>`;
 }
 
-function abs(u){ try{ return new URL(u, location.origin).toString(); }catch{ return ''; } }
-
+/* === meta-fetch (kun tekst – ingen billeder) === */
 async function fetchMeta(url){
   try{
     const res = await fetch(url, { credentials: 'same-origin' });
@@ -111,16 +176,14 @@ async function fetchMeta(url){
     const h1 = doc.querySelector('h1')?.textContent?.trim();
     const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
     const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Se opskriften';
-    const og = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
-    let img = og || doc.querySelector('img')?.getAttribute('src') || '';
-    if (img) img = abs(img);
-    return { title, blurb, img };
+    return { title, blurb };
   }catch{
     const t = url.split('/').pop().replace('.html','').replace(/-/g,' ');
-    return { title: t, blurb: 'Se opskriften', img: '' };
+    return { title: t, blurb: 'Se opskriften' };
   }
 }
 
+/* === data-load === */
 async function loadRecipes(){
   try{
     const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
@@ -164,6 +227,7 @@ function render(list){
   else{ grid.innerHTML = out.map(card).join(''); empty.style.display='none'; }
 }
 
+/* === init === */
 let ALL=[];
 const onSearch = debounce(()=>render(ALL),150);
 q.addEventListener('input', onSearch);
