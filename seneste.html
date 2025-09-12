@@ -25,7 +25,8 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 @media(max-width:560px){.grid-3{grid-template-columns:1fr}}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
 .card:hover{transform:translateY(-2px)}
-.thumb{aspect-ratio:16/9;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb{aspect-ratio:16/9;background:linear-gradient(180deg,#f8fafc,#fff);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:#64748b;margin-top:4px}
@@ -76,8 +77,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 <script>
-const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';   // <— ny sitemap
-const CACHE_KEY = 'RECIPES_CACHE_v1';
+const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';
+const CACHE_KEY = 'RECIPES_CACHE_v2';
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
 const grid = document.getElementById('grid');
@@ -99,6 +100,8 @@ function card(r){
     </a>`;
 }
 
+function abs(u){ try{ return new URL(u, location.origin).toString(); }catch{ return ''; } }
+
 async function fetchMeta(url){
   try{
     const res = await fetch(url, { credentials: 'same-origin' });
@@ -108,7 +111,9 @@ async function fetchMeta(url){
     const h1 = doc.querySelector('h1')?.textContent?.trim();
     const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
     const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Se opskriften';
-    const img = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || doc.querySelector('img')?.src || '';
+    const og = doc.querySelector('meta[property="og:image"]')?.getAttribute('content') || '';
+    let img = og || doc.querySelector('img')?.getAttribute('src') || '';
+    if (img) img = abs(img);
     return { title, blurb, img };
   }catch{
     const t = url.split('/').pop().replace('.html','').replace(/-/g,' ');
@@ -123,12 +128,16 @@ async function loadRecipes(){
   }catch{}
 
   const res = await fetch(RECIPES_SITEMAP_URL, { credentials: 'same-origin' });
-  const xml = parseXML(await res.text());
+  if (!res.ok) throw new Error('Kunne ikke hente recipes-sitemap.xml: ' + res.status);
+  const txt = await res.text();
+  const xml = parseXML(txt);
   const locs = Array.from(xml.querySelectorAll('url > loc')).map(n => n.textContent.trim());
+  if (!locs.length) throw new Error('recipes-sitemap.xml indeholder ingen <loc>.');
 
   const urls = locs.filter(u => u.includes('/opskrifter/') && u.endsWith('.html'));
+
   const items = [];
-  const concurrency = 12;
+  const concurrency = 14;
   let i = 0;
   async function worker(){
     while(i < urls.length){
@@ -140,6 +149,7 @@ async function loadRecipes(){
   }
   await Promise.all(Array.from({length: concurrency}, worker));
   items.sort((a,b)=> a.title.localeCompare(b.title,'da'));
+
   try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch{}
   return items;
 }
@@ -160,7 +170,14 @@ q.addEventListener('input', onSearch);
 q.addEventListener('keydown', e=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
 
 (async function(){
-  try{ ALL = await loadRecipes(); }catch{ ALL=[]; }
+  try{
+    ALL = await loadRecipes();
+  }catch(e){
+    console.error(e);
+    resultsEl.textContent = 'Kunne ikke indlæse opskrifter – tjek at /recipes-sitemap.xml ligger i roden og ikke er tom.';
+    ALL = [];
+    try{ localStorage.removeItem(CACHE_KEY); }catch{}
+  }
   render(ALL);
 })();
 </script>
