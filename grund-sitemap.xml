@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Grundsider -->
+  <url><loc>https://www.opskrift-airfryer.dk/</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/guides.html</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/udstyr.html</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/om.html</loc><lastmod>2025-09-14</lastmod></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kontakt.html</loc><lastmod>2025-09-14</lastmod></url>
+
+  <!-- Kategori-deeplinks (facultativt – behold kun dem I faktisk bruger) -->
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Svinek%C3%B8d</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Oksek%C3%B8d</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Kylling</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Fisk</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Gr%C3%B8nt</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Tilbeh%C3%B8r</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Dessert</loc></url>
+</urlset>
