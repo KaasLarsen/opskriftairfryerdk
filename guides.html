@@ -13,11 +13,11 @@ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.hero{padding:22px 0 12px}
+.hero{padding:12px 0 8px}
 .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 .lead{margin:0;color:var(--muted)}
-.section{margin:24px 0}
+.section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .section-head h2{font-size:22px;margin:0}
 .grid{display:grid;gap:16px}
@@ -27,18 +27,24 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s}
 .card:hover{transform:translateY(-2px)}
 .thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
-.thumb-icon svg{width:54px;height:54px;color:#0ea5e9}
+.thumb-icon svg{width:54px;height:54px;color:var(--accent)}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
-.controls{display:flex;gap:8px;align-items:center}
-.btn{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;min-width:260px;width:min(700px,100%);font-size:15px;background:#fff}
+.btn{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
 .btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-.badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;margin-top:6px}
+.badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px}
+.copy{color:#64748b;font-size:13px;text-align:center;margin:12px 0 0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Skjul tomme AdSense slots */
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 </style>
 </head>
 <body>
 
+<!-- Partials -->
 <div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
 
@@ -47,13 +53,25 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
     <span class="kicker">Overblik</span>
     <h1>Guides & Tips</h1>
     <p class="lead">Alle vores airfryer guides samlet ét sted – tider, temperaturer, rengøring, udstyr, fejlfinding og meget mere.</p>
-    <div class="controls" style="margin-top:10px">
+
+    <div class="controls" role="search">
+      <label class="sr-only" for="q">Søg i guides</label>
+      <input id="q" class="input" type="search" placeholder="Søg i guides… (fx rengøring, tider, bacon)" autocomplete="off" />
       <button id="check-links" class="btn">Tjek Links</button>
       <span id="count" class="badge" style="display:none"></span>
     </div>
   </section>
 
-  <div style="margin:8px 0 18px">
+  <section class="section">
+    <div class="section-head">
+      <h2>Alle Guides</h2>
+    </div>
+    <div id="guides-grid" class="grid grid-3"><p class="meta">Indlæser…</p></div>
+    <p id="empty" class="copy" style="display:none">Ingen guides matcher din søgning.</p>
+  </section>
+
+  <!-- Annonce (flyttet under grid for at undgå stort top-gap) -->
+  <div class="ad-wrap" style="margin:8px 0 18px">
     <ins class="adsbygoogle" style="display:block"
          data-ad-client="ca-pub-7373148222153531"
          data-ad-slot="1234567890"
@@ -61,13 +79,6 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
          data-full-width-responsive="true"></ins>
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
-
-  <section class="section">
-    <div class="section-head">
-      <h2>Alle Guides</h2>
-    </div>
-    <div id="guides-grid" class="grid grid-3"><p class="meta">Indlæser…</p></div>
-  </section>
 </main>
 
 <div data-include="/partials/footer.html"></div>
@@ -76,9 +87,16 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 <script>
 (function(){
   const PRIMARY_SITEMAP = '/guides-sitemap.xml';
-  const FALLBACK_SITEMAP = '/airfryer-guides-sitemap.xml'; // kun hvis den første mangler
+  const FALLBACK_SITEMAP = '/airfryer-guides-sitemap.xml'; // hvis den primære ikke findes
+  const CACHE_KEY = 'GUIDES_CACHE_v5';       // bump for at rydde gammel cache
+  const CACHE_TTL_MS = 12 * 60 * 60 * 1000;  // 12 timer
+
   const grid = document.getElementById('guides-grid');
   const countBadge = document.getElementById('count');
+  const empty = document.getElementById('empty');
+  const q = document.getElementById('q');
+
+  const debounce = (fn, ms=200)=>{ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
 
   function titleFromSlug(slug){
     try{
@@ -102,9 +120,15 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
   }
 
   function render(urls){
-    countBadge.textContent = urls.length + ' guides';
+    const term = (q.value || '').toLowerCase().trim();
+    let filtered = urls;
+    if(term){
+      filtered = urls.filter(u => titleFromSlug(u).toLowerCase().includes(term));
+    }
+    countBadge.textContent = `${filtered.length} guides`;
     countBadge.style.display = 'inline-block';
-    grid.innerHTML = urls.map(card).join('');
+    empty.style.display = filtered.length ? 'none' : 'block';
+    grid.innerHTML = filtered.length ? filtered.map(card).join('') : '';
   }
 
   async function fetchSitemap(url){
@@ -112,31 +136,35 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
     if(!res.ok) throw new Error('Sitemap ikke fundet: ' + url);
     const xml = await res.text();
     const matches = Array.from(xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)).map(m => m[1]);
-    const sameHost = matches
-      .filter(u => {
-        try { const url = new URL(u, location.origin); return url.pathname.startsWith('/guides/'); }
-        catch(e){ return false; }
-      })
-      .map(u => new URL(u, location.origin).pathname);
-    return sameHost;
+    // behold kun /guides/*.html på samme host
+    return matches
+      .map(u => new URL(u, location.origin))
+      .filter(u => u.pathname.startsWith('/guides/') && u.pathname.endsWith('.html'))
+      .map(u => u.pathname);
   }
 
-  async function loadSitemap(){
+  async function loadAll(){
+    // cache?
     try{
-      return await fetchSitemap(PRIMARY_SITEMAP);
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) return cached.items;
+    }catch(_){}
+
+    let urls = [];
+    try{
+      urls = await fetchSitemap(PRIMARY_SITEMAP);
     }catch(_){
-      // prøv fallback hvis primær mangler
-      try { return await fetchSitemap(FALLBACK_SITEMAP); }
-      catch(e){
-        console.error(e);
-        return [];
-      }
+      try{ urls = await fetchSitemap(FALLBACK_SITEMAP); }catch(e){ urls = []; }
     }
+    urls.sort((a,b)=> titleFromSlug(a).localeCompare(titleFromSlug(b), 'da'));
+    try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items: urls })); }catch(_){}
+    return urls;
   }
 
   async function checkLinks(){
     const cards = Array.from(grid.querySelectorAll('a.card'));
     let ok=0, dead=0;
+    // kør i batches for at være sød ved serveren
     for (const a of cards){
       try{
         const r = await fetch(a.href, {method:'HEAD', cache:'no-store'});
@@ -148,10 +176,14 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
   }
 
   document.getElementById('check-links').addEventListener('click', checkLinks);
+  const onSearch = debounce(()=> render(ALL_URLS), 150);
+  q.addEventListener('input', onSearch);
+  q.addEventListener('keydown', e=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
 
-  loadSitemap().then(urls => {
-    if (!urls.length){ grid.innerHTML = '<p class="meta">Ingen guides fundet i sitemap.</p>'; return; }
-    render(urls);
+  let ALL_URLS = [];
+  loadAll().then(urls => {
+    ALL_URLS = urls;
+    render(ALL_URLS);
   }).catch(()=>{
     grid.innerHTML = '<p class="meta">Kunne ikke hente guides.</p>';
   });
