@@ -4,207 +4,86 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Guides & Tips – Opskrift-Airfryer.dk</title>
-<meta name="description" content="Guides til airfryer: tider & temperaturer, valg af model, rengøring, sikkerhed, energi og mere." />
+<meta name="description" content="Alle vores airfryer guides samlet ét sted – tider, temperaturer, rengøring, udstyr, fejlfinding og meget mere." />
 <link rel="icon" href="/img/favicon.ico" />
-<!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box}html,body{height:100%}
-body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.65}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
-:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#ec4899;--accent-soft:#fce7f3;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
+:root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.section{margin:18px 0}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
-.section-head h1{font-size:26px;margin:0}
-.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%}
-.input{
-  padding:14px 16px;border:2px solid var(--accent);
-  border-radius:14px;min-width:260px;width:min(720px,100%);
-  background:var(--accent-soft);font-size:18px;outline:none;
-}
-.input:focus{box-shadow:0 0 0 4px rgba(236,72,153,.15)}
-.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;cursor:pointer}
-.btn:hover{background:#f8fafc}
+.hero{padding:22px 0 12px}
+.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
+.lead{margin:0;color:var(--muted)}
+.section{margin:24px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.section-head h2{font-size:22px;margin:0}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.grid-3{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s ease}
+.card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden;display:block;transition:transform .06s}
 .card:hover{transform:translateY(-2px)}
 .thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
-.thumb-icon svg{width:48px;height:48px;color:var(--accent)}
+.thumb-icon svg{width:54px;height:54px;color:#0ea5e9}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
 .meta{font-size:13px;color:var(--muted);margin-top:4px}
-.copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
-.skel{height:110px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(90deg,#f8fafc 25%,#eef2f7 37%,#f8fafc 63%);background-size:400% 100%;animation:shimmer 1.2s infinite}
-@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
-.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
-svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.toolbar-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
-.results{font-size:13px;color:#64748b}
+.controls{display:flex;gap:8px;align-items:center}
+.btn{display:inline-block;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+.badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;margin-top:6px}
 </style>
 </head>
 <body>
 
-<!-- Ikoner + header via partials -->
 <div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
 
 <main class="container">
+  <section class="hero">
+    <span class="kicker">Overblik</span>
+    <h1>Guides & Tips</h1>
+    <p class="lead">Alle vores airfryer guides samlet ét sted – tider, temperaturer, rengøring, udstyr, fejlfinding og meget mere.</p>
+    <div class="controls" style="margin-top:10px">
+      <button id="check-links" class="btn">Tjek Links</button>
+      <span id="count" class="badge" style="display:none"></span>
+    </div>
+  </section>
+
+  <div style="margin:8px 0 18px">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7373148222153531"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
   <section class="section">
-    <div class="section-head" style="flex-direction:column;align-items:flex-start">
-      <h1>Guides & Tips</h1>
-      <div class="tools" role="search">
-        <label class="sr-only" for="q">Søg i guides</label>
-        <input id="q" class="input" type="search" placeholder="Søg i guides… (fx rengøring, tider, bacon)" autocomplete="off" />
-      </div>
+    <div class="section-head">
+      <h2>Alle Guides</h2>
     </div>
-
-    <!-- Annonce -->
-    <div style="margin:8px 0 18px">
-      <ins class="adsbygoogle" style="display:block"
-           data-ad-client="ca-pub-7373148222153531"
-           data-ad-slot="1234567890"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-    </div>
-
-    <!-- skeletons under load -->
-    <div id="grid" class="grid grid-3" aria-live="polite">
-      <div class="skel"></div><div class="skel"></div><div class="skel"></div>
-    </div>
-
-    <div class="toolbar-bottom">
-      <p id="empty" class="copy" style="display:none">Ingen guides matcher din søgning.</p>
-      <div class="results" id="results">Indlæser…</div>
-    </div>
+    <div id="guides-grid" class="grid grid-3"><p class="meta">Indlæser…</p></div>
   </section>
 </main>
 
-<!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
-
 <script src="/assets/include.js?v=4"></script>
+
 <script>
-/* ========== konfiguration ========== */
-const GUIDES_SITEMAP_URL = '/guides-sitemap.xml'; // <-- HENTER FRA DEN NYE SITEMAP
-const CACHE_KEY = 'GUIDES_CACHE_v3';
-const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 timer
+(function(){
+  // 1) Indlæs hele guides-sitemap
+  const SITEMAP_URL = '/airfryer-guides-sitemap.xml'; // skift hvis du har placeret den et andet sted
+  const grid = document.getElementById('guides-grid');
+  const countBadge = document.getElementById('count');
 
-/* ========== elementer ========== */
-const grid = document.getElementById('grid');
-const empty = document.getElementById('empty');
-const resultsEl = document.getElementById('results');
-const q = document.getElementById('q');
-
-/* ========== utils ========== */
-const debounce = (fn, ms=200) => { let t; return (...args)=>{ clearTimeout(t); t=setTimeout(()=>fn(...args), ms); }; };
-
-function parseXML(text){
-  return new DOMParser().parseFromString(text, 'application/xml');
-}
-
-function card(g){
-  return `
-    <a class="card" href="${g.slug}">
-      <div class="thumb-icon"><svg><use href="#book" xlink:href="#book"></use></svg></div>
-      <div class="card-body">
-        <h3>${g.title}</h3>
-        <p class="meta">${g.blurb}</p>
-      </div>
-    </a>`;
-}
-
-async function fetchGuideMeta(url){
-  try{
-    const res = await fetch(url, { credentials: 'same-origin' });
-    if(!res.ok) throw new Error('http '+res.status);
-    const html = await res.text();
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    const h1 = doc.querySelector('h1')?.textContent?.trim();
-    const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
-    const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Læs guiden';
-    return { title, blurb };
-  }catch(e){
-    const fallbackTitle = url.split('/').pop().replace('.html','').replace(/-/g,' ');
-    return { title: fallbackTitle, blurb: 'Læs guiden' };
-  }
-}
-
-async function loadGuides(){
-  // cache?
-  try{
-    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-    if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) return cached.items;
-  }catch(_) {}
-
-  const res = await fetch(GUIDES_SITEMAP_URL, { credentials: 'same-origin' });
-  if(!res.ok){ throw new Error('kunne ikke hente guides-sitemap.xml'); }
-  const xmlText = await res.text();
-  const xml = parseXML(xmlText);
-  const locs = Array.from(xml.querySelectorAll('url > loc')).map(n => n.textContent.trim());
-
-  // Kun html-guides under /guides/
-  const guideUrls = locs
-    .filter(href => href.includes('/guides/') && href.endsWith('.html'))
-    .filter(href => !href.endsWith('/guides.html'));
-
-  const items = [];
-  const concurrency = 12;
-  let i = 0;
-  async function worker(){
-    while(i < guideUrls.length){
-      const href = guideUrls[i++];
-      const u = new URL(href, location.origin);
-      const slug = u.pathname; // "/guides/xxx.html"
-      const meta = await fetchGuideMeta(slug);
-      items.push({ title: meta.title, slug, blurb: meta.blurb });
-    }
-  }
-  await Promise.all(Array.from({length: concurrency}, worker));
-  items.sort((a,b)=> a.title.localeCompare(b.title, 'da'));
-  try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch(_){}
-  return items;
-}
-
-function render(list){
-  const term = (q.value || '').toLowerCase().trim();
-  let out = list;
-  if(term){
-    out = out.filter(g =>
-      (g.title||'').toLowerCase().includes(term) ||
-      (g.blurb||'').toLowerCase().includes(term)
-    );
-  }
-  resultsEl.textContent = `${out.length} resultat${out.length===1?'':'er'}`;
-  if(out.length === 0){
-    grid.innerHTML = '';
-    empty.style.display = 'block';
-  }else{
-    grid.innerHTML = out.map(card).join('');
-    empty.style.display = 'none';
-  }
-}
-
-/* ========== init ========== */
-let ALL = [];
-const onSearch = debounce(()=>render(ALL), 150);
-q.addEventListener('input', onSearch);
-q.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
-
-(async function(){
-  try{
-    ALL = await loadGuides();
-  }catch(e){
-    console.error(e);
-    ALL = [];
-  }
-  render(ALL);
-})();
-</script>
-</body>
-</html>
+  function titleFromSlug(slug){
+    try {
+      const name = slug.replace(/\.html$/,'').split('/').pop()
+        .replace(/-/g,' ')
+        .replace(/\b\w/g, m => m.toUpperCase());
+      return name;
+    } catch(e
