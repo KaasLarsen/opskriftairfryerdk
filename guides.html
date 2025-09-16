@@ -86,4 +86,64 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
         .replace(/-/g,' ')
         .replace(/\b\w/g, m => m.toUpperCase());
       return name;
-    } catch(e
+    } catch(e){ return slug; }
+  }
+
+  function card(href){
+    const slug = href;
+    const title = titleFromSlug(href);
+    return `
+      <a class="card" href="${href}">
+        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+        <div class="card-body">
+          <h3>${title}</h3>
+          <p class="meta">Guide</p>
+        </div>
+      </a>`;
+  }
+
+  function render(urls){
+    countBadge.textContent = urls.length + ' guides';
+    countBadge.style.display = 'inline-block';
+    grid.innerHTML = urls.map(card).join('');
+  }
+
+  async function loadSitemap(){
+    const res = await fetch(SITEMAP_URL, {cache:'no-store'});
+    if(!res.ok){ grid.innerHTML = '<p class="meta">Kunne ikke hente sitemap.</p>'; return []; }
+    const xml = await res.text();
+    const matches = Array.from(xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)).map(m => m[1]);
+    // Brug kun links på samme domæne og under /guides/
+    const sameHost = matches.filter(u => {
+      try { const url = new URL(u, location.origin); return url.pathname.startsWith('/guides/'); }
+      catch(e){ return false; }
+    }).map(u => new URL(u, location.origin).pathname);
+    return sameHost;
+  }
+
+  // 2) Link checker (skjul døde links)
+  async function checkLinks(){
+    const cards = Array.from(grid.querySelectorAll('a.card'));
+    let ok = 0, dead = 0;
+    for (const a of cards){
+      try{
+        const r = await fetch(a.href, {method:'HEAD', cache:'no-store'});
+        if (!r.ok){ a.remove(); dead++; } else { ok++; }
+      }catch(e){ a.remove(); dead++; }
+    }
+    const left = grid.querySelectorAll('a.card').length;
+    countBadge.textContent = left + ' guides (OK: ' + ok + ', Døde: ' + dead + ')';
+  }
+
+  document.getElementById('check-links').addEventListener('click', checkLinks);
+
+  loadSitemap().then(urls => {
+    if (!urls.length){ grid.innerHTML = '<p class="meta">Ingen guides fundet i sitemap.</p>'; return; }
+    render(urls);
+  }).catch(()=>{
+    grid.innerHTML = '<p class="meta">Kunne ikke hente guides.</p>';
+  });
+})();
+</script>
+</body>
+</html>
