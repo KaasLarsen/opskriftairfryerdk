@@ -77,31 +77,63 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- Auto-render -->
-<script src="/assets/recipes.js?v=2"></script>
-<script src="/assets/render-recipes.js?v=2"></script>
+<!-- DATA -->
+<script src="/assets/recipes.js?v=20"></script>
+
 <script>
-  // Læs ?navn= fra URL og render
+(function(){
   const params = new URLSearchParams(location.search);
+  const rawSlug = params.get('slug');
+  const rawName = params.get('navn');
+  const raw = rawSlug || rawName || 'Alle';
 
-  // 1) Rå værdi fra URL (kan være “SvinekøD”, “svinekød”, “SVINEKØD”, “svinekoed”, osv.)
-  const raw = params.get('navn') || 'Alle';
+  // slugify (dansk venlig)
+  const slugify = (s='') => s.toString().toLowerCase()
+    .normalize('NFD').replace(/\p{Diacritic}/gu,'')
+    .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
 
-  // 2) Normalisér for pæn visning: decode, erstat bindestreger med mellemrum, lav lowercase
-  const normalized = decodeURIComponent(raw).replace(/-/g, ' ').toLowerCase().trim();
+  const wanted = slugify(raw);
 
-  // 3) Titlecase (inkl. æ/ø/å med \p{L})
-  const nice = normalized.replace(/\b\p{L}/gu, ch => ch.toUpperCase());
+  // Nice visning
+  const pretty = decodeURIComponent(raw).replace(/-/g,' ');
+  const nice = pretty.charAt(0).toUpperCase() + pretty.slice(1);
 
-  // Tekster
   document.getElementById('kat-title').textContent = 'Kategori: ' + nice;
   document.getElementById('kat-h2').textContent = nice + ' – Opskrifter';
   const badge = document.getElementById('kat-badge');
-  badge.textContent = nice; 
+  badge.textContent = nice;
   badge.style.display = 'inline-block';
 
-  // Render kategorien (AFO matcher case-insensitivt, så vi kan godt sende raw)
-  AFO.renderCategory(raw, 'kategori-grid');
+  const grid = document.getElementById('kategori-grid');
+  const card = r => `
+    <a class="card" href="/opskrifter/${r.slug}.html">
+      <div class="thumb-icon"><svg><use href="#${r.icon||'star'}"></use></svg></div>
+      <div class="card-body">
+        <h3>${r.title}</h3>
+        ${r.meta ? `<p class="meta">${r.meta}</p>` : ''}
+      </div>
+    </a>`;
+
+  function render(list){
+    const matches = list.filter(r=>{
+      const catName = r.category || r.kategori || '';
+      const catSlug = r.categorySlug || slugify(catName);
+      const tagSlugs = (r.tags||[]).map(slugify);
+      return wanted==='alle' || catSlug===wanted || tagSlugs.includes(wanted);
+    });
+    grid.innerHTML = matches.length
+      ? matches.map(card).join('')
+      : '<p class="meta">Ingen opskrifter fundet i denne kategori.</p>';
+  }
+
+  if (window.AFO && AFO.ready && typeof AFO.ready.then==='function'){
+    AFO.ready.then(()=> render(AFO.getAll()))
+             .catch(()=> grid.innerHTML='<p class="meta">Kunne ikke hente opskrifter.</p>');
+  } else {
+    window.addEventListener('load', ()=> render(window.RECIPES||[]));
+  }
+})();
 </script>
 </body>
 </html>
