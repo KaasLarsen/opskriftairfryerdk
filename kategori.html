@@ -15,7 +15,6 @@ body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
 .hero{padding:22px 0 12px}
 .kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
@@ -77,34 +76,63 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
 
-<!-- DATA -->
-<script src="/assets/recipes.js?v=20"></script>
+<!-- DATA: behold din eksisterende sti/version -->
+<script src="/assets/recipes.js?v=2"></script>
+<!-- (valgfri) hvis du i forvejen har denne, lader vi den være -->
+<script src="/assets/render-recipes.js?v=2"></script>
 
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
-  const rawSlug = params.get('slug');
-  const rawName = params.get('navn');
-  const raw = rawSlug || rawName || 'Alle';
 
-  // slugify (dansk venlig)
-  const slugify = (s='') => s.toString().toLowerCase()
-    .normalize('NFD').replace(/\p{Diacritic}/gu,'')
-    .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
-    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  // 1) Læs både slug og navn (fallback til 'alle')
+  const raw = (params.get('slug') || params.get('navn') || 'alle').trim();
 
+  // 2) Slugify – kompatibel uden \p{Diacritic}
+  function slugify(s){
+    return s.toString().toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // fjern kombinerende tegn
+      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
+      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  }
   const wanted = slugify(raw);
 
-  // Nice visning
-  const pretty = decodeURIComponent(raw).replace(/-/g,' ');
-  const nice = pretty.charAt(0).toUpperCase() + pretty.slice(1);
-
+  // 3) Visningstekster
+  const pretty = raw.replace(/-/g,' ');
+  const nice = pretty.charAt(0).toLocaleUpperCase('da') + pretty.slice(1);
   document.getElementById('kat-title').textContent = 'Kategori: ' + nice;
   document.getElementById('kat-h2').textContent = nice + ' – Opskrifter';
   const badge = document.getElementById('kat-badge');
-  badge.textContent = nice;
-  badge.style.display = 'inline-block';
+  badge.textContent = nice; badge.style.display = 'inline-block';
 
+  // 4) Hent opskrifter (AFO eller RECIPES)
+  function getAllRecipes(){
+    if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
+      return AFO.ready.then(()=>AFO.getAll());
+    }
+    if (Array.isArray(window.RECIPES)) return Promise.resolve(window.RECIPES);
+    return new Promise(resolve=>{
+      window.addEventListener('load', ()=> resolve(Array.isArray(window.RECIPES) ? window.RECIPES : []));
+    });
+  }
+
+  // 5) Match på categorySlug, kategori/category og tags
+  function matchesWanted(r){
+    const names = [
+      r.category, r.kategori, r.categoryName,
+      ...(Array.isArray(r.categories) ? r.categories : [])
+    ].filter(Boolean).map(String);
+
+    const slugs = [
+      r.categorySlug,
+      ...names.map(slugify),
+      ...(Array.isArray(r.tags) ? r.tags.map(slugify) : [])
+    ].filter(Boolean);
+
+    return wanted === 'alle' || slugs.includes(wanted);
+  }
+
+  // 6) Render
   const grid = document.getElementById('kategori-grid');
   const card = r => `
     <a class="card" href="/opskrifter/${r.slug}.html">
@@ -115,24 +143,16 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
       </div>
     </a>`;
 
-  function render(list){
-    const matches = list.filter(r=>{
-      const catName = r.category || r.kategori || '';
-      const catSlug = r.categorySlug || slugify(catName);
-      const tagSlugs = (r.tags||[]).map(slugify);
-      return wanted==='alle' || catSlug===wanted || tagSlugs.includes(wanted);
-    });
-    grid.innerHTML = matches.length
-      ? matches.map(card).join('')
+  getAllRecipes().then(list=>{
+    const data = Array.isArray(list) ? list : [];
+    const items = data.filter(matchesWanted);
+    grid.innerHTML = items.length
+      ? items.map(card).join('')
       : '<p class="meta">Ingen opskrifter fundet i denne kategori.</p>';
-  }
-
-  if (window.AFO && AFO.ready && typeof AFO.ready.then==='function'){
-    AFO.ready.then(()=> render(AFO.getAll()))
-             .catch(()=> grid.innerHTML='<p class="meta">Kunne ikke hente opskrifter.</p>');
-  } else {
-    window.addEventListener('load', ()=> render(window.RECIPES||[]));
-  }
+  }).catch(err=>{
+    console.error('Kategori fejl:', err);
+    grid.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
+  });
 })();
 </script>
 </body>
