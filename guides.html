@@ -75,22 +75,21 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 
 <script>
 (function(){
-  // 1) Indlæs hele guides-sitemap
-  const SITEMAP_URL = '/airfryer-guides-sitemap.xml'; // skift hvis du har placeret den et andet sted
+  const PRIMARY_SITEMAP = '/guides-sitemap.xml';
+  const FALLBACK_SITEMAP = '/airfryer-guides-sitemap.xml'; // kun hvis den første mangler
   const grid = document.getElementById('guides-grid');
   const countBadge = document.getElementById('count');
 
   function titleFromSlug(slug){
-    try {
+    try{
       const name = slug.replace(/\.html$/,'').split('/').pop()
         .replace(/-/g,' ')
         .replace(/\b\w/g, m => m.toUpperCase());
       return name;
-    } catch(e){ return slug; }
+    }catch(e){ return slug; }
   }
 
   function card(href){
-    const slug = href;
     const title = titleFromSlug(href);
     return `
       <a class="card" href="${href}">
@@ -108,31 +107,44 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
     grid.innerHTML = urls.map(card).join('');
   }
 
-  async function loadSitemap(){
-    const res = await fetch(SITEMAP_URL, {cache:'no-store'});
-    if(!res.ok){ grid.innerHTML = '<p class="meta">Kunne ikke hente sitemap.</p>'; return []; }
+  async function fetchSitemap(url){
+    const res = await fetch(url, {cache:'no-store'});
+    if(!res.ok) throw new Error('Sitemap ikke fundet: ' + url);
     const xml = await res.text();
     const matches = Array.from(xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)).map(m => m[1]);
-    // Brug kun links på samme domæne og under /guides/
-    const sameHost = matches.filter(u => {
-      try { const url = new URL(u, location.origin); return url.pathname.startsWith('/guides/'); }
-      catch(e){ return false; }
-    }).map(u => new URL(u, location.origin).pathname);
+    const sameHost = matches
+      .filter(u => {
+        try { const url = new URL(u, location.origin); return url.pathname.startsWith('/guides/'); }
+        catch(e){ return false; }
+      })
+      .map(u => new URL(u, location.origin).pathname);
     return sameHost;
   }
 
-  // 2) Link checker (skjul døde links)
+  async function loadSitemap(){
+    try{
+      return await fetchSitemap(PRIMARY_SITEMAP);
+    }catch(_){
+      // prøv fallback hvis primær mangler
+      try { return await fetchSitemap(FALLBACK_SITEMAP); }
+      catch(e){
+        console.error(e);
+        return [];
+      }
+    }
+  }
+
   async function checkLinks(){
     const cards = Array.from(grid.querySelectorAll('a.card'));
-    let ok = 0, dead = 0;
+    let ok=0, dead=0;
     for (const a of cards){
       try{
         const r = await fetch(a.href, {method:'HEAD', cache:'no-store'});
         if (!r.ok){ a.remove(); dead++; } else { ok++; }
-      }catch(e){ a.remove(); dead++; }
+      }catch(_){ a.remove(); dead++; }
     }
     const left = grid.querySelectorAll('a.card').length;
-    countBadge.textContent = left + ' guides (OK: ' + ok + ', Døde: ' + dead + ')';
+    countBadge.textContent = `${left} guides (OK: ${ok}, Døde: ${dead})`;
   }
 
   document.getElementById('check-links').addEventListener('click', checkLinks);
