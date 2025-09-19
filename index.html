@@ -146,6 +146,24 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 html{scroll-behavior:smooth}
+
+/* Compact cards: kun i "Hurtige Tider & Temperaturer" sektionen */
+#tider .grid{ gap:12px; }                         /* lidt mindre afstand mellem kort */
+#tider .card{ border-radius:12px; }               /* en anelse strammere */
+#tider .thumb-icon{
+  aspect-ratio:auto;                              /* drop 16:9 */
+  height:80px;                                    /* lavere “thumbnail”-højde */
+}
+#tider .thumb-icon svg{ width:34px; height:34px; }/* mindre ikon */
+#tider .card-body{ padding:10px 12px; }           /* mindre indre afstand */
+#tider .card-body h3{ font-size:14px; }           /* lidt mindre titel */
+#tider .meta{ font-size:12px; }                   /* lidt mindre meta-tekst */
+
+@media (max-width:560px){
+  #tider .thumb-icon{ height:68px; }
+  #tider .thumb-icon svg{ width:30px; height:30px; }
+  #tider .card-body h3{ font-size:13.5px; }
+}
 </style>
 </head>
 <body>
