@@ -78,7 +78,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 <script>
 const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';
-const CACHE_KEY = 'RECIPES_CACHE_v4'; // bump for at rydde gammel cache
+const CACHE_KEY = 'RECIPES_CACHE_v5'; // bump for at rydde gammel cache
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
 const grid = document.getElementById('grid');
@@ -89,6 +89,26 @@ const q = document.getElementById('q');
 const debounce = (fn, ms=200) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
 const parseXML = t => new DOMParser().parseFromString(t,'application/xml');
 
+/* === heuristik: tjek om siden faktisk har indhold === */
+function hasContent(html){
+  // markører vi normalt bruger i opskrifterne
+  const markers = [
+    'class="ingredients"', 'id="ingredienser"', 'itemprop="recipeIngredient"',
+    'class="steps"', 'id="fremgangsmaade"', 'id="fremgangsmåde"', 'itemprop="recipeInstructions"'
+  ];
+  const foundMarker = markers.some(m => html.includes(m));
+
+  // fallback: tjek længde i main/article
+  let longMain = false;
+  try{
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const main = doc.querySelector("main, article");
+    if (main && (main.textContent || "").trim().length > 800) longMain = true;
+  }catch{}
+
+  return foundMarker || longMain;
+}
+
 /* === ikonvalg ud fra slug === */
 function iconFromSlug(slug){
   const s = slug.toLowerCase();
@@ -97,7 +117,7 @@ function iconFromSlug(slug){
   if (s.includes('kylling') || s.includes('chicken')) return 'chicken';
   if (s.includes('okse') || s.includes('boef') || s.includes('bøf') || s.includes('koed') || s.includes('kød')) return 'cow';
   if (s.includes('svin') || s.includes('flaesk') || s.includes('flæsk') || s.includes('medister') || s.includes('moerbrad') || s.includes('mørbrad')) return 'pig';
-  if (s.includes('lam')) return 'meatball';     // alternativt eget lamme-ikon
+  if (s.includes('lam')) return 'meatball';
   if (s.includes('and')) return 'duck';
   if (s.includes('kalkun') || s.includes('turkey')) return 'turkey';
   if (s.includes('rib') || s.includes('ribbensteg')) return 'ribs';
@@ -166,24 +186,28 @@ function card(r){
     </a>`;
 }
 
-/* === meta-fetch (kun tekst – ingen billeder) === */
+/* === meta + indholdstjek (filtrerer tomme sider fra) === */
 async function fetchMeta(url){
   try{
-    const res = await fetch(url, { credentials: 'same-origin' });
+    const res = await fetch(url, { credentials: 'same-origin', cache: 'no-store' });
     if(!res.ok) throw 0;
     const html = await res.text();
+
+    // filtrér tomme sider fra
+    if (!hasContent(html)) return null;
+
     const doc = new DOMParser().parseFromString(html,'text/html');
     const h1 = doc.querySelector('h1')?.textContent?.trim();
     const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
     const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Se opskriften';
     return { title, blurb };
   }catch{
-    const t = url.split('/').pop().replace('.html','').replace(/-/g,' ');
-    return { title: t, blurb: 'Se opskriften' };
+    // ved fejl viser vi ikke kortet – så undgår vi døde/tomme sider
+    return null;
   }
 }
 
-/* === data-load === */
+/* === data-load (uændret kilde: RECIPES_SITEMAP_URL) === */
 async function loadRecipes(){
   try{
     const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
@@ -207,10 +231,12 @@ async function loadRecipes(){
       const href = urls[i++];
       const slug = new URL(href, location.origin).pathname;
       const m = await fetchMeta(slug);
-      items.push({ slug, ...m });
+      if (m) items.push({ slug, ...m }); // kun tilføj hvis siden har indhold
     }
   }
   await Promise.all(Array.from({length: concurrency}, worker));
+
+  // sortér alfabetisk efter titel
   items.sort((a,b)=> a.title.localeCompare(b.title,'da'));
 
   try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch{}
