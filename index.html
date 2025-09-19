@@ -69,6 +69,24 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
 .hero-ico{width:120px;height:120px;color:var(--accent)}
 
+/* Boxed hero (panel) */
+.panel{
+  border:2px solid #0f172a;         /* tydelig outline a la PriceRunner */
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(2,8,23,.06);
+  padding:16px;
+  margin:18px 0;
+}
+@media (max-width:900px){ .panel{padding:12px} }
+.panel-search{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+.panel--light{ border-color: var(--line); }
+.panel--accent{ border-color: var(--accent); }
+
 /* Section */
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
@@ -145,19 +163,33 @@ html{scroll-behavior:smooth}
 </div>
 
 <main class="container">
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <span class="kicker">Danske Airfryer Opskrifter</span>
-      <h1>Airfryer Opskrifter – Nemt Og Hurtigt</h1>
-      <p>Tydelige Tider, Temperaturer Og Trin-For-Trin. Mindre Opvask, Mere Sprødhed.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#populaere">Se Populære</a>
-        <a class="btn" href="/seneste.html">Se Seneste</a>
+  <!-- BOXED HERO (headline + knapper + søg i én ramme) -->
+  <section class="panel panel--light">
+    <div class="hero">
+      <div>
+        <span class="kicker">Danske Airfryer Opskrifter</span>
+        <h1>Airfryer Opskrifter – Nemt Og Hurtigt</h1>
+        <p>Tydelige Tider, Temperaturer Og Trin-For-Trin. Mindre Opvask, Mere Sprødhed.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#populaere">Se Populære</a>
+          <a class="btn" href="/seneste.html">Se Seneste</a>
+        </div>
+      </div>
+      <div class="hero-box">
+        <img src="/img/logo.png" alt="Opskrift-Airfryer.dk" class="hero-ico" style="width:120px;height:auto" />
       </div>
     </div>
-    <div class="hero-box">
-      <img src="/img/logo.png" alt="Opskrift-Airfryer.dk" class="hero-ico" style="width:120px;height:auto" />
+
+    <!-- Søgefeltet ligger nu inde i boksen -->
+    <div class="panel-search">
+      <div style="max-width:700px;margin:0 auto">
+        <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
+              style="display:flex;align-items:center;gap:8px;background:#fff0f5;padding:16px 18px;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
+          <input id="search-input" type="text" placeholder="🔍 Søg efter opskrifter..."
+                 style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+          <button class="btn primary" type="submit">Søg</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -171,17 +203,6 @@ html{scroll-behavior:smooth}
     <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
   </div>
 
-  <!-- Søgefelt (sender til seneste.html) -->
-  <section class="section" style="margin:36px 0">
-    <div style="max-width:700px;margin:0 auto">
-      <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
-            style="display:flex;align-items:center;gap:8px;background:#fff0f5;padding:16px 18px;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
-        <input id="search-input" type="text" placeholder="🔍 Søg efter opskrifter..."
-               style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
-        <button class="btn primary" type="submit">Søg</button>
-      </form>
-    </div>
-  </section>
   <script>
     function doSearch(){
       const q = document.getElementById('search-input').value.trim();
@@ -197,28 +218,22 @@ html{scroll-behavior:smooth}
     </div>
     <div class="grid grid-3">
       <!-- Flæskesteg -->
-<a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
-  <div class="thumb-icon">
-    <svg><use href="#flaeskesteg"></use></svg>
-  </div>
-  <div class="card-body"><h3>Flæskesteg I Airfryer – Sprød Svær</h3><p class="meta">45–60 Min · Nemt</p></div>
-</a>
+      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div>
+        <div class="card-body"><h3>Flæskesteg I Airfryer – Sprød Svær</h3><p class="meta">45–60 Min · Nemt</p></div>
+      </a>
 
-<!-- Frikadeller -->
-<a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
-  <div class="thumb-icon">
-    <svg><use href="#frikadelle"></use></svg>
-  </div>
-  <div class="card-body"><h3>Frikadeller I Airfryer – Klassikeren</h3><p class="meta">25 Min · Familiehit</p></div>
-</a>
+      <!-- Frikadeller -->
+      <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div>
+        <div class="card-body"><h3>Frikadeller I Airfryer – Klassikeren</h3><p class="meta">25 Min · Familiehit</p></div>
+      </a>
 
-<!-- Kylling (uændret) -->
-<a class="card" href="/opskrifter/kyllingelaar-i-airfryer.html">
-  <div class="thumb-icon">
-    <svg><use href="#chicken"></use></svg>
-  </div>
-  <div class="card-body"><h3>Kyllingelår I Airfryer – Saftige</h3><p class="meta">22–28 Min · Protein</p></div>
-</a>
+      <!-- Kylling (uændret) -->
+      <a class="card" href="/opskrifter/kyllingelaar-i-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
+        <div class="card-body"><h3>Kyllingelår I Airfryer – Saftige</h3><p class="meta">22–28 Min · Protein</p></div>
+      </a>
     </div>
   </section>
 
@@ -229,11 +244,11 @@ html{scroll-behavior:smooth}
       <a class="more" href="/kategori.html">Se Alle</a>
     </div>
     <div class="grid grid-4">
-   <a class="cat" href="/kategori.html?slug=svinekod"><svg><use href="#pig"></use></svg><span>Svinekød</span></a>
-  <a class="cat" href="/kategori.html?slug=kylling"><svg><use href="#chicken"></use></svg><span>Kylling</span></a>
-  <a class="cat" href="/kategori.html?slug=groent"><svg><use href="#leaf"></use></svg><span>Grønt</span></a>
-    <a class="cat" href="/kategori.html?slug=tilbehoer"><svg><use href="#fries"></use></svg><span>Tilbehør</span></a>
-</div>
+      <a class="cat" href="/kategori.html?slug=svinekod"><svg><use href="#pig"></use></svg><span>Svinekød</span></a>
+      <a class="cat" href="/kategori.html?slug=kylling"><svg><use href="#chicken"></use></svg><span>Kylling</span></a>
+      <a class="cat" href="/kategori.html?slug=groent"><svg><use href="#leaf"></use></svg><span>Grønt</span></a>
+      <a class="cat" href="/kategori.html?slug=tilbehoer"><svg><use href="#fries"></use></svg><span>Tilbehør</span></a>
+    </div>
   </section>
 
   <!-- Seneste -->
@@ -430,7 +445,8 @@ html{scroll-behavior:smooth}
   }
 })();
 </script>
-  <!-- AUTOSUGGEST: CSS -->
+
+<!-- AUTOSUGGEST: CSS -->
 <style>
   .as-layer{position:absolute;z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 10px 30px rgba(2,8,23,.08);overflow:hidden;max-height:340px;display:none}
   .as-list{list-style:none;margin:0;padding:6px 0;max-height:340px;overflow:auto}
@@ -444,7 +460,8 @@ html{scroll-behavior:smooth}
 <!-- AUTOSUGGEST: JS -->
 <script>
 (function(){
-  const INPUT = document.querySelector('#site-search, #q');
+  // bind til forsiden (#search-input) + fælles (#site-search, #q)
+  const INPUT = document.querySelector('#search-input, #site-search, #q');
   if(!INPUT) return;
 
   const SITEMAPS = ['/recipes-sitemap.xml','/guides-sitemap.xml','/airfryer-guides-sitemap.xml'];
@@ -551,7 +568,7 @@ html{scroll-behavior:smooth}
       location.href = matches[idx].url;
     } else {
       // fallback til jeres eksisterende søgning
-      const target = '/seneste.html?q=' + encodeURIComponent(term);
+      const target = '/seneste.html?soeg=' + encodeURIComponent(term);
       location.href = target;
     }
   }
