@@ -1,9 +1,9 @@
 {
   "redirects": [
-    { "source": "/aeblekage-i-airfryer/", "destination": "/opskrifter/aeblekage-i-airfryer.html", "permanent": true },
-    { "source": "/flaeskesteg-i-airfryer/", "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
-    { "source": "/kartoffelchips-i-airfryer/", "destination": "/opskrifter/kartoffelchips-i-airfryer.html", "permanent": true },
-    { "source": "/kyllingelaar-i-airfryer/", "destination": "/opskrifter/kyllingelaar-i-airfryer.html", "permanent": true },
-    { "source": "/lasagne-i-airfryer/", "destination": "/opskrifter/lasagne-i-airfryer.html", "permanent": true }
+    { "source": "/broccoli-i-airfryer/", "destination": "/opskrifter/broccoli-i-airfryer.html", "permanent": true },
+    { "source": "/pommes-frites-i-airfryer/", "destination": "/opskrifter/pommes-frites-i-airfryer.html", "permanent": true },
+    { "source": "/kyllingespyd-i-airfryer/", "destination": "/opskrifter/kyllingespyd-i-airfryer.html", "permanent": true },
+    { "source": "/flutes-i-airfryer/", "destination": "/opskrifter/flutes-i-airfryer.html", "permanent": true },
+    { "source": "/hvidloegsbroed-i-airfryer/", "destination": "/opskrifter/hvidloegsbroed-i-airfryer.html", "permanent": true }
   ]
 }
