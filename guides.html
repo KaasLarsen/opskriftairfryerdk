@@ -94,7 +94,7 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 (function(){
   const PRIMARY_SITEMAP = '/guides-sitemap.xml';
   const FALLBACK_SITEMAP = '/airfryer-guides-sitemap.xml';
-  const CACHE_KEY = 'GUIDES_CACHE_v6';
+  const CACHE_KEY = 'GUIDES_CACHE_v7'; // bump for at rydde gammel cache
   const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
   const grid = document.getElementById('guides-grid');
@@ -103,6 +103,34 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
   const q = document.getElementById('q');
 
   const debounce = (fn, ms=200)=>{ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
+
+  /* ===== Heuristik: Har guiden reelt indhold? ===== */
+  function hasContent(html){
+    // typiske "guide"-markører
+    const markers = [
+      'class="guide"', 'id="guide"', 'class="howto"', 'itemtype="http://schema.org/HowTo"',
+      'class="faq"', 'id="faq"', 'class="tips"', 'id="tips"'
+    ];
+    const foundMarker = markers.some(m => html.includes(m));
+
+    // parse og tjek struktur + længde
+    try{
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const main = doc.querySelector('main, article, .content, .post');
+      const textLen = (main?.textContent || '').replace(/\s+/g,' ').trim().length;
+
+      const h2count = main ? main.querySelectorAll('h2').length : 0;
+      const licount = main ? main.querySelectorAll('li').length : 0;
+
+      // kriterier: nok tekst eller tydelig struktur
+      if (foundMarker) return true;
+      if (textLen > 800) return true;            // substantiel brødtekst
+      if (h2count >= 2 && textLen > 400) return true; // flere sektioner + noget tekst
+      if (licount >= 5 && textLen > 300) return true; // lister + noget tekst
+    }catch(_){}
+
+    return false;
+  }
 
   function titleFromSlug(slug){
     try{
@@ -113,23 +141,27 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
     }catch(e){ return slug; }
   }
 
-  function card(href){
-    const title = titleFromSlug(href);
+  function card(item){
+    const title = item.title || titleFromSlug(item.href);
+    const blurb = item.desc || 'Guide';
     return `
-      <a class="card" href="${href}">
+      <a class="card" href="${item.href}">
         <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
         <div class="card-body">
           <h3>${title}</h3>
-          <p class="meta">Guide</p>
+          <p class="meta">${blurb}</p>
         </div>
       </a>`;
   }
 
-  function render(urls){
+  function render(items){
     const term = (q.value || '').toLowerCase().trim();
-    let filtered = urls;
+    let filtered = items;
     if(term){
-      filtered = urls.filter(u => titleFromSlug(u).toLowerCase().includes(term));
+      filtered = items.filter(it =>
+        (it.title || '').toLowerCase().includes(term) ||
+        (it.desc || '').toLowerCase().includes(term)
+      );
     }
     countBadge.textContent = `${filtered.length} guides`;
     countBadge.style.display = 'inline-block';
@@ -148,27 +180,63 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
       .map(u => u.pathname);
   }
 
+  async function fetchMeta(href){
+    try{
+      const res = await fetch(href, { cache: 'no-store', credentials: 'same-origin' });
+      if(!res.ok) return null;
+      const html = await res.text();
+      if(!hasContent(html)) return null;
+
+      const doc = new DOMParser().parseFromString(html,'text/html');
+      const h1 = doc.querySelector('h1')?.textContent?.trim();
+      const title = h1 || doc.querySelector('title')?.textContent?.trim() || titleFromSlug(href);
+      const desc = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Guide';
+      return { href, title, desc };
+    }catch(_){
+      return null;
+    }
+  }
+
   async function loadAll(){
+    // cache
     try{
       const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
       if (cached && (Date.now() - cached.ts) < CACHE_TTL_MS) return cached.items;
     }catch(_){}
-    let urls = [];
-    try{ urls = await fetchSitemap(PRIMARY_SITEMAP); }
-    catch(_){ try{ urls = await fetchSitemap(FALLBACK_SITEMAP); }catch(e){ urls = []; } }
-    urls.sort((a,b)=> titleFromSlug(a).localeCompare(titleFromSlug(b), 'da'));
-    try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items: urls })); }catch(_){}
-    return urls;
+
+    // hent sitemap (primær -> fallback)
+    let slugs = [];
+    try{ slugs = await fetchSitemap(PRIMARY_SITEMAP); }
+    catch(_){ try{ slugs = await fetchSitemap(FALLBACK_SITEMAP); } catch(_){ slugs = []; } }
+
+    // hent meta + indholdstjek i batches
+    const items = [];
+    const concurrency = 12;
+    let i = 0;
+    async function worker(){
+      while (i < slugs.length){
+        const href = slugs[i++];
+        const meta = await fetchMeta(href);
+        if (meta) items.push(meta);
+      }
+    }
+    await Promise.all(Array.from({length: concurrency}, worker));
+
+    // sortér pænt efter titel
+    items.sort((a,b)=> (a.title||'').localeCompare(b.title||'', 'da'));
+
+    try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch(_){}
+    return items;
   }
 
-  const onSearch = debounce(()=> render(ALL_URLS), 150);
+  const onSearch = debounce(()=> render(ALL_ITEMS), 150);
   q.addEventListener('input', onSearch);
   q.addEventListener('keydown', e=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
 
-  let ALL_URLS = [];
-  loadAll().then(urls => {
-    ALL_URLS = urls;
-    render(ALL_URLS);
+  let ALL_ITEMS = [];
+  loadAll().then(items => {
+    ALL_ITEMS = items;
+    render(ALL_ITEMS);
   }).catch(()=>{
     grid.innerHTML = '<p class="meta">Kunne ikke hente guides.</p>';
   });
