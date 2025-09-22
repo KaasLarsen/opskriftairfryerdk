@@ -1,6 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/fl%C3%A6skesteg-i-airfryer/", "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
+    { "source": "/fl%C3%A6skesteg-i-airfryer",  "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
+    { "source": "/flæskesteg-i-airfryer/",     "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
+    { "source": "/flæskesteg-i-airfryer",      "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true }
+    /* … resten af dine opskrifts-redirects herunder … */
+  ]
+}
+  "redirects": [
     {
       "source": "/10-sjove-og-uhyggelige-halloween-snacks-til-din-airfryer/",
       "destination": "/opskrifter/10-sjove-og-uhyggelige-halloween-snacks-til-din-airfryer.html",
