@@ -1,11 +1,20 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    {
-      "source": "/fl%C3%A6skesteg-i-airfryer/",
-      "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
-      "permanent": true
-    },
+    { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer",  "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
+    { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer/", "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
+
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren",  "destination": "/opskrifter/klejner-i-airfryer-julet-bagte.html", "permanent": true },
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren/", "destination": "/opskrifter/klejner-i-airfryer-julet-bagte.html", "permanent": true },
+
+    { "source": "/%F0%9F%90%91-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade",  "destination": "/opskrifter/lammeskank-klassisk-i-airfryer.html", "permanent": true },
+    { "source": "/%F0%9F%90%91-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade/", "destination": "/opskrifter/lammeskank-klassisk-i-airfryer.html", "permanent": true },
+    { "source": "/🐑-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade",  "destination": "/opskrifter/lammeskank-klassisk-i-airfryer.html", "permanent": true },
+    { "source": "/🐑-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade/", "destination": "/opskrifter/lammeskank-klassisk-i-airfryer.html", "permanent": true },
+
+    { "source": "/fl%C3%A6skesteg-i-airfryer/", "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
+    { "source": "/flæskesteg-i-airfryer/",     "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true }
+
     {
       "source": "/flæskesteg-i-airfryer/",
       "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
