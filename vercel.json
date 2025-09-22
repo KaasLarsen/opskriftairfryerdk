@@ -6,8 +6,15 @@
   "redirects": [
     { "source": "/fl%C3%A6skesteg-i-airfryer/", "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
     { "source": "/flæskesteg-i-airfryer/", "destination": "/opskrifter/flaeskesteg-i-airfryer.html", "permanent": true },
-
     { "source": "/:slug/", "destination": "/opskrifter/:slug.html", "permanent": true },
     { "source": "/:slug",  "destination": "/opskrifter/:slug.html", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/opskrifter/(.*).html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
   ]
 }
