@@ -1,6 +1,54 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
+    { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer", "destination": "/opskrifter/gnocchi-sproede-i-airfryer.html", "permanent": true },
+{ "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer/", "destination": "/opskrifter/gnocchi-sproede-i-airfryer.html", "permanent": true },
+
+{ "source": "/perfekt-stegt-ribeye-i-airfryer-saftig-og-sproed-hver-gang", "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+{ "source": "/perfekt-stegt-ribeye-i-airfryer-saftig-og-sproed-hver-gang/", "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+
+{ "source": "/pulled-chicken-i-airfryer-nemt-laekkert-og-saftigt", "destination": "/opskrifter/butter-chicken-i-airfryer.html", "permanent": true },
+{ "source": "/pulled-chicken-i-airfryer-nemt-laekkert-og-saftigt/", "destination": "/opskrifter/butter-chicken-i-airfryer.html", "permanent": true },
+
+{ "source": "/klejner-den-sproede-juleklassiker-i-airfryeren", "destination": "/opskrifter/gnocchi-sproede-i-airfryer.html", "permanent": true },
+{ "source": "/klejner-den-sproede-juleklassiker-i-airfryeren/", "destination": "/opskrifter/gnocchi-sproede-i-airfryer.html", "permanent": true },
+
+{ "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter", "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+{ "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter/", "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+
+{ "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt", "destination": "/opskrifter/fladbroed-i-airfryer.html", "permanent": true },
+{ "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt/", "destination": "/opskrifter/fladbroed-i-airfryer.html", "permanent": true },
+
+{ "source": "/perfekt-tunsteak-i-airfryer-moer-saftig-og-nem-opskrift", "destination": "/opskrifter/tunsteak-i-airfryer.html", "permanent": true },
+{ "source": "/perfekt-tunsteak-i-airfryer-moer-saftig-og-nem-opskrift/", "destination": "/opskrifter/tunsteak-i-airfryer.html", "permanent": true },
+
+{ "source": "/entrecote-i-airfryer-saftig-og-moer-paa-den-nemme-maade", "destination": "/opskrifter/entrecote-i-airfryer.html", "permanent": true },
+{ "source": "/entrecote-i-airfryer-saftig-og-moer-paa-den-nemme-maade/", "destination": "/opskrifter/entrecote-i-airfryer.html", "permanent": true },
+
+{ "source": "/lammekoteletter-i-airfryer-gourmetoplevelse-paa-ingen-tid", "destination": "/opskrifter/lammekoteletter-i-airfryer.html", "permanent": true },
+{ "source": "/lammekoteletter-i-airfryer-gourmetoplevelse-paa-ingen-tid/", "destination": "/opskrifter/lammekoteletter-i-airfryer.html", "permanent": true },
+
+{ "source": "/t-bone-steak-i-airfryer-perfekt-stegeskorpe-og-saftigt-koed", "destination": "/opskrifter/t-bone-steak-i-airfryer.html", "permanent": true },
+{ "source": "/t-bone-steak-i-airfryer-perfekt-stegeskorpe-og-saftigt-koed/", "destination": "/opskrifter/t-bone-steak-i-airfryer.html", "permanent": true },
+
+{ "source": "/leverpostej-i-airfryer-nem-opskrift-med-perfekt-resultat", "destination": "/opskrifter/leverpostej-i-airfryer.html", "permanent": true },
+{ "source": "/leverpostej-i-airfryer-nem-opskrift-med-perfekt-resultat/", "destination": "/opskrifter/leverpostej-i-airfryer.html", "permanent": true },
+
+{ "source": "/nem-og-sproed-sejfilet-i-airfryer-perfekt-til-hverdagen", "destination": "/opskrifter/sejfilet-i-airfryer-sproed.html", "permanent": true },
+{ "source": "/nem-og-sproed-sejfilet-i-airfryer-perfekt-til-hverdagen/", "destination": "/opskrifter/sejfilet-i-airfryer-sproed.html", "permanent": true },
+
+{ "source": "/tempura-groentsager-i-airfryer-sproed-og-laekker-opskrift", "destination": "/opskrifter/tempura-groentsager-i-airfryer.html", "permanent": true },
+{ "source": "/tempura-groentsager-i-airfryer-sproed-og-laekker-opskrift/", "destination": "/opskrifter/tempura-groentsager-i-airfryer.html", "permanent": true },
+
+{ "source": "/saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang", "destination": "/opskrifter/roastbeef-i-airfryer.html", "permanent": true },
+{ "source": "/saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang/", "destination": "/opskrifter/roastbeef-i-airfryer.html", "permanent": true },
+
+{ "source": "/brownie-bites-nem-cafe-klassiker-i-airfryer", "destination": "/opskrifter/brownie-bites-i-airfryer.html", "permanent": true },
+{ "source": "/brownie-bites-nem-cafe-klassiker-i-airfryer/", "destination": "/opskrifter/brownie-bites-i-airfryer.html", "permanent": true },
+
+{ "source": "/perfekt-culottesteg-i-airfryer-nemt-saftigt-og-sproedt", "destination": "/opskrifter/culottesteg-i-airfryer.html", "permanent": true },
+{ "source": "/perfekt-culottesteg-i-airfryer-nemt-saftigt-og-sproedt/", "destination": "/opskrifter/culottesteg-i-airfryer.html", "permanent": true }
+
     {
       "source": "/fl%C3%A6skesteg-i-airfryer/",
       "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
