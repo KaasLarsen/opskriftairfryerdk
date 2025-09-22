@@ -2,23 +2,23 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/fl%C3%A6skesteg-i-airfryer/",
-      "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
+      "source": "/kyllingespyd-i-airfryer/",
+      "destination": "/opskrifter/kyllingespyd-i-airfryer.html",
       "permanent": true
     },
     {
-      "source": "/fl%C3%A6skesteg-i-airfryer",
-      "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
+      "source": "/kyllingespyd-i-airfryer",
+      "destination": "/opskrifter/kyllingespyd-i-airfryer.html",
       "permanent": true
     },
     {
-      "source": "/flæskesteg-i-airfryer/",
-      "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
+      "source": "/hvidloegsbroed-i-airfryer/",
+      "destination": "/opskrifter/hvidloegsbroed-i-airfryer.html",
       "permanent": true
     },
     {
-      "source": "/flæskesteg-i-airfryer",
-      "destination": "/opskrifter/flaeskesteg-i-airfryer.html",
+      "source": "/hvidloegsbroed-i-airfryer",
+      "destination": "/opskrifter/hvidloegsbroed-i-airfryer.html",
       "permanent": true
     },
     {
@@ -2869,11 +2869,6 @@
     {
       "source": "/%F0%9F%AB%9B-saadan-dyrker-du-aerter-og-sukkeraerter-indendoers-spis-spirer-og-baelge/",
       "destination": "/opskrifter/🫛-saadan-dyrker-du-aerter-og-sukkeraerter-indendoers-spis-spirer-og-baelge.html",
-      "permanent": true
-    },
-    {
-      "source": "/:path*/",
-      "destination": "/:path*",
       "permanent": true
     }
   ]
