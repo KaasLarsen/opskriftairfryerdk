@@ -253,7 +253,5 @@
 
 { "source": "/tag/groent/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
 { "source": "/tag/groentsager/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
-{ "
-
   ]
 }
