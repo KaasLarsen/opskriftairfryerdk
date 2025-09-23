@@ -16,9 +16,12 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
 .section-head h1{font-size:26px;margin:0;}
-.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%;position:relative}
 .input{padding:14px 16px;border:2px solid var(--accent);border-radius:14px;min-width:260px;width:min(720px,100%);background:#fce7f3;font-size:18px;outline:none}
 .input:focus{box-shadow:0 0 0 4px rgba(236,72,153,.15)}
+.btn{appearance:none;border:2px solid var(--accent);background:var(--accent);color:#fff;border-radius:14px;padding:12px 16px;font-weight:600;cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.btn:active{transform:translateY(1px)}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
@@ -38,6 +41,14 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .toolbar-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
 .results{font-size:13px;color:#64748b}
+
+/* Autocomplete */
+.suggest{position:absolute;top:60px;left:0;width:min(720px,100%);background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);z-index:30;max-height:320px;overflow:auto;display:none}
+.suggest[aria-expanded="true"]{display:block}
+.suggest ul{list-style:none;margin:0;padding:6px}
+.suggest li{padding:10px 12px;border-radius:10px;cursor:pointer;display:flex;align-items:center;gap:8px;font-size:15px}
+.suggest li:hover,.suggest li.active{background:#f8fafc}
+.suggest .hint{font-size:12px;color:#64748b;margin-left:auto}
 </style>
 </head>
 <body>
@@ -48,9 +59,13 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   <section class="section">
     <div class="section-head" style="flex-direction:column;align-items:flex-start">
       <h1>Seneste Opskrifter</h1>
-      <div class="tools" role="search">
+      <div class="tools" role="search" aria-label="Søg i opskrifter">
         <label class="sr-only" for="q">Søg i opskrifter</label>
-        <input id="q" class="input" type="search" placeholder="Søg i opskrifter… (fx frikadeller, broccoli, brownies)" autocomplete="off" />
+        <input id="q" class="input" type="search" placeholder="Søg i opskrifter… (fx frikadeller, broccoli, brownies)" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" />
+        <button id="searchBtn" class="btn" type="button" aria-label="Søg">Søg</button>
+
+        <!-- Autocomplete dropdown -->
+        <div id="suggestions" class="suggest" role="listbox" aria-expanded="false" aria-label="Forslag"></div>
       </div>
     </div>
 
@@ -78,42 +93,38 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 <script src="/assets/include.js?v=4"></script>
 <script>
 const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';
-const CACHE_KEY = 'RECIPES_CACHE_v5'; // bump for at rydde gammel cache
+const CACHE_KEY = 'RECIPES_CACHE_v6'; // bumpet for at aktivere ny sortering + autocomplete hurtigere
 const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
 const grid = document.getElementById('grid');
 const empty = document.getElementById('empty');
 const resultsEl = document.getElementById('results');
 const q = document.getElementById('q');
+const searchBtn = document.getElementById('searchBtn');
+const suggestionsEl = document.getElementById('suggestions');
 
 const debounce = (fn, ms=200) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
 const parseXML = t => new DOMParser().parseFromString(t,'application/xml');
 
-/* === heuristik: tjek om siden faktisk har indhold === */
+/* === Heuristik: tjek om siden faktisk har indhold === */
 function hasContent(html){
-  // markører vi normalt bruger i opskrifterne
   const markers = [
     'class="ingredients"', 'id="ingredienser"', 'itemprop="recipeIngredient"',
     'class="steps"', 'id="fremgangsmaade"', 'id="fremgangsmåde"', 'itemprop="recipeInstructions"'
   ];
   const foundMarker = markers.some(m => html.includes(m));
-
-  // fallback: tjek længde i main/article
   let longMain = false;
   try{
     const doc = new DOMParser().parseFromString(html, "text/html");
     const main = doc.querySelector("main, article");
     if (main && (main.textContent || "").trim().length > 800) longMain = true;
   }catch{}
-
   return foundMarker || longMain;
 }
 
 /* === ikonvalg ud fra slug === */
 function iconFromSlug(slug){
   const s = slug.toLowerCase();
-
-  // kød
   if (s.includes('kylling') || s.includes('chicken')) return 'chicken';
   if (s.includes('okse') || s.includes('boef') || s.includes('bøf') || s.includes('koed') || s.includes('kød')) return 'cow';
   if (s.includes('svin') || s.includes('flaesk') || s.includes('flæsk') || s.includes('medister') || s.includes('moerbrad') || s.includes('mørbrad')) return 'pig';
@@ -123,12 +134,8 @@ function iconFromSlug(slug){
   if (s.includes('rib') || s.includes('ribbensteg')) return 'ribs';
   if (s.includes('bacon')) return 'bacon';
   if (s.includes('drumstick') || s.includes('vinger')) return 'drumstick';
-
-  // fisk & skaldyr
-  if (s.includes('fisk') || s.includes('laks') || s.includes('torsk') || s.includes('roedspaette') || s.includes('rødspætte') || s.includes('tun') || s.includes('sej') || s.includes('roedfisk') || s.includes('rødfisk')) return 'fish';
+  if (s.includes('fisk') || s.includes('laks') || s.includes('torsk') || s.includes('tun') || s.includes('sej') || s.includes('roedspaette') || s.includes('rødspætte') || s.includes('roedfisk') || s.includes('rødfisk')) return 'fish';
   if (s.includes('reje') || s.includes('kammusling') || s.includes('musling') || s.includes('calamari')) return 'shrimp';
-
-  // grønt/veg
   if (s.includes('broccoli') || s.includes('groen') || s.includes('grøn') || s.includes('salat') || s.includes('groentsag') || s.includes('grøntsag')) return 'leaf';
   if (s.includes('aubergine') || s.includes('squash')) return 'eggplant';
   if (s.includes('svamp') || s.includes('champignon') || s.includes('portobello')) return 'mushroom';
@@ -137,18 +144,13 @@ function iconFromSlug(slug){
   if (s.includes('tomat')) return 'tomato';
   if (s.includes('tofu')) return 'tofu';
   if (s.includes('falafel') || s.includes('veg')) return 'falafel';
-
-  // brød/tilbehør/snacks
   if (s.includes('toast') || s.includes('broed') || s.includes('brød') || s.includes('naan') || s.includes('focaccia') || s.includes('panini') || s.includes('bolle')) return 'bread';
   if (s.includes('vafel') || s.includes('vaffel') || s.includes('vafler')) return 'waffle';
-  if (s.includes('croissant')) return 'croissant';
   if (s.includes('chips') || s.includes('tortilla')) return 'chips';
   if (s.includes('fries') || s.includes('pommes')) return 'fries';
   if (s.includes('nugget')) return 'nuggets';
   if (s.includes('skewer') || s.includes('spyd') || s.includes('souvlaki')) return 'skewer';
   if (s.includes('pita')) return 'wrap';
-
-  // retter/verdenskøkken
   if (s.includes('pizza')) return 'pizza';
   if (s.includes('burger')) return 'burger';
   if (s.includes('taco')) return 'taco';
@@ -158,110 +160,283 @@ function iconFromSlug(slug){
   if (s.includes('noodle') || s.includes('nudel')) return 'noodles';
   if (s.includes('gryde') || s.includes('stew') || s.includes('suppe')) return 'pot';
   if (s.includes('pande') || s.includes('steg') || s.includes('stir-fry')) return 'pan';
-
-  // smag/ingredienser
   if (s.includes('hvidloeg') || s.includes('hvidløg')) return 'garlic';
   if (s.includes('citron') || s.includes('lemon')) return 'lemon';
   if (s.includes('chili') || s.includes('spicy')) return 'chili';
   if (s.includes('smor') || s.includes('smør') || s.includes('butter')) return 'butter';
   if (s.includes('ost') || s.includes('cheese') || s.includes('mozzarella') || s.includes('parmesan') || s.includes('feta')) return 'cheese';
-
-  // sødt
   if (s.includes('kage') || s.includes('brownie') || s.includes('donut') || s.includes('cookie') || s.includes('scone') || s.includes('tærte') || s.includes('taerte') || s.includes('crumble')) return 'cake';
-
-  // fallback
   return 'book';
 }
 
-/* === UI === */
+function formatDate(d){
+  try{
+    return new Intl.DateTimeFormat('da-DK', { day:'2-digit', month:'short', year:'numeric' }).format(d);
+  }catch{ return ''; }
+}
+
+function highlight(text, term){
+  if(!term) return text;
+  try{
+    const re = new RegExp('(' + term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','ig');
+    return text.replace(re,'<mark>$1</mark>');
+  }catch{ return text; }
+}
+
 function card(r){
   const icon = iconFromSlug(r.slug);
+  const dateStr = r.date ? formatDate(r.date) : '';
+  const meta = dateStr ? `${dateStr} · ${r.blurb}` : r.blurb;
   return `
     <a class="card" href="${r.slug}">
       <div class="thumb-icon"><svg><use href="#${icon}" xlink:href="#${icon}"></use></svg></div>
       <div class="card-body">
         <h3>${r.title}</h3>
-        <p class="meta">${r.blurb}</p>
+        <p class="meta">${meta}</p>
       </div>
     </a>`;
 }
 
-/* === meta + indholdstjek (filtrerer tomme sider fra) === */
-async function fetchMeta(url){
+/* === dato fra side-HTML (JSON-LD + meta-tags) === */
+function extractDateFromHTML(html){
+  try{
+    const doc = new DOMParser().parseFromString(html,'text/html');
+    const scripts = Array.from(doc.querySelectorAll('script[type="application/ld+json"]'));
+    for (const s of scripts){
+      try{
+        const json = JSON.parse(s.textContent.trim());
+        const objs = Array.isArray(json) ? json : [json];
+        for (const o of objs){
+          if (o && typeof o === 'object'){
+            const dp = o.datePublished || o.dateModified;
+            if (dp){ const d = new Date(dp); if(!isNaN(d)) return d; }
+          }
+        }
+      }catch{}
+    }
+    const metaSel = [
+      'meta[property="article:published_time"]',
+      'meta[name="date"]',
+      'meta[name="publish-date"]',
+      'meta[itemprop="datePublished"]'
+    ].join(',');
+    const m = doc.querySelector(metaSel);
+    if (m){
+      const val = m.getAttribute('content') || m.getAttribute('value');
+      if (val){ const d = new Date(val); if(!isNaN(d)) return d; }
+    }
+  }catch{}
+  return null;
+}
+
+/* === hent titel/description + dato === */
+async function fetchMeta(url, fallbackDate){
   try{
     const res = await fetch(url, { credentials: 'same-origin', cache: 'no-store' });
     if(!res.ok) throw 0;
     const html = await res.text();
-
-    // filtrér tomme sider fra
     if (!hasContent(html)) return null;
 
     const doc = new DOMParser().parseFromString(html,'text/html');
     const h1 = doc.querySelector('h1')?.textContent?.trim();
     const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
     const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Se opskriften';
-    return { title, blurb };
+
+    let date = extractDateFromHTML(html) || fallbackDate || null;
+    if (!date){
+      const lastModHeader = res.headers.get('last-modified');
+      if (lastModHeader){
+        const d = new Date(lastModHeader);
+        if (!isNaN(d)) date = d;
+      }
+    }
+
+    return { title, blurb, date };
   }catch{
-    // ved fejl viser vi ikke kortet – så undgår vi døde/tomme sider
     return null;
   }
 }
 
-/* === data-load (uændret kilde: RECIPES_SITEMAP_URL) === */
+/* === load fra sitemap med lastmod === */
 async function loadRecipes(){
   try{
     const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-    if(cached && (Date.now()-cached.ts) < CACHE_TTL_MS) return cached.items;
+    if(cached && (Date.now()-cached.ts) < CACHE_TTL_MS){
+      const items = (cached.items||[]).map(r => ({...r, date: r.date ? new Date(r.date) : null}));
+      return items;
+    }
   }catch{}
 
   const res = await fetch(RECIPES_SITEMAP_URL, { credentials: 'same-origin' });
   if (!res.ok) throw new Error('Kunne ikke hente recipes-sitemap.xml: ' + res.status);
   const txt = await res.text();
   const xml = parseXML(txt);
-  const locs = Array.from(xml.querySelectorAll('url > loc')).map(n => n.textContent.trim());
-  if (!locs.length) throw new Error('recipes-sitemap.xml indeholder ingen <loc>.');
 
-  const urls = locs.filter(u => u.includes('/opskrifter/') && u.endsWith('.html'));
+  const entries = Array.from(xml.querySelectorAll('url')).map(u => {
+    const loc = u.querySelector('loc')?.textContent?.trim();
+    const lastmod = u.querySelector('lastmod')?.textContent?.trim() || null;
+    if (!loc) return null;
+    const slugPath = new URL(loc, location.origin).pathname;
+    const lastmodDate = lastmod ? new Date(lastmod) : null;
+    return { href: loc, slugPath, lastmodDate };
+  }).filter(Boolean).filter(e => e.slugPath.includes('/opskrifter/') && e.slugPath.endsWith('.html'));
 
   const items = [];
   const concurrency = 14;
   let i = 0;
   async function worker(){
-    while(i < urls.length){
-      const href = urls[i++];
-      const slug = new URL(href, location.origin).pathname;
-      const m = await fetchMeta(slug);
-      if (m) items.push({ slug, ...m }); // kun tilføj hvis siden har indhold
+    while(i < entries.length){
+      const e = entries[i++];
+      const m = await fetchMeta(e.slugPath, e.lastmodDate);
+      if (m) items.push({ slug: e.slugPath, ...m });
     }
   }
   await Promise.all(Array.from({length: concurrency}, worker));
 
-  // sortér alfabetisk efter titel
-  items.sort((a,b)=> a.title.localeCompare(b.title,'da'));
+  // sortér: nyeste først, derefter alfabetisk
+  items.sort((a,b)=>{
+    const ad = a.date ? a.date.getTime() : 0;
+    const bd = b.date ? b.date.getTime() : 0;
+    if (bd !== ad) return bd - ad;
+    return a.title.localeCompare(b.title, 'da');
+  });
 
-  try{ localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items })); }catch{}
+  try{
+    const toCache = items.map(r => ({...r, date: r.date ? r.date.toISOString() : null}));
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items: toCache }));
+  }catch{}
+
   return items;
 }
 
+/* === Render + søgning === */
 function render(list){
   const term = (q.value||'').toLowerCase().trim();
   const out = term
-    ? list.filter(r => (r.title||'').toLowerCase().includes(term) || (r.blurb||'').toLowerCase().includes(term))
+    ? list.filter(r =>
+        (r.title||'').toLowerCase().includes(term) ||
+        (r.blurb||'').toLowerCase().includes(term) ||
+        (r.slug||'').toLowerCase().includes(term)
+      )
     : list;
+
   resultsEl.textContent = `${out.length} resultat${out.length===1?'':'er'}`;
   if(out.length===0){ grid.innerHTML=''; empty.style.display='block'; }
-  else{ grid.innerHTML = out.map(card).join(''); empty.style.display='none'; }
+  else{
+    const html = out.map(card).join('');
+    grid.innerHTML = html;
+    empty.style.display='none';
+  }
 }
 
-/* === init === */
-let ALL=[];
-const onSearch = debounce(()=>render(ALL),150);
-q.addEventListener('input', onSearch);
-q.addEventListener('keydown', e=>{ if(e.key==='Escape'){ q.value=''; onSearch(); q.blur(); }});
+/* === Autocomplete / forslag === */
+let ALL = [];
+let SUG_INDEX = []; // { term, score }
+function buildSuggestIndex(items){
+  const stop = new Set(['i','og','med','også','en','et','af','til','på','paa','fra','den','det','de','eller','for','the','and']);
+  const freq = new Map();
+  for (const r of items){
+    const base = (r.title + ' ' + r.slug.replace('/opskrifter/','').replace('.html','').replace(/-/g,' ')).toLowerCase();
+    for (const raw of base.split(/\s+/)){
+      const w = raw.normalize('NFKD').replace(/[^\w]/g,'');
+      if (w.length<3 || stop.has(w)) continue;
+      freq.set(w, (freq.get(w)||0)+1);
+    }
+  }
+  const tokens = Array.from(freq.entries()).sort((a,b)=>b[1]-a[1]).slice(0,60).map(([term,score])=>({term,score}));
+  SUG_INDEX = tokens;
+}
 
+function showSuggestions(list){
+  if (!list.length){ suggestionsEl.setAttribute('aria-expanded','false'); suggestionsEl.style.display='none'; return; }
+  const html = '<ul>' + list.map((s,i)=>`
+    <li role="option" data-value="${s.value.replace(/"/g,'&quot;')}" class="${i===0?'active':''}">
+      <span>${s.label}</span>
+      <span class="hint">${s.hint||''}</span>
+    </li>`).join('') + '</ul>';
+  suggestionsEl.innerHTML = html;
+  suggestionsEl.style.display='block';
+  suggestionsEl.setAttribute('aria-expanded','true');
+  q.setAttribute('aria-expanded','true');
+}
+
+function hideSuggestions(){
+  suggestionsEl.innerHTML = '';
+  suggestionsEl.style.display='none';
+  suggestionsEl.setAttribute('aria-expanded','false');
+  q.setAttribute('aria-expanded','false');
+}
+
+function suggest(){
+  const term = (q.value||'').toLowerCase().trim();
+  if (term.length < 2){ // vis populære søgninger
+    const popular = ['kylling','kartoffel','svin','okse','laks','grøntsager','dessert','pizza'].map(t=>({label:t,value:t,hint:'populær'}));
+    showSuggestions(popular);
+    return;
+  }
+  const titleMatches = ALL
+    .filter(r => (r.title||'').toLowerCase().includes(term))
+    .slice(0,6)
+    .map(r => ({ label: r.title, value: r.title, hint: 'opskrift' }));
+  const tokenMatches = SUG_INDEX
+    .filter(x => x.term.includes(term) && !titleMatches.some(t => t.value.toLowerCase()===x.term))
+    .slice(0, 8 - titleMatches.length)
+    .map(x => ({ label: x.term, value: x.term, hint: `${x.score}+` }));
+  const combined = [...titleMatches, ...tokenMatches];
+  showSuggestions(combined);
+}
+
+/* === UI events === */
+const onSearch = debounce(()=>{ render(ALL); hideSuggestions(); },120);
+q.addEventListener('input', ()=>{ onSearch(); suggest(); });
+q.addEventListener('focus', ()=> suggest());
+q.addEventListener('blur', ()=> setTimeout(hideSuggestions, 120)); // give klik tid
+
+searchBtn.addEventListener('click', ()=>{ render(ALL); hideSuggestions(); });
+
+q.addEventListener('keydown', (e)=>{
+  const open = suggestionsEl.getAttribute('aria-expanded')==='true';
+  const items = Array.from(suggestionsEl.querySelectorAll('li'));
+  const activeIdx = items.findIndex(li => li.classList.contains('active'));
+  if (e.key==='Enter'){
+    if (open && activeIdx>=0){
+      const v = items[activeIdx].dataset.value || '';
+      q.value = v;
+    }
+    render(ALL);
+    hideSuggestions();
+    e.preventDefault();
+  } else if (e.key==='ArrowDown' && open){
+    const next = Math.min(activeIdx+1, items.length-1);
+    items.forEach(li=>li.classList.remove('active'));
+    if (items[next]) items[next].classList.add('active');
+    e.preventDefault();
+  } else if (e.key==='ArrowUp' && open){
+    const prev = Math.max(activeIdx-1, 0);
+    items.forEach(li=>li.classList.remove('active'));
+    if (items[prev]) items[prev].classList.add('active');
+    e.preventDefault();
+  } else if (e.key==='Escape'){
+    q.value='';
+    render(ALL);
+    hideSuggestions();
+  }
+});
+
+suggestionsEl.addEventListener('mousedown', (e)=>{
+  const li = e.target.closest('li');
+  if (!li) return;
+  const v = li.dataset.value || '';
+  q.value = v;
+  render(ALL);
+  hideSuggestions();
+});
+
+/* === init === */
 (async function(){
   try{
     ALL = await loadRecipes();
+    buildSuggestIndex(ALL);
   }catch(e){
     console.error(e);
     resultsEl.textContent = 'Kunne ikke indlæse opskrifter – tjek at /recipes-sitemap.xml ligger i roden og ikke er tom.';
