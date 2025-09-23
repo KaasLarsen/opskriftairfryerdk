@@ -1,21 +1,19 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-
   "headers": [
     {
-      "source": "/opskrifter/(.*)\\.html",
+      "source": "/opskrifter/:path*.html",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
-      "source": "/(.*)\\.html",
+      "source": "/:path*.html",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ],
-
   "redirects": [
     { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer",  "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
     { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer/", "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
@@ -271,7 +269,6 @@
     { "source": "/tag/groent/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
     { "source": "/tag/groentsager/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
 
-    /* Wildcards til nye tags/kategorier – rører IKKE ved /opskrifter/* */
     { "source": "/tag/:slug", "destination": "/kategori.html?navn=:slug", "permanent": true },
     { "source": "/kategori/:navn", "destination": "/kategori.html?navn=:navn", "permanent": true }
   ]
