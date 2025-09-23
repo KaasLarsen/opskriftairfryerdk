@@ -235,6 +235,25 @@
     { "source": "/sproede-hjemmelavede-grovfritter-i-airfryer-nemme-og-laekre/", "destination": "/opskrifter/kyllingenuggets-i-airfryer-sproede-hjemmelavede.html", "permanent": true },
 
     { "source": "/koed",  "destination": "/opskrifter/pirogger-med-koed-i-airfryer.html", "permanent": true },
-    { "source": "/koed/", "destination": "/opskrifter/pirogger-med-koed-i-airfryer.html", "permanent": true }
+    { "source": "/koed/", "destination": "/opskrifter/pirogger-med-koed-i-airfryer.html", "permanent": true },
+    { "source": "/tag/kylling/", "destination": "/kategori.html?navn=Kylling", "permanent": true },
+{ "source": "/tag/kyllingefilet/", "destination": "/kategori.html?navn=Kylling", "permanent": true },
+{ "source": "/tag/kyllingebryst/", "destination": "/kategori.html?navn=Kylling", "permanent": true },
+
+{ "source": "/tag/oksekoed/", "destination": "/kategori.html?navn=Oksek%C3%B8d", "permanent": true },
+{ "source": "/tag/boef/", "destination": "/kategori.html?navn=Oksek%C3%B8d", "permanent": true },
+
+{ "source": "/tag/svinekod/", "destination": "/kategori.html?navn=Svin", "permanent": true },
+{ "source": "/tag/svinek%C3%B8d/", "destination": "/kategori.html?navn=Svin", "permanent": true },
+{ "source": "/tag/flaeskesteg/", "destination": "/kategori.html?navn=Svin", "permanent": true },
+
+{ "source": "/tag/fisk/", "destination": "/kategori.html?navn=Fisk", "permanent": true },
+{ "source": "/tag/laks/", "destination": "/kategori.html?navn=Fisk", "permanent": true },
+{ "source": "/tag/torsk/", "destination": "/kategori.html?navn=Fisk", "permanent": true },
+
+{ "source": "/tag/groent/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
+{ "source": "/tag/groentsager/", "destination": "/kategori.html?navn=Gr%C3%B8nt", "permanent": true },
+{ "
+
   ]
 }
