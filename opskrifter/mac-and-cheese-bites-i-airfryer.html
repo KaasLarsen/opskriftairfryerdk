@@ -3,140 +3,263 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Mac ’N’ Cheese Bites (Sprød Skal)</title>
-<meta name="description" content="Mac ’N’ Cheese Bites (Sprød Skal) – præcise tider og temperaturer, sprød overflade og saftig midte." />
+<title>Mac And Cheese Bites I Airfryer – Nemt Og Sprødt</title>
+<meta name="description" content="Mac And Cheese Bites i airfryer – præcise tider og temperaturer. Nem opskrift med trin-for-trin, tips, servering og FAQ." />
 <link rel="icon" href="/img/favicon.ico" />
+
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/assets/styles.css?v=17" />
+
+<!-- Structured data: Recipe schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "Mac And Cheese Bites i airfryer – nemt og sprødt",
+  "image": "/img/recipes/mac-and-cheese-bites.png",
+  "description": "Nem opskrift på Mac And Cheese Bites i airfryer. Sprød overflade, tydelige tider og temperaturer.",
+  "author": {
+    "@type": "Organization",
+    "name": "Opskrift Airfryer"
+  },
+  "prepTime": "PT10M",
+  "cookTime": "PT20M",
+  "totalTime": "PT30M",
+  "recipeYield": "3 portioner",
+  "recipeCategory": "Airfryer",
+  "recipeCuisine": "International",
+  "keywords": "mac and cheese bites i airfryer, nem opskrift, sprød",
+  "recipeIngredient": [
+    "1 spsk olie",
+    "1 tsk salt",
+    "Friskkværnet peber",
+    "500–800 g kød (tilpasset retten)",
+    "1 tsk paprika eller krydderimix"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Gør råvarerne klar og dup dem tørre for bedre sprødhed."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Forvarm airfryeren 3–5 min ved 195 °C."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Vend med olie, salt og krydderier – ryst overskud af."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Læg i ét lag i kurven for optimal luftcirkulation."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tilbered 20–25 Min – vend/ryst halvvejs, efter behov."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Tjek kernetemperatur/sprødhed; justér 1–3 min for perfektion."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Lad hvile 5–10 min før servering for at bevare saftighed."
+    }
+  ]
+}
+</script>
+
+<style>
+/* ===== Layout & Stil (samme look som tidligere) ===== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:center; padding:12px 0 6px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.hero-box{background:linear-gradient(180deg,#fff,#f8fafc);border:1px solid #e2e8f0;border-radius:18px;min-height:260px;display:grid;place-items:center;box-shadow:0 8px 22px rgba(2,8,23,.06)}
+.hero-ico{width:120px;height:120px;color:#0ea5e9}
+h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:0 0 8px}
+p.lead{margin:0;color:#475569}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;border:1px solid #e2e8f0;padding:8px 10px;border-radius:999px;background:#fff}
+
+/* Blocks & Grids */
+.section{margin:18px 0}
+.block{border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(2,8,23,.06);padding:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+
+ul.list{margin:0;padding-left:18px;list-style:disc}
+ul.list li{margin:6px 0}
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0}
+ol.steps li{counter-increment:s;position:relative;margin:10px 0;padding-left:34px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font:600 13px/1 ui-sans-serif}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid-3{grid-template-columns:1fr}}
+.card{border:1px solid #e2e8f0;border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(2,8,23,.06);overflow:hidden;display:block}
+.thumb-icon{aspect-ratio:16/9;display:grid;place-items:center;background:linear-gradient(180deg,#f8fafc,#fff)}
+.thumb-icon svg{width:48px;height:48px;color:#0ea5e9}
+.card-body{padding:12px 14px}
+.card-body h3{font-size:15px;line-height:1.35;margin:0}
+
+.copy{color:#64748b;font-size:13px;text-align:center;margin:26px 0 0}
+
+/* Ads – skjul tom plads hvis ingen annonce */
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+
+/* Inline sprite container */
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+</style>
 </head>
 <body>
 
-<!-- Ikoner + Header via partials -->
-<div data-include="/partials/icons.html"></div>
+<!-- Ikon-sprite -->
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="roast" viewBox="0 0 24 24">
+    <path d="M3.5 13.5c0-3.5 3.8-6 8.5-6s8.5 2.5 8.5 6v2c0 .8-.7 1.5-1.5 1.5H5c-.8 0-1.5-.7-1.5-1.5v-2z" fill="currentColor"/>
+    <path d="M7.5 11.5h9M7.5 13.5h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="20.5" cy="12.5" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 10v3l2 2" stroke="currentColor" stroke-width="2" fill="none"/></symbol>
+  <symbol id="thermo" viewBox="0 0 24 24"><path d="M14 14.5V6a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="m12 17-5.5 3 1.5-6.2L3 9.5l6.3-.6L12 3l2.7 5.9 6.3.6-5 4.3L17.5 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="currentColor"/></symbol>
+</svg>
+
+<!-- Header via partial -->
 <div data-include="/partials/header.html"></div>
 
-<main class="container recipe">
+<main class="container">
   <!-- HERO -->
   <section class="hero">
     <div>
-      <h1>Mac ’N’ Cheese Bites (Sprød Skal)</h1>
-      <p class="lead">Mac ’N’ Cheese Bites (Sprød Skal) – præcise tider og temperaturer, sprød overflade og saftig midte.</p>
-      <div class="badges"><span class="badge">⏱ 8–12 Min</span><span class="badge">🌡 190–200 °C</span><span class="badge">⭐ Nemt</span><span class="badge">3–4 Portioner</span></div>
+      <h1>Mac And Cheese Bites I Airfryer – Nemt Og Sprødt</h1>
+      <p class="lead">Præcise tider og temperaturer. Stabilt resultat – mindre bøvl, mere sprødhed.</p>
+      <div class="badges">
+        <span class="badge"><svg width="16" height="16"><use href="#timer"/></svg> 20–25 Min</span>
+        <span class="badge"><svg width="16" height="16"><use href="#thermo"/></svg> 195 °C</span>
+        <span class="badge"><svg width="16" height="16"><use href="#star"/></svg> Nemt</span>
+        <span class="badge">3 Portioner</span>
+      </div>
+    </div>
+    <div class="hero-box" aria-hidden="true">
+      <svg class="hero-ico"><use href="#roast"/></svg>
     </div>
   </section>
 
-  <!-- Introduktion -->
+  <!-- Annonce (lille mellemrum) -->
+  <div style="margin:6px 0 10px">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-7373148222153531"
+         data-ad-slot="0987654321"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- Intro / SEO-tekst -->
   <section class="section block">
-    <h2>Introduktion</h2>
-    <p>Mac ’N’ Cheese Bites (Sprød Skal) er skabt til airfryeren: kortere tilberedning, mindre olie og maksimal sprødhed. Med vores trin-for-trin-guide får du et stabilt, gentageligt resultat – uanset model. Brug kernetemperatur og øjemål de sidste minutter for at ramme perfekt.</p>
+    <h2>Hvorfor Lave Mac And Cheese Bites I Airfryer?</h2>
+    <p>Mac And Cheese Bites i airfryer er både hurtigt og nemt. Den cirkulerede varme giver jævn tilberedning og en fin overflade – uden stegeos og med minimal opvask.</p>
+    <p>Med få trin, korrekt temperatur og kort hviletid får du et stabilt, gentageligt resultat – uanset airfryer-model.</p>
   </section>
 
-  <!-- Ingredienser / Udstyr / Trin -->
+  <!-- Ingredienser & Fremgangsmåde -->
   <section class="section block two">
     <div>
       <h2>Ingredienser</h2>
       <ul class="list">
-        <li>Hovedingrediens i god kvalitet (afdryppet/tørret)</li>
-<li>1–2 spsk olie eller sprayspray</li>
-<li>Groft salt &amp; friskkværnet peber</li>
-<li>Krydderier/urter efter smag (paprika, hvidløg, chili, rosmarin)</li>
+        <li>1 spsk olie</li>
+        <li>1 tsk salt</li>
+        <li>Friskkværnet peber</li>
+        <li>500–800 g kød (tilpasset retten)</li>
+        <li>1 tsk paprika eller krydderimix</li>
       </ul>
 
       <h2 style="margin-top:12px">Udstyr</h2>
       <ul class="list">
-        <li>Airfryer (5 L+ anbefales for jævn varme)</li>
-<li>Silikoneunderlag/rist (valgfrit)</li>
-<li>Stegetermometer (især til kød/fisk)</li>
+        <li>Airfryer (5 L+)</li>
+        <li>Tang eller palet</li>
+        <li>Bagepapir/ristindsats</li>
+      </ul>
+
+      <h2 style="margin-top:12px">Nøgletal</h2>
+      <ul class="list">
+        <li>Kernetemperatur: 50–54 °C (rød fisk)</li>
+        <li>Hviletid: 5–10 min</li>
       </ul>
     </div>
+
     <div>
       <h2>Sådan Gør Du</h2>
       <ol class="steps">
         <li>Gør råvarerne klar og dup dem tørre for bedre sprødhed.</li>
-<li>Forvarm airfryeren 3–5 min ved 190–200 °C.</li>
-<li>Vend med olie, salt og krydderier – ryst overskud af.</li>
-<li>Læg i ét lag i kurven for optimal luftcirkulation.</li>
-<li>Tilbered 8–12 min – vend/ryst halvvejs, efter behov.</li>
-<li>Tjek kernetemperatur/sprødhed; justér 1–3 min for perfektion.</li>
-<li>Lad hvile 2–5 min før servering for at bevare saftighed.</li>
+        <li>Forvarm airfryeren 3–5 min ved 195 °C.</li>
+        <li>Vend med olie, salt og krydderier – ryst overskud af.</li>
+        <li>Læg i ét lag i kurven for optimal luftcirkulation.</li>
+        <li>Tilbered 20–25 Min – vend/ryst halvvejs, efter behov.</li>
+        <li>Tjek kernetemperatur/sprødhed; justér 1–3 min for perfektion.</li>
+        <li>Lad hvile 5–10 min før servering for at bevare saftighed.</li>
       </ol>
     </div>
   </section>
 
-  <!-- Tips / Alternativer / Servering -->
+  <!-- Tips & Alternativer -->
   <section class="section block">
-    <h2>Tips</h2>
+    <h2>Tips Til Perfekt Resultat</h2>
     <ul class="list">
-      <li>Fyld ikke kurven for meget – lav hellere flere hold.</li>
-<li>En smule bagepulver i krydringen kan give ekstra sprød overflade.</li>
-<li>Dryp med citron eller eddike lige før servering for at løfte smagen.</li>
+      <li>Brug ensartede stykker for jævn tilberedning.</li>
+      <li>Overfyld ikke kurven – luftcirkulation er nøglen.</li>
+      <li>Tilsæt en smule olie for ekstra sprødhed (især panering).</li>
     </ul>
 
-    <h2 style="margin-top:12px">Alternative Tilberedninger</h2>
+    <h2 style="margin-top:12px">Andre Tilberedningsmetoder</h2>
     <ul class="list">
-      <li>Ovn: 190–220 °C varmluft; beregn lidt længere tid end i airfryer.</li>
-<li>Grill/pande: hold øje og brug kernetemperatur som rettesnor.</li>
-    </ul>
-
-    <h2 style="margin-top:12px">Serveringsforslag</h2>
-    <ul class="list">
-      <li>Server med grøn salat, sprøde kartofler eller passende dip.</li>
-<li>Til madsammensætning: suppler med grønt/fuldkorn for balance.</li>
+      <li><b>Ovn:</b> 200 °C varmluft, 5–10 min længere end airfryer.</li>
+      <li><b>Grill:</b> Mellem indirekte varme – vend undervejs.</li>
     </ul>
   </section>
 
-  <!-- Næring / Opbevaring / FAQ -->
-  <section class="section block two">
-    <div>
-      <h2>Næringsoverslag</h2>
-      <ul class="list">
-        <li>Næringsindhold afhænger af råvare og oliemængde – se producentdata.</li>
-      </ul>
-
-      <h2 style="margin-top:12px">Opbevaring &amp; Genopvarmning</h2>
-      <ul class="list">
-        <li>Køl: 2–3 dage i lufttæt beholder.</li>
-<li>Genopvarm: 3–6 min i airfryer ved 180–190 °C for at genskabe sprødhed.</li>
-      </ul>
-    </div>
-    <div>
-      <h2>FAQ</h2>
-      <ul class="list">
-        <li><b>Hvorfor bliver det ikke sprødt?</b> – Dup råvarerne tørre, forvarm, og undgå at overfylde kurven.</li>
-<li><b>Skal jeg forvarme hver gang?</b> – Det anbefales – du får mere ensartet resultat og kortere samlet tid.</li>
-<li><b>Kan jeg bruge bagepapir?</b> – Ja, men perforeret underlag giver bedst luftcirkulation og sprødhed.</li>
-      </ul>
-    </div>
+  <!-- Servering -->
+  <section class="section block">
+    <h2>Serveringsforslag</h2>
+    <p>Server med en frisk salat og en syrlig dip – eller gå all-in med sprøde kartofler og en cremet dressing.</p>
   </section>
 
-  <!-- Relaterede -->
+  <!-- FAQ -->
+  <section class="section block">
+    <h2>Ofte Stillede Spørgsmål</h2>
+    <h3>Skal jeg forvarme airfryeren?</h3>
+    <p>Ja, 3–5 minutter giver mere stabil varme og bedre sprødhed.</p>
+
+    <h3>Kan jeg tilberede flere portioner på én gang?</h3>
+    <p>Ja, men tilbered i lag/hold ad gangen for at bevare sprødheden.</p>
+
+    <h3>Hvordan undgår jeg, at det bliver tørt?</h3>
+    <p>Hold øje de sidste minutter, og lad maden hvile kort – så bevares saftigheden.</p>
+  </section>
+
+  <!-- Relaterede (automatisk) -->
   <section class="section">
-    <h2>Relaterede Opskrifter</h2>
-    <div class="grid grid-3">
-      <a class="card" href="/opskrifter/broccoli-i-airfryer.html">
-  <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-  <div class="card-body"><h3>Broccoli I Airfryer – Sprød Og Nærende</h3></div>
-</a>
-<a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html">
-  <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
-  <div class="card-body"><h3>Kyllingespyd I Airfryer – Marinade Og Smag</h3></div>
-</a>
-<a class="card" href="/opskrifter/hasselbagte-kartofler-i-airfryer.html">
-  <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-  <div class="card-body"><h3>Hasselbagte Kartofler I Airfryer</h3></div>
-</a>
-    </div>
+    <h2 id="related-heading">Relaterede Opskrifter</h2>
+    <div id="related-grid" class="grid-3"></div>
   </section>
 
   <!-- PriceRunner i bunden -->
   <section class="section block">
     <h2>Annonce · Airfryer Bruges I Opskriften</h2>
-    <div id="pr-product-widget-0b13e4f0" style="display:block;width:100%"></div>
-    <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3208440524&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-0b13e4f0" async></script>
+    <div id="pr-product-widget-78428440" style="display:block;width:100%"></div>
+    <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-78428440" async></script>
     <div style="display:inline-block">
-      <a href="https://www.pricerunner.dk/pl/81-3208440524/Frituregryder/Ninja-Foodi-FlexDrawer-AF500EU-Sammenlign-Priser" rel="nofollow">
-        <p style="font:14px 'Klarna Text', Helvetica, Arial, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
+      <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow">
+        <p style="font:14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color:#334155; text-decoration: underline;">
           Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
         </p>
       </a>
@@ -147,7 +270,8 @@
 <!-- Footer via partial -->
 <div data-include="/partials/footer.html"></div>
 
-<!-- Loader til partials -->
-<script src="/assets/include.js?v=4"></script>
+<!-- Loader til partials + relaterede -->
+<script src="/assets/include.js?v=1"></script>
+<script src="/assets/related.js?v=1"></script>
 </body>
 </html>
