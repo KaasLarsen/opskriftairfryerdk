@@ -4,6 +4,7 @@
   <!-- ====== Grundsider ====== -->
   <url><loc>https://www.opskrift-airfryer.dk/</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top.html</loc></url>
 
   <!-- Kategorier (oversigt + direkte deep-links) -->
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc></url>
