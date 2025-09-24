@@ -9,60 +9,31 @@
   <link rel="canonical" href="https://www.opskrift-airfryer.dk/top/top-25-airfryer-opskrifter.html" />
   <meta name="robots" content="index,follow" />
 
-  <!-- Global CSS (bemærk .css) -->
-  <link rel="stylesheet" href="/assets/styles.css?v=10" />
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/assets/styles.css?v=11" />
 
-  <!-- Page-scoped tweaks: fjerner gap efter hero, ny accent, pænere thumbs/hover -->
+  <!-- Page tweaks: fjerner mellemrum under hero, holder orange accent, og fjerner ekstra spacing omkring annoncen -->
   <style>
-    body.top-page{ --accent:#f59e0b; } /* amber accent KUN på denne side */
-    .hero{ margin:18px 0 0; }          /* fjern bundmargen */
-    .hero + .section{ margin-top:0; }  /* fjern første sektion top-gap */
-    .hero .hero-box{ display:grid; place-items:center; background:linear-gradient(180deg,#fff,#fffbeb); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); min-height:220px }
-    .card .thumb{ display:grid; place-items:center; }
-    .card .thumb svg{ width:44px; height:44px; color:var(--accent); opacity:.95 }
+    body.top-page{ --accent:#f59e0b; }
+    .hero{ margin:12px 0 0 !important; }           /* nul “hul” under hero */
+    .hero + .ad-wrap{ margin-top:0 !important; }   /* ingen top-gap før annoncen */
+    .ad-wrap{ margin:0 0 10px !important; }        /* minimal bund-gap */
+    .hero .hero-box{
+      display:grid;place-items:center;
+      background:linear-gradient(180deg,#fff,#fffbeb);
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);min-height:220px
+    }
+    /* cards som jeres default – ens ikon og standard thumb-baggrund */
+    .card .thumb{ display:grid;place-items:center; }
+    .card .thumb svg{ width:44px;height:44px;color:var(--accent);opacity:.95 }
     .card:hover{ transform:translateY(-2px); transition:.18s ease; box-shadow:0 10px 24px rgba(2,8,23,.08) }
-    /* bløde, varierede thumb-baggrunde */
-    .g-amber{ background:linear-gradient(180deg,#fff,#fffbeb); }
-    .g-green{ background:linear-gradient(180deg,#fff,#ecfdf5); }
-    .g-blue{  background:linear-gradient(180deg,#fff,#eff6ff); }
-    .g-rose{  background:linear-gradient(180deg,#fff,#fff1f2); }
-    .g-vio{   background:linear-gradient(180deg,#fff,#f5f3ff); }
-    .g-slate{ background:linear-gradient(180deg,#fff,#f8fafc); }
   </style>
 
   <!-- Google Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 </head>
 <body class="top-page">
-  <!-- Inline ekstra ikoner (kolliderer ikke med dine partials) -->
-  <svg class="hidden" aria-hidden="true">
-    <symbol id="icon-trophy" viewBox="0 0 24 24">
-      <path d="M6 3h12v3h2a3 3 0 0 1-3 3h-1a5 5 0 0 1-4 3.87V16h3a1 1 0 0 1 0 2h-3v2h4a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2h4v-2H9a1 1 0 0 1 0-2h3v-3.13A5 5 0 0 1 8 9H7A3 3 0 0 1 4 6h2V3zM18 6V5H6v1a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3z"/>
-    </symbol>
-    <symbol id="icon-fries" viewBox="0 0 24 24">
-      <path d="M6 2h2l1 4h2l1-4h2l-1 4h2l1-3h2l-1 4h2l-2 13a3 3 0 0 1-3 2H9a3 3 0 0 1-3-2L4 7h2l1-5z"/>
-    </symbol>
-    <symbol id="icon-drumstick" viewBox="0 0 24 24">
-      <path d="M16 3a5 5 0 0 1 3.54 8.54l-4.92 4.92a3.5 3.5 0 0 1-4.95 0l-.59-.59-.7.7a2 2 0 1 1-2.83-2.83l.7-.7-.59-.59a3.5 3.5 0 0 1 0-4.95L10.46 4.5A5 5 0 0 1 16 3z"/>
-    </symbol>
-    <symbol id="icon-fish" viewBox="0 0 24 24">
-      <path d="M3 12s3-5 9-5c5 0 9 5 9 5s-4 5-9 5c-6 0-9-5-9-5zm9-2a2 2 0 1 0 .001 3.999A2 2 0 0 0 12 10z"/>
-    </symbol>
-    <symbol id="icon-leaf" viewBox="0 0 24 24">
-      <path d="M19 3C9 3 5 9 5 14a6 6 0 0 0 6 6c5 0 11-4 11-14V3h-3zM6 20c2-5 6-9 11-11"/>
-    </symbol>
-    <symbol id="icon-cheese" viewBox="0 0 24 24">
-      <path d="M3 10l9-5 9 5v6a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-6zm4 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm4-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-    </symbol>
-    <symbol id="icon-egg" viewBox="0 0 24 24">
-      <path d="M12 3c4 0 7 6 7 10a7 7 0 0 1-14 0c0-4 3-10 7-10z"/>
-    </symbol>
-    <symbol id="icon-pan" viewBox="0 0 24 24">
-      <path d="M3 13a6 6 0 1 1 12 0v2H3v-2zm12 0h6v2h-6zM7 18h4v2H7z"/>
-    </symbol>
-  </svg>
-
-  <!-- Partials (din header/footer + base-ikoner) -->
+  <!-- Partials (ikoner + header) -->
   <div data-include="/partials/icons.html"></div>
   <div data-include="/partials/header.html"></div>
 
@@ -82,7 +53,7 @@
         <p>De mest elskede opskrifter på tværs af kød, fisk, grønt og snacks – med korte noter, tips og direkte links.</p>
       </div>
       <div class="hero-box">
-        <!-- Ny hero-illustration (inline SVG), kan gemmes som /img/hero-top25.svg hvis du vil -->
+        <!-- Hero-illustration: kan gemmes som /img/hero-top25.svg om ønsket -->
         <svg viewBox="0 0 160 160" width="160" height="160" role="img" aria-label="Top Airfryer">
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
@@ -90,27 +61,19 @@
               <stop offset="1" stop-color="#ffedd5"/>
             </linearGradient>
           </defs>
-          <!-- airfryer-krop -->
           <rect x="30" y="30" rx="18" ry="18" width="100" height="90" fill="url(#g1)" stroke="#f59e0b" stroke-width="2"/>
-          <!-- top indikator -->
           <circle cx="60" cy="50" r="5" fill="#f59e0b"/>
           <rect x="40" y="60" width="80" height="24" rx="6" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
-          <!-- kurv -->
           <rect x="38" y="88" width="84" height="26" rx="6" fill="#fff" stroke="#f59e0b" stroke-width="1.5"/>
           <circle cx="60" cy="101" r="3" fill="#f59e0b"/>
           <circle cx="80" cy="101" r="3" fill="#f59e0b"/>
           <circle cx="100" cy="101" r="3" fill="#f59e0b"/>
-          <!-- lille trofæ badge -->
-          <g transform="translate(108,18)">
-            <circle cx="16" cy="16" r="16" fill="#f59e0b" opacity=".12"/>
-            <use href="#icon-trophy" width="18" height="18" x="7" y="7" fill="#f59e0b"></use>
-          </g>
         </svg>
       </div>
     </section>
 
-    <!-- Annonce -->
-    <div style="margin:8px 0 18px">
+    <!-- Annonce (uden ekstra top-gap) -->
+    <div class="ad-wrap">
       <ins class="adsbygoogle" style="display:block"
            data-ad-client="ca-pub-7373148222153531"
            data-ad-slot="1234567890"
@@ -141,31 +104,32 @@
     <section class="section block">
       <h2>De 25 mest populære opskrifter</h2>
       <div class="grid grid-3">
-        <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html"><div class="thumb g-amber"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Flæskesteg i Airfryer</h3><p class="meta">Sprød svær, saftig steg – nemt hver gang</p></div></a>
-        <a class="card" href="/opskrifter/kyllingevinger-i-airfryer.html"><div class="thumb g-rose"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Kyllingevinger</h3><p class="meta">Søde/stærke varianter, perfekt snack</p></div></a>
-        <a class="card" href="/opskrifter/lasagne-i-airfryer.html"><div class="thumb g-slate"><svg><use href="#icon-pan"/></svg></div><div class="card-body"><h3>Lasagne</h3><p class="meta">Hverdagsfavorit i lille form</p></div></a>
-        <a class="card" href="/opskrifter/pommes-frites-i-airfryer-super-sproede.html"><div class="thumb g-amber"><svg><use href="#icon-fries"/></svg></div><div class="card-body"><h3>Pommes Frites</h3><p class="meta">Ekstra sprøde – skyl & ryst</p></div></a>
-        <a class="card" href="/opskrifter/andebryst-i-airfryer-sproedt-skind.html"><div class="thumb g-rose"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Andebryst</h3><p class="meta">Sprødt skind, rosa midte</p></div></a>
-        <a class="card" href="/opskrifter/bagt-camembert-med-honning-i-airfryer.html"><div class="thumb g-vio"><svg><use href="#icon-cheese"/></svg></div><div class="card-body"><h3>Bagt Camembert</h3><p class="meta">Cremet deling på 10 min</p></div></a>
-        <a class="card" href="/opskrifter/gyoza-i-airfryer.html"><div class="thumb g-blue"><svg><use href="#icon-pan"/></svg></div><div class="card-body"><h3>Gyoza</h3><p class="meta">Asiatisk sprødhed – ingen olie</p></div></a>
-        <a class="card" href="/opskrifter/mozzarella-sticks-i-airfryer.html"><div class="thumb g-vio"><svg><use href="#icon-cheese"/></svg></div><div class="card-body"><h3>Mozzarella Sticks</h3><p class="meta">Sygt gode med marinara</p></div></a>
-        <a class="card" href="/opskrifter/rejer-sproede-i-airfryer.html"><div class="thumb g-blue"><svg><use href="#icon-fish"/></svg></div><div class="card-body"><h3>Sprøde Rejer</h3><p class="meta">Hvidløg & citron – 6–8 min</p></div></a>
-        <a class="card" href="/opskrifter/asparges-i-airfryer.html"><div class="thumb g-green"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Asparges</h3><p class="meta">Grøn, sprød sideret</p></div></a>
-        <a class="card" href="/opskrifter/butter-chicken-i-airfryer.html"><div class="thumb g-rose"><svg><use href="#icon-pan"/></svg></div><div class="card-body"><h3>Butter Chicken</h3><p class="meta">Cremet, krydret og nem</p></div></a>
-        <a class="card" href="/opskrifter/tunsteak-i-airfryer-sesam.html"><div class="thumb g-blue"><svg><use href="#icon-fish"/></svg></div><div class="card-body"><h3>Tunsteak m. Sesam</h3><p class="meta">Rosa midte på 2–3 min</p></div></a>
-        <a class="card" href="/opskrifter/culottesteg-i-airfryer.html"><div class="thumb g-slate"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Culottesteg</h3><p class="meta">Sikker rosa kerne</p></div></a>
-        <a class="card" href="/opskrifter/ribeye-steak-i-airfryer.html"><div class="thumb g-slate"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Ribeye Steak</h3><p class="meta">Stegeskorpe + saft</p></div></a>
-        <a class="card" href="/opskrifter/cote-de-boeuf-i-airfryer.html"><div class="thumb g-slate"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Côte de Boeuf</h3><p class="meta">Delbar luksus</p></div></a>
-        <a class="card" href="/opskrifter/klejner-i-airfryer-julet-bagte.html"><div class="thumb g-vio"><svg><use href="#icon-cheese"/></svg></div><div class="card-body"><h3>Klejner</h3><p class="meta">Julet favorit – bagt</p></div></a>
-        <a class="card" href="/opskrifter/leverpostej-i-airfryer.html"><div class="thumb g-vio"><svg><use href="#icon-cheese"/></svg></div><div class="card-body"><h3>Leverpostej</h3><p class="meta">Perfekt smørbar</p></div></a>
-        <a class="card" href="/opskrifter/roedbedefritter-i-airfryer.html"><div class="thumb g-rose"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Rødbedefritter</h3><p class="meta">Søde & sprøde</p></div></a>
-        <a class="card" href="/opskrifter/sproede-kikaerter-i-airfryer.html"><div class="thumb g-rose"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Kikærter</h3><p class="meta">5-min snack</p></div></a>
-        <a class="card" href="/opskrifter/kyllingenuggets-i-airfryer-sproede-hjemmelavede.html"><div class="thumb g-rose"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Kyllingenuggets</h3><p class="meta">Hjemmelavede og sprøde</p></div></a>
-        <a class="card" href="/opskrifter/soed-kartoffel-hasselback-i-airfryer.html"><div class="thumb g-green"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Sød Kartofel Hasselback</h3><p class="meta">Nem sideret</p></div></a>
-        <a class="card" href="/opskrifter/hasselback-kartofler-i-airfryer.html"><div class="thumb g-green"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Hasselback Kartofler</h3><p class="meta">Klassiker – altid hit</p></div></a>
-        <a class="card" href="/opskrifter/fish-tacos-i-airfryer.html"><div class="thumb g-blue"><svg><use href="#icon-fish"/></svg></div><div class="card-body"><h3>Fish Tacos</h3><p class="meta">Sprød + frisk</p></div></a>
-        <a class="card" href="/opskrifter/nachos-i-airfryer-ostesauce.html"><div class="thumb g-amber"><svg><use href="#icon-fries"/></svg></div><div class="card-body"><h3>Nachos m. Ostesauce</h3><p class="meta">Hygge på 10 min</p></div></a>
-        <a class="card" href="/opskrifter/aeg-i-airfryer.html"><div class="thumb g-slate"><svg><use href="#icon-egg"/></svg></div><div class="card-body"><h3>Æg i Airfryer</h3><p class="meta">Blød→hård, super let</p></div></a>
+        <!-- Alle kort bruger jeres standardikon (typisk #book) -->
+        <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html"><div class="thumb"><svg><use href="#book" xlink:href="#book"></use></svg></div><div class="card-body"><h3>Flæskesteg i Airfryer</h3><p class="meta">Sprød svær, saftig steg – nemt hver gang</p></div></a>
+        <a class="card" href="/opskrifter/kyllingevinger-i-airfryer.html"><div class="thumb"><svg><use href="#book" xlink:href="#book"></use></svg></div><div class="card-body"><h3>Kyllingevinger</h3><p class="meta">Søde/stærke varianter, perfekt snack</p></div></a>
+        <a class="card" href="/opskrifter/lasagne-i-airfryer.html"><div class="thumb"><svg><use href="#book" xlink:href="#book"></use></svg></div><div class="card-body"><h3>Lasagne</h3><p class="meta">Hverdagsfavorit i lille form</p></div></a>
+        <a class="card" href="/opskrifter/pommes-frites-i-airfryer-super-sproede.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Pommes Frites</h3><p class="meta">Ekstra sprøde – skyl & ryst</p></div></a>
+        <a class="card" href="/opskrifter/andebryst-i-airfryer-sproedt-skind.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Andebryst</h3><p class="meta">Sprødt skind, rosa midte</p></div></a>
+        <a class="card" href="/opskrifter/bagt-camembert-med-honning-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Bagt Camembert</h3><p class="meta">Cremet deling på 10 min</p></div></a>
+        <a class="card" href="/opskrifter/gyoza-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Gyoza</h3><p class="meta">Asiatisk sprødhed – ingen olie</p></div></a>
+        <a class="card" href="/opskrifter/mozzarella-sticks-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Mozzarella Sticks</h3><p class="meta">Sygt gode med marinara</p></div></a>
+        <a class="card" href="/opskrifter/rejer-sproede-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Sprøde Rejer</h3><p class="meta">Hvidløg & citron – 6–8 min</p></div></a>
+        <a class="card" href="/opskrifter/asparges-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Asparges</h3><p class="meta">Grøn, sprød sideret</p></div></a>
+        <a class="card" href="/opskrifter/butter-chicken-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Butter Chicken</h3><p class="meta">Cremet, krydret og nem</p></div></a>
+        <a class="card" href="/opskrifter/tunsteak-i-airfryer-sesam.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Tunsteak m. Sesam</h3><p class="meta">Rosa midte på 2–3 min</p></div></a>
+        <a class="card" href="/opskrifter/culottesteg-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Culottesteg</h3><p class="meta">Sikker rosa kerne</p></div></a>
+        <a class="card" href="/opskrifter/ribeye-steak-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Ribeye Steak</h3><p class="meta">Stegeskorpe + saft</p></div></a>
+        <a class="card" href="/opskrifter/cote-de-boeuf-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Côte de Boeuf</h3><p class="meta">Delbar luksus</p></div></a>
+        <a class="card" href="/opskrifter/klejner-i-airfryer-julet-bagte.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Klejner</h3><p class="meta">Julet favorit – bagt</p></div></a>
+        <a class="card" href="/opskrifter/leverpostej-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Leverpostej</h3><p class="meta">Perfekt smørbar</p></div></a>
+        <a class="card" href="/opskrifter/roedbedefritter-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Rødbedefritter</h3><p class="meta">Søde & sprøde</p></div></a>
+        <a class="card" href="/opskrifter/sproede-kikaerter-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Kikærter</h3><p class="meta">5-min snack</p></div></a>
+        <a class="card" href="/opskrifter/kyllingenuggets-i-airfryer-sproede-hjemmelavede.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Kyllingenuggets</h3><p class="meta">Hjemmelavede og sprøde</p></div></a>
+        <a class="card" href="/opskrifter/soed-kartoffel-hasselback-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Sød Kartofel Hasselback</h3><p class="meta">Nem sideret</p></div></a>
+        <a class="card" href="/opskrifter/hasselback-kartofler-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Hasselback Kartofler</h3><p class="meta">Klassiker – altid hit</p></div></a>
+        <a class="card" href="/opskrifter/fish-tacos-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Fish Tacos</h3><p class="meta">Sprød + frisk</p></div></a>
+        <a class="card" href="/opskrifter/nachos-i-airfryer-ostesauce.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Nachos m. Ostesauce</h3><p class="meta">Hygge på 10 min</p></div></a>
+        <a class="card" href="/opskrifter/aeg-i-airfryer.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Æg i Airfryer</h3><p class="meta">Blød→hård, super let</p></div></a>
       </div>
     </section>
 
@@ -196,12 +160,12 @@
     <section class="section block">
       <h2>Hop til kategorier</h2>
       <div class="grid grid-3">
-        <a class="card" href="/kategori.html?navn=Kylling"><div class="thumb g-rose"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Kylling</h3><p class="meta">Filet, vinger, spyd m.m.</p></div></a>
-        <a class="card" href="/kategori.html?navn=Oksek%C3%B8d"><div class="thumb g-slate"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Oksekød</h3><p class="meta">Steaks, culotte, ribeye</p></div></a>
-        <a class="card" href="/kategori.html?navn=Svin"><div class="thumb g-amber"><svg><use href="#icon-drumstick"/></svg></div><div class="card-body"><h3>Svin</h3><p class="meta">Flæskesteg, koteletter</p></div></a>
-        <a class="card" href="/kategori.html?navn=Fisk"><div class="thumb g-blue"><svg><use href="#icon-fish"/></svg></div><div class="card-body"><h3>Fisk</h3><p class="meta">Laks, torsk, rejer</p></div></a>
-        <a class="card" href="/kategori.html?navn=Gr%C3%B8nt"><div class="thumb g-green"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Grønt</h3><p class="meta">Asparges, kartofler, m.m.</p></div></a>
-        <a class="card" href="/top.html"><div class="thumb g-vio"><svg><use href="#icon-trophy"/></svg></div><div class="card-body"><h3>Flere toplister</h3><p class="meta">Snacks, brunch, gæstemad</p></div></a>
+        <a class="card" href="/kategori.html?navn=Kylling"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Kylling</h3><p class="meta">Filet, vinger, spyd m.m.</p></div></a>
+        <a class="card" href="/kategori.html?navn=Oksek%C3%B8d"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Oksekød</h3><p class="meta">Steaks, culotte, ribeye</p></div></a>
+        <a class="card" href="/kategori.html?navn=Svin"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Svin</h3><p class="meta">Flæskesteg, koteletter</p></div></a>
+        <a class="card" href="/kategori.html?navn=Fisk"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Fisk</h3><p class="meta">Laks, torsk, rejer</p></div></a>
+        <a class="card" href="/kategori.html?navn=Gr%C3%B8nt"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Grønt</h3><p class="meta">Asparges, kartofler, m.m.</p></div></a>
+        <a class="card" href="/top.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Flere toplister</h3><p class="meta">Snacks, brunch, gæstemad</p></div></a>
       </div>
     </section>
 
@@ -223,21 +187,10 @@
     <section class="section block">
       <h2>Relaterede guider</h2>
       <div class="grid grid-3">
-        <a class="card" href="/guides/airfryer-tider.html"><div class="thumb g-amber"><svg><use href="#icon-pan"/></svg></div><div class="card-body"><h3>Airfryer Tider & Temperaturer</h3><p class="meta">Komplet oversigt</p></div></a>
-        <a class="card" href="/guides/airfryer-rengoering.html"><div class="thumb g-green"><svg><use href="#icon-leaf"/></svg></div><div class="card-body"><h3>Rengøring af Airfryer</h3><p class="meta">Undgå dårlig lugt</p></div></a>
-        <a class="card" href="/guides/airfryer-koebsguide.html"><div class="thumb g-vio"><svg><use href="#icon-trophy"/></svg></div><div class="card-body"><h3>Købsguide</h3><p class="meta">Find den rigtige størrelse</p></div></a>
+        <a class="card" href="/guides/airfryer-tider.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Airfryer Tider & Temperaturer</h3><p class="meta">Komplet oversigt</p></div></a>
+        <a class="card" href="/guides/airfryer-rengoering.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Rengøring af Airfryer</h3><p class="meta">Undgå dårlig lugt</p></div></a>
+        <a class="card" href="/guides/airfryer-koebsguide.html"><div class="thumb"><svg><use href="#book"></use></svg></div><div class="card-body"><h3>Købsguide</h3><p class="meta">Find den rigtige størrelse</p></div></a>
       </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section block">
-      <h2>FAQ</h2>
-      <ul style="margin:0;padding-left:18px;list-style:disc">
-        <li><strong>Hvilken opskrift skal jeg starte med?</strong> Prøv <a href="/opskrifter/pommes-frites-i-airfryer-super-sproede.html">pommes</a> eller <a href="/opskrifter/kyllingevinger-i-airfryer.html">kyllingevinger</a> – de er taknemmelige og viser teknikken.</li>
-        <li><strong>Skal jeg forvarme?</strong> Ikke altid. Forvarm ved kød der skal have stegeskorpe (bøf, and), mindre vigtigt ved grønt/snacks.</li>
-        <li><strong>Hvor meget kan jeg komme i?</strong> Fyld i ét lag for sprødhed. Lav hellere to omgange end én overfyldt.</li>
-        <li><strong>Min kurv lugter?</strong> Se <a href="/guides/airfryer-rengoering.html">rengøringsguiden</a> – og kør 3–4 min med citronskiver ved 180 °C.</li>
-      </ul>
     </section>
   </main>
 
@@ -245,7 +198,7 @@
   <div data-include="/partials/footer.html"></div>
 
   <!-- Loader til partials -->
-  <script src="/assets/include.js?v=4"></script>
+  <script src="/assets/include.js?v=4" defer></script>
 
   <!-- Schema: ItemList -->
   <script type="application/ld+json">
