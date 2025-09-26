@@ -6,6 +6,10 @@
   <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/top.html</loc></url>
 
+  <!-- Nye TOP-sider -->
+<url><loc>https://www.opskrift-airfryer.dk/top/top-10-sunde-retter-i-airfryer.html</loc></url>
+<url><loc>https://www.opskrift-airfryer.dk/top/top-12-julefavoritter-i-airfryer.html</loc></url>
+
   <!-- Kategorier (oversigt + direkte deep-links) -->
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html?navn=Svinek%C3%B8d</loc></url>
