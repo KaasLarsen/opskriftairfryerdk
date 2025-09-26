@@ -13,7 +13,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 
   <style>
-    /* Sidespecifik, lille ekstra UI – respekterer dit eksisterende design */
+    /* Sidespecifik, lille ekstra UI – respekterer jeres eksisterende design */
     .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:20px;align-items:center;margin:18px 0}
     .hero .hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);min-height:200px;display:grid;place-items:center}
     .kicker{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
@@ -24,11 +24,13 @@
     .thumb{aspect-ratio:16/9;background:linear-gradient(180deg,#f8fafc,#fff);display:grid;place-items:center}
     .thumb svg{width:42px;height:42px;color:var(--accent)}
     .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
-    /* Sørg for at links-kort opfører sig som kort */
+    /* Links skal opføre sig som kort */
     a.card { display:block; color:inherit; text-decoration:none; }
+    /* Inline-ikon i korttitler */
+    .ico-inline{width:16px;height:16px;margin-right:6px;vertical-align:-2px;color:var(--accent)}
   </style>
 
-  <!-- Structured data: ItemList med det indhold, der er live -->
+  <!-- Structured data: ItemList med de sider, der er live -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -110,30 +112,40 @@
           </div>
         </a>
 
-        <!-- NY: nu klikbar, siden er live -->
+        <!-- LIVE: 12 fejl – nu klikbar + inline-ikon -->
         <a class="card top-card"
            href="/top/12-almindelige-airfryer-fejl.html"
            data-title="Airfryer fejl 12 almindelige fejl og løsninger tips svær sprød">
           <div class="thumb"><svg><use href="#alert" xlink:href="#alert"></use></svg></div>
           <div class="card-body">
-            <h3>12 almindelige airfryer-fejl</h3>
+            <h3>
+              <svg class="ico-inline" aria-hidden="true"><use href="#alert" xlink:href="#alert"></use></svg>
+              12 almindelige airfryer-fejl
+            </h3>
             <p class="meta">Guide til at undgå tør kylling, blød svær og brændte kanter.</p>
           </div>
         </a>
 
-        <!-- KOMMER SNART – ikke klikbar endnu -->
+        <!-- KOMMER SNART – Tider & temperaturer (med inline-ikon i titel) -->
         <div class="card top-card" data-title="Tider temperaturer skema omregning ovn varmluft airfryer tabel">
           <div class="thumb"><svg><use href="#clock" xlink:href="#clock"></use></svg></div>
           <div class="card-body">
-            <h3>Tider & temperaturer</h3>
+            <h3>
+              <svg class="ico-inline" aria-hidden="true"><use href="#clock" xlink:href="#clock"></use></svg>
+              Tider & temperaturer
+            </h3>
             <p class="meta">Hurtig omregning og standardskema til de mest brugte råvarer. <span class="soon">Kommer snart</span></p>
           </div>
         </div>
 
+        <!-- KOMMER SNART – Bedste airfryere & købsguide (med inline-ikon i titel) -->
         <div class="card top-card" data-title="Bedste airfryere købsguide anbefalinger pricerunner test">
           <div class="thumb"><svg><use href="#trophy" xlink:href="#trophy"></use></svg></div>
           <div class="card-body">
-            <h3>Bedste airfryere & købsguide</h3>
+            <h3>
+              <svg class="ico-inline" aria-hidden="true"><use href="#trophy" xlink:href="#trophy"></use></svg>
+              Bedste airfryere & købsguide
+            </h3>
             <p class="meta">Hvilken model passer til dig? Sammenlign kapacitet, funktioner og pris. <span class="soon">Kommer snart</span></p>
           </div>
         </div>
