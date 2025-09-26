@@ -6,8 +6,10 @@
 <title>Kategorier – Opskrift-Airfryer.dk</title>
 <meta name="description" content="Se airfryer opskrifter efter kategori: kød, kylling, fisk, grønt, tilbehør, dessert og meget mere." />
 <link rel="icon" href="/img/favicon.ico" />
+
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+
 <style>
 /* Clean category page */
 *,*::before,*::after{box-sizing:border-box}html,body{height:100%}
@@ -36,6 +38,12 @@ h1{font-size:clamp(26px,3vw,38px);line-height:1.2;margin:6px 0 8px}
 .adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 .badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;margin-top:6px}
+
+/* Underkategori chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-size:13px}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 </style>
 </head>
 <body>
@@ -51,6 +59,9 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <h1 id="kat-title">Kategori</h1>
     <p class="lead">Se opskrifter under den valgte kategori.</p>
     <span id="kat-badge" class="badge" style="display:none"></span>
+
+    <!-- Underkategorier (vises automatisk for udvalgte kategorier) -->
+    <div id="subcats" class="chips" aria-label="Underkategorier" hidden></div>
   </section>
 
   <!-- Annonce -->
@@ -87,6 +98,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
   // 1) Læs både slug og navn (fallback til 'alle')
   const raw = (params.get('slug') || params.get('navn') || 'alle').trim();
+  const underParam = (params.get('under') || '').trim();
 
   // 2) Slugify – kompatibel uden \p{Diacritic}
   function slugify(s){
@@ -96,16 +108,49 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
       .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
   }
   const wanted = slugify(raw);
+  const wantedUnder = slugify(underParam);
 
   // 3) Visningstekster
   const pretty = raw.replace(/-/g,' ');
   const nice = pretty.charAt(0).toLocaleUpperCase('da') + pretty.slice(1);
-  document.getElementById('kat-title').textContent = 'Kategori: ' + nice;
-  document.getElementById('kat-h2').textContent = nice + ' – Opskrifter';
-  const badge = document.getElementById('kat-badge');
-  badge.textContent = nice; badge.style.display = 'inline-block';
+  const underNice = underParam ? (underParam.charAt(0).toLocaleUpperCase('da') + underParam.slice(1)) : '';
 
-  // 4) Hent opskrifter (AFO eller RECIPES)
+  const titleEl = document.getElementById('kat-title');
+  const h2El = document.getElementById('kat-h2');
+  const badge = document.getElementById('kat-badge');
+
+  titleEl.textContent = 'Kategori: ' + nice + (underNice ? ' – ' + underNice : '');
+  h2El.textContent = (underNice ? underNice + ' – ' : '') + nice + ' – Opskrifter';
+  badge.textContent = nice + (underNice ? ' · ' + underNice : '');
+  badge.style.display = 'inline-block';
+
+  // 4) Underkategori-definitioner (kan udvides)
+  const SUBS = {
+    "Grønt": ["Broccoli","Blomkål","Gulerødder","Søde kartofler","Spidskål","Squash","Peberfrugt","Rodfrugter"]
+    // Eksempel på udvidelser:
+    // ,"Kylling": ["Bryst","Lår/vinger","Kødboller"]
+    // ,"Fisk": ["Laks","Torsk","Rejer"]
+  };
+
+  // 5) Tegn chips når der findes underkategorier
+  const subWrap = document.getElementById('subcats');
+  const list = SUBS[nice];
+  if(list && subWrap){
+    subWrap.hidden = false;
+    list.forEach(label=>{
+      const a = document.createElement('a');
+      a.className = 'chip';
+      a.textContent = label;
+      const u = new URL(location.href);
+      u.searchParams.set('navn', raw); // bevar original form
+      u.searchParams.set('under', label);
+      a.href = u.toString();
+      if(slugify(label)===wantedUnder) a.setAttribute('aria-current','true');
+      subWrap.appendChild(a);
+    });
+  }
+
+  // 6) Hent opskrifter (AFO eller RECIPES)
   function getAllRecipes(){
     if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
       return AFO.ready.then(()=>AFO.getAll());
@@ -116,8 +161,8 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     });
   }
 
-  // 5) Match på categorySlug, kategori/category og tags
-  function matchesWanted(r){
+  // 7) Match på categorySlug, kategori/category og tags
+  function matchesCategory(r){
     const names = [
       r.category, r.kategori, r.categoryName,
       ...(Array.isArray(r.categories) ? r.categories : [])
@@ -132,10 +177,21 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     return wanted === 'alle' || slugs.includes(wanted);
   }
 
-  // 6) Render
+  function matchesUnder(r){
+    if(!wantedUnder) return true;
+    const hay = [
+      r.title || '',
+      r.meta || '',
+      ...(Array.isArray(r.tags) ? r.tags : [])
+    ].join(' ').toLowerCase()
+     .normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    return hay.includes(wantedUnder);
+  }
+
+  // 8) Render
   const grid = document.getElementById('kategori-grid');
   const card = r => `
-    <a class="card" href="/opskrifter/${r.slug}.html">
+    <a class="card" href="/opskrifter/${r.slug}.html" ${r.tags ? `data-tags="${(r.tags||[]).join(',')}"` : ''}>
       <div class="thumb-icon"><svg><use href="#${r.icon||'star'}"></use></svg></div>
       <div class="card-body">
         <h3>${r.title}</h3>
@@ -145,7 +201,9 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
   getAllRecipes().then(list=>{
     const data = Array.isArray(list) ? list : [];
-    const items = data.filter(matchesWanted);
+    const byCat = data.filter(matchesCategory);
+    const items = byCat.filter(matchesUnder);
+
     grid.innerHTML = items.length
       ? items.map(card).join('')
       : '<p class="meta">Ingen opskrifter fundet i denne kategori.</p>';
