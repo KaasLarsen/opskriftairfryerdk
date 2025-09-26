@@ -6,6 +6,8 @@
 <title>Opskrift-Airfryer.dk – Sprøde Airfryer Opskrifter</title>
 <meta name="description" content="Nemme, sprøde og hurtige airfryer opskrifter på dansk – tydelige tider og temperaturer." />
 <link rel="icon" href="/img/favicon.ico" />
+<link rel="stylesheet" href="/assets/styles.css?v=5" />
+
 <!-- AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 
@@ -25,7 +27,7 @@
 }
 </script>
 
-<!-- Structured Data: Organization (inkl. Facebook-gruppe) -->
+<!-- Structured Data: Organization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,67 +35,31 @@
   "name": "Opskrift-Airfryer.dk",
   "url": "https://www.opskrift-airfryer.dk/",
   "logo": "https://www.opskrift-airfryer.dk/img/logo.png",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61567373592516"
-  ]
+  "sameAs": ["https://www.facebook.com/profile.php?id=61567373592516"]
 }
 </script>
 
 <style>
-/* ====== Clean One-File Theme (Forside) ====== */
-*,*::before,*::after{box-sizing:border-box}html,body{height:100%}
+/* ====== Base ====== */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
 body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#0f172a;background:#fff;line-height:1.6}
-a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 :root{--max:1200px;--pad:16px;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--soft:#f8fafc;--accent:#0ea5e9;--radius:14px;--shadow:0 8px 22px rgba(2,8,23,.06)}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.section{margin:18px 0}
+h1{font-size:clamp(28px,3.2vw,40px);line-height:1.15;margin:6px 0 8px}
+h2{font-size:22px;margin:0 0 10px}
+p{margin:0 0 10px;color:var(--muted)}
+.meta{font-size:13px;color:var(--muted)}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
 
-/* Header (via partials – matcher opskrift-sider) */
+/* ====== Header (partials) ====== */
 .header{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
 .header-inner{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-weight:800;color:#0ea5e9;font-size:20px}
-.nav{display:flex;gap:18px;flex-wrap:wrap}
-.nav a{font-size:15px;color:var(--text)}
-.nav details.dropdown summary{list-style:none;cursor:pointer}
-.nav details .menu{position:absolute;margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);padding:8px 10px}
-.nav details .menu a{display:block;padding:6px 8px;white-space:nowrap}
 
-/* Hero – strammet padding */
-.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;padding:12px 0 6px}
-@media(max-width:900px){.hero{grid-template-columns:1fr}}
-.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.hero h1{font-size:clamp(28px,3.2vw,40px);line-height:1.15;margin:6px 0 8px}
-.hero p{margin:0;color:var(--muted)}
-.hero-actions{display:flex;gap:10px;margin-top:14px}
-.btn{display:inline-block;padding:10px 14px;border-radius:999px;font-weight:600;border:1px solid var(--line);background:#fff}
-.btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-.hero-box{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
-.hero-ico{width:120px;height:120px;color:var(--accent)}
-
-/* Boxed hero (panel) */
-.panel{
-  border:2px solid #0f172a;         /* tydelig outline a la PriceRunner */
-  border-radius:20px;
-  background:#fff;
-  box-shadow:0 10px 30px rgba(2,8,23,.06);
-  padding:16px;
-  margin:18px 0;
-}
-@media (max-width:900px){ .panel{padding:12px} }
-.panel-search{
-  margin-top:12px;
-  padding-top:12px;
-  border-top:1px solid var(--line);
-}
-.panel--light{ border-color: var(--line); }
-.panel--accent{ border-color: var(--accent); }
-
-/* Section */
-.section{margin:18px 0}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.section-head h2{font-size:22px;margin:0}
-.more{font-size:14px;color:var(--muted);text-decoration:underline}
-
-/* Cards & grids */
+/* ====== Cards & grids ====== */
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-4{grid-template-columns:repeat(4,1fr)}
@@ -105,26 +71,72 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .thumb-icon svg{width:54px;height:54px;color:#0ea5e9}
 .card-body{padding:12px 14px}
 .card-body h3{font-size:15px;line-height:1.35;margin:0}
-.meta{font-size:13px;color:var(--muted);margin-top:4px}
 
-/* Category tiles */
+/* ====== Category tiles ====== */
 .cat{display:grid;place-items:center;text-align:center;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow)}
 .cat svg{width:38px;height:38px;color:#0ea5e9;margin-bottom:8px}
 .cat span{font-weight:600}
 
-/* Guides */
-.guide{display:block;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:14px}
-.guide h3{margin:0 0 6px;font-size:16px}
-.guide p{margin:0;color:#475569;font-size:14px}
+/* ====== Panel + Hero ====== */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center}
+@media(max-width:900px){.hero{grid-template-columns:1fr}}
+.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hero-box{background:#fff;border:1px solid var(--line);border-radius:18px;min-height:230px;display:grid;place-items:center;box-shadow:var(--shadow)}
+.hero-ico{width:120px;height:120px;color:var(--accent)}
 
-/* Newsletter */
-.news{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
-@media(max-width:700px){.news{grid-template-columns:1fr}}
-.news form{display:flex;align-items:center;gap:8px}
-.news input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;flex:1 1 auto}
-.news button.btn{white-space:nowrap}
+/* Panel (basis) – denne ligger FØR blå varianten */
+.panel{
+  border:2px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  box-shadow:var(--shadow);
+  padding:16px;
+  margin:18px 0;
+}
+@media (max-width:900px){ .panel{padding:12px} }
+.panel-search{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
 
-/* Carousel (PriceRunner) */
+/* Knap (basis) */
+.btn{
+  display:inline-block;padding:10px 14px;border-radius:999px;font-weight:600;
+  border:1px solid var(--line);background:#fff;color:#0f172a;transition:transform .06s ease
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+
+/* --- BLUE HERO VARIANT (PLACERET EFTER .panel SÅ DEN VINDER) --- */
+.panel.panel--blue{
+  background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
+  border-color:#0369a1;
+  color:#fff;
+}
+.panel.panel--blue .kicker,
+.panel.panel--blue .hero h1,
+.panel.panel--blue .hero p{ color:#fff; }
+.panel.panel--blue a{ color:#fff; }
+.panel.panel--blue .hero-box{
+  background:#fff;
+  border-color:rgba(255,255,255,.8);
+}
+.panel.panel--blue .btn{
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,.45);
+}
+.panel.panel--blue .btn.primary{
+  background:#fff;color:#0f172a;border-color:#fff;
+}
+.panel.panel--blue .panel-search form{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:var(--shadow);
+  padding:16px 18px;border-radius:14px
+}
+.panel.panel--blue #search-input{
+  background:#fff;border:1px solid #e2e8f0;color:#0f172a;border-radius:10px;padding:10px 14px
+}
+
+/* ====== Carousel (PriceRunner) ====== */
 .pr-carousel{position:relative}
 .pr-slide{display:none}
 .pr-slide.is-active{display:block}
@@ -135,44 +147,36 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .pr-dot{width:8px;height:8px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
 .pr-dot.is-active{background:#0ea5e9;border-color:#0ea5e9}
 
-/* Footer */
-.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:24px}
-.footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
-.footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
-.copy{color:#64748b;font-size:13px;text-align:center}
-@media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
-
-/* Misc */
-svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
-.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
-html{scroll-behavior:smooth}
-
-/* Compact cards: kun i "Hurtige Tider & Temperaturer" sektionen */
-#tider .grid{ gap:12px; }                         /* lidt mindre afstand mellem kort */
-#tider .card{ border-radius:12px; }               /* en anelse strammere */
-#tider .thumb-icon{
-  aspect-ratio:auto;                              /* drop 16:9 */
-  height:80px;                                    /* lavere “thumbnail”-højde */
-}
-#tider .thumb-icon svg{ width:34px; height:34px; }/* mindre ikon */
-#tider .card-body{ padding:10px 12px; }           /* mindre indre afstand */
-#tider .card-body h3{ font-size:14px; }           /* lidt mindre titel */
-#tider .meta{ font-size:12px; }                   /* lidt mindre meta-tekst */
-
+/* ====== Tider & Temperaturer kompakt ====== */
+#tider .grid{ gap:12px; }
+#tider .card{ border-radius:12px; }
+#tider .thumb-icon{ aspect-ratio:auto; height:80px; }
+#tider .thumb-icon svg{ width:34px; height:34px; }
+#tider .card-body{ padding:10px 12px; }
+#tider .card-body h3{ font-size:14px; }
+#tider .meta{ font-size:12px; }
 @media (max-width:560px){
   #tider .thumb-icon{ height:68px; }
   #tider .thumb-icon svg{ width:30px; height:30px; }
   #tider .card-body h3{ font-size:13.5px; }
 }
+
+/* ====== Footer fallback ====== */
+.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:24px}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
+.footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
+.copy{color:#64748b;font-size:13px;text-align:center}
+@media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
+html{scroll-behavior:smooth}
 </style>
 </head>
 <body>
 
-<!-- Partials (SKAL ligge inde i <body>) -->
+<!-- Partials -->
 <div data-include="/partials/icons.html"></div>
 <div data-include="/partials/header.html"></div>
 
-<!-- BLACK FRIDAY TOPBAR (placeres lige under header) -->
+<!-- BLACK FRIDAY TOPBAR -->
 <div style="background:#0b0f19;color:#fff">
   <div class="container" style="padding:8px 0;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
     <span style="font-weight:600">🔥 Black Friday 2025: Se bedste airfryer-tilbud</span>
@@ -184,14 +188,14 @@ html{scroll-behavior:smooth}
 </div>
 
 <main class="container">
-  <!-- BOXED HERO (headline + knapper + søg i én ramme) -->
+  <!-- BLÅ HERO -->
   <section class="panel panel--blue">
     <div class="hero">
       <div>
         <span class="kicker">Danske Airfryer Opskrifter</span>
         <h1>Airfryer Opskrifter – Nemt Og Hurtigt</h1>
         <p>Tydelige Tider, Temperaturer Og Trin-For-Trin. Mindre Opvask, Mere Sprødhed.</p>
-        <div class="hero-actions">
+        <div class="hero-actions" style="display:flex;gap:10px;margin-top:14px">
           <a class="btn primary" href="#populaere">Se Populære</a>
           <a class="btn" href="/seneste.html">Se Seneste</a>
         </div>
@@ -201,13 +205,12 @@ html{scroll-behavior:smooth}
       </div>
     </div>
 
-    <!-- Søgefeltet ligger nu inde i boksen -->
+    <!-- Søgefelt inde i blå panel -->
     <div class="panel-search">
       <div style="max-width:700px;margin:0 auto">
         <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
-              style="display:flex;align-items:center;gap:8px;background:#fff0f5;padding:16px 18px;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)">
-          <input id="search-input" type="text" placeholder="🔍 Søg efter opskrifter..."
-                 style="flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px" />
+              style="display:flex;align-items:center;gap:8px">
+          <input id="search-input" type="text" placeholder="🔍 Søg efter opskrifter..." />
           <button class="btn primary" type="submit">Søg</button>
         </form>
       </div>
@@ -233,24 +236,19 @@ html{scroll-behavior:smooth}
 
   <!-- Populære -->
   <section id="populaere" class="section">
-    <div class="section-head">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <h2>Populære Opskrifter</h2>
-      <a class="more" href="/seneste.html">Se Seneste</a>
+      <a class="more" href="/seneste.html" style="font-size:14px;color:var(--muted);text-decoration:underline">Se Seneste</a>
     </div>
     <div class="grid grid-3">
-      <!-- Flæskesteg -->
       <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html">
         <div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div>
         <div class="card-body"><h3>Flæskesteg I Airfryer – Sprød Svær</h3><p class="meta">45–60 Min · Nemt</p></div>
       </a>
-
-      <!-- Frikadeller -->
       <a class="card" href="/opskrifter/frikadeller-i-airfryer.html">
         <div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div>
         <div class="card-body"><h3>Frikadeller I Airfryer – Klassikeren</h3><p class="meta">25 Min · Familiehit</p></div>
       </a>
-
-      <!-- Kylling (uændret) -->
       <a class="card" href="/opskrifter/kyllingelaar-i-airfryer.html">
         <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
         <div class="card-body"><h3>Kyllingelår I Airfryer – Saftige</h3><p class="meta">22–28 Min · Protein</p></div>
@@ -260,9 +258,9 @@ html{scroll-behavior:smooth}
 
   <!-- Kategorier -->
   <section class="section">
-    <div class="section-head">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <h2>Kategorier</h2>
-      <a class="more" href="/kategori.html">Se Alle</a>
+      <a class="more" href="/kategori.html" style="font-size:14px;color:var(--muted);text-decoration:underline">Se Alle</a>
     </div>
     <div class="grid grid-4">
       <a class="cat" href="/kategori.html?slug=svinekod"><svg><use href="#pig"></use></svg><span>Svinekød</span></a>
@@ -274,9 +272,9 @@ html{scroll-behavior:smooth}
 
   <!-- Seneste -->
   <section id="seneste" class="section">
-    <div class="section-head">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <h2>Seneste Opskrifter</h2>
-      <a class="more" href="/seneste.html">Se Alle</a>
+      <a class="more" href="/seneste.html" style="font-size:14px;color:var(--muted);text-decoration:underline">Se Alle</a>
     </div>
     <div id="seneste-grid" class="grid grid-3">
       <p class="meta">Indlæser…</p>
@@ -285,106 +283,43 @@ html{scroll-behavior:smooth}
 
   <!-- Guides & Tips -->
   <section class="section">
-    <div class="section-head">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <h2>Guides & Tips</h2>
-      <a class="more" href="/guides.html">Se Alle</a>
+      <a class="more" href="/guides.html" style="font-size:14px;color:var(--muted);text-decoration:underline">Se Alle</a>
     </div>
     <div class="grid grid-3">
-      <a class="guide" href="/guides/airfryer-tider.html"><h3>Airfryer Tider & Temperaturer (Cheat Sheet)</h3><p>Hvor længe skal kylling, kartofler og grønt have? Få overblik.</p></a>
-      <a class="guide" href="/guides/valg-af-airfryer.html"><h3>Vælg Den Rigtige Airfryer</h3><p>Størrelse, effekt, kurv vs. skuffe – og det bedste tilbehør.</p></a>
-      <a class="guide" href="/guides/airfryer-rengoering.html"><h3>Rengøring Af Airfryer</h3><p>Skånsom rengøring af kurv, rist og varmelegeme – uden ridser.</p></a>
+      <a class="guide" href="/guides/airfryer-tider.html" style="display:block;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:14px"><h3 style="margin:0 0 6px;font-size:16px">Airfryer Tider & Temperaturer (Cheat Sheet)</h3><p style="margin:0;color:#475569;font-size:14px">Hvor længe skal kylling, kartofler og grønt have? Få overblik.</p></a>
+      <a class="guide" href="/guides/valg-af-airfryer.html" style="display:block;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:14px"><h3 style="margin:0 0 6px;font-size:16px">Vælg Den Rigtige Airfryer</h3><p style="margin:0;color:#475569;font-size:14px">Størrelse, effekt, kurv vs. skuffe – og det bedste tilbehør.</p></a>
+      <a class="guide" href="/guides/airfryer-rengoering.html" style="display:block;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:14px"><h3 style="margin:0 0 6px;font-size:16px">Rengøring Af Airfryer</h3><p style="margin:0;color:#475569;font-size:14px">Skånsom rengøring af kurv, rist og varmelegeme – uden ridser.</p></a>
     </div>
   </section>
 
-  <!-- Hurtige Tider & Temperaturer (mini cheat sheet) -->
-<section class="section" id="tider">
-  <div class="section-head">
-    <h2>Hurtige Tider & Temperaturer</h2>
-    <a class="more" href="/guides/airfryer-tider.html">Se hele oversigten</a>
-  </div>
-
-  <div class="grid grid-4">
-    <!-- Kyllingelår -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
-      <div class="card-body">
-        <h3>Kyllingelår</h3>
-        <p class="meta">200°C · 22–28 min</p>
-      </div>
+  <!-- Hurtige Tider & Temperaturer -->
+  <section class="section" id="tider">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <h2>Hurtige Tider & Temperaturer</h2>
+      <a class="more" href="/guides/airfryer-tider.html" style="font-size:14px;color:var(--muted);text-decoration:underline">Se hele oversigten</a>
     </div>
 
-    <!-- Flæskesteg -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div>
-      <div class="card-body">
-        <h3>Flæskesteg</h3>
-        <p class="meta">200°C · 45–60 min</p>
-      </div>
+    <div class="grid grid-4">
+      <div class="card"><div class="thumb-icon"><svg><use href="#chicken"></use></svg></div><div class="card-body"><h3>Kyllingelår</h3><p class="meta">200°C · 22–28 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#flaeskesteg"></use></svg></div><div class="card-body"><h3>Flæskesteg</h3><p class="meta">200°C · 45–60 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div><div class="card-body"><h3>Frikadeller</h3><p class="meta">180°C · 12–16 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#fish"></use></svg></div><div class="card-body"><h3>Laks</h3><p class="meta">190°C · 8–12 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#leaf"></use></svg></div><div class="card-body"><h3>Broccoli</h3><p class="meta">190°C · 8–10 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#fries"></use></svg></div><div class="card-body"><h3>Pommes</h3><p class="meta">200°C · 12–18 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#bacon"></use></svg></div><div class="card-body"><h3>Bacon</h3><p class="meta">200°C · 6–9 min</p></div></div>
+      <div class="card"><div class="thumb-icon"><svg><use href="#potato"></use></svg></div><div class="card-body"><h3>Bagt kartoffel</h3><p class="meta">200°C · 35–45 min</p></div></div>
     </div>
 
-    <!-- Frikadeller -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#frikadelle"></use></svg></div>
-      <div class="card-body">
-        <h3>Frikadeller</h3>
-        <p class="meta">180°C · 12–16 min</p>
-      </div>
-    </div>
-
-    <!-- Laks -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#fish"></use></svg></div>
-      <div class="card-body">
-        <h3>Laks</h3>
-        <p class="meta">190°C · 8–12 min</p>
-      </div>
-    </div>
-
-    <!-- Broccoli -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-      <div class="card-body">
-        <h3>Broccoli</h3>
-        <p class="meta">190°C · 8–10 min</p>
-      </div>
-    </div>
-
-    <!-- Pommes -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#fries"></use></svg></div>
-      <div class="card-body">
-        <h3>Pommes</h3>
-        <p class="meta">200°C · 12–18 min</p>
-      </div>
-    </div>
-
-    <!-- Bacon -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#bacon"></use></svg></div>
-      <div class="card-body">
-        <h3>Bacon</h3>
-        <p class="meta">200°C · 6–9 min</p>
-      </div>
-    </div>
-
-    <!-- Bagt kartoffel -->
-    <div class="card">
-      <div class="thumb-icon"><svg><use href="#potato"></use></svg></div>
-      <div class="card-body">
-        <h3>Bagt kartoffel</h3>
-        <p class="meta">200°C · 35–45 min</p>
-      </div>
-    </div>
-  </div>
-
-  <p class="meta" style="text-align:center;margin-top:6px">
-    Tip: Vend halvvejs og tjek centrumtemperatur (fx kylling 75°C, laks 63°C).
-  </p>
-</section>
+    <p class="meta" style="text-align:center;margin-top:6px">
+      Tip: Vend halvvejs og tjek centrumtemperatur (fx kylling 75°C, laks 63°C).
+    </p>
+  </section>
 
   <!-- Anbefalede (carousel) -->
   <section class="section" id="anbefalede">
-    <div class="section-head">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
       <h2>Anbefalede tilbud</h2>
     </div>
 
@@ -443,7 +378,7 @@ html{scroll-behavior:smooth}
     <div class="pr-dots" id="pr-dots"></div>
   </section>
 
-  <!-- Slider logik med autoplay -->
+  <!-- Slider logik -->
   <script>
   (function(){
     const root = document.getElementById('pr-carousel');
@@ -452,12 +387,11 @@ html{scroll-behavior:smooth}
     const prev = root.querySelector('.pr-prev');
     const next = root.querySelector('.pr-next');
     const dotsWrap = document.getElementById('pr-dots');
-
     if (slides.length <= 1) return;
 
     let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
     let timer = null;
-    const INTERVAL = 6000; // 6 sek
+    const INTERVAL = 6000;
 
     function show(n){
       slides.forEach(s=>s.classList.remove('is-active'));
@@ -467,7 +401,6 @@ html{scroll-behavior:smooth}
       }
       i = n;
     }
-
     function makeDots(){
       if(!dotsWrap) return;
       dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="Slide ${k+1}"></button>`).join('');
@@ -475,39 +408,28 @@ html{scroll-behavior:smooth}
         stop(); show(k); start();
       }));
     }
-
     function nextSlide(){ show((i+1) % slides.length); }
     function prevSlide(){ show((i-1+slides.length) % slides.length); }
-
     function start(){
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      stop();
-      timer = setInterval(nextSlide, INTERVAL);
+      stop(); timer = setInterval(nextSlide, INTERVAL);
     }
-    function stop(){
-      if (timer){ clearInterval(timer); timer = null; }
-    }
+    function stop(){ if (timer){ clearInterval(timer); timer = null; } }
 
     prev && prev.addEventListener('click', ()=>{ stop(); prevSlide(); start(); });
     next && next.addEventListener('click', ()=>{ stop(); nextSlide(); start(); });
-
     root.addEventListener('mouseenter', stop);
     root.addEventListener('mouseleave', start);
     root.addEventListener('focusin', stop);
     root.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', ()=>{ if (document.hidden) stop(); else start(); });
 
-    document.addEventListener('visibilitychange', ()=>{
-      if (document.hidden) stop(); else start();
-    });
-
-    makeDots();
-    show(i);
-    start();
+    makeDots(); show(i); start();
   })();
   </script>
 </main>
 
-<!-- Footer via partial (med lille fallback hvis include.js fejler) -->
+<!-- Footer via partial (fallback) -->
 <div data-include="/partials/footer.html">
   <footer class="footer">
     <div class="footer-inner">
@@ -521,11 +443,11 @@ html{scroll-behavior:smooth}
   </footer>
 </div>
 
-<!-- Partials loader -->
+<!-- Partials loader + data -->
 <script defer src="/assets/include.js?v=4"></script>
-
-<!-- DATA + RENDER: Seneste -->
 <script src="/assets/recipes.js?v=20"></script>
+
+<!-- Render seneste -->
 <script>
 (function(){
   const mount = document.getElementById('seneste-grid');
@@ -553,7 +475,7 @@ html{scroll-behavior:smooth}
 })();
 </script>
 
-<!-- AUTOSUGGEST: CSS -->
+<!-- Autosuggest (kan blive) -->
 <style>
   .as-layer{position:absolute;z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 10px 30px rgba(2,8,23,.08);overflow:hidden;max-height:340px;display:none}
   .as-list{list-style:none;margin:0;padding:6px 0;max-height:340px;overflow:auto}
@@ -563,35 +485,24 @@ html{scroll-behavior:smooth}
   .as-item:hover,.as-item.is-active{background:#f8fafc}
   .as-empty{padding:10px 12px;color:#64748b;font-size:13px}
 </style>
-
-<!-- AUTOSUGGEST: JS -->
 <script>
 (function(){
-  // bind til forsiden (#search-input) + fælles (#site-search, #q)
-  const INPUT = document.querySelector('#search-input, #site-search, #q');
+  const INPUT = document.querySelector('#search-input');
   if(!INPUT) return;
 
   const SITEMAPS = ['/recipes-sitemap.xml','/guides-sitemap.xml','/airfryer-guides-sitemap.xml'];
   const CACHE_KEY = 'SITE_INDEX_v1';
-  const TTL = 12*60*60*1000; // 12h
+  const TTL = 12*60*60*1000;
   const MAX_SUGGEST = 6;
 
-  // floating layer
   const layer = document.createElement('div');
   layer.className = 'as-layer';
   layer.innerHTML = '<ul class="as-list" role="listbox" id="as-list"></ul>';
   document.body.appendChild(layer);
   const listEl = layer.querySelector('#as-list');
 
-  // helpers
-  const norm = s => (s||'')
-    .toLowerCase()
-    .normalize('NFD').replace(/\p{Diacritic}/gu,'') // fjerner accent
-    .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa');
-  const titleFromSlug = href => {
-    const name = href.replace(/\.html$/,'').split('/').pop().replace(/-/g,' ');
-    return name.replace(/\b\w/g,m=>m.toUpperCase());
-  };
+  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'').replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa');
+  const titleFromSlug = href => href.replace(/\.html$/,'').split('/').pop().replace(/-/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
   const typeFromPath = p => p.startsWith('/guides/') ? 'Guide' : 'Opskrift';
 
   function positionLayer(){
@@ -604,7 +515,6 @@ html{scroll-behavior:smooth}
   function hide(){ layer.style.display='none'; ACTIVE = -1; }
   function isShown(){ return layer.style.display === 'block'; }
 
-  // load index (from cache or sitemaps)
   async function getIndex(){
     try{
       const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
@@ -627,7 +537,6 @@ html{scroll-behavior:smooth}
         });
       }catch(_){}
     }
-    // dedup
     const seen = new Set(); const dedup = [];
     for (const it of items){ if(!seen.has(it.url)){ seen.add(it.url); dedup.push(it);} }
     dedup.sort((a,b)=> a.title.localeCompare(b.title,'da'));
@@ -638,9 +547,9 @@ html{scroll-behavior:smooth}
   function score(item, q){
     if (!q) return 0;
     const i = item.key.indexOf(q);
-    if (i === 0) return 200 - item.title.length;      // starter med -> højt
-    if (i > 0)  return 100 - i;                       // indeholder -> mellem
-    return -1;                                        // ikke match
+    if (i === 0) return 200 - item.title.length;
+    if (i > 0)  return 100 - i;
+    return -1;
   }
 
   let INDEX = [], ACTIVE = -1;
@@ -662,25 +571,14 @@ html{scroll-behavior:smooth}
   function select(idx){
     const items = [...listEl.querySelectorAll('.as-item')];
     items.forEach(el=>el.classList.remove('is-active'));
-    if (idx>=0 && idx<items.length){
-      items[idx].classList.add('is-active');
-      ACTIVE = idx;
-    } else {
-      ACTIVE = -1;
-    }
+    if (idx>=0 && idx<items.length){ items[idx].classList.add('is-active'); ACTIVE = idx; } else { ACTIVE = -1; }
   }
 
   function follow(idx, matches, term){
-    if (idx >= 0 && matches[idx]) {
-      location.href = matches[idx].url;
-    } else {
-      // fallback til jeres eksisterende søgning
-      const target = '/seneste.html?soeg=' + encodeURIComponent(term);
-      location.href = target;
-    }
+    if (idx >= 0 && matches[idx]) location.href = matches[idx].url;
+    else location.href = '/seneste.html?soeg=' + encodeURIComponent(term);
   }
 
-  // wire up
   let ready = false;
   getIndex().then(items => { INDEX = items; ready = true; });
 
@@ -697,8 +595,6 @@ html{scroll-behavior:smooth}
       .sort((a,b)=> b._s - a._s)
       .slice(0, MAX_SUGGEST);
     render(matches);
-
-    // mouse interactions
     listEl.querySelectorAll('.as-item').forEach((el, i) => {
       el.addEventListener('mousemove',()=>select(i));
       el.addEventListener('mousedown',(e)=>{ e.preventDefault(); follow(i, matches, raw); });
