@@ -184,4 +184,70 @@
         <div class="thumb"><svg><use href="#shrimp" xlink:href="#shrimp"></use></svg></div>
         <div class="body">
           <h3>10) rejer & skaldyr</h3>
-          <p class="small">2–5 min er no
+          <p class="small">2–5 min er nok – bare til de lige krøller. citron + urter.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- måltidskasser (affiliate) -->
+  <section class="section block">
+    <h2>sunde måltidskasser der spiller med airfryer</h2>
+    <p class="small">annoncelinks · vi kan modtage kommission.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://go.adt231.net/t/t?a=1498475325&as=1940697285&t=2&tk=1" target="_blank" rel="nofollow sponsored" data-aff-name="HelloFresh">prøv <span class="brand">HelloFresh</span></a>
+      <a class="btn" href="https://ion.retnemt.dk/t/t?a=1551145451&as=1940697285&t=2&tk=1" target="_blank" rel="nofollow sponsored" data-aff-name="RetNemt">prøv <span class="brand">RetNemt</span></a>
+      <a class="btn" href="https://to.aarstiderne.com/t/t?a=1673031373&as=1940697285&t=2&tk=1" target="_blank" rel="nofollow sponsored" data-aff-name="Aarstiderne">prøv <span class="brand">Aarstiderne</span></a>
+      <a class="btn" href="https://in.betterfeast.dk/t/t?a=1673028586&as=1940697285&t=2&tk=1" target="_blank" rel="nofollow sponsored" data-aff-name="BetterFeast">prøv <span class="brand">BetterFeast</span></a>
+    </div>
+    <div class="call good" style="margin-top:12px">
+      <b>tip:</b> vælg proteinrige kasser og brug airfryeren til grøntsager og sprød finish – det sparer tid og olie.
+    </div>
+  </section>
+
+  <!-- mere læsning -->
+  <section class="section block">
+    <h2>mere læsning</h2>
+    <ul class="list">
+      <li><a href="/top/tider-og-temperaturer.html">tider & temperaturer – stor tabel + omregner</a></li>
+      <li><a href="/top/12-almindelige-airfryer-fejl.html">12 almindelige airfryer-fejl (og løsninger)</a></li>
+      <li><a href="/top/top-25-airfryer-opskrifter.html">top 25 airfryer-opskrifter</a></li>
+    </ul>
+  </section>
+
+  <!-- faq -->
+  <section class="section block">
+    <h2>faq</h2>
+    <ul class="list">
+      <li><b>kan jeg lave sund mad uden olie?</b> ja, men en smule olie-spray giver bedre farve og tekstur.</li>
+      <li><b>hvordan undgår jeg tør kylling?</b> brug termometer (72–74 °c), og lad kødet hvile 3–5 min.</li>
+      <li><b>kan jeg meal-preppe i airfryeren?</b> ja – lav store portioner kylling/kødboller og grønt i batch.</li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- footer via partial -->
+<div data-include="/partials/footer.html"></div>
+
+<!-- loader -->
+<script src="/assets/include.js?v=4"></script>
+
+<!-- affiliate click tracking -->
+<script>
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[rel~="sponsored"]');
+    if(!a) return;
+    try{
+      if(window.gtag){
+        gtag('event','affiliate_click',{
+          event_category:'Affiliate',
+          event_label: a.dataset.affName || 'unknown'
+        });
+      }
+    }catch(e){}
+  });
+</script>
+</body>
+</html>
