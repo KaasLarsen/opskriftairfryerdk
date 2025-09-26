@@ -327,3 +327,40 @@ a.card[href^="/top/"] .thumb-icon{
 a.card[href^="/top/"] .thumb svg,
 a.card[href^="/top/"] .thumb-icon svg{ color:hsl(var(--tone-top)); }
 
+/* === HOTFIX 2: Tint guides (uanset om href er /guides/... eller relative) === */
+
+/* Hvis guides er renderet som .card med relative links */
+a.card[href^="guides/"],
+a.card[href*="/guides/"]{
+  border-color: hsl(var(--tone-guide) / .22) !important;
+}
+a.card[href^="guides/"] .thumb,
+a.card[href*="/guides/"] .thumb,
+a.card[href^="guides/"] .thumb-icon,
+a.card[href*="/guides/"] .thumb-icon{
+  background: linear-gradient(180deg,
+    hsl(var(--tone-guide) / .13),
+    hsl(var(--tone-guide) / .06) 55%,
+    #fff
+  ) !important;
+}
+a.card[href^="guides/"] .thumb svg,
+a.card[href*="/guides/"] .thumb svg,
+a.card[href^="guides/"] .thumb-icon svg,
+a.card[href*="/guides/"] .thumb-icon svg{
+  color: hsl(var(--tone-guide)) !important;
+}
+
+/* Hvis guides er de tekstuelle blokke <a class="guide"> (uden thumb) */
+a.guide{
+  border-color: hsl(var(--tone-guide) / .22) !important;
+  background: linear-gradient(180deg,
+    hsl(var(--tone-guide) / .06),
+    #fff 58%
+  ) !important;               /* diskret tint – bevarer læsbarhed */
+  box-shadow: var(--shadow);
+}
+a.guide h3{
+  color: hsl(var(--tone-guide)) !important; /* lille accent i titlen */
+}
+
