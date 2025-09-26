@@ -232,4 +232,35 @@ p{margin:0 0 10px;color:var(--muted)}
 /* ====== RECIPE SHARED ====== */
 .recipe-hero{display:grid;grid-template-columns:1.35fr .65fr;gap:20px;align-items:center;margin-top:12px}
 .recipe-hero .hero-icon{display:grid;place-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);min-height:240px}
-ol.steps{counter-reset:s;list-style:none;padding:0;ma
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+ol.steps li{counter-increment:s;position:relative;margin:10px 0;padding-left:34px}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font:600 13px/1 ui-sans-serif}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+
+/* ====== FOOTER ====== */
+.footer{background:#f8fafc;border-top:1px solid var(--line);margin-top:24px}
+.footer-inner{max-width:var(--max);margin:0 auto;padding:28px var(--pad)}
+.footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:16px}
+@media(max-width:900px){.footer-cols{grid-template-columns:1fr}}
+
+/* ====== MISC ====== */
+svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
+.adsbygoogle[data-ad-status="unfilled"]{display:none !important}
+html{scroll-behavior:smooth}
+
+/* ====== AUTOSUGGEST (fælles) ====== */
+.as-layer{position:absolute;z-index:9999;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 10px 30px rgba(2,8,23,.08);overflow:hidden;max-height:340px;display:none}
+.as-list{list-style:none;margin:0;padding:6px 0;max-height:340px;overflow:auto}
+.as-item{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;font-size:14px;line-height:1.3}
+.as-item small{color:#64748b}
+.as-item svg{width:18px;height:18px;opacity:.9}
+.as-item:hover,.as-item.is-active{background:#f8fafc}
+.as-empty{padding:10px 12px;color:#64748b;font-size:13px}
+
+/* ====== CATEGORY PAGE EXTRAS (chips) ====== */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-size:13px}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
