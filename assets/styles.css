@@ -264,3 +264,66 @@ html{scroll-behavior:smooth}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-size:13px}
 .chip:hover{transform:translateY(-1px)}
 .chip[aria-current="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+
+/* === HOTFIX: Blå hero – søgefelt skal fylde (uden HTML-ændringer) === */
+.panel.panel--blue .panel-search form{
+  display:flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  background: rgba(255,255,255,.10) !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  padding:16px 18px !important;
+  border-radius:14px !important;
+}
+.panel.panel--blue #search-input{
+  flex:1 1 auto !important;
+  width:100% !important;
+  min-width:0 !important;
+  background:#fff !important;
+  border:1px solid #e2e8f0 !important;
+  color:#0f172a !important;
+  border-radius:10px !important;
+  padding:10px 14px !important;
+}
+.panel.panel--blue .panel-search .btn.primary{
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  background:#fff !important;
+  color:#0f172a !important;
+  border-color:#fff !important;
+}
+
+/* === AUTO-TINT: Uden at røre HTML (via href-path) === */
+:root{
+  --tone-recipe: 142 72% 45%;   /* grøn */
+  --tone-guide:  243 75% 59%;   /* indigo */
+  --tone-top:     43 96% 56%;   /* amber */
+}
+
+/* Opskrifter */
+a.card[href^="/opskrifter/"]{ border-color: hsl(var(--tone-recipe) / .22); }
+a.card[href^="/opskrifter/"] .thumb, 
+a.card[href^="/opskrifter/"] .thumb-icon{
+  background: linear-gradient(180deg, hsl(var(--tone-recipe)/.13), hsl(var(--tone-recipe)/.06) 55%, #fff);
+}
+a.card[href^="/opskrifter/"] .thumb svg,
+a.card[href^="/opskrifter/"] .thumb-icon svg{ color:hsl(var(--tone-recipe)); }
+
+/* Guides */
+a.card[href^="/guides/"]{ border-color: hsl(var(--tone-guide) / .22); }
+a.card[href^="/guides/"] .thumb, 
+a.card[href^="/guides/"] .thumb-icon{
+  background: linear-gradient(180deg, hsl(var(--tone-guide)/.13), hsl(var(--tone-guide)/.06) 55%, #fff);
+}
+a.card[href^="/guides/"] .thumb svg,
+a.card[href^="/guides/"] .thumb-icon svg{ color:hsl(var(--tone-guide)); }
+
+/* Top-indhold */
+a.card[href^="/top/"]{ border-color: hsl(var(--tone-top) / .22); }
+a.card[href^="/top/"] .thumb, 
+a.card[href^="/top/"] .thumb-icon{
+  background: linear-gradient(180deg, hsl(var(--tone-top)/.13), hsl(var(--tone-top)/.06) 55%, #fff);
+}
+a.card[href^="/top/"] .thumb svg,
+a.card[href^="/top/"] .thumb-icon svg{ color:hsl(var(--tone-top)); }
+
