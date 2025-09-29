@@ -271,5 +271,13 @@
 
     { "source": "/tag/:slug", "destination": "/kategori.html?navn=:slug", "permanent": true },
     { "source": "/kategori/:navn", "destination": "/kategori.html?navn=:navn", "permanent": true }
+    { "source": "/🥓-stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad",  "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true },
+    { "source": "/🥓-stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad/", "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true },
+
+    { "source": "/%F0%9F%A5%93-stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad",  "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true },
+    { "source": "/%F0%9F%A5%93-stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad/", "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true },
+
+    { "source": "/stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad",  "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true },
+    { "source": "/stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad/", "destination": "/opskrifter/stegt-flaesk-i-airfryer.html", "permanent": true }
   ]
 }
