@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Top 12 Tapas & Snacks i Airfryer – film & fodbold</title>
-  <meta name="description" content="12 sprøde tapas og snacks i airfryer: mozzarella sticks, jalapeño poppers, mini-pizza, kartoffelbåde, garlic bread, kikærter, onion rings m.m. Tips til sprødhed og servering." />
+  <meta name="description" content="12 sprøde tapas og snacks i airfryer: mozzarella sticks, jalapeño poppers, mini-pizza, kartoffelbåde, garlic bread, kikærter, onion rings m.m. Tips til sprødhed, panering, frosne snacks og servering." />
   <link rel="canonical" href="https://www.opskrift-airfryer.dk/top/top-12-tapas-og-snacks-i-airfryer.html" />
   <link rel="icon" href="/img/favicon.ico" />
   <link rel="stylesheet" href="/assets/styles.css?v=7" />
@@ -33,7 +33,7 @@
     "@type":"FAQPage",
     "mainEntity":[
       {"@type":"Question","name":"Hvordan undgår jeg bløde snacks?","acceptedAnswer":{"@type":"Answer","text":"Lav i ét lag, ryst halvvejs og slut 2–3 min ved lidt højere temperatur. Oliespray på panering før tilberedning hjælper meget."}},
-      {"@type":"Question","name":"Kan jeg bruge frosne snacks direkte?","acceptedAnswer":{"@type":"Answer","text":"Ja – forvarm 3–5 min, spred ud i ét lag og følg vores bud på tider/temperaturer. Ryst 1–2 gange."}},
+      {"@type":"Question","name":"Kan jeg bruge frosne snacks direkte?","acceptedAnswer":{"@type":"Answer","text":"Ja – forvarm 3–5 min, spred ud i ét lag og følg tider/temperaturer. Ryst 1–2 gange undervejs."}},
       {"@type":"Question","name":"Hvilke dips passer godt?","acceptedAnswer":{"@type":"Answer","text":"Hvidløgsdip, chilimayo (mild), yoghurt-tahin, salsa, BBQ eller honning-sennep."}}
     ]
   }
@@ -48,6 +48,11 @@
     .snack-grid .card{border-color:hsl(var(--tone-top)/.22)}
     .snack-grid .thumb-icon{background:linear-gradient(180deg,hsl(var(--tone-top)/.13),hsl(var(--tone-top)/.06) 55%,#fff)}
     .snack-grid .thumb-icon svg{color:hsl(var(--tone-top))}
+    /* SEO blok */
+    .seo{border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);background:#fff;padding:16px}
+    .seo h3{margin:0 0 8px}
+    .seo .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:900px){.seo .two{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -89,73 +94,85 @@
     <h2>Sådan får du de sprødeste snacks</h2>
     <ul class="small" style="margin:0;padding-left:18px;list-style:disc">
       <li><b>Ét lag + plads:</b> Luft omkring giver sprødhed. Lav evt. 2 batches.</li>
-      <li><b>Oliespray på panering:</b> Hjælper panko og panerede emner med at brune.</li>
+      <li><b>Oliespray på panering:</b> Hjælper panko og panerede emner med at brune jævnt.</li>
       <li><b>Ryst halvvejs:</b> Jævn farve og tekstur – især på frosne snacks.</li>
       <li><b>Server straks:</b> Snacks er bedst direkte fra kurven med dip klar.</li>
     </ul>
   </section>
 
-  <!-- Top 12 grid -->
+  <!-- Top 12 grid (ALLE DIREKTE LINKS + UNIKKE IKONER) -->
   <section class="section">
     <h2>De 12 snack-favoritter</h2>
     <div class="grid grid-3 snack-grid">
 
-      <a class="card" href="/seneste.html?soeg=mozzarella" data-title="mozzarella sticks snack panko">
-        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+      <!-- 1 Mozzarella sticks -->
+      <a class="card" href="/opskrifter/mozzarella-sticks-i-airfryer.html" data-title="mozzarella sticks snack panko">
+        <div class="thumb-icon"><svg><use href="#cheese"></use></svg></div>
         <div class="card-body"><h3>Mozzarella sticks</h3><p class="meta">200°C · 6–9 min · Panko</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=jalapeno" data-title="jalapeno poppers mild">
-        <div class="thumb-icon"><svg><use href="#fire"></use></svg></div>
+      <!-- 2 Jalapeño poppers -->
+      <a class="card" href="/opskrifter/jalapeno-poppers-i-airfryer.html" data-title="jalapeno poppers mild">
+        <div class="thumb-icon"><svg><use href="#chili"></use></svg></div>
         <div class="card-body"><h3>Jalapeño poppers (mild)</h3><p class="meta">190°C · 7–10 min · Cremeost</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=falafel" data-title="falafel bites snack vegetar">
-        <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-        <div class="card-body"><h3>Falafel bites</h3><p class="meta">190°C · 10–14 min · Plads mellem</p></div>
+      <!-- 3 Falafel bites (direkte til falafel-opskriften) -->
+      <a class="card" href="/opskrifter/falafel-i-airfryer.html" data-title="falafel bites snack vegetar">
+        <div class="thumb-icon"><svg><use href="#falafel"></use></svg></div>
+        <div class="card-body"><h3>Falafel bites</h3><p class="meta">190°C · 10–14 min · Plads imellem</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=mini%20pizza" data-title="mini pizza tortilla snack">
-        <div class="thumb-icon"><svg><use href="#fire"></use></svg></div>
+      <!-- 4 Mini-pizza -->
+      <a class="card" href="/opskrifter/mini-pizza-i-airfryer.html" data-title="mini pizza tortilla snack">
+        <div class="thumb-icon"><svg><use href="#pizza"></use></svg></div>
         <div class="card-body"><h3>Mini-pizza</h3><p class="meta">190°C · 6–9 min · Tortilla/bolle</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=kartoffelboede" data-title="kartoffelbaade kartoffelbåde">
+      <!-- 5 Kartoffelbåde -->
+      <a class="card" href="/opskrifter/kartoffelbaade-i-airfryer.html" data-title="kartoffelbaade kartoffelbåde">
         <div class="thumb-icon"><svg><use href="#potato"></use></svg></div>
         <div class="card-body"><h3>Kartoffelbåde</h3><p class="meta">200°C · 18–24 min · Paprika</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=hvidl%C3%B8gsbr%C3%B8d" data-title="garlic bread hvidloegsbroed">
-        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+      <!-- 6 Garlic bread -->
+      <a class="card" href="/opskrifter/garlic-bread-i-airfryer.html" data-title="garlic bread hvidloegsbroed">
+        <div class="thumb-icon"><svg><use href="#garlic-butter"></use></svg></div>
         <div class="card-body"><h3>Garlic bread</h3><p class="meta">190°C · 5–8 min · Smør + hvidløg</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=kikaerter" data-title="ristede kikaerter kikærter">
-        <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
+      <!-- 7 Ristede kikærter -->
+      <a class="card" href="/opskrifter/ristede-kikaerter-i-airfryer.html" data-title="ristede kikaerter kikærter">
+        <div class="thumb-icon"><svg><use href="#bowl"></use></svg></div>
         <div class="card-body"><h3>Ristede kikærter</h3><p class="meta">200°C · 10–15 min · Paprika/spidskommen</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=onion%20rings" data-title="onion rings loegringe">
-        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+      <!-- 8 Onion rings -->
+      <a class="card" href="/opskrifter/onion-rings-i-airfryer.html" data-title="onion rings loegringe">
+        <div class="thumb-icon"><svg><use href="#onion"></use></svg></div>
         <div class="card-body"><h3>Onion rings</h3><p class="meta">200°C · 8–12 min · Ryst 1–2×</p></div>
       </a>
 
+      <!-- 9 Kyllingevinger (findes allerede) -->
       <a class="card" href="/opskrifter/kyllingevinger-i-airfryer.html" data-title="kyllingevinger mild snack">
         <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
         <div class="card-body"><h3>Kyllingevinger (mild)</h3><p class="meta">200°C · 18–24 min · BBQ/paprika</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=nachos" data-title="nachos ost salsa">
-        <div class="thumb-icon"><svg><use href="#fire"></use></svg></div>
+      <!-- 10 Nachos -->
+      <a class="card" href="/opskrifter/nachos-i-airfryer.html" data-title="nachos ost salsa">
+        <div class="thumb-icon"><svg><use href="#taco"></use></svg></div>
         <div class="card-body"><h3>Nachos</h3><p class="meta">180°C · 4–7 min · Ost + salsa</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=for%C3%A5rsruller" data-title="forarsruller foraarsruller spring rolls">
-        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+      <!-- 11 Forårsruller -->
+      <a class="card" href="/opskrifter/foraarsruller-i-airfryer.html" data-title="forarsruller foraarsruller spring rolls">
+        <div class="thumb-icon"><svg><use href="#wrap"></use></svg></div>
         <div class="card-body"><h3>Forårsruller</h3><p class="meta">200°C · 10–14 min · Ryst 1×</p></div>
       </a>
 
-      <a class="card" href="/seneste.html?soeg=soede%20kartofler" data-title="soede kartofler fries">
+      <!-- 12 Søde kartoffel-fritter (findes allerede) -->
+      <a class="card" href="/opskrifter/soede-kartofler-i-airfryer.html" data-title="soede kartofler fries">
         <div class="thumb-icon"><svg><use href="#fries"></use></svg></div>
         <div class="card-body"><h3>Søde kartoffel-fritter</h3><p class="meta">200°C · 12–16 min · Maizena + olie</p></div>
       </a>
@@ -171,6 +188,33 @@
       <li>Citronbåde til alt paneret – og friske urter på toppen.</li>
       <li>Hold snacks varme i 80–90°C mens du laver næste batch.</li>
     </ul>
+  </section>
+
+  <!-- Ekstra SEO-indhold (hjælpsomt + intern linkning) -->
+  <section class="section block">
+    <div class="seo">
+      <h2>Airfryer tapas: tider, panering og frosne snacks</h2>
+      <div class="two">
+        <div>
+          <h3>Hurtige tommelfingerregler</h3>
+          <ul class="list">
+            <li><b>Forvarm 3–5 min</b> og lav i <b>ét lag</b> for mest sprødhed.</li>
+            <li>Brug <b>oliespray</b> på panering (panko/rasp) før tilberedning.</li>
+            <li><b>Ryst/vend</b> halvvejs – især ved fritter, ringe og frosne snacks.</li>
+            <li>Giv evtl. <b>2–3 min ekstra</b> ved højere temp for mere farve.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Prøv også</h3>
+          <ul class="list">
+            <li><a href="/top/top-15-brunch-og-morgenmad-i-airfryer.html">Top 15 brunch & morgenmad</a> – søde og salte morgenfavoritter.</li>
+            <li><a href="/top/top-25-airfryer-opskrifter.html">Top 25 airfryer-opskrifter</a> – vores mest populære retter.</li>
+            <li><a href="/top/tider-og-temperaturer.html">Tider & temperaturer</a> – stor tabel og omregner fra ovn.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small" style="margin-top:10px">Tip: Har du rester? Varm dem kort i airfryer (180–190°C, 2–5 min) for at genvinde sprødheden.</p>
+    </div>
   </section>
 
   <!-- Tilbehør (partners) -->
