@@ -15,6 +15,15 @@
     }
   ],
   "redirects": [
+    { "source": "/entrecote-i-airfryer-saftig-og-moer-paa-den-nemme-maade",  "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+    { "source": "/entrecote-i-airfryer-saftig-og-moer-paa-den-nemme-maade/", "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+    
+    { "source": "/entrecôte-i-airfryer-saftig-og-mør-på-den-nemme-måde",  "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+    { "source": "/entrecôte-i-airfryer-saftig-og-mør-på-den-nemme-måde/", "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+    
+    { "source": "/entrec%C3%B4te-i-airfryer-saftig-og-m%C3%B8r-p%C3%A5-den-nemme-m%C3%A5de",  "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+    { "source": "/entrec%C3%B4te-i-airfryer-saftig-og-m%C3%B8r-p%C3%A5-den-nemme-m%C3%A5de/", "destination": "/opskrifter/ribeye-steak-i-airfryer.html", "permanent": true },
+
     { "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt",  "destination": "/opskrifter/fladbroed-med-hytteost-og-aeg-i-airfryer.html", "permanent": true },
     { "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt/", "destination": "/opskrifter/fladbroed-med-hytteost-og-aeg-i-airfryer.html", "permanent": true },
 
