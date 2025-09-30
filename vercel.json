@@ -15,6 +15,12 @@
     }
   ],
   "redirects": [
+    { "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter",  "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+    { "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter/", "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+    
+    { "source": "/luftige-roraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter",  "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+    { "source": "/luftige-roraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter/", "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
+
     { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     
