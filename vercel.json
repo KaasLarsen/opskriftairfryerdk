@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/opskrifter/lammeskank-klassisk-i-airfryer.html",  "destination": "/opskrifter/lammeskank-i-airfryer.html", "permanent": true },
+    { "source": "/opskrifter/lammeskank-klassisk-i-airfryer.html/", "destination": "/opskrifter/lammeskank-i-airfryer.html", "permanent": true },
+
     { "source": "/sproede-groenkaalschips-i-airfryer-en-sund-og-laekker-snack",  "destination": "/opskrifter/groenkaalschips-i-airfryer.html", "permanent": true },
     { "source": "/sproede-groenkaalschips-i-airfryer-en-sund-og-laekker-snack/", "destination": "/opskrifter/groenkaalschips-i-airfryer.html", "permanent": true },
 
