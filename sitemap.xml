@@ -6,21 +6,20 @@
   <url><loc>https://www.opskrift-airfryer.dk/seneste.html</loc></url>
   <url><loc>https://www.opskrift-airfryer.dk/top.html</loc></url>
 
-  <!-- Nye TOP-sider -->
-<url><loc>https://www.opskrift-airfryer.dk/top/top-10-sunde-retter-i-airfryer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-12-julefavoritter-i-airfryer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/12-almindelige-airfryer-fejl.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/tider-og-temperaturer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-25-airfryer-opskrifter.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/bedste-airfryere-og-koebsguide.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-12-boernevenlige-i-airfryer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-12-vegetariske-airfryer-retter.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-15-brunch-og-morgenmad-i-airfryer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-12-tapas-og-snacks-i-airfryer.html</loc></url>
-<url><loc>https://www.opskrift-airfryer.dk/top/top-12-proteiner-i-airfryer.html</loc></url>
-
-
-
+    <!-- Nye TOP-sider -->
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-10-sunde-retter-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-julefavoritter-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/12-almindelige-airfryer-fejl.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/tider-og-temperaturer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-25-airfryer-opskrifter.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/bedste-airfryere-og-koebsguide.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-boernevenlige-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-vegetariske-airfryer-retter.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-15-brunch-og-morgenmad-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-tapas-og-snacks-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-proteiner-i-airfryer.html</loc></url>
+  <url><loc>https://www.opskrift-airfryer.dk/top/top-12-saeson-efteraar-vinter-comfort.html</loc></url>
+  
 
   <!-- Kategorier (oversigt + direkte deep-links) -->
   <url><loc>https://www.opskrift-airfryer.dk/kategori.html</loc></url>
