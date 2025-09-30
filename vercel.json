@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/perfekt-tilberedt-torsk-i-airfryer-nem-og-sund-opskrift",  "destination": "/opskrifter/torsk-i-airfryer.html", "permanent": true },
+    { "source": "/perfekt-tilberedt-torsk-i-airfryer-nem-og-sund-opskrift/", "destination": "/opskrifter/torsk-i-airfryer.html", "permanent": true },
+
     { "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter",  "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
     { "source": "/luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter/", "destination": "/opskrifter/roeraeg-i-airfryer.html", "permanent": true },
     
