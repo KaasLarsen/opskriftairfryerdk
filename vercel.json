@@ -15,6 +15,15 @@
     }
   ],
   "redirects": [
+    { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
+    { "source": "/klejner",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/klejner/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+
     { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer",  "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
     { "source": "/nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer/", "destination": "/opskrifter/nachos-i-airfryer-ostesauce.html", "permanent": true },
 
