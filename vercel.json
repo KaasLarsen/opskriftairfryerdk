@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt",  "destination": "/opskrifter/fladbroed-med-hytteost-og-aeg-i-airfryer.html", "permanent": true },
+    { "source": "/fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt/", "destination": "/opskrifter/fladbroed-med-hytteost-og-aeg-i-airfryer.html", "permanent": true },
+
     { "source": "/opskrifter/lammeskank-klassisk-i-airfryer.html",  "destination": "/opskrifter/lammeskank-i-airfryer.html", "permanent": true },
     { "source": "/opskrifter/lammeskank-klassisk-i-airfryer.html/", "destination": "/opskrifter/lammeskank-i-airfryer.html", "permanent": true },
 
