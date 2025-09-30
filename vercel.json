@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/tag/klejner",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/tag/klejner/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+
     { "source": "/perfekt-tilberedt-torsk-i-airfryer-nem-og-sund-opskrift",  "destination": "/opskrifter/torsk-i-airfryer.html", "permanent": true },
     { "source": "/perfekt-tilberedt-torsk-i-airfryer-nem-og-sund-opskrift/", "destination": "/opskrifter/torsk-i-airfryer.html", "permanent": true },
 
