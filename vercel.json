@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/sproede-groenkaalschips-i-airfryer-en-sund-og-laekker-snack",  "destination": "/opskrifter/groenkaalschips-i-airfryer.html", "permanent": true },
+    { "source": "/sproede-groenkaalschips-i-airfryer-en-sund-og-laekker-snack/", "destination": "/opskrifter/groenkaalschips-i-airfryer.html", "permanent": true },
+
     { "source": "/tag/klejner",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     { "source": "/tag/klejner/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
 
