@@ -18,6 +18,21 @@
     { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     
+    { "source": "/opskrifter/klejner-i-airfryer-julet-%28bagte%29.html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/opskrifter/klejner-i-airfryer-julet-%28bagte%29.html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
+    { "source": "/opskrifter/klejner-i-airfryer-julet-(bagte).html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/opskrifter/klejner-i-airfryer-julet-(bagte).html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
+    { "source": "/klejner",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/klejner/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+
+    { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    { "source": "/opskrifter/klejner-i-airfryer-julet-bagte.html/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
+    
     { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren",  "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     { "source": "/klejner-den-sproede-juleklassiker-i-airfryeren/", "destination": "/opskrifter/klejner-i-airfryer.html", "permanent": true },
     
