@@ -42,7 +42,7 @@
       ro.observe(header);
     }
 
-    // If landing on #hash, ensure anchor is visible (some mobile browsers)
+    // If landing on #hash, ensure anchor is visible
     if (location.hash && document.querySelector(location.hash)) {
       setTimeout(function () {
         try { document.querySelector(location.hash).scrollIntoView(); } catch(e) {}
@@ -52,4 +52,30 @@
 
   if (document.readyState === 'complete') init();
   else window.addEventListener('load', init);
+})();
+
+/*!
+ * Illustration helper
+ * - Inserts hero illustration if <meta name="afo:illustration"> exists
+ * - Marks hero with .has-illu so CSS can adjust spacing/layout
+ */
+(function(){
+  var m = document.querySelector('meta[name="afo:illustration"]');
+  var slot = document.getElementById('hero-illu-slot');
+  if (!m || !slot) return;
+  var src = m.getAttribute('content');
+  if (!src) return;
+
+  var img = new Image();
+  img.src = src;
+  img.alt = 'Illustration';
+  img.className = 'hero-illu';
+  img.loading = 'eager';
+  img.decoding = 'async';
+  img.onerror = function(){ slot.remove(); };
+  img.onload = function(){
+    var hero = slot.closest('.hero');
+    if (hero) hero.classList.add('has-illu');
+  };
+  slot.appendChild(img);
 })();
