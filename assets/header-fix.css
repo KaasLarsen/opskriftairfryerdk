@@ -1,0 +1,35 @@
+/* Global sticky-header + anchor/hero spacing fix */
+:root {
+  /* Fallback height; real value is set by JS */
+  --header-h: 64px;
+}
+
+/* Make your header sticky (works with your existing .site-header markup) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* Push content below the sticky header once we’ve measured it */
+body.has-fixed-header main {
+  /* Account for iOS safe-area and dynamic header height */
+  padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+}
+
+/* Headings/anchors must not hide under the sticky header when scrolled-to */
+h1, h2, h3, h4, h5, h6, [id] {
+  scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 8px);
+}
+
+/* Small safety so hero never “sticks” under the bar on mobile */
+.hero {
+  padding-top: min(1.25rem, calc(var(--header-h) + env(safe-area-inset-top, 0px)));
+}
+
+/* Optional: when viewport is wide, reduce the visual offset a bit */
+@media (min-width: 900px) {
+  h1, h2, h3, h4, h5, h6, [id] {
+    scroll-margin-top: calc((var(--header-h) * 0.7) + 8px);
+  }
+}
