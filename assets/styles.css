@@ -363,4 +363,13 @@ a.guide{
 a.guide h3{
   color: hsl(var(--tone-guide)) !important; /* lille accent i titlen */
 }
+:root { --header-h: 64px; } /* fallback */
+.site-header { position: sticky; top: 0; z-index: 9999; }
 
+body.has-fixed-header main { padding-top: var(--header-h); }
+
+/* Sørg for at overskrifter/ankre ikke gemmer sig bag headeren ved scroll */
+h1, h2, h3, [id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+
+/* Lille sikkerhed på mobil, så hero ikke klistrer under bjælken */
+.hero { padding-top: min(1.25rem, var(--header-h)); }
