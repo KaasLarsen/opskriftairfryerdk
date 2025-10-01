@@ -22,14 +22,21 @@ h1, h2, h3, h4, h5, h6, [id] {
   scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 20px);
 }
 
-/* Small safety so hero never “sticks” under the bar on mobile */
+/* Hero section spacing (so H1 never hides under header) */
 .hero {
-  padding-top: min(1.25rem, calc(var(--header-h) + env(safe-area-inset-top, 0px)));
+  padding-top: calc(var(--header-h) + 16px);
 }
 
-/* Optional: when viewport is wide, reduce the visual offset a bit */
+/* On smaller screens give even more breathing room */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 32px);
+  }
+}
+
+/* Optional: when viewport is wide, reduce the anchor offset a bit */
 @media (min-width: 900px) {
   h1, h2, h3, h4, h5, h6, [id] {
-    scroll-margin-top: calc((var(--header-h) * 0.7) + 8px);
+    scroll-margin-top: calc((var(--header-h) * 0.7) + 12px);
   }
 }
