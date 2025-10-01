@@ -19,7 +19,7 @@ body.has-fixed-header main {
 
 /* Headings/anchors must not hide under the sticky header when scrolled-to */
 h1, h2, h3, h4, h5, h6, [id] {
-  scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 8px);
+  scroll-margin-top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 20px);
 }
 
 /* Small safety so hero never “sticks” under the bar on mobile */
