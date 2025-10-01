@@ -3,126 +3,221 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Banankage i airfryer (saftig)</title>
-<meta name="description" content="Banankage i airfryer (saftig) – præcise tider og temperaturer. Nem, hurtig og sprød i airfryer." />
-<meta name="afo:categories" content="Airfryer" />
+<title>Banankage i airfryer – saftig og nem (trin for trin)</title>
+<meta name="description" content="Banankage i airfryer – saftig og nem opskrift. Færdig på 20–25 min. Brug modne bananer, lille form der passer i airfryer, og få perfekt krumme hver gang." />
+
+<!-- AFO meta (bruges af vores templates og script) -->
+<meta name="afo:categories" content="Dessert,Kage,Airfryer" />
+<meta name="afo:meta" content="20–25 Min · 180 °C · Nem" />
 <meta name="afo:illustration" content="/img/illustrations/banankage.png" />
-<meta name="afo:meta" content="12–25 Min · 180 °C · Mellem" />
+
 <link rel="icon" href="/img/favicon.ico" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/assets/styles.css?v=17" />
+
+<!-- Lille, isoleret styling til hero-illustration + opskriftens layout -->
+<style>
+  .hero { display:grid; gap:1.25rem; align-items:center }
+  @media (min-width: 900px){ .hero { grid-template-columns: 1fr 360px } }
+  .hero-illu { width:100%; max-width:360px; justify-self:end; background:#fff; border-radius:20px; padding:12px; box-shadow:0 8px 24px rgba(15,23,42,.08) }
+  .badges { display:flex; flex-wrap:wrap; gap:.5rem }
+  .badge { background:#f3f4f6; border-radius:999px; padding:.4rem .75rem; font-weight:600 }
+  .note { background:#fff7ed; border:1px solid #fed7aa; padding:.75rem 1rem; border-radius:.75rem; }
+  .grid-2 { display:grid; gap:1rem }
+  @media (min-width: 880px){ .grid-2 { grid-template-columns: 1fr 1fr } }
+  .list-tight li { margin:.3rem 0 }
+</style>
+
+<!-- JSON-LD: Recipe -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Banankage i airfryer (saftig og nem)",
+  "description": "Saftig banankage bagt i airfryer på 20–25 minutter. Perfekt, når du vil bage hurtigt i en lille form.",
+  "image": ["/img/illustrations/banankage.png"],
+  "recipeCategory": ["Dessert", "Kage", "Airfryer"],
+  "keywords": "banankage i airfryer, banankage airfryer saftig",
+  "recipeYield": "8 stykker (form Ø16–18 cm eller 18×18 cm)",
+  "totalTime": "PT30M",
+  "prepTime": "PT10M",
+  "cookTime": "PT20M",
+  "recipeIngredient": [
+    "2 meget modne bananer (ca. 240 g uden skræl)",
+    "100 g sukker (evt. 80 g hvis bananerne er meget søde)",
+    "1 tsk vaniljesukker",
+    "1 knsp fint salt",
+    "2 æg (str. M)",
+    "60 g smør, smeltet (eller 60 ml neutral olie)",
+    "120 g hvedemel",
+    "1 tsk bagepulver",
+    "0,5 tsk natron",
+    "Valgfrit: 1 tsk kanel eller kardemomme",
+    "Valgfrit: 50 g mørk chokolade i små stykker eller 50 g valnødder"
+  ],
+  "recipeInstructions": [
+    "Forvarm airfryeren til 180 °C i 3–5 minutter.",
+    "Smør en lille kageform, der kan være i airfryeren (Ø16–18 cm rund eller 18×18 cm firkant). Læg evt. bagepapir i bunden.",
+    "Mos bananerne helt jævnt i en skål. Pisk sukker, vaniljesukker og salt i.",
+    "Pisk æggene i et ad gangen. Rør smeltet smør (let afkølet) i.",
+    "Sigt mel, bagepulver og natron ned i dejen (og kanel/kardemomme, hvis du bruger det). Vend forsigtigt sammen til dejen netop er samlet.",
+    "Vend chokolade/nødder i, hvis ønsket. Hæld dejen i formen og glat toppen.",
+    "Bag ved 180 °C i 20–25 minutter. Tjek efter 18–20 minutter: en tandstik i midten skal komme ud med få fugtige krummer (ikke rå dej).",
+    "Lad kagen køle 10 minutter i formen, løsn kanten og afkøl på rist. Servér lun eller helt afkølet."
+  ],
+  "nutrition": { "@type": "NutritionInformation", "calories": "ca. 280 kcal pr. stykke (8 stk.)" }
+}
+</script>
 </head>
+
 <body>
 <div data-include="/partials/header.html"></div>
+
 <main class="container">
   <section class="hero">
-    <h1>Banankage i airfryer (saftig)</h1>
-    <p class="lead">Fuld guide med præcise tider og temperaturer – perfekt hver gang.</p>
-    <div class="badges">
-      <span class="badge">⏱ 12–25 Min</span>
-      <span class="badge">🌡 180 °C</span>
-      <span class="badge">⭐ Mellem</span>
-      <span class="badge">2–4 Portioner</span>
+    <div>
+      <h1>banankage i airfryer – saftig og nem</h1>
+      <p class="lead">hurtig, saftig banankage på 20–25 min – perfekt, når du vil bage småt og smart i airfryer.</p>
+      <div class="badges">
+        <span class="badge">⏱ 20–25 min</span>
+        <span class="badge">🌡 180 °c</span>
+        <span class="badge">⭐ nem</span>
+        <span class="badge">8 stykker</span>
+      </div>
+    </div>
+
+    <!-- illustrationen sættes ind her af scriptet nedenfor -->
+    <div id="hero-illu-slot" aria-hidden="true"></div>
+  </section>
+
+  <section class="section block">
+    <h2>introduktion</h2>
+    <p>denne banankage er udviklet specifikt til airfryer: lille form, kort bagetid og maksimal saftighed. brug <em>meget modne</em> bananer for bedst smag – gerne med brune pletter. natron + bagepulver giver flot løft i den lille form.</p>
+    <p class="note"><strong>formstørrelse:</strong> rund Ø16–18 cm eller firkant 18×18 cm passer i de fleste kurve. tykkere dej = lidt længere tid; tyndere dej = kortere tid.</p>
+  </section>
+
+  <section class="section block grid-2">
+    <div>
+      <h2>ingredienser</h2>
+      <ul class="list list-tight">
+        <li>2 meget modne bananer (ca. 240 g uden skræl)</li>
+        <li>100 g sukker (80 g ved meget søde bananer)</li>
+        <li>1 tsk vaniljesukker · 1 knsp salt</li>
+        <li>2 æg (str. m)</li>
+        <li>60 g smør, smeltet (eller 60 ml olie)</li>
+        <li>120 g hvedemel</li>
+        <li>1 tsk bagepulver · 0,5 tsk natron</li>
+        <li>valgfrit: 1 tsk kanel/kardemomme</li>
+        <li>valgfrit: 50 g mørk chokolade eller valnødder</li>
+      </ul>
+    </div>
+    <div>
+      <h2>udstyr</h2>
+      <ul class="list list-tight">
+        <li>airfryer (xxl passer bedst) + kurv/rist</li>
+        <li>lille kageform (Ø16–18 cm eller 18×18 cm)</li>
+        <li>bagepapir til bunden</li>
+        <li>dejskraber, piskeris</li>
+        <li>tandstik til at tjekke krumme</li>
+      </ul>
     </div>
   </section>
 
   <section class="section block">
-    <h2>Introduktion</h2>
-    <p>Denne opskrift på banankage i airfryer (saftig) er udviklet specifikt til airfryer for at give maksimal sprødhed og saftighed med minimal indsats.</p>
-    <p>Den cirkulerende varme bruner hurtigt overfladen, mens indersiden forbliver mør. Det giver kortere tilberedningstid end ovn – perfekt til hverdage.</p>
-    <p>Start med den korteste tid i intervallet og justér herefter i små trin. Ryst eller vend halvvejs for jævn farve og konsistens.</p>
-  </section>
-
-  <section class="section block">
-    <h2>Ingredienser</h2>
-    <ul class="list">
-      <li>Hovedingrediens</li>
-      <li>1–2 spsk olie eller smør</li>
-      <li>Krydderier efter smag</li>
-      <li>Salt og peber</li>
-    </ul>
-  </section>
-
-  <section class="section block">
-    <h2>Udstyr</h2>
-    <ul class="list">
-      <li>Philips Avance Collection XXL HD9650</li>
-      <li>Kurv/rist + bagepapir</li>
-      <li>Olieforstøver/pensel</li>
-      <li>Stegetermometer</li>
-      <li>Tænger</li>
-    </ul>
-  </section>
-
-  <section class="section block">
-    <h2>Sådan Gør Du</h2>
+    <h2>sådan gør du</h2>
     <ol class="steps">
-      <li>Forvarm airfryeren 3–5 min ved 180 °C.</li>
-      <li>Vend ingredienserne i olie og krydderier.</li>
-      <li>Læg i kurven i ét lag.</li>
-      <li>Tilbered 12–25 min; vend halvvejs.</li>
-      <li>Lad hvile 2–5 min før servering.</li>
+      <li>forvarm airfryeren til 180 °c (3–5 min).</li>
+      <li>smør formen og læg bagepapir i bunden.</li>
+      <li>mos bananer meget fint. pisk sukker, vanilje og salt i.</li>
+      <li>pisk æg i ét ad gangen. rør smeltet, let afkølet smør i.</li>
+      <li>sigt mel, bagepulver og natron i. vend forsigtigt sammen.</li>
+      <li>tilsæt evt. chokolade/nødder. hæld i formen og glat toppen.</li>
+      <li>bag 20–25 min ved 180 °c. tjek efter 18–20 min med tandstik.</li>
+      <li>køl 10 min i formen, løsn og afkøl på rist. servér lun eller kold.</li>
     </ol>
   </section>
 
   <section class="section block">
-    <h2>Tips</h2>
+    <h2>tips</h2>
     <ul class="list">
-      <li>Fyld ikke kurven for meget – kør i flere hold.</li>
-      <li>Et tyndt lag olie giver ekstra sprødhed.</li>
+      <li><strong>for mørk top?</strong> læg et lille stykke folie over de sidste 3–5 min.</li>
+      <li><strong>for rå midte?</strong> skru ned til 170 °c og giv 3–6 min ekstra.</li>
+      <li><strong>glutenfri:</strong> brug 1:1 glutenfri melblanding og tilføj 1 spsk mælk.</li>
+      <li><strong>uden æg:</strong> erstat hvert æg med 60 g æblemos.</li>
     </ul>
   </section>
 
   <section class="section block">
-    <h2>Alternative Tilberedninger</h2>
+    <h2>alternative tilberedninger</h2>
     <ul class="list">
-      <li><strong>Ovn:</strong> Varmluft 180 °C i omtrent samme tid.</li>
-      <li><strong>Pande/Grill:</strong> Brun kort og færdiggør skånsomt.</li>
+      <li><strong>ovn:</strong> 180 °c varmluft i ca. 25–30 min i samme formstørrelse.</li>
+      <li><strong>topping:</strong> rør 75 g flormelis + 1–2 spsk citronsaft til glasur.</li>
     </ul>
   </section>
 
   <section class="section block">
-    <h2>Serveringsforslag</h2>
+    <h2>serveringsforslag</h2>
     <ul class="list">
-      <li>Server med salat, grønt tilbehør eller kartofler/ris.</li>
-      <li>Top med friske urter, citronsaft eller dip.</li>
+      <li>server lun med skyr eller flødeskum og friske bær.</li>
+      <li>dryp med lidt honning og ristede nødder for crunch.</li>
     </ul>
   </section>
 
-
   <section class="section block">
-    <h2>Annonce · Airfryer brugt i opskriften</h2>
-<div id="pr-product-widget-1ffe4720" style="display: block; width: 100%"></div>
+    <h2>annonce · airfryer brugt i opskriften</h2>
+    <div id="pr-product-widget-1ffe4720" style="display:block;width:100%"></div>
     <script type="text/javascript" src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=4498681&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-1ffe4720" async></script>
-    <div style="display: inline-block">
+    <div style="display:inline-block">
       <a href="https://www.pricerunner.dk/pl/81-4498681/Frituregryder/Philips-Avance-Collection-XXL-HD9650-Sammenlign-Priser" rel="nofollow">
-        <p style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100); text-decoration: underline;">
-             Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+        <p style="font:14px Helvetica,Arial,sans-serif;font-style:italic;color:#334155;text-decoration:underline">
+          annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
         </p>
       </a>
     </div>
   </section>
 
-
   <section class="section block">
-    <h2>FAQ</h2>
+    <h2>faq</h2>
     <ul class="list">
-      <li><strong>Skal jeg forvarme?</strong> Ja, 3–5 min giver jævn varme og sprødhed.</li>
-      <li><strong>Hvordan undgår jeg tørhed?</strong> Gå ned i tid/temperatur og lad hvile.</li>
-      <li><strong>Større portion?</strong> Lav i flere hold og ryst oftere.</li>
+      <li><strong>skal jeg forvarme?</strong> ja, 3–5 min giver mere stabil varme og jævn hævning.</li>
+      <li><strong>kan jeg fordoble?</strong> ja, brug større form og forlæng tiden 5–10 min.</li>
+      <li><strong>hvordan ved jeg den er færdig?</strong> tandstik med få fugtige krummer – ikke rå dej.</li>
     </ul>
   </section>
 
   <section class="section block">
-    <h2>Relaterede Opskrifter</h2>
+    <h2>relaterede opskrifter</h2>
     <div class="grid grid-3">
-      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html"><div class="card-body"><h3>Flæskesteg i airfryer</h3></div></a>
-      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html"><div class="card-body"><h3>Kyllingespyd i airfryer</h3></div></a>
-      <a class="card" href="/opskrifter/laks-i-airfryer.html"><div class="card-body"><h3>Laks i airfryer</h3></div></a>
+      <a class="card" href="/opskrifter/flaeskesteg-i-airfryer.html"><div class="card-body"><h3>flæskesteg i airfryer</h3></div></a>
+      <a class="card" href="/opskrifter/kyllingespyd-i-airfryer.html"><div class="card-body"><h3>kyllingespyd i airfryer</h3></div></a>
+      <a class="card" href="/opskrifter/laks-i-airfryer.html"><div class="card-body"><h3>laks i airfryer</h3></div></a>
     </div>
   </section>
 </main>
+
 <div data-include="/partials/footer.html"></div>
+
+<!-- Script: indsæt hero-illustration automatisk ud fra meta -->
+<script>
+(function(){
+  var m = document.querySelector('meta[name="afo:illustration"]');
+  var slot = document.getElementById('hero-illu-slot');
+  if (!m || !slot) return;
+  var src = m.getAttribute('content');
+  if (!src) return;
+
+  var img = new Image();
+  img.src = src;
+  img.alt = 'illustration af banankage i airfryer';
+  img.width = 768; img.height = 768;
+  img.className = 'hero-illu';
+  img.loading = 'eager';
+  img.decoding = 'async';
+  img.onerror = function(){ slot.remove(); }; // hvis billedet ikke findes, skjul slot
+  slot.appendChild(img);
+})();
+</script>
+
 <script src="/assets/include.js?v=4"></script>
 </body>
 </html>
