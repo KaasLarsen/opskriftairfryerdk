@@ -40,3 +40,29 @@ h1, h2, h3, h4, h5, h6, [id] {
     scroll-margin-top: calc((var(--header-h) * 0.7) + 12px);
   }
 }
+
+/* --- Extra handling for heroes with illustration --- */
+@media (max-width: 600px) {
+  .hero.has-illu {
+    padding-top: calc(var(--header-h) + 40px) !important; /* extra room */
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+  .hero.has-illu > div:first-child { order: 1; }
+  .hero.has-illu #hero-illu-slot   { order: 2; justify-self: center; }
+}
+
+.hero.has-illu h1 {
+  margin-top: 6px;
+}
+
+/* Hero illustration styling */
+.hero-illu {
+  max-width: 360px;
+  height: auto;
+  justify-self: end;
+  background: #fff;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 8px 24px rgba(15,23,42,.08);
+}
