@@ -272,15 +272,24 @@
   <script src="/assets/include.js?v=4"></script>
   <script src="/assets/header-fix.js?v=2"></script>
 
-  <!-- Fail-safe: hvis et ikon-id mangler i sprite, brug #star -->
-  <script>
-    (function(){
-      function ok(id){ try{ return !!document.querySelector(id); }catch(e){ return false; } }
-      document.querySelectorAll('.thumb use, .ico-inline use').forEach(function(u){
-        var href = u.getAttribute('href') || u.getAttribute('xlink:href');
-        if(!href || !ok(href)) u.setAttribute('href', '#star');
-      });
-    })();
-  </script>
+  <!-- Ikon-failsafe (vent til spritesheet er indsat) -->
+<script>
+(function(){
+  function spriteReady(){ return document.querySelector('svg symbol') !== null; }
+  function exists(id){ try { return !!document.querySelector(id); } catch(e){ return false; } }
+  function run(){
+    document.querySelectorAll('.thumb use, .ico-inline use').forEach(function(u){
+      var href = u.getAttribute('href') || u.getAttribute('xlink:href');
+      if(!href || !exists(href)) u.setAttribute('href', '#star');
+    });
+  }
+  function wait(tries){
+    if (spriteReady()) return run();
+    if ((tries||0) > 80) return;        // giv op efter ~5s
+    setTimeout(function(){ wait((tries||0)+1); }, 60);
+  }
+  window.addEventListener('load', function(){ wait(0); });
+})();
+</script>
 </body>
 </html>
