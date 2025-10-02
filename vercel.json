@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/hjemmelavede-soltoerrede-tomater-i-airfryer-klar-paa-ingen-tid",  "destination": "/opskrifter/soltoerrede-tomater-i-airfryer.html", "permanent": true },
+    { "source": "/hjemmelavede-soltoerrede-tomater-i-airfryer-klar-paa-ingen-tid/", "destination": "/opskrifter/soltoerrede-tomater-i-airfryer.html", "permanent": true },
+
     { "source": "/tunsteak-i-airfryer-sesam",  "destination": "/opskrifter/tunsteak-i-airfryer-sesam.html", "permanent": true },
     { "source": "/tunsteak-i-airfryer-sesam/", "destination": "/opskrifter/tunsteak-i-airfryer-sesam.html", "permanent": true },
 
