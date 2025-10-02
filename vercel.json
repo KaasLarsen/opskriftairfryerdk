@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/tunsteak-i-airfryer-sesam",  "destination": "/opskrifter/tunsteak-i-airfryer-sesam.html", "permanent": true },
+    { "source": "/tunsteak-i-airfryer-sesam/", "destination": "/opskrifter/tunsteak-i-airfryer-sesam.html", "permanent": true },
+
     { "source": "/%F0%9F%90%9F-moerksej-i-airfryer-saftig-sund-og-smagfuld-fiskeret-paa-faa-minutter",  "destination": "/opskrifter/moerksej-i-airfryer-saftig.html", "permanent": true },
     { "source": "/%F0%9F%90%9F-moerksej-i-airfryer-saftig-sund-og-smagfuld-fiskeret-paa-faa-minutter/", "destination": "/opskrifter/moerksej-i-airfryer-saftig.html", "permanent": true },
 
