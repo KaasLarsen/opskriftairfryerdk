@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/%F0%9F%90%9F-moerksej-i-airfryer-saftig-sund-og-smagfuld-fiskeret-paa-faa-minutter",  "destination": "/opskrifter/moerksej-i-airfryer-saftig.html", "permanent": true },
+    { "source": "/%F0%9F%90%9F-moerksej-i-airfryer-saftig-sund-og-smagfuld-fiskeret-paa-faa-minutter/", "destination": "/opskrifter/moerksej-i-airfryer-saftig.html", "permanent": true },
+
     { "source": "/lammekoteletter-i-airfryer-gourmetoplevelse-paa-ingen-tid",  "destination": "/opskrifter/lammekoteletter-i-airfryer.html", "permanent": true },
     { "source": "/lammekoteletter-i-airfryer-gourmetoplevelse-paa-ingen-tid/", "destination": "/opskrifter/lammekoteletter-i-airfryer.html", "permanent": true },
 
