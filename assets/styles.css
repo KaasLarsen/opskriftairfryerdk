@@ -373,3 +373,35 @@ h1, h2, h3, [id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 
 /* Lille sikkerhed på mobil, så hero ikke klistrer under bjælken */
 .hero { padding-top: min(1.25rem, var(--header-h)); }
+
+/* — Forside: 3 bedste tilbud — */
+.deals3 { margin: 22px 0; }
+.deals3 .grid { display:grid; gap:16px; grid-template-columns:repeat(3,1fr); }
+@media (max-width:900px){ .deals3 .grid { grid-template-columns:1fr; } }
+
+.deals3 .card { overflow:hidden; } /* du har allerede border/shadow på .card globalt */
+
+.deals3 .card-body { padding:12px 14px; }
+.deals3 h2 { margin:0 0 10px; font-size:22px; }
+.deals3 .meta { font-size:13px; color:#64748b; }
+.deals3 .cta {
+  display:inline-block; margin-top:6px; padding:9px 12px;
+  border-radius:999px; font-weight:600; border:1px solid #e2e8f0;
+  background:#0ea5e9; color:#fff;
+}
+
+/* Ens billedhøjde + pæne proportioner (samme princip som BF-siden) */
+.deals3 .imgwrap {
+  display:block;
+  aspect-ratio:16/10;
+  background:linear-gradient(180deg,#f8fafc,#fff);
+  overflow:hidden;
+}
+.deals3 .imgwrap img {
+  width:100%; height:100%;
+  object-fit:contain;
+  padding:14px;
+}
+@media (max-width:900px){ .deals3 .imgwrap{ aspect-ratio:16/11; } }
+@media (max-width:560px){ .deals3 .imgwrap{ aspect-ratio:16/12; } }
+
