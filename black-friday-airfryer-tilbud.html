@@ -53,6 +53,25 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .small{font-size:12px;color:#64748b}
 .updated{font-size:13px;color:#64748b}
 
+  /* Logo-cards: samme størrelse, centreret */
+.logo-card {
+  display: grid;
+  place-items: center;
+  min-height: 120px;               /* ens korthøjde */
+  background: #fff;
+}
+.logo-card img {
+  max-width: 160px;                /* ens breddegrænse */
+  max-height: 48px;                /* ens højdegrænse */
+  width: auto; height: auto;
+  object-fit: contain;             /* ingen stræk */
+  image-rendering: -webkit-optimize-contrast;
+}
+@media (max-width: 900px){
+  .logo-card { min-height: 100px; }
+  .logo-card img { max-width: 140px; max-height: 44px; }
+}
+
 /* === Deal-kort: kontrolleret image layout === */
 .bf-card .imgwrap{
   display:block;
