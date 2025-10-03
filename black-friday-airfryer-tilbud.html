@@ -53,25 +53,6 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .small{font-size:12px;color:#64748b}
 .updated{font-size:13px;color:#64748b}
 
-  /* Logo-cards: samme størrelse, centreret */
-.logo-card {
-  display: grid;
-  place-items: center;
-  min-height: 120px;               /* ens korthøjde */
-  background: #fff;
-}
-.logo-card img {
-  max-width: 160px;                /* ens breddegrænse */
-  max-height: 48px;                /* ens højdegrænse */
-  width: auto; height: auto;
-  object-fit: contain;             /* ingen stræk */
-  image-rendering: -webkit-optimize-contrast;
-}
-@media (max-width: 900px){
-  .logo-card { min-height: 100px; }
-  .logo-card img { max-width: 140px; max-height: 44px; }
-}
-
 /* === Deal-kort: kontrolleret image layout === */
 .bf-card .imgwrap{
   display:block;
@@ -92,6 +73,25 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
   .bf-card .imgwrap{ aspect-ratio: 16 / 12; }
 }
 
+/* === Logo-cards: samme størrelse, centreret === */
+.logo-card {
+  display:grid;
+  place-items:center;
+  min-height:120px;
+  background:#fff;
+}
+.logo-card img{
+  max-width:160px;
+  max-height:48px;
+  width:auto;height:auto;
+  object-fit:contain;
+  image-rendering:-webkit-optimize-contrast;
+}
+@media (max-width:900px){
+  .logo-card{min-height:100px}
+  .logo-card img{max-width:140px;max-height:44px}
+}
+
 /* sikring: ingen tvungen lowercase */
 body { text-transform: none; }
 </style>
@@ -107,8 +107,8 @@ body { text-transform: none; }
   <!-- hero -->
   <section class="hero">
     <div class="hero-card">
-      <span class="badge">black friday 2025</span>
-      <h1 style="margin:8px 0 6px">black friday airfryer tilbud 2025</h1>
+      <span class="badge">Black Friday 2025</span>
+      <h1 style="margin:8px 0 6px">Black Friday Airfryer Tilbud 2025</h1>
       <p class="meta">Vi samler de bedste priser, hurtige anbefalinger og en kort købsguide – alt på ét sted.</p>
       <div class="count" id="bf-count">
         <div class="pill"><div id="d">–</div><div class="small">Dage</div></div>
@@ -218,14 +218,38 @@ body { text-transform: none; }
     </div>
   </section>
 
-  <!-- butikker vi samarbejder med -->
+  <!-- butikker vi samarbejder med (med logoer) -->
   <section class="section">
     <div class="section-head"><h2>Butikker vi samarbejder med</h2></div>
     <div class="grid grid-4">
-      <a class="card" rel="sponsored nofollow" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Proshop</h3><p class="meta">Bredt udvalg af elektronik & køkken · annonce/partnerlink</p></div></a>
-      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Onyx Cookware</h3><p class="meta">Direkte fra producenten · annonce/partnerlink</p></div></a>
-      <a class="card" rel="sponsored nofollow" href="https://dot.butik24.dk/t/t?a=1755429678&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Butik24</h3><p class="meta">Gode husholdningsdeals · annonce/partnerlink</p></div></a>
-      <a class="card" rel="sponsored nofollow" href="https://go.adt231.net/t/t?a=1498475325&as=1940697285&t=2&tk=1"><div class="card-body"><h3>HelloFresh</h3><p class="meta">Måltidskasser – nemme sideretter til airfryer · annonce/partnerlink</p></div></a>
+      <!-- Proshop -->
+      <a class="card" rel="sponsored nofollow"
+         href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1" aria-label="Proshop">
+        <div class="card-body logo-card">
+          <img src="/img/proshop.png" alt="Proshop" loading="lazy" decoding="async">
+        </div>
+      </a>
+      <!-- Onyx Cookware -->
+      <a class="card" rel="sponsored nofollow"
+         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1" aria-label="Onyx Cookware">
+        <div class="card-body logo-card">
+          <img src="/img/onyxcookware.png" alt="Onyx Cookware" loading="lazy" decoding="async">
+        </div>
+      </a>
+      <!-- Butik24 -->
+      <a class="card" rel="sponsored nofollow"
+         href="https://dot.butik24.dk/t/t?a=1755429678&as=1940697285&t=2&tk=1" aria-label="Butik24">
+        <div class="card-body logo-card">
+          <img src="/img/buitk24.png" alt="Butik24" loading="lazy" decoding="async">
+        </div>
+      </a>
+      <!-- HelloFresh -->
+      <a class="card" rel="sponsored nofollow"
+         href="https://go.adt231.net/t/t?a=1498475325&as=1940697285&t=2&tk=1" aria-label="HelloFresh">
+        <div class="card-body logo-card">
+          <img src="/img/hellofresh.png" alt="HelloFresh" loading="lazy" decoding="async">
+        </div>
+      </a>
     </div>
     <p class="disclaimer">Nogle udgående links er partnerlinks (annoncer). Vi kan modtage kommission – prisen er den samme for dig.</p>
   </section>
@@ -243,7 +267,7 @@ body { text-transform: none; }
         </tbody>
       </table>
     </div>
-    <p class="note" style="padding:10px 14px 12px">Tip: vælg kapacitet efter husholdning og kurvens højde – store emner (fx flæskesteg) kræver ekstra plads i højden.</p></div>
+    <p class="note" style="padding:10px 14px 12px">Tip: Vælg kapacitet efter husholdning og kurvens højde – store emner (fx flæskesteg) kræver ekstra plads i højden.</p></div>
   </section>
 
   <!-- købsguide -->
@@ -274,7 +298,7 @@ body { text-transform: none; }
 <!-- partials loader -->
 <script defer src="/assets/include.js?v=4"></script>
 
-<!-- title-case -->
+<!-- Title-case til overskrifter -->
 <script>
 (function(){
   const SMALL=new Set(['og','i','på','til','af','for','med','om','fra','ved','en','et','de','den','det','eller','samt','som','men']);
@@ -306,37 +330,48 @@ body { text-transform: none; }
 
 <!-- countdown + carousel -->
 <script>
+// countdown til 28 nov 2025 00:00
 (function(){
   const dEl=document.getElementById('d'),hEl=document.getElementById('h'),mEl=document.getElementById('m'),sEl=document.getElementById('s');
   const target=new Date('2025-11-28T00:00:00');
   function pad(n){return String(n).padStart(2,'0')}
   function tick(){
-    const now=new Date();
-    let diff=Math.max(0,target-now);
-    const d=Math.floor(diff/86400000);diff-=d*86400000;
-    const h=Math.floor(diff/3600000);diff-=h*3600000;
-    const m=Math.floor(diff/60000);diff-=m*60000;
+    const now=new Date(); let diff=Math.max(0,target-now);
+    const d=Math.floor(diff/86400000); diff-=d*86400000;
+    const h=Math.floor(diff/3600000);  diff-=h*3600000;
+    const m=Math.floor(diff/60000);    diff-=m*60000;
     const s=Math.floor(diff/1000);
-    dEl.textContent=d;hEl.textContent=pad(h);mEl.textContent=pad(m);sEl.textContent=pad(s);
+    dEl.textContent=d; hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
   }
-  tick();setInterval(tick,1000);
-  const upd=document.getElementById('updated');if(upd){const d=new Date();upd.textContent=[pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('.');}
+  tick(); setInterval(tick,1000);
+  const upd=document.getElementById('updated');
+  if(upd){ const d=new Date(); upd.textContent=[pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('.'); }
 })();
+
+// simpel carousel
 (function(){
-  const root=document.getElementById('pr-carousel');if(!root)return;
-  const slides=Array.from(root.querySelectorAll('.pr-slide'));
-  const prev=root.querySelector('.pr-prev');const next=root.querySelector('.pr-next');
+  const root=document.getElementById('pr-carousel'); if(!root) return;
+  const slides=[...root.querySelectorAll('.pr-slide')];
+  const prev=root.querySelector('.pr-prev'); const next=root.querySelector('.pr-next');
   const dotsWrap=document.getElementById('pr-dots');
-  let i=Math.max(0,slides.findIndex(s=>s.classList.contains('is-active')));let t=null;const INTERVAL=6000;
-  function show(n){slides.forEach(s=>s.classList.remove('is-active'));slides[n].classList.add('is-active');dotsWrap&&dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active',k===n));i=n;}
-  function start(){stop();if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(()=>show((i+1)%slides.length),INTERVAL);}
-  function stop(){if(t){clearInterval(t);t=null;}}
-  if(dotsWrap){dotsWrap.innerHTML=slides.map((_,k)=>`<button class="pr-dot" aria-label="slide ${k+1}"></button>`).join('');dotsWrap.querySelectorAll('.pr-dot').forEach((b,k)=>b.addEventListener('click',()=>{stop();show(k);start();}));}
+  let i=Math.max(0,slides.findIndex(s=>s.classList.contains('is-active'))), t=null; const INTERVAL=6000;
+  function show(n){
+    slides.forEach(s=>s.classList.remove('is-active'));
+    slides[n].classList.add('is-active');
+    dotsWrap&&dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active',k===n));
+    i=n;
+  }
+  function start(){ stop(); if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(()=>show((i+1)%slides.length),INTERVAL); }
+  function stop(){ if(t){clearInterval(t); t=null;} }
+  if(dotsWrap){
+    dotsWrap.innerHTML=slides.map((_,k)=>`<button class="pr-dot" aria-label="slide ${k+1}"></button>`).join('');
+    dotsWrap.querySelectorAll('.pr-dot').forEach((b,k)=>b.addEventListener('click',()=>{stop();show(k);start();}));
+  }
   prev&&prev.addEventListener('click',()=>{stop();show((i-1+slides.length)%slides.length);start();});
   next&&next.addEventListener('click',()=>{stop();show((i+1)%slides.length);start();});
-  root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
+  root.addEventListener('mouseenter',stop); root.addEventListener('mouseleave',start);
   document.addEventListener('visibilitychange',()=>{document.hidden?stop():start();});
-  show(i);start();
+  show(i); start();
 })();
 </script>
 
