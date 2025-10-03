@@ -53,7 +53,27 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .small{font-size:12px;color:#64748b}
 .updated{font-size:13px;color:#64748b}
 
-/* sikkerhed: sørg for at intet globalt tvinger lowercase */
+/* === Deal-kort: kontrolleret image layout === */
+.bf-card .imgwrap{
+  display:block;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(180deg,#f8fafc,#fff);
+  overflow:hidden;
+}
+.bf-card .imgwrap img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  padding:14px;
+}
+@media (max-width:900px){
+  .bf-card .imgwrap{ aspect-ratio: 16 / 11; }
+}
+@media (max-width:560px){
+  .bf-card .imgwrap{ aspect-ratio: 16 / 12; }
+}
+
+/* sikring: ingen tvungen lowercase */
 body { text-transform: none; }
 </style>
 </head>
@@ -68,8 +88,8 @@ body { text-transform: none; }
   <!-- hero -->
   <section class="hero">
     <div class="hero-card">
-      <span class="badge">Black Friday 2025</span>
-      <h1 style="margin:8px 0 6px">Black Friday Airfryer Tilbud 2025</h1>
+      <span class="badge">black friday 2025</span>
+      <h1 style="margin:8px 0 6px">black friday airfryer tilbud 2025</h1>
       <p class="meta">Vi samler de bedste priser, hurtige anbefalinger og en kort købsguide – alt på ét sted.</p>
       <div class="count" id="bf-count">
         <div class="pill"><div id="d">–</div><div class="small">Dage</div></div>
@@ -94,9 +114,7 @@ body { text-transform: none; }
             <div id="pr-product-widget-e0348930"></div>
             <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3280146314&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-e0348930" async></script>
           </div>
-          <p class="small" style="margin-top:6px">
-            Annonce i samarbejde med <strong>PriceRunner</strong>
-          </p>
+          <p class="small" style="margin-top:6px">Annonce i samarbejde med <strong>PriceRunner</strong></p>
         </div>
         <!-- slide 2 -->
         <div class="pr-slide">
@@ -122,7 +140,7 @@ body { text-transform: none; }
     </div>
   </section>
 
-  <!-- Dagens 3 tilbud (dine links + billeder) -->
+  <!-- dagens 3 tilbud -->
   <section id="dagens" class="section">
     <div class="section-head">
       <h2>Dagens 3 bedste tilbud</h2>
@@ -132,36 +150,36 @@ body { text-transform: none; }
 
       <!-- Ninja AF500EU -->
       <article class="card bf-card">
-        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/?s=Ninja+AF500EU+Flex+Drawer" rel="sponsored nofollow" target="_blank" aria-label="Ninja AF500EU hos Proshop">
-          <img src="/img/Ninja-Foodi-FlexDrawer-AF500EU.jpg" alt="Ninja AF500EU Flex Drawer" width="960" height="540" />
+        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/?s=Ninja+AF500EU+Flex+Drawer" rel="sponsored nofollow" target="_blank">
+          <img src="/img/Ninja-Foodi-FlexDrawer-AF500EU.jpg" alt="Ninja AF500EU Flex Drawer" loading="lazy" decoding="async" width="960" height="540" />
         </a>
         <div class="card-body">
           <h3>Ninja AF500EU Flex Drawer</h3>
-          <p class="meta">Proshop · Stor fleksibel dualzone</p>
+          <p class="meta">Proshop · stor fleksibel dualzone</p>
           <a class="cta" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/?s=Ninja+AF500EU+Flex+Drawer" rel="sponsored nofollow" target="_blank">Se tilbud</a>
         </div>
       </article>
 
       <!-- Ninja AF300EU -->
       <article class="card bf-card">
-        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684" rel="sponsored nofollow" target="_blank" aria-label="Ninja AF300EU hos Proshop">
-          <img src="/img/Ninja-Foodi-AF300.jpg" alt="Ninja AF300EU Hot Air Fryer" width="960" height="540" />
+        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684" rel="sponsored nofollow" target="_blank">
+          <img src="/img/Ninja-Foodi-AF300.jpg" alt="Ninja AF300EU Hot Air Fryer" loading="lazy" decoding="async" width="960" height="540" />
         </a>
         <div class="card-body">
           <h3>Ninja AF300EU Hot Air Fryer</h3>
-          <p class="meta">Proshop · Dual zone – Populært valg</p>
+          <p class="meta">Proshop · dual zone – populært valg</p>
           <a class="cta" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684" rel="sponsored nofollow" target="_blank">Se tilbud</a>
         </div>
       </article>
 
       <!-- Princess 8L -->
       <article class="card bf-card">
-        <a class="imgwrap" href="https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/" rel="sponsored nofollow" target="_blank" aria-label="Princess 8L hos KitchenOne">
-          <img src="/img/Princess-182254.jpg" alt="Princess Digital Airfryer 8L" width="960" height="540" />
+        <a class="imgwrap" href="https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/" rel="sponsored nofollow" target="_blank">
+          <img src="/img/Princess-182254.jpg" alt="Princess Digital Airfryer 8L" loading="lazy" decoding="async" width="960" height="540" />
         </a>
         <div class="card-body">
           <h3>Princess Digital Airfryer 8L</h3>
-          <p class="meta">KitchenOne · Stor familiekapacitet</p>
+          <p class="meta">KitchenOne · stor familiekapacitet</p>
           <a class="cta" href="https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/" rel="sponsored nofollow" target="_blank">Se tilbud</a>
         </div>
       </article>
@@ -170,160 +188,62 @@ body { text-transform: none; }
     <p class="disclaimer">Priser og tilgængelighed kan ændre sig hurtigt. Nogle links er affiliate/partnerlinks (rel="sponsored").</p>
   </section>
 
-  <!-- HURTIGE ANBEFALINGER — udvalgte produkter (partner) -->
+  <!-- hurtige anbefalinger -->
   <section class="section">
     <div class="section-head"><h2>Hurtige anbefalinger (udvalgte produkter)</h2></div>
     <div class="grid grid-4">
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-5l-aof">
-        <div class="card-body">
-          <h3>ONYX Airfryer 5L (AOF)</h3>
-          <p class="meta">Kompakt til 1–2 pers · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-5l">
-        <div class="card-body">
-          <h3>ONYX Airfryer 5L (standard)</h3>
-          <p class="meta">God værdi · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-air-fryer-dual-aof">
-        <div class="card-body">
-          <h3>ONYX Airfryer Dual</h3>
-          <p class="meta">2 zoner – Fleksibilitet · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-8li">
-        <div class="card-body">
-          <h3>ONYX Airfryer 8L</h3>
-          <p class="meta">Familievenlig kapacitet · Annonce/partnerlink</p>
-        </div>
-      </a>
-
+      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-5l-aof"><div class="card-body"><h3>ONYX airfryer 5L (AOF)</h3><p class="meta">Kompakt til 1–2 pers · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-5l"><div class="card-body"><h3>ONYX airfryer 5L (standard)</h3><p class="meta">God værdi · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-air-fryer-dual-aof"><div class="card-body"><h3>ONYX airfryer Dual</h3><p class="meta">2 zoner – fleksibilitet · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-8li"><div class="card-body"><h3>ONYX airfryer 8L</h3><p class="meta">Familievenlig kapacitet · annonce/partnerlink</p></div></a>
     </div>
   </section>
 
-  <!-- BUTIKKER VI SAMARBEJDER MED -->
+  <!-- butikker vi samarbejder med -->
   <section class="section">
     <div class="section-head"><h2>Butikker vi samarbejder med</h2></div>
     <div class="grid grid-4">
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1">
-        <div class="card-body">
-          <h3>Proshop</h3>
-          <p class="meta">Bredt udvalg af elektronik & køkken · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1">
-        <div class="card-body">
-          <h3>Onyx Cookware</h3>
-          <p class="meta">Direkte fra producenten · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://dot.butik24.dk/t/t?a=1755429678&as=1940697285&t=2&tk=1">
-        <div class="card-body">
-          <h3>Butik24</h3>
-          <p class="meta">Gode husholdningsdeals · Annonce/partnerlink</p>
-        </div>
-      </a>
-
-      <a class="card" rel="sponsored nofollow"
-         href="https://go.adt231.net/t/t?a=1498475325&as=1940697285&t=2&tk=1">
-        <div class="card-body">
-          <h3>HelloFresh</h3>
-          <p class="meta">Måltidskasser – Nemme sideretter til airfryer · Annonce/partnerlink</p>
-        </div>
-      </a>
-
+      <a class="card" rel="sponsored nofollow" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Proshop</h3><p class="meta">Bredt udvalg af elektronik & køkken · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Onyx Cookware</h3><p class="meta">Direkte fra producenten · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://dot.butik24.dk/t/t?a=1755429678&as=1940697285&t=2&tk=1"><div class="card-body"><h3>Butik24</h3><p class="meta">Gode husholdningsdeals · annonce/partnerlink</p></div></a>
+      <a class="card" rel="sponsored nofollow" href="https://go.adt231.net/t/t?a=1498475325&as=1940697285&t=2&tk=1"><div class="card-body"><h3>HelloFresh</h3><p class="meta">Måltidskasser – nemme sideretter til airfryer · annonce/partnerlink</p></div></a>
     </div>
     <p class="disclaimer">Nogle udgående links er partnerlinks (annoncer). Vi kan modtage kommission – prisen er den samme for dig.</p>
   </section>
 
-  <!-- sammenligning (light) -->
+  <!-- sammenligning -->
   <section class="section">
     <div class="section-head"><h2>Hurtig sammenligning</h2></div>
-    <div class="card">
-      <div class="card-body" style="padding:0">
-        <table class="table">
-          <thead>
-            <tr><th>Model</th><th>Styrke</th><th>Passer til</th><th>Prisguide</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ninja Double Stack (≈9–10L)</td>
-              <td>To niveauer, fleksibel kapacitet</td>
-              <td>Familier, sprødhed på 2 etager</td>
-              <td><a class="subtle" href="#pr-carousel">Se priser</a></td>
-            </tr>
-            <tr>
-              <td>Xiaomi Mi Smart Air Fryer</td>
-              <td>Simpel app-styring</td>
-              <td>Studie/små køkkener</td>
-              <td><a class="subtle" href="#pr-carousel">Se priser</a></td>
-            </tr>
-            <tr>
-              <td>Philips 3000 Series</td>
-              <td>Pålidelig allround</td>
-              <td>De fleste husholdninger</td>
-              <td><a class="subtle" href="#pr-carousel">Se priser</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="note" style="padding:10px 14px 12px">Tip: Vælg kapacitet efter husholdning og kurvens højde – store emner (fx flæskesteg) kræver ekstra plads i højden.</p>
+    <div class="card"><div class="card-body" style="padding:0">
+      <table class="table">
+        <thead><tr><th>Model</th><th>Styrke</th><th>Passer til</th><th>Prisguide</th></tr></thead>
+        <tbody>
+          <tr><td>Ninja Double Stack (≈9–10L)</td><td>To niveauer, fleksibel kapacitet</td><td>Familier, sprødhed på 2 etager</td><td><a class="subtle" href="#pr-carousel">Se priser</a></td></tr>
+          <tr><td>Xiaomi Mi Smart Air Fryer</td><td>Simpel app-styring</td><td>Studie/små køkkener</td><td><a class="subtle" href="#pr-carousel">Se priser</a></td></tr>
+          <tr><td>Philips 3000 Series</td><td>Pålidelig allround</td><td>De fleste husholdninger</td><td><a class="subtle" href="#pr-carousel">Se priser</a></td></tr>
+        </tbody>
+      </table>
     </div>
+    <p class="note" style="padding:10px 14px 12px">Tip: vælg kapacitet efter husholdning og kurvens højde – store emner (fx flæskesteg) kræver ekstra plads i højden.</p></div>
   </section>
 
   <!-- købsguide -->
   <section id="guide" class="section">
     <div class="section-head"><h2>Kort købsguide til Black Friday</h2></div>
     <div class="grid grid-2">
-      <div class="card"><div class="card-body">
-        <h3>1) Størrelse & kurv</h3>
-        <p class="meta">4–5L: 1–2 pers · 7–8L: 3–5 pers · Dual/2-niveauer: Fleksibilitet til store portioner.</p>
-      </div></div>
-      <div class="card"><div class="card-body">
-        <h3>2) Effekt & hastighed</h3>
-        <p class="meta">Højere watt varmer hurtigere op. Kig efter jævn luftcirkulation og god ristehøjde.</p>
-      </div></div>
-      <div class="card"><div class="card-body">
-        <h3>3) Rengøring</h3>
-        <p class="meta">Aftagelige dele og liner/silicone-kurve sparer tid. Undgå ridser i non-stick.</p>
-      </div></div>
-      <div class="card"><div class="card-body">
-        <h3>4) Tilbehør</h3>
-        <p class="meta">Olieforstøver, stegetermometer, bageforme – små køb der giver bedre resultater.</p>
-      </div></div>
+      <div class="card"><div class="card-body"><h3>1) Størrelse & kurv</h3><p class="meta">4–5L: 1–2 pers · 7–8L: 3–5 pers · dual/2-niveauer: fleksibilitet til store portioner.</p></div></div>
+      <div class="card"><div class="card-body"><h3>2) Effekt & hastighed</h3><p class="meta">Højere watt varmer hurtigere op. Kig efter jævn luftcirkulation og god ristehøjde.</p></div></div>
+      <div class="card"><div class="card-body"><h3>3) Rengøring</h3><p class="meta">Aftagelige dele og liner/silicone-kurve sparer tid. Undgå ridser i non-stick.</p></div></div>
+      <div class="card"><div class="card-body"><h3>4) Tilbehør</h3><p class="meta">Olieforstøver, stegetermometer, bageforme – små køb der giver bedre resultater.</p></div></div>
     </div>
   </section>
 
   <!-- faq -->
   <section class="section faq">
     <div class="section-head"><h2>FAQ</h2></div>
-    <details>
-      <summary>Hvornår er Black Friday 2025?</summary>
-      <p>Fredag den 28. november 2025.</p>
-    </details>
-    <details>
-      <summary>Er priserne lavere end Singles’ Day og Cyber Monday?</summary>
-      <p>Ofte ja, men det varierer pr. model. Tjek prisudvikling i widgets her på siden for at spotte gode drops.</p>
-    </details>
-    <details>
-      <summary>Kan jeg returnere, hvis jeg fortryder?</summary>
-      <p>Ja, følg butikkens returregler. Gem kvittering og emballage, især ved online-køb.</p>
-    </details>
+    <details><summary>Hvornår er Black Friday 2025?</summary><p>Fredag den 28. november 2025.</p></details>
+    <details><summary>Er priserne lavere end Singles’ Day og Cyber Monday?</summary><p>Ofte ja, men det varierer pr. model. Tjek prisudvikling i widgets her på siden for at spotte gode drops.</p></details>
+    <details><summary>Kan jeg returnere, hvis jeg fortryder?</summary><p>Ja, følg butikkens returregler. Gem kvittering og emballage, især ved online-køb.</p></details>
     <p class="disclaimer">Oplysningerne her er vejledende. Tjek altid butikken for endelige vilkår.</p>
   </section>
 
@@ -335,121 +255,78 @@ body { text-transform: none; }
 <!-- partials loader -->
 <script defer src="/assets/include.js?v=4"></script>
 
-<!-- DK Title-case for overskrifter (beholdt) + Sætnings-start autokapitalisering -->
+<!-- title-case -->
 <script>
 (function(){
-  // ==== Title-case for headings (DK) ====
-  const SMALL = new Set(['og','i','på','til','af','for','med','om','fra','ved','en','et','de','den','det','eller','samt','som','men']);
-  const SEL = 'h1, .section-head h2, .card h3, .faq summary';
-  function isAllCaps(w){ return w.length>1 && /^[A-ZÆØÅ0-9\-\.]+$/.test(w); }
-  function capFirst(w){ return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); }
+  const SMALL=new Set(['og','i','på','til','af','for','med','om','fra','ved','en','et','de','den','det','eller','samt','som','men']);
+  const SEL='h1,.section-head h2,.card h3,.faq summary';
+  function isAllCaps(w){return w.length>1&&/^[A-ZÆØÅ0-9\-\.]+$/.test(w);}
+  function capFirst(w){return w.charAt(0).toUpperCase()+w.slice(1).toLowerCase();}
   function titleCaseDA(text){
-    const parts = text.split(/\s+/);
-    return parts.map((token, idx) => {
-      if (isAllCaps(token)) return token;
-      const m = token.match(/^([«“"(\[]?)(.*?)([»”")\]]+)?$/);
-      const pre = m?.[1] || '', core = m?.[2] || token, post = m?.[3] || '';
-      const lw = core.toLowerCase(); const first = idx===0, last = idx===parts.length-1;
-      const cased = (first || last || !SMALL.has(lw)) ? capFirst(core) : lw;
-      return pre + cased + post;
+    const parts=text.split(/\s+/);
+    return parts.map((token,idx)=>{
+      if(isAllCaps(token))return token;
+      const m=token.match(/^([«“"(\[]?)(.*?)([»”")\]]+)?$/);
+      const pre=m?.[1]||'',core=m?.[2]||token,post=m?.[3]||'';
+      const lw=core.toLowerCase();
+      const first=idx===0,last=idx===parts.length-1;
+      const cased=(first||last||!SMALL.has(lw))?capFirst(core):lw;
+      return pre+cased+post;
     }).join(' ');
   }
-
-  // ==== Sætnings-start autokapitalisering ====
-  // Gør første bogstav efter start eller ., !, ? + mellemrum stort. Påvirker ikke resten af ordet.
-  const SENTENCE_SEL = 'p, .meta, .note, .disclaimer, .badge, .faq details > p, .faq summary';
-  function capSentenceStarts(str){
-    return str.replace(/(^|[.!?]\s+)([a-zæøå])/giu, (m, pre, ch) => pre + ch.toUpperCase());
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // Headings
-    document.querySelectorAll(SEL).forEach(el => {
-      if (el.hasAttribute('data-keepcase')) return;
-      const txt = el.textContent?.trim(); if (!txt) return;
-      el.textContent = titleCaseDA(txt);
-    });
-    // Sentence starts
-    document.querySelectorAll(SENTENCE_SEL).forEach(el => {
-      if (el.hasAttribute('data-keepcase')) return;
-      const txt = el.textContent; if (!txt) return;
-      el.textContent = capSentenceStarts(txt);
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.querySelectorAll(SEL).forEach(el=>{
+      if(el.hasAttribute('data-keepcase'))return;
+      const txt=el.textContent?.trim();
+      if(!txt)return;
+      el.textContent=titleCaseDA(txt);
     });
   });
 })();
 </script>
 
-<!-- countdown + carousel logic -->
+<!-- countdown + carousel -->
 <script>
-// --- countdown til 28 nov 2025 00:00 lokal tid ---
 (function(){
   const dEl=document.getElementById('d'),hEl=document.getElementById('h'),mEl=document.getElementById('m'),sEl=document.getElementById('s');
-  const target = new Date('2025-11-28T00:00:00');
+  const target=new Date('2025-11-28T00:00:00');
   function pad(n){return String(n).padStart(2,'0')}
   function tick(){
-    const now = new Date();
-    let diff = Math.max(0, target - now);
-    const d = Math.floor(diff/86400000); diff-=d*86400000;
-    const h = Math.floor(diff/3600000);  diff-=h*3600000;
-    const m = Math.floor(diff/60000);    diff-=m*60000;
-    const s = Math.floor(diff/1000);
-    dEl.textContent=d; hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
+    const now=new Date();
+    let diff=Math.max(0,target-now);
+    const d=Math.floor(diff/86400000);diff-=d*86400000;
+    const h=Math.floor(diff/3600000);diff-=h*3600000;
+    const m=Math.floor(diff/60000);diff-=m*60000;
+    const s=Math.floor(diff/1000);
+    dEl.textContent=d;hEl.textContent=pad(h);mEl.textContent=pad(m);sEl.textContent=pad(s);
   }
-  tick(); setInterval(tick,1000);
-  const upd = document.getElementById('updated'); if(upd){ const d=new Date(); upd.textContent=[pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('.'); }
+  tick();setInterval(tick,1000);
+  const upd=document.getElementById('updated');if(upd){const d=new Date();upd.textContent=[pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('.');}
 })();
-
-// --- simpel carousel (PriceRunner slides) ---
 (function(){
-  const root = document.getElementById('pr-carousel'); if(!root) return;
-  const slides = Array.from(root.querySelectorAll('.pr-slide'));
-  const prev = root.querySelector('.pr-prev'); const next = root.querySelector('.pr-next');
-  const dotsWrap = document.getElementById('pr-dots');
-  let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
-  let t=null; const INTERVAL=6000;
-  function show(n){
-    slides.forEach(s=>s.classList.remove('is-active'));
-    slides[n].classList.add('is-active');
-    dotsWrap && dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active',k===n));
-    i=n;
-  }
-  function start(){ stop(); if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(()=>show((i+1)%slides.length),INTERVAL); }
-  function stop(){ if(t){clearInterval(t); t=null;} }
-  if(dotsWrap){
-    dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="slide ${k+1}"></button>`).join('');
-    dotsWrap.querySelectorAll('.pr-dot').forEach((b,k)=>b.addEventListener('click',()=>{stop();show(k);start();}));
-  }
-  prev && prev.addEventListener('click',()=>{stop();show((i-1+slides.length)%slides.length);start();});
-  next && next.addEventListener('click',()=>{stop();show((i+1)%slides.length);start();});
-  root.addEventListener('mouseenter',stop); root.addEventListener('mouseleave',start);
+  const root=document.getElementById('pr-carousel');if(!root)return;
+  const slides=Array.from(root.querySelectorAll('.pr-slide'));
+  const prev=root.querySelector('.pr-prev');const next=root.querySelector('.pr-next');
+  const dotsWrap=document.getElementById('pr-dots');
+  let i=Math.max(0,slides.findIndex(s=>s.classList.contains('is-active')));let t=null;const INTERVAL=6000;
+  function show(n){slides.forEach(s=>s.classList.remove('is-active'));slides[n].classList.add('is-active');dotsWrap&&dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active',k===n));i=n;}
+  function start(){stop();if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;t=setInterval(()=>show((i+1)%slides.length),INTERVAL);}
+  function stop(){if(t){clearInterval(t);t=null;}}
+  if(dotsWrap){dotsWrap.innerHTML=slides.map((_,k)=>`<button class="pr-dot" aria-label="slide ${k+1}"></button>`).join('');dotsWrap.querySelectorAll('.pr-dot').forEach((b,k)=>b.addEventListener('click',()=>{stop();show(k);start();}));}
+  prev&&prev.addEventListener('click',()=>{stop();show((i-1+slides.length)%slides.length);start();});
+  next&&next.addEventListener('click',()=>{stop();show((i+1)%slides.length);start();});
+  root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
   document.addEventListener('visibilitychange',()=>{document.hidden?stop():start();});
-  show(i); start();
+  show(i);start();
 })();
 </script>
 
-<!-- faq schema + itemlist (top picks) -->
+<!-- schema -->
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Hvornår er Black Friday 2025?","acceptedAnswer":{"@type":"Answer","text":"Fredag den 28. november 2025."}},
-    {"@type":"Question","name":"Er priserne lavere end på Singles’ Day og Cyber Monday?","acceptedAnswer":{"@type":"Answer","text":"Det varierer pr. model og butik. Brug priswidgets på siden til at se aktuelle drops."}},
-    {"@type":"Question","name":"Kan jeg returnere mit køb?","acceptedAnswer":{"@type":"Answer","text":"Ja, følg butikkens returregler. Gem kvittering og emballage, især ved online-køb."}}
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hvornår er Black Friday 2025?","acceptedAnswer":{"@type":"Answer","text":"Fredag den 28. november 2025."}},{"@type":"Question","name":"Er priserne lavere end på Singles’ Day og Cyber Monday?","acceptedAnswer":{"@type":"Answer","text":"Det varierer pr. model og butik. Brug priswidgets på siden til at se aktuelle drops."}},{"@type":"Question","name":"Kan jeg returnere mit køb?","acceptedAnswer":{"@type":"Answer","text":"Ja, følg butikkens returregler. Gem kvittering og emballage, især ved online-køb."}}]}
 </script>
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"ItemList",
-  "name":"Top airfryer picks til Black Friday 2025",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Ninja Double Stack 9.5L","url":"#pr-carousel"},
-    {"@type":"ListItem","position":2,"name":"Xiaomi Mi Smart Air Fryer","url":"#pr-carousel"},
-    {"@type":"ListItem","position":3,"name":"Philips 3000 Series","url":"#pr-carousel"}
-  ]
-}
+{"@context":"https://schema.org","@type":"ItemList","name":"Top airfryer picks til Black Friday 2025","itemListElement":[{"@type":"ListItem","position":1,"name":"Ninja Double Stack 9.5L","url":"#pr-carousel"},{"@type":"ListItem","position":2,"name":"Xiaomi Mi Smart Air Fryer","url":"#pr-carousel"},{"@type":"ListItem","position":3,"name":"Philips 3000 Series","url":"#pr-carousel"}]}
 </script>
 </body>
 </html>
