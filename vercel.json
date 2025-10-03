@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/sproed-og-smagfuld-marineret-tofu-i-airfryer",  "destination": "/opskrifter/sproed-og-smagfuld-marineret-tofu-i-airfryer.html", "permanent": true },
+    { "source": "/sproed-og-smagfuld-marineret-tofu-i-airfryer/", "destination": "/opskrifter/sproed-og-smagfuld-marineret-tofu-i-airfryer.html", "permanent": true },
+
     { "source": "/%F0%9F%90%91-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade",  "destination": "/opskrifter/lammekoelle-i-airfryer.html", "permanent": true },
     { "source": "/%F0%9F%90%91-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade/", "destination": "/opskrifter/lammekoelle-i-airfryer.html", "permanent": true },
 
