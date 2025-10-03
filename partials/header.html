@@ -2,13 +2,13 @@
 <style>
   :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --text:#0f172a; --accent:#0ea5e9; }
 
-  .header{position:relative; z-index:50; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
+  .header{position:sticky; top:0; z-index:1002; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
   .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad);
     display:flex; align-items:center; justify-content:space-between; gap:12px;}
 
   .logo{font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
 
-  /* nav */
+  /* nav (desktop default) */
   .nav{display:flex; align-items:center; gap:22px;}
   .nav > a{color:var(--text); font-size:15px; text-decoration:none; padding:6px 2px; position:relative;}
   .nav > a:hover{color:#0b1220}
@@ -29,15 +29,7 @@
   }
   .menu a{color:var(--text); text-decoration:none; font-size:14px; padding:8px 10px; border-radius:8px; display:flex; align-items:center; justify-content:space-between;}
   .menu a:hover{background:#f8fafc}
-
-  /* klik-område til at fange klik udenfor (visuelt usynlig) */
   .drop[open]::before{content:""; position:fixed; inset:0; background:transparent;}
-
-  /* responsiv */
-  @media (max-width:720px){
-    .nav{gap:14px}
-    .menu{min-width:85vw}
-  }
 
   /* Facebook-knap */
   .fb-btn{
@@ -45,15 +37,68 @@
     width:32px; height:32px; border:1px solid var(--line);
     border-radius:999px; background:#fff; color:#1877f2;
     transition:transform .08s ease, background .15s;
+    flex-shrink:0;
   }
   .fb-btn:hover{background:#f0f6ff; transform:translateY(-1px);}
+
+  /* ========= MOBIL BURGER – ALT I DENNE FIL ========= */
+  /* burger-knap (skjult på desktop) */
+  .burger{
+    display:none; place-items:center;
+    width:42px; height:38px;
+    border:2px solid var(--accent);
+    border-radius:10px; background:var(--accent);
+    color:#fff; cursor:pointer;
+  }
+  .burger span{width:22px; height:2px; background:#fff; display:block; border-radius:2px;}
+  .burger span + span{margin-top:5px;}
+
+  /* mobil: nav bliver til et panel under headeren */
+  @media (max-width:900px){
+    /* vis burger, gem nav i normal tilstand */
+    .burger{display:inline-grid}
+    .nav{
+      position:fixed; left:0; right:0;
+      top:calc(56px + env(safe-area-inset-top, 0px));
+      background:#fff; border-top:1px solid var(--line);
+      box-shadow:0 12px 24px rgba(2,8,23,.12);
+      max-height:70vh; overflow:auto;
+      z-index:1001;
+      display:block;                /* vi styrer synlighed via transform/opacity */
+      padding:8px 10px;
+      transform:translateY(-4%); opacity:0; pointer-events:none;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+    .header.open .nav{ transform:none; opacity:1; pointer-events:auto; }
+
+    /* lodret liste i panelet */
+    .nav > a, .nav .drop > summary{ display:flex; align-items:center; padding:14px 8px; font-size:17px; }
+    .nav > a + a, .nav .drop + a, .nav .drop + .drop{ border-top:1px solid #f1f5f9; }
+
+    /* dropdown i mobil: gør “menu”-boksen flad (ikke flydende) */
+    .nav .menu{
+      position:static; inset:auto; box-shadow:none; border:0; padding:4px 0; min-width:auto;
+    }
+    .nav .menu a{ padding:12px 8px; font-size:16px; }
+  }
+
+  /* lås body-scroll når menuen er åben */
+  body.no-scroll{ overflow:hidden; touch-action:none; }
+
+  /* undgå overlap af overskrifter ved anker-hop */
+  main :where(h1,h2,h3){ scroll-margin-top: 80px; }
 </style>
 
 <header class="header" role="banner">
   <div class="header-inner">
     <a class="logo" href="/">Opskrift Airfryer</a>
 
-    <nav class="nav" role="navigation" aria-label="Hovednavigation">
+    <!-- Burger: kun synlig på mobil via CSS -->
+    <button id="navToggle" class="burger" type="button" aria-label="åbn menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="mainNav" class="nav" role="navigation" aria-label="Hovednavigation">
       <a href="/">Forside</a>
       <a href="/top.html">Top</a>
       <a href="/seneste.html">Seneste</a>
@@ -92,46 +137,69 @@
 </header>
 
 <script>
-  // tilgængelig & robust dropdown-adfærd
+  // eksisterende dropdown-tilgængelighed (uændret)
   (function(){
     const drop = document.getElementById('catDrop');
     const summary = drop?.querySelector('summary');
     if(!drop || !summary) return;
-
     const syncAria = () => summary.setAttribute('aria-expanded', drop.hasAttribute('open') ? 'true' : 'false');
-
     summary.addEventListener('click', ()=>{ setTimeout(syncAria, 0); });
-
-    // klik udenfor lukker
     document.addEventListener('click', (e)=>{
       if(!drop.hasAttribute('open')) return;
       if (drop.contains(e.target)) return;
-      drop.removeAttribute('open');
-      syncAria();
+      drop.removeAttribute('open'); syncAria();
     });
-
-    // esc lukker
     document.addEventListener('keydown', (e)=>{
       if(e.key === 'Escape' && drop.hasAttribute('open')){
-        drop.removeAttribute('open');
-        summary.focus();
-        syncAria();
+        drop.removeAttribute('open'); summary.focus(); syncAria();
       }
     });
-
-    // luk efter klik på menupunkt (hvis siden ikke skifter)
     drop.querySelectorAll('.menu a').forEach(a=>{
-      a.addEventListener('click', ()=>{
-        setTimeout(()=>{
-          if (drop.hasAttribute('open')) {
-            drop.removeAttribute('open');
-            syncAria();
-          }
-        }, 0);
-      });
+      a.addEventListener('click', ()=>{ setTimeout(()=>{ if (drop.hasAttribute('open')) { drop.removeAttribute('open'); syncAria(); } }, 0); });
+    });
+    syncAria();
+  })();
+
+  // mobil-burger toggle (kun i denne partial)
+  (function(){
+    const header = document.querySelector('.header');
+    const btn = document.getElementById('navToggle');
+    const nav = document.getElementById('mainNav');
+    if(!header || !btn || !nav) return;
+
+    function openMenu(){
+      header.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      document.body.classList.add('no-scroll');
+      // fokus første link
+      const f = nav.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+      if (f) f.focus({preventScroll:true});
+    }
+    function closeMenu(){
+      header.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.classList.remove('no-scroll');
+      btn.focus({preventScroll:true});
+    }
+
+    btn.addEventListener('click', ()=>{
+      const open = header.classList.contains('open');
+      open ? closeMenu() : openMenu();
     });
 
-    // init
-    syncAria();
+    // luk ved ESC og klik udenfor
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && header.classList.contains('open')) closeMenu();
+    });
+    document.addEventListener('click', (e)=>{
+      if(!header.classList.contains('open')) return;
+      if (header.contains(e.target)) return; // klik i header/nav ignoreres
+      closeMenu();
+    });
+
+    // luk når man klikker på et link
+    nav.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=>{ closeMenu(); });
+    });
   })();
 </script>
