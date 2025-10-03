@@ -122,13 +122,52 @@ body { text-transform: none; }
     </div>
   </section>
 
-  <!-- dagens 5 tilbud -->
+  <!-- dagens 3 tilbud (indsat dine links) -->
   <section id="dagens" class="section">
     <div class="section-head">
-      <h2>dagens 5 bedste tilbud</h2>
+      <h2>dagens 3 bedste tilbud</h2>
       <span class="updated" id="deal-updated"></span>
     </div>
-    <div id="deals" class="grid grid-3"></div>
+
+    <!-- Grid med rigtige billeder + knapper -->
+    <div class="grid grid-3" id="bf-grid">
+      <!-- KORT #1 – Proshop: Ninja AF500EU (søgning) -->
+      <article class="card bf-card" data-img="" data-fallback="https://icons.duckduckgo.com/ip3/www.proshop.dk.ico">
+        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/?s=Ninja+AF500EU+Flex+Drawer" rel="sponsored nofollow" target="_blank" aria-label="Se tilbud: Ninja AF500EU Flex Drawer – Proshop">
+          <img alt="Ninja AF500EU Flex Drawer – Proshop" src="" />
+        </a>
+        <div class="card-body">
+          <h3>Ninja AF500EU Flex Drawer – Proshop (søgning)</h3>
+          <p class="meta">Partner: Proshop · Model: AF500EU</p>
+          <a class="cta" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/?s=Ninja+AF500EU+Flex+Drawer" rel="sponsored nofollow" target="_blank">køb her</a>
+        </div>
+      </article>
+
+      <!-- KORT #2 – Proshop: Ninja AF300EU produkt -->
+      <article class="card bf-card" data-img="" data-fallback="https://icons.duckduckgo.com/ip3/www.proshop.dk.ico">
+        <a class="imgwrap" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684" rel="sponsored nofollow" target="_blank" aria-label="Se tilbud: Ninja AF300EU – Proshop">
+          <img alt="Ninja AF300EU Hot Air Fryer – Proshop" src="" />
+        </a>
+        <div class="card-body">
+          <h3>Ninja AF300EU Hot Air Fryer – Proshop</h3>
+          <p class="meta">Partner: Proshop · Model: AF300EU</p>
+          <a class="cta" href="https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684" rel="sponsored nofollow" target="_blank">køb her</a>
+        </div>
+      </article>
+
+      <!-- KORT #3 – KitchenOne: Princess 8L -->
+      <article class="card bf-card" data-img="" data-fallback="https://icons.duckduckgo.com/ip3/www.kitchenone.dk.ico">
+        <a class="imgwrap" href="https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/" rel="sponsored nofollow" target="_blank" aria-label="Se tilbud: Princess 8L – KitchenOne">
+          <img alt="Princess digital varmluftsfrituregryde 8 L – KitchenOne" src="" />
+        </a>
+        <div class="card-body">
+          <h3>Princess 8 liter – KitchenOne</h3>
+          <p class="meta">Partner: KitchenOne · Model: Princess 8 L digital</p>
+          <a class="cta" href="https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/" rel="sponsored nofollow" target="_blank">køb her</a>
+        </div>
+      </article>
+    </div>
+
     <p class="disclaimer">priser og tilgængelighed kan ændre sig hurtigt. nogle links er affiliate/partnerlinks (rel="sponsored").</p>
   </section>
 
@@ -297,37 +336,28 @@ body { text-transform: none; }
 <!-- partials loader -->
 <script defer src="/assets/include.js?v=4"></script>
 
-<!-- ===== Title-Case visning for overskrifter (DK) ===== -->
+<!-- Title-case til overskrifter (DK) -->
 <script>
 (function(){
-  // små danske ord der normalt ikke capitalizes midt i en titel
   const SMALL = new Set(['og','i','på','til','af','for','med','om','fra','ved','en','et','de','den','det','eller','samt','som','men']);
   const SEL = 'h1, .section-head h2, .card h3, .faq summary';
-
   function isAllCaps(w){ return w.length > 1 && /^[A-ZÆØÅ0-9\-\.]+$/.test(w); }
   function capFirst(w){ return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); }
-
   function titleCaseDA(text){
     const parts = text.split(/\s+/);
     return parts.map((token, idx) => {
-      // bevar allerede-HELT-MED-STORT (ONYX, FAQ, USB, osv.)
       if (isAllCaps(token)) return token;
-
-      // hold styr på evt. punctuation omkring ordet
       const m = token.match(/^([«“"(\[]?)(.*?)([»”")\]]+)?$/);
       const pre = m?.[1] || '', core = m?.[2] || token, post = m?.[3] || '';
       const lw = core.toLowerCase();
       const first = idx === 0, last = idx === parts.length - 1;
-
       const cased = (first || last || !SMALL.has(lw)) ? capFirst(core) : lw;
       return pre + cased + post;
     }).join(' ');
   }
-
-  // anvend på udvalgte headings
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(SEL).forEach(el => {
-      if (el.hasAttribute('data-keepcase')) return; // mulighed for at fravælge på enkelt element
+      if (el.hasAttribute('data-keepcase')) return;
       const txt = el.textContent?.trim();
       if (!txt) return;
       el.textContent = titleCaseDA(txt);
@@ -353,36 +383,24 @@ body { text-transform: none; }
     dEl.textContent=d; hEl.textContent=pad(h); mEl.textContent=pad(m); sEl.textContent=pad(s);
   }
   tick(); setInterval(tick,1000);
-  // opdateret-dato
   const upd = document.getElementById('updated'); if(upd){ const d=new Date(); upd.textContent=[pad(d.getDate()),pad(d.getMonth()+1),d.getFullYear()].join('.'); }
 })();
 
-// --- dagens tilbud (redigér arrayet for at opdatere hurtigt) ---
+// --- (option) fallback-billeder til de 3 deals ---
+// Sæt data-img="https://…/produkt.webp" på .bf-card for rigtige produktfotos.
+// Indtil da bruger vi butik-ikon som fallback.
 (function(){
-  const deals = [
-    {title:'Ninja Double Stack 9.5L', tag:'familiefavorit', url:'https://www.pricerunner.dk/pl/81-3280146314/Frituregryder/Ninja-Double-Stack-XL-2-Level-Air-Fryer-9.5L-Sammenlign-Priser', sponsored:false},
-    {title:'Xiaomi Mi Smart Air Fryer', tag:'budget', url:'https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser', sponsored:false},
-    {title:'Philips 3000 Series NA352/00', tag:'stabil allround', url:'https://www.pricerunner.dk/pl/81-3231353404/Frituregryder/Philips-3000-Series-NA352-00-Sammenlign-Priser', sponsored:false},
-    {title:'ONYX airfryer 8L', tag:'stor kapacitet', url:'https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-air-fryer-8l-aof', sponsored:true},
-    {title:'ONYX airfryer 5L', tag:'kompakt', url:'https://go.adt253.net/t/t?a=1971899089&as=1940697285&t=2&tk=1&url=https://onyxcookware.dk/products/onyx-cookware-airfryer-5l-aof', sponsored:true}
-  ];
-  const mount = document.getElementById('deals');
-  const updated = document.getElementById('deal-updated');
-  if(updated){ const d=new Date(); const dd=String(d.getDate()).padStart(2,'0'); const mm=String(d.getMonth()+1).padStart(2,'0'); updated.textContent='opdateret '+dd+'.'+mm+'.'+d.getFullYear(); }
-  function item(d){
-    return `
-      <a class="card" href="${d.url}" ${d.sponsored?'rel="sponsored nofollow"':''}>
-        <div class="card-body">
-          <h3>${d.title}</h3>
-          <p class="meta">${d.tag}${d.sponsored?' · annonce/partnerlink':''}</p>
-        </div>
-      </a>
-    `;
-  }
-  mount.innerHTML = deals.map(item).join('');
+  document.querySelectorAll('.bf-card').forEach(card=>{
+    const img = card.querySelector('img');
+    const custom = card.getAttribute('data-img') || '';
+    const fallback = card.getAttribute('data-fallback') || '';
+    if (custom) { img.src = custom; }
+    else if (fallback){ img.src = fallback; img.style.objectFit='contain'; img.style.padding='18px'; }
+    else { img.src='data:image/gif;base64,R0lGODlhAQABAAAAACw='; }
+  });
 })();
 
-// --- simpel carousel logik (samme stil som forsiden) ---
+// --- simpel carousel (PriceRunner slides) ---
 (function(){
   const root = document.getElementById('pr-carousel'); if(!root) return;
   const slides = Array.from(root.querySelectorAll('.pr-slide'));
@@ -398,7 +416,6 @@ body { text-transform: none; }
   }
   function start(){ stop(); if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; t=setInterval(()=>show((i+1)%slides.length),INTERVAL); }
   function stop(){ if(t){clearInterval(t); t=null;} }
-  // dots
   if(dotsWrap){ dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="slide ${k+1}"></button>`).join('');
     dotsWrap.querySelectorAll('.pr-dot').forEach((b,k)=>b.addEventListener('click',()=>{stop();show(k);start();})); }
   prev && prev.addEventListener('click',()=>{stop();show((i-1+slides.length)%slides.length);start();});
