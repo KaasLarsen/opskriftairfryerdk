@@ -55,27 +55,47 @@
 })();
 
 /*!
- * Illustration helper
- * - Inserts hero illustration if <meta name="afo:illustration"> exists
- * - Marks hero with .has-illu so CSS can adjust spacing/layout
+ * Illustration helper (idempotent)
+ * - Inserts hero illustration from <meta name="afo:illustration">
+ * - Ensures only ONE image is ever inserted
+ * - Adds .has-illu on .hero when loaded
  */
 (function(){
-  var m = document.querySelector('meta[name="afo:illustration"]');
+  // Undgå dobbel-kørsel hvis filen er inkluderet flere gange
+  if (window.__heroIlluDone) return;
+  window.__heroIlluDone = true;
+
+  var meta = document.querySelector('meta[name="afo:illustration"]');
   var slot = document.getElementById('hero-illu-slot');
-  if (!m || !slot) return;
-  var src = m.getAttribute('content');
-  if (!src) return;
+  var src  = meta && meta.getAttribute('content') ? meta.getAttribute('content').trim() : '';
+  if (!meta || !slot || !src) return;
+
+  // Fjern tidligere auto-indsatte (hvis hot-reload / tidligere kørsel)
+  try {
+    slot.querySelectorAll('img.hero-illu').forEach(function(n){ n.remove(); });
+  } catch(e) {}
+
+  // Hvis der allerede findes en hero-illu i slottet, stop
+  if (slot.querySelector('img.hero-illu')) return;
 
   var img = new Image();
   img.src = src;
-  img.alt = 'Illustration';
+  img.alt = (document.querySelector('h1') && document.querySelector('h1').textContent
+            ? document.querySelector('h1').textContent.trim()
+            : 'Illustration');
   img.className = 'hero-illu';
   img.loading = 'eager';
   img.decoding = 'async';
-  img.onerror = function(){ slot.remove(); };
+
+  img.onerror = function(){
+    // Hvis billedet fejler, fjern slottet så layout ikke “hulker”
+    try { slot.remove(); } catch(e) {}
+  };
+
   img.onload = function(){
     var hero = slot.closest('.hero');
     if (hero) hero.classList.add('has-illu');
   };
+
   slot.appendChild(img);
 })();
