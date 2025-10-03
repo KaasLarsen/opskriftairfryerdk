@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
+    { "source": "/de-5-bedste-snacks-du-kan-lave-i-airfryer-paa-under-30-minutter",  "destination": "/top/top-5-snacks-under-30-min.html", "permanent": true },
+    { "source": "/de-5-bedste-snacks-du-kan-lave-i-airfryer-paa-under-30-minutter/", "destination": "/top/top-5-snacks-under-30-min.html", "permanent": true },
+
     { "source": "/sproed-og-smagfuld-marineret-tofu-i-airfryer",  "destination": "/opskrifter/sproed-og-smagfuld-marineret-tofu-i-airfryer.html", "permanent": true },
     { "source": "/sproed-og-smagfuld-marineret-tofu-i-airfryer/", "destination": "/opskrifter/sproed-og-smagfuld-marineret-tofu-i-airfryer.html", "permanent": true },
 
