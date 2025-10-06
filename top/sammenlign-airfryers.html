@@ -98,8 +98,8 @@
 <script src="/assets/include.js?v=4"></script>
 
 <script>
-/* --- Mini-database (kan udvides) --------------------------------------- */
-const DB = [
+/* --- Seed DB (viser noget selv hvis JSON ikke findes) ------------------ */
+let DB = [
   {
     id:"ninja-af500eu", names:["Ninja AF500EU","AF500EU","Flex Drawer","FlexDrawer","Ninja Flex"],
     brand:"Ninja", model:"AF500EU Flex Drawer", capacity:"10,4 L (MegaZone) / 2×5,2 L", zones:2, watt:2470,
@@ -147,21 +147,36 @@ const DB = [
   }
 ];
 
+/* --- Hent og merge med /data/airfryers.json ---------------------------- */
+async function loadCatalog(){
+  try{
+    const res = await fetch('/data/airfryers.json?v=' + Date.now(), {cache:'no-store'});
+    if(!res.ok) return;
+    const extra = await res.json();
+    const map = new Map(DB.map(m => [m.id, m]));
+    for(const m of extra){
+      const prev = map.get(m.id) || {};
+      map.set(m.id, {...prev, ...m});
+    }
+    DB = Array.from(map.values());
+  }catch(e){
+    console.warn('Kunne ikke hente /data/airfryers.json', e);
+  }
+}
+
 /* --- Utils -------------------------------------------------------------- */
 const norm = s => (s||"").toLowerCase().normalize('NFKD').replace(/[^\w\s\-\.]/g,'').trim();
 
 function findModel(q){
   if(!q) return null;
   const t = norm(q);
-  // forsøg 1: fuldt match på brand + model eller id/aliases
   let m = DB.find(m =>
     norm(m.brand+' '+m.model)===t ||
     m.id===t ||
-    m.names.some(n => norm(n)===t)
+    (m.names||[]).some(n => norm(n)===t)
   );
-  // forsøg 2: delvist match i navne
   if(!m){
-    m = DB.find(m => (m.names.concat([m.brand+' '+m.model,m.model])).some(n => norm(n).includes(t)));
+    m = DB.find(m => ((m.names||[]).concat([m.brand+' '+m.model,m.model])).some(n => norm(n).includes(t)));
   }
   return m || null;
 }
@@ -189,12 +204,12 @@ function render(model, mount){
     <div class="head">
       <div>
         <div class="title">${model.brand} ${model.model}</div>
-        <div class="meta">${model.capacity} · ${model.zones===2?'2 zoner':'1 zone'} · ${model.watt} W</div>
+        <div class="meta">${model.capacity||''} · ${model.zones===2?'2 zoner':'1 zone'} · ${model.watt?model.watt+' W':''}</div>
       </div>
-      <a class="tag" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Se pris</a>
+      ${model.affiliate ? `<a class="tag" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Se pris</a>` : ''}
     </div>
     <div class="body">
-      <img class="heroimg" src="${model.image}" alt="${model.brand} ${model.model}">
+      <img class="heroimg" src="${model.image||'/img/top/placeholder.jpg'}" alt="${model.brand} ${model.model}">
       <table class="specs">
         <tr><td></td><td><strong>Specifikationer</strong></td><td></td></tr>
         ${specRow('Kapacitet', model.capacity, '')}
@@ -206,7 +221,7 @@ function render(model, mount){
         <div><strong>Fordele</strong><ul>${(model.strengths||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
         <div><strong>Ulemper</strong><ul>${(model.weaknesses||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
       </div>
-      <a class="cta" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Gå til butik</a>
+      ${model.affiliate ? `<a class="cta" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Gå til butik</a>` : ''}
     </div>
   `;
 }
@@ -234,12 +249,13 @@ function compare(){
 document.getElementById('go').addEventListener('click', compare);
 [inputA,inputB].forEach(i=>i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); compare(); } }));
 
-// Deep-link (?a=...&b=...)
-(function(){
+// --- Init: hent katalog + vis fra URL -----------------------------------
+(async function init(){
   const p = new URLSearchParams(location.search);
   if(p.get('a')) inputA.value = p.get('a');
   if(p.get('b')) inputB.value = p.get('b');
-  if(inputA.value || inputB.value) compare();
+  await loadCatalog();
+  compare();
 })();
 </script>
 </body>
