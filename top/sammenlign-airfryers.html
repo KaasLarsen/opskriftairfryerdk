@@ -38,7 +38,14 @@
   @media (max-width:560px){ .cols{grid-template-columns:1fr} }
   .body ul{margin:6px 0 0;padding-left:18px}
   .cta{display:inline-block;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:999px;font-weight:600;background:#0ea5e9;color:#fff}
-  .suggest{margin-top:8px}
+
+  /* autocomplete */
+  .suggestbox{position:relative;flex:1 1 320px}
+  .suggestlist{position:absolute;z-index:50;left:0;right:0;top:100%;border:1px solid var(--line);background:#fff;border-radius:12px;margin-top:6px;box-shadow:var(--shadow);max-height:320px;overflow:auto}
+  .suggestitem{padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+  .suggestitem:hover,.suggestitem[aria-selected="true"]{background:var(--soft)}
+  .suggestbrand{font-weight:600}
+  .suggestmeta{color:#64748b;font-size:12px}
 </style>
 
 <!-- Basic JSON-LD for the tool page -->
@@ -64,7 +71,7 @@
     <div class="box">
       <span class="small" style="text-transform:uppercase;letter-spacing:.04em">værktøj</span>
       <h1 style="margin:6px 0 8px">Sammenlign airfryers – A vs. B</h1>
-      <p class="meta">Skriv to modelnavne (fx “Ninja AF500EU” og “Philips XXL HD9650”). Vi matcher også korte/ufuldstændige navne og viser styrker/ulemper.</p>
+      <p class="meta">Skriv to modelnavne (fx “Ninja AF500EU” og “Philips XXL HD9650”). Autocomplete hjælper dig med at finde præcis model.</p>
       <div class="badgeline">
         <span class="badge">kapacitet & zoner</span>
         <span class="badge">watt & programmer</span>
@@ -73,12 +80,17 @@
     </div>
     <div class="box">
       <form class="form" onsubmit="return false" role="search" aria-label="Sammenlignér to modeller">
-        <input id="a" type="search" placeholder="Airfryer A (fx Ninja AF500EU)" autocomplete="off" />
-        <input id="b" type="search" placeholder="Airfryer B (fx Cosori 5.5L)" autocomplete="off" />
+        <div class="suggestbox">
+          <input id="a" type="search" placeholder="Airfryer A (skriv fx 'Ninja AF500EU')" autocomplete="off" aria-autocomplete="list" aria-controls="listA" aria-expanded="false" />
+          <div id="listA" class="suggestlist" role="listbox" hidden></div>
+        </div>
+        <div class="suggestbox">
+          <input id="b" type="search" placeholder="Airfryer B (skriv fx 'Cosori 5,5 L')" autocomplete="off" aria-autocomplete="list" aria-controls="listB" aria-expanded="false" />
+          <div id="listB" class="suggestlist" role="listbox" hidden></div>
+        </div>
         <button id="go" class="btn" type="button">Sammenlign</button>
       </form>
-      <p class="hint">Tip: Del linket – valgene gemmes i URL’en.</p>
-      <div id="suggest" class="meta suggest"></div>
+      <p class="hint">Tip: tryk pil ned/ op for at vælge forslag · enter for at bekræfte.</p>
     </div>
   </section>
 
@@ -100,60 +112,20 @@
 <script>
 /* --- Seed DB (viser noget selv hvis JSON ikke findes) ------------------ */
 let DB = [
-  {
-    id:"ninja-af500eu", names:["Ninja AF500EU","AF500EU","Flex Drawer","FlexDrawer","Ninja Flex"],
-    brand:"Ninja", model:"AF500EU Flex Drawer", capacity:"10,4 L (MegaZone) / 2×5,2 L", zones:2, watt:2470,
-    programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Prove","Sync/Match"],
-    strengths:["MegaZone (én stor kurv) eller 2 zoner","Hurtig opvarmning og sprødhed","God til store emner (fx steg)"],
-    weaknesses:["Stor og tung på bordet","Ofte dyrere end 1-kurvs modeller"],
-    affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF500EU-Flex-Drawer/3243985",
-    image:"/img/top/af500eu.jpg"
-  },
-  {
-    id:"ninja-af300eu", names:["Ninja AF300EU","AF300EU","Dual Zone","AF300"],
-    brand:"Ninja", model:"AF300EU Dual Zone", capacity:"2×3,8 L (7,6 L)", zones:2, watt:2400,
-    programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Sync/Match"],
-    strengths:["To zoner – lav forskellig mad samtidig","Kendt for sprødhed","God størrelse til 3–4 pers"],
-    weaknesses:["Ingen MegaZone","Kurvhøjde begrænser meget høje emner"],
-    affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684",
-    image:"/img/top/af300eu.jpg"
-  },
-  {
-    id:"philips-hd9650", names:["Philips XXL HD9650","HD9650","Avance XXL","Philips XXL"],
-    brand:"Philips", model:"XXL HD9650", capacity:"≈7,3 L (XXL kurv)", zones:1, watt:2225,
-    programs:["Air Fry","Roast","Bake","Grill","Reheat"],
-    strengths:["Pålidelig allround med jævn varme","God til hele kyllinger/steg i én kurv","Meget tilbehør tilgængeligt"],
-    weaknesses:["Ikke dual-zone","Lidt langsommere end Ninja i Max Crisp"],
-    affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://philips-xxl-hd9650",
-    image:"/img/top/philips-hd9650.jpg"
-  },
-  {
-    id:"princess-8l", names:["Princess 8L","Princess Digital 8L","Princess 182254","Princess 8 liter"],
-    brand:"Princess", model:"Digital Airfryer 8L", capacity:"8 L (enkelt kurv)", zones:1, watt:1700,
-    programs:["Air Fry","Roast","Bake","Reheat"],
-    strengths:["Stor kapacitet til prisen","Simpel betjening","Ofte god kampagnepris"],
-    weaknesses:["Færre avancerede features","Lidt langsommere opvarmning"],
-    affiliate:"https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/",
-    image:"/img/top/princess-8l.jpg"
-  },
-  {
-    id:"cosori-5-5", names:["Cosori 5.5L","Cosori Premium 5.5","Cosori Pro 5.5","COSORI 5,5"],
-    brand:"Cosori", model:"Premium / Pro 5.5L", capacity:"5,5 L", zones:1, watt:1700,
-    programs:["Air Fry","Roast","Bake","Keep Warm"],
-    strengths:["Kompakt – perfekt til 1–3 pers","Fin sprødhed i lille formfaktor","Ofte skarp pris"],
-    weaknesses:["Mindre kurv – ikke til store stege","Færre zoner/programmer"],
-    affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://www.computersalg.dk/i/10135902/cosori-premium-air-fryer-sort-5-5-liter",
-    image:"/img/top/cosori-5-5.jpg"
-  }
+  { id:"ninja-af500eu", names:["Ninja AF500EU","AF500EU","Flex Drawer","FlexDrawer","Ninja Flex"], brand:"Ninja", model:"AF500EU Flex Drawer", capacity:"10,4 L (MegaZone) / 2×5,2 L", zones:2, watt:2470, programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Prove","Sync/Match"], strengths:["MegaZone (én stor kurv) eller 2 zoner","Hurtig opvarmning og sprødhed","God til store emner (fx steg)"], weaknesses:["Stor og tung på bordet","Ofte dyrere end 1-kurvs modeller"], affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF500EU-Flex-Drawer/3243985", image:"/img/top/af500eu.jpg" },
+  { id:"ninja-af300eu", names:["Ninja AF300EU","AF300EU","Dual Zone","AF300"], brand:"Ninja", model:"AF300EU Dual Zone", capacity:"2×3,8 L (7,6 L)", zones:2, watt:2400, programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Sync/Match"], strengths:["To zoner – lav forskellig mad samtidig","Kendt for sprødhed","God størrelse til 3–4 pers"], weaknesses:["Ingen MegaZone","Kurvhøjde begrænser meget høje emner"], affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684", image:"/img/top/af300eu.jpg" },
+  { id:"philips-hd9650", names:["Philips XXL HD9650","HD9650","Avance XXL","Philips XXL"], brand:"Philips", model:"XXL HD9650", capacity:"≈7,3 L (XXL kurv)", zones:1, watt:2225, programs:["Air Fry","Roast","Bake","Grill","Reheat"], strengths:["Pålidelig allround med jævn varme","God til hele kyllinger/steg i én kurv","Meget tilbehør tilgængeligt"], weaknesses:["Ikke dual-zone","Lidt langsommere end Ninja i Max Crisp"], affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://philips-xxl-hd9650", image:"/img/top/philips-hd9650.jpg" },
+  { id:"princess-8l", names:["Princess 8L","Princess Digital 8L","Princess 182254","Princess 8 liter"], brand:"Princess", model:"Digital Airfryer 8L", capacity:"8 L (enkelt kurv)", zones:1, watt:1700, programs:["Air Fry","Roast","Bake","Reheat"], strengths:["Stor kapacitet til prisen","Simpel betjening","Ofte god kampagnepris"], weaknesses:["Færre avancerede features","Lidt langsommere opvarmning"], affiliate:"https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/", image:"/img/top/princess-8l.jpg" },
+  { id:"cosori-5-5", names:["Cosori 5.5L","Cosori Premium 5.5","Cosori Pro 5.5","COSORI 5,5"], brand:"Cosori", model:"Premium / Pro 5.5L", capacity:"5,5 L", zones:1, watt:1700, programs:["Air Fry","Roast","Bake","Keep Warm"], strengths:["Kompakt – perfekt til 1–3 pers","Fin sprødhed i lille formfaktor","Ofte skarp pris"], weaknesses:["Mindre kurv – ikke til store stege","Færre zoner/programmer"], affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://www.computersalg.dk/i/10135902/cosori-premium-air-fryer-sort-5-5-liter", image:"/img/top/cosori-5-5.jpg" }
 ];
 
 /* --- Hent og merge med /data/airfryers.json ---------------------------- */
 async function loadCatalog(){
   try{
-    const res = await fetch('/data/airfryers.json?v=' + Date.now(), {cache:'no-store'});
+    const res = await fetch('/data/airfryers.json?v='+Date.now(), {cache:'no-store'});
     if(!res.ok) return;
     const extra = await res.json();
-    const map = new Map(DB.map(m => [m.id, m]));
+    const map = new Map(DB.map(m=>[m.id,m]));
     for(const m of extra){
       const prev = map.get(m.id) || {};
       map.set(m.id, {...prev, ...m});
@@ -167,6 +139,32 @@ async function loadCatalog(){
 /* --- Utils -------------------------------------------------------------- */
 const norm = s => (s||"").toLowerCase().normalize('NFKD').replace(/[^\w\s\-\.]/g,'').trim();
 
+function hay(m){
+  return [m.brand, m.model, ...(m.names||[]), ...(m.programs||[])].map(norm).join(' ');
+}
+
+// scoring: exact > startsWith > includes
+function score(q, m){
+  const t = norm(q);
+  const h = hay(m);
+  if(!t) return -Infinity;
+  if(h.split(' ').includes(t)) return 3;
+  if(h.startsWith(t)) return 2;
+  if(h.includes(t)) return 1;
+  return -Infinity;
+}
+
+function findTop(q, limit=8){
+  const t = norm(q);
+  if(!t) return [];
+  return DB
+    .map(m => ({ m, sc: score(t, m) }))
+    .filter(x => x.sc > 0)
+    .sort((a,b)=> b.sc - a.sc || norm(a.m.brand+a.m.model).localeCompare(norm(b.m.brand+b.m.model)))
+    .slice(0, limit)
+    .map(x=>x.m);
+}
+
 function findModel(q){
   if(!q) return null;
   const t = norm(q);
@@ -175,10 +173,8 @@ function findModel(q){
     m.id===t ||
     (m.names||[]).some(n => norm(n)===t)
   );
-  if(!m){
-    m = DB.find(m => ((m.names||[]).concat([m.brand+' '+m.model,m.model])).some(n => norm(n).includes(t)));
-  }
-  return m || null;
+  if(m) return m;
+  return findTop(q,1)[0] || null;
 }
 
 /* --- Render ------------------------------------------------------------- */
@@ -186,13 +182,10 @@ const colA = document.getElementById('colA');
 const colB = document.getElementById('colB');
 const inputA = document.getElementById('a');
 const inputB = document.getElementById('b');
-const suggest = document.getElementById('suggest');
-
 function specRow(label, a, b){
   const diff = (a!==b && a && b) ? ' class="diff"' : '';
   return `<tr${diff}><td style="width:32%">${label}</td><td>${a||'–'}</td><td>${b||'–'}</td></tr>`;
 }
-
 function render(model, mount){
   if(!model){
     mount.innerHTML = `
@@ -233,18 +226,71 @@ function compare(){
   render(mA, colA);
   render(mB, colB);
 
-  if(!mA || !mB){
-    const names = DB.map(m=>m.brand+' '+m.model).join(' · ');
-    suggest.textContent = 'Forslag: ' + names;
-  } else {
-    suggest.textContent = '';
-  }
-
   const params = new URLSearchParams();
   if(inputA.value) params.set('a', inputA.value);
   if(inputB.value) params.set('b', inputB.value);
   history.replaceState({}, '', location.pathname + (params.toString()?('?'+params.toString()):''));
 }
+
+/* --- Autocomplete UI ---------------------------------------------------- */
+const listA = document.getElementById('listA');
+const listB = document.getElementById('listB');
+
+function renderSuggest(container, items, attachToInput){
+  if(!items.length){ container.hidden = true; container.innerHTML=''; attachToInput.setAttribute('aria-expanded','false'); return; }
+  container.innerHTML = items.map((m,i)=>`
+    <div class="suggestitem" role="option" data-id="${m.id}" aria-selected="${i===0?'true':'false'}">
+      <span><span class="suggestbrand">${m.brand}</span> ${m.model}</span>
+      <span class="suggestmeta">${m.zones===2?'2 zoner':'1 zone'} · ${m.capacity||''}</span>
+    </div>`).join('');
+  container.hidden = false;
+  attachToInput.setAttribute('aria-expanded','true');
+
+  container.querySelectorAll('.suggestitem').forEach(el=>{
+    el.addEventListener('mouseenter', ()=>{
+      container.querySelectorAll('.suggestitem').forEach(x=>x.setAttribute('aria-selected','false'));
+      el.setAttribute('aria-selected','true');
+    });
+    el.addEventListener('click', ()=>{
+      const picked = DB.find(x=>x.id===el.dataset.id);
+      attachToInput.value = picked ? (picked.brand+' '+picked.model) : '';
+      container.hidden = true;
+      attachToInput.setAttribute('aria-expanded','false');
+      compare();
+    });
+  });
+}
+
+function wireAutocomplete(inp, box){
+  let idx = 0; // keyboard focus
+  function update(list){
+    renderSuggest(box, list, inp);
+    idx = 0;
+  }
+  inp.addEventListener('input', ()=>{
+    const list = findTop(inp.value, 8);
+    update(list);
+  });
+  inp.addEventListener('focus', ()=>{
+    if(inp.value){
+      update(findTop(inp.value,8));
+    }
+  });
+  inp.addEventListener('blur', ()=>{
+    setTimeout(()=>{ box.hidden = true; inp.setAttribute('aria-expanded','false'); }, 120);
+  });
+  inp.addEventListener('keydown', (e)=>{
+    const opts = [...box.querySelectorAll('.suggestitem')];
+    if(!opts.length) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); idx = (idx+1)%opts.length; opts.forEach(x=>x.setAttribute('aria-selected','false')); opts[idx].setAttribute('aria-selected','true'); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); idx = (idx-1+opts.length)%opts.length; opts.forEach(x=>x.setAttribute('aria-selected','false')); opts[idx].setAttribute('aria-selected','true'); }
+    if(e.key==='Enter'){ e.preventDefault(); opts[idx].click(); }
+    if(e.key==='Escape'){ box.hidden = true; inp.setAttribute('aria-expanded','false'); }
+  });
+}
+
+wireAutocomplete(inputA, listA);
+wireAutocomplete(inputB, listB);
 
 document.getElementById('go').addEventListener('click', compare);
 [inputA,inputB].forEach(i=>i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); compare(); } }));
