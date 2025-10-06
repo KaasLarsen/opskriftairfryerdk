@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sammenlign Airfryers – hurtig 1:1 sammenligning af modeller</title>
+<meta name="description" content="Sammenlign to airfryers side om side. Se kapacitet, zoner, watt, programmer samt fordele og ulemper. Hurtige links til prissammenligning og butikker." />
+<link rel="icon" href="/img/favicon.ico" />
+<link rel="stylesheet" href="/assets/styles.css?v=17" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+
+<style>
+  :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --soft:#f8fafc; --muted:#475569; --accent:#0ea5e9; --radius:14px; --shadow:0 6px 18px rgba(2,8,23,.06); }
+  .wrap{max-width:var(--max);margin:0 auto;padding:18px var(--pad);}
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;margin:12px 0 18px}
+  @media (max-width:900px){ .hero{grid-template-columns:1fr} }
+  .box{border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,var(--soft));box-shadow:var(--shadow);padding:16px}
+  .badgeline{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:#fff;color:#334155}
+  .form{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .form input{flex:1 1 320px;padding:12px;border:1px solid var(--line);border-radius:12px}
+  .btn{padding:10px 14px;border-radius:999px;font-weight:600;border:1px solid var(--line);background:#0ea5e9;color:#fff;cursor:pointer}
+  .hint{font-size:12px;color:#64748b}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  @media (max-width:900px){ .compare{grid-template-columns:1fr} }
+  .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+  .head{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;justify-content:space-between}
+  .title{font-weight:800}
+  .meta{color:#64748b;font-size:13px}
+  .tag{font-size:12px;color:#334155;border:1px solid var(--line);border-radius:999px;padding:4px 8px;background:#fff;white-space:nowrap}
+  .body{padding:12px 14px}
+  .heroimg{width:100%;aspect-ratio:16/10;object-fit:contain;background:linear-gradient(180deg,#f8fafc,#fff);border:1px solid var(--line);border-radius:12px;padding:10px}
+  .specs{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px}
+  .specs td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .specs tr:last-child td{border-bottom:none}
+  .diff{background:linear-gradient(180deg,#f8fafc,#fff)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+  @media (max-width:560px){ .cols{grid-template-columns:1fr} }
+  .body ul{margin:6px 0 0;padding-left:18px}
+  .cta{display:inline-block;margin-top:10px;padding:10px 12px;border:1px solid var(--line);border-radius:999px;font-weight:600;background:#0ea5e9;color:#fff}
+  .suggest{margin-top:8px}
+</style>
+
+<!-- Basic JSON-LD for the tool page -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Sammenlign airfryers",
+  "description":"Brug værktøjet til at sammenligne to airfryer-modeller side om side.",
+  "url":"https://www.opskrift-airfryer.dk/top/sammenlign-airfryers.html"
+}
+</script>
+</head>
+<body>
+
+<!-- Partials -->
+<div data-include="/partials/header.html"></div>
+
+<main class="wrap">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="box">
+      <span class="small" style="text-transform:uppercase;letter-spacing:.04em">værktøj</span>
+      <h1 style="margin:6px 0 8px">Sammenlign airfryers – A vs. B</h1>
+      <p class="meta">Skriv to modelnavne (fx “Ninja AF500EU” og “Philips XXL HD9650”). Vi matcher også korte/ufuldstændige navne og viser styrker/ulemper.</p>
+      <div class="badgeline">
+        <span class="badge">kapacitet & zoner</span>
+        <span class="badge">watt & programmer</span>
+        <span class="badge">fordele/ulemper</span>
+      </div>
+    </div>
+    <div class="box">
+      <form class="form" onsubmit="return false" role="search" aria-label="Sammenlignér to modeller">
+        <input id="a" type="search" placeholder="Airfryer A (fx Ninja AF500EU)" autocomplete="off" />
+        <input id="b" type="search" placeholder="Airfryer B (fx Cosori 5.5L)" autocomplete="off" />
+        <button id="go" class="btn" type="button">Sammenlign</button>
+      </form>
+      <p class="hint">Tip: Del linket – valgene gemmes i URL’en.</p>
+      <div id="suggest" class="meta suggest"></div>
+    </div>
+  </section>
+
+  <!-- Resultater -->
+  <section class="compare">
+    <article id="colA" class="card" aria-live="polite"></article>
+    <article id="colB" class="card" aria-live="polite"></article>
+  </section>
+
+  <p class="hint" style="margin-top:12px">Data er vejledende. Tjek altid butik/producent for endelige specifikationer og pris.</p>
+</main>
+
+<!-- Footer -->
+<div data-include="/partials/footer.html"></div>
+
+<!-- Includes -->
+<script src="/assets/include.js?v=4"></script>
+
+<script>
+/* --- Mini-database (kan udvides) --------------------------------------- */
+const DB = [
+  {
+    id:"ninja-af500eu", names:["Ninja AF500EU","AF500EU","Flex Drawer","FlexDrawer","Ninja Flex"],
+    brand:"Ninja", model:"AF500EU Flex Drawer", capacity:"10,4 L (MegaZone) / 2×5,2 L", zones:2, watt:2470,
+    programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Prove","Sync/Match"],
+    strengths:["MegaZone (én stor kurv) eller 2 zoner","Hurtig opvarmning og sprødhed","God til store emner (fx steg)"],
+    weaknesses:["Stor og tung på bordet","Ofte dyrere end 1-kurvs modeller"],
+    affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF500EU-Flex-Drawer/3243985",
+    image:"/img/top/af500eu.jpg"
+  },
+  {
+    id:"ninja-af300eu", names:["Ninja AF300EU","AF300EU","Dual Zone","AF300"],
+    brand:"Ninja", model:"AF300EU Dual Zone", capacity:"2×3,8 L (7,6 L)", zones:2, watt:2400,
+    programs:["Max Crisp","Air Fry","Roast","Bake","Reheat","Dehydrate","Sync/Match"],
+    strengths:["To zoner – lav forskellig mad samtidig","Kendt for sprødhed","God størrelse til 3–4 pers"],
+    weaknesses:["Ingen MegaZone","Kurvhøjde begrænser meget høje emner"],
+    affiliate:"https://go.adt267.com/t/t?a=1877068248&as=1940697285&t=2&tk=1&url=https://www.proshop.dk/Airfryer/Ninja-AF300EU-Hot-Air-Fryer/3019684",
+    image:"/img/top/af300eu.jpg"
+  },
+  {
+    id:"philips-hd9650", names:["Philips XXL HD9650","HD9650","Avance XXL","Philips XXL"],
+    brand:"Philips", model:"XXL HD9650", capacity:"≈7,3 L (XXL kurv)", zones:1, watt:2225,
+    programs:["Air Fry","Roast","Bake","Grill","Reheat"],
+    strengths:["Pålidelig allround med jævn varme","God til hele kyllinger/steg i én kurv","Meget tilbehør tilgængeligt"],
+    weaknesses:["Ikke dual-zone","Lidt langsommere end Ninja i Max Crisp"],
+    affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://philips-xxl-hd9650",
+    image:"/img/top/philips-hd9650.jpg"
+  },
+  {
+    id:"princess-8l", names:["Princess 8L","Princess Digital 8L","Princess 182254","Princess 8 liter"],
+    brand:"Princess", model:"Digital Airfryer 8L", capacity:"8 L (enkelt kurv)", zones:1, watt:1700,
+    programs:["Air Fry","Roast","Bake","Reheat"],
+    strengths:["Stor kapacitet til prisen","Simpel betjening","Ofte god kampagnepris"],
+    weaknesses:["Færre avancerede features","Lidt langsommere opvarmning"],
+    affiliate:"https://in.kitchenone.dk/t/t?a=1577686426&as=1940697285&t=2&tk=1&url=https://www.kitchenone.dk/p/princess-digital-varmluftsfrituregryde-8-liter-sort_58750/",
+    image:"/img/top/princess-8l.jpg"
+  },
+  {
+    id:"cosori-5-5", names:["Cosori 5.5L","Cosori Premium 5.5","Cosori Pro 5.5","COSORI 5,5"],
+    brand:"Cosori", model:"Premium / Pro 5.5L", capacity:"5,5 L", zones:1, watt:1700,
+    programs:["Air Fry","Roast","Bake","Keep Warm"],
+    strengths:["Kompakt – perfekt til 1–3 pers","Fin sprødhed i lille formfaktor","Ofte skarp pris"],
+    weaknesses:["Mindre kurv – ikke til store stege","Færre zoner/programmer"],
+    affiliate:"https://go.computersalg.dk/t/t?a=1319510587&as=1940697285&t=2&tk=1&url=https://www.computersalg.dk/i/10135902/cosori-premium-air-fryer-sort-5-5-liter",
+    image:"/img/top/cosori-5-5.jpg"
+  }
+];
+
+/* --- Utils -------------------------------------------------------------- */
+const norm = s => (s||"").toLowerCase().normalize('NFKD').replace(/[^\w\s\-\.]/g,'').trim();
+
+function findModel(q){
+  if(!q) return null;
+  const t = norm(q);
+  // forsøg 1: fuldt match på brand + model eller id/aliases
+  let m = DB.find(m =>
+    norm(m.brand+' '+m.model)===t ||
+    m.id===t ||
+    m.names.some(n => norm(n)===t)
+  );
+  // forsøg 2: delvist match i navne
+  if(!m){
+    m = DB.find(m => (m.names.concat([m.brand+' '+m.model,m.model])).some(n => norm(n).includes(t)));
+  }
+  return m || null;
+}
+
+/* --- Render ------------------------------------------------------------- */
+const colA = document.getElementById('colA');
+const colB = document.getElementById('colB');
+const inputA = document.getElementById('a');
+const inputB = document.getElementById('b');
+const suggest = document.getElementById('suggest');
+
+function specRow(label, a, b){
+  const diff = (a!==b && a && b) ? ' class="diff"' : '';
+  return `<tr${diff}><td style="width:32%">${label}</td><td>${a||'–'}</td><td>${b||'–'}</td></tr>`;
+}
+
+function render(model, mount){
+  if(!model){
+    mount.innerHTML = `
+      <div class="head"><div class="title">Vælg model</div></div>
+      <div class="body meta">Søg efter modelnavn i feltet ovenfor.</div>`;
+    return;
+  }
+  mount.innerHTML = `
+    <div class="head">
+      <div>
+        <div class="title">${model.brand} ${model.model}</div>
+        <div class="meta">${model.capacity} · ${model.zones===2?'2 zoner':'1 zone'} · ${model.watt} W</div>
+      </div>
+      <a class="tag" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Se pris</a>
+    </div>
+    <div class="body">
+      <img class="heroimg" src="${model.image}" alt="${model.brand} ${model.model}">
+      <table class="specs">
+        <tr><td></td><td><strong>Specifikationer</strong></td><td></td></tr>
+        ${specRow('Kapacitet', model.capacity, '')}
+        ${specRow('Zoner', (model.zones===2?'2':'1'), '')}
+        ${specRow('Watt', model.watt ? (model.watt+' W') : '', '')}
+        ${specRow('Programmer', (model.programs||[]).join(', '), '')}
+      </table>
+      <div class="cols">
+        <div><strong>Fordele</strong><ul>${(model.strengths||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        <div><strong>Ulemper</strong><ul>${(model.weaknesses||[]).map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      </div>
+      <a class="cta" href="${model.affiliate}" target="_blank" rel="sponsored nofollow">Gå til butik</a>
+    </div>
+  `;
+}
+
+/* --- Sammenlign + URL sync -------------------------------------------- */
+function compare(){
+  const mA = findModel(inputA.value);
+  const mB = findModel(inputB.value);
+  render(mA, colA);
+  render(mB, colB);
+
+  if(!mA || !mB){
+    const names = DB.map(m=>m.brand+' '+m.model).join(' · ');
+    suggest.textContent = 'Forslag: ' + names;
+  } else {
+    suggest.textContent = '';
+  }
+
+  const params = new URLSearchParams();
+  if(inputA.value) params.set('a', inputA.value);
+  if(inputB.value) params.set('b', inputB.value);
+  history.replaceState({}, '', location.pathname + (params.toString()?('?'+params.toString()):''));
+}
+
+document.getElementById('go').addEventListener('click', compare);
+[inputA,inputB].forEach(i=>i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); compare(); } }));
+
+// Deep-link (?a=...&b=...)
+(function(){
+  const p = new URLSearchParams(location.search);
+  if(p.get('a')) inputA.value = p.get('a');
+  if(p.get('b')) inputB.value = p.get('b');
+  if(inputA.value || inputB.value) compare();
+})();
+</script>
+</body>
+</html>
