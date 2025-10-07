@@ -85,7 +85,28 @@
 
   /* undgå overlap af overskrifter ved anker-hop */
   main :where(h1,h2,h3){ scroll-margin-top: 80px; }
+
+  /* ====== synlig stjerne-komponent (til review-schema) ====== */
+  .afo-stars { margin: 8px 0 4px; }
+  .afo-stars-row { display:inline-flex; gap:8px; align-items:center; font-size:14px; line-height:1; user-select:none; }
+  .afo-stars-row::before { content: attr(aria-label); position:absolute; left:-9999px; }
+  .afo-stars .afo-stars-text { color: var(--muted, #64748b); }
+  .afo-stars .afo-stars-text strong { font-weight:700; }
 </style>
+
+<!-- REVIEW MARKUP: global konfiguration + loader
+     Placeres fint i body fordi scriptet er 'defer'.  -->
+<script>
+  // Global standard – kan overskrives pr. side via meta-tags:
+  // <meta name="afo:ratingValue" content="4.7" />
+  // <meta name="afo:ratingCount" content="26" />
+  window.AFO_RATING_DEFAULT_VALUE = 4.8;
+  window.AFO_RATING_DEFAULT_COUNT = 37;
+
+  // I kan ikke tilføje billede nu → rør ikke image-feltet i schema
+  window.AFO_IMAGE_FALLBACK = null;
+</script>
+<script defer src="/assets/review-schema.js?v=2"></script>
 
 <header class="header" role="banner">
   <div class="header-inner">
