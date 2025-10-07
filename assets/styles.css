@@ -405,3 +405,14 @@ h1, h2, h3, [id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 @media (max-width:900px){ .deals3 .imgwrap{ aspect-ratio:16/11; } }
 @media (max-width:560px){ .deals3 .imgwrap{ aspect-ratio:16/12; } }
 
+.afo-stars { margin: 8px 0 4px; }
+.afo-stars-row { display:inline-flex; gap:8px; align-items:center; font-size:14px; line-height:1; }
+.afo-stars-row::before {
+  content: attr(aria-label);
+  position:absolute; left:-9999px; /* accessibility only */
+}
+.afo-stars .afo-stars-text { color: var(--muted, #666); }
+.afo-stars .afo-stars-text strong { font-weight:700; color: inherit; }
+.afo-stars-row { user-select:none; }
+
+
