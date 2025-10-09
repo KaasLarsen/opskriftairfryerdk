@@ -505,106 +505,110 @@ html{scroll-behavior:smooth}
   const mount = document.getElementById('seneste-grid');
   if (!mount) return;
 
-  const iconSvg = id => '<div class="thumb-icon"><svg><use href="#'+(id||'star')+'"></use></svg></div>';
-  const toTitle = slug => slug.replace(/-/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
-  const card = (r) => [
+  const iconSvg = id => '<div class="thumb-icon"><svg><use href="#'+(id||'book')+'"></use></svg></div>';
+  const toTitle = s => s.replace(/-/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
+  const parseISO = s => { const d = new Date(s); return isNaN(d) ? null : d; };
+  const pickDate = o => parseISO(o.published || o.datePublished || o.updated || o.lastmod || o.date || o.addedAt);
+
+  const card = r => [
     '<a class="card" href="', r.url ,'">',
       iconSvg(r.icon),
       '<div class="card-body"><h3>', r.title ,'</h3>',
-        r.meta ? '<p class="meta">'+r.meta+'</p>' : '',
+      r.meta ? '<p class="meta">'+r.meta+'</p>' : '',
       '</div>',
     '</a>'
   ].join('');
 
-  const parseISO = (s) => {
-    try { if (!s) return null; const d = new Date(s); return isNaN(d) ? null : d; } catch(_) { return null; }
-  };
-
-  function pickDate(obj){
-    // vælg det første eksisterende felt der ligner en dato
-    return parseISO(obj.published || obj.datePublished || obj.updated || obj.lastmod || obj.date || obj.addedAt || null);
-  }
-
-  function render(items, n=6){
-    const out = (items||[]).slice(0,n).map(card).join('');
+  function render(list, n=6){
+    const out = (list||[]).slice(0,n).map(card).join('');
     mount.innerHTML = out || '<p class="meta">Ingen opskrifter fundet.</p>';
   }
 
-  function sortByDateDesc(arr){
-    return arr
-      .map(x => ({...x, _d: pickDate(x)}))
-      .sort((a,b) => {
-        if (a._d && b._d) return b._d - a._d;
-        if (a._d && !b._d) return -1;
-        if (!a._d && b._d) return 1;
-        // fallback: alfabetisk på titel
-        return (a.title||'').localeCompare(b.title||'', 'da');
-      });
+  function sortDesc(arr){
+    return arr.map(x=>({...x, _d: pickDate(x)})).sort((a,b)=>{
+      if (a._d && b._d) return b._d - a._d;
+      if (a._d && !b._d) return -1;
+      if (!a._d && b._d) return 1;
+      return (a.title||'').localeCompare(b.title||'', 'da');
+    });
   }
 
-  function fromLocal(n=6){
-    // Forsøg 1: AFO API
+  function fromLocal(){
+    // AFO
     if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
       return AFO.ready.then(()=>{
         const list = (AFO.getAll && AFO.getAll()) || [];
-        const mapped = list.map(r => ({
-          url: r.url || ('/opskrifter/'+(r.slug||'').replace(/^\//,'')+'.html'),
+        const items = list.map(r=>({
+          url: r.url || ('/opskrifter/'+(r.slug||'')+'.html'),
           title: r.title || toTitle((r.slug||'').split('/').pop()||''),
           icon: r.icon || 'book',
           meta: r.meta || r.kicker || '',
           published: r.published || r.datePublished || r.updated || r.lastmod || r.date || r.addedAt || null
         }));
-        const sorted = sortByDateDesc(mapped);
-        render(sorted, n);
-        return true;
+        const sorted = sortDesc(items);
+        if (sorted.length){ render(sorted); return true; }
+        return false;
       });
     }
-    // Forsøg 2: window.RECIPES
+    // window.RECIPES
     if (Array.isArray(window.RECIPES) && window.RECIPES.length){
-      const mapped = window.RECIPES.map(r => ({
-        url: r.url || ('/opskrifter/'+(r.slug||'').replace(/^\//,'')+'.html'),
+      const items = window.RECIPES.map(r=>({
+        url: r.url || ('/opskrifter/'+(r.slug||'')+'.html'),
         title: r.title || toTitle((r.slug||'').split('/').pop()||''),
         icon: r.icon || 'book',
         meta: r.meta || '',
         published: r.published || r.datePublished || r.updated || r.lastmod || r.date || r.addedAt || null
       }));
-      const sorted = sortByDateDesc(mapped);
-      render(sorted, 6);
-      return Promise.resolve(true);
+      const sorted = sortDesc(items);
+      if (sorted.length){ render(sorted); return Promise.resolve(true); }
     }
     return Promise.resolve(false);
   }
 
-  async function fromSitemap(n=6){
+  async function fromSitemapIndex(){
     try{
-      const res = await fetch('/recipes-sitemap.xml', {cache:'no-store'});
-      if(!res.ok) throw new Error('No sitemap');
+      // 1) Hent /sitemap.xml (index eller enkelt)
+      const res = await fetch('/sitemap.xml', {cache:'no-store'});
+      if (!res.ok) throw 1;
       const xml = await res.text();
-      const locs = [...xml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>(?:[\s\S]*?<lastmod>([^<]+)<\/lastmod>)?[\s\S]*?<\/url>/g)]
-        .map(m=>({ loc:m[1], lastmod: m[2] || null }))
-        .filter(x => x.loc.includes('/opskrifter/') && x.loc.endsWith('.html'));
-      const items = locs.map(x => {
-        const u = new URL(x.loc, location.origin);
-        const slug = u.pathname.replace(/^\/+|\.html$/g,'').split('/').pop();
-        return {
-          url: u.pathname,
-          title: toTitle(slug),
-          icon: 'book',
-          meta: '',
-          lastmod: x.lastmod
-        };
-      });
-      const sorted = sortByDateDesc(items);
-      render(sorted, n);
+
+      // 2) Find child-sitemaps; ellers brug selve filen som urlset
+      const smaps = [...xml.matchAll(/<sitemap>\s*<loc>([^<]+)<\/loc>[\s\S]*?<\/sitemap>/g)].map(m=>m[1]);
+      const urlsets = smaps.length ? smaps : ['/recipes-sitemap.xml']; // fallback direkte
+
+      const all = [];
+      for (const sm of urlsets){
+        try{
+          const r = await fetch(new URL(sm, location.origin).pathname, {cache:'no-store'});
+          if (!r.ok) continue;
+          const sx = await r.text();
+          const urls = [...sx.matchAll(/<url>\s*<loc>([^<]+)<\/loc>(?:[\s\S]*?<lastmod>([^<]+)<\/lastmod>)?[\s\S]*?<\/url>/g)]
+            .map(m=>({loc:m[1], lastmod:m[2]||null}))
+            .filter(x=>x.loc.includes('/opskrifter/') && x.loc.endsWith('.html'));
+          urls.forEach(x=>{
+            try{
+              const u = new URL(x.loc, location.origin);
+              const slug = u.pathname.replace(/^\/+|\.html$/g,'').split('/').pop();
+              all.push({ url:u.pathname, title:toTitle(slug), icon:'book', meta:'', lastmod:x.lastmod });
+            }catch(_){}
+          });
+        }catch(_){}
+      }
+      const sorted = sortDesc(all);
+      if (sorted.length) render(sorted);
+      else mount.innerHTML = '<p class="meta">Ingen opskrifter fundet i sitemap.</p>';
     }catch(_){
       mount.innerHTML = '<p class="meta">Kunne ikke hente seneste fra sitemap.</p>';
     }
   }
 
-  // Kør: lokal data -> fallback til sitemap
-  fromLocal(6).then(found=>{
-    if(!found) fromSitemap(6);
-  });
+  // Kør: lokal -> timeout -> sitemap
+  let done = false;
+  fromLocal().then(ok=>{
+    if (ok){ done = true; return; }
+    // timeout fallback efter 1.5s
+    setTimeout(()=>{ if(!done){ fromSitemapIndex(); } }, 1500);
+  }).catch(()=> setTimeout(()=>{ if(!done){ fromSitemapIndex(); } }, 1500));
 })();
 </script>
 
