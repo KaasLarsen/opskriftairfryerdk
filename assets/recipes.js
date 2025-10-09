@@ -1,8 +1,7 @@
 /* =========================================================================
    /assets/recipes.js — Hent ALT fra sitemap (index + urlset), robust & NS-safe
-   - Finder opskrifter via sitemap.xml / sitemap_index.xml (+ direkte fallback)
-   - Scraper titel + simple meta fra hver opskriftsside
-   - Udgiver window.RECIPES (nyeste først) + AFO API (ready/getAll/search/…)
+   NYT: Læser også datoer fra JSON-LD (Recipe) og meta-tags i HTML.
+   Output: window.RECIPES (nyeste først) + AFO API (ready/getAll/search/…)
    ======================================================================= */
 window.AFO = window.AFO || {};
 (function () {
@@ -59,7 +58,7 @@ window.AFO = window.AFO || {};
     // Namespace-aware DOM
     let urlNodes = doc.getElementsByTagName('url');
     if (!urlNodes || !urlNodes.length){
-      urlNodes = doc.getElementsByTagNameNS('*','url'); // <— vigtig til xmlns=".../sitemap/0.9"
+      urlNodes = doc.getElementsByTagNameNS('*','url'); // vigtigt til xmlns=".../sitemap/0.9"
     }
     if (urlNodes && urlNodes.length){
       for (const n of urlNodes){
@@ -67,14 +66,14 @@ window.AFO = window.AFO || {};
         const lastNode = n.getElementsByTagName('lastmod')[0] || n.getElementsByTagNameNS('*','lastmod')[0];
         const loc  = locNode?.textContent?.trim();
         const last = (lastNode?.textContent?.trim() || '').slice(0,10);
-        if (loc) urls.push({ loc, lastmod: last });
+        if (loc) urls.push({ loc, lastmod: last || null });
       }
       return urls;
     }
     // Fallback: regex på hele XML
     const xml = new XMLSerializer().serializeToString(doc);
     const locs = [...xml.matchAll(/<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?(?:<lastmod>([^<]+)<\/lastmod>)?[\s\S]*?<\/url>/gi)];
-    return locs.map(m => ({ loc: m[1], lastmod: (m[2]||'').slice(0,10) }));
+    return locs.map(m => ({ loc: m[1], lastmod: (m[2]||'').slice(0,10) || null }));
   }
 
   // Udtræk child-sitemaps fra sitemapindex – namespace-aware + regex fallback
@@ -82,7 +81,7 @@ window.AFO = window.AFO || {};
     let maps = [];
     let smNodes = doc.getElementsByTagName('sitemap');
     if (!smNodes || !smNodes.length){
-      smNodes = doc.getElementsByTagNameNS('*','sitemap'); // <— vigtig!
+      smNodes = doc.getElementsByTagNameNS('*','sitemap');
     }
     if (smNodes && smNodes.length){
       for (const n of smNodes){
@@ -127,7 +126,7 @@ window.AFO = window.AFO || {};
           const sitemaps = extractSitemapsFromIndex(doc);
           for (const smUrl of sitemaps){
             try{
-              const smPath = toPath(smUrl); // sikrer same-origin path
+              const smPath = toPath(smUrl); // same-origin path
               const smTxt = await fetchText(smPath);
               const smDoc = parseXml(smTxt);
               if (!smDoc) continue;
@@ -167,11 +166,64 @@ window.AFO = window.AFO || {};
     return queue; // [{path,lastmod}]
   }
 
-  // ------------ HTML meta-scrape ------------
+  // ------------ HTML dato + meta-scrape ------------
+  function safeJSONparse(str){
+    try{ return JSON.parse(str); }catch{ return null; }
+  }
+  function pickISO(s){
+    if(!s) return null;
+    // Normalisér til 'YYYY-MM-DD' hvis muligt
+    const d = new Date(s);
+    return isNaN(d) ? null : d.toISOString().slice(0,10);
+  }
+
+  function extractDatesFromDoc(doc){
+    let published = null, modified = null;
+
+    // 1) JSON-LD: find @type Recipe og læs datePublished/dateModified
+    const ldNodes = doc.querySelectorAll('script[type="application/ld+json"]');
+    for (const node of ldNodes){
+      const data = safeJSONparse(node.textContent || '');
+      if (!data) continue;
+      const flat = Array.isArray(data) ? data : [data];
+      for (const entry of flat){
+        if (!entry || typeof entry !== 'object') continue;
+        // @graph kan indeholde flere nodes
+        const graph = Array.isArray(entry['@graph']) ? entry['@graph'] : [entry];
+        for (const g of graph){
+          const t = (g['@type'] || g.type || '');
+          if (t === 'Recipe' || (Array.isArray(t) && t.includes('Recipe'))){
+            if (!published) published = pickISO(g.datePublished);
+            if (!modified)  modified  = pickISO(g.dateModified);
+          }
+        }
+      }
+      if (published || modified) break;
+    }
+
+    // 2) Meta tags (Open Graph / Article)
+    const metaPublished =
+      doc.querySelector('meta[property="article:published_time"]')?.content ||
+      doc.querySelector('meta[name="article:published_time"]')?.content ||
+      doc.querySelector('meta[name="date"]')?.content ||
+      doc.querySelector('time[datetime]')?.getAttribute('datetime');
+
+    const metaUpdated =
+      doc.querySelector('meta[property="article:modified_time"]')?.content ||
+      doc.querySelector('meta[property="og:updated_time"]')?.content ||
+      doc.querySelector('meta[name="lastmod"]')?.content;
+
+    published = published || pickISO(metaPublished);
+    modified  = modified  || pickISO(metaUpdated);
+
+    return { published, modified };
+  }
+
   async function scrapeMeta(path){
     try{
       const html = await fetchText(path, 9000);
       const doc  = new DOMParser().parseFromString(html, 'text/html');
+
       const h1   = doc.querySelector('h1')?.textContent?.trim();
       const ttl  = capWords(h1 || doc.title || 'Airfryer Opskrift');
 
@@ -180,12 +232,16 @@ window.AFO = window.AFO || {};
       const metaIcon = doc.querySelector('meta[name="afo:icon"]')?.content;
       const metaMeta = doc.querySelector('meta[name="afo:meta"]')?.content;
 
+      const dates = extractDatesFromDoc(doc);
+
       const g = guessMeta(ttl);
       return {
         title: ttl,
         categories: metaCats ? metaCats.split(',').map(s=>s.trim()).filter(Boolean) : g.categories,
         icon: metaIcon || g.icon,
-        meta: metaMeta || ""
+        meta: metaMeta || "",
+        published: dates.published || null,
+        modified:  dates.modified  || null
       };
     }catch{
       return null;
@@ -204,19 +260,30 @@ window.AFO = window.AFO || {};
         if (!slug) return;
         const m = await scrapeMeta(it.path);
         if (!m) return;
+
+        // Vælg dato: sitemap <lastmod> → JSON-LD published → JSON-LD modified → (ellers null)
+        const date = it.lastmod || m.published || m.modified || null;
+
         map[slug] = {
           title: m.title,
           slug,
-          date: (it.lastmod || new Date().toISOString().slice(0,10)), // brug <lastmod> hvis muligt
+          date, // kan være null -> sorteres nederst
           categories: m.categories,
           icon: m.icon,
           meta: m.meta
         };
       }));
 
-      // Udgiv global liste – nyeste først
+      // Udgiv global liste – nyeste først (udaterede til sidst)
       window.RECIPES = Object.values(map)
-        .sort((a,b)=> (b.date||"").localeCompare(a.date||""));
+        .sort((a,b)=>{
+          const da = a.date ? a.date : '';
+          const db = b.date ? b.date : '';
+          if (da && db) return db.localeCompare(da); // begge har dato
+          if (db) return 1;  // a mangler dato -> b først
+          if (da) return -1; // b mangler dato -> a først
+          return (a.title||'').localeCompare(b.title||'', 'da');
+        });
 
       _resolve();
     }catch(err){
