@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Seneste Opskrifter – Opskrift-Airfryer.dk</title>
-<meta name="description" content="Alle de nyeste airfryer opskrifter – søg og filtrér efter kød, grønt, tilbehør, kager og mere." />
+<meta name="description" content="Alle de nyeste airfryer opskrifter – søg efter kød, grønt, tilbehør, kager og meget mere." />
 <link rel="icon" href="/img/favicon.ico" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
 <style>
@@ -15,12 +15,13 @@ a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
 .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
 .section{margin:18px 0}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:12px;flex-wrap:wrap}
-.section-head h1{font-size:26px;margin:0}
+.section-head h1{font-size:26px;margin:0;}
 .tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;width:100%;position:relative}
 .input{padding:14px 16px;border:2px solid var(--accent);border-radius:14px;min-width:260px;width:min(720px,100%);background:#fce7f3;font-size:18px;outline:none}
 .input:focus{box-shadow:0 0 0 4px rgba(236,72,153,.15)}
 .btn{appearance:none;border:2px solid var(--accent);background:var(--accent);color:#fff;border-radius:14px;padding:12px 16px;font-weight:600;cursor:pointer}
-.btn:hover{filter:brightness(.95)} .btn:active{transform:translateY(1px)}
+.btn:hover{filter:brightness(.95)}
+.btn:active{transform:translateY(1px)}
 .grid{display:grid;gap:16px}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 @media(max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
@@ -49,16 +50,11 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 .suggest li:hover,.suggest li.active{background:#f8fafc}
 .suggest .hint{font-size:12px;color:#64748b;margin-left:auto}
 
-/* Kategori-filterbar */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
-.filter-btn{
-  appearance:none;border:1px solid var(--line);background:#fff;color:#0f172a;
-  border-radius:999px;padding:8px 12px;font-size:13px;cursor:pointer;box-shadow:var(--shadow)
-}
-.filter-btn:hover{background:#f8fafc}
-.filter-btn.is-active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-.filter-clear{margin-left:auto}
-.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 8px;font-size:12px;background:#fff;color:#64748b;margin-left:8px}
+/* Kategori chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:#ec4899;color:#fff;border-color:#ec4899}
+.clear-chip{border:1px dashed var(--line);background:#fff}
 </style>
 </head>
 <body>
@@ -70,34 +66,26 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <div class="section-head" style="flex-direction:column;align-items:flex-start">
       <h1>Seneste Opskrifter</h1>
 
-      <!-- Søg + filtre -->
       <div class="tools" role="search" aria-label="Søg i opskrifter">
         <label class="sr-only" for="q">Søg i opskrifter</label>
         <input id="q" class="input" type="search" placeholder="Søg i opskrifter… (fx frikadeller, broccoli, brownies)" autocomplete="off" aria-autocomplete="list" aria-controls="suggestions" aria-expanded="false" />
         <button id="searchBtn" class="btn" type="button" aria-label="Søg">Søg</button>
-        <span id="activeFilter" class="badge" style="display:none"></span>
 
         <!-- Autocomplete dropdown -->
         <div id="suggestions" class="suggest" role="listbox" aria-expanded="false" aria-label="Forslag"></div>
+      </div>
 
-        <!-- Kategori-knapper -->
-        <div class="filters" aria-label="Filtrér kategorier">
-          <button class="filter-btn" data-cat="Alle">Alle</button>
-          <button class="filter-btn" data-cat="Kylling">Kylling</button>
-          <button class="filter-btn" data-cat="Oksekød">Oksekød</button>
-          <button class="filter-btn" data-cat="Svinekød">Svinekød</button>
-          <button class="filter-btn" data-cat="Fisk">Fisk</button>
-          <button class="filter-btn" data-cat="Grønt">Grønt</button>
-          <button class="filter-btn" data-cat="Tilbehør">Tilbehør</button>
-          <button class="filter-btn" data-cat="Brød">Brød</button>
-          <button class="filter-btn" data-cat="Dessert">Dessert</button>
-          <button class="filter-btn" data-cat="Snacks">Snacks</button>
-          <button class="filter-btn" data-cat="Asiatisk">Asiatisk</button>
-          <button class="filter-btn" data-cat="Mexicansk">Mexicansk</button>
-          <button class="filter-btn" data-cat="Indisk">Indisk</button>
-          <button class="filter-btn" data-cat="Halloween">Halloween</button>
-          <button class="filter-btn filter-clear" data-cat="__clear">Ryd filter</button>
-        </div>
+      <!-- Kategori chips (klikbare filtre) -->
+      <div class="chips" id="chips" aria-label="Filtrer efter kategori" role="group">
+        <button class="chip clear-chip" data-cat="" aria-pressed="true">Alle</button>
+        <button class="chip" data-cat="Kylling">Kylling</button>
+        <button class="chip" data-cat="Svinekød">Svinekød</button>
+        <button class="chip" data-cat="Oksekød">Oksekød</button>
+        <button class="chip" data-cat="Fisk">Fisk</button>
+        <button class="chip" data-cat="Grønt">Grønt</button>
+        <button class="chip" data-cat="Tilbehør">Tilbehør</button>
+        <button class="chip" data-cat="Dessert">Dessert</button>
+        <button class="chip" data-cat="Halloween">Halloween</button>
       </div>
     </div>
 
@@ -115,7 +103,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     </div>
 
     <div class="toolbar-bottom">
-      <p id="empty" class="copy" style="display:none">Ingen opskrifter matcher din søgning/filtrering.</p>
+      <p id="empty" class="copy" style="display:none">Ingen opskrifter matcher din søgning.</p>
       <div class="results" id="results">Indlæser…</div>
     </div>
   </section>
@@ -123,13 +111,23 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
 
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
-
-<!-- Seneste: robust sitemap + søgning + kategori-filtre -->
 <script>
-const RECIPES_SITEMAP_URL = '/recipes-sitemap.xml';
-const FALLBACK_SITEMAP_URL = '/sitemap.xml';
-const CACHE_KEY = 'RECIPES_CACHE_v9'; // bump ved ændringer
-const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
+/* ===========================
+   Robust “Seneste” med:
+   - Namespace-sikker XML parsing
+   - Følger sitemap_index.xml
+   - Kategori chips + søgning
+   =========================== */
+
+const SITEMAP_CANDIDATES = [
+  '/recipes-sitemap.xml',
+  '/sitemap_index.xml',
+  '/sitemap.xml'
+];
+
+// Bump cache for at undgå gammel localStorage
+const CACHE_KEY = 'RECIPES_CACHE_v12';
+const CACHE_TTL_MS = 12*60*60*1000;
 
 const grid = document.getElementById('grid');
 const empty = document.getElementById('empty');
@@ -137,39 +135,56 @@ const resultsEl = document.getElementById('results');
 const q = document.getElementById('q');
 const searchBtn = document.getElementById('searchBtn');
 const suggestionsEl = document.getElementById('suggestions');
-const activeFilterBadge = document.getElementById('activeFilter');
+const chipsEl = document.getElementById('chips');
+
+let ACTIVE_CAT = ''; // chips-filter
+let ALL = [];
+let ALL_NORM = [];
+let SUG_INDEX = [];
 
 const debounce = (fn, ms=200) => { let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), ms); }; };
-const capitalizeWords = s => s.replace(/\b\w/g, c => c.toUpperCase());
+const parseXML = t => new DOMParser().parseFromString(t,'application/xml');
 
-/* === Normalisering (æ/ø/å) === */
+/* === Normalisering === */
 function norm(s=''){
-  return s.toLowerCase().normalize('NFKD')
-    .replace(/\p{Diacritic}/gu,'')
-    .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa');
+  return s.toLowerCase().normalize('NFKD').replace(/\p{Diacritic}/gu,'')
+           .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa');
 }
 
-/* === Ikon ud fra slug === */
+/* === Ikon fra slug === */
 function iconFromSlug(slug){
-  const s = (slug||'').toLowerCase();
-  if (s.includes('kylling')||s.includes('chicken')) return 'chicken';
-  if (s.includes('okse')||s.includes('boef')||s.includes('bøf')||s.includes('koed')||s.includes('kød')) return 'cow';
-  if (s.includes('svin')||s.includes('flaesk')||s.includes('flæsk')||s.includes('medister')||s.includes('moerbrad')||s.includes('mørbrad')) return 'pig';
+  const s = slug.toLowerCase();
+  if (s.includes('kylling')) return 'chicken';
+  if (s.includes('okse') || s.includes('bøf') || s.includes('boef')) return 'cow';
+  if (s.includes('svin') || s.includes('flæsk') || s.includes('flaesk') || s.includes('medister')) return 'pig';
+  if (s.includes('lam')) return 'meatball';
   if (s.includes('and')) return 'duck';
-  if (s.includes('fisk')||s.includes('laks')||s.includes('torsk')||s.includes('tun')||s.includes('sej')||s.includes('roedspaette')||s.includes('rødspætte')) return 'fish';
-  if (s.includes('broccoli')||s.includes('grønt')||s.includes('groent')||s.includes('grontsag')||s.includes('grøntsag')) return 'leaf';
-  if (s.includes('toast')||s.includes('brød')||s.includes('broed')||s.includes('naan')||s.includes('focaccia')||s.includes('panini')||s.includes('bolle')||s.includes('flutes')||s.includes('pita')) return 'bread';
-  if (s.includes('kage')||s.includes('brownie')||s.includes('donut')||s.includes('cookie')||s.includes('scone')||s.includes('tærte')||s.includes('taerte')||s.includes('crumble')||s.includes('muffin')||s.includes('vaffel')) return 'cake';
-  if (s.includes('chips')||s.includes('tortilla')||s.includes('pommes')||s.includes('fries')) return 'chips';
+  if (s.includes('kalkun')) return 'turkey';
+  if (s.includes('fisk') || s.includes('laks') || s.includes('torsk') || s.includes('tun') || s.includes('sej') || s.includes('roedspaette') || s.includes('rødspætte')) return 'fish';
+  if (s.includes('reje') || s.includes('musling') || s.includes('kammusling') || s.includes('calamari')) return 'shrimp';
+  if (s.includes('broccoli') || s.includes('grønt') || s.includes('groent')) return 'leaf';
+  if (s.includes('aubergine') || s.includes('squash')) return 'eggplant';
+  if (s.includes('svamp') || s.includes('champignon') || s.includes('portobello')) return 'mushroom';
+  if (s.includes('gulerod')) return 'carrot';
+  if (s.includes('kartoffel') || s.includes('pommes') || s.includes('roesti') || s.includes('rösti')) return 'potato';
+  if (s.includes('toast') || s.includes('brød') || s.includes('broed') || s.includes('naan') || s.includes('focaccia') || s.includes('panini')) return 'bread';
+  if (s.includes('chips')) return 'chips';
+  if (s.includes('fries') || s.includes('pommes')) return 'fries';
+  if (s.includes('nugget')) return 'nuggets';
   if (s.includes('pizza')) return 'pizza';
   if (s.includes('burger')) return 'burger';
+  if (s.includes('kage') || s.includes('brownie') || s.includes('donut') || s.includes('cookie') || s.includes('scone') || s.includes('tærte') || s.includes('taerte') || s.includes('muffin')) return 'cake';
   return 'book';
 }
-function formatDate(d){ try{ return new Intl.DateTimeFormat('da-DK',{day:'2-digit',month:'short',year:'numeric'}).format(d);}catch{return '';} }
+
+function capitalizeWords(s){ return s.replace(/\b\w/g,c=>c.toUpperCase()); }
+function formatDate(d){ try{ return new Intl.DateTimeFormat('da-DK',{day:'2-digit',month:'short',year:'numeric'}).format(d);}catch{return '';}}
+
+/* === Kort === */
 function card(r){
   const icon = iconFromSlug(r.slug);
   const dateStr = r.date ? formatDate(r.date) : '';
-  const meta = [dateStr, r.blurb||'Se opskriften'].filter(Boolean).join(' · ');
+  const meta = dateStr ? `${dateStr} · ${r.blurb||'Se opskriften'}` : (r.blurb||'Se opskriften');
   return `
     <a class="card" href="${r.slug}">
       <div class="thumb-icon"><svg><use href="#${icon}" xlink:href="#${icon}"></use></svg></div>
@@ -180,160 +195,150 @@ function card(r){
     </a>`;
 }
 
-/* === Kategorier fra slug + titel (til filtre) === */
-function categoriesFrom(title, slug){
-  const s = norm((title||'')+' '+(slug||''));
-  const cats = new Set();
-
-  // primære
-  if (/\bkylling|chicken|vinger|drumstick|souvlaki|shawarma|tikka|katsu\b/.test(s)) cats.add('Kylling');
-  if (/\bokse|boef|bof|koed|koefte|roastbeef|ribeye|cheesesteak|stroganoff|gryde|chili con carne\b/.test(s)) cats.add('Oksekød');
-  if (/\bsvin|flaesk|flask|rib|porchetta|medister|moerbrad|mørbrad|karbonade|kotelet|char siu\b/.test(s)) cats.add('Svinekød');
-  if (/\bfisk|laks|torsk|tun|sej|reje|rejer|kammusling|musling|calamari|fiskefileter|fiskepinde\b/.test(s)) cats.add('Fisk');
-  if (/\bbroccoli|grontsag|groentsag|salat|aubergine|eggplant|squash|svamp|champignon|portobello|kartoffel|rodfrugt|pastinak|gulerod|kik(ae|æ)rte|tofu|tempeh\b/.test(s)) cats.add('Grønt');
-  if (/\btilbehoer|tilbehør|pommes|fritter|chips|majskolbe|croutoner|sides?\b/.test(s)) cats.add('Tilbehør');
-  if (/\bbr(oe|ø)d|bolle|naan|focaccia|toast|flutes|pita|bagels|ciabatta|bagning|bagte\b/.test(s)) cats.add('Brød');
-  if (/\bdessert|kage|brownie|muffin|cookie|scone|taerte|tærte|vaffel|donut|cheesecake|smuldre|crumble|churros|is\b/.test(s)) cats.add('Dessert');
-  if (/\bsnack|nachos|chips|sticks|bites|fries|popcorn|poppers|wrap\b/.test(s)) cats.add('Snacks');
-
-  // cuisine tags
-  if (/\bindisk|tandoori|butter chicken|masala|paneer|dal|biryani\b/.test(s)) cats.add('Indisk');
-  if (/\bmexicansk|taco|tacos|enchilada|burrito|tostada|quesadilla|nachos|al pastor|empanadas|tamales\b/.test(s)) cats.add('Mexicansk');
-  if (/\basia|asiatisk|teriyaki|soy(a)?|gyoza|samosa|shawarma|falafel|hummus|tabouleh|fattoush|souvlaki|spanakopita\b/.test(s)) cats.add('Asiatisk');
-
-  // sæson/tema
-  if (/\bhalloween|gr(oe|ø)skar|pumpkin|spooky|uhygge|monster\b/.test(s)) cats.add('Halloween');
-  if (/\bjul|jule|nyt(a|å)r|christmas|holiday\b/.test(s)) cats.add('Jul');
-
-  return Array.from(cats);
-}
-
-/* === XML helpers (namespace-tolerant) === */
-function parseXML(t){ return new DOMParser().parseFromString(t,'application/xml'); }
-function extractUrlEntries(xmlDoc){
-  let urlNodes = Array.from(xmlDoc.getElementsByTagName('url'));
-  if (!urlNodes.length) urlNodes = Array.from(xmlDoc.getElementsByTagNameNS('*','url'));
-  return urlNodes.map(n=>{
-    const locNode  = n.getElementsByTagName('loc')[0]     || n.getElementsByTagNameNS('*','loc')[0];
-    const lastNode = n.getElementsByTagName('lastmod')[0] || n.getElementsByTagNameNS('*','lastmod')[0];
-    const loc = locNode?.textContent?.trim() || '';
-    const last = lastNode?.textContent?.trim() || '';
-    return { loc, lastmod: last };
-  }).filter(u=>u.loc);
-}
-function extractSitemapsFromIndex(xmlDoc){
-  let smNodes = Array.from(xmlDoc.getElementsByTagName('sitemap'));
-  if (!smNodes.length) smNodes = Array.from(xmlDoc.getElementsByTagNameNS('*','sitemap'));
-  return smNodes.map(n=>{
-    const locNode = n.getElementsByTagName('loc')[0] || n.getElementsByTagNameNS('*','loc')[0];
-    return locNode?.textContent?.trim();
-  }).filter(Boolean);
-}
-
-/* === Fetch helpers (med cache-bust) === */
-function addBust(url){
-  try{ const u = new URL(url, location.origin); u.searchParams.set('cb', String(Date.now())); return u.pathname + u.search; }
-  catch{ return url; }
-}
+/* === XML helpers (namespace-sikre) === */
 async function fetchXML(url){
-  const res = await fetch(addBust(url), { cache:'no-store', credentials:'same-origin' });
-  if (!res.ok) throw new Error(url+': '+res.status);
+  const res = await fetch(url, {cache:'no-store'});
+  if (!res.ok) throw new Error(url + ' • HTTP ' + res.status);
   return parseXML(await res.text());
 }
-async function fetchText(url){
-  const res = await fetch(addBust(url), { cache:'no-store', credentials:'same-origin' });
-  if (!res.ok) throw new Error(url+': '+res.status);
-  return await res.text();
+
+function extractUrlEntries(doc){
+  const out = [];
+  const urls = doc.getElementsByTagName('url');
+  if (urls && urls.length){
+    for (const n of urls){
+      const locNode = n.getElementsByTagName('loc')[0] || n.getElementsByTagNameNS('*','loc')[0];
+      const lastNode= n.getElementsByTagName('lastmod')[0] || n.getElementsByTagNameNS('*','lastmod')[0];
+      const loc = locNode?.textContent?.trim();
+      const last = lastNode?.textContent?.trim() || null;
+      if (loc) out.push({loc, lastmod:last});
+    }
+    return out;
+  }
+  // regex fallback
+  const html = doc.documentElement?.outerHTML || '';
+  const rx = /<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?(?:<lastmod>([^<]+)<\/lastmod>)?[\s\S]*?<\/url>/gi;
+  for (const m of html.matchAll(rx)){ out.push({loc:m[1], lastmod:m[2]||null}); }
+  return out;
 }
 
-/* === Dato + meta fra side-HTML === */
+function extractSitemapsFromIndex(doc){
+  const out = [];
+  const nodes = doc.getElementsByTagName('sitemap');
+  if (nodes && nodes.length){
+    for (const n of nodes){
+      const loc = (n.getElementsByTagName('loc')[0] || n.getElementsByTagNameNS('*','loc')[0])?.textContent?.trim();
+      if (loc) out.push(loc);
+    }
+    return out;
+  }
+  const html = doc.documentElement?.outerHTML || '';
+  const rx = /<sitemap>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<\/sitemap>/gi;
+  for (const m of html.matchAll(rx)){ out.push(m[1]); }
+  return out;
+}
+
+/* === Dato/tekst-scrape fra opskriftsside === */
 function extractDateFromHTML(html){
   try{
     const doc = new DOMParser().parseFromString(html,'text/html');
-    const ld = Array.from(doc.querySelectorAll('script[type="application/ld+json"]'));
-    for (const s of ld){
+    const scripts = Array.from(doc.querySelectorAll('script[type="application/ld+json"]'));
+    for (const s of scripts){
       try{
         const json = JSON.parse(s.textContent.trim());
-        const arr = Array.isArray(json) ? json : [json];
-        for (const obj of arr){
-          const dp = obj?.datePublished || obj?.dateModified;
-          if (dp){ const d = new Date(dp); if (!isNaN(d)) return d; }
-          if (Array.isArray(obj?.['@graph'])){
-            for (const g of obj['@graph']){
-              const dp2 = g?.datePublished || g?.dateModified;
-              if (dp2){ const d2 = new Date(dp2); if (!isNaN(d2)) return d2; }
-            }
+        const objs = Array.isArray(json) ? json : [json];
+        for (const o of objs){
+          if (o && typeof o==='object'){
+            const dp = o.datePublished || o.dateModified;
+            if (dp){ const d=new Date(dp); if(!isNaN(d)) return d; }
           }
         }
       }catch{}
     }
     const m = doc.querySelector('meta[property="article:published_time"],meta[name="date"],meta[name="publish-date"],meta[itemprop="datePublished"]');
-    if (m){ const val = m.content || m.value; const d = new Date(val); if (!isNaN(d)) return d; }
+    if (m){
+      const val = m.content || m.getAttribute('value');
+      if (val){ const d = new Date(val); if (!isNaN(d)) return d; }
+    }
   }catch{}
   return null;
 }
+
 async function fetchMeta(url, fallbackDate){
   try{
-    const html = await fetchText(url);
-    const doc  = new DOMParser().parseFromString(html,'text/html');
-    const h1   = doc.querySelector('h1')?.textContent?.trim();
-    const title= h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
-    const blurb= doc.querySelector('meta[name="description"]')?.content?.trim() || 'Se opskriften';
-    let date   = extractDateFromHTML(html) || fallbackDate || null;
-    return { title, blurb, date };
+    const res = await fetch(url, {cache:'no-store'});
+    if(!res.ok) throw 0;
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html,'text/html');
+    const h1 = doc.querySelector('h1')?.textContent?.trim();
+    const title = h1 || doc.querySelector('title')?.textContent?.trim() || url.split('/').pop().replace('.html','').replace(/-/g,' ');
+    const blurb = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || 'Se opskriften';
+    const catsMeta = doc.querySelector('meta[name="afo:categories"]')?.getAttribute('content') || '';
+    const cats = catsMeta.split(',').map(s=>s.trim()).filter(Boolean);
+
+    let date = extractDateFromHTML(html) || fallbackDate || null;
+    if (!date){
+      const lastModHeader = res.headers.get('last-modified');
+      if (lastModHeader){
+        const d = new Date(lastModHeader);
+        if (!isNaN(d)) date = d;
+      }
+    }
+    return { title, blurb, date, cats };
   }catch{ return null; }
 }
 
-/* === Sitemap loader (index -> urlset) === */
+/* === Hent fra ALLE relevante sitemaps (namespace-sikkert) === */
 async function loadFromSitemaps(){
-  let doc;
-  try{ doc = await fetchXML(RECIPES_SITEMAP_URL); }
-  catch{ doc = await fetchXML(FALLBACK_SITEMAP_URL); }
+  const seen = new Set();
+  const entries = [];
 
-  const rootName = (doc.documentElement?.nodeName||'').toLowerCase();
-  async function collectFromUrlset(xml){
-    const urls = extractUrlEntries(xml);
-    return urls
-      .map(u=>{
-        const loc = u.loc;
-        const last = u.lastmod ? new Date(u.lastmod) : null;
-        const p = new URL(loc, location.origin).pathname;
-        if (!p.endsWith('.html')) return null;
-        if (!p.startsWith('/opskrifter/')) return null;
-        return {
-          href: loc,
-          slugPath: p,
-          lastmodDate: last,
-          baseTitle: p.split('/').pop().replace('.html','').replace(/-/g,' ').trim()
-        };
-      })
-      .filter(Boolean);
-  }
-
-  let entries = [];
-  if (rootName.includes('urlset')){
-    entries = await collectFromUrlset(doc);
-  } else if (rootName.includes('sitemapindex')){
-    const maps = extractSitemapsFromIndex(doc);
-    for (const sm of maps){
+  // helper: tilføj alle /opskrifter/
+  function addFromUrlset(doc){
+    const urls = extractUrlEntries(doc);
+    for (const u of urls){
       try{
-        const sub = await fetchXML(sm);
-        if ((sub.documentElement?.nodeName||'').toLowerCase().includes('urlset')){
-          entries.push(...await collectFromUrlset(sub));
-        }
-      }catch(e){ console.warn('Undersitemap fejl:', sm, e); }
+        const p = new URL(u.loc, location.origin).pathname;
+        if (!p.endsWith('.html')) continue;
+        if (!p.startsWith('/opskrifter/')) continue;
+        if (seen.has(p)) continue;
+        seen.add(p);
+        entries.push({
+          href: u.loc,
+          slugPath: p,
+          lastmodDate: u.lastmod ? new Date(u.lastmod) : null,
+          baseTitle: p.split('/').pop().replace('.html','').replace(/-/g,' ').trim()
+        });
+      }catch{}
     }
-  } else {
-    entries = await collectFromUrlset(doc);
   }
 
-  // Basis items (hurtig render)
+  for (const url of SITEMAP_CANDIDATES){
+    try{
+      const doc = await fetchXML(url);
+      const root = (doc.documentElement?.nodeName||'').toLowerCase();
+      if (root.includes('urlset')){
+        addFromUrlset(doc);
+      } else if (root.includes('sitemapindex')){
+        const maps = extractSitemapsFromIndex(doc);
+        for (const sm of maps){
+          try{
+            const sub = await fetchXML(new URL(sm, location.origin).pathname);
+            const r2 = (sub.documentElement?.nodeName||'').toLowerCase();
+            if (r2.includes('urlset')) addFromUrlset(sub);
+          }catch(e){ /* ignore single sub-errors */ }
+        }
+      }
+    }catch(e){ /* ignore single errors */ }
+  }
+
+  // Basisliste
   const items = entries.map(e => ({
     slug: e.slugPath,
     title: capitalizeWords(e.baseTitle),
     blurb: 'Se opskriften',
     date: e.lastmodDate || null,
-    cats: [] // udfyldes ved enrich
+    categories: [] // beriges senere
   }));
 
   // Sortér nyeste først
@@ -341,7 +346,7 @@ async function loadFromSitemaps(){
     const ad = a.date ? a.date.getTime() : 0;
     const bd = b.date ? b.date.getTime() : 0;
     if (bd !== ad) return bd - ad;
-    return a.title.localeCompare(b.title, 'da');
+    return a.title.localeCompare(b.title,'da');
   });
 
   return { items, entries };
@@ -350,67 +355,30 @@ async function loadFromSitemaps(){
 /* === Cache === */
 function readCache(){
   try{
-    const c = JSON.parse(localStorage.getItem(CACHE_KEY)||'null');
-    if (c && (Date.now()-c.ts) < CACHE_TTL_MS){
-      return (c.items||[]).map(r=>({...r, date: r.date ? new Date(r.date) : null }));
+    const c = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+    if (c && (Date.now() - c.ts) < CACHE_TTL_MS){
+      const items = (c.items||[]).map(r => ({...r, date: r.date ? new Date(r.date) : null}));
+      return items;
     }
   }catch{}
   return null;
 }
 function writeCache(items){
   try{
-    const toCache = items.map(r=>({...r, date: r.date ? r.date.toISOString() : null }));
+    const toCache = items.map(r => ({...r, date: r.date ? r.date.toISOString() : null}));
     localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items: toCache }));
   }catch{}
 }
 
-/* === Søgning + filtrering === */
-let ALL = [];
-let ALL_NORM = [];
-let ACTIVE_CAT = ''; // ''=ingen filter
-
+/* === Søgning/filtrering === */
 function buildNormIndex(list){
   ALL_NORM = list.map(r => ({
     t: norm(r.title||''),
     b: norm(r.blurb||''),
-    s: norm(r.slug||'')
+    s: norm(r.slug||''),
+    c: norm((r.categories||[]).join(' '))
   }));
 }
-function matchesCategory(r){
-  if (!ACTIVE_CAT || ACTIVE_CAT==='Alle') return true;
-  return (r.cats||[]).some(c => c.toLowerCase() === ACTIVE_CAT.toLowerCase());
-}
-function render(list){
-  const termRaw = (q.value||'').trim();
-  const term = norm(termRaw);
-  // vi matcher mod ALLE, men filtrerer på kategori bagefter
-  let base = list;
-  if (term){
-    base = list.filter((r, i) => {
-      const n = ALL_NORM[i]; // samme indeks fordi list===ALL
-      return n.t.includes(term) || n.b.includes(term) || n.s.includes(term);
-    });
-  }
-  const out = base.filter(matchesCategory);
-
-  resultsEl.textContent = `${out.length} resultat${out.length===1?'':'er'}`;
-  if(!out.length){ grid.innerHTML=''; empty.style.display='block'; }
-  else{
-    grid.innerHTML = out.map(card).join('');
-    empty.style.display='none';
-  }
-
-  // badge
-  if (ACTIVE_CAT && ACTIVE_CAT!=='Alle'){
-    activeFilterBadge.textContent = `Filter: ${ACTIVE_CAT}`;
-    activeFilterBadge.style.display = 'inline-block';
-  } else {
-    activeFilterBadge.style.display = 'none';
-  }
-}
-
-/* === Autocomplete === */
-let SUG_INDEX = [];
 function buildSuggestIndex(items, cap=120){
   const stop = new Set(['i','og','med','også','en','et','af','til','på','paa','fra','den','det','de','eller','for','the','and']);
   const freq = new Map();
@@ -422,9 +390,49 @@ function buildSuggestIndex(items, cap=120){
       freq.set(w, (freq.get(w)||0)+1);
     }
   }
-  const tokens = Array.from(freq.entries()).sort((a,b)=>b[1]-a[1]).slice(0,cap).map(([term,score])=>({term,score}));
-  SUG_INDEX = tokens;
+  SUG_INDEX = Array.from(freq.entries()).sort((a,b)=>b[1]-a[1]).slice(0,cap).map(([term,score])=>({term,score}));
 }
+
+function matchesCategory(r){
+  if (!ACTIVE_CAT) return true;
+  const catNorm = norm(ACTIVE_CAT);
+  const inCats = (r.categories||[]).some(c => norm(c)===catNorm || norm(c).includes(catNorm));
+  if (inCats) return true;
+  // fallback: heuristik på slug/titel
+  const s = norm(r.slug + ' ' + r.title);
+  if (catNorm==='kylling' && s.includes('kylling')) return true;
+  if (catNorm==='svinekød' && (s.includes('svin')||s.includes('flaesk')||s.includes('flæsk'))) return true;
+  if (catNorm==='oksekød' && (s.includes('okse')||s.includes('boef')||s.includes('bøf'))) return true;
+  if (catNorm==='fisk' && (s.includes('fisk')||s.includes('laks')||s.includes('torsk')||s.includes('sej'))) return true;
+  if (catNorm==='grønt' && (s.includes('groent')||s.includes('grønt')||s.includes('salat')||s.includes('broccoli'))) return true;
+  if (catNorm==='tilbehør' && (s.includes('tilbehoer')||s.includes('tilbehør')||s.includes('fritter')||s.includes('chips'))) return true;
+  if (catNorm==='dessert' && (s.includes('dessert')||s.includes('kage')||s.includes('cookie')||s.includes('brownie'))) return true;
+  if (catNorm==='halloween' && (s.includes('halloween')||s.includes('spøg')||s.includes('spoeg')||s.includes('græskar')||s.includes('graeskar')||s.includes('pumpkin'))) return true;
+  return false;
+}
+
+function render(list){
+  const termRaw = (q.value||'').trim();
+  const term = norm(termRaw);
+
+  const filtered = list.filter((r,i)=>{
+    const n = ALL_NORM[i];
+    const textMatch = !term || n.t.includes(term) || n.b.includes(term) || n.s.includes(term) || n.c.includes(term);
+    const catMatch = matchesCategory(r);
+    return textMatch && catMatch;
+  });
+
+  resultsEl.textContent = `${filtered.length} resultat${filtered.length===1?'':'er'}` + (ACTIVE_CAT ? ` • ${ACTIVE_CAT}` : '');
+  if (!filtered.length){
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+  } else {
+    grid.innerHTML = filtered.map(card).join('');
+    empty.style.display = 'none';
+  }
+}
+
+/* === Forslag === */
 function showSuggestions(list){
   if (!list.length){ suggestionsEl.setAttribute('aria-expanded','false'); suggestionsEl.style.display='none'; return; }
   const html = '<ul>' + list.map((s,i)=>`
@@ -433,20 +441,23 @@ function showSuggestions(list){
       <span class="hint">${s.hint||''}</span>
     </li>`).join('') + '</ul>';
   suggestionsEl.innerHTML = html;
-  suggestionsEl.style.display='block';
+  suggestionsEl.style.display = 'block';
   suggestionsEl.setAttribute('aria-expanded','true');
   q.setAttribute('aria-expanded','true');
 }
 function hideSuggestions(){
-  suggestionsEl.innerHTML=''; suggestionsEl.style.display='none';
-  suggestionsEl.setAttribute('aria-expanded','false'); q.setAttribute('aria-expanded','false');
+  suggestionsEl.innerHTML = '';
+  suggestionsEl.style.display = 'none';
+  suggestionsEl.setAttribute('aria-expanded','false');
+  q.setAttribute('aria-expanded','false');
 }
 function suggest(){
   const term = norm((q.value||'').trim());
   if (term.length < 2){
-    const popular = ['kylling','kartoffel','svin','okse','laks','grøntsager','dessert','pizza']
+    const popular = ['kylling','kartoffel','svin','okse','laks','grøntsager','dessert','pizza','halloween']
       .map(t=>({label:t,value:t,hint:'populær'}));
-    showSuggestions(popular); return;
+    showSuggestions(popular);
+    return;
   }
   const titleMatches = ALL
     .filter(r => norm(r.title||'').includes(term))
@@ -456,25 +467,28 @@ function suggest(){
     .filter(x => x.term.includes(term) && !titleMatches.some(t => norm(t.value)===x.term))
     .slice(0, 8 - titleMatches.length)
     .map(x => ({ label: x.term, value: x.term, hint: `${x.score}+` }));
-  showSuggestions([...titleMatches, ...tokenMatches]);
+  const combined = [...titleMatches, ...tokenMatches];
+  showSuggestions(combined);
 }
 
-/* === Progressiv berigelse === */
+/* === Progressiv berigelse (titler, dato, kategorier) === */
 async function enrich(items, entries){
   const bySlug = new Map(items.map(r => [r.slug, r]));
-  const concurrency = 10; let i = 0;
+  const concurrency = 10;
+  let i = 0;
   async function worker(){
     while(i < entries.length){
-      const e = entries[i++]; const cur = bySlug.get(e.slugPath);
+      const e = entries[i++];
+      const cur = bySlug.get(e.slugPath);
       const meta = await fetchMeta(e.slugPath, e.lastmodDate);
       if (meta){
         cur.title = meta.title || cur.title;
         cur.blurb = meta.blurb || cur.blurb;
         cur.date  = meta.date  || cur.date;
+        if (meta.cats && meta.cats.length){
+          cur.categories = Array.from(new Set([...(cur.categories||[]), ...meta.cats]));
+        }
       }
-      // kategorier
-      cur.cats = categoriesFrom(cur.title, cur.slug);
-
       if (i % 5 === 0) writeCache(items);
     }
   }
@@ -485,84 +499,98 @@ async function enrich(items, entries){
 }
 
 /* === UI events === */
-const onSearch = debounce(()=>{ render(ALL); hideSuggestions(); },120);
+const onSearch = debounce(()=>{ render(ALL); hideSuggestions(); }, 120);
 q.addEventListener('input', ()=>{ onSearch(); suggest(); });
 q.addEventListener('focus', ()=> suggest());
 q.addEventListener('blur', ()=> setTimeout(hideSuggestions, 120));
 searchBtn.addEventListener('click', ()=>{ render(ALL); hideSuggestions(); });
+
 q.addEventListener('keydown', (e)=>{
   const open = suggestionsEl.getAttribute('aria-expanded')==='true';
   const items = Array.from(suggestionsEl.querySelectorAll('li'));
   const activeIdx = items.findIndex(li => li.classList.contains('active'));
   if (e.key==='Enter'){
-    if (open && activeIdx>=0){ q.value = items[activeIdx].dataset.value || ''; }
-    render(ALL); hideSuggestions(); e.preventDefault();
+    if (open && activeIdx>=0){
+      const v = items[activeIdx].dataset.value || '';
+      q.value = v;
+    }
+    render(ALL);
+    hideSuggestions();
+    e.preventDefault();
   } else if (e.key==='ArrowDown' && open){
     const next = Math.min(activeIdx+1, items.length-1);
-    items.forEach(li=>li.classList.remove('active')); if (items[next]) items[next].classList.add('active'); e.preventDefault();
+    items.forEach(li=>li.classList.remove('active'));
+    if (items[next]) items[next].classList.add('active');
+    e.preventDefault();
   } else if (e.key==='ArrowUp' && open){
     const prev = Math.max(activeIdx-1, 0);
-    items.forEach(li=>li.classList.remove('active')); if (items[prev]) items[prev].classList.add('active'); e.preventDefault();
+    items.forEach(li=>li.classList.remove('active'));
+    if (items[prev]) items[prev].classList.add('active');
+    e.preventDefault();
   } else if (e.key==='Escape'){
-    q.value=''; render(ALL); hideSuggestions();
+    q.value='';
+    render(ALL);
+    hideSuggestions();
   }
 });
 suggestionsEl.addEventListener('mousedown', (e)=>{
   const li = e.target.closest('li'); if (!li) return;
-  q.value = li.dataset.value || ''; render(ALL); hideSuggestions();
+  q.value = li.dataset.value || '';
+  render(ALL);
+  hideSuggestions();
 });
 
-/* === Filter-knapper === */
-document.addEventListener('click', (e)=>{
-  const btn = e.target.closest('.filter-btn'); if (!btn) return;
-  const cat = btn.dataset.cat;
-  if (cat === '__clear'){ ACTIVE_CAT=''; document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('is-active')); render(ALL); return; }
-  if (cat === 'Alle'){ ACTIVE_CAT=''; }
-  else { ACTIVE_CAT = cat; }
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('is-active', b===btn && cat!=='__clear'));
+/* === Chips (kategori-knapper) === */
+chipsEl.addEventListener('click', (e)=>{
+  const btn = e.target.closest('.chip'); if (!btn) return;
+  const was = btn.getAttribute('aria-pressed')==='true';
+  chipsEl.querySelectorAll('.chip').forEach(b=>b.setAttribute('aria-pressed','false'));
+  if (was){ ACTIVE_CAT = ''; chipsEl.querySelector('.clear-chip').setAttribute('aria-pressed','true'); }
+  else{
+    ACTIVE_CAT = btn.dataset.cat || '';
+    btn.setAttribute('aria-pressed','true');
+  }
   render(ALL);
 });
 
 /* === init === */
 (async function init(){
-  const t0 = performance.now();
-
-  // URL-parameter ?soeg= og ?kat=
+  // URL-parameter ?soeg=
   try{
     const params = new URLSearchParams(location.search);
     const prefill = params.get('soeg') || params.get('søg') || '';
     if (prefill) q.value = decodeURIComponent(prefill);
-    const preCat = params.get('kat') || '';
-    if (preCat){ ACTIVE_CAT = preCat; }
   }catch{}
 
-  // cache først
+  // forsøg cache først
   let items = readCache();
   if (items){
-    // hvis cache er ældre struktur, udfyld cats nu
-    for (const it of items){ if (!Array.isArray(it.cats)) it.cats = categoriesFrom(it.title, it.slug); }
-    ALL = items; buildNormIndex(ALL); buildSuggestIndex(ALL); render(ALL);
-    resultsEl.textContent += ' • (cache)';
+    ALL = items;
+    buildNormIndex(ALL);
+    buildSuggestIndex(ALL);
+    render(ALL);
+    resultsEl.textContent = `${ALL.length} opskrifter • (cache)`;
   } else {
     try{
       const { items: baseItems, entries } = await loadFromSitemaps();
-      // init cats hurtigt fra slug/titel
-      for (const it of baseItems){ it.cats = categoriesFrom(it.title, it.slug); }
-      ALL = baseItems; buildNormIndex(ALL); buildSuggestIndex(ALL); render(ALL);
-      const t1 = performance.now();
-      resultsEl.textContent = `${ALL.length} opskrifter • klar på ${(t1 - t0 | 0)} ms`;
-      // enrich i baggrunden
+      ALL = baseItems;
+      buildNormIndex(ALL);
+      buildSuggestIndex(ALL);
+      render(ALL);
+
+      // enrich i baggrunden (titler, datoer, kategorier)
       enrich(ALL, entries);
     }catch(e){
       console.error(e);
-      resultsEl.textContent = 'Kunne ikke indlæse opskrifter – tjek at /recipes-sitemap.xml eller /sitemap.xml findes og ikke er tom.';
-      ALL = []; try{ localStorage.removeItem(CACHE_KEY); }catch{}
+      resultsEl.textContent = 'Kunne ikke indlæse opskrifter – tjek at /recipes-sitemap.xml eller /sitemap.xml findes.';
+      ALL = [];
+      try{ localStorage.removeItem(CACHE_KEY); }catch{}
       render(ALL);
     }
   }
 
-  // hvis der er forudfyldt søgning eller kategori, apply
-  if (q.value.trim() || ACTIVE_CAT) render(ALL);
+  // hvis der er præ-udfyldt søgning
+  if (q.value.trim()){ render(ALL); }
 })();
 </script>
 </body>
