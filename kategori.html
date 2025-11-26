@@ -60,7 +60,7 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
     <p class="lead">Se opskrifter under den valgte kategori.</p>
     <span id="kat-badge" class="badge" style="display:none"></span>
 
-    <!-- Underkategorier (vises automatisk for udvalgte kategorier) -->
+    <!-- Underkategorier -->
     <div id="subcats" class="chips" aria-label="Underkategorier" hidden></div>
   </section>
 
@@ -83,135 +83,97 @@ svg.hidden{position:absolute;width:0;height:0;overflow:hidden}
   </section>
 </main>
 
-<!-- Footer -->
 <div data-include="/partials/footer.html"></div>
 <script src="/assets/include.js?v=4"></script>
-
-<!-- DATA: behold din eksisterende sti/version -->
 <script src="/assets/recipes.js?v=2"></script>
-<!-- (valgfri) hvis du i forvejen har denne, lader vi den være -->
 <script src="/assets/render-recipes.js?v=2"></script>
 
+<!-- ===================== -->
+<!--   B-MODEL SCRIPT FIX   -->
+<!-- ===================== -->
 <script>
 (function(){
   const params = new URLSearchParams(location.search);
 
-  // 1) Læs både slug og navn (fallback til 'alle')
-  const raw = (params.get('slug') || params.get('navn') || 'alle').trim();
-  const underParam = (params.get('under') || '').trim();
+  // 1) Normal dansk slug
+  const rawSlug = (params.get('slug') || '').trim();
 
-  // 2) Slugify – kompatibel uden \p{Diacritic}
-  function slugify(s){
-    return s.toString().toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g,'') // fjern kombinerende tegn
-      .replace(/æ/g,'ae').replace(/ø/g,'oe').replace(/å/g,'aa')
-      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
-  }
-  const wanted = slugify(raw);
-  const wantedUnder = slugify(underParam);
+  // 2) Normalizer (men uden at ændre æ/ø/å)
+  const normalize = s =>
+    s.toLowerCase().trim().replace(/\s+/g,' ').replace(/-+/g,'-');
 
-  // 3) Visningstekster
-  const pretty = raw.replace(/-/g,' ');
-  const nice = pretty.charAt(0).toLocaleUpperCase('da') + pretty.slice(1);
-  const underNice = underParam ? (underParam.charAt(0).toLocaleUpperCase('da') + underParam.slice(1)) : '';
+  const wanted = normalize(rawSlug);
 
-  const titleEl = document.getElementById('kat-title');
-  const h2El = document.getElementById('kat-h2');
+  // 3) Visningsnavn
+  const nice =
+    rawSlug.charAt(0).toUpperCase() + rawSlug.slice(1).replace(/-/g,' ');
+
+  document.getElementById('kat-title').textContent = "Kategori: " + nice;
+  document.getElementById('kat-h2').textContent = nice + " – Opskrifter";
+
   const badge = document.getElementById('kat-badge');
+  badge.textContent = nice;
+  badge.style.display = "inline-block";
 
-  titleEl.textContent = 'Kategori: ' + nice + (underNice ? ' – ' + underNice : '');
-  h2El.textContent = (underNice ? underNice + ' – ' : '') + nice + ' – Opskrifter';
-  badge.textContent = nice + (underNice ? ' · ' + underNice : '');
-  badge.style.display = 'inline-block';
-
-  // 4) Underkategori-definitioner (kan udvides)
-  const SUBS = {
-    "Grønt": ["Broccoli","Blomkål","Gulerødder","Søde kartofler","Spidskål","Squash","Peberfrugt","Rodfrugter"]
-    // Eksempel på udvidelser:
-    // ,"Kylling": ["Bryst","Lår/vinger","Kødboller"]
-    // ,"Fisk": ["Laks","Torsk","Rejer"]
-  };
-
-  // 5) Tegn chips når der findes underkategorier
-  const subWrap = document.getElementById('subcats');
-  const list = SUBS[nice];
-  if(list && subWrap){
-    subWrap.hidden = false;
-    list.forEach(label=>{
-      const a = document.createElement('a');
-      a.className = 'chip';
-      a.textContent = label;
-      const u = new URL(location.href);
-      u.searchParams.set('navn', raw); // bevar original form
-      u.searchParams.set('under', label);
-      a.href = u.toString();
-      if(slugify(label)===wantedUnder) a.setAttribute('aria-current','true');
-      subWrap.appendChild(a);
-    });
-  }
-
-  // 6) Hent opskrifter (AFO eller RECIPES)
+  // 4) Hent opskrifter
   function getAllRecipes(){
     if (window.AFO && AFO.ready && typeof AFO.ready.then === 'function'){
       return AFO.ready.then(()=>AFO.getAll());
     }
     if (Array.isArray(window.RECIPES)) return Promise.resolve(window.RECIPES);
-    return new Promise(resolve=>{
-      window.addEventListener('load', ()=> resolve(Array.isArray(window.RECIPES) ? window.RECIPES : []));
+    return new Promise(res=>{
+      window.addEventListener('load', ()=>res(Array.isArray(window.RECIPES)?window.RECIPES:[]));
     });
   }
 
-  // 7) Match på categorySlug, kategori/category og tags
+  // 5) Matcher kategori MED danske tegn
   function matchesCategory(r){
-    const names = [
+    const catFields = [
       r.category, r.kategori, r.categoryName,
       ...(Array.isArray(r.categories) ? r.categories : [])
-    ].filter(Boolean).map(String);
+    ].filter(Boolean)
+     .map(x => normalize(String(x)));
 
-    const slugs = [
-      r.categorySlug,
-      ...names.map(slugify),
-      ...(Array.isArray(r.tags) ? r.tags.map(slugify) : [])
-    ].filter(Boolean);
+    const tagFields = Array.isArray(r.tags)
+      ? r.tags.map(x => normalize(String(x)))
+      : [];
 
-    return wanted === 'alle' || slugs.includes(wanted);
+    const all = [
+      normalize(r.categorySlug || ''),
+      ...catFields,
+      ...tagFields
+    ];
+
+    if (!wanted) return true; // vis alle hvis ingen slug
+
+    return all.includes(wanted);
   }
 
-  function matchesUnder(r){
-    if(!wantedUnder) return true;
-    const hay = [
-      r.title || '',
-      r.meta || '',
-      ...(Array.isArray(r.tags) ? r.tags : [])
-    ].join(' ').toLowerCase()
-     .normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-    return hay.includes(wantedUnder);
-  }
-
-  // 8) Render
+  // 6) Render opskrifter
   const grid = document.getElementById('kategori-grid');
+
   const card = r => `
-    <a class="card" href="/opskrifter/${r.slug}.html" ${r.tags ? `data-tags="${(r.tags||[]).join(',')}"` : ''}>
+    <a class="card" href="/opskrifter/${r.slug}.html">
       <div class="thumb-icon"><svg><use href="#${r.icon||'star'}"></use></svg></div>
       <div class="card-body">
         <h3>${r.title}</h3>
         ${r.meta ? `<p class="meta">${r.meta}</p>` : ''}
       </div>
-    </a>`;
+    </a>
+  `;
 
   getAllRecipes().then(list=>{
-    const data = Array.isArray(list) ? list : [];
-    const byCat = data.filter(matchesCategory);
-    const items = byCat.filter(matchesUnder);
+    const items = (list || []).filter(matchesCategory);
 
     grid.innerHTML = items.length
       ? items.map(card).join('')
-      : '<p class="meta">Ingen opskrifter fundet i denne kategori.</p>';
+      : `<p class="meta">Ingen opskrifter fundet i kategorien "${nice}".</p>`;
   }).catch(err=>{
-    console.error('Kategori fejl:', err);
+    console.error("Kategori fejl:", err);
     grid.innerHTML = '<p class="meta">Kunne ikke hente opskrifter.</p>';
   });
 })();
 </script>
+
 </body>
 </html>
