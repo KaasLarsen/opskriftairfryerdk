@@ -3,52 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Madplaner i Airfryer – nemme ugeplaner til vægttab</title>
-  <meta name="description" content="Få overblik over vores nemme madplaner til airfryer – sundt, hurtigt og perfekt til vægttab eller travle hverdage." />
+  <title>Madplaner i Airfryer – sunde ugeplaner med sprøde opskrifter</title>
+  <meta name="description" content="Få overblik over alle vores airfryer madplaner – nemme, sunde og perfekte til vægttab, travle hverdage eller hele familien. Download som PDF." />
+  <link rel="icon" href="/img/favicon.ico" />
   <link rel="stylesheet" href="/assets/styles.css?v=17" />
 </head>
 <body>
-  <div data-include="/partials/header.html"></div>
-  <main class="container">
 
-    <section class="section">
-      <h1>📅 Madplaner i airfryer</h1>
-      <p class="meta">Få styr på hele ugen med vores lækre og lette madplaner – lavet til airfryer. Spar tid, spis sundt og få sprøde resultater hver dag.</p>
-    </section>
+<!-- Header -->
+<div data-include="/partials/header.html"></div>
 
-    <section class="section">
-      <div class="grid grid-3">
-        <a class="card" href="/madplan/vaegttab-airfryer.html">
-          <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-          <div class="card-body">
-            <h3>Vægttab med airfryer</h3>
-            <p class="meta">7 dages madplan · ca. 1100 kcal/dag · Download som PDF</p>
-          </div>
-        </a>
-        <div class="card">
-          <div class="thumb-icon"><svg><use href="#book"></use></svg></div>
-          <div class="card-body">
-            <h3>Ny madplan på vej…</h3>
-            <p class="meta">Vi arbejder på flere – fx familie, budget, vegetar og keto.</p>
-          </div>
+<!-- Hero section -->
+<section class="panel panel--blue">
+  <div class="hero">
+    <div>
+      <span class="kicker">Airfryer madplaner</span>
+      <h1>Planlæg Ugen Med Sprøde Madplaner</h1>
+      <p>Få 7 dages nem og sund mad – alt tilberedt i din airfryer. Perfekt til vægttab, hverdag og madglæde.</p>
+      <div class="hero-actions" style="display:flex;gap:10px;margin-top:14px">
+        <a class="btn primary" href="/madplan/vaegttab-airfryer-dag1.html">Start Madplan</a>
+        <a class="btn" href="/downloads/madplan-vaegttab.pdf">Download PDF</a>
+      </div>
+    </div>
+    <div class="hero-box">
+      <img src="/img/pdf-madplan-cover.jpg" alt="PDF Madplan Airfryer" class="hero-ico" style="width:120px;height:auto" />
+    </div>
+  </div>
+
+  <!-- Søgefelt -->
+  <div class="panel-search">
+    <div style="max-width:700px;margin:0 auto">
+      <form id="search-form" onsubmit="event.preventDefault(); doSearch();"
+            style="display:flex;align-items:center;gap:8px">
+        <input id="search-input" type="text" placeholder="🔍 Søg efter opskrifter..." />
+        <button class="btn primary" type="submit">Søg</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Annonce -->
+<div style="margin:8px 0 18px">
+  <ins class="adsbygoogle" style="display:block"
+       data-ad-client="ca-pub-7373148222153531"
+       data-ad-slot="1234567890"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<!-- Madplaner Cards -->
+<main class="container">
+  <section class="section">
+    <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <h2>Ugeplaner i airfryer</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card" href="/madplan/vaegttab-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
+        <div class="card-body">
+          <h3>Madplan til vægttab</h3>
+          <p class="meta">7 dage · ca. 1100 kcal/dag · PDF inkluderet</p>
         </div>
-        <div class="card">
-          <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
-          <div class="card-body">
-            <h3>Har du ønsker?</h3>
-            <p class="meta">Skriv til os og fortæl hvilken slags madplan du savner.</p>
-          </div>
+      </a>
+      <div class="card">
+        <div class="thumb-icon"><svg><use href="#book"></use></svg></div>
+        <div class="card-body">
+          <h3>Flere planer på vej…</h3>
+          <p class="meta">Vi arbejder på familievenlige, vegetariske og budgetplaner.</p>
         </div>
       </div>
-    </section>
+      <div class="card">
+        <div class="thumb-icon"><svg><use href="#star"></use></svg></div>
+        <div class="card-body">
+          <h3>Har du ønsker?</h3>
+          <p class="meta">Fortæl os hvad du gerne vil have næste gang – vi lytter!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <section class="section">
-      <h2>📄 PDF-version</h2>
-      <p>Vil du hellere printe eller gemme din plan på mobilen? Du kan downloade vores vægttabs-madplan som PDF her:</p>
-      <a class="btn primary" href="/downloads/madplan-vaegttab.pdf">Download madplan som PDF</a>
-    </section>
+<!-- Footer -->
+<div data-include="/partials/footer.html"></div>
 
-  </main>
-  <div data-include="/partials/footer.html"></div>
+<!-- Søgefunktion -->
+<script>
+  function doSearch(){
+    const q = document.getElementById('search-input').value.trim();
+    if(q){ window.location.href = "/seneste.html?soeg=" + encodeURIComponent(q); }
+  }
+</script>
+
+<!-- Annonce -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+
 </body>
 </html>
