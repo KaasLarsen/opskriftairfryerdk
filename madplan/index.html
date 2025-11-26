@@ -3,133 +3,125 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Madplaner i Airfryer – nemme ugeplaner med opskrifter</title>
-  <meta name="description" content="Få komplette madplaner til airfryer – med opskrifter, kalorier og indkøbsliste. Vægttabsplaner, familievenlige uger og budgetmad gjort nemt." />
+  <title>Madplaner med Airfryer – Nem og sund hverdag</title>
+  <meta name="description" content="Få nemme madplaner med airfryer – sund, hurtig og kalorielet hverdagsmad til vægttab eller bare mere struktur. Se alle dags- og ugeplaner her." />
   <link rel="icon" href="/img/favicon.ico" />
   <link rel="stylesheet" href="/assets/styles.css?v=17" />
 </head>
-<body class="has-fixed-header">
-  <div data-include="/partials/header.html"></div>
-  <main class="container">
+<body>
 
-    <!-- HERO -->
-    <section class="hero panel panel--blue">
-      <div>
-        <div class="kicker">madplan</div>
-        <h1>nemme og sunde madplaner til airfryer</h1>
-        <p>Følg en komplet ugeplan med opskrifter, kalorier og indkøbsliste. Perfekt til vægttab, børnefamilier eller travle hverdage.</p>
-        <div class="badges">
-          <span class="badge">🥗 vægttab</span>
-          <span class="badge">👨‍👩‍👧‍👦 familievenlig</span>
-          <span class="badge">💸 budgetvenlig</span>
+<!-- Header -->
+<div data-include="/partials/header.html"></div>
+
+<main class="container">
+  <section class="hero">
+    <span class="kicker">Overblik</span>
+    <h1>Madplaner med Airfryer</h1>
+    <p class="lead">Saml dine måltider i enkle og sunde madplaner – perfekte til vægttab og nem hverdag. Vi har lavet dags- og ugeplaner, så du bare skal trykke på start.</p>
+
+    <div class="controls" role="search">
+      <label class="sr-only" for="q">Søg i madplaner</label>
+      <input id="q" class="input" type="search" placeholder="Søg i madplaner… (fx vægttab, ugeplan, kylling)" autocomplete="off" />
+      <span id="count" class="badge" style="display:none"></span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Alle Madplaner</h2>
+    </div>
+    <div id="plans-grid" class="grid grid-3">
+      <a class="card card--guide" href="/madplan/madplan-vaegttab-airfryer-dag1.html">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>Dag 1 – Vægttab med Airfryer</h3>
+          <p class="meta">3 måltider • 1150 kcal • Hurtig og sund</p>
         </div>
-      </div>
-      <div class="hero-box">
-        <svg class="hero-ico"><use href="#calendar"/></svg>
-      </div>
-    </section>
+      </a>
 
-    <!-- AKTUEL PLAN -->
-    <section class="section">
-      <h2>🟢 aktuelle madplaner</h2>
-      <div class="grid grid-3">
-        <a class="card card--guide" href="/madplan/vaegttab-airfryer-dag1.html">
-          <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
-          <div class="card-body">
-            <h3>vægttabs madplan</h3>
-            <p class="meta">komplet uge • 1100-1300 kcal/dag</p>
-          </div>
-        </a>
-      </div>
-    </section>
+      <!-- Kommende planer (fake kort) -->
+      <a class="card card--guide" href="#">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>Dag 2 – Kommer snart</h3>
+          <p class="meta">Flere lækre retter i planlagt serie</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="#">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>Ugeplan – 7 dage med Airfryer</h3>
+          <p class="meta">Færdig ugemadplan til travle uger</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="#">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>Familievenlig madplan</h3>
+          <p class="meta">Mad til børn og voksne – nemt og varieret</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="#">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>Budgetvenlig ugeplan</h3>
+          <p class="meta">Airfryer-retter for under 350 kr/uge</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="#">
+        <div class="thumb-icon"><svg><use href="#calendar"></use></svg></div>
+        <div class="card-body">
+          <h3>High protein madplan</h3>
+          <p class="meta">Højere protein – perfekt til træning og vægttab</p>
+        </div>
+      </a>
+    </div>
 
-    <!-- KOMMER SNART -->
-    <section class="section">
-      <h2>🟨 madplaner på vej</h2>
-      <div class="grid grid-3">
-        <a class="card card--guide" href="/madplan/vegetarisk-airfryer-dag1.html">
-          <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
-          <div class="card-body">
-            <h3>vegetarisk madplan</h3>
-            <p class="meta">grønt & nemt</p>
-          </div>
-        </a>
-        <a class="card card--guide" href="/madplan/familievenlig-airfryer-dag1.html">
-          <div class="thumb-icon"><svg><use href="#chicken"/></svg></div>
-          <div class="card-body">
-            <h3>familievenlig madplan</h3>
-            <p class="meta">retter børn elsker</p>
-          </div>
-        </a>
-        <a class="card card--guide" href="/madplan/budget-airfryer-dag1.html">
-          <div class="thumb-icon"><svg><use href="#pig"/></svg></div>
-          <div class="card-body">
-            <h3>budgetvenlig madplan</h3>
-            <p class="meta">billig mad i airfryer</p>
-          </div>
-        </a>
-      </div>
-    </section>
+    <p id="empty" class="copy" style="display:none">Ingen madplaner matcher din søgning.</p>
+  </section>
 
-    <!-- SØGNING -->
-    <section class="section">
-      <h2>🔍 søg i madplaner</h2>
-      <div class="panel panel-search">
-        <form>
-          <input type="search" id="search-input" placeholder="Søg efter ingrediens eller plan..." />
-          <button class="btn primary">søg</button>
-        </form>
-      </div>
-    </section>
+  <!-- Relateret indhold -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Relateret Indhold</h2>
+    </div>
+    <div class="grid grid-3">
+      <a class="card card--recipe" href="/opskrifter/kylling-sund-vaegttab-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#chicken"></use></svg></div>
+        <div class="card-body">
+          <h3>Sund kylling med grønt</h3>
+          <p class="meta">Perfekt til madplaner og vægttab</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="/guides/airfryer-vaegttab-guide.html">
+        <div class="thumb-icon"><svg><use href="#info"></use></svg></div>
+        <div class="card-body">
+          <h3>Guide: Airfryer til vægttab</h3>
+          <p class="meta">Sådan kommer du i gang</p>
+        </div>
+      </a>
+      <a class="card card--guide" href="/guides/mealprep-airfryer.html">
+        <div class="thumb-icon"><svg><use href="#clock"></use></svg></div>
+        <div class="card-body">
+          <h3>Mealprep i airfryer</h3>
+          <p class="meta">Spar tid – planlæg hele ugen</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
-    <!-- INSPIRATION -->
-    <section class="section">
-      <h2>💡 nye madplaner på vej</h2>
-      <ul>
-        <li>🏋️ proteinrig madplan til træning</li>
-        <li>🧘‍♀️ antiinflammatorisk madplan</li>
-        <li>🍲 madplan med rester – undgå madspild</li>
-        <li>🌍 klimavenlig madplan</li>
-      </ul>
-    </section>
+  <!-- PriceRunner widget -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Billige Airfryere lige nu</h2>
+    </div>
+    <div class="pr-carousel" data-pricerunner-widget="airfryer"></div>
+    <script async src="https://widgets.pricerunner.com/latest.js"></script>
+  </section>
+</main>
 
-    <!-- PRICERUNNER -->
-    <section class="section">
-      <h2>🛒 tilbud og udstyr</h2>
-      <div class="panel">
-        <p>[PriceRunner-widget kan indsættes her]</p>
-      </div>
-    </section>
-
-    <!-- GUIDES -->
-    <section class="section">
-      <h2>📚 relaterede guides</h2>
-      <div class="grid grid-3">
-        <a class="card card--guide" href="/guides/airfryer-til-vaegttab.html">
-          <div class="thumb-icon"><svg><use href="#leaf"/></svg></div>
-          <div class="card-body">
-            <h3>brug airfryer til vægttab</h3>
-            <p class="meta">sunde retter & kaloriekontrol</p>
-          </div>
-        </a>
-        <a class="card card--guide" href="/guides/bedste-airfryer-til-madplaner.html">
-          <div class="thumb-icon"><svg><use href="#settings"/></svg></div>
-          <div class="card-body">
-            <h3>bedste airfryer til madplaner</h3>
-            <p class="meta">stor nok til 4 personer</p>
-          </div>
-        </a>
-        <a class="card card--guide" href="/guides/airfryer-maaltidskasser.html">
-          <div class="thumb-icon"><svg><use href="#box"/></svg></div>
-          <div class="card-body">
-            <h3>airfryer & måltidskasser</h3>
-            <p class="meta">kombinér nemhed og sundhed</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-  </main>
-  <div data-include="/partials/footer.html"></div>
+<!-- Footer -->
+<div data-include="/partials/footer.html"></div>
+<script src="/assets/include.js?v=4"></script>
 </body>
 </html>
