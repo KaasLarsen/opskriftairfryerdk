@@ -240,5 +240,75 @@
     });
   })();
   </script>
+  <script>
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
+
+  function card(mp){
+    return `
+      <a class="card card--guide" href="${mp.href}">
+        <div class="thumb-icon"><svg><use href="#${mp.icon||'star'}"></use></svg></div>
+        <div class="card-body">
+          <h3>${mp.title}</h3>
+          <p class="meta">${mp.desc||''}</p>
+        </div>
+      </a>`;
+  }
+
+  function renderSections(mp){
+    document.querySelectorAll('[data-mp-grid]').forEach(node=>{
+      const tag=(node.getAttribute('data-tag')||'').toLowerCase();
+      const limit=parseInt(node.getAttribute('data-limit')||'0',10)||mp.length;
+      const items=mp.filter(m=>(m.tags||[]).some(t=>t.toLowerCase()===tag)).slice(0,limit);
+      node.innerHTML=items.map(card).join('');
+    });
+    const all=document.querySelector('[data-mp-all]');
+    if(all) all.innerHTML=mp.map(card).join('');
+  }
+
+  function wireSearch(mp){
+    const input=document.getElementById('search-input');
+    const all=document.querySelector('[data-mp-all]');
+    if(!input||!all) return;
+    let last='';
+    input.addEventListener('input',function(){
+      const q=(this.value||'').trim().toLowerCase();
+      if(q===last) return; last=q;
+      if(!q){
+        // vis sektionerne igen
+        document.querySelectorAll('[data-mp-grid]').forEach(n=>n.parentElement.style.display='');
+        all.innerHTML=mp.map(card).join('');
+        return;
+      }
+      // gem sektionerne under søgning
+      document.querySelectorAll('[data-mp-grid]').forEach(n=>n.parentElement.style.display='none');
+      const hit=mp.filter(m=>{
+        const hay=(m.title+' '+(m.desc||'')+' '+(m.tags||[]).join(' ')).toLowerCase();
+        return hay.includes(q);
+      });
+      all.innerHTML=hit.length?hit.map(card).join(''):'<p class="copy">Ingen madplaner matcher din søgning.</p>';
+    });
+  }
+
+  function boot(){
+    // Vent kort på datafil hvis den loader efter
+    let tries=0;
+    (function wait(){
+      if(Array.isArray(window.MP)&&window.MP.length){
+        const data=window.MP.slice();
+        renderSections(data);
+        wireSearch(data);
+      }else if(tries++<60){ setTimeout(wait,50); }
+      else{
+        const all=document.querySelector('[data-mp-all]');
+        if(all) all.innerHTML='<p class="copy">Kunne ikke indlæse madplaner (data mangler).</p>';
+      }
+    })();
+  }
+
+  ready(boot);
+})();
+</script>
+
 </body>
 </html>
