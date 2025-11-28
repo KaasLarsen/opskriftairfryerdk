@@ -260,6 +260,41 @@
 })();
 </script>
 
+<script>
+(function(){
+  const gridSections = [...document.querySelectorAll('[data-mp-grid]')];
+  if (!window.MADPLANER || !gridSections.length) return;
+
+  const icon = id => `<div class="thumb-icon"><svg><use href="#${id||'calendar'}"></use></svg></div>`;
+  const badge = (ico, txt)=> `<span class="badge"><svg class="ico-inline"><use href="#${ico}"></use></svg> ${txt}</span>`;
+  const toCard = p => (
+    `<a class="card card--guide" href="/madplan/${p.slug}.html">
+      ${icon(p.icon)}
+      <div class="card-body">
+        <h3>${p.title}</h3>
+        <p class="meta">${p.desc}</p>
+        <div class="badges" style="margin-top:6px">
+          ${badge('timer', p.duration || '7 dage')}
+          ${badge('users', (p.people||4) + ' personer')}
+          ${badge('scale', (p.kcalAvg||'–') + ' kcal')}
+        </div>
+      </div>
+    </a>`
+  );
+
+  function renderInto(el){
+    const tag = el.getAttribute('data-tag');       // fx "vægttab" / "budget" / "familie"
+    const limit = +el.getAttribute('data-limit') || 6;
+    const list = window.MADPLANER
+      .filter(p => !tag || (p.tags||[]).includes(tag))
+      .sort((a,b)=> (b.published||'').localeCompare(a.published||''))
+      .slice(0, limit);
+    el.innerHTML = list.map(toCard).join('') || `<p class="meta">Ingen madplaner endnu.</p>`;
+  }
+
+  gridSections.forEach(renderInto);
+})();
+</script>
 
   <div data-include="/partials/footer.html"></div>
   <script src="/assets/include.js?v=4"></script>
