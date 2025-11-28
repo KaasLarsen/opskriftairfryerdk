@@ -1,92 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- Hub / oversigt -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Hub -->
   <url>
     <loc>https://www.opskrift-airfryer.dk/madplan/</loc>
     <lastmod>2025-11-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
   </url>
 
-  <!-- Nemt i hverdagen / basisplaner -->
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/7-dages-airfryer-madplan.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/madplan-budget.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/familievenlig-hverdag.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Sider -->
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/7-dages-airfryer-madplan.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/airfryer-vaegttab-kvinder.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <!-- Æ-variant (hvis filen findes fysisk) -->
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/airfryer-v%C3%A6gttab-kvinder.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/budget-400.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/familie-bornevenlig.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/familievenlig-hverdag.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/hurtig-hverdag-20min.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/hurtig-hverdag-uden-prep.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/kalorielet-airfryer.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/madplan-budget.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/madplan-for-2-uge-2.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/madplan-for-2.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/madplan-jul-airfryer.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/proteinfokus-airfryer.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/proteinfokus-lean.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/sommermad-airfryer.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/sund-ugeplan.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
 
-  <!-- Vægttabsfokus -->
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/kalorielet-airfryer.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/sund-ugeplan.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/airfryer-v%C3%A6gttab-kvinder.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- 7-dages vægttab (dag1–dag7) -->
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag1.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag2.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag3.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag4.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag5.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag6.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vaegttab-airfryer-dag7.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
-  <!-- Kommer/temasider -->
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/madplan-jul-airfryer.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/sommermad-airfryer.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/madplan-for-2.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Nye du bad om -->
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/proteinfokus-airfryer.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/hurtig-hverdag-20min.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.opskrift-airfryer.dk/madplan/vegetar-airfryer-uge.html</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Vegetar-planer -->
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vegetar-airfryer-uge.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.opskrift-airfryer.dk/madplan/vegetar-airfryer-uge-2.html</loc><lastmod>2025-11-28</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
 </urlset>
