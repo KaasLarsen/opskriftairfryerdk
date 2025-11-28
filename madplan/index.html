@@ -152,17 +152,114 @@
 </section>
 
 
-    <!-- PriceRunner Widget -->
-    <section class="section">
-      <div class="section-head">
-        <h2><svg class="ico-inline"><use href="#tag"></use></svg>Tilbud & Udstyr</h2>
+    <section class="section" id="anbefalede">
+  <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+    <h2><svg class="ico-inline"><use href="#tag"></use></svg>Tilbud & Udstyr</h2>
+  </div>
+
+  <div class="pr-carousel" id="pr-carousel">
+    <!-- SLIDE 1 -->
+    <div class="pr-slide is-active">
+      <div style="min-height:220px">
+        <div id="pr-product-widget-e0348930" style="display:block;width:100%"></div>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3280146314&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-e0348930" async></script>
       </div>
-      <div id="pricerunner-widget">
-        <script src="https://widget.pricerunner.com/script/widget.js"></script>
-        <div class="pricerunner-widget" data-id="7a0d46a2-e334-4fc1-9761-bd449bde7f04" data-country="dk"></div>
+      <div style="display:inline-block;margin-top:6px">
+        <a href="https://www.pricerunner.dk/pl/81-3280146314/Frituregryder/Ninja-Double-Stack-XL-2-Level-Air-Fryer-9.5L-Sammenlign-Priser" rel="nofollow sponsored">
+          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="pr-slide">
+      <div style="min-height:220px">
+        <div id="pr-product-widget-f262c590" style="display:block;width:100%"></div>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-f262c590" async></script>
+      </div>
+      <div style="display:inline-block;margin-top:6px">
+        <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow sponsored">
+          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="pr-slide">
+      <div style="min-height:220px">
+        <div id="pr-product-widget-0a362ae0" style="display:block;width:100%"></div>
+        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3231353404&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-0a362ae0" async></script>
+      </div>
+      <div style="display:inline-block;margin-top:6px">
+        <a href="https://www.pricerunner.dk/pl/81-3231353404/Frituregryder/Philips-3000-Series-NA352-00-Sammenlign-Priser" rel="nofollow sponsored">
+          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
+            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <button class="pr-nav pr-prev" aria-label="Forrige">‹</button>
+    <button class="pr-nav pr-next" aria-label="Næste">›</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="pr-dots" id="pr-dots"></div>
+</section>
+
+<!-- Slider logik (indsæt KUN hvis du ikke allerede har den globalt) -->
+<script>
+(function(){
+  const root = document.getElementById('pr-carousel');
+  if(!root) return;
+  const slides = Array.from(root.querySelectorAll('.pr-slide'));
+  const prev = root.querySelector('.pr-prev');
+  const next = root.querySelector('.pr-next');
+  const dotsWrap = document.getElementById('pr-dots');
+  if (slides.length <= 1) return;
+
+  let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
+  let timer = null;
+  const INTERVAL = 6000;
+
+  function show(n){
+    slides.forEach(s=>s.classList.remove('is-active'));
+    slides[n].classList.add('is-active');
+    if (dotsWrap){
+      dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active', k===n));
+    }
+    i = n;
+  }
+  function makeDots(){
+    if(!dotsWrap) return;
+    dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="Slide ${k+1}"></button>`).join('');
+    dotsWrap.querySelectorAll('.pr-dot').forEach((btn,k)=>btn.addEventListener('click', ()=>{ stop(); show(k); start(); }));
+  }
+  function nextSlide(){ show((i+1) % slides.length); }
+  function prevSlide(){ show((i-1+slides.length) % slides.length); }
+  function start(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stop(); timer = setInterval(nextSlide, INTERVAL);
+  }
+  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+
+  prev && prev.addEventListener('click', ()=>{ stop(); prevSlide(); start(); });
+  next && next.addEventListener('click', ()=>{ stop(); nextSlide(); start(); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+  document.addEventListener('visibilitychange', ()=>{ if (document.hidden) stop(); else start(); });
+
+  makeDots(); show(i); start();
+})();
+</script>
+
 
   <div data-include="/partials/footer.html"></div>
   <script src="/assets/include.js?v=4"></script>
