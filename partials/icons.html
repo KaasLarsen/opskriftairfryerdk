@@ -1,401 +1,653 @@
-<!-- === ICON SPRITE (GREEN, ROUNDED, MINIMAL) === -->
-<svg xmlns="http://www.w3.org/2000/svg" class="hidden" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-  <!-- Helpers: alle ikoner bruger viewBox 24 og fyldt grøn -->
-  <!-- ===== CORE / NAV-LIKE ===== -->
-  <symbol id="calendar" viewBox="0 0 24 24">
-    <rect x="3" y="4" width="18" height="16" rx="3" fill="#22C55E"/>
-    <rect x="7" y="2" width="2.5" height="4" rx="1.25" fill="#22C55E"/>
-    <rect x="14.5" y="2" width="2.5" height="4" rx="1.25" fill="#22C55E"/>
+<!-- PARTIAL: /partials/icons.html -->
+<svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ========== DINE EKSISTERENDE IKONER (UÆNDRET) ========== -->
+
+  <!-- Airfryer (mørk grå + hvide detaljer) -->
+  <symbol id="airfryer" viewBox="0 0 24 24">
+    <rect x="5" y="3" width="14" height="18" rx="3" fill="#374151"/>
+    <rect x="8" y="7" width="8" height="4" rx="1" fill="#ffffff"/>
+    <circle cx="12" cy="16" r="2.5" fill="#ffffff"/>
+  </symbol>
+
+  <!-- Facebook -->
+  <symbol id="facebook" viewBox="0 0 24 24">
+    <path fill="currentColor"
+      d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H8.4v-2.91h2.04V9.89c0-2.01 1.2-3.12 3.03-3.12.88 0 1.8.16 1.8.16v1.98h-1.01c-.99 0-1.3.62-1.3 1.26v1.52h2.21l-.35 2.91h-1.86V22c4.78-.76 8.44-4.92 8.44-9.94z"/>
+  </symbol>
+
+  <symbol id="pumpkin" viewBox="0 0 24 24">
+    <path d="M8 5c-3 0-5 3-5 7s2 7 5 7c1 0 2-.4 3-1v-12c-1-.6-2-1-3-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M16 5c3 0 5 3 5 7s-2 7-5 7c-1 0-2-.4-3-1v-12c1-.6 2-1 3-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M12 2c-1 0-2 .8-2 2v1h4V4c0-1.2-1-2-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="alert" viewBox="0 0 24 24">
+    <path d="M12 3l10 18H2L12 3z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M12 9v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12" cy="17" r="1.4" fill="currentColor"/>
   </symbol>
 
   <symbol id="clock" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="9" fill="#22C55E"/>
-    <rect x="11.2" y="7" width="1.6" height="6" rx="0.8" fill="#fff"/>
-    <rect x="12" y="11.5" width="4.5" height="1.6" rx="0.8" fill="#fff" transform="rotate(40 12 12.3)"/>
+    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
   </symbol>
 
-  <symbol id="star" viewBox="0 0 24 24">
-    <path d="M12 3l2.6 5.4 6 0.9-4.3 4.2 1 5.9L12 16.8 6.7 19.4l1-5.9-4.3-4.2 6-.9L12 3z" fill="#22C55E"/>
+  <symbol id="trophy" viewBox="0 0 24 24">
+    <path d="M8 21h8v-3H8v3zM7 6v2a5 5 0 0 0 10 0V6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M5 6h2a3 3 0 0 1-3 3V7a1 1 0 0 1 1-1zm14 0h-2a3 3 0 0 0 3 3V7a1 1 0 0 0-1-1z" fill="none" stroke="currentColor" stroke-width="2"/>
   </symbol>
 
-  <symbol id="heart" viewBox="0 0 24 24">
-    <path d="M12 20.5s-6-3.8-8.5-6.8C1.7 11.5 3 7.5 6.6 7.5c2 0 3.1 1.1 3.9 2 0.8-0.9 1.9-2 3.9-2 3.6 0 4.9 4 3.1 6.2C18 16.7 12 20.5 12 20.5z" fill="#22C55E"/>
+  <!-- (Din oprindelige duplikat-id 'airfryer' – beholdt uændret) -->
+  <symbol id="airfryer" viewBox="0 0 24 24">
+    <path d="M5 8c0-2.5 1.5-5 5-5h4c3.5 0 5 2.5 5 5v9c0 1.5-1 3-3 3H8c-2 0-3-1.5-3-3V8z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M9 12h6M9 16h6M10 5h4a1 1 0 0 1 1 1v2H9V6a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="2"/>
   </symbol>
 
-  <symbol id="fire" viewBox="0 0 24 24">
-    <path d="M12 3c2.6 3.2 2.2 5.9 1.4 7.4 1.1-.2 2.1-.8 3-1.7 1.7 2.2 2.2 4.2 1.7 6.2-0.7 3-3.4 5.6-6.9 5.6S4.9 17.1 4.2 14c-.5-2 0-4 1.7-6.2.4 1.1.8 2 .8 3.1 0 1.4.6 2.5 1.7 3.2-.4-1-.6-2-.6-2.9 0-1.9 0-3.6 3.2-5.2z" fill="#22C55E"/>
+  <!-- Broccoli -->
+  <symbol id="broccoli" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path d="M7.5 7.5a3.5 3.5 0 0 1 6.5-1.8A3.8 3.8 0 0 1 20 8.2a3.2 3.2 0 0 1-3.2 3.3H7.2A3.2 3.2 0 0 1 4 8.3 3.3 3.3 0 0 1 7.5 7.5z" stroke-width="1.5" />
+    <path d="M12 11.5v6.5M9.5 12.5l1.5 5.5M14.5 12.5l-1.5 5.5" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M9 20h6" stroke-width="1.5" stroke-linecap="round"/>
   </symbol>
 
-  <symbol id="bolt" viewBox="0 0 24 24">
-    <path d="M13 2 5.5 13.5H12l-1 8L19 10h-6l0-8z" fill="#22C55E"/>
+  <!-- Svinekød -->
+  <symbol id="pig" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8" fill="#F8A8C2"/>
+    <ellipse cx="12" cy="13" rx="5.5" ry="4" fill="#F190B2"/>
+    <circle cx="10.25" cy="13" r="0.8" fill="#7A2E40"/>
+    <circle cx="13.75" cy="13" r="0.8" fill="#7A2E40"/>
+    <circle cx="8" cy="9.5" r="1" fill="#7A2E40"/>
+    <circle cx="16" cy="9.5" r="1" fill="#7A2E40"/>
   </symbol>
 
-  <symbol id="tag" viewBox="0 0 24 24">
-    <path d="M3 12l9-9h7a2 2 0 0 1 2 2v7l-9 9-9-9z" fill="#22C55E"/>
-    <circle cx="17" cy="7" r="1.6" fill="#fff"/>
+  <symbol id="sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z"/>
+    <path d="M4 6l.8 1.6L7 9l-2.2.4L4 11l-.8-1.6L1 9l2.2-.4L4 6zM19 14l.7 1.4 1.3.6-1.3.6L19 18l-.7-1.4-1.3-.6 1.3-.6L19 14z"/>
   </symbol>
 
-  <symbol id="gift" viewBox="0 0 24 24">
-    <rect x="3" y="9" width="18" height="11" rx="2" fill="#22C55E"/>
-    <rect x="11" y="4" width="2" height="16" rx="1" fill="#fff"/>
-    <rect x="3" y="9" width="18" height="2" fill="#fff" opacity=".9"/>
+  <symbol id="calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="17" rx="2" ry="2"/>
+    <path d="M16 2v4M8 2v4M3 10h18"/>
+    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/>
   </symbol>
 
-  <symbol id="user" viewBox="0 0 24 24">
-    <circle cx="12" cy="8" r="4" fill="#22C55E"/>
-    <rect x="5" y="13" width="14" height="7" rx="3.5" fill="#22C55E"/>
+  <symbol id="frikadelle" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8.5" cy="10" r="3.3"/>
+      <circle cx="14.7" cy="14" r="3.3"/>
+      <path d="M6.8 9.2c.6.2 1.2.2 1.8 0M13 13.2c.6.2 1.2.2 1.8 0"/>
+    </g>
   </symbol>
 
-  <!-- ===== FOOD / CATEGORY ===== -->
-  <symbol id="leaf" viewBox="0 0 24 24">
-    <path d="M6 14c0-4.5 4.5-8.5 9-8.5 2.5 0 4 .6 5 1.3C18.5 15 12.5 18.5 9 18.5 7 18.5 6 17 6 14z" fill="#22C55E"/>
+  <symbol id="flaeskesteg" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="9" width="18" height="8" rx="2"/>
+      <path d="M4 9c2 -3 14 -3 16 0"/>
+      <path d="M7 8v2M10 7.8v2.2M13 7.8v2.2M16 8v2"/>
+    </g>
   </symbol>
 
   <symbol id="chicken" viewBox="0 0 24 24">
-    <path d="M6 13.5c0-3.3 3.4-6.2 7.5-6.2S21 10.2 21 13.5s-3.7 6.2-7.5 6.2S6 16.8 6 13.5z" fill="#22C55E"/>
-    <circle cx="10.4" cy="13" r="1" fill="#fff"/>
+    <path d="M6 13c0-3 3-6 7-6s7 3 7 6-3.5 6-7 6-7-3-7-6z" fill="#FACC15"/>
+    <circle cx="10" cy="13" r="1.1" fill="#1F2937"/>
+    <path d="M7 8.2c1.1-.3 1.9-.6 2.6-1.4 1-1 1.1-2 1.1-2s2 1 2.2 2.2c.2 1.1-.8 2.1-2 2.6C9.8 9.9 8.3 9.7 7 9.4V8.2z" fill="#EF4444"/>
+    <path d="M19 13l3 1.2-3 1.2v-2.4z" fill="#FB923C"/>
+  </symbol>
+
+  <symbol id="cow" viewBox="0 0 24 24">
+    <path d="M5 9c3-3 11-3 14 1s0 9-6 9-9-4-8-7 0-2 0-3z" fill="#B91C1C"/>
+    <circle cx="15.5" cy="13.5" r="1.6" fill="#FEE2E2"/>
   </symbol>
 
   <symbol id="fish" viewBox="0 0 24 24">
-    <path d="M3 12s3.8-4.2 9-4.2S21 12 21 12s-5.2 4.2-9 4.2S3 12 3 12z" fill="#22C55E"/>
-    <circle cx="16.5" cy="12" r="1" fill="#fff"/>
+    <path d="M3 12s3-4 8-4 10 4 10 4-5 4-10 4-8-4-8-4z" fill="#06B6D4"/>
+    <circle cx="17" cy="12" r="1.1" fill="#E0F2FE"/>
   </symbol>
 
-  <symbol id="beef" viewBox="0 0 24 24">
-    <path d="M5 10c3-3 11-3 14 1 2.5 3.5-1 8-6.5 8S4 15 5 10z" fill="#22C55E"/>
-    <circle cx="15.5" cy="13" r="1.6" fill="#fff"/>
-  </symbol>
-
-  <symbol id="egg" viewBox="0 0 24 24">
-    <ellipse cx="12" cy="12.5" rx="5.2" ry="6.8" fill="#22C55E"/>
-    <circle cx="12" cy="14" r="2.1" fill="#fff"/>
-  </symbol>
-
-  <symbol id="cheese" viewBox="0 0 24 24">
-    <path d="M4 12l8-4 8 4v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5z" fill="#22C55E"/>
-    <circle cx="10" cy="14" r="1.1" fill="#fff"/>
-    <circle cx="14" cy="16" r="1.1" fill="#fff"/>
-  </symbol>
-
-  <symbol id="bread" viewBox="0 0 24 24">
-    <rect x="4" y="10" width="16" height="8" rx="4" fill="#22C55E"/>
-    <path d="M7 13h2M11 13h2M15 13h2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-  </symbol>
-
-  <symbol id="apple" viewBox="0 0 24 24">
-    <path d="M8 9c0-2 2-3 4-3s4 1 4 3 0 8-4 8-4-6-4-8z" fill="#22C55E"/>
-    <rect x="11.2" y="5" width="1.6" height="2" rx="0.8" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="avocado" viewBox="0 0 24 24">
-    <path d="M12 20c-4 0-6-3-6-6s2-7 6-7 6 4 6 7-2 6-6 6z" fill="#22C55E"/>
-    <circle cx="12" cy="14" r="2.4" fill="#fff"/>
-  </symbol>
-
-  <symbol id="carrot" viewBox="0 0 24 24">
-    <path d="M7 8l10 10-4.6 2L7 8z" fill="#22C55E"/>
-    <path d="M7 8c1.2-2.2 2.7-3.2 5-3-1 1-1.4 1.9-1.5 2.8C9.8 7.3 8.4 7.5 7 8z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="mushroom" viewBox="0 0 24 24">
-    <path d="M6 11c0-3.6 3.4-6.2 6-6.2s6 2.6 6 6.2H6z" fill="#22C55E"/>
-    <rect x="10.3" y="11" width="3.4" height="6" rx="1.6" fill="#22C55E"/>
+  <symbol id="leaf" viewBox="0 0 24 24">
+    <path d="M5 14c0-4 4-8 9-8 2 0 3 .5 5 1.5C18 14 12 18 8 18c-2 0-3-1.5-3-4z" fill="#10B981"/>
   </symbol>
 
   <symbol id="salad" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="7.2" fill="#22C55E"/>
-    <path d="M8 12c2.2-1.1 5.8-1.1 8 0-2.2 3.2-6 3.2-8 0z" fill="#fff" opacity=".25"/>
-  </symbol>
-
-  <symbol id="bacon" viewBox="0 0 24 24">
-    <path d="M6 8c3 2 6 0 9 2 2 1 3 3 3 3-3-2-6 0-9-2-1-.8-2-3-3-3z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="burger" viewBox="0 0 24 24">
-    <rect x="4" y="8" width="16" height="4" rx="2" fill="#22C55E"/>
-    <rect x="4" y="12" width="16" height="3" rx="1.5" fill="#22C55E"/>
-    <rect x="4" y="15" width="16" height="3" rx="1.5" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="pizza" viewBox="0 0 24 24">
-    <path d="M5 18l7-12 7 12H5z" fill="#22C55E"/>
-    <circle cx="12" cy="13" r="1.1" fill="#fff"/>
-    <circle cx="14.5" cy="15" r="1.1" fill="#fff"/>
-  </symbol>
-
-  <symbol id="donut" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="7" fill="#22C55E"/>
-    <circle cx="12" cy="12" r="2.2" fill="#fff"/>
-  </symbol>
-
-  <symbol id="cookie" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="7" fill="#22C55E"/>
-    <circle cx="10" cy="11" r="1" fill="#fff"/>
-    <circle cx="14" cy="9" r="1" fill="#fff"/>
-    <circle cx="13" cy="14" r="1" fill="#fff"/>
-  </symbol>
-
-  <symbol id="sushi" viewBox="0 0 24 24">
-    <rect x="5" y="9" width="14" height="8" rx="3" fill="#22C55E"/>
-    <rect x="7" y="11" width="10" height="4" rx="2" fill="#fff" opacity=".3"/>
-  </symbol>
-
-  <symbol id="taco" viewBox="0 0 24 24">
-    <path d="M5 15a7 7 0 0 1 14 0H5z" fill="#22C55E"/>
-    <path d="M6.5 14c1.2-1.8 4.3-3 5.5-3 1.7 0 4 .9 5.5 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  </symbol>
-
-  <symbol id="wrap" viewBox="0 0 24 24">
-    <rect x="7" y="6" width="10" height="12" rx="3" fill="#22C55E"/>
-    <path d="M9 9c2 1 4 1 6 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M8 12c2-1 4-1 8 0-2 3-6 4-8 0z" fill="#16A34A"/>
   </symbol>
 
   <symbol id="fries" viewBox="0 0 24 24">
-    <rect x="5" y="10" width="14" height="9" rx="2" fill="#22C55E"/>
-    <path d="M7 10 8 5m3 5 1-5m3 5 1-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <path d="M5 10h14l-2 9a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2l-2-9z" fill="#F59E0B"/>
+    <path d="M7 10 8 5m3 5 1-5m3 5 1-4" stroke="#FFF7ED" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="chips" viewBox="0 0 24 24">
+    <path d="M6 9c3-2 7-2 12 2-2 5-10 6-12-2z" fill="#F59E0B"/>
+    <path d="M9 14c1 1 3 2 6 2" stroke="#FED7AA" stroke-width="1.5" fill="none"/>
+  </symbol>
+
+  <symbol id="cake" viewBox="0 0 24 24">
+    <rect x="4" y="12" width="16" height="7" rx="2" fill="#EC4899"/>
+    <path d="M4 15c2 0 2 2 4 2s2-2 4-2 2 2 4 2 2-2 4-2" stroke="#FCE7F3" stroke-width="1.5" fill="none"/>
+    <path d="M12 5.5c0-.8.7-1.5 1.5-1.5S15 4.7 15 5.5 12 9 12 9s-3-2.2-3-3.5z" fill="#F472B6"/>
+  </symbol>
+
+  <symbol id="burger" viewBox="0 0 24 24">
+    <rect x="4" y="8" width="16" height="4" rx="2" fill="#EAB308"/>
+    <rect x="4" y="12" width="16" height="3" rx="1.5" fill="#16A34A"/>
+    <rect x="4" y="15" width="16" height="3" rx="1.5" fill="#92400E"/>
+    <rect x="4" y="6" width="16" height="2" rx="1" fill="#FDE68A"/>
+  </symbol>
+
+  <symbol id="duck" viewBox="0 0 24 24">
+    <path d="M6 13c0-2.5 2.5-4.5 6-4.5S18 10.5 18 13s-3 4.5-6 4.5S6 15.5 6 13z" fill="#0EA5E9"/>
+    <circle cx="10" cy="13" r="1.1" fill="#0C4A6E"/>
+    <path d="M6 11l-3 1.2 3 1.2V11z" fill="#F59E0B"/>
+  </symbol>
+
+  <symbol id="turkey" viewBox="0 0 24 24">
+    <path d="M7 12c0-3 2.5-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5z" fill="#8B5CF6"/>
+    <circle cx="10" cy="12" r="1.1" fill="#4338CA"/>
+    <path d="M16 11l2.5-1.5v3z" fill="#EF4444"/>
+  </symbol>
+
+  <symbol id="mushroom" viewBox="0 0 24 24">
+    <path d="M6 11c0-3 3-6 6-6s6 3 6 6H6z" fill="#D6D3D1"/>
+    <rect x="10.5" y="11" width="3" height="5.5" rx="1.5" fill="#A8A29E"/>
+    <circle cx="10" cy="10" r="0.8" fill="#A8A29E"/>
+    <circle cx="14" cy="10" r="0.8" fill="#A8A29E"/>
+  </symbol>
+
+  <symbol id="cheese" viewBox="0 0 24 24">
+    <path d="M4 12l8-4 8 4v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5z" fill="#FBBF24"/>
+    <circle cx="10" cy="14" r="1" fill="#F59E0B"/>
+    <circle cx="14" cy="15.5" r="1" fill="#F59E0B"/>
+  </symbol>
+
+  <symbol id="feta" viewBox="0 0 24 24">
+    <rect x="5" y="7" width="14" height="10" rx="2" fill="#ffffff" stroke="#60A5FA" stroke-width="1.5"/>
+    <circle cx="10" cy="12" r="0.7" fill="#E5E7EB"/>
+    <circle cx="14" cy="10" r="0.6" fill="#E5E7EB"/>
+  </symbol>
+
+  <symbol id="eggplant" viewBox="0 0 24 24">
+    <path d="M8 8c4 0 8 4 8 8s-3 5-6 5-5-2-5-5 1-8 3-8z" fill="#9333EA"/>
+    <path d="M8 7c1-2 2-3 4-3 1 0 2 .8 2 2-2 0-4 .3-6 1z" fill="#16A34A"/>
   </symbol>
 
   <symbol id="nuggets" viewBox="0 0 24 24">
-    <rect x="6.2" y="9" width="5.6" height="4.6" rx="2.2" fill="#22C55E"/>
-    <rect x="12.2" y="11" width="5.6" height="4.6" rx="2.2" fill="#22C55E"/>
+    <rect x="6" y="8" width="6" height="5" rx="2" fill="#F59E0B"/>
+    <rect x="12" y="10" width="6" height="5" rx="2" fill="#FB923C"/>
+    <circle cx="9" cy="11" r="0.6" fill="#FED7AA"/>
+    <circle cx="15" cy="12.5" r="0.6" fill="#FED7AA"/>
   </symbol>
 
-  <!-- ===== COOKWARE / DEVICES ===== -->
-  <symbol id="airfryer" viewBox="0 0 24 24">
-    <rect x="5" y="4" width="14" height="16" rx="3" fill="#22C55E"/>
-    <circle cx="12" cy="14" r="2.7" fill="#fff"/>
-    <rect x="8" y="7" width="8" height="4" rx="1.2" fill="#fff" opacity=".85"/>
+  <symbol id="carrot" viewBox="0 0 24 24">
+    <path d="M6 7l12 12-5 2L6 7z" fill="#F97316"/>
+    <path d="M6 7c1-2 3-3 5-3-1 1-1.5 2-1.5 3C8.5 6.5 7.2 6.6 6 7z" fill="#22C55E"/>
   </symbol>
 
-  <symbol id="oven" viewBox="0 0 24 24">
-    <rect x="4" y="4" width="16" height="16" rx="2.5" fill="#22C55E"/>
-    <rect x="6.5" y="8" width="11" height="8" rx="1.4" fill="#fff" opacity=".9"/>
-    <circle cx="8" cy="6.5" r="0.9" fill="#fff"/>
-    <circle cx="10.5" cy="6.5" r="0.9" fill="#fff"/>
+  <symbol id="porkloin" viewBox="0 0 24 24">
+    <rect x="5" y="8" width="14" height="8" rx="4" fill="#F87171"/>
+    <path d="M8 12h8" stroke="#FEE2E2" stroke-width="1.6" stroke-linecap="round"/>
   </symbol>
 
-  <symbol id="microwave" viewBox="0 0 24 24">
-    <rect x="3.5" y="6" width="17" height="12" rx="2" fill="#22C55E"/>
-    <rect x="6" y="8" width="9" height="8" rx="1.2" fill="#fff" opacity=".85"/>
-    <circle cx="17.5" cy="10" r="0.9" fill="#fff"/>
-    <circle cx="17.5" cy="13" r="0.9" fill="#fff"/>
+  <symbol id="meatloaf" viewBox="0 0 24 24">
+    <rect x="4.5" y="9" width="15" height="7" rx="2" fill="#B91C1C"/>
+    <path d="M5 11h14" stroke="#7F1D1D" stroke-width="2"/>
+    <rect x="6" y="8" width="12" height="2" rx="1" fill="#DC2626"/>
   </symbol>
 
-  <symbol id="grill" viewBox="0 0 24 24">
-    <rect x="5" y="9" width="14" height="6" rx="3" fill="#22C55E"/>
-    <path d="M7 15l-1.5 4M17 15l1.5 4" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+  <symbol id="fire" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 3c1.5 2.2 2.2 4.1 2.2 5.6 0 .8-.2 1.5-.6 2.1.9-.1 1.7-.5 2.4-1.2 1.2 1.6 1.8 3.1 1.8 4.7 0 3.6-2.9 6.4-6.8 6.4s-6.8-2.8-6.8-6.4c0-2.6 1.4-4.9 3.9-6.7-.1.5-.2 1-.2 1.6 0 1.5.6 2.7 1.7 3.6-.3-.8-.4-1.6-.4-2.4 0-2 1.1-4 2.8-5.3z"/>
+  </symbol>
+
+  <symbol id="timer" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="8" fill="none" stroke="#111827" stroke-width="2"/>
+    <path d="M12 10v3l2 2" stroke="#111827" stroke-width="2" fill="none"/>
+    <rect x="9" y="3" width="6" height="2" rx="1" fill="#111827"/>
+  </symbol>
+
+  <symbol id="thermo" viewBox="0 0 24 24">
+    <path d="M14 14.5V6a2 2 0 0 0-4 0v8.5a4 4 0 1 0 4 0z" fill="none" stroke="#111827" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="star" viewBox="0 0 24 24">
+    <path d="m12 17-5.5 3 1.5-6.2L3 9.5l6.3-.6L12 3l2.7 5.9 6.3.6-5 4.3L17.5 20z"
+          fill="none" stroke="#111827" stroke-width="2" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="book" viewBox="0 0 24 24">
+    <path d="M5 5h10a3 3 0 0 1 3 3v11H8a3 3 0 0 1-3-3V5z" fill="#0EA5E9"/>
+    <path d="M8 5v14" stroke="#ffffff" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="cart" viewBox="0 0 24 24">
+    <path d="M3 5h2l2 12h10l2-8H7" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="meatballs" viewBox="0 0 24 24" fill="currentColor">
+    <circle cx="8" cy="8" r="4"></circle>
+    <circle cx="16" cy="10" r="4"></circle>
+    <circle cx="12" cy="16" r="4"></circle>
   </symbol>
 
   <symbol id="pan" viewBox="0 0 24 24">
-    <rect x="4" y="10" width="11" height="6" rx="3" fill="#22C55E"/>
-    <rect x="16" y="11.5" width="5" height="3" rx="1.5" fill="#22C55E"/>
+    <rect x="3" y="9" width="12" height="7" rx="3" fill="#111827"/>
+    <rect x="15" y="11" width="6" height="3" rx="1.5" fill="#6B7280"/>
   </symbol>
 
   <symbol id="pot" viewBox="0 0 24 24">
-    <rect x="4" y="9" width="16" height="9" rx="2" fill="#22C55E"/>
-    <rect x="7" y="7" width="10" height="2" rx="1" fill="#22C55E"/>
-    <rect x="2" y="11" width="3" height="2" rx="1" fill="#22C55E"/>
-    <rect x="19" y="11" width="3" height="2" rx="1" fill="#22C55E"/>
+    <rect x="4" y="9" width="16" height="9" rx="2" fill="#374151"/>
+    <rect x="7" y="7" width="10" height="2" rx="1" fill="#9CA3AF"/>
+    <rect x="2" y="10.5" width="3" height="2" rx="1" fill="#6B7280"/>
+    <rect x="19" y="10.5" width="3" height="2" rx="1" fill="#6B7280"/>
   </symbol>
 
-  <symbol id="knife" viewBox="0 0 24 24">
-    <path d="M3 15l10-7 2 3-10 7a2 2 0 0 1-2-3z" fill="#22C55E"/>
-    <rect x="15" y="8.8" width="6" height="2.6" rx="1.3" fill="#22C55E"/>
+  <symbol id="cutlery" viewBox="0 0 24 24">
+    <path d="M7 4v9" stroke="#111827" stroke-width="2"/>
+    <path d="M5 4v9M9 4v9" stroke="#111827" stroke-width="2"/>
+    <path d="M16 4c1.5 0 2.5 1.2 2.5 2.7V13h-2V9h-1v4h-2V6.7C13.5 5.2 14.5 4 16 4z" fill="#111827"/>
   </symbol>
 
-  <symbol id="fork" viewBox="0 0 24 24">
-    <rect x="7" y="4" width="2" height="9" rx="1" fill="#22C55E"/>
-    <rect x="10.5" y="4" width="2" height="9" rx="1" fill="#22C55E"/>
-    <rect x="14" y="4" width="2" height="9" rx="1" fill="#22C55E"/>
-    <rect x="9.5" y="13" width="5" height="7" rx="2.5" fill="#22C55E"/>
+  <symbol id="bread" viewBox="0 0 24 24">
+    <rect x="4" y="9" width="16" height="8" rx="4" fill="#F59E0B"/>
+    <path d="M7 12h2M11 12h2M15 12h2" stroke="#FDE68A" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="waffle" viewBox="0 0 24 24">
+    <rect x="5" y="7" width="14" height="10" rx="2" fill="#F59E0B"/>
+    <path d="M8 7v10M12 7v10M16 7v10M5 10h14M5 14h14"
+          stroke="#FCD34D" stroke-width="1.2"/>
+  </symbol>
+
+  <symbol id="croissant" viewBox="0 0 24 24">
+    <path d="M6 14c0-3 3-6 6-6s6 3 6 6c-3 1-9 1-12 0z" fill="#F59E0B"/>
+    <path d="M7 13c2 .6 8 .6 10 0" stroke="#FDE68A" stroke-width="1.2"/>
+  </symbol>
+
+  <symbol id="donut" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7" fill="#EC4899"/>
+    <circle cx="12" cy="12" r="2.2" fill="#FCE7F3"/>
+  </symbol>
+
+  <symbol id="cookie" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7" fill="#D97706"/>
+    <circle cx="10" cy="11" r="1" fill="#7C2D12"/>
+    <circle cx="14" cy="9" r="1" fill="#7C2D12"/>
+    <circle cx="13" cy="14" r="1" fill="#7C2D12"/>
+  </symbol>
+
+  <symbol id="pizza" viewBox="0 0 24 24">
+    <path d="M5 18l7-12 7 12H5z" fill="#F59E0B"/>
+    <path d="M8 16c2-2 6-2 8 0" stroke="#FDE68A" stroke-width="2"/>
+    <circle cx="12" cy="13" r="1" fill="#B91C1C"/>
+    <circle cx="14.5" cy="15" r="1" fill="#B91C1C"/>
+  </symbol>
+
+  <symbol id="taco" viewBox="0 0 24 24">
+    <path d="M5 15a7 7 0 0 1 14 0H5z" fill="#F59E0B"/>
+    <path d="M6 14c1-2 4-3 6-3s5 1 6 3" stroke="#16A34A" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="wrap" viewBox="0 0 24 24">
+    <rect x="7" y="6" width="10" height="12" rx="3" fill="#FBBF24"/>
+    <path d="M9 9c2 1 4 1 6 0" stroke="#16A34A" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="sushi" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="8" rx="3" fill="#111827"/>
+    <rect x="7" y="11" width="10" height="4" rx="2" fill="#F87171"/>
+  </symbol>
+
+  <symbol id="rice-bowl" viewBox="0 0 24 24">
+    <path d="M6 12c0 4 3 7 6 7s6-3 6-7H6z" fill="#60A5FA"/>
+    <path d="M6 12c2-2 10-2 12 0" stroke="#93C5FD" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="noodles" viewBox="0 0 24 24">
+    <rect x="6" y="11" width="12" height="6" rx="2" fill="#EAB308"/>
+    <path d="M8 8v3M12 8v3M16 8v3" stroke="#A16207" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="onion" viewBox="0 0 24 24">
+    <path d="M12 7c3 0 6 3 6 6s-3 6-6 6-6-3-6-6 3-6 6-6z" fill="#FCA5A5"/>
+    <path d="M12 5c1 1 2 1.5 2.5 2" stroke="#DC2626" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="garlic" viewBox="0 0 24 24">
+    <path d="M12 7c2 0 4 2 5 4.5S16.5 18 12 18 7 15.5 7 11.5 10 7 12 7z" fill="#E5E7EB"/>
+    <path d="M12 6c.8-.8 1.6-1.5 2.2-2" stroke="#9CA3AF" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="chili" viewBox="0 0 24 24">
+    <path d="M6 14c0-3 4-6 8-6 2 0 3 1 4 2-1 6-5 8-9 8-2 0-3-1.5-3-4z" fill="#DC2626"/>
+    <path d="M14 7c0-1.2.8-2.2 2-2.2" stroke="#16A34A" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="lemon" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="12" rx="7" ry="5" fill="#FDE047"/>
+    <path d="M8 12c2-1 4-1 8 0" stroke="#FACC15" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="potato" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="13" rx="6" ry="5" fill="#A16207"/>
+    <circle cx="10" cy="12" r="0.6" fill="#FCD34D"/>
+    <circle cx="14" cy="14" r="0.6" fill="#FCD34D"/>
+  </symbol>
+
+  <symbol id="tomato" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="6" fill="#EF4444"/>
+    <path d="M9 8c2-2 4-2 6 0" stroke="#16A34A" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="butter" viewBox="0 0 24 24">
+    <rect x="6" y="10" width="12" height="6" rx="2" fill="#FDE68A"/>
+    <rect x="8" y="11.5" width="8" height="3" rx="1.5" fill="#FACC15"/>
+  </symbol>
+
+  <symbol id="egg" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="12.5" rx="5" ry="6.5" fill="#F3F4F6"/>
+    <circle cx="12" cy="14" r="2" fill="#F59E0B"/>
+  </symbol>
+
+  <symbol id="falafel" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="6" fill="#A3E635"/>
+    <circle cx="10" cy="11" r="0.8" fill="#65A30D"/>
+    <circle cx="14" cy="13" r="0.8" fill="#65A30D"/>
+  </symbol>
+
+  <symbol id="tofu" viewBox="0 0 24 24">
+    <rect x="6" y="8" width="12" height="8" rx="1.6" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.2"/>
+  </symbol>
+
+  <symbol id="shrimp" viewBox="0 0 24 24">
+    <path d="M6 13c0-3 3-5 6-5s6 2 6 5H6z" fill="#F87171"/>
+    <circle cx="14" cy="12" r="0.9" fill="#7F1D1D"/>
+  </symbol>
+
+  <symbol id="bacon" viewBox="0 0 24 24">
+    <path d="M6 8c3 2 6 0 9 2 2 1 3 3 3 3-3-2-6 0-9-2C7 10 6 8 6 8z" fill="#EF4444"/>
+    <path d="M7 9c3 2 6 0 9 2" stroke="#FCA5A5" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="drumstick" viewBox="0 0 24 24">
+    <circle cx="14" cy="12" r="5" fill="#92400E"/>
+    <rect x="6.5" y="12" width="5" height="2.5" rx="1.2" fill="#FDE68A"/>
+  </symbol>
+
+  <symbol id="ribs" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="7" rx="2" fill="#B91C1C"/>
+    <path d="M7 10.5h10" stroke="#7F1D1D" stroke-width="2"/>
+  </symbol>
+
+  <symbol id="spice" viewBox="0 0 24 24">
+    <rect x="7" y="6" width="4.5" height="12" rx="2" fill="#9CA3AF"/>
+    <rect x="12.5" y="6" width="4.5" height="12" rx="2" fill="#6B7280"/>
+    <circle cx="9" cy="8" r="0.6" fill="#111827"/>
+    <circle cx="15" cy="8" r="0.6" fill="#F9FAFB"/>
+  </symbol>
+
+  <symbol id="bottle" viewBox="0 0 24 24">
+    <rect x="10" y="4" width="4" height="5" rx="1" fill="#374151"/>
+    <rect x="9" y="9" width="6" height="10" rx="2" fill="#111827"/>
+  </symbol>
+
+  <symbol id="mix-bowl" viewBox="0 0 24 24">
+    <path d="M6 12c0 4 3 7 6 7s6-3 6-7H6z" fill="#CBD5E1"/>
+    <path d="M8 8l8 8" stroke="#0EA5E9" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="measure" viewBox="0 0 24 24">
+    <path d="M7 7h10v9a3 3 0 0 1-3 3H10a3 3 0 0 1-3-3V7z" fill="#93C5FD"/>
+    <path d="M10 9h6M10 11h5M10 13h4" stroke="#1D4ED8" stroke-width="1.6"/>
+  </symbol>
+
+  <symbol id="skewer" viewBox="0 0 24 24">
+    <path d="M6 7l12 10" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="8.5" cy="9" r="1.2" fill="#16A34A"/>
+    <circle cx="12" cy="12" r="1.2" fill="#F59E0B"/>
+    <circle cx="15.5" cy="15" r="1.2" fill="#DC2626"/>
+  </symbol>
+
+  <symbol id="meatball" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="5" fill="#92400E"/>
+    <circle cx="12" cy="12" r="2" fill="#F59E0B"/>
+  </symbol>
+
+  <symbol id="garlic-butter" viewBox="0 0 24 24">
+    <rect x="6" y="12" width="12" height="5" rx="2" fill="#FDE68A"/>
+    <path d="M8 9c1-1 2-2 4-2 2 0 3 1 4 2" stroke="#9CA3AF" stroke-width="1.6"/>
   </symbol>
 
   <symbol id="bowl" viewBox="0 0 24 24">
     <path d="M4 12h16c0 4-3.5 7-8 7s-8-3-8-7z" fill="#22C55E"/>
+    <path d="M6 12c2-2 10-2 12 0" stroke="#16A34A" stroke-width="2"/>
   </symbol>
 
-  <symbol id="thermometer" viewBox="0 0 24 24">
+
+  <!-- ========== NYE MADPLAN-IKONER (APPEND-ONLY, 'mp-' PREFIX) ========== -->
+
+  <symbol id="mp-weight" viewBox="0 0 24 24">
+    <rect x="4" y="5" width="16" height="14" rx="3" fill="#22C55E"/><circle cx="12" cy="12" r="3.2" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-lightning" viewBox="0 0 24 24">
+    <path d="M13 2 6 14h6l-1 8 7-12h-6l1-8z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-family" viewBox="0 0 24 24">
+    <circle cx="9" cy="8" r="2.2" fill="#22C55E"/><circle cx="15" cy="8" r="2.2" fill="#22C55E"/><rect x="5" y="12" width="14" height="7" rx="3.5" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-easy" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8.5" fill="#22C55E"/><path d="M8.5 12l2.5 2.5L15.5 10" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-week" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="14" rx="3" fill="#22C55E"/><rect x="7" y="3" width="2.4" height="4" rx="1.2" fill="#22C55E"/><rect x="14.6" y="3" width="2.4" height="4" rx="1.2" fill="#22C55E"/><rect x="6.5" y="10" width="3.5" height="2.6" rx="1.3" fill="#fff" opacity=".9"/><rect x="10.25" y="10" width="3.5" height="2.6" rx="1.3" fill="#fff" opacity=".6"/><rect x="14" y="10" width="3.5" height="2.6" rx="1.3" fill="#fff" opacity=".35"/>
+  </symbol>
+  <symbol id="mp-calendar-plus" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="14" rx="3" fill="#22C55E"/><rect x="11" y="10" width="2" height="6" rx="1" fill="#fff"/><rect x="9" y="12" width="6" height="2" rx="1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-checklist" viewBox="0 0 24 24">
+    <rect x="6" y="4.5" width="12" height="15" rx="2" fill="#22C55E"/><path d="M8.5 9l1.6 1.6 3-3" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="8.2" y="13" width="7.6" height="1.8" rx="0.9" fill="#fff" opacity=".7"/>
+  </symbol>
+  <symbol id="mp-grocery" viewBox="0 0 24 24">
+    <path d="M5 8h14l-1.6 9a2.4 2.4 0 0 1-2.4 2H9A2.4 2.4 0 0 1 6.6 17L5 8z" fill="#22C55E"/><path d="M7 8l1.4-3M10.5 8l1-3M14 8l.8-2.6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-mealprep" viewBox="0 0 24 24">
+    <rect x="4.5" y="7" width="15" height="10" rx="2.2" fill="#22C55E"/><rect x="7" y="9" width="4.5" height="6" rx="1.2" fill="#fff" opacity=".25"/><rect x="12.5" y="9" width="4.5" height="6" rx="1.2" fill="#fff" opacity=".25"/>
+  </symbol>
+  <symbol id="mp-leftovers" viewBox="0 0 24 24">
+    <rect x="4.5" y="9" width="15" height="8" rx="2" fill="#22C55E"/><rect x="6.5" y="7" width="11" height="2" rx="1" fill="#22C55E"/><circle cx="12" cy="13" r="2.2" fill="#fff" opacity=".28"/>
+  </symbol>
+
+  <!-- Diet/tags -->
+  <symbol id="mp-highprotein" viewBox="0 0 24 24">
+    <rect x="6.5" y="6" width="11" height="12" rx="3" fill="#22C55E"/><rect x="9.5" y="9" width="5" height="6" rx="2" fill="#fff" opacity=".28"/>
+  </symbol>
+  <symbol id="mp-lowcarb" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="6" rx="3" fill="#22C55E"/><path d="M7.5 12h9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-vegan" viewBox="0 0 24 24">
+    <path d="M5 12c0-4 4-7 9-7 2.5 0 4 .5 5 1.4-2 8-8 10.6-11 10.6S5 16 5 12z" fill="#22C55E"/><path d="M12 7c-1 2-1 4-1 6" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  </symbol>
+  <symbol id="mp-vegetarian" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7" fill="#22C55E"/><path d="M9 12c2-1 4-1 6 0-2 3-4 3-6 0z" fill="#fff" opacity=".25"/>
+  </symbol>
+  <symbol id="mp-glutenfree" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="8" fill="#22C55E"/><path d="M8 10c2-2 6-2 8 0M8 14c2 2 6 2 8 0" stroke="#fff" stroke-width="2" opacity=".6"/><path d="M6 6l12 12" stroke="#fff" stroke-width="2"/>
+  </symbol>
+  <symbol id="mp-dairyfree" viewBox="0 0 24 24">
+    <rect x="7" y="6" width="10" height="12" rx="3" fill="#22C55E"/><path d="M6 6l12 12" stroke="#fff" stroke-width="2"/>
+  </symbol>
+  <symbol id="mp-nutfree" viewBox="0 0 24 24">
+    <path d="M12 4c4 2 6 4.5 6 7.5S16 19 12 19s-6-3-6-7.5S8 6 12 4z" fill="#22C55E"/><path d="M6 6l12 12" stroke="#fff" stroke-width="2"/>
+  </symbol>
+  <symbol id="mp-budget" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="13" rx="8.2" ry="5.8" fill="#22C55E"/><rect x="7.2" y="12" width="9.6" height="2" rx="1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-premium" viewBox="0 0 24 24">
+    <path d="M5 11l3-4 4 3 4-3 3 4-7 7-7-7z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-quick" viewBox="0 0 24 24">
+    <path d="M12 4a8 8 0 1 0 8 8" fill="#22C55E"/><rect x="11.2" y="8" width="1.6" height="5" rx="0.8" fill="#fff"/><rect x="12" y="12.5" width="4.6" height="1.6" rx="0.8" fill="#fff" transform="rotate(35 12 13.3)"/>
+  </symbol>
+  <symbol id="mp-slow" viewBox="0 0 24 24">
+    <path d="M5 15c0-2 2.5-4 5-4h4c2.5 0 5 2 5 4 0 2-2 3.5-5 3.5H10C7 18.5 5 17 5 15z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-postworkout" viewBox="0 0 24 24">
+    <rect x="6" y="5" width="12" height="14" rx="3" fill="#22C55E"/><rect x="9" y="8" width="6" height="6" rx="3" fill="#fff" opacity=".28"/>
+  </symbol>
+
+  <!-- Meals/courses -->
+  <symbol id="mp-breakfast" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="6" fill="#22C55E"/><circle cx="12" cy="13" r="2.6" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-lunch" viewBox="0 0 24 24">
+    <rect x="6" y="9" width="12" height="7" rx="2" fill="#22C55E"/><rect x="7" y="7" width="10" height="2" rx="1" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-dinner" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7.5" fill="#22C55E"/><circle cx="12" cy="12" r="3.5" fill="#fff" opacity=".25"/>
+  </symbol>
+  <symbol id="mp-snack" viewBox="0 0 24 24">
+    <rect x="7" y="7" width="10" height="10" rx="3" fill="#22C55E"/><circle cx="12" cy="12" r="2.5" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-dessert" viewBox="0 0 24 24">
+    <rect x="5" y="12" width="14" height="6" rx="2" fill="#22C55E"/><path d="M6.5 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2" stroke="#fff" stroke-width="1.6" opacity=".55" fill="none"/>
+  </symbol>
+  <symbol id="mp-drink" viewBox="0 0 24 24">
+    <rect x="8.5" y="6" width="7" height="12" rx="2" fill="#22C55E"/><rect x="10" y="3" width="6" height="1.6" rx="0.8" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-smoothie" viewBox="0 0 24 24">
+    <rect x="9" y="5" width="6" height="14" rx="3" fill="#22C55E"/><path d="M9 9h6" stroke="#fff" stroke-width="2" opacity=".6"/>
+  </symbol>
+  <symbol id="mp-coffee" viewBox="0 0 24 24">
+    <rect x="7" y="9" width="8" height="7" rx="2" fill="#22C55E"/><rect x="15" y="10.5" width="3.5" height="4" rx="1.6" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-tea" viewBox="0 0 24 24">
+    <rect x="8" y="9" width="7" height="7" rx="2" fill="#22C55E"/><rect x="15" y="10.5" width="3.2" height="3.8" rx="1.6" fill="#22C55E"/>
+  </symbol>
+
+  <!-- Ingrediens/kategori -->
+  <symbol id="mp-chicken" viewBox="0 0 24 24">
+    <path d="M6 13.5c0-3.3 3.5-6.2 7.5-6.2S21 10.2 21 13.5s-3.7 6.2-7.5 6.2S6 16.8 6 13.5z" fill="#22C55E"/><circle cx="10.4" cy="13" r="1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-beef" viewBox="0 0 24 24">
+    <path d="M5 10c3-3 11-3 14 1 2.5 3.5-1 8-6.5 8S4 15 5 10z" fill="#22C55E"/><circle cx="15.5" cy="13" r="1.6" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-pork" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="8" rx="4" fill="#22C55E"/><path d="M8 13h8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+  </symbol>
+  <symbol id="mp-fish" viewBox="0 0 24 24">
+    <path d="M3 12s3.8-4.2 9-4.2S21 12 21 12s-5.2 4.2-9 4.2S3 12 3 12z" fill="#22C55E"/><circle cx="16.5" cy="12" r="1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-egg" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="12.5" rx="5.2" ry="6.8" fill="#22C55E"/><circle cx="12" cy="14" r="2.1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-broccoli" viewBox="0 0 24 24">
+    <path d="M7 9c0-2.2 2.2-3.8 4.2-3.8 1.2 0 2.1.5 2.8 1.3.6-.5 1.5-.8 2.4-.8 2.2 0 3.8 1.7 3.8 3.6 0 2-1.8 3.4-3.6 3.4H8.3C7 12.7 7 10.8 7 9z" fill="#22C55E"/><rect x="11.3" y="12.2" width="1.4" height="5.3" rx=".7" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-carrot" viewBox="0 0 24 24">
+    <path d="M7 8l10 10-4.6 2L7 8z" fill="#22C55E"/><path d="M7 8c1.2-2.2 2.7-3.2 5-3-1 1-1.4 1.9-1.5 2.8C9.8 7.3 8.4 7.5 7 8z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-tomato" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="6" fill="#22C55E"/><path d="M9 8c2-2 4-2 6 0" stroke="#fff" stroke-width="2" opacity=".5"/>
+  </symbol>
+  <symbol id="mp-onion" viewBox="0 0 24 24">
+    <circle cx="12" cy="13" r="6" fill="#22C55E"/><path d="M12 8c1 1.2 2 1.8 2.6 2.1" stroke="#fff" stroke-width="1.6" opacity=".7"/>
+  </symbol>
+  <symbol id="mp-garlic" viewBox="0 0 24 24">
+    <path d="M12 7c2 0 4 2 5 4.5S16.5 18 12 18 7 15.5 7 11.5 10 7 12 7z" fill="#22C55E"/><path d="M12 6c.8-.8 1.6-1.5 2.2-2" stroke="#22C55E" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="mp-lemon" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="12" rx="7" ry="5" fill="#22C55E"/><path d="M8 12c2-1 4-1 8 0" stroke="#fff" stroke-width="2" opacity=".5"/>
+  </symbol>
+  <symbol id="mp-potato" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="13" rx="6" ry="5" fill="#22C55E"/><circle cx="10" cy="12" r="0.6" fill="#fff"/><circle cx="14" cy="14" r="0.6" fill="#fff"/>
+  </symbol>
+
+  <!-- Rettyper -->
+  <symbol id="mp-salad-bowl" viewBox="0 0 24 24">
+    <path d="M4 12h16c0 4-3.5 7-8 7s-8-3-8-7z" fill="#22C55E"/><path d="M6.5 12c2-2 9-2 11 0" stroke="#fff" stroke-width="2" opacity=".4"/>
+  </symbol>
+  <symbol id="mp-soup" viewBox="0 0 24 24">
+    <path d="M5 12h14a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5z" fill="#22C55E"/><path d="M8 9c.8-.5 1.6-.5 2.4 0M12 9c.8-.5 1.6-.5 2.4 0" stroke="#22C55E" stroke-width="2"/>
+  </symbol>
+  <symbol id="mp-rice" viewBox="0 0 24 24">
+    <path d="M6 13c0 4 3 7 6 7s6-3 6-7H6z" fill="#22C55E"/><path d="M6 13c2-2 10-2 12 0" stroke="#fff" stroke-width="2" opacity=".4"/>
+  </symbol>
+  <symbol id="mp-pasta" viewBox="0 0 24 24">
+    <rect x="5" y="11" width="14" height="6" rx="2" fill="#22C55E"/><path d="M7 12.5h10M7 14.5h10" stroke="#fff" stroke-width="1.6" opacity=".6"/>
+  </symbol>
+  <symbol id="mp-wrap" viewBox="0 0 24 24">
+    <rect x="7" y="6" width="10" height="12" rx="3" fill="#22C55E"/><path d="M9 9c2 1 4 1 6 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-taco" viewBox="0 0 24 24">
+    <path d="M5 15a7 7 0 0 1 14 0H5z" fill="#22C55E"/><path d="M6.5 14c1.1-1.3 3.8-2.5 5.5-2.5S16.5 12.7 17.5 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-pizza" viewBox="0 0 24 24">
+    <path d="M5 18l7-12 7 12H5z" fill="#22C55E"/><circle cx="12" cy="13" r="1.1" fill="#fff"/><circle cx="14.5" cy="15" r="1.1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-burger" viewBox="0 0 24 24">
+    <rect x="4" y="8" width="16" height="4" rx="2" fill="#22C55E"/><rect x="4" y="12" width="16" height="3" rx="1.5" fill="#22C55E"/><rect x="4" y="15" width="16" height="3" rx="1.5" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-fries" viewBox="0 0 24 24">
+    <rect x="5" y="10" width="14" height="9" rx="2" fill="#22C55E"/><path d="M7 10 8 5m3 5 1-5m3 5 1-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-nuggets" viewBox="0 0 24 24">
+    <rect x="6.2" y="9" width="5.6" height="4.6" rx="2.2" fill="#22C55E"/><rect x="12.2" y="11" width="5.6" height="4.6" rx="2.2" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-sushi" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="8" rx="3" fill="#22C55E"/><rect x="7" y="11" width="10" height="4" rx="2" fill="#fff" opacity=".35"/>
+  </symbol>
+  <symbol id="mp-cake" viewBox="0 0 24 24">
+    <rect x="4.5" y="11" width="15" height="7" rx="2" fill="#22C55E"/><path d="M5.5 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2" stroke="#fff" stroke-width="1.6" fill="none" opacity=".6"/>
+  </symbol>
+  <symbol id="mp-cookie" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7" fill="#22C55E"/><circle cx="10" cy="11" r="1" fill="#fff"/><circle cx="14" cy="9" r="1" fill="#fff"/><circle cx="13" cy="14" r="1" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-donut" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="7" fill="#22C55E"/><circle cx="12" cy="12" r="2.2" fill="#fff"/>
+  </symbol>
+  <symbol id="mp-waffle" viewBox="0 0 24 24">
+    <rect x="5" y="7" width="14" height="10" rx="2" fill="#22C55E"/><path d="M8 7v10M12 7v10M16 7v10M5 10h14M5 14h14" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+  </symbol>
+
+  <!-- Devices/metoder -->
+  <symbol id="mp-airfryer" viewBox="0 0 24 24">
+    <rect x="5" y="4" width="14" height="16" rx="3" fill="#22C55E"/><circle cx="12" cy="14" r="2.7" fill="#fff"/><rect x="8" y="7" width="8" height="4" rx="1.2" fill="#fff" opacity=".85"/>
+  </symbol>
+  <symbol id="mp-oven" viewBox="0 0 24 24">
+    <rect x="4" y="4" width="16" height="16" rx="2.5" fill="#22C55E"/><rect x="6.5" y="8" width="11" height="8" rx="1.4" fill="#fff" opacity=".9"/>
+  </symbol>
+  <symbol id="mp-grill" viewBox="0 0 24 24">
+    <rect x="5" y="9" width="14" height="6" rx="3" fill="#22C55E"/><path d="M7 15l-1.5 4M17 15l1.5 4" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-pan" viewBox="0 0 24 24">
+    <rect x="4" y="10" width="11" height="6" rx="3" fill="#22C55E"/><rect x="16" y="11.5" width="5" height="3" rx="1.5" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-pot" viewBox="0 0 24 24">
+    <rect x="4" y="9" width="16" height="9" rx="2" fill="#22C55E"/><rect x="7" y="7" width="10" height="2" rx="1" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-thermo" viewBox="0 0 24 24">
     <path d="M14 14.5V7a2 2 0 0 0-4 0v7.5a4 4 0 1 0 4 0z" fill="#22C55E"/>
   </symbol>
 
-  <symbol id="blender" viewBox="0 0 24 24">
-    <rect x="7" y="4" width="10" height="11" rx="2" fill="#22C55E"/>
-    <rect x="9" y="16" width="6" height="3.5" rx="1.7" fill="#22C55E"/>
+  <!-- Utilities -->
+  <symbol id="mp-search" viewBox="0 0 24 24">
+    <circle cx="11" cy="11" r="6" fill="#22C55E"/><rect x="15" y="15" width="6" height="2.6" rx="1.3" fill="#22C55E" transform="rotate(45 18 16.3)"/>
+  </symbol>
+  <symbol id="mp-star" viewBox="0 0 24 24">
+    <path d="M12 3l2.6 5.4 6 .9-4.3 4.2 1 5.9L12 16.8 6.7 19.4l1-5.9-4.3-4.2 6-.9L12 3z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-heart" viewBox="0 0 24 24">
+    <path d="M12 20.5s-6-3.8-8.5-6.8C1.7 11.5 3 7.5 6.6 7.5c2 0 3.1 1.1 3.9 2 .8-.9 1.9-2 3.9-2 3.6 0 4.9 4 3.1 6.2C18 16.7 12 20.5 12 20.5z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-fire" viewBox="0 0 24 24">
+    <path d="M12 3c2.6 3.2 2.2 5.9 1.4 7.4 1.1-.2 2.1-.8 3-1.7 1.7 2.2 2.2 4.2 1.7 6.2-.7 3-3.4 5.6-6.9 5.6S4.9 17.1 4.2 14c-.5-2 0-4 1.7-6.2.4 1.1.8 2 .8 3.1 0 1.4.6 2.5 1.7 3.2-.4-1-.6-2-.6-2.9 0-1.9 0-3.6 3.2-5.2z" fill="#22C55E"/>
+  </symbol>
+  <symbol id="mp-badge" viewBox="0 0 24 24">
+    <rect x="5" y="6" width="14" height="12" rx="3" fill="#22C55E"/><path d="M8 12l2.2 2.2L16 9" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mp-cart" viewBox="0 0 24 24">
+    <path d="M3 6h2l2 11h10l2-7H7" fill="#22C55E"/><circle cx="9.5" cy="19" r="1.4" fill="#22C55E"/><circle cx="16.5" cy="19" r="1.4" fill="#22C55E"/>
   </symbol>
 
-  <!-- ===== DIET / CONTEXT ===== -->
-  <symbol id="scale" viewBox="0 0 24 24">
-    <path d="M6 4h12a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z" fill="#22C55E"/>
-    <circle cx="12" cy="12" r="2.6" fill="#fff"/>
-  </symbol>
-
-  <symbol id="vegan" viewBox="0 0 24 24">
-    <path d="M5 12c0-4 4-7 9-7 2.5 0 4 .5 5 1.4-2 8-8 10.6-11 10.6S5 16 5 12z" fill="#22C55E"/>
-    <path d="M12 7c-1 2-1 4-1 6" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
-  </symbol>
-
-  <symbol id="vegetarian" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="7" fill="#22C55E"/>
-    <path d="M9 12c2-1 4-1 6 0-2 3-4 3-6 0z" fill="#fff" opacity=".25"/>
-  </symbol>
-
-  <symbol id="lowcarb" viewBox="0 0 24 24">
-    <rect x="5" y="8" width="14" height="8" rx="3" fill="#22C55E"/>
-    <path d="M7.5 12h9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  </symbol>
-
-  <symbol id="highprotein" viewBox="0 0 24 24">
-    <rect x="6" y="6" width="12" height="12" rx="3" fill="#22C55E"/>
-    <rect x="9" y="9" width="6" height="6" rx="2" fill="#fff" opacity=".3"/>
-  </symbol>
-
-  <symbol id="budget" viewBox="0 0 24 24">
-    <ellipse cx="12" cy="12" rx="8.5" ry="6" fill="#22C55E"/>
-    <rect x="7" y="11" width="10" height="2" rx="1" fill="#fff"/>
-  </symbol>
-
-  <symbol id="premium" viewBox="0 0 24 24">
-    <path d="M5 11l3-4 4 3 4-3 3 4-7 7-7-7z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="quick" viewBox="0 0 24 24">
-    <path d="M13 2 6 14h6l-1 8 7-12h-6l1-8z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="slow" viewBox="0 0 24 24">
-    <path d="M5 15c0-2 2.5-4 5-4h4c2.5 0 5 2 5 4 0 2-2 3.5-5 3.5H10C7 18.5 5 17 5 15z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="kids" viewBox="0 0 24 24">
-    <circle cx="8" cy="7.5" r="2.2" fill="#22C55E"/>
-    <circle cx="16" cy="7.5" r="2.2" fill="#22C55E"/>
-    <rect x="4" y="12" width="6.5" height="7.5" rx="2.8" fill="#22C55E"/>
-    <rect x="13.5" y="12" width="6.5" height="7.5" rx="2.8" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="family" viewBox="0 0 24 24">
-    <circle cx="9" cy="8" r="2.4" fill="#22C55E"/>
-    <circle cx="15" cy="8" r="2.4" fill="#22C55E"/>
-    <rect x="5" y="12" width="14" height="7" rx="3.5" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="picnic" viewBox="0 0 24 24">
-    <rect x="5" y="10" width="14" height="7" rx="2" fill="#22C55E"/>
-    <path d="M7 10l5-4 5 4" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
-  </symbol>
-
-  <symbol id="snack" viewBox="0 0 24 24">
-    <rect x="7" y="7" width="10" height="10" rx="3" fill="#22C55E"/>
-    <circle cx="12" cy="12" r="2.5" fill="#fff"/>
-  </symbol>
-
-  <symbol id="dessert" viewBox="0 0 24 24">
-    <rect x="4.5" y="11" width="15" height="7" rx="2" fill="#22C55E"/>
-    <path d="M6 14c2 0 2 2 4 2s2-2 4-2 2 2 4 2" stroke="#fff" stroke-width="1.6" fill="none" opacity=".6"/>
-  </symbol>
-
-  <symbol id="main" viewBox="0 0 24 24">
-    <circle cx="12" cy="13" r="6" fill="#22C55E"/>
-    <circle cx="12" cy="13" r="2.8" fill="#fff" opacity=".28"/>
-  </symbol>
-
-  <symbol id="side" viewBox="0 0 24 24">
-    <circle cx="9" cy="13" r="4.2" fill="#22C55E"/>
-    <circle cx="15" cy="13" r="2.8" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="drink" viewBox="0 0 24 24">
-    <rect x="8" y="6" width="8" height="12" rx="2" fill="#22C55E"/>
-    <rect x="10" y="3" width="6" height="1.6" rx="0.8" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="juice" viewBox="0 0 24 24">
-    <rect x="9" y="5" width="6" height="14" rx="2" fill="#22C55E"/>
-    <path d="M9 9h6" stroke="#fff" stroke-width="2" opacity=".6"/>
-  </symbol>
-
-  <symbol id="soup" viewBox="0 0 24 24">
-    <path d="M5 12h14a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5z" fill="#22C55E"/>
-    <path d="M8 9c.8-.5 1.6-.5 2.4 0M12 9c.8-.5 1.6-.5 2.4 0" stroke="#22C55E" stroke-width="2" stroke-linecap="round"/>
-  </symbol>
-
-  <symbol id="salad-bowl" viewBox="0 0 24 24">
-    <path d="M4 12h16c0 4-3.5 7-8 7s-8-3-8-7z" fill="#22C55E"/>
-    <path d="M6.5 12c2-2 9-2 11 0" stroke="#fff" stroke-width="2" opacity=".4"/>
-  </symbol>
-
-  <!-- ===== MISC / EXTRA ===== -->
-  <symbol id="cup" viewBox="0 0 24 24">
-    <rect x="7" y="7" width="8" height="10" rx="2" fill="#22C55E"/>
-    <rect x="15" y="9" width="3.5" height="6" rx="1.6" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="plate" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="7.5" fill="#22C55E"/>
-    <circle cx="12" cy="12" r="3.5" fill="#fff" opacity=".25"/>
-  </symbol>
-
-  <symbol id="bottle" viewBox="0 0 24 24">
-    <rect x="10" y="4" width="4" height="5" rx="1" fill="#22C55E"/>
-    <rect x="9" y="9" width="6" height="10" rx="2" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="water" viewBox="0 0 24 24">
-    <path d="M12 4c4 6 5.5 8.6 5.5 11A5.5 5.5 0 0 1 12 20a5.5 5.5 0 0 1-5.5-5c0-2.4 1.5-5 5.5-11z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="sun" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="5" fill="#22C55E"/>
-    <g fill="#22C55E">
-      <rect x="11.2" y="2" width="1.6" height="3" rx="0.8"/>
-      <rect x="11.2" y="19" width="1.6" height="3" rx="0.8"/>
-      <rect x="2" y="11.2" width="3" height="1.6" rx="0.8"/>
-      <rect x="19" y="11.2" width="3" height="1.6" rx="0.8"/>
-    </g>
-  </symbol>
-
-  <symbol id="timer" viewBox="0 0 24 24">
-    <rect x="9" y="3" width="6" height="2" rx="1" fill="#22C55E"/>
-    <circle cx="12" cy="13" r="7.5" fill="#22C55E"/>
-    <rect x="11.2" y="9.5" width="1.6" height="4.5" rx="0.8" fill="#fff"/>
-  </symbol>
-
-  <symbol id="crown" viewBox="0 0 24 24">
-    <path d="M4 10l3-3 5 4 5-4 3 3v7H4v-7z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="shield" viewBox="0 0 24 24">
-    <path d="M12 3l8 3v6c0 6-8 9-8 9s-8-3-8-9V6l8-3z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="map" viewBox="0 0 24 24">
-    <path d="M4 6l6-2 4 2 6-2v14l-6 2-4-2-6 2V6z" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="location" viewBox="0 0 24 24">
-    <path d="M12 3a7 7 0 0 1 7 7c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 7-7z" fill="#22C55E"/>
-    <circle cx="12" cy="10" r="2.2" fill="#fff"/>
-  </symbol>
-
-  <symbol id="cart" viewBox="0 0 24 24">
-    <path d="M3 6h2l2 11h10l2-7H7" fill="#22C55E"/>
-    <circle cx="9.5" cy="19" r="1.4" fill="#22C55E"/>
-    <circle cx="16.5" cy="19" r="1.4" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="search" viewBox="0 0 24 24">
-    <circle cx="11" cy="11" r="6" fill="#22C55E"/>
-    <rect x="15" y="15" width="6" height="2.6" rx="1.3" fill="#22C55E" transform="rotate(45 18 16.3)"/>
-  </symbol>
-
-  <symbol id="list" viewBox="0 0 24 24">
-    <rect x="6" y="6" width="12" height="2.4" rx="1.2" fill="#22C55E"/>
-    <rect x="6" y="10.8" width="12" height="2.4" rx="1.2" fill="#22C55E"/>
-    <rect x="6" y="15.6" width="12" height="2.4" rx="1.2" fill="#22C55E"/>
-  </symbol>
-
-  <symbol id="sparkles" viewBox="0 0 24 24">
-    <path d="M12 3l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z" fill="#22C55E"/>
-    <path d="M4 7l.8 1.6L7 9l-2.2.4L4 11l-.8-1.6L1 9l2.2-.4L4 7zM19 14l.7 1.4 1.3.6-1.3.6L19 18l-.7-1.4-1.3-.6 1.3-.6L19 14z" fill="#22C55E"/>
-  </symbol>
 </svg>
