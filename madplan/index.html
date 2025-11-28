@@ -21,7 +21,7 @@
         <p class="lead">Alle vores madplaner samlet ét sted – vælg mellem sunde planer, airfryer-mad, vægttabsvenlige forslag og meget mere.</p>
 
         <div class="panel-search" role="search">
-          <form>
+          <form onsubmit="event.preventDefault();">
             <input id="search-input" type="search" placeholder="Søg i madplaner… (fx kylling, vægttab, ugeplan)" />
             <button class="btn primary" type="submit">Søg</button>
           </form>
@@ -32,271 +32,42 @@
       </div>
     </section>
 
-    <!-- Sektion: Nemt i hverdagen -->
+    <!-- Nemt i hverdagen -->
     <section class="section">
-      <div class="section-head">
-        <h2><svg class="ico-inline"><use href="#sparkles"></use></svg>Nemt i hverdagen</h2>
-      </div>
-      <div class="grid grid-3">
-        <a href="/madplan/7-dages-airfryer-madplan.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#bolt"></use></svg></div>
-          <div class="card-body">
-            <h3>7 Dages Airfryer Madplan</h3>
-            <p class="meta">Nem og sund mad til hele ugen</p>
-          </div>
-        </a>
-        <a href="/madplan/madplan-budget.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#coin"></use></svg></div>
-          <div class="card-body">
-            <h3>Budgetvenlig Madplan</h3>
-            <p class="meta">Billig mad uden at gå på kompromis</p>
-          </div>
-        </a>
-        <a href="/madplan/familievenlig-hverdag.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#family"></use></svg></div>
-          <div class="card-body">
-            <h3>Familievenlig Madplan</h3>
-            <p class="meta">Retter børn og voksne elsker</p>
-          </div>
-        </a>
-      </div>
+      <div class="section-head"><h2><svg class="ico-inline"><use href="#sparkles"></use></svg>Nemt i hverdagen</h2></div>
+      <div class="grid grid-3" data-mp-grid data-tag="hverdag" data-limit="6"></div>
     </section>
 
-    <!-- Sektion: Til vægttab -->
+    <!-- Vægttab -->
     <section class="section">
-      <div class="section-head">
-        <h2><svg class="ico-inline"><use href="#heart"></use></svg>Madplaner til vægttab</h2>
-      </div>
-      <div class="grid grid-3">
-        <a href="/madplan/kalorielet-airfryer.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#scale"></use></svg></div>
-          <div class="card-body">
-            <h3>Kalorielet Airfryer Plan</h3>
-            <p class="meta">Perfekt til vægttabsrejser</p>
-          </div>
-        </a>
-        <a href="/madplan/sund-ugeplan.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#leaf"></use></svg></div>
-          <div class="card-body">
-            <h3>Sund Madplan Uge 1</h3>
-            <p class="meta">Fyldt med grønt og protein</p>
-          </div>
-        </a>
-        <a href="/madplan/airfryer-vægttab-kvinder.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#female"></use></svg></div>
-          <div class="card-body">
-            <h3>Vægttab for Kvinder</h3>
-            <p class="meta">Designet til 1200 kcal pr. dag</p>
-          </div>
-        </a>
-      </div>
+      <div class="section-head"><h2><svg class="ico-inline"><use href="#leaf"></use></svg>Madplaner til vægttab</h2></div>
+      <div class="grid grid-3" data-mp-grid data-tag="vægttab" data-limit="6"></div>
     </section>
 
-    <!-- Sektion: Kommende madplaner (fake links) -->
+    <!-- For 2 -->
     <section class="section">
-      <div class="section-head">
-        <h2><svg class="ico-inline"><use href="#clock"></use></svg>Kommende madplaner</h2>
-      </div>
-      <div class="grid grid-3">
-        <a href="/madplan/madplan-jul-airfryer.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#gift"></use></svg></div>
-          <div class="card-body">
-            <h3>Julemad i Airfryer</h3>
-            <p class="meta">Traditioner på en nem måde</p>
-          </div>
-        </a>
-        <a href="/madplan/sommermad-airfryer.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#sun"></use></svg></div>
-          <div class="card-body">
-            <h3>Sommermadplan</h3>
-            <p class="meta">Lette og friske retter</p>
-          </div>
-        </a>
-        <a href="/madplan/madplan-for-2.html" class="card card--guide">
-          <div class="thumb-icon"><svg><use href="#user"></use></svg></div>
-          <div class="card-body">
-            <h3>Madplan for 2 personer</h3>
-            <p class="meta">Simpelt, hurtigt og lækkert</p>
-          </div>
-        </a>
-      </div>
+      <div class="section-head"><h2><svg class="ico-inline"><use href="#bowl"></use></svg>For 2 personer</h2></div>
+      <div class="grid grid-3" data-mp-grid data-tag="for2" data-limit="6"></div>
     </section>
 
-   <section class="section">
-  <div class="section-head">
-    <h2><svg class="ico-inline"><use href="#star"></use></svg>Relateret indhold</h2>
-  </div>
-  <div class="grid grid-3">
-    <a href="/guides/airfryer-tider.html" class="card card--guide">
-      <div class="thumb-icon"><svg><use href="#thermo"></use></svg></div>
-      <div class="card-body">
-        <h3>Airfryer Tider & Temperaturer</h3>
-        <p class="meta">Hurtigt overblik til alle retter</p>
+    <!-- Alle planer (søger mål) -->
+    <section class="section">
+      <div class="section-head"><h2><svg class="ico-inline"><use href="#star"></use></svg>Alle planer</h2></div>
+      <div class="grid grid-3" data-mp-all></div>
+    </section>
+
+    <!-- PriceRunner (indsæt jeres carousel-snippet her hvis ønsket) -->
+    <section class="section">
+      <div class="section-head"><h2><svg class="ico-inline"><use href="#cart"></use></svg>Tilbud & Udstyr</h2></div>
+      <div id="pricerunner-wrap">
+        <!-- Indsæt jeres kendte carousel fra forsiden her -->
       </div>
-    </a>
-    <a href="/guides/valg-af-airfryer.html" class="card card--guide">
-      <div class="thumb-icon"><svg><use href="#airfryer"></use></svg></div>
-      <div class="card-body">
-        <h3>Vælg Den Rigtige Airfryer</h3>
-        <p class="meta">Størrelse, effekt og tilbehør</p>
-      </div>
-    </a>
-    <a href="/guides/airfryer-rengoering.html" class="card card--guide">
-      <div class="thumb-icon"><svg><use href="#sparkles"></use></svg></div>
-      <div class="card-body">
-        <h3>Rengøring Af Airfryer</h3>
-        <p class="meta">Skånsomt og uden ridser</p>
-      </div>
-    </a>
-  </div>
-</section>
-
-
-    <section class="section" id="anbefalede">
-  <div class="section-head" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-    <h2><svg class="ico-inline"><use href="#tag"></use></svg>Tilbud & Udstyr</h2>
-  </div>
-
-  <div class="pr-carousel" id="pr-carousel">
-    <!-- SLIDE 1 -->
-    <div class="pr-slide is-active">
-      <div style="min-height:220px">
-        <div id="pr-product-widget-e0348930" style="display:block;width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3280146314&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-e0348930" async></script>
-      </div>
-      <div style="display:inline-block;margin-top:6px">
-        <a href="https://www.pricerunner.dk/pl/81-3280146314/Frituregryder/Ninja-Double-Stack-XL-2-Level-Air-Fryer-9.5L-Sammenlign-Priser" rel="nofollow sponsored">
-          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
-            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 2 -->
-    <div class="pr-slide">
-      <div style="min-height:220px">
-        <div id="pr-product-widget-f262c590" style="display:block;width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3200256729&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-f262c590" async></script>
-      </div>
-      <div style="display:inline-block;margin-top:6px">
-        <a href="https://www.pricerunner.dk/pl/81-3200256729/Frituregryder/Xiaomi-Mi-Smart-Air-Fryer-Sammenlign-Priser" rel="nofollow sponsored">
-          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
-            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 3 -->
-    <div class="pr-slide">
-      <div style="min-height:220px">
-        <div id="pr-product-widget-0a362ae0" style="display:block;width:100%"></div>
-        <script src="https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=3231353404&partnerId=adrunner_dk_opskrift-airfryer&widgetId=pr-product-widget-0a362ae0" async></script>
-      </div>
-      <div style="display:inline-block;margin-top:6px">
-        <a href="https://www.pricerunner.dk/pl/81-3231353404/Frituregryder/Philips-3000-Series-NA352-00-Sammenlign-Priser" rel="nofollow sponsored">
-          <p style="font:14px 'Klarna Text',Helvetica,sans-serif;font-style:italic;color:var(--muted);text-decoration:underline">
-            Annonce i samarbejde med <span style="font-weight:bold">PriceRunner</span>
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <button class="pr-nav pr-prev" aria-label="Forrige">‹</button>
-    <button class="pr-nav pr-next" aria-label="Næste">›</button>
-  </div>
-
-  <!-- Dots -->
-  <div class="pr-dots" id="pr-dots"></div>
-</section>
-
-<!-- Slider logik (indsæt KUN hvis du ikke allerede har den globalt) -->
-<script>
-(function(){
-  const root = document.getElementById('pr-carousel');
-  if(!root) return;
-  const slides = Array.from(root.querySelectorAll('.pr-slide'));
-  const prev = root.querySelector('.pr-prev');
-  const next = root.querySelector('.pr-next');
-  const dotsWrap = document.getElementById('pr-dots');
-  if (slides.length <= 1) return;
-
-  let i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
-  let timer = null;
-  const INTERVAL = 6000;
-
-  function show(n){
-    slides.forEach(s=>s.classList.remove('is-active'));
-    slides[n].classList.add('is-active');
-    if (dotsWrap){
-      dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active', k===n));
-    }
-    i = n;
-  }
-  function makeDots(){
-    if(!dotsWrap) return;
-    dotsWrap.innerHTML = slides.map((_,k)=>`<button class="pr-dot" aria-label="Slide ${k+1}"></button>`).join('');
-    dotsWrap.querySelectorAll('.pr-dot').forEach((btn,k)=>btn.addEventListener('click', ()=>{ stop(); show(k); start(); }));
-  }
-  function nextSlide(){ show((i+1) % slides.length); }
-  function prevSlide(){ show((i-1+slides.length) % slides.length); }
-  function start(){
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    stop(); timer = setInterval(nextSlide, INTERVAL);
-  }
-  function stop(){ if (timer){ clearInterval(timer); timer = null; } }
-
-  prev && prev.addEventListener('click', ()=>{ stop(); prevSlide(); start(); });
-  next && next.addEventListener('click', ()=>{ stop(); nextSlide(); start(); });
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
-  root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', start);
-  document.addEventListener('visibilitychange', ()=>{ if (document.hidden) stop(); else start(); });
-
-  makeDots(); show(i); start();
-})();
-</script>
-
-<script>
-(function(){
-  const gridSections = [...document.querySelectorAll('[data-mp-grid]')];
-  if (!window.MADPLANER || !gridSections.length) return;
-
-  const icon = id => `<div class="thumb-icon"><svg><use href="#${id||'calendar'}"></use></svg></div>`;
-  const badge = (ico, txt)=> `<span class="badge"><svg class="ico-inline"><use href="#${ico}"></use></svg> ${txt}</span>`;
-  const toCard = p => (
-    `<a class="card card--guide" href="/madplan/${p.slug}.html">
-      ${icon(p.icon)}
-      <div class="card-body">
-        <h3>${p.title}</h3>
-        <p class="meta">${p.desc}</p>
-        <div class="badges" style="margin-top:6px">
-          ${badge('timer', p.duration || '7 dage')}
-          ${badge('users', (p.people||4) + ' personer')}
-          ${badge('scale', (p.kcalAvg||'–') + ' kcal')}
-        </div>
-      </div>
-    </a>`
-  );
-
-  function renderInto(el){
-    const tag = el.getAttribute('data-tag');       // fx "vægttab" / "budget" / "familie"
-    const limit = +el.getAttribute('data-limit') || 6;
-    const list = window.MADPLANER
-      .filter(p => !tag || (p.tags||[]).includes(tag))
-      .sort((a,b)=> (b.published||'').localeCompare(a.published||''))
-      .slice(0, limit);
-    el.innerHTML = list.map(toCard).join('') || `<p class="meta">Ingen madplaner endnu.</p>`;
-  }
-
-  gridSections.forEach(renderInto);
-})();
-</script>
+    </section>
+  </main>
 
   <div data-include="/partials/footer.html"></div>
   <script src="/assets/include.js?v=4"></script>
+  <script src="/assets/madplaner.js?v=1"></script>
+  <script src="/assets/madplan-hub.js?v=1"></script>
 </body>
 </html>
