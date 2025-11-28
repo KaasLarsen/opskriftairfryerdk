@@ -1,84 +1,122 @@
-/*! assets/madplan-hub.js – robust renderer til madplan-hubben */
+/* Madplan hub – bygger kort + søgning
+   Kræver: /assets/madplaner.js der eksporterer window.MP (array af objekter)
+   Struktur pr. item i MP:
+   { url, title, desc, icon, tags: ['hverdag','vægttab','for2', ...], lastmod }
+*/
 (function () {
-  const byId = (id) => document.getElementById(id);
-  const $all = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+  // ===== helpers =====
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-  // Lille helper til sikker tekst
-  const esc = (s) => String(s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  // Registrér
+  const REG = Array.isArray(window.MP) ? window.MP.slice() : [];
 
-  function cardHTML(it){
-    const icon = esc(it.icon || "star");
-    const title = esc(it.title || "");
-    const url = esc(it.url || "#");
-    const meta = esc(it.kicker || "");
+  // Fallback: hent fra sitemap hvis REG er tomt
+  async function loadFromSitemapIfEmpty(){
+    if (REG.length) return REG;
+    try{
+      const res = await fetch('/madplan-sitemap.xml', {cache:'no-store'});
+      if(!res.ok) throw 1;
+      const xml = await res.text();
+      const urls = [...xml.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)]
+        .map(m=>m[1])
+        .filter(u => u.includes('/madplan/'));
+      urls.forEach(u=>{
+        const p = new URL(u, location.origin).pathname;
+        const slug = p.split('/').pop().replace(/\.html$/,'');
+        REG.push({
+          url: p,
+          title: slug.replace(/-/g,' ').replace(/\b\w/g,m=>m.toUpperCase()),
+          desc: 'Madplan',
+          icon: 'calendar',
+          tags: []
+        });
+      });
+    }catch(_){}
+    return REG;
+  }
+
+  // Kort
+  function card(item){
+    const icon = item.icon || 'calendar';
+    const desc = item.desc || 'Madplan';
     return `
-      <a class="card card--guide" href="${url}">
+      <a class="card card--guide" href="${item.url}">
         <div class="thumb-icon"><svg><use href="#${icon}"></use></svg></div>
         <div class="card-body">
-          <h3>${title}</h3>
-          <p class="meta">${meta}</p>
+          <h3>${item.title}</h3>
+          <p class="meta">${desc}</p>
         </div>
-      </a>`;
+      </a>
+    `;
   }
 
-  function renderSectionGrids(items){
-    // data-mp-grid: filtrér på ét tag
-    $all('[data-mp-grid]').forEach(el=>{
-      const tag = (el.dataset.tag || '').toLowerCase().trim();
-      const limit = parseInt(el.dataset.limit||'0',10) || 6;
-      const subset = items.filter(it => (it.tags||[]).some(t => String(t).toLowerCase() === tag)).slice(0, limit);
-      el.innerHTML = subset.map(cardHTML).join('') || '<p class="meta">Ingen planer endnu.</p>';
-    });
-
-    // data-mp-all: vis alle
-    $all('[data-mp-all]').forEach(el=>{
-      const limit = parseInt(el.dataset.limit||'0',10) || 12;
-      el.innerHTML = items.slice(0, limit).map(cardHTML).join('') || '<p class="meta">Ingen planer endnu.</p>';
+  // Render et grid ud fra tag + limit
+  function renderTaggedGrids(list){
+    $$('[data-mp-grid]').forEach(grid=>{
+      const tag = grid.getAttribute('data-tag') || '';
+      const cap = parseInt(grid.getAttribute('data-limit') || '6', 10);
+      const items = list.filter(x => (x.tags||[]).includes(tag)).slice(0, cap);
+      grid.innerHTML = items.length ? items.map(card).join('') : '<p class="meta">Ingen madplaner endnu.</p>';
     });
   }
 
-  function normalise(list){
-    const out = (list||[]).map(x => ({
-      url: x.url, title: x.title, icon: x.icon || 'star',
-      tags: Array.isArray(x.tags) ? x.tags : [],
-      kicker: x.kicker || '',
-      published: x.published || ''
-    }));
-    // Nyeste først, så alfabetisk
-    out.sort((a,b)=>{
-      const da = new Date(a.published||0), db = new Date(b.published||0);
-      if (db - da) return db - da;
-      return (a.title||'').localeCompare(b.title||'', 'da');
-    });
-    return out;
+  // Render “Alle planer”
+  function renderAll(list){
+    const mount = $('[data-mp-all]');
+    if (!mount) return;
+    const byTitle = list.slice().sort((a,b)=> (a.title||'').localeCompare(b.title||'', 'da'));
+    mount.innerHTML = byTitle.map(card).join('');
   }
 
-  function tryRender(){
-    const data = normalise(window.MADPLANS || []);
-    if (!data.length) return false;
-    renderSectionGrids(data);
-    return true;
+  // Søgning: filtrér i REG og skriv ind i [data-mp-all]
+  function initSearch(list){
+    const input = $('#search-input');
+    const mount = $('[data-mp-all]');
+    if (!input || !mount) return;
+
+    const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu,'');
+    let ALL = list.slice();
+
+    function run(){
+      const q = norm(input.value.trim());
+      if (!q){ renderAll(ALL); return; }
+      const out = ALL.filter(x=>{
+        const hay = [x.title, x.desc, (x.tags||[]).join(' ')].map(norm).join(' ');
+        return hay.includes(q) || hay.split(' ').some(w => w.startsWith(q));
+      });
+      mount.innerHTML = out.length ? out.map(card).join('') : '<p class="meta">Ingen madplaner matchede din søgning.</p>';
+    }
+
+    // bind
+    input.addEventListener('input', run);
+    const form = input.closest('form');
+    if (form) form.addEventListener('submit', e=>{ e.preventDefault(); run(); });
   }
 
-  // Kør når DOM er klar
-  function boot(){
-    if (tryRender()) return;
-
-    // Fald tilbage: lyt efter forskellige mulige events/flags og prøv igen
-    let retries = 20;
-    const timer = setInterval(()=>{
-      if (tryRender() || --retries <= 0) clearInterval(timer);
-    }, 200);
-
-    // Lyt til flere mulige events (vi sender selv "madplans:ready" fra datafilen)
-    ['madplans:ready','madplan:ready','MADPLANS_READY'].forEach(ev=>{
-      document.addEventListener(ev, tryRender, { once:false });
-    });
+  // Diagnostic: log manglende filer (404) i konsollen
+  async function checkMissing(list){
+    try{
+      const checks = await Promise.all(list.map(async it=>{
+        try{
+          const r = await fetch(it.url, {method:'HEAD', cache:'no-store'});
+          return {url: it.url, ok: r.ok};
+        }catch(_){ return {url: it.url, ok:false}; }
+      }));
+      const missing = checks.filter(c=>!c.ok);
+      if (missing.length){
+        console.warn('[Madplan HUB] Mangler filer:', missing.map(m=>m.url));
+      }
+    }catch(_){}
   }
 
-  if (document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+  // Boot
+  (async function(){
+    const data = await loadFromSitemapIfEmpty(); // bruger MP hvis den findes
+    renderTaggedGrids(data);
+    renderAll(data);
+    initSearch(data);
+    // valgfrit: tjek for 404 i baggrunden (hjælper debug)
+    setTimeout(()=>checkMissing(data), 50);
+  })();
 })();
