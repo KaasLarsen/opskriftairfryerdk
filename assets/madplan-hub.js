@@ -1,70 +1,84 @@
-(function(){
-  if (!window.MADPLANER) return;
-  const $ = s => document.querySelector(s);
-  const $$ = s => Array.from(document.querySelectorAll(s));
+/*! assets/madplan-hub.js – robust renderer til madplan-hubben */
+(function () {
+  const byId = (id) => document.getElementById(id);
+  const $all = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-  const icon = id => `<div class="thumb-icon"><svg><use href="#${id||'calendar'}"></use></svg></div>`;
-  const badge = (ico, txt) => `<span class="badge"><svg class="ico-inline"><use href="#${ico}"></use></svg> ${txt}</span>`;
-  const card = p => `
-    <a class="card card--guide" href="/madplan/${p.slug}.html">
-      ${icon(p.icon)}
-      <div class="card-body">
-        <h3>${p.title}</h3>
-        <p class="meta">${p.desc||''}</p>
-        <div class="badges" style="margin-top:6px">
-          ${badge('timer', p.duration || '7 dage')}
-          ${badge('bowl', (p.people||4)+' pers.')}
-          ${badge('leaf', (p.kcalAvg||'–')+' kcal')}
+  // Lille helper til sikker tekst
+  const esc = (s) => String(s||"").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+  function cardHTML(it){
+    const icon = esc(it.icon || "star");
+    const title = esc(it.title || "");
+    const url = esc(it.url || "#");
+    const meta = esc(it.kicker || "");
+    return `
+      <a class="card card--guide" href="${url}">
+        <div class="thumb-icon"><svg><use href="#${icon}"></use></svg></div>
+        <div class="card-body">
+          <h3>${title}</h3>
+          <p class="meta">${meta}</p>
         </div>
-      </div>
-    </a>`;
+      </a>`;
+  }
 
-  function list(tag){
-    let out = window.MADPLANER.slice();
-    if (tag) out = out.filter(p => (p.tags||[]).includes(tag));
-    out.sort((a,b)=> (b.published||'').localeCompare(a.published||''));
+  function renderSectionGrids(items){
+    // data-mp-grid: filtrér på ét tag
+    $all('[data-mp-grid]').forEach(el=>{
+      const tag = (el.dataset.tag || '').toLowerCase().trim();
+      const limit = parseInt(el.dataset.limit||'0',10) || 6;
+      const subset = items.filter(it => (it.tags||[]).some(t => String(t).toLowerCase() === tag)).slice(0, limit);
+      el.innerHTML = subset.map(cardHTML).join('') || '<p class="meta">Ingen planer endnu.</p>';
+    });
+
+    // data-mp-all: vis alle
+    $all('[data-mp-all]').forEach(el=>{
+      const limit = parseInt(el.dataset.limit||'0',10) || 12;
+      el.innerHTML = items.slice(0, limit).map(cardHTML).join('') || '<p class="meta">Ingen planer endnu.</p>';
+    });
+  }
+
+  function normalise(list){
+    const out = (list||[]).map(x => ({
+      url: x.url, title: x.title, icon: x.icon || 'star',
+      tags: Array.isArray(x.tags) ? x.tags : [],
+      kicker: x.kicker || '',
+      published: x.published || ''
+    }));
+    // Nyeste først, så alfabetisk
+    out.sort((a,b)=>{
+      const da = new Date(a.published||0), db = new Date(b.published||0);
+      if (db - da) return db - da;
+      return (a.title||'').localeCompare(b.title||'', 'da');
+    });
     return out;
   }
 
-  function renderGrid(el){
-    const tag = el.getAttribute('data-tag');
-    const limit = +el.getAttribute('data-limit') || 6;
-    el.innerHTML = list(tag).slice(0, limit).map(card).join('') || '<p class="meta">Ingen madplaner endnu.</p>';
+  function tryRender(){
+    const data = normalise(window.MADPLANS || []);
+    if (!data.length) return false;
+    renderSectionGrids(data);
+    return true;
   }
 
-  // Render all grids
-  $$('[data-mp-grid]').forEach(renderGrid);
+  // Kør når DOM er klar
+  function boot(){
+    if (tryRender()) return;
 
-  // Search
-  const q = $('#search-input');
-  const target = $('[data-mp-all]'); // a dedicated "all" grid
-  if (q && target){
-    const on = () => {
-      const term = (q.value||'').toLowerCase().trim();
-      const base = list(null);
-      const items = term
-        ? base.filter(p => (p.title||'').toLowerCase().includes(term) ||
-                           (p.desc||'').toLowerCase().includes(term)  ||
-                           (p.tags||[]).some(t => t.toLowerCase().includes(term)))
-        : base;
-      target.innerHTML = items.slice(0,12).map(card).join('') || '<p class="meta">Ingen resultater.</p>';
-    };
-    q.addEventListener('input', on);
-    on();
+    // Fald tilbage: lyt efter forskellige mulige events/flags og prøv igen
+    let retries = 20;
+    const timer = setInterval(()=>{
+      if (tryRender() || --retries <= 0) clearInterval(timer);
+    }, 200);
+
+    // Lyt til flere mulige events (vi sender selv "madplans:ready" fra datafilen)
+    ['madplans:ready','madplan:ready','MADPLANS_READY'].forEach(ev=>{
+      document.addEventListener(ev, tryRender, { once:false });
+    });
   }
 
-  // SEO ItemList of first 10
-  (function(){
-    try{
-      const items = list(null).slice(0,10).map((p,i)=>({
-        "@type":"ListItem",
-        "position": i+1,
-        "url": location.origin + '/madplan/' + p.slug + '.html',
-        "name": p.title
-      }));
-      const ld = {"@context":"https://schema.org","@type":"ItemList","itemListElement":items};
-      const s = document.createElement('script'); s.type='application/ld+json'; s.textContent = JSON.stringify(ld);
-      document.head.appendChild(s);
-    }catch(_){}
-  })();
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();
