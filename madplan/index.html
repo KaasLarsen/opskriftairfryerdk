@@ -118,5 +118,107 @@
   <script src="/assets/include.js?v=4"></script>
   <script src="/assets/madplaner.js?v=1"></script>
   <script src="/assets/madplan-hub.js?v=1"></script>
+  <script>
+(function () {
+  // Vent til DOM er klar
+  function ready(fn){
+    if (document.readyState==='complete' || document.readyState==='interactive') return fn();
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+
+  ready(function(){
+    // --- 1) Indlæs PriceRunner-script KUN én gang
+    function loadPR(cb){
+      if (window.__PR_WIDGET_LOADED__) return cb && cb();
+      var s = document.createElement('script');
+      s.src = "https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&partnerId=adrunner_dk_opskrift-airfryer";
+      s.async = true;
+      s.onload = function(){ window.__PR_WIDGET_LOADED__ = true; cb && cb(); };
+      document.body.appendChild(s);
+    }
+
+    // --- 2) Init widgets (match dine div#-id’er)
+    function initWidgets(){
+      if (!window.PRICE_RUNNER_PRODUCT_WIDGET) return;
+
+      // Ninja Double Stack
+      window.PRICE_RUNNER_PRODUCT_WIDGET.init({
+        productId: "3280146314",
+        widgetId: "pr-product-widget-e0348930",
+        offerLimit: 3,
+        onlyInStock: true,
+        offerOrigin: "NATIONAL"
+      });
+
+      // Xiaomi Mi Smart Air Fryer
+      window.PRICE_RUNNER_PRODUCT_WIDGET.init({
+        productId: "3200256729",
+        widgetId: "pr-product-widget-f262c590",
+        offerLimit: 3,
+        onlyInStock: true,
+        offerOrigin: "NATIONAL"
+      });
+
+      // Philips 3000 NA352/00
+      window.PRICE_RUNNER_PRODUCT_WIDGET.init({
+        productId: "3231353404",
+        widgetId: "pr-product-widget-0a362ae0",
+        offerLimit: 3,
+        onlyInStock: true,
+        offerOrigin: "NATIONAL"
+      });
+    }
+
+    // --- 3) Simpel carousel
+    function initCarousel(){
+      var root = document.getElementById('pr-carousel');
+      if (!root) return;
+      var slides = Array.from(root.querySelectorAll('.pr-slide'));
+      var prev = root.querySelector('.pr-prev');
+      var next = root.querySelector('.pr-next');
+      var dotsWrap = document.getElementById('pr-dots');
+      if (slides.length <= 1) return;
+
+      var i = Math.max(0, slides.findIndex(s=>s.classList.contains('is-active')));
+      var timer = null, INTERVAL = 6000;
+
+      function show(n){
+        slides.forEach(s=>s.classList.remove('is-active'));
+        slides[n].classList.add('is-active');
+        if (dotsWrap){
+          dotsWrap.querySelectorAll('.pr-dot').forEach((d,k)=>d.classList.toggle('is-active', k===n));
+        }
+        i = n;
+      }
+      function nextSlide(){ show((i+1) % slides.length); }
+      function prevSlide(){ show((i-1+slides.length) % slides.length); }
+      function start(){
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        stop(); timer = setInterval(nextSlide, INTERVAL);
+      }
+      function stop(){ if (timer){ clearInterval(timer); timer = null; } }
+      function makeDots(){
+        if (!dotsWrap) return;
+        dotsWrap.innerHTML = slides.map((_,k)=>'<button class="pr-dot" aria-label="Slide '+(k+1)+'"></button>').join('');
+        dotsWrap.querySelectorAll('.pr-dot').forEach((btn,k)=>btn.addEventListener('click', function(){ stop(); show(k); start(); }));
+      }
+
+      prev && prev.addEventListener('click', function(){ stop(); prevSlide(); start(); });
+      next && next.addEventListener('click', function(){ stop(); nextSlide(); start(); });
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      document.addEventListener('visibilitychange', function(){ if (document.hidden) stop(); else start(); });
+
+      makeDots(); show(i); start();
+    }
+
+    loadPR(function(){
+      initWidgets();
+      initCarousel();
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
