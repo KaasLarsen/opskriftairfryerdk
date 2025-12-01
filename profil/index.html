@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Min konto – log ind, favoritter og indstillinger</title>
+  <meta name="description" content="Log ind på din konto, se dine favoritter og styr dine indstillinger for Opskrift-Airfryer.dk." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css?v=17" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+  <style>
+    .account-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+    @media(max-width:900px){.account-grid{grid-template-columns:1fr}}
+    .panel.block{padding:16px}
+    .form-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+    .input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;min-width:260px}
+    .note{font-size:13px;color:var(--muted)}
+    .status-ok{color:#059669}
+    .status-warn{color:#b45309}
+    .status-err{color:#b91c1c}
+    .mini-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+    @media(max-width:560px){.mini-grid{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px}
+  </style>
+</head>
+<body class="has-fixed-header">
+  <!-- Partials -->
+  <div data-include="/partials/icons.html"></div>
+  <div data-include="/partials/header.html"></div>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="kicker">Profil</span>
+        <h1>Min konto</h1>
+        <p class="lead">Log ind for at <strong>synkronisere favoritter</strong> og gemme dine madplaner på tværs af enheder.</p>
+        <div class="badges" id="acct-badges" style="margin-top:10px">
+          <span class="badge" id="badge-auth"><svg class="ico-inline"><use href="#alert"></use></svg>Kontostatus tjekkes…</span>
+          <a class="badge" href="/profil/favoritter.html"><svg class="ico-inline"><use href="#heart"></use></svg>Mine favoritter</a>
+          <a class="badge" href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Madplaner</a>
+        </div>
+      </div>
+      <div class="hero-box">
+        <svg class="hero-ico"><use href="#user"></use></svg>
+      </div>
+    </section>
+
+    <div class="account-grid">
+      <!-- Venstre: Konto / login -->
+      <section class="panel block">
+        <h2 style="margin:0 0 10px"><svg class="ico-inline"><use href="#lock"></use></svg>Konto</h2>
+        <p class="small muted" id="acct-hint">Log ind med din e-mail for at synkronisere favoritter.</p>
+
+        <!-- Logged OUT form -->
+        <div id="auth-out">
+          <label class="small" for="email">E-mail</label>
+          <div class="form-row">
+            <input id="email" class="input" type="email" placeholder="din@email.dk" autocomplete="email" />
+            <button id="btn-login" class="btn primary" type="button">Send login-link</button>
+          </div>
+          <p id="login-msg" class="note" style="margin-top:8px"></p>
+
+          <div class="section" style="margin-top:16px">
+            <div class="badges">
+              <span class="badge"><svg class="ico-inline"><use href="#shield"></use></svg>Vi gemmer kun din e-mail</span>
+              <span class="badge"><svg class="ico-inline"><use href="#cloud"></use></svg>Favoritter synces i skyen</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logged IN view -->
+        <div id="auth-in" style="display:none">
+          <div class="grid" style="gap:10px">
+            <div class="chip"><svg class="ico-inline"><use href="#user"></use></svg><span id="me-email">–</span></div>
+            <div class="chip"><svg class="ico-inline"><use href="#clock"></use></svg><span id="me-since">–</span></div>
+          </div>
+
+          <div class="form-row" style="margin-top:12px">
+            <a class="btn" href="/profil/favoritter.html"><svg class="ico-inline"><use href="#heart"></use></svg>Gå til favoritter</a>
+            <button id="btn-logout" class="btn" type="button"><svg class="ico-inline"><use href="#lock"></use></svg>Log ud</button>
+          </div>
+
+          <p class="note" style="margin-top:10px">Du er logget ind. Når du trykker ♥ ude på siden, bliver dine favoritter gemt i skyen og delt mellem dine enheder.</p>
+        </div>
+      </section>
+
+      <!-- Højre: Seneste favoritter (lokale) -->
+      <section class="panel block">
+        <div class="section-head" style="margin-bottom:8px">
+          <h2 style="margin:0"><svg class="ico-inline"><use href="#heart"></use></svg>Seneste favoritter (lokalt)</h2>
+        </div>
+        <div class="mini-grid" id="fav-mini"></div>
+        <p id="fav-mini-empty" class="note" style="margin-top:6px">Ingen lokale favoritter endnu. Tryk ♥ ved en opskrift, guide eller madplan for at gemme.</p>
+        <div class="form-row" style="margin-top:10px">
+          <a class="btn" href="/profil/favoritter.html">Se alle favoritter</a>
+          <button class="btn" id="fav-mini-clear" type="button">Ryd lokale</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Lidt hjælp -->
+    <section class="section">
+      <div class="block">
+        <h2 style="margin:0 0 10px"><svg class="ico-inline"><use href="#sparkles"></use></svg>Sådan virker det</h2>
+        <ol class="steps">
+          <li>Log ind med din e-mail – du får et login-link.</li>
+          <li>Tryk ♥ ved opskrifter, guides og madplaner for at gemme dem.</li>
+          <li>Dine favoritter synkroniseres mellem computer og mobil, når du er logget ind.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <!-- Partials loader -->
+  <script src="/assets/include.js?v=4"></script>
+
+  <!-- Supabase UMD (fallback hvis ikke allerede loaded af auth.js) -->
+  <script>
+    (function ensureSupabase(){
+      if (window.supabase) return;
+      var s=document.createElement('script');
+      s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+      s.async=true;
+      document.head.appendChild(s);
+    })();
+  </script>
+
+  <!-- Profil logik (selvstændig – rører ikke andre sider) -->
+  <script>
+  (function(){
+    const $ = (s, r=document)=>r.querySelector(s);
+    const LS_KEY = 'oa_favs_v1';
+
+    const badgeAuth = $('#badge-auth');
+    const authOut = $('#auth-out');
+    const authIn  = $('#auth-in');
+    const loginBtn = $('#btn-login');
+    const logoutBtn = $('#btn-logout');
+    const emailInput = $('#email');
+    const loginMsg = $('#login-msg');
+    const meEmail = $('#me-email');
+    const meSince = $('#me-since');
+
+    const miniWrap = $('#fav-mini');
+    const miniEmpty = $('#fav-mini-empty');
+    const miniClear = $('#fav-mini-clear');
+
+    // === Favorit preview (lokalt) ===
+    const readLS = ()=>{ try{ return JSON.parse(localStorage.getItem(LS_KEY)||'[]'); }catch(_){ return []; } };
+    const writeLS = (a)=> localStorage.setItem(LS_KEY, JSON.stringify(a||[]));
+    function miniCard(it){
+      const icon = it.type==='madplan' ? '#calendar' : (it.type==='guide' ? '#book' : '#star');
+      return `
+        <a class="card" href="${it.url||'#'}">
+          <div class="thumb-icon"><svg><use href="${icon}"></use></svg></div>
+          <div class="card-body"><h3>${it.title||'Favorit'}</h3><p class="meta">${it.type||'indhold'}</p></div>
+        </a>
+      `;
+    }
+    function paintMini(){
+      const arr = readLS().slice(0,6);
+      if (arr.length===0){
+        miniWrap.innerHTML = '';
+        miniEmpty.style.display = 'block';
+      } else {
+        miniEmpty.style.display = 'none';
+        miniWrap.innerHTML = arr.map(miniCard).join('');
+      }
+    }
+    miniClear.addEventListener('click', function(){
+      if (!confirm('Vil du rydde alle lokale favoritter på denne enhed?')) return;
+      writeLS([]);
+      paintMini();
+    });
+
+    // === Auth (Supabase) ===
+    const SUPA_URL = "https://mrcctupzajqetsnalriy.supabase.co";
+    const SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8";
+
+    let client = null;
+    function getClient(){
+      if (client) return client;
+      if (!window.supabase || !window.supabase.createClient) return null;
+      client = window.supabase.createClient(SUPA_URL, SUPA_KEY, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      });
+      return client;
+    }
+
+    function setStatus(text, cls){
+      badgeAuth.textContent = text;
+      badgeAuth.className = 'badge '+(cls||'');
+    }
+
+    async function refreshUI(){
+      const c = getClient();
+      if (!c){
+        setStatus('Auth ikke klar endnu…', 'status-warn');
+        return showLoggedOut();
+      }
+      const { data } = await c.auth.getSession();
+      const user = data?.session?.user || null;
+      if (user){
+        setStatus('Logget ind', 'status-ok');
+        showLoggedIn(user);
+      }else{
+        setStatus('Ikke logget ind', '');
+        showLoggedOut();
+      }
+    }
+
+    function showLoggedOut(){
+      authOut.style.display = 'block';
+      authIn.style.display  = 'none';
+      $('#acct-hint').textContent = 'Log ind med din e-mail for at synkronisere favoritter.';
+    }
+
+    function showLoggedIn(user){
+      authOut.style.display = 'none';
+      authIn.style.display  = 'block';
+      meEmail.textContent = user.email || '—';
+      try{
+        const ts = user.created_at ? new Date(user.created_at) : null;
+        meSince.textContent = ts ? ('Bruger siden ' + ts.toLocaleDateString('da-DK')) : 'Bruger oprettet';
+      }catch(_){
+        meSince.textContent = 'Bruger oprettet';
+      }
+      $('#acct-hint').textContent = 'Dine favoritter synkroniseres på tværs af enheder.';
+    }
+
+    // Login via magic link
+    async function sendMagicLink(email){
+      const c = getClient();
+      if (!c){ loginMsg.textContent = 'Auth ikke klar – prøv at genindlæse siden.'; loginMsg.className='note status-err'; return; }
+      loginMsg.textContent = 'Sender login-link…'; loginMsg.className='note';
+      const { error } = await c.auth.signInWithOtp({
+        email,
+        options: { emailRedirectTo: location.origin + '/profil/index.html' }
+      });
+      if (error){
+        loginMsg.textContent = 'Kunne ikke sende link: ' + (error.message || 'ukendt fejl');
+        loginMsg.className='note status-err';
+      }else{
+        loginMsg.textContent = 'Tjek din mail – vi har sendt et login-link.';
+        loginMsg.className='note status-ok';
+      }
+    }
+
+    // Logout
+    async function doLogout(){
+      const c = getClient();
+      if (!c) return;
+      await c.auth.signOut();
+      await refreshUI();
+    }
+
+    // Event wiring
+    loginBtn.addEventListener('click', function(){
+      const email = (emailInput.value||'').trim();
+      if (!email){ emailInput.focus(); return; }
+      sendMagicLink(email);
+    });
+    logoutBtn.addEventListener('click', doLogout);
+
+    // Start
+    paintMini();
+
+    // Vent til supabase UMD er loaded, derefter UI
+    (function waitForSupabase(retries=40){
+      if (window.supabase && window.supabase.createClient){
+        getClient();
+        refreshUI();
+      } else if (retries>0){
+        setTimeout(()=>waitForSupabase(retries-1), 100);
+      } else {
+        setStatus('Auth fejlede at loade', 'status-err');
+      }
+    })();
+
+    // Opdater UI når fanen får fokus (i tilfælde af at brugeren klikker magic link)
+    document.addEventListener('visibilitychange', function(){
+      if (!document.hidden) refreshUI();
+    });
+  })();
+  </script>
+</body>
+</html>
