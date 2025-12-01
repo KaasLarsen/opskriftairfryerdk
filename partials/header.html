@@ -21,14 +21,39 @@
 </header>
 
 <script>
-/* Header JS – kun det nødvendige, uden at røre andet */
+/* Header controller – én fil der klarer alt (mobilmenu + auth-modal + auth.js) */
 (function(){
   function ready(fn){
     if (document.readyState === 'complete' || document.readyState === 'interactive') return fn();
     document.addEventListener('DOMContentLoaded', fn);
   }
+
+  // Loader et eksternt script kun én gang
+  function loadOnce(src, flagName, cb){
+    if (window[flagName]) return cb && cb();
+    var s = document.createElement('script');
+    s.src = src; s.defer = true; s.async = false;
+    s.onload = function(){ window[flagName] = true; cb && cb(); };
+    document.head.appendChild(s);
+  }
+
+  // Henter en partial og indsætter i body hvis ikke tilstede
+  function ensurePartial(selector, url, cb){
+    if (document.querySelector(selector)) return cb && cb();
+    fetch(url, { credentials:'same-origin' })
+      .then(r=> r.ok ? r.text() : Promise.reject(url + ' ikke fundet'))
+      .then(html=>{
+        var wrap = document.createElement('div');
+        wrap.innerHTML = html;
+        // indsæt i slutningen af body
+        document.body.appendChild(wrap);
+        cb && cb();
+      })
+      .catch(()=> cb && cb());
+  }
+
   ready(function(){
-    // Burger: ARIA toggle
+    /* === Mobilmenu === */
     var toggle = document.getElementById('nav-toggle');
     var btn = document.querySelector('.burger-btn');
     var nav = document.getElementById('site-nav');
@@ -36,25 +61,46 @@
       function syncAria(){ btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false'); }
       toggle.addEventListener('change', syncAria);
       syncAria();
-      // Luk menu ved klik på et link (mobil)
       nav.addEventListener('click', function(e){
         if (e.target.tagName === 'A'){ toggle.checked = false; syncAria(); }
       });
     }
 
-    // Åbn auth-modal uden at påvirke burgeren
-    document.body.addEventListener('click', function(e){
-      var t = e.target.closest('[data-auth-open]');
-      if (!t) return;
-      e.preventDefault();
+    /* === Auth-modal: indlæs partial hvis mangler === */
+    ensurePartial('#auth-modal', '/partials/auth-modal.html', function(){
+      // Åbn/luk modal
       var modal = document.getElementById('auth-modal');
-      if (modal){
+
+      function openModal(){
+        if (!modal) return;
         modal.classList.add('is-open');
         document.documentElement.style.overflow = 'hidden';
-      } else {
-        // fallback: gå til hash så modal kan åbne når partials er loadet
-        location.hash = '#login';
       }
+      function closeModal(){
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        document.documentElement.style.overflow = '';
+        if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
+      }
+
+      // Klik på “Log ind”
+      document.body.addEventListener('click', function(e){
+        var t = e.target.closest('[data-auth-open]');
+        if (!t) return;
+        e.preventDefault();
+        openModal();
+      });
+
+      // Luk via backdrop/knap (dele sidder i auth-modal.html, men vi fail-sikrer her)
+      document.body.addEventListener('click', function(e){
+        if (e.target.matches('[data-auth-close], .auth-backdrop')) closeModal();
+      });
+
+      // Åben ved #login (direkte link)
+      if (location.hash === '#login') openModal();
+
+      /* === Loader auth.js globalt, kun én gang === */
+      loadOnce('/assets/auth.js?v=3', '__AUTH_JS_LOADED__');
     });
   });
 })();
