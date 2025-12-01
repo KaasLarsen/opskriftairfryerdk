@@ -1,57 +1,27 @@
 <!-- PARTIAL: /partials/auth-modal.html -->
-<div id="auth-modal" class="auth-modal" aria-hidden="true" role="dialog" aria-label="Log ind" style="display:none">
-  <div class="auth-backdrop" data-auth-close></div>
-  <div class="auth-card block" role="document" style="max-width:480px;margin:10vh auto;background:#fff">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <h2 style="margin:0;font-size:20px">Log ind</h2>
-      <button class="btn" data-auth-close aria-label="Luk">Luk</button>
-    </div>
-    <p class="small">Brug din e-mail for magic link eller vælg Google.</p>
+<div id="auth-backdrop" style="display:none;position:fixed;inset:0;background:rgba(2,8,23,.45);z-index:10000"></div>
 
-    <form id="auth-email-form" style="display:grid;gap:8px;margin-top:10px">
-      <input id="auth-email" type="email" required placeholder="din@email.dk"
-             style="padding:10px 12px;border:1px solid var(--line);border-radius:10px" />
-      <button class="btn primary" type="submit">Send login-link</button>
-    </form>
+<div id="auth-modal" class="block" style="display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10001;max-width:min(520px,92vw)">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+    <h2 style="margin:0">Log ind / Opret bruger</h2>
+    <button type="button" id="auth-close" class="btn">Luk</button>
+  </div>
 
-    <div style="margin:12px 0;text-align:center" class="small">eller</div>
+  <div class="tabs" style="display:flex;gap:8px;margin:6px 0 12px">
+    <button type="button" data-auth-tab="login" class="btn primary">Log ind</button>
+    <button type="button" data-auth-tab="signup" class="btn">Opret bruger</button>
+  </div>
 
-    <button id="auth-google" class="btn" type="button" style="width:100%">Fortsæt med Google</button>
+  <form id="auth-form" class="grid" style="gap:10px">
+    <input id="auth-email" type="email" placeholder="E-mail" required
+           style="padding:10px 12px;border:1px solid var(--line);border-radius:10px" />
+    <input id="auth-pass" type="password" placeholder="Adgangskode" required
+           style="padding:10px 12px;border:1px solid var(--line);border-radius:10px" />
+    <button id="auth-submit" type="submit" class="btn primary">Fortsæt</button>
+    <p id="auth-msg" class="small"></p>
+  </form>
 
-    <p id="auth-msg" class="small" style="margin-top:10px;color:var(--muted)"></p>
+  <div style="border-top:1px solid var(--line);margin:12px 0 0;padding-top:10px">
+    <p class="small">Når du er logget ind kan du ♥-gemme opskrifter, guides og madplaner, samt se dem under <em>Bruger → Mine favoritter</em>.</p>
   </div>
 </div>
-
-<style>
-.auth-modal.is-open{ display:block; }
-.auth-backdrop{ position:fixed; inset:0; background:rgba(2,8,23,.45); }
-.auth-card{ position:relative; z-index:2; }
-</style>
-
-<script>
-(function(){
-  function ready(fn){
-    if (document.readyState==='complete' || document.readyState==='interactive') return fn();
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-  ready(function(){
-    var modal = document.getElementById('auth-modal');
-    if (!modal) return;
-
-    function close(){
-      modal.classList.remove('is-open');
-      document.documentElement.style.overflow = '';
-      history.replaceState(null, '', location.pathname + location.search); // fjern #login
-    }
-    modal.addEventListener('click', function(e){
-      if (e.target.matches('[data-auth-close], .auth-backdrop')) close();
-    });
-
-    // Åbn hvis hash siger #login (fx første load)
-    if (location.hash === '#login'){
-      modal.classList.add('is-open');
-      document.documentElement.style.overflow = 'hidden';
-    }
-  });
-})();
-</script>
