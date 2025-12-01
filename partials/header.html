@@ -1,168 +1,42 @@
 <!-- PARTIAL: /partials/header.html -->
-<style>
-  :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --text:#0f172a; --accent:#0ea5e9; }
+<header class="site-header-wrap">
+  <div class="site-header">
+    <a class="logo" href="/" aria-label="Opskrift-Airfryer.dk">Opskrift-Airfryer.dk</a>
 
-  .header{position:sticky; top:0; z-index:1002; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
-  .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad);
-    display:flex; align-items:center; justify-content:space-between; gap:12px;}
+    <!-- Desktop-nav -->
+    <nav class="nav" aria-label="Hovednavigation">
+      <!-- Tilpas links som du vil – strukturen matcher dit eksisterende CSS -->
+      <a href="/opskrifter.html">Opskrifter</a>
+      <a href="/guides/index.html">Guides</a>
+      <a href="/madplan/index.html">Madplaner</a>
+      <a href="/top/udstyr.html">Udstyr</a>
+      <a href="/kontakt.html">Kontakt</a>
+      <!-- Log ind trigger -->
+      <a href="#" class="btn" data-auth-open aria-controls="auth-modal" aria-expanded="false">Log ind</a>
+      <a href="/profil.html" class="btn" id="auth-user-btn" style="display:none"></a>
+    </nav>
 
-  .logo{font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
-
-  /* nav (desktop) */
-  .nav{display:flex; align-items:center; gap:22px;}
-  .nav > a{color:var(--text); font-size:15px; text-decoration:none; padding:6px 2px;}
-  .nav > a:hover{color:#0b1220}
-
-  /* dropdown */
-  .drop{position:relative}
-  .drop > summary{
-    list-style:none; cursor:pointer; user-select:none;
-    color:var(--text); font-size:15px; padding:6px 2px; display:flex; align-items:center; gap:6px;
-  }
-  .drop > summary::-webkit-details-marker{display:none}
-  .drop > summary::after{content:"▾"; font-size:12px; opacity:.75; transition:transform .12s ease}
-  .drop[open] > summary::after{transform:rotate(180deg)}
-  .menu{
-    position:absolute; left:0; top:calc(100% + 8px);
-    background:#fff; border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 22px rgba(2,8,23,.08);
-    padding:8px; min-width:240px; display:grid; gap:6px;
-  }
-  .menu a{color:var(--text); text-decoration:none; font-size:14px; padding:8px 10px; border-radius:8px; display:flex; align-items:center; justify-content:space-between;}
-  .menu a:hover{background:#f8fafc}
-  .drop[open]::before{content:""; position:fixed; inset:0; background:transparent;}
-
-  /* Facebook-knap */
-  .fb-btn{
-    display:inline-grid; place-items:center;
-    width:32px; height:32px; border:1px solid var(--line);
-    border-radius:999px; background:#fff; color:#1877f2;
-    transition:transform .08s ease, background .15s;
-    flex-shrink:0;
-  }
-  .fb-btn:hover{background:#f0f6ff; transform:translateY(-1px);}
-
-  /* ========= MOBIL BURGER (NO-JS) ========= */
-  .burger{
-    display:none; place-items:center;
-    width:42px; height:38px;
-    border:2px solid var(--accent);
-    border-radius:10px; background:var(--accent);
-    color:#fff; cursor:pointer;
-  }
-  .burger span{width:22px; height:2px; background:#fff; display:block; border-radius:2px;}
-  .burger span + span{margin-top:5px;}
-
-  @media (max-width:900px){
-    .burger{display:inline-grid}
-    .nav{
-      position:fixed; left:0; right:0;
-      top:calc(56px + env(safe-area-inset-top, 0px));
-      background:#fff; border-top:1px solid var(--line);
-      box-shadow:0 12px 24px rgba(2,8,23,.12);
-      max-height:70vh; overflow:auto;
-      z-index:1001;
-      display:block;
-      padding:8px 10px;
-      transform:translateY(-4%); opacity:0; pointer-events:none;
-      transition:transform .18s ease, opacity .18s ease;
-    }
-    /* toggle via checkbox */
-    .navcheck:checked ~ .nav{ transform:none; opacity:1; pointer-events:auto; }
-
-    /* lodret liste i panelet */
-    .nav > a, .nav .drop > summary{ display:flex; align-items:center; padding:14px 8px; font-size:17px; }
-    .nav > a + a, .nav .drop + a, .nav .drop + .drop{ border-top:1px solid #f1f5f9; }
-
-    /* dropdown i mobil */
-    .nav .menu{ position:static; inset:auto; box-shadow:none; border:0; padding:4px 0; min-width:auto; }
-    .nav .menu a{ padding:12px 8px; font-size:16px; }
-  }
-
-  /* X-ikon animation ved åben menu */
-  .navcheck:checked + .burger span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
-  .navcheck:checked + .burger span:nth-child(2){ opacity:0; }
-  .navcheck:checked + .burger span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
-
-  /* undgå overlap af overskrifter ved anker-hop */
-  main :where(h1,h2,h3){ scroll-margin-top: 80px; }
-
-  /* ====== synlig stjerne-komponent (til review-schema) ====== */
-  .afo-stars { margin: 8px 0 4px; }
-  .afo-stars-row { display:inline-flex; gap:8px; align-items:center; font-size:14px; line-height:1; user-select:none; }
-  .afo-stars-row::before { content: attr(aria-label); position:absolute; left:-9999px; }
-  .afo-stars .afo-stars-text { color: var(--muted, #64748b); }
-  .afo-stars .afo-stars-text strong { font-weight:700; }
-</style>
-
-<!-- GOOGLE ANALYTICS -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RXMT7HRDV2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RXMT7HRDV2');
-</script>
-
-<!-- REVIEW MARKUP: global konfiguration + loader -->
-<script>
-  window.AFO_RATING_DEFAULT_VALUE = 4.8;
-  window.AFO_RATING_DEFAULT_COUNT = 37;
-  window.AFO_IMAGE_FALLBACK = null;
-</script>
-<script defer src="/assets/review-schema.js?v=2"></script>
-
-<header class="header" role="banner">
-  <div class="header-inner">
-    <a class="logo" href="/">Opskrift Airfryer</a>
-
-    <!-- Burger toggle (checkbox + label) -->
-    <input id="mnav" type="checkbox" class="navcheck" hidden />
-    <label for="mnav" class="burger" aria-label="åbn menu" role="button">
+    <!-- Burger (mobil) -->
+    <input id="nav-toggle" class="burger" type="checkbox" hidden />
+    <label class="burger-btn" for="nav-toggle" aria-label="Åbn menu">
       <span></span><span></span><span></span>
     </label>
-
-    <nav id="mainNav" class="nav" role="navigation" aria-label="Hovednavigation">
-      <a href="/">Forside</a>
-      <a href="/top.html">Top</a>
-      <a href="/madplan/index.html">Madplaner</a>
-      <a href="/seneste.html">Seneste</a>
-      <a href="/guides.html">Guides</a>
-
-      <details class="drop" id="catDrop">
-        <summary aria-haspopup="menu">Kategorier</summary>
-        <div class="menu" role="menu" aria-label="Opskriftskategorier">
-          <a href="/kategori.html?navn=Svinek%C3%B8d" role="menuitem">Svinekød</a>
-          <a href="/kategori.html?navn=Kylling" role="menuitem">Kylling</a>
-          <a href="/kategori.html?navn=Oksek%C3%B8d" role="menuitem">Oksekød</a>
-          <a href="/kategori.html?navn=Fisk" role="menuitem">Fisk</a>
-          <a href="/kategori.html?navn=Gr%C3%B8nt" role="menuitem">Grønt</a>
-          <a href="/kategori.html?navn=Tilbeh%C3%B8r" role="menuitem">Tilbehør</a>
-          <a href="/kategori.html?navn=Dessert" role="menuitem">Dessert</a>
-          <a href="/kategori.html?navn=Lam" role="menuitem">Lam</a>
-          <a href="/kategori.html?navn=And" role="menuitem">And</a>
-          <a href="/kategori.html?navn=Kalkun" role="menuitem">Kalkun</a>
-          <a href="/kategori.html?navn=Snacks" role="menuitem">Snacks</a>
-          <a href="/kategori.html?navn=Bagning" role="menuitem">Bagning</a>
-          <a href="/kategori.html?navn=Morgenmad" role="menuitem">Morgenmad</a>
-        </div>
-      </details>
-
-      <!-- Facebook-knap -->
-      <a class="fb-btn"
-         href="https://www.facebook.com/profile.php?id=61567373592516"
-         target="_blank" rel="noopener"
-         aria-label="Besøg vores Facebook-gruppe" title="Facebook-gruppe">
-        <svg width="18" height="18" aria-hidden="true"><use href="#facebook"></use></svg>
-      </a>
-   </nav>
-    <!-- Konto -->
-<div class="account" id="account">
-  <button id="btn-open-auth" class="btn">Log ind</button>
-  <div id="account-mini" class="small" style="display:none">
-    <span id="acc-email" class="small"></span>
-    <button id="btn-logout" class="btn" style="margin-left:8px">Log ud</button>
-  </div>
-</div>
-
   </div>
 </header>
+
+<!-- Inject auth-modal på alle sider via partial -->
+<div data-include="/partials/auth-modal.html"></div>
+
+<!-- Lidt defensiv CSS hvis den ikke allerede er i styles.css -->
+<style>
+.site-header-wrap{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
+.site-header{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;color:var(--accent);font-size:20px}
+.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+@media(max-width:860px){
+  .nav{display:none;position:absolute;left:0;right:0;top:58px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(2,8,23,.06);padding:12px var(--pad);z-index:10010}
+  #nav-toggle:checked ~ .burger-btn + .nav,
+  #nav-toggle:checked ~ .nav{display:block}
+}
+.site-header-wrap{position:sticky;top:0;z-index:10020}
+</style>
