@@ -1,87 +1,63 @@
 <!-- PARTIAL: /partials/header.html -->
+<header class="site-header-wrap" style="background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)">
+  <div class="site-header" style="max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <!-- Logo -->
+    <a class="logo" href="/" aria-label="Forside" style="font-weight:800;color:var(--accent);font-size:20px;text-decoration:none">Opskrift-Airfryer.dk</a>
+
+    <!-- Burger (mobil) -->
+    <input id="nav-toggle" type="checkbox" hidden />
+    <label for="nav-toggle" class="burger-btn" aria-label="Menu" style="display:none"></label>
+
+    <!-- Nav (desktop) -->
+    <nav class="nav" aria-label="Hovedmenu" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+      <a href="/opskrifter/" class="nav-link">Opskrifter</a>
+      <a href="/guides/" class="nav-link">Guides</a>
+      <a href="/madplan/index.html" class="nav-link">Madplaner</a>
+      <a href="/top/" class="nav-link">Top</a>
+
+      <!-- Bruger (hover dropdown på desktop) -->
+      <div class="has-sub" style="position:relative">
+        <a href="/profil/" class="nav-link">Bruger ▾</a>
+        <div class="submenu" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-width:200px;padding:8px 0;z-index:50">
+          <a href="/profil/" class="sub-link" style="display:block;padding:8px 12px">Min profil</a>
+          <a href="/profil/favoritter.html" class="sub-link" style="display:block;padding:8px 12px">Mine favoritter</a>
+          <a href="/profil/mine-madplaner.html" class="sub-link" style="display:block;padding:8px 12px">Mine madplaner</a>
+          <a href="/profil/gemt.html" class="sub-link" style="display:block;padding:8px 12px">Gemt indhold</a>
+          <div style="height:1px;background:var(--line);margin:6px 0"></div>
+          <a href="/profil/log-ind.html" class="sub-link" style="display:block;padding:8px 12px">Log ind</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
 <style>
-  :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --text:#0f172a; --muted:#64748b; --accent:#0ea5e9; }
-  /* Isolér headeren fra side-CSS */
-  .header,
-  .header *{ box-sizing:border-box; }
-  .header{position:sticky; top:0; z-index:1002; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 2px 6px rgba(2,8,23,.04);}
-  .header-inner{max-width:var(--max); margin:0 auto; padding:12px var(--pad);
-    display:flex; align-items:center; justify-content:space-between; gap:12px;}
-  .logo{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--accent); font-size:20px; text-decoration:none;}
-  .logo svg{width:22px; height:22px}
-
-  /* nav (desktop) */
-  .nav{display:flex; align-items:center; gap:22px;}
-  .nav > a{color:var(--text); font-weight:600; text-decoration:none; padding:8px 6px; border-radius:10px}
-  .nav > a:hover{background:#f8fafc}
-  .nav .pill{display:inline-flex; align-items:center; gap:6px; padding:8px 10px; border:1px solid var(--line); border-radius:999px;}
-  .nav .pill svg{width:18px; height:18px}
-
-  /* right */
-  .actions{display:flex; align-items:center; gap:10px}
-  .btn{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--line); background:#fff; border-radius:10px; font-weight:600; text-decoration:none; color:var(--text)}
-  .btn.primary{background:var(--accent); color:#fff; border-color:transparent}
-  .btn svg{width:18px; height:18px}
-
-  /* mobile */
-  .hamburger{display:none; background:#fff; border:1px solid var(--line); border-radius:10px; padding:8px}
-  .hamburger svg{width:22px; height:22px}
-  @media (max-width:900px){
-    .nav{display:none}
-    .hamburger{display:inline-flex}
+/* bevar din eksisterende styling – disse små helpers følger dine klasse-navne */
+.has-sub:hover .submenu{display:block}
+.burger-btn{display:none}
+@media(max-width:860px){
+  .burger-btn{display:inline-flex;flex-direction:column;gap:3px;width:32px;height:28px;justify-content:center;cursor:pointer}
+  .burger-btn::before,.burger-btn::after{content:"";height:2px;background:#0f172a;border-radius:2px}
+  .burger-btn::after{box-shadow:0 -7px 0 #0f172a,0 7px 0 #0f172a}
+  .nav{
+    display:none;position:absolute;left:0;right:0;top:58px;background:#fff;border-bottom:1px solid var(--line);
+    box-shadow:0 8px 18px rgba(2,8,23,.06);padding:12px var(--pad)
   }
-
-  /* mobile drawer */
-  .drawer{position:fixed; inset:0 0 auto auto; top:60px; right:var(--pad); width:min(92vw,320px); background:#fff; border:1px solid var(--line); border-radius:14px; box-shadow:0 12px 28px rgba(2,8,23,.15); padding:10px; display:none}
-  .drawer.open{display:block}
-  .drawer a{display:flex; align-items:center; gap:10px; padding:10px; border-radius:10px; color:var(--text); text-decoration:none}
-  .drawer a:hover{background:#f8fafc}
-  .drawer a svg{width:20px;height:20px}
+  #nav-toggle:checked ~ .nav{display:block}
+  .nav a{display:block;padding:10px 6px}
+  .has-sub .submenu{position:static;display:block;border:none;box-shadow:none;padding:0;margin-left:6px}
+  .has-sub .sub-link{padding:8px 12px}
+}
 </style>
 
-<header class="header" role="banner">
-  <div class="header-inner">
-    <a class="logo" href="/">
-      <svg aria-hidden="true"><use href="#airfryer"></use></svg>
-      <span>Opskrift-Airfryer.dk</span>
-    </a>
-
-    <nav class="nav" aria-label="Primær">
-      <a href="/opskrifter.html">Opskrifter</a>
-      <a href="/guides/index.html">Guides</a>
-      <a class="pill" href="/madplan/index.html"><svg aria-hidden="true"><use href="#calendar"></use></svg><span>Madplaner</span></a>
-      <a href="/om.html">Om</a>
-    </nav>
-
-    <div class="actions">
-      <a class="btn" href="/profil/gemt.html" title="Gemt"><svg aria-hidden="true"><use href="#heart"></use></svg><span class="hide-sm">Gemt</span></a>
-      <button class="btn" id="btn-auth" type="button"><svg aria-hidden="true"><use href="#user"></use></svg><span>Log ind</span></button>
-      <button class="hamburger" id="btn-menu" aria-label="Åbn menu"><svg><use href="#menu"></use></svg></button>
-    </div>
-  </div>
-
-  <!-- Mobile drawer -->
-  <div class="drawer" id="drawer" aria-label="Mobilmenu">
-    <a href="/opskrifter.html"><svg><use href="#pan"></use></svg> Opskrifter</a>
-    <a href="/guides/index.html"><svg><use href="#book"></use></svg> Guides</a>
-    <a href="/madplan/index.html"><svg><use href="#calendar"></use></svg> Madplaner</a>
-    <a href="/profil/gemt.html"><svg><use href="#heart"></use></svg> Gemt</a>
-    <a href="/profil/index.html"><svg><use href="#user"></use></svg> Bruger</a>
-  </div>
-
-  <script>
-    (function(){
-      const drawer = document.getElementById('drawer');
-      const btnMenu = document.getElementById('btn-menu');
-      const btnAuth = document.getElementById('btn-auth');
-
-      btnMenu && btnMenu.addEventListener('click', ()=> drawer.classList.toggle('open'));
-
-      // Åbn login modal hvis auth.js er til stede – ellers gå til profil
-      btnAuth && btnAuth.addEventListener('click', function(){
-        if (window.OA && typeof window.OA.openAuth === 'function'){ window.OA.openAuth(); }
-        else { location.href = '/profil/index.html'; }
-      });
-    })();
-  </script>
-</header>
+<script>
+/* Sæt CSS-var for header-højde så din sticky-offset virker – uden at ændre andet */
+(function(){
+  function setH(){ 
+    var h = document.querySelector('.site-header-wrap')?.getBoundingClientRect().height || 64;
+    document.documentElement.style.setProperty('--header-h', Math.round(h) + 'px');
+  }
+  window.addEventListener('load', setH, {once:true});
+  window.addEventListener('resize', setH);
+})();
+</script>
