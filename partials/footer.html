@@ -1,140 +1,30 @@
 <!-- PARTIAL: /partials/footer.html -->
-<style>
-  :root{ --max:1200px; --pad:16px; --line:#e2e8f0; --muted:#475569; }
-  .footer{background:#f8fafc; border-top:1px solid var(--line); margin-top:36px;}
-  .footer-inner{max-width:var(--max); margin:0 auto; padding:28px var(--pad);}
-  .footer-cols{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-bottom:16px;}
-  .footer h3{margin:0 0 8px; font-size:16px;}
-  .footer a, .footer p, .footer li{color:var(--muted); font-size:14px; text-decoration:none;}
-  .footer ul{list-style:none; margin:0; padding:0; display:grid; gap:6px;}
-  .copy{color:#64748b; font-size:13px; text-align:center; margin:8px 0 0;}
-  @media(max-width:900px){ .footer-cols{grid-template-columns:1fr 1fr} }
-  @media(max-width:600px){ .footer-cols{grid-template-columns:1fr} }
-
-  /* Cookie banner styling */
-  #cookie-banner {
-    display:none; 
-    position:fixed; 
-    bottom:20px; 
-    left:20px; 
-    right:20px; 
-    background:#fff; 
-    color:#333; 
-    border:1px solid #ddd; 
-    border-radius:12px; 
-    padding:15px; 
-    box-shadow:0 4px 12px rgba(0,0,0,0.1); 
-    z-index:9999; 
-    max-width:600px; 
-    margin:0 auto; 
-    font-family:Arial,sans-serif; 
-    font-size:14px;
-  }
-  #cookie-banner p {
-    margin:0 0 10px 0;
-  }
-  #cookie-banner a {
-    color:#0073e6; 
-    text-decoration:none;
-  }
-  #cookie-accept {
-    background:#0073e6; 
-    color:#fff; 
-    border:none; 
-    padding:8px 16px; 
-    border-radius:6px; 
-    cursor:pointer; 
-    font-size:14px;
-  }
-</style>
-
-<footer class="footer" role="contentinfo">
+<footer class="footer">
   <div class="footer-inner">
     <div class="footer-cols">
-      
-      <!-- Kategorier dropdown -->
       <div>
-        <h3>Kategorier</h3>
-        <details>
-          <summary style="cursor:pointer; color:var(--muted); font-size:14px;">Se alle</summary>
-          <ul>
-            <li><a href="/kategori.html?navn=Svinekød">Svinekød</a></li>
-            <li><a href="/kategori.html?navn=Kylling">Kylling</a></li>
-            <li><a href="/kategori.html?navn=Oksekød">Oksekød</a></li>
-            <li><a href="/kategori.html?navn=Fisk">Fisk</a></li>
-            <li><a href="/kategori.html?navn=Lam">Lam</a></li>
-            <li><a href="/kategori.html?navn=Grønt">Grønt</a></li>
-            <li><a href="/kategori.html?navn=Tilbehør">Tilbehør</a></li>
-            <li><a href="/kategori.html?navn=Dessert">Dessert</a></li>
-            <li><a href="/kategori.html?navn=Vegetar">Vegetar</a></li>
-            <li><a href="/kategori.html?navn=Snack">Snacks</a></li>
-          </ul>
-        </details>
+        <h2>Opskrift-Airfryer.dk</h2>
+        <p class="small">Nem hverdagsmad, airfryer-tips og madplaner.</p>
       </div>
-      
-      <!-- Guides & Tips -->
       <div>
-        <h3>Guides & Tips</h3>
-        <ul>
-          <li><a href="/guides.html">Se alle guides</a></li>
-          <li><a href="/guides/airfryer-tider.html">Airfryer tider</a></li>
-          <li><a href="/guides/valg-af-airfryer.html">Vælg airfryer</a></li>
-          <li><a href="/guides/airfryer-rengoering.html">Rengøring</a></li>
-        </ul>
+        <h3 style="margin:0 0 8px;font-size:16px">Indhold</h3>
+        <p class="small"><a href="/opskrifter.html">Opskrifter</a> · <a href="/guides.html">Guides</a> · <a href="/madplan/index.html">Madplaner</a></p>
       </div>
-      
-      <!-- Om os & Kontakt -->
       <div>
-        <h3>Om os</h3>
-        <ul>
-          <li><a href="/om-os.html">Om Opskrift-Airfryer.dk</a></li>
-          <li><a href="/kontakt.html">Kontakt</a></li>
-          <li><a href="/cookiepolitik.html">Cookiepolitik</a></li>
-        </ul>
+        <h3 style="margin:0 0 8px;font-size:16px">Følg os</h3>
+        <p class="small"><a href="https://www.facebook.com/" rel="nofollow">Facebook</a></p>
       </div>
-      
     </div>
-    <p class="copy">© 2025 Opskrift-Airfryer.dk – Nemme opskrifter til din airfryer</p>
+    <p class="copy">© <span id="y"></span> Opskrift-Airfryer.dk • Alle rettigheder forbeholdes</p>
   </div>
-  <!-- Auth modal (global) -->
-<div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:99999;align-items:center;justify-content:center">
-  <div class="block" style="max-width:420px;width:calc(100% - 32px)">
-    <h2 style="margin-top:0">Log ind</h2>
-    <p class="small">Vi sender et login-link til din e-mail. Ingen password.</p>
-    <form id="auth-form">
-      <input id="auth-email" type="email" required placeholder="din@email.dk"
-             style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0">
-      <button class="btn primary" type="submit">Send login-link</button>
-      <button class="btn" type="button" id="auth-cancel" style="margin-left:8px">Luk</button>
-    </form>
-    <p id="auth-msg" class="small" style="display:none;margin-top:8px"></p>
-  </div>
-</div>
-
-<!-- Global auth (loader på ALLE sider via footer-partial) -->
-<script src="/assets/auth.js?v=1" type="module"></script>
-
 </footer>
 
-<!-- Cookies Banner -->
-<div id="cookie-banner">
-  <p>
-    🍪 Vi bruger cookies for at forbedre din oplevelse på Opskrift-Airfryer.dk. 
-    Ved at fortsætte accepterer du vores brug af cookies. 
-    <a href="/cookiepolitik.html">Læs mere</a>
-  </p>
-  <button id="cookie-accept">Accepter</button>
-</div>
-
 <script>
-  // Check if user already accepted cookies
-  if (!localStorage.getItem("cookieAccepted")) {
-    document.getElementById("cookie-banner").style.display = "block";
-  }
-
-  // Handle accept click
-  document.getElementById("cookie-accept").addEventListener("click", function() {
-    localStorage.setItem("cookieAccepted", "true");
-    document.getElementById("cookie-banner").style.display = "none";
-  });
+  (function(){ var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear(); })();
 </script>
+
+<!-- Auth-modal inkluderes globalt via footer-partial (så du ikke skal røre andre sider) -->
+<div data-include="/partials/auth-modal.html"></div>
+
+<!-- Auth-logic (Supabase + favoritter + modal) – én gang her, virker på hele sitet -->
+<script src="/assets/auth.js?v=3" defer></script>
