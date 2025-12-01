@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mine favoritter – gemte opskrifter, guides og madplaner</title>
+  <meta name="description" content="Se alle dine gemte favoritter fra Opskrift-Airfryer.dk – opskrifter, guides og madplaner. Log ind for at synkronisere på tværs af enheder." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css?v=17" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+  <style>
+    .fav-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+    .pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:#fff;font-size:13px}
+    .fav-empty{border:1px dashed var(--line);border-radius:14px;padding:16px;background:var(--soft)}
+    .card .actions{display:flex;gap:8px;margin-top:8px}
+    .btn.danger{border-color:#fecaca;color:#991b1b;background:#fff}
+    .btn.danger:hover{transform:translateY(-1px)}
+  </style>
+</head>
+<body class="has-fixed-header">
+  <div data-include="/partials/icons.html"></div>
+  <div data-include="/partials/header.html"></div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="kicker">Profil</span>
+        <h1>Mine favoritter</h1>
+        <p class="lead">Her samler vi alt, du har ♥ gemt – opskrifter, guides og madplaner. <span id="fav-sync-hint" class="small"></span></p>
+
+        <div class="fav-toolbar">
+          <span id="fav-count" class="pill" style="display:none"></span>
+          <button id="fav-clear" class="btn" style="display:none">Ryd lokale favoritter</button>
+          <a class="btn" href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Gå til Madplaner</a>
+          <a class="btn" href="/guides.html"><svg class="ico-inline"><use href="#book"></use></svg>Gå til Guides</a>
+          <a class="btn" href="/opskrifter.html"><svg class="ico-inline"><use href="#star"></use></svg>Gå til Opskrifter</a>
+        </div>
+      </div>
+      <div class="hero-box">
+        <svg class="hero-ico"><use href="#heart"></use></svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-3" id="fav-grid"></div>
+      <div id="fav-empty" class="fav-empty" style="display:none">
+        <h2 style="margin:0 0 8px">Ingen favoritter endnu</h2>
+        <p class="small">Tryk på ♥ ved en opskrift, guide eller madplan for at gemme den her.</p>
+        <div class="badges">
+          <a class="badge" href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Se madplaner</a>
+          <a class="badge" href="/guides.html"><svg class="ico-inline"><use href="#book"></use></svg>Se guides</a>
+          <a class="badge" href="/opskrifter.html"><svg class="ico-inline"><use href="#star"></use></svg>Se opskrifter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+  <script src="/assets/include.js?v=4"></script>
+
+  <script>
+  (function(){
+    const $ = (s, r=document)=>r.querySelector(s);
+    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+    const grid = $('#fav-grid');
+    const empty = $('#fav-empty');
+    const countPill = $('#fav-count');
+    const clearBtn = $('#fav-clear');
+    const syncHint = $('#fav-sync-hint');
+
+    const LS_KEY = 'oa_favs_v1';
+    const readLS = ()=>{ try{ return JSON.parse(localStorage.getItem(LS_KEY)||'[]'); }catch(_){ return []; } };
+    const writeLS = (a)=> localStorage.setItem(LS_KEY, JSON.stringify(a||[]));
+
+    function byIdUnique(arr){
+      const map = new Map();
+      for(const it of arr){ if(!it || !it.id) continue; if(!map.has(it.id)) map.set(it.id, it); }
+      return Array.from(map.values());
+    }
+
+    function niceType(t){
+      if(!t) return 'indhold';
+      if(t==='opskrift') return 'opskrift';
+      if(t==='guide') return 'guide';
+      if(t==='madplan') return 'madplan';
+      return t;
+    }
+
+    function card(item){
+      const href = item.url || '#';
+      const title = item.title || 'Favorit';
+      const type = niceType(item.type);
+      const id = item.id;
+
+      return `
+        <a class="card ${type==='madplan'?'card--guide':''}" href="${href}">
+          <div class="thumb-icon">
+            <svg><use href="${type==='madplan' ? '#calendar' : (type==='guide' ? '#book' : '#star')}"></use></svg>
+          </div>
+          <div class="card-body">
+            <h3>${title}</h3>
+            <p class="meta">${type}</p>
+            <div class="actions">
+              <button class="btn danger" data-remove="${id}">Fjern</button>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+
+    function paint(list){
+      const items = list || [];
+      const n = items.length;
+      if(n===0){
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        countPill.style.display = 'none';
+        clearBtn.style.display = 'none';
+        return;
+      }
+      empty.style.display = 'none';
+      countPill.textContent = `${n} favorit${n===1?'':'ter'}`;
+      countPill.style.display = 'inline-flex';
+      clearBtn.style.display = 'inline-block';
+      grid.innerHTML = items.map(card).join('');
+    }
+
+    async function getSupabaseClient(){
+      // auth.js loader supabase UMD – men hvis den ikke er klar endnu, vent lidt
+      if (window.supabase) return window.supabase.createClient
+        ? window.supabase.createClient
+        : null;
+
+      // fallback: injicer bibliotek
+      await new Promise(res=>{
+        const s=document.createElement('script');
+        s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+        s.async=true; s.onload=res; document.head.appendChild(s);
+      });
+      return window.supabase ? window.supabase.createClient : null;
+    }
+
+    async function loadAll(){
+      const local = readLS();
+
+      // prøv Supabase
+      let remote = [];
+      try{
+        const createClient = await getSupabaseClient();
+        if (createClient){
+          const client = createClient("https://mrcctupzajqetsnalriy.supabase.co",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8");
+
+          const { data: sessionData } = await client.auth.getSession();
+          const user = sessionData?.session?.user || null;
+
+          if (user){
+            syncHint.innerHTML = 'Logget ind – favoritter synkroniseres på tværs af enheder.';
+            const { data, error } = await client.from('favorites')
+              .select('content_id,title,url,type,created_at')
+              .order('created_at', { ascending: false })
+              .limit(500);
+            if (!error && Array.isArray(data)){
+              remote = data.map(r => ({
+                id: r.content_id,
+                title: r.title,
+                url: r.url,
+                type: r.type
+              }));
+            }
+          }else{
+            syncHint.innerHTML = 'Tip: Log ind for at synkronisere dine favoritter på tværs af enheder.';
+          }
+        }
+      }catch(_){ /* ignorer – vis bare lokale */ }
+
+      const merged = byIdUnique([...(remote||[]), ...(local||[])]);
+      paint(merged);
+      return { merged, remote };
+    }
+
+    async function removeOne(id){
+      // fjern lokalt
+      const cur = readLS().filter(x => x.id !== id);
+      writeLS(cur);
+
+      // forsøg også at slette i Supabase (hvis logget ind)
+      try{
+        const createClient = await getSupabaseClient();
+        if (createClient){
+          const client = createClient("https://mrcctupzajqetsnalriy.supabase.co",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8");
+          const { data } = await client.auth.getSession();
+          const user = data?.session?.user || null;
+          if (user){
+            await client.from('favorites').delete()
+              .eq('user_id', user.id)
+              .eq('content_id', id);
+          }
+        }
+      }catch(_){}
+
+      // re-render
+      const { merged } = await loadAll();
+      // tryk hjerterne på siden opdateres af auth.js når brugeren klikker derude – her er vi på profilsiden.
+    }
+
+    document.addEventListener('click', function(e){
+      const btn = e.target.closest('[data-remove]');
+      if (!btn) return;
+      e.preventDefault();
+      const id = btn.getAttribute('data-remove');
+      removeOne(id);
+    });
+
+    clearBtn.addEventListener('click', function(){
+      if (!confirm('Vil du rydde alle lokale favoritter på denne enhed?')) return;
+      writeLS([]);
+      loadAll();
+    });
+
+    // go
+    loadAll();
+  })();
+  </script>
+</body>
+</html>
