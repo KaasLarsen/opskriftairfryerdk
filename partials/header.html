@@ -93,6 +93,7 @@
   .afo-stars .afo-stars-text { color: var(--muted, #64748b); }
   .afo-stars .afo-stars-text strong { font-weight:700; }
 </style>
+
 <!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXMT7HRDV2"></script>
 <script>
@@ -101,16 +102,11 @@
   gtag('js', new Date());
   gtag('config', 'G-RXMT7HRDV2');
 </script>
-<!-- REVIEW MARKUP: global konfiguration + loader
-     Placeres fint i body fordi scriptet er 'defer'.  -->
+
+<!-- REVIEW MARKUP: global konfiguration + loader -->
 <script>
-  // Global standard – kan overskrives pr. side via meta-tags:
-  // <meta name="afo:ratingValue" content="4.7" />
-  // <meta name="afo:ratingCount" content="26" />
   window.AFO_RATING_DEFAULT_VALUE = 4.8;
   window.AFO_RATING_DEFAULT_COUNT = 37;
-
-  // I kan ikke tilføje billede nu → rør ikke image-feltet i schema
   window.AFO_IMAGE_FALLBACK = null;
 </script>
 <script defer src="/assets/review-schema.js?v=2"></script>
