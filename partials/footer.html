@@ -96,6 +96,24 @@
     </div>
     <p class="copy">© 2025 Opskrift-Airfryer.dk – Nemme opskrifter til din airfryer</p>
   </div>
+  <!-- Auth modal (global) -->
+<div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:99999;align-items:center;justify-content:center">
+  <div class="block" style="max-width:420px;width:calc(100% - 32px)">
+    <h2 style="margin-top:0">Log ind</h2>
+    <p class="small">Vi sender et login-link til din e-mail. Ingen password.</p>
+    <form id="auth-form">
+      <input id="auth-email" type="email" required placeholder="din@email.dk"
+             style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;margin:8px 0">
+      <button class="btn primary" type="submit">Send login-link</button>
+      <button class="btn" type="button" id="auth-cancel" style="margin-left:8px">Luk</button>
+    </form>
+    <p id="auth-msg" class="small" style="display:none;margin-top:8px"></p>
+  </div>
+</div>
+
+<!-- Global auth (loader på ALLE sider via footer-partial) -->
+<script src="/assets/auth.js?v=1" type="module"></script>
+
 </footer>
 
 <!-- Cookies Banner -->
