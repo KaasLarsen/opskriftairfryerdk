@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gemt indhold – dine favoritter på tværs af hele sitet</title>
+  <meta name="description" content="Se alle dine gemte opskrifter, guides og madplaner. Synkroniseret mellem enheder når du er logget ind." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css?v=17" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+  <style>
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;min-width:260px}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;cursor:pointer;font-size:13px}
+    .chip[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+    .btn-danger{border-color:#fecaca;background:#ef4444;color:#fff}
+    .card .actions{display:flex;gap:8px;margin-top:8px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body class="has-fixed-header">
+  <div data-include="/partials/icons.html"></div>
+  <div data-include="/partials/header.html"></div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="kicker">Profil</span>
+        <h1>Gemt indhold</h1>
+        <p class="lead">Her ser du alle dine ♥ favoritter – opskrifter, guides og madplaner. Log ind for at synkronisere mellem enheder.</p>
+        <div class="badges" style="margin-top:8px">
+          <span class="badge" id="sync-badge"><svg class="ico-inline"><use href="#cloud"></use></svg>Synk-status tjekkes…</span>
+          <a class="badge" href="/profil/index.html"><svg class="ico-inline"><use href="#user"></use></svg>Min konto</a>
+          <a class="badge" href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Madplaner</a>
+        </div>
+
+        <div class="controls" role="search">
+          <input id="q" class="input" type="search" placeholder="Søg i dine favoritter… (fx kylling, bacon, madplan)" autocomplete="off" />
+          <span id="count" class="badge" style="display:none"></span>
+          <button id="btn-clear-local" class="btn" type="button">Ryd lokale</button>
+          <button id="btn-clear-all" class="btn btn-danger" type="button">Slet alle (denne enhed)</button>
+        </div>
+
+        <div class="chips" style="margin-top:10px">
+          <button class="chip" data-type="all" aria-pressed="true"><svg class="ico-inline"><use href="#star"></use></svg>Alle</button>
+          <button class="chip" data-type="opskrift" aria-pressed="false"><svg class="ico-inline"><use href="#pan"></use></svg>Opskrifter</button>
+          <button class="chip" data-type="guide" aria-pressed="false"><svg class="ico-inline"><use href="#book"></use></svg>Guides</button>
+          <button class="chip" data-type="madplan" aria-pressed="false"><svg class="ico-inline"><use href="#calendar"></use></svg>Madplaner</button>
+        </div>
+      </div>
+      <div class="hero-box">
+        <svg class="hero-ico"><use href="#heart"></use></svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2><svg class="ico-inline"><use href="#sparkles"></use></svg>Dine favoritter</h2>
+      </div>
+      <div id="grid" class="grid grid-3"></div>
+      <p id="empty" class="copy" style="display:none">Du har ingen favoritter endnu. Tip: Tryk ♥ ved indhold for at gemme.</p>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/include.js?v=4"></script>
+  <!-- Supabase UMD fallback -->
+  <script>
+    (function ensureSupabase(){
+      if (window.supabase) return;
+      var s=document.createElement('script');
+      s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+      s.async=true;
+      document.head.appendChild(s);
+    })();
+  </script>
+  <script>
+  (function(){
+    const $ = (s, r=document)=>r.querySelector(s);
+    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+
+    const LS_KEY = 'oa_favs_v1';
+    const SUPA_URL = "https://mrcctupzajqetsnalriy.supabase.co";
+    const SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8";
+
+    const grid = $('#grid');
+    const empty = $('#empty');
+    const count = $('#count');
+    const q = $('#q');
+    const chips = $$('.chip');
+    const syncBadge = $('#sync-badge');
+
+    let client=null, USER=null, ALL=[]; // samlet liste (cloud+local)
+
+    function iconFor(type){
+      if (type==='madplan') return '#calendar';
+      if (type==='guide') return '#book';
+      if (type==='opskrift') return '#pan';
+      return '#star';
+    }
+    function readLS(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||'[]'); }catch(_){ return []; } }
+    function writeLS(a){ localStorage.setItem(LS_KEY, JSON.stringify(a||[])); }
+    function uniqByUrl(items){
+      const m=new Map();
+      for(const it of items){ if (!it || !it.url) continue; if(!m.has(it.url)) m.set(it.url, it); }
+      return Array.from(m.values());
+    }
+
+    function card(it){
+      return `
+        <div class="card">
+          <a href="${it.url}" class="thumb-icon" aria-label="${it.title}">
+            <svg><use href="${iconFor(it.type)}"></use></svg>
+          </a>
+          <div class="card-body">
+            <h3>${it.title||'Uden titel'}</h3>
+            <p class="meta">${it.type || 'indhold'} · ${new Date(it.saved_at||Date.now()).toLocaleDateString('da-DK')}</p>
+            <div class="actions">
+              <a href="${it.url}" class="btn">Åbn</a>
+              <button class="btn btn-danger" data-remove="${encodeURIComponent(it.url)}">Fjern</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function activeType(){
+      const on = chips.find(c=>c.getAttribute('aria-pressed')==='true');
+      return on ? on.dataset.type : 'all';
+    }
+
+    function render(){
+      const term = (q.value||'').toLowerCase().trim();
+      const type = activeType();
+      let items = ALL.slice();
+
+      if (type!=='all') items = items.filter(it=> (it.type||'').toLowerCase()===type);
+      if (term){
+        items = items.filter(it =>
+          (it.title||'').toLowerCase().includes(term) ||
+          (it.url||'').toLowerCase().includes(term)
+        );
+      }
+
+      count.style.display='inline-block';
+      count.textContent = items.length + ' gemte';
+
+      if (items.length===0){
+        grid.innerHTML = '';
+        empty.style.display='block';
+      } else {
+        empty.style.display='none';
+        grid.innerHTML = items.map(card).join('');
+      }
+    }
+
+    function setSync(text, cls){
+      syncBadge.textContent = text;
+      syncBadge.className = 'badge' + (cls ? ' '+cls : '');
+    }
+
+    function getClient(){
+      if (client) return client;
+      if (!window.supabase || !window.supabase.createClient) return null;
+      client = window.supabase.createClient(SUPA_URL, SUPA_KEY, {
+        auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true }
+      });
+      return client;
+    }
+
+    async function loadAll(){
+      // start med lokale
+      let local = readLS().map(x=>({...x, source:'local'}));
+
+      // prøv cloud
+      const c = getClient();
+      if (!c){ setSync('Kun lokale favoritter (auth ikke klar)', ''); ALL = uniqByUrl(local).sort(sorter); return; }
+
+      const { data:session } = await c.auth.getSession();
+      USER = session?.session?.user || null;
+
+      if (!USER){
+        setSync('Ikke logget ind – viser lokale', '');
+        ALL = uniqByUrl(local).sort(sorter);
+        return;
+      }
+
+      setSync('Logget ind – henter skyfavoritter…', 'status-ok');
+      // antaget tabel: favorites(title, url, type, saved_at, user_id)
+      let cloud = [];
+      try{
+        const { data, error } = await c.from('favorites')
+          .select('title,url,type,saved_at')
+          .order('saved_at', { ascending:false })
+          .limit(500);
+        if (error) throw error;
+        cloud = (data||[]).map(x=>({...x, source:'cloud'}));
+      }catch(e){
+        setSync('Kunne ikke hente skyfavoritter', 'status-warn');
+      }
+
+      // merge – cloud vinder
+      const merged = uniqByUrl([...cloud, ...local]);
+      ALL = merged.sort(sorter);
+
+      // enkel ét-vejssync: skub lokale der ikke findes i sky
+      const wantPush = local.filter(l => !cloud.find(c => c.url===l.url));
+      if (USER && wantPush.length){
+        try{
+          await c.from('favorites').insert(
+            wantPush.map(x=>({
+              title: x.title||null,
+              url: x.url,
+              type: x.type||null,
+              saved_at: x.saved_at || new Date().toISOString()
+            }))
+          );
+          setSync('Synkroniseret ✔', 'status-ok');
+        }catch(_){
+          setSync('Delvis synkroniseret', 'status-warn');
+        }
+      } else {
+        setSync('Synkroniseret ✔', 'status-ok');
+      }
+    }
+
+    function sorter(a,b){
+      const da = new Date(a.saved_at||0).getTime();
+      const db = new Date(b.saved_at||0).getTime();
+      return db - da;
+    }
+
+    // Fjern én
+    async function removeOne(urlEnc){
+      const url = decodeURIComponent(urlEnc);
+      // lokalt
+      const local = readLS().filter(x=>x.url!==url);
+      writeLS(local);
+
+      // sky
+      if (USER && getClient()){
+        try{
+          await client.from('favorites').delete().eq('url', url);
+        }catch(_){}
+      }
+
+      // lokalt ALL
+      ALL = ALL.filter(x=>x.url!==url);
+      render();
+    }
+
+    // UI events
+    q.addEventListener('input', render);
+    chips.forEach(ch=>{
+      ch.addEventListener('click', ()=>{
+        chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        ch.setAttribute('aria-pressed','true');
+        render();
+      });
+    });
+
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-remove]');
+      if (!btn) return;
+      const url = btn.getAttribute('data-remove');
+      if (confirm('Fjerne fra favoritter?')) removeOne(url);
+    });
+
+    $('#btn-clear-local').addEventListener('click', ()=>{
+      if (!confirm('Ryd kun lokale favoritter på denne enhed?')) return;
+      writeLS([]);
+      // Fjern lokalt fra ALL, bevar cloud
+      ALL = ALL.filter(x=>x.source==='cloud');
+      render();
+    });
+
+    $('#btn-clear-all').addEventListener('click', ()=>{
+      if (!confirm('Dette sletter ALLE favoritter lokalt (på denne enhed). Fortsæt?')) return;
+      writeLS([]);
+      // hvis ikke logget ind, er ALL tom
+      if (!USER) ALL = [];
+      else ALL = ALL.filter(x=>x.source==='cloud');
+      render();
+    });
+
+    // Boot
+    (function wait(retries=40){
+      if (window.supabase && window.supabase.createClient){
+        loadAll().then(render);
+      } else if (retries>0){
+        setTimeout(()=>wait(retries-1), 100);
+      } else {
+        setSync('Auth fejlede at loade – viser lokale', 'status-warn');
+        ALL = uniqByUrl(readLS()).sort(sorter);
+        render();
+      }
+    })();
+
+    document.addEventListener('visibilitychange', function(){
+      if (!document.hidden) loadAll().then(render);
+    });
+  })();
+  </script>
+</body>
+</html>
