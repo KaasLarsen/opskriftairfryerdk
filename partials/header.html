@@ -2,29 +2,52 @@
 <header class="site-header-wrap" style="background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)">
   <div class="site-header" style="max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px">
     <!-- Logo -->
-    <a class="logo" href="/" aria-label="Forside" style="font-weight:800;color:var(--accent);font-size:20px;text-decoration:none">Opskrift-Airfryer.dk</a>
+    <a class="logo" href="/" aria-label="Forside">Opskrift-Airfryer.dk</a>
 
     <!-- Burger (mobil) -->
-    <input id="nav-toggle" type="checkbox" hidden />
-    <label for="nav-toggle" class="burger-btn" aria-label="Menu" style="display:none"></label>
+    <input id="nav-toggle" type="checkbox" hidden>
+    <label for="nav-toggle" class="burger-btn" aria-label="Åbn menu">
+      <span></span><span></span><span></span>
+    </label>
 
-    <!-- Nav (desktop) -->
-    <nav class="nav" aria-label="Hovedmenu" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
-      <a href="/opskrifter/" class="nav-link">Opskrifter</a>
-      <a href="/guides/" class="nav-link">Guides</a>
-      <a href="/madplan/index.html" class="nav-link">Madplaner</a>
-      <a href="/top/" class="nav-link">Top</a>
+    <!-- Nav -->
+    <nav class="nav" aria-label="Hovedmenu">
+      <a href="/opskrifter/" class="nav-link">
+        <svg class="ico-inline"><use href="#book"></use></svg> Opskrifter
+      </a>
+      <a href="/guides/" class="nav-link">
+        <svg class="ico-inline"><use href="#star"></use></svg> Guides
+      </a>
+      <a href="/madplan/index.html" class="nav-link">
+        <svg class="ico-inline"><use href="#calendar"></use></svg> Madplaner
+      </a>
+      <a href="/top/" class="nav-link">
+        <svg class="ico-inline"><use href="#trophy"></use></svg> Top
+      </a>
 
-      <!-- Bruger (hover dropdown på desktop) -->
-      <div class="has-sub" style="position:relative">
-        <a href="/profil/" class="nav-link">Bruger ▾</a>
-        <div class="submenu" style="display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);min-width:200px;padding:8px 0;z-index:50">
-          <a href="/profil/" class="sub-link" style="display:block;padding:8px 12px">Min profil</a>
-          <a href="/profil/favoritter.html" class="sub-link" style="display:block;padding:8px 12px">Mine favoritter</a>
-          <a href="/profil/mine-madplaner.html" class="sub-link" style="display:block;padding:8px 12px">Mine madplaner</a>
-          <a href="/profil/gemt.html" class="sub-link" style="display:block;padding:8px 12px">Gemt indhold</a>
-          <div style="height:1px;background:var(--line);margin:6px 0"></div>
-          <a href="/profil/log-ind.html" class="sub-link" style="display:block;padding:8px 12px">Log ind</a>
+      <!-- Bruger (hover + focus-within) -->
+      <div class="has-sub">
+        <button class="nav-link user-btn" aria-haspopup="true" aria-expanded="false">
+          <svg class="ico-inline"><use href="#user"></use></svg> Bruger
+          <svg class="chev" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <div class="submenu" role="menu">
+          <a href="/profil/" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#user"></use></svg> Min profil
+          </a>
+          <a href="/profil/favoritter.html" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#star"></use></svg> Mine favoritter
+          </a>
+          <a href="/profil/mine-madplaner.html" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#calendar"></use></svg> Mine madplaner
+          </a>
+          <a href="/profil/gemt.html" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#bookmark"></use></svg> Gemt indhold
+          </a>
+          <div class="sub-sep"></div>
+          <a href="/profil/log-ind.html" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#lock"></use></svg> Log ind
+          </a>
         </div>
       </div>
     </nav>
@@ -32,32 +55,74 @@
 </header>
 
 <style>
-/* bevar din eksisterende styling – disse små helpers følger dine klasse-navne */
-.has-sub:hover .submenu{display:block}
-.burger-btn{display:none}
-@media(max-width:860px){
-  .burger-btn{display:inline-flex;flex-direction:column;gap:3px;width:32px;height:28px;justify-content:center;cursor:pointer}
-  .burger-btn::before,.burger-btn::after{content:"";height:2px;background:#0f172a;border-radius:2px}
-  .burger-btn::after{box-shadow:0 -7px 0 #0f172a,0 7px 0 #0f172a}
+/* Baseline (matcher dine klasser/variabler) */
+.site-header-wrap{position:sticky;top:0;z-index:1002}
+.logo{font-weight:800;color:var(--accent);font-size:20px;text-decoration:none}
+.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:static}
+.nav-link{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15px;text-decoration:none}
+.ico-inline{width:16px;height:16px;display:inline-block;vertical-align:-2px;color:currentColor}
+.has-sub{position:relative}
+.user-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15px}
+.chev{opacity:.7}
+
+/* Dropdown */
+.submenu{
+  display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:220px;
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  box-shadow:var(--shadow);padding:8px 0;z-index:1003
+}
+.sub-link{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:14px;color:var(--text);text-decoration:none}
+.sub-link:hover{background:#f8fafc}
+.sub-sep{height:1px;background:var(--line);margin:6px 0}
+
+/* Hover + tastatur (focus-within) */
+.has-sub:hover .submenu,
+.has-sub:focus-within .submenu{display:block}
+.has-sub:focus-within .user-btn{outline:2px solid rgba(14,165,233,.3);border-radius:8px}
+
+/* Burger / mobil */
+.burger-btn{display:none;flex-direction:column;gap:4px;width:32px;height:28px;justify-content:center}
+.burger-btn span{height:2px;background:#0f172a;border-radius:2px}
+@media (max-width:860px){
+  .burger-btn{display:inline-flex}
   .nav{
-    display:none;position:absolute;left:0;right:0;top:58px;background:#fff;border-bottom:1px solid var(--line);
-    box-shadow:0 8px 18px rgba(2,8,23,.06);padding:12px var(--pad)
+    display:none;position:absolute;left:0;right:0;top:58px;background:#fff;
+    border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(2,8,23,.06);
+    padding:12px var(--pad);flex-direction:column;align-items:stretch;gap:6px
   }
-  #nav-toggle:checked ~ .nav{display:block}
-  .nav a{display:block;padding:10px 6px}
-  .has-sub .submenu{position:static;display:block;border:none;box-shadow:none;padding:0;margin-left:6px}
-  .has-sub .sub-link{padding:8px 12px}
+  #nav-toggle:checked ~ .nav{display:flex}
+  .has-sub{position:static}
+  .submenu{position:static;display:block;border:none;box-shadow:none;padding:4px 0}
 }
 </style>
 
 <script>
-/* Sæt CSS-var for header-højde så din sticky-offset virker – uden at ændre andet */
+/* Sæt --header-h så siderne har korrekt offset */
 (function(){
-  function setH(){ 
+  function setH(){
     var h = document.querySelector('.site-header-wrap')?.getBoundingClientRect().height || 64;
-    document.documentElement.style.setProperty('--header-h', Math.round(h) + 'px');
+    document.documentElement.style.setProperty('--header-h', Math.round(h)+'px');
   }
   window.addEventListener('load', setH, {once:true});
   window.addEventListener('resize', setH);
+
+  /* Åbn/luk på klik for “Bruger” på desktop også */
+  var hs = document.querySelector('.has-sub');
+  var btn = hs?.querySelector('.user-btn');
+  var menu = hs?.querySelector('.submenu');
+  if(btn && menu){
+    btn.addEventListener('click', function(e){
+      var open = menu.style.display === 'block';
+      menu.style.display = open ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!open));
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function(){
+      if(getComputedStyle(menu).position === 'absolute'){
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
 })();
 </script>
