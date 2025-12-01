@@ -1,42 +1,61 @@
 <!-- PARTIAL: /partials/header.html -->
-<header class="site-header-wrap">
+<header class="site-header-wrap" role="banner">
   <div class="site-header">
-    <a class="logo" href="/" aria-label="Opskrift-Airfryer.dk">Opskrift-Airfryer.dk</a>
+    <a class="logo" href="/">Opskrift-Airfryer.dk</a>
 
-    <!-- Desktop-nav -->
-    <nav class="nav" aria-label="Hovednavigation">
-      <!-- Tilpas links som du vil – strukturen matcher dit eksisterende CSS -->
-      <a href="/opskrifter.html">Opskrifter</a>
-      <a href="/guides/index.html">Guides</a>
-      <a href="/madplan/index.html">Madplaner</a>
-      <a href="/top/udstyr.html">Udstyr</a>
-      <a href="/kontakt.html">Kontakt</a>
-      <!-- Log ind trigger -->
-      <a href="#" class="btn" data-auth-open aria-controls="auth-modal" aria-expanded="false">Log ind</a>
-      <a href="/profil.html" class="btn" id="auth-user-btn" style="display:none"></a>
-    </nav>
-
-    <!-- Burger (mobil) -->
-    <input id="nav-toggle" class="burger" type="checkbox" hidden />
-    <label class="burger-btn" for="nav-toggle" aria-label="Åbn menu">
+    <!-- Burger -->
+    <input id="nav-toggle" type="checkbox" hidden />
+    <label for="nav-toggle" class="burger-btn" aria-label="Åbn menu" aria-controls="site-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </label>
+
+    <!-- Nav -->
+    <nav id="site-nav" class="nav" role="navigation">
+      <a href="/opskrifter.html">Opskrifter</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/madplan/index.html">Madplaner</a>
+      <a href="/top.html">Top</a>
+      <a href="#" class="btn" data-auth-open aria-controls="auth-modal" aria-expanded="false">Log ind</a>
+    </nav>
   </div>
 </header>
 
-<!-- Inject auth-modal på alle sider via partial -->
-<div data-include="/partials/auth-modal.html"></div>
+<script>
+/* Header JS – kun det nødvendige, uden at røre andet */
+(function(){
+  function ready(fn){
+    if (document.readyState === 'complete' || document.readyState === 'interactive') return fn();
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function(){
+    // Burger: ARIA toggle
+    var toggle = document.getElementById('nav-toggle');
+    var btn = document.querySelector('.burger-btn');
+    var nav = document.getElementById('site-nav');
+    if (toggle && btn && nav){
+      function syncAria(){ btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false'); }
+      toggle.addEventListener('change', syncAria);
+      syncAria();
+      // Luk menu ved klik på et link (mobil)
+      nav.addEventListener('click', function(e){
+        if (e.target.tagName === 'A'){ toggle.checked = false; syncAria(); }
+      });
+    }
 
-<!-- Lidt defensiv CSS hvis den ikke allerede er i styles.css -->
-<style>
-.site-header-wrap{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)}
-.site-header{max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-weight:800;color:var(--accent);font-size:20px}
-.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-@media(max-width:860px){
-  .nav{display:none;position:absolute;left:0;right:0;top:58px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(2,8,23,.06);padding:12px var(--pad);z-index:10010}
-  #nav-toggle:checked ~ .burger-btn + .nav,
-  #nav-toggle:checked ~ .nav{display:block}
-}
-.site-header-wrap{position:sticky;top:0;z-index:10020}
-</style>
+    // Åbn auth-modal uden at påvirke burgeren
+    document.body.addEventListener('click', function(e){
+      var t = e.target.closest('[data-auth-open]');
+      if (!t) return;
+      e.preventDefault();
+      var modal = document.getElementById('auth-modal');
+      if (modal){
+        modal.classList.add('is-open');
+        document.documentElement.style.overflow = 'hidden';
+      } else {
+        // fallback: gå til hash så modal kan åbne når partials er loadet
+        location.hash = '#login';
+      }
+    });
+  });
+})();
+</script>
