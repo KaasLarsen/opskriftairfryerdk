@@ -25,7 +25,7 @@
       <svg class="ico-inline"><use href="#trophy"></use></svg> Top
       </a>
 
-      <!-- Bruger (hover + focus-within) -->
+      <!-- Bruger -->
       <div class="has-sub">
         <button class="nav-link user-btn" aria-haspopup="true" aria-expanded="false">
           <svg class="ico-inline"><use href="#user"></use></svg> Bruger
@@ -42,9 +42,9 @@
             <svg class="ico-inline"><use href="#calendar"></use></svg> Mine madplaner
           </a>
           <a href="/profil/gemt.html" class="menu-item">
-  <svg class="ico-inline"><use href="#star"></use></svg>
-  Gemt indhold
-</a>
+            <svg class="ico-inline"><use href="#star"></use></svg>
+            Gemt indhold
+          </a>
           <div class="sub-sep"></div>
           <a href="/profil/log-ind.html" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#lock"></use></svg> Log ind
@@ -56,7 +56,7 @@
 </header>
 
 <style>
-/* Baseline (matcher dine klasser/variabler) */
+/* Baseline */
 .site-header-wrap{position:sticky;top:0;z-index:1002}
 .logo{font-weight:800;color:var(--accent);font-size:20px;text-decoration:none}
 .nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:static}
@@ -72,11 +72,11 @@
   background:#fff;border:1px solid var(--line);border-radius:10px;
   box-shadow:var(--shadow);padding:8px 0;z-index:1003
 }
-.sub-link{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:14px;color:var(--text);text-decoration:none}
+.sub-link{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:14px;color:var(--text)}
 .sub-link:hover{background:#f8fafc}
 .sub-sep{height:1px;background:var(--line);margin:6px 0}
 
-/* Hover + tastatur (focus-within) */
+/* Hover + tastatur */
 .has-sub:hover .submenu,
 .has-sub:focus-within .submenu{display:block}
 .has-sub:focus-within .user-btn{outline:2px solid rgba(14,165,233,.3);border-radius:8px}
@@ -98,7 +98,6 @@
 </style>
 
 <script>
-/* Sæt --header-h så siderne har korrekt offset */
 (function(){
   function setH(){
     var h = document.querySelector('.site-header-wrap')?.getBoundingClientRect().height || 64;
@@ -107,7 +106,6 @@
   window.addEventListener('load', setH, {once:true});
   window.addEventListener('resize', setH);
 
-  /* Åbn/luk på klik for “Bruger” på desktop også */
   var hs = document.querySelector('.has-sub');
   var btn = hs?.querySelector('.user-btn');
   var menu = hs?.querySelector('.submenu');
@@ -126,4 +124,60 @@
     });
   }
 })();
+</script>
+
+
+<!-- ===================================================== -->
+<!--  AUTOMATISK GOOGLE RECIPE SCHEMA – RØRER IKKE HEADER  -->
+<!-- ===================================================== -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": document.querySelector("h1")?.innerText || "",
+  "image": (function () {
+      const img = document.querySelector("main img");
+      if (img && img.src) return img.src;
+      return "https://www.opskrift-airfryer.dk/img/default-recipe.png";
+  })(),
+  "description": document.querySelector('meta[name="description"]')?.content || "",
+  "author": { "@type": "Organization", "name": "Opskrift Airfryer" },
+  "recipeYield": (function () {
+      const badge = [...document.querySelectorAll(".badge")]
+        .find(b => b.innerText.toLowerCase().includes("portion"));
+      return badge ? badge.innerText : "";
+  })(),
+  "prepTime": "PT10M",
+  "cookTime": (function () {
+      const badge = [...document.querySelectorAll(".badge")]
+        .find(b => b.innerText.match(/\d+.*min/i));
+      if (!badge) return "PT0M";
+      const t = badge.innerText.toLowerCase();
+      const r = t.match(/(\d+)[–-](\d+)\s*min/);
+      if (r) {
+          const mid = Math.round((+r[1] + +r[2]) / 2);
+          return "PT" + mid + "M";
+      }
+      const m = t.match(/(\d+)\s*min/);
+      return m ? "PT" + m[1] + "M" : "PT0M";
+  })(),
+  "totalTime": (function () {
+      const badge = [...document.querySelectorAll(".badge")]
+        .find(b => b.innerText.match(/\d+/));
+      const m = badge?.innerText.match(/(\d+)/);
+      return m ? "PT" + m[1] + "M" : "PT0M";
+  })(),
+  "recipeIngredient": (function () {
+      return [...document.querySelectorAll("h2 + ul.list li")]
+        .map(x => x.innerText.trim());
+  })(),
+  "recipeInstructions": (function () {
+      return [...document.querySelectorAll("ol.steps li")]
+        .map(li => ({
+          "@type": "HowToStep",
+          "text": li.innerText.trim()
+        }));
+  })()
+}
 </script>
