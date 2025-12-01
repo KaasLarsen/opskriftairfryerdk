@@ -3,105 +3,58 @@
   <div class="site-header">
     <a class="logo" href="/">Opskrift-Airfryer.dk</a>
 
-    <!-- Burger -->
+    <!-- Burger (mobil) -->
     <input id="nav-toggle" type="checkbox" hidden />
     <label for="nav-toggle" class="burger-btn" aria-label="Åbn menu" aria-controls="site-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </label>
 
-    <!-- Nav -->
+    <!-- Navigation -->
     <nav id="site-nav" class="nav" role="navigation">
-      <a href="/opskrifter.html">Opskrifter</a>
-      <a href="/guides.html">Guides</a>
-      <a href="/madplan/index.html">Madplaner</a>
-      <a href="/top.html">Top</a>
-      <a href="#" class="btn" data-auth-open aria-controls="auth-modal" aria-expanded="false">Log ind</a>
+      <a href="/opskrifter.html"><svg class="ico-inline"><use href="#pan"></use></svg>Opskrifter</a>
+      <a href="/guides.html"><svg class="ico-inline"><use href="#book"></use></svg>Guides</a>
+      <a href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Madplaner</a>
+      <a href="/top.html"><svg class="ico-inline"><use href="#star"></use></svg>Top</a>
+
+      <!-- Bruger-menu (desktop) -->
+      <div class="has-sub">
+        <a href="/#login"><svg class="ico-inline"><use href="#user"></use></svg>Bruger</a>
+        <div class="submenu" role="menu">
+          <a href="/profil/favoritter.html" role="menuitem"><svg class="ico-inline"><use href="#heart"></use></svg>Mine favoritter</a>
+          <a href="/profil/mine-madplaner.html" role="menuitem"><svg class="ico-inline"><use href="#bowl"></use></svg>Mine madplaner</a>
+          <a href="/profil/gemt.html" role="menuitem"><svg class="ico-inline"><use href="#bookmark"></use></svg>Gemte opskrifter</a>
+          <div style="border-top:1px solid var(--line);margin:6px 0"></div>
+          <a href="/#login" role="menuitem"><svg class="ico-inline"><use href="#lock"></use></svg>Log ind</a>
+          <a href="/#login" role="menuitem"><svg class="ico-inline"><use href="#sparkles"></use></svg>Opret bruger</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
 
 <script>
-/* Header controller – én fil der klarer alt (mobilmenu + auth-modal + auth.js) */
+/* Minimal JS – matcher din eksisterende CSS-adfærd, ingen globale ændringer */
 (function(){
   function ready(fn){
-    if (document.readyState === 'complete' || document.readyState === 'interactive') return fn();
+    if (document.readyState==='complete' || document.readyState==='interactive') return fn();
     document.addEventListener('DOMContentLoaded', fn);
   }
-
-  // Loader et eksternt script kun én gang
-  function loadOnce(src, flagName, cb){
-    if (window[flagName]) return cb && cb();
-    var s = document.createElement('script');
-    s.src = src; s.defer = true; s.async = false;
-    s.onload = function(){ window[flagName] = true; cb && cb(); };
-    document.head.appendChild(s);
-  }
-
-  // Henter en partial og indsætter i body hvis ikke tilstede
-  function ensurePartial(selector, url, cb){
-    if (document.querySelector(selector)) return cb && cb();
-    fetch(url, { credentials:'same-origin' })
-      .then(r=> r.ok ? r.text() : Promise.reject(url + ' ikke fundet'))
-      .then(html=>{
-        var wrap = document.createElement('div');
-        wrap.innerHTML = html;
-        // indsæt i slutningen af body
-        document.body.appendChild(wrap);
-        cb && cb();
-      })
-      .catch(()=> cb && cb());
-  }
-
   ready(function(){
-    /* === Mobilmenu === */
     var toggle = document.getElementById('nav-toggle');
     var btn = document.querySelector('.burger-btn');
     var nav = document.getElementById('site-nav');
-    if (toggle && btn && nav){
-      function syncAria(){ btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false'); }
-      toggle.addEventListener('change', syncAria);
-      syncAria();
-      nav.addEventListener('click', function(e){
-        if (e.target.tagName === 'A'){ toggle.checked = false; syncAria(); }
-      });
+
+    if (toggle && btn){
+      function sync(){ btn.setAttribute('aria-expanded', toggle.checked ? 'true' : 'false'); }
+      toggle.addEventListener('change', sync); sync();
     }
 
-    /* === Auth-modal: indlæs partial hvis mangler === */
-    ensurePartial('#auth-modal', '/partials/auth-modal.html', function(){
-      // Åbn/luk modal
-      var modal = document.getElementById('auth-modal');
-
-      function openModal(){
-        if (!modal) return;
-        modal.classList.add('is-open');
-        document.documentElement.style.overflow = 'hidden';
-      }
-      function closeModal(){
-        if (!modal) return;
-        modal.classList.remove('is-open');
-        document.documentElement.style.overflow = '';
-        if (location.hash === '#login') history.replaceState(null, '', location.pathname + location.search);
-      }
-
-      // Klik på “Log ind”
-      document.body.addEventListener('click', function(e){
-        var t = e.target.closest('[data-auth-open]');
-        if (!t) return;
-        e.preventDefault();
-        openModal();
+    // Luk mobilmenu når man klikker et link
+    if (nav && toggle){
+      nav.addEventListener('click', function(e){
+        if (e.target.tagName === 'A' || e.target.closest('a')){ toggle.checked = false; if(btn) btn.setAttribute('aria-expanded','false'); }
       });
-
-      // Luk via backdrop/knap (dele sidder i auth-modal.html, men vi fail-sikrer her)
-      document.body.addEventListener('click', function(e){
-        if (e.target.matches('[data-auth-close], .auth-backdrop')) closeModal();
-      });
-
-      // Åben ved #login (direkte link)
-      if (location.hash === '#login') openModal();
-
-      /* === Loader auth.js globalt, kun én gang === */
-      loadOnce('/assets/auth.js?v=3', '__AUTH_JS_LOADED__');
-    });
+    }
   });
 })();
 </script>
