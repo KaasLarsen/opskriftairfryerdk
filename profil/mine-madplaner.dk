@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mine madplaner – gemte ugeplaner og favoritter</title>
+  <meta name="description" content="Se dine gemte madplaner. Synk mellem enheder når du er logget ind." />
+  <link rel="icon" href="/img/favicon.ico" />
+  <link rel="stylesheet" href="/assets/styles.css?v=17" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7373148222153531" crossorigin="anonymous"></script>
+  <style>
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .input{padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;min-width:260px}
+    .btn-danger{border-color:#fecaca;background:#ef4444;color:#fff}
+    .card .actions{display:flex;gap:8px;margin-top:8px}
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body class="has-fixed-header">
+  <div data-include="/partials/icons.html"></div>
+  <div data-include="/partials/header.html"></div>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="kicker">Profil</span>
+        <h1>Mine madplaner</h1>
+        <p class="lead">Dine ♥ gemte madplaner. Brug søgning for hurtigt at finde “vægttab”, “hverdag”, “sommer” osv.</p>
+        <div class="badges" style="margin-top:8px">
+          <span class="badge" id="sync-badge"><svg class="ico-inline"><use href="#cloud"></use></svg>Synk-status tjekkes…</span>
+          <a class="badge" href="/madplan/index.html"><svg class="ico-inline"><use href="#calendar"></use></svg>Madplan-hub</a>
+          <a class="badge" href="/profil/gemt.html"><svg class="ico-inline"><use href="#heart"></use></svg>Alle gemte</a>
+        </div>
+
+        <div class="controls" role="search">
+          <input id="q" class="input" type="search" placeholder="Søg i dine madplaner… (fx kylling, uge, lavt kalorie)" autocomplete="off" />
+          <span id="count" class="badge" style="display:none"></span>
+          <button id="btn-clear-local" class="btn" type="button">Ryd lokale</button>
+        </div>
+      </div>
+      <div class="hero-box">
+        <svg class="hero-ico"><use href="#calendar"></use></svg>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2><svg class="ico-inline"><use href="#sparkles"></use></svg>Dine madplaner</h2>
+      </div>
+      <div id="grid" class="grid grid-3"></div>
+      <p id="empty" class="copy" style="display:none">
+        Du har ingen gemte madplaner endnu. <a href="/madplan/index.html">Gå til madplan-hubben</a> og tryk ♥ for at gemme.
+      </p>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+
+  <script src="/assets/include.js?v=4"></script>
+  <!-- Supabase UMD fallback -->
+  <script>
+    (function ensureSupabase(){
+      if (window.supabase) return;
+      var s=document.createElement('script');
+      s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";
+      s.async=true;
+      document.head.appendChild(s);
+    })();
+  </script>
+  <script>
+  (function(){
+    const $ = (s, r=document)=>r.querySelector(s);
+    const LS_KEY = 'oa_favs_v1';
+    const SUPA_URL = "https://mrcctupzajqetsnalriy.supabase.co";
+    const SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8";
+
+    const grid = $('#grid');
+    const empty = $('#empty');
+    const q = $('#q');
+    const count = $('#count');
+    const syncBadge = $('#sync-badge');
+
+    let client=null, USER=null, ALL=[];
+
+    function readLS(){ try{ return JSON.parse(localStorage.getItem(LS_KEY)||'[]'); }catch(_){ return []; } }
+    function writeLS(a){ localStorage.setItem(LS_KEY, JSON.stringify(a||[])); }
+    function uniqByUrl(items){
+      const m=new Map();
+      for(const it of items){ if (!it || !it.url) continue; if(!m.has(it.url)) m.set(it.url, it); }
+      return Array.from(m.values());
+    }
+    function sorter(a,b){
+      const da = new Date(a.saved_at||0).getTime();
+      const db = new Date(b.saved_at||0).getTime();
+      return db - da;
+    }
+    function setSync(text, cls){
+      syncBadge.textContent = text;
+      syncBadge.className = 'badge' + (cls ? ' '+cls : '');
+    }
+
+    function card(it){
+      return `
+        <div class="card">
+          <a href="${it.url}" class="thumb-icon" aria-label="${it.title}">
+            <svg><use href="#calendar"></use></svg>
+          </a>
+          <div class="card-body">
+            <h3>${it.title||'Madplan'}</h3>
+            <p class="meta">Gemte · ${new Date(it.saved_at||Date.now()).toLocaleDateString('da-DK')}</p>
+            <div class="actions">
+              <a href="${it.url}" class="btn">Åbn</a>
+              <button class="btn btn-danger" data-remove="${encodeURIComponent(it.url)}">Fjern</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function render(){
+      const term = (q.value||'').toLowerCase().trim();
+      let items = ALL.filter(it => (it.type||'').toLowerCase()==='madplan');
+
+      if (term){
+        items = items.filter(it =>
+          (it.title||'').toLowerCase().includes(term) ||
+          (it.url||'').toLowerCase().includes(term)
+        );
+      }
+
+      count.style.display='inline-block';
+      count.textContent = items.length + ' madplaner';
+
+      if (items.length===0){
+        grid.innerHTML = '';
+        empty.style.display='block';
+      } else {
+        empty.style.display='none';
+        grid.innerHTML = items.map(card).join('');
+      }
+    }
+
+    function getClient(){
+      if (client) return client;
+      if (!window.supabase || !window.supabase.createClient) return null;
+      client = window.supabase.createClient(SUPA_URL, SUPA_KEY, {
+        auth:{ persistSession:true, autoRefreshToken:true, detectSessionInUrl:true }
+      });
+      return client;
+    }
+
+    async function loadAll(){
+      let local = readLS().map(x=>({...x, source:'local'}));
+      const c = getClient();
+      if (!c){ setSync('Kun lokale favoritter (auth ikke klar)', ''); ALL = uniqByUrl(local).sort(sorter); return; }
+
+      const { data:session } = await c.auth.getSession();
+      USER = session?.session?.user || null;
+
+      if (!USER){
+        setSync('Ikke logget ind – viser lokale', '');
+        ALL = uniqByUrl(local).sort(sorter);
+        return;
+      }
+
+      setSync('Logget ind – henter skyfavoritter…', 'status-ok');
+      let cloud = [];
+      try{
+        const { data, error } = await c.from('favorites')
+          .select('title,url,type,saved_at')
+          .eq('type','madplan')
+          .order('saved_at', { ascending:false })
+          .limit(500);
+        if (error) throw error;
+        cloud = (data||[]).map(x=>({...x, source:'cloud'}));
+      }catch(_){
+        setSync('Kunne ikke hente skyfavoritter', 'status-warn');
+      }
+
+      const merged = uniqByUrl([...cloud, ...local.filter(x=>x.type==='madplan')]);
+      ALL = merged.sort(sorter);
+
+      // Skub lokale madplaner der mangler i sky
+      const wantPush = merged.filter(x=>x.source==='local' && x.type==='madplan' && !cloud.find(c=>c.url===x.url));
+      if (wantPush.length){
+        try{
+          await client.from('favorites').insert(
+            wantPush.map(x=>({
+              title: x.title||null, url:x.url, type:'madplan',
+              saved_at: x.saved_at || new Date().toISOString()
+            }))
+          );
+          setSync('Synkroniseret ✔', 'status-ok');
+        }catch(_){
+          setSync('Delvis synkroniseret', 'status-warn');
+        }
+      } else {
+        setSync('Synkroniseret ✔', 'status-ok');
+      }
+    }
+
+    async function removeOne(urlEnc){
+      const url = decodeURIComponent(urlEnc);
+      // lokalt
+      const ls = readLS().filter(x=>x.url!==url);
+      writeLS(ls);
+
+      // cloud
+      if (USER && getClient()){
+        try{ await client.from('favorites').delete().eq('url', url); }catch(_){}
+      }
+
+      ALL = ALL.filter(x=>x.url!==url);
+      render();
+    }
+
+    q.addEventListener('input', render);
+    document.addEventListener('click', (e)=>{
+      const btn = e.target.closest('[data-remove]');
+      if (!btn) return;
+      const url = btn.getAttribute('data-remove');
+      if (confirm('Fjerne madplan fra favoritter?')) removeOne(url);
+    });
+
+    $('#btn-clear-local').addEventListener('click', ()=>{
+      if (!confirm('Ryd kun lokale (madplaner) på denne enhed?')) return;
+      const keep = readLS().filter(x => (x.type||'')!=='madplan');
+      writeLS(keep);
+      ALL = ALL.filter(x=>x.source==='cloud'); // behold sky
+      render();
+    });
+
+    (function wait(retries=40){
+      if (window.supabase && window.supabase.createClient){
+        loadAll().then(render);
+      } else if (retries>0){
+        setTimeout(()=>wait(retries-1), 100);
+      } else {
+        setSync('Auth fejlede at loade – viser lokale', 'status-warn');
+        ALL = uniqByUrl(readLS().filter(x=>x.type==='madplan')).sort(sorter);
+        render();
+      }
+    })();
+
+    document.addEventListener('visibilitychange', function(){
+      if (!document.hidden) loadAll().then(render);
+    });
+  })();
+  </script>
+</body>
+</html>
