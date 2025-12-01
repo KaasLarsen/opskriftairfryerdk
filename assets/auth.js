@@ -1,116 +1,112 @@
-// /assets/auth.js
+<!-- /assets/auth.js -->
+<script type="module">
+/**
+ * Opskrift-Airfryer.dk – Supabase Auth (magic link)
+ * Drop-in: Indlæs denne fil via /partials/footer.html (allerede gjort).
+ * Krav i header/footer:
+ *  - #btn-open-auth  (login-knap)
+ *  - #btn-logout     (logout-knap)
+ *  - #user-email     (vis e-mail)
+ *  - #auth-modal     (dialog)
+ *  - #auth-form, #auth-email, #auth-send, #auth-close, #auth-note
+ */
+
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-/* === KONFIG ===
-   Udfyld disse to – resten virker automatisk over hele sitet via partials.
-*/
-const SUPABASE_URL = 'DIN_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'DIN_PUBLIC_ANON_KEY';
+// === DINE NØGLER (klientside-ANON er OK) ===
+const SUPABASE_URL = 'https://mrcctupzajqetsnalriy.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1yY2N0dXB6YWpxZXRzbmFscml5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ1Nzk1ODMsImV4cCI6MjA4MDE1NTU4M30.5znuLOTGoOl2cAQbJVpujdIFsN98kWp2BUVnKa8G3h8';
 
-/* Gate: kræv login på bestemte stier (smart gate).
-   Tom liste = ingen hård blokering. Eksempel: kun madplaner:
-*/
-const HARD_GATE_PATHS = [/^\/madplan\/.+\.html$/];
+// === Init klient ===
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// === Små helpers ===
+const $ = (s) => document.querySelector(s);
 
-// Hjælpere
-const $ = (sel, ctx=document) => ctx.querySelector(sel);
-const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
-const show = (el, on=true) => el && (el.style.display = on ? '' : 'none');
-
-async function getSession(){
-  try { return (await sb.auth.getSession())?.data?.session || null; }
-  catch { return null; }
-}
-
-function openModal(){ show($('#auth-modal'), true); }
-function closeModal(){ show($('#auth-modal'), false); }
-
-async function refreshHeader(){
-  const ses = await getSession();
-  const btnOpen = $('#btn-open-auth');
-  const mini = $('#account-mini');
-  const email = $('#acc-email');
-
-  if (ses?.user){
-    show(btnOpen, false);
-    show(mini, true);
-    if (email) email.textContent = ses.user.email || '';
-  } else {
-    show(mini, false);
-    show(btnOpen, true);
+function setLoggedIn(email){
+  $('#btn-open-auth')?.style && ($('#btn-open-auth').style.display = 'none');
+  $('#btn-logout')?.style && ($('#btn-logout').style.display = 'inline-flex');
+  const u = $('#user-email');
+  if (u){
+    u.textContent = email || '';
+    u.style.display = 'inline-flex';
   }
 }
 
-function wireHeader(){
-  const openBtn = $('#btn-open-auth');
-  const logout = $('#btn-logout');
-  openBtn && openBtn.addEventListener('click', openModal);
-  logout && logout.addEventListener('click', async ()=>{ await sb.auth.signOut(); await refreshHeader(); });
+function setLoggedOut(){
+  $('#btn-open-auth')?.style && ($('#btn-open-auth').style.display = 'inline-flex');
+  $('#btn-logout')?.style && ($('#btn-logout').style.display = 'none');
+  const u = $('#user-email');
+  if (u){
+    u.textContent = '';
+    u.style.display = 'none';
+  }
 }
 
-function wireModal(){
-  const form = $('#auth-form');
-  const email = $('#auth-email');
-  const msg = $('#auth-msg');
-  const cancel = $('#auth-cancel');
+function openModal(){ $('#auth-modal')?.setAttribute('open',''); }
+function closeModal(){ $('#auth-modal')?.removeAttribute('open'); }
 
-  form?.addEventListener('submit', async (e)=>{
+async function sendMagicLink(email){
+  const { data, error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      // Sender brugeren tilbage til samme side efter klik
+      emailRedirectTo: window.location.href
+    }
+  });
+  if (error) throw error;
+  return data;
+}
+
+// === Bootstrap ===
+function ready(fn){
+  if (document.readyState === 'complete' || document.readyState === 'interactive') return fn();
+  document.addEventListener('DOMContentLoaded', fn);
+}
+
+ready(async function(){
+  // Knapper i header
+  $('#btn-open-auth')?.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); });
+  $('#btn-logout')?.addEventListener('click', async (e)=>{
     e.preventDefault();
-    show(msg, true);
-    msg.textContent = 'Sender link…';
-    const { error } = await sb.auth.signInWithOtp({
-      email: email.value.trim(),
-      options: { emailRedirectTo: location.origin + location.pathname }
-    });
-    msg.textContent = error ? ('Kunne ikke sende link: ' + error.message) : 'Tjek din e-mail og klik på login-linket.';
+    await supabase.auth.signOut();
+    setLoggedOut();
   });
 
-  cancel?.addEventListener('click', closeModal);
-}
+  // Modal
+  $('#auth-close')?.addEventListener('click', (e)=>{ e.preventDefault(); closeModal(); });
 
-/* === “Smart gate”:
-   1) Elementer med [data-requires-auth] bliver klik-blokeret og åbner modal.
-   2) Hele sider på HARD_GATE_PATHS får modal/lock ved manglende login.
-*/
-function protectInteractive(){
-  $$
-  ('[data-requires-auth]').forEach(el=>{
-    el.addEventListener('click', async (e)=>{
-      const ses = await getSession();
-      if (!ses?.user){
-        e.preventDefault();
-        openModal();
-      }
-    });
+  // Formular
+  $('#auth-form')?.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const email = /** @type {HTMLInputElement} */($('#auth-email'))?.value?.trim();
+    const btn = $('#auth-send');
+    const note = $('#auth-note');
+    if (!email) return;
+
+    btn.disabled = true;
+    note.textContent = 'Sender magic link…';
+    try{
+      await sendMagicLink(email);
+      note.textContent = 'Tjek din e-mail og klik på linket for at logge ind.';
+    }catch(err){
+      console.error(err);
+      note.textContent = 'Kunne ikke sende mail. Prøv igen om lidt.';
+    }finally{
+      btn.disabled = false;
+    }
   });
-}
 
-async function maybeHardGate(){
-  const onHardGatePath = HARD_GATE_PATHS.some(rx => rx.test(location.pathname));
-  if (!onHardGatePath) return;
+  // Start med at spørge Supabase om en session
+  try{
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session?.user?.email) setLoggedIn(session.user.email); else setLoggedOut();
+  }catch(_){ setLoggedOut(); }
 
-  const ses = await getSession();
-  if (!ses?.user){
-    // lås siden let – uden at ødelægge SEO helt
-    openModal();
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-/* === Init === */
-document.addEventListener('DOMContentLoaded', async ()=>{
-  wireHeader();
-  wireModal();
-  await refreshHeader();
-  protectInteractive();
-  await maybeHardGate();
-
-  // Opdater header på auth state changes
-  sb.auth.onAuthStateChange(async ()=>{
-    await refreshHeader();
-    if ($('#auth-modal')) closeModal();
-    document.body.style.overflow = ''; // fjern evt. lås når man er logget ind
+  // Lyt på fremtidige auth-ændringer (fx efter magic link redirect)
+  supabase.auth.onAuthStateChange((_event, session)=>{
+    if (session?.user?.email) setLoggedIn(session.user.email);
+    else setLoggedOut();
   });
 });
+</script>
