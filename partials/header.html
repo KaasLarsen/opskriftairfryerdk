@@ -36,6 +36,7 @@
         </button>
 
         <div class="submenu" role="menu">
+
           <a href="/profil/" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#user"></use></svg> Min profil
           </a>
@@ -54,10 +55,11 @@
 
           <div class="sub-sep"></div>
 
-          <!-- LOGIN POPUP TRIGGER -->
+          <!-- LOGIN POPUP TRIGGER (kritisk) -->
           <a href="#login" class="sub-link" role="menuitem" data-login-trigger="1">
             <svg class="ico-inline"><use href="#lock"></use></svg> Log ind
           </a>
+
         </div>
       </div>
     </nav>
@@ -122,12 +124,12 @@
   window.addEventListener('load', setH, {once:true});
   window.addEventListener('resize', setH);
 
-  // Dropdown toggle
   var hs = document.querySelector('.has-sub');
   var btn = hs?.querySelector('.user-btn');
   var menu = hs?.querySelector('.submenu');
 
   if (btn && menu) {
+    // Toggle with click
     btn.addEventListener('click', function(e){
       var open = menu.style.display === 'block';
       menu.style.display = open ? 'none' : 'block';
@@ -135,6 +137,7 @@
       e.stopPropagation();
     });
 
+    // Close when clicking outside
     document.addEventListener('click', function(){
       if (getComputedStyle(menu).position === 'absolute') {
         menu.style.display = 'none';
