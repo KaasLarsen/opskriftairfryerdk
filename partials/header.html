@@ -28,12 +28,12 @@
 
       <!-- Bruger -->
       <div class="has-sub">
-        <button class="nav-link user-btn" aria-haspopup="true" aria-expanded="false">
+        <a href="javascript:void(0)" class="nav-link user-btn" aria-haspopup="true" aria-expanded="false">
           <svg class="ico-inline"><use href="#user"></use></svg> Bruger
           <svg class="chev" width="14" height="14" viewBox="0 0 24 24">
             <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
           </svg>
-        </button>
+        </a>
 
         <div class="submenu" role="menu">
           <a href="/profil/" class="sub-link" role="menuitem">
@@ -54,8 +54,8 @@
 
           <div class="sub-sep"></div>
 
-          <!-- LOGIN POPUP TRIGGER (VIGTIGT) -->
-          <a href="#login" class="sub-link" role="menuitem">
+          <!-- LOGIN TRIGGER -->
+          <a href="#login" class="sub-link login-trigger" role="menuitem">
             <svg class="ico-inline"><use href="#lock"></use></svg> Log ind
           </a>
         </div>
@@ -72,7 +72,7 @@
 .nav-link { display:inline-flex; align-items:center; gap:8px; color:var(--text); font-size:15px; text-decoration:none }
 .ico-inline { width:16px; height:16px; display:inline-block; vertical-align:-2px; color:currentColor }
 .has-sub { position:relative }
-.user-btn { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:8px; color:var(--text); font-size:15px }
+.user-btn { cursor:pointer }
 .chev { opacity:.7 }
 
 /* Dropdown */
@@ -93,19 +93,10 @@
 .has-sub:focus-within .submenu {
   display:block;
 }
-.has-sub:focus-within .user-btn {
-  outline:2px solid rgba(14,165,233,.3);
-  border-radius:8px;
-}
 
 /* Mobilmenu */
-.burger-btn {
-  display:none; flex-direction:column; gap:4px;
-  width:32px; height:28px; justify-content:center;
-}
-.burger-btn span {
-  height:2px; background:#0f172a; border-radius:2px;
-}
+.burger-btn { display:none; flex-direction:column; gap:4px; width:32px; height:28px; justify-content:center }
+.burger-btn span { height:2px; background:#0f172a; border-radius:2px }
 
 @media (max-width:860px) {
   .burger-btn { display:inline-flex }
@@ -117,10 +108,7 @@
     flex-direction:column; align-items:stretch; gap:6px;
   }
   #nav-toggle:checked ~ .nav { display:flex }
-  .has-sub { position:static }
-  .submenu {
-    position:static; display:block; border:none; box-shadow:none; padding:4px 0;
-  }
+  .submenu { position:static; display:block; border:none; box-shadow:none; padding:4px 0 }
 }
 </style>
 
@@ -133,13 +121,13 @@
   window.addEventListener('load', setH, {once:true});
   window.addEventListener('resize', setH);
 
-  // Desktop click toggle
   var hs = document.querySelector('.has-sub');
   var btn = hs?.querySelector('.user-btn');
   var menu = hs?.querySelector('.submenu');
 
   if (btn && menu) {
     btn.addEventListener('click', function(e){
+      e.preventDefault();
       var open = menu.style.display === 'block';
       menu.style.display = open ? 'none' : 'block';
       btn.setAttribute('aria-expanded', String(!open));
