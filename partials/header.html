@@ -1,6 +1,7 @@
 <!-- PARTIAL: /partials/header.html -->
 <header class="site-header-wrap" style="background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(2,8,23,.04)">
   <div class="site-header" style="max-width:var(--max);margin:0 auto;padding:10px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:12px">
+
     <!-- Logo -->
     <a class="logo" href="/" aria-label="Forside">Opskrift-Airfryer.dk</a>
 
@@ -10,7 +11,7 @@
       <span></span><span></span><span></span>
     </label>
 
-    <!-- Nav -->
+    <!-- Navigation -->
     <nav class="nav" aria-label="Hovedmenu">
       <a href="/seneste.html/" class="nav-link">
         <svg class="ico-inline"><use href="#book"></use></svg> Seneste
@@ -22,31 +23,39 @@
         <svg class="ico-inline"><use href="#calendar"></use></svg> Madplaner
       </a>
       <a href="/top.html" class="nav-link">
-      <svg class="ico-inline"><use href="#trophy"></use></svg> Top
+        <svg class="ico-inline"><use href="#trophy"></use></svg> Top
       </a>
 
       <!-- Bruger -->
       <div class="has-sub">
         <button class="nav-link user-btn" aria-haspopup="true" aria-expanded="false">
           <svg class="ico-inline"><use href="#user"></use></svg> Bruger
-          <svg class="chev" width="14" height="14" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <svg class="chev" width="14" height="14" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
         </button>
+
         <div class="submenu" role="menu">
           <a href="/profil/" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#user"></use></svg> Min profil
           </a>
+
           <a href="/profil/favoritter.html" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#star"></use></svg> Mine favoritter
           </a>
+
           <a href="/profil/mine-madplaner.html" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#calendar"></use></svg> Mine madplaner
           </a>
-          <a href="/profil/gemt.html" class="menu-item">
-            <svg class="ico-inline"><use href="#star"></use></svg>
-            Gemt indhold
+
+          <a href="/profil/gemt.html" class="sub-link" role="menuitem">
+            <svg class="ico-inline"><use href="#star"></use></svg> Gemt indhold
           </a>
+
           <div class="sub-sep"></div>
-          <a href="/profil/log-ind.html" class="sub-link" role="menuitem">
+
+          <!-- LOGIN POPUP TRIGGER (VIGTIGT) -->
+          <a href="#login" class="sub-link" role="menuitem">
             <svg class="ico-inline"><use href="#lock"></use></svg> Log ind
           </a>
         </div>
@@ -57,43 +66,61 @@
 
 <style>
 /* Baseline */
-.site-header-wrap{position:sticky;top:0;z-index:1002}
-.logo{font-weight:800;color:var(--accent);font-size:20px;text-decoration:none}
-.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap;position:static}
-.nav-link{display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15px;text-decoration:none}
-.ico-inline{width:16px;height:16px;display:inline-block;vertical-align:-2px;color:currentColor}
-.has-sub{position:relative}
-.user-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;color:var(--text);font-size:15px}
-.chev{opacity:.7}
+.site-header-wrap { position:sticky; top:0; z-index:1002 }
+.logo { font-weight:800; color:var(--accent); font-size:20px; text-decoration:none }
+.nav { display:flex; align-items:center; gap:18px; flex-wrap:wrap; position:static }
+.nav-link { display:inline-flex; align-items:center; gap:8px; color:var(--text); font-size:15px; text-decoration:none }
+.ico-inline { width:16px; height:16px; display:inline-block; vertical-align:-2px; color:currentColor }
+.has-sub { position:relative }
+.user-btn { all:unset; cursor:pointer; display:inline-flex; align-items:center; gap:8px; color:var(--text); font-size:15px }
+.chev { opacity:.7 }
 
 /* Dropdown */
-.submenu{
-  display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:220px;
-  background:#fff;border:1px solid var(--line);border-radius:10px;
-  box-shadow:var(--shadow);padding:8px 0;z-index:1003
+.submenu {
+  display:none; position:absolute; top:calc(100% + 6px); left:0; min-width:220px;
+  background:#fff; border:1px solid var(--line); border-radius:10px;
+  box-shadow:var(--shadow); padding:8px 0; z-index:1003;
 }
-.sub-link{display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:14px;color:var(--text)}
-.sub-link:hover{background:#f8fafc}
-.sub-sep{height:1px;background:var(--line);margin:6px 0}
+.sub-link {
+  display:flex; align-items:center; gap:8px;
+  padding:9px 12px; font-size:14px; color:var(--text); text-decoration:none;
+}
+.sub-link:hover { background:#f8fafc }
+.sub-sep { height:1px; background:var(--line); margin:6px 0 }
 
-/* Hover + tastatur */
+/* Hover / keyboard */
 .has-sub:hover .submenu,
-.has-sub:focus-within .submenu{display:block}
-.has-sub:focus-within .user-btn{outline:2px solid rgba(14,165,233,.3);border-radius:8px}
+.has-sub:focus-within .submenu {
+  display:block;
+}
+.has-sub:focus-within .user-btn {
+  outline:2px solid rgba(14,165,233,.3);
+  border-radius:8px;
+}
 
-/* Burger / mobil */
-.burger-btn{display:none;flex-direction:column;gap:4px;width:32px;height:28px;justify-content:center}
-.burger-btn span{height:2px;background:#0f172a;border-radius:2px}
-@media (max-width:860px){
-  .burger-btn{display:inline-flex}
-  .nav{
-    display:none;position:absolute;left:0;right:0;top:58px;background:#fff;
-    border-bottom:1px solid var(--line);box-shadow:0 8px 18px rgba(2,8,23,.06);
-    padding:12px var(--pad);flex-direction:column;align-items:stretch;gap:6px
+/* Mobilmenu */
+.burger-btn {
+  display:none; flex-direction:column; gap:4px;
+  width:32px; height:28px; justify-content:center;
+}
+.burger-btn span {
+  height:2px; background:#0f172a; border-radius:2px;
+}
+
+@media (max-width:860px) {
+  .burger-btn { display:inline-flex }
+  .nav {
+    display:none; position:absolute; left:0; right:0; top:58px; background:#fff;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 8px 18px rgba(2,8,23,.06);
+    padding:12px var(--pad);
+    flex-direction:column; align-items:stretch; gap:6px;
   }
-  #nav-toggle:checked ~ .nav{display:flex}
-  .has-sub{position:static}
-  .submenu{position:static;display:block;border:none;box-shadow:none;padding:4px 0}
+  #nav-toggle:checked ~ .nav { display:flex }
+  .has-sub { position:static }
+  .submenu {
+    position:static; display:block; border:none; box-shadow:none; padding:4px 0;
+  }
 }
 </style>
 
@@ -101,93 +128,30 @@
 (function(){
   function setH(){
     var h = document.querySelector('.site-header-wrap')?.getBoundingClientRect().height || 64;
-    document.documentElement.style.setProperty('--header-h', Math.round(h)+'px');
+    document.documentElement.style.setProperty('--header-h', Math.round(h) + 'px');
   }
   window.addEventListener('load', setH, {once:true});
   window.addEventListener('resize', setH);
 
+  // Desktop click toggle
   var hs = document.querySelector('.has-sub');
   var btn = hs?.querySelector('.user-btn');
   var menu = hs?.querySelector('.submenu');
-  if(btn && menu){
+
+  if (btn && menu) {
     btn.addEventListener('click', function(e){
       var open = menu.style.display === 'block';
       menu.style.display = open ? 'none' : 'block';
       btn.setAttribute('aria-expanded', String(!open));
       e.stopPropagation();
     });
+
     document.addEventListener('click', function(){
-      if(getComputedStyle(menu).position === 'absolute'){
+      if (getComputedStyle(menu).position === 'absolute') {
         menu.style.display = 'none';
         btn.setAttribute('aria-expanded','false');
       }
     });
   }
-})();
-</script>
-
-
-<!-- ===================================================== -->
-<!--  AUTOMATISK GOOGLE RECIPE SCHEMA – RØRER IKKE HEADER  -->
-<!-- ===================================================== -->
-
-<script>
-(function() {
-
-  function getCookTime() {
-    const badge = [...document.querySelectorAll(".badge")]
-      .find(b => /min/i.test(b.innerText));
-    if (!badge) return null;
-
-    const txt = badge.innerText.toLowerCase();
-
-    // 45–60 min → gennemsnit
-    const range = txt.match(/(\d+)[–-](\d+)\s*min/);
-    if (range) {
-      const avg = Math.round((+range[1] + +range[2]) / 2);
-      return "PT" + avg + "M";
-    }
-
-    // 45 min
-    const single = txt.match(/(\d+)\s*min/);
-    if (single) return "PT" + single[1] + "M";
-
-    return null;
-  }
-
-  function getTotalTime() {
-    return getCookTime();
-  }
-
-  const recipe = {
-    "@context": "https://schema.org/",
-    "@type": "Recipe",
-    "name": document.querySelector("h1")?.innerText || "",
-    "image": (function () {
-        const img = document.querySelector("main img");
-        return img?.src || "https://www.opskrift-airfryer.dk/img/default-recipe.png";
-    })(),
-    "description": document.querySelector('meta[name="description"]')?.content || "",
-    "author": { "@type": "Organization", "name": "Opskrift Airfryer" },
-    "recipeYield": (function () {
-        const badge = [...document.querySelectorAll(".badge")]
-          .find(b => b.innerText.toLowerCase().includes("portion"));
-        return badge?.innerText || "";
-    })(),
-    "prepTime": "PT10M",
-    "cookTime": getCookTime(),
-    "totalTime": getTotalTime(),
-    "recipeIngredient": [...document.querySelectorAll("h2 + ul.list li")].map(li => li.innerText.trim()),
-    "recipeInstructions": [...document.querySelectorAll("ol.steps li")].map(li => ({
-      "@type": "HowToStep",
-      "text": li.innerText.trim()
-    }))
-  };
-
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.textContent = JSON.stringify(recipe);
-  document.head.appendChild(script);
-
 })();
 </script>
