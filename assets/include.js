@@ -34,7 +34,7 @@
     }
   }
 
-  // Hent + indsæt alle includes (parallel fetch, sekventiel DOM-indsæt for enkelhed)
+  // Hent + indsæt alle includes
   await Promise.all(nodes.map(async (el) => {
     const url = el.getAttribute("data-include");
     try {
@@ -50,8 +50,9 @@
       // Erstat placeholder med indholdet
       el.replaceWith(fragment);
 
-      // Eksekver scripts der kom fra include
-      executeScriptsFrom(document);
+      // EKSEKVÉR KUN SCRIPTS FRA DET INDLÆSTE FRAGMENT — IKKE HELE DOKUMENTET
+      executeScriptsFrom(fragment);
+
     } catch (e) {
       console.warn("include fail:", url, e);
     }
