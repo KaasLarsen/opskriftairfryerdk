@@ -110,7 +110,10 @@
   ready(function(){
     injectSupabase(async function(){
       const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
+function closeAllMenus() {
+  document.querySelectorAll('.submenu').forEach(m => m.style.display='none');
+  document.querySelectorAll('.user-btn').forEach(b => b.setAttribute('aria-expanded','false'));
+}
       // Intercept "Log ind" links (a[href^="/#login"] og a[href="#login"])
       document.addEventListener('click', function(e){
         const a = e.target.closest('a');
