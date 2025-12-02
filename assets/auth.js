@@ -116,9 +116,12 @@
         const a = e.target.closest('a');
         if (!a) return;
         const href = a.getAttribute('href') || '';
-        if (href === '#login' || href === '/#login'){
-          e.preventDefault(); openModal();
-        }
+        if (a.matches('[data-login-trigger]')) {
+  e.preventDefault();
+  e.stopPropagation();
+  closeAllMenus();
+  openModal();
+}
         if (href === '#logout' || href === '/#logout'){
           e.preventDefault(); client.auth.signOut().then(()=>{ setUserLabel(null); });
         }
