@@ -415,4 +415,39 @@ h1, h2, h3, [id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .afo-stars .afo-stars-text strong { font-weight:700; color: inherit; }
 .afo-stars-row { user-select:none; }
 
+/* Favorit-hjerte ved titel */
+.hero h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.fav-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8; /* slukket/neutral */
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.fav-toggle:hover {
+  transform: scale(1.08);
+}
+
+.fav-toggle.is-active {
+  color: #ef4444; /* rød når valgt */
+}
+
+.fav-toggle:focus-visible {
+  outline: 2px solid rgba(14,165,233,.5);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
 
