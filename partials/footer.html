@@ -2,29 +2,51 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-cols">
+
+      <!-- Kolonne 1 -->
       <div>
         <h2>Opskrift-Airfryer.dk</h2>
         <p class="small">Nem hverdagsmad, airfryer-tips og madplaner.</p>
       </div>
+
+      <!-- Kolonne 2 -->
       <div>
         <h3 style="margin:0 0 8px;font-size:16px">Indhold</h3>
-        <p class="small"><a href="/opskrifter.html">Opskrifter</a> · <a href="/guides.html">Guides</a> · <a href="/madplan/index.html">Madplaner</a></p>
+        <p class="small">
+          <a href="/opskrifter.html">Opskrifter</a> · 
+          <a href="/guides.html">Guides</a> · 
+          <a href="/madplan/index.html">Madplaner</a>
+        </p>
       </div>
+
+      <!-- Kolonne 3 -->
       <div>
         <h3 style="margin:0 0 8px;font-size:16px">Følg os</h3>
-        <p class="small"><a href="https://www.facebook.com/" rel="nofollow">Facebook</a></p>
+        <p class="small">
+          <a href="https://www.facebook.com/" rel="nofollow">Facebook</a>
+        </p>
       </div>
+
     </div>
+
+    <!-- Årstal -->
     <p class="copy">© <span id="y"></span> Opskrift-Airfryer.dk • Alle rettigheder forbeholdes</p>
   </div>
 </footer>
 
+<!-- Sæt automatisk årstal -->
 <script>
-  (function(){ var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear(); })();
+  (function(){
+    var y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
 </script>
 
-<!-- Auth-modal inkluderes globalt via footer-partial (så du ikke skal røre andre sider) -->
+<!-- Global Auth Modal (login / opret bruger) -->
 <div data-include="/partials/auth-modal.html"></div>
 
-<!-- Auth-logic (Supabase + favoritter + modal) – én gang her, virker på hele sitet -->
+<!-- Auth-logic (Supabase + brugerhåndtering) -->
 <script src="/assets/auth.js?v=3" defer></script>
+
+<!-- FAVORIT-HJERTER (Indlæses kun én gang fra footer → ingen duplikerede hjerter) -->
+<script src="/assets/favorites.js?v=1"></script>
