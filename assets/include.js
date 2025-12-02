@@ -1,35 +1,34 @@
 // ultra-let HTML include: <div data-include="/partials/header.html"></div>
-(async function injectIncludes(){
+(async function injectIncludes() {
   const nodes = Array.from(document.querySelectorAll("[data-include]"));
 
   // Hjælper: eksekver <script>-tags fra et fragment
-  function executeScriptsFrom(fragment){
+  function executeScriptsFrom(fragment) {
     const scripts = Array.from(fragment.querySelectorAll("script"));
 
-    for (const old of scripts){
+    for (const old of scripts) {
       // Undgå dobbelt-kørsel
       if (old.dataset.executed === "true") continue;
 
       const s = document.createElement("script");
 
       // Bevar type/nomodule/defer/async/nonce m.m.
-      for (const {name, value} of Array.from(old.attributes)){
-        // src håndteres særskilt herunder men vi kopierer øvrige attrs
+      for (const { name, value } of Array.from(old.attributes)) {
         if (name === "src") continue;
         s.setAttribute(name, value);
       }
 
-      if (old.src){
+      if (old.src) {
         // Eksternt script: kør synkront i rækkefølge (async=false)
         s.src = old.src;
         s.async = false;
       } else {
-        // Inline script
         s.textContent = old.textContent || "";
       }
 
       // Markér originalen, så vi ikke eksekverer igen
       old.dataset.executed = "true";
+
       // Erstat i DOM på samme position for korrekt scope/ordre
       old.replaceWith(s);
     }
@@ -58,7 +57,7 @@
     }
   }));
 
-  // mark active nav link (uændret)
+  // mark active nav link
   const path = location.pathname.replace(/\/index\.html$/, "/");
   document.querySelectorAll('a[href]').forEach(a => {
     const href = a.getAttribute('href');
@@ -69,9 +68,21 @@
 })();
 
 // simple search placeholder (uændret)
-window.siteSearch = function(){
+window.siteSearch = function () {
   const q = (document.getElementById('q')?.value || '').trim();
-  if(!q){ alert('skriv hvad du søger 😊'); return; }
-  // TODO: skift til rigtig søgning (lunr/elastic/algolia) senere
+  if (!q) { alert('skriv hvad du søger 😊'); return; }
   location.href = "/soeg.html?q=" + encodeURIComponent(q);
 };
+
+/* ----------------------------------------------------------
+   FAVORITES.JS LOADER – LOADER KUN ÉN GANG GLOBALT
+---------------------------------------------------------- */
+(function () {
+  if (window.favScriptLoaded) return; // forhindrer flere load
+  window.favScriptLoaded = true;
+
+  const s = document.createElement("script");
+  s.src = "/assets/favorites.js?v=1";
+  s.async = false;
+  document.body.appendChild(s);
+})();
