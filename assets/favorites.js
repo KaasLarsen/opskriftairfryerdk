@@ -1,59 +1,60 @@
-// /assets/favorites.js
 (function () {
-  // Nøgle i localStorage
+
+  // Favorit-opbevaring i localStorage
   var STORAGE_KEY = "oa_favorites";
 
   function getFavorites() {
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return [];
-      var arr = JSON.parse(raw);
-      return Array.isArray(arr) ? arr : [];
-    } catch (e) {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch {
       return [];
     }
   }
 
   function saveFavorites(list) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-    } catch (e) {
-      // ignorer
-    }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
   }
 
   function isFavorite(url) {
-    var list = getFavorites();
-    return list.indexOf(url) !== -1;
+    return getFavorites().includes(url);
   }
 
   function toggleFavorite(url) {
     var list = getFavorites();
-    var idx = list.indexOf(url);
-    if (idx === -1) {
-      list.push(url);
+    if (list.includes(url)) {
+      list = list.filter(x => x !== url);
     } else {
-      list.splice(idx, 1);
+      list.push(url);
     }
     saveFavorites(list);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var h1 = document.querySelector("main .hero h1");
+  // Venter på at alt (inkl. data-include content) er loaded
+  function onContentReady(callback) {
+    if (document.readyState === "complete") {
+      setTimeout(callback, 50);
+    } else {
+      window.addEventListener("load", function () {
+        setTimeout(callback, 50); // vent til include.js er færdig
+      });
+    }
+  }
+
+  onContentReady(function () {
+
+    // Find h1
+    var h1 = document.querySelector(".hero h1");
     if (!h1) return;
 
     var currentUrl = window.location.pathname;
 
-    // Opret hjerte-knap
+    // Opret hjerteknap
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "fav-toggle";
+    btn.textContent = "♥";
     btn.setAttribute("aria-label", "Gem opskrift");
 
-    // Brug ♥ som ikon
-    btn.textContent = "♥";
-
-    // Start-tilstand
     if (isFavorite(currentUrl)) {
       btn.classList.add("is-active");
       btn.setAttribute("aria-pressed", "true");
@@ -67,7 +68,8 @@
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
 
-    // Tilføj hjertet efter h1-tekst
+    // Tilføj hjertet i h1
     h1.appendChild(btn);
   });
+
 })();
