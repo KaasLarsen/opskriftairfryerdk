@@ -1,13 +1,17 @@
 # Opskrift Airfryer (SEO-first)
 
-Astro-baseret statisk site til **opskriftairfryer.dk** med fokus på hastighed, indeksering og struktureret data (Recipe, FAQ, Article, Breadcrumb).
+Astro-baseret statisk site til **www.opskrift-airfryer.dk** med fokus på hastighed, indeksering og struktureret data (Recipe, FAQ, Article, Breadcrumb).
 
 ## Udvikling
 
 ```bash
 npm install
+cp .env.example .env
+# Udfyld PUBLIC_SUPABASE_* i .env (se nedenfor)
 npm run dev
 ```
+
+Appen kører typisk på `http://localhost:4321`.
 
 ## Byg
 
@@ -16,18 +20,41 @@ npm run build
 npm run preview
 ```
 
+`npm run build` genererer bl.a. `dist/sitemap.xml` (så Google kan finde sitemap’et på roden efter deploy).
+
 ## Indhold
 
 Opskrifter ligger i [`src/content/recipes/`](src/content/recipes/) som Markdown med Zod-validering i [`src/content.config.ts`](src/content.config.ts).
 
+## Log ind (Supabase) – hvad du skal gøre
+
+Det repo “fixer” kun koden. **Du** skal knappe tre ting sammen i dashboards (én gang):
+
+1. **Miljøvariabler**  
+   Brug [`/.env.example`](.env.example) som skabelon. Du skal have **samme to variabler** både lokalt (`.env`) og hos din host (fx **Vercel → Project → Settings → Environment Variables**):
+   - `PUBLIC_SUPABASE_URL` – dit projekts URL fra Supabase → *Project Settings → API*.
+   - `PUBLIC_SUPABASE_ANON_KEY` – **anon public** key derfra (ikke `service_role`).
+
+2. **Supabase Auth – hvor må browseren lande**  
+   I Supabase: *Authentication → URL Configuration*:
+   - **Site URL:** `https://www.opskrift-airfryer.dk`
+   - **Redirect URLs** (tilføj begge):  
+     `https://www.opskrift-airfryer.dk/auth/callback`  
+     `http://localhost:4321/auth/callback`
+
+3. **Google-login (hvis du bruger det)**  
+   *Authentication → Providers → Google*: slå til og udfyld OAuth-klient fra Google Cloud Console. Ellers virker email/password som vanligt hvis det er aktiveret.
+
+**Vigtigt:** Commit aldrig rigtige nøgler. Kun `.env` (som er i `.gitignore`) eller host-secrets.
+
 ## Domæne & SEO
 
-- `site` er sat i [`astro.config.mjs`](astro.config.mjs) til `https://opskriftairfryer.dk` (sitemap + kanoniske URL’er).
-- [`public/robots.txt`](public/robots.txt) peger på `sitemap-index.xml` efter deploy.
+- `site` er sat i [`astro.config.mjs`](astro.config.mjs) til `https://www.opskrift-airfryer.dk` (sitemap + kanoniske URL’er).
+- [`public/robots.txt`](public/robots.txt) peger på `sitemap.xml` og `sitemap-index.xml`.
 - [`vercel.json`](vercel.json) har 301 fra typiske **`.html`‑URL’er** til rene stier (hjælper ved migrering fra statisk HTML).
 
 ## Efter deploy
 
-1. Google Search Console: bekræft ejerskab, indsend sitemap `https://opskriftairfryer.dk/sitemap-index.xml`.
+1. **Google Search Console:** bekræft ejerskab for `www.opskrift-airfryer.dk`, indsend sitemap **`https://www.opskrift-airfryer.dk/sitemap.xml`** (evt. også index-URL hvis du bruger den).
 2. Tjek **Sideoplevelse** / CWV og **Dækning** for 404/redirect.
 3. Udvid `vercel.json` redirects med konkrete gamle URL’er hvis du har dem fra det tidligere site.
