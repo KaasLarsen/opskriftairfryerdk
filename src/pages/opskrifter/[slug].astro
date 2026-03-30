@@ -143,14 +143,14 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 	ogType="article"
 	jsonLd={jsonLdWithArticle}
 >
-	<article class="section" style="padding-top: var(--space-8)">
-		<div class="container">
-			<nav class="recipe-meta-row" aria-label="Brødkrummer" style="margin-bottom: var(--space-6)">
+	<article class="section recipe-article">
+		<div class="container recipe-article-inner">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
 				<a href="/">Forside</a>
-				<span aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
 				<a href="/opskrifter">Opskrifter</a>
-				<span aria-hidden="true">/</span>
-				<span style="color: var(--color-text)">{d.title}</span>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">{d.title}</span>
 			</nav>
 
 			<div class="recipe-hero">
@@ -181,54 +181,55 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						)
 					}
 				</div>
-				<div>
+				<div class="recipe-hero-copy">
 					<h1 class="recipe-title">{d.title}</h1>
-					<div class="recipe-stats">
-						<div class="stat-pill">
-							<strong>Forberedelse</strong>
-							{d.prepMinutes} min
+					<div class="recipe-meta-panel" role="group" aria-label="Tider og mængder">
+						<div class="recipe-meta-cell">
+							<span class="recipe-meta-label">Forberedelse</span>
+							<span class="recipe-meta-value">{d.prepMinutes} min</span>
 						</div>
-						<div class="stat-pill">
-							<strong>Tilberedning</strong>
-							{d.cookMinutes} min
+						<div class="recipe-meta-cell">
+							<span class="recipe-meta-label">Tilberedning</span>
+							<span class="recipe-meta-value">{d.cookMinutes} min</span>
 						</div>
-						<div class="stat-pill">
-							<strong>I alt</strong>
-							{totalMinutes} min
+						<div class="recipe-meta-cell">
+							<span class="recipe-meta-label">I alt</span>
+							<span class="recipe-meta-value">{totalMinutes} min</span>
 						</div>
-						<div class="stat-pill">
-							<strong>Portioner</strong>
-							{d.servings}
+						<div class="recipe-meta-cell recipe-meta-cell--wide">
+							<span class="recipe-meta-label">Portioner</span>
+							<span class="recipe-meta-value">{d.servings}</span>
 						</div>
 						{
 							d.temperatureC !== undefined && (
-								<div class="stat-pill">
-									<strong>Airfryer</strong>
-									{d.temperatureC} °C
+								<div class="recipe-meta-cell">
+									<span class="recipe-meta-label">Airfryer</span>
+									<span class="recipe-meta-value">{d.temperatureC} °C</span>
 								</div>
 							)
 						}
 					</div>
-					<p style="font-size: 1.125rem; color: var(--color-muted); margin: 0">
-						{d.description}
-					</p>
+					<p class="recipe-lead">{d.description}</p>
 				</div>
 			</div>
 
-			<div class="two-col" style="margin-bottom: var(--space-12)">
-				<section aria-labelledby="ingredients-heading">
-					<h2 id="ingredients-heading" class="block-title">Ingredienser</h2>
-					<ul class="ingredient-list">
-						{d.ingredients.map((ing) => (
-							<li>
-								<span class="ingredient-text">{ing.text}</span>
-							</li>
-						))}
-					</ul>
+			<div class="two-col recipe-body-columns">
+				<section class="recipe-block" aria-labelledby="ingredients-heading">
+					<h2 id="ingredients-heading" class="block-title recipe-block-title">Ingredienser</h2>
+					<div class="recipe-card-panel">
+						<ul class="recipe-panel-list">
+							{d.ingredients.map((ing) => (
+								<li>
+									<span class="recipe-panel-text">{ing.text}</span>
+								</li>
+							))}
+						</ul>
+					</div>
 				</section>
-				<section aria-labelledby="steps-heading">
-					<h2 id="steps-heading" class="block-title">Sådan gør du</h2>
-					<ul class="step-list">
+				<section class="recipe-block" aria-labelledby="steps-heading">
+					<h2 id="steps-heading" class="block-title recipe-block-title">Sådan gør du</h2>
+					<div class="recipe-steps-panel">
+						<ul class="step-list">
 						{
 							d.instructions.map((step, idx) => (
 								<li>
@@ -238,35 +239,38 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 							))
 						}
 					</ul>
+					</div>
 				</section>
 			</div>
 
 			{
 				d.tips && d.tips.length > 0 && (
-					<section style="margin-bottom: var(--space-12)" aria-labelledby="tips-heading">
-						<h2 id="tips-heading" class="block-title">
-							Eksperttips (bedre resultat hver gang)
+					<section class="recipe-block recipe-block--tips" aria-labelledby="tips-heading">
+						<h2 id="tips-heading" class="block-title recipe-block-title">
+							Eksperttips
 						</h2>
-						<ul class="ingredient-list">
-							{d.tips.map((t) => (
-								<li>
-									<span class="ingredient-text">{t}</span>
-								</li>
-							))}
-						</ul>
+						<div class="recipe-card-panel recipe-card-panel--tips">
+							<ul class="recipe-panel-list recipe-panel-list--tips">
+								{d.tips.map((t) => (
+									<li>
+										<span class="recipe-panel-text">{t}</span>
+									</li>
+								))}
+							</ul>
+						</div>
 					</section>
 				)
 			}
 
-			<section class="prose" style="margin-bottom: var(--space-12)">
-				<h2 class="block-title">Lidt mere om retten</h2>
+			<section class="prose recipe-prose">
+				<h2 class="block-title recipe-block-title">Lidt mere om retten</h2>
 				<Content />
 			</section>
 
 			{
 				d.faq && d.faq.length > 0 && (
-					<section class="faq" aria-labelledby="faq-heading">
-						<h2 id="faq-heading" class="block-title">
+					<section class="faq recipe-faq" aria-labelledby="faq-heading">
+						<h2 id="faq-heading" class="block-title recipe-block-title">
 							Ofte stillede spørgsmål
 						</h2>
 						{d.faq.map((item) => (
@@ -279,15 +283,15 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 				)
 			}
 
-			<section class="related-grid" aria-labelledby="related-heading">
-				<h2 id="related-heading" class="block-title">Prøv også</h2>
+			<section class="related-grid recipe-related" aria-labelledby="related-heading">
+				<h2 id="related-heading" class="block-title recipe-block-title">Prøv også</h2>
 				<div class="recipe-grid">
 					{others.map((r) => (
 						<RecipeCard recipe={r} />
 					))}
 				</div>
-				<p style="margin-top: var(--space-6)">
-					<a href="/opskrifter">← Tilbage til alle opskrifter</a>
+				<p class="recipe-back-link">
+					<a href="/opskrifter">Tilbage til alle opskrifter</a>
 				</p>
 			</section>
 		</div>
