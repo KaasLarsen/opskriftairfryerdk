@@ -195,25 +195,25 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 				<div class="recipe-hero-copy">
 					<h1 class="recipe-title">{d.title}</h1>
 					<div class="recipe-meta-panel" role="group" aria-label="Tider og mængder">
-						<div class="recipe-meta-cell">
+						<div class="recipe-meta-item">
 							<span class="recipe-meta-label">Forberedelse</span>
 							<span class="recipe-meta-value">{d.prepMinutes} min</span>
 						</div>
-						<div class="recipe-meta-cell">
+						<div class="recipe-meta-item">
 							<span class="recipe-meta-label">Tilberedning</span>
 							<span class="recipe-meta-value">{d.cookMinutes} min</span>
 						</div>
-						<div class="recipe-meta-cell">
+						<div class="recipe-meta-item">
 							<span class="recipe-meta-label">I alt</span>
 							<span class="recipe-meta-value">{totalMinutes} min</span>
 						</div>
-						<div class="recipe-meta-cell recipe-meta-cell--wide">
+						<div class="recipe-meta-item recipe-meta-item--grow">
 							<span class="recipe-meta-label">Portioner</span>
 							<span class="recipe-meta-value">{d.servings}</span>
 						</div>
 						{
 							d.temperatureC !== undefined && (
-								<div class="recipe-meta-cell">
+								<div class="recipe-meta-item">
 									<span class="recipe-meta-label">Airfryer</span>
 									<span class="recipe-meta-value">{d.temperatureC} °C</span>
 								</div>
@@ -245,8 +245,8 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 			<div class="two-col recipe-body-columns">
 				<section class="recipe-block" aria-labelledby="ingredients-heading">
 					<h2 id="ingredients-heading" class="block-title recipe-block-title">Ingredienser</h2>
-					<div class="recipe-card-panel">
-						<ul class="recipe-panel-list">
+					<div class="recipe-card-panel recipe-card-panel--ingredients">
+						<ul class="recipe-panel-list recipe-panel-list--ingredients">
 							{d.ingredients.map((ing) => (
 								<li>
 									<span class="recipe-panel-text">{ing.text}</span>

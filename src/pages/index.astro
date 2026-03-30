@@ -11,7 +11,7 @@ const featured = allRecipes
 	.slice(0, 5);
 
 const site = Astro.site ?? new URL(SITE_URL);
-const ogImage = new URL('/og-default.svg', site).toString();
+const ogImage = new URL('/images/hero-forside.png', site).toString();
 
 const jsonLd = {
 	'@context': 'https://schema.org',
@@ -50,12 +50,16 @@ const jsonLd = {
 					<a class="btn btn-primary" href="/opskrifter">Se alle opskrifter</a>
 				</div>
 			</div>
-			<div
-				class="hero-visual hero-visual--placeholder"
-				role="img"
-				aria-label="Plads til foto – kommer snart"
-			>
-				<span class="hero-placeholder-label">Foto til forsiden kommer snart</span>
+			<div class="hero-visual">
+				<img
+					src="/images/hero-forside.png"
+					alt="Airfryer med sprød kylling og kartofler, omringet af grøntsagsmix, laks med salat og dip på rustikt træbord"
+					width="1024"
+					height="682"
+					loading="eager"
+					fetchpriority="high"
+					decoding="async"
+				/>
 			</div>
 		</div>
 	</section>

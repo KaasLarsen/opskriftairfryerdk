@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kartofler i både – sprøde og nemme hverdagskartofler'
 description: 'Sprøde kartoflebåde uden friture – med tydelig tid og temperatur. Velegnet som tilbehør til kød, fisk og vegetariske retter.'
+heroImage: '/images/recipes/airfryer-kartofler-i-baade.png'
+heroAlt: 'Gyldne kartoflebåde i hvid skål med persille, dip og olieflaske i baggrunden på rustikt træbord'
 pubDate: 2025-03-02
 updatedDate: 2025-03-30
 prepMinutes: 10

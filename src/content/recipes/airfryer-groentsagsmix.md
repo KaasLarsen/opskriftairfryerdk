@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer grøntsagsmix – hurtigt sundt tilbehør'
 description: 'Farverigt grøntsagsmix fra airfryer med karamelliserede kanter og kort koketid. Ideelt til kød, fisk eller vegetarisk hovedret.'
+heroImage: '/images/recipes/airfryer-groentsagsmix.png'
+heroAlt: 'Farverigt bagt grøntsagsmix i hvid skål med broccoli, gulerødder, peber og zucchini på rustikt træbord'
 pubDate: 2025-03-04
 updatedDate: 2025-03-30
 prepMinutes: 12

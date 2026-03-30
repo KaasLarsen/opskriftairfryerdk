@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingebryst (saftigt) – nem hverdagsopskrift på 25 min'
 description: 'Saftigt kyllingebryst fra airfryer uden tør kant. Trin, temperatur og hviletid – så lykkes du med kylling i hverdagen.'
+heroImage: '/images/recipes/airfryer-kyllingebryst.png'
+heroAlt: 'Skåret kyllingebryst med krydderi på tallerken sammen med kartofler, salat, citron og timian – airfryer i baggrunden på træbord'
 pubDate: 2025-03-01
 updatedDate: 2025-03-30
 prepMinutes: 10

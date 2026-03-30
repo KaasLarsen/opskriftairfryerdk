@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer laks – hurtig aftensmad på 15 minutter'
 description: 'Laks fra airfryer med sprødt skind og mør kød – kort forberedelse og præcis tid. God til hverdag og gæster.'
+heroImage: '/images/recipes/airfryer-laks.png'
+heroAlt: 'Stegt laksefilet med krydderi på hvid tallerken, citron, dild, salat og kartofler i baggrunden på træbord'
 pubDate: 2025-03-03
 updatedDate: 2025-03-30
 prepMinutes: 5

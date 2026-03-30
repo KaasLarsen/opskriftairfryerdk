@@ -6,7 +6,15 @@ interface Props {
 }
 
 const { recipe } = Astro.props;
-const { title, description, heroImage, heroAlt, prepMinutes, cookMinutes } = recipe.data;
+const {
+	title,
+	description,
+	heroImage,
+	heroAlt,
+	prepMinutes,
+	cookMinutes,
+	category,
+} = recipe.data;
 const total = prepMinutes + cookMinutes;
 const href = `/opskrifter/${recipe.id}`;
 ---
@@ -31,11 +39,15 @@ const href = `/opskrifter/${recipe.id}`;
 		}
 	</div>
 	<div class="recipe-card-body">
+		<div class="recipe-card-badges">
+			<span class="recipe-card-badge">{category}</span>
+			<span class="recipe-card-badge recipe-card-badge--muted">{total} min i alt</span>
+		</div>
 		<h3>{title}</h3>
 		<div class="recipe-meta-row">
-			<span>Forberedelse: {prepMinutes} min</span>
-			<span>Tilberedning: {cookMinutes} min</span>
-			<span>I alt: {total} min</span>
+			<span>Forberedelse {prepMinutes} min</span>
+			<span>·</span>
+			<span>Tilberedning {cookMinutes} min</span>
 		</div>
 		<p>{description}</p>
 	</div>
