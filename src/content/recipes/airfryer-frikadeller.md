@@ -3,8 +3,6 @@ title: 'Airfryer frikadeller – sprød kant og hurtig familieaftensmad'
 description: 'Frikadeller i airfryer med bedre hverdagsstyring af fedt og stadig masser af smag. Tider, temperatur og tips til ensartet resultat.'
 pubDate: 2025-03-05
 updatedDate: 2025-03-15
-heroImage: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=80'
-heroAlt: 'Hjemmelavede frikadeller med klassisk tilbehør'
 prepMinutes: 15
 cookMinutes: 18
 servings: '4 portioner (12–14 små frikadeller)'
@@ -49,6 +47,6 @@ faq:
     answer: 'For små–mellemstore frikadeller ved 185 °C typisk 16–18 minutter i alt, afhængigt af model og størrelse. Mål kerntemperatur eller skær én op til tjek.'
 ---
 
-**Airfryer frikadeller** rammer den danske hverdag lige i øjet: kendt smag, mindre fedt end traditionel pandestegning, og nemmere oprydning når børnene skal have mad hurtigt. Den her version er skrevet til søgninger som **frikadeller airfryer**, **dansk hverdagsmad** og **familiemiddag uden stress**.
+**Airfryer frikadeller** passer fint til den danske hverdag: kendt smag, mindre fedt end pandestegning i rigelig olie, og nemmere oprydning når det går stærkt.
 
-Put de klassiske [kartoflebåde](/opskrifter/airfryer-kartofler-i-baade) ved siden og eventuelt en skål [bagt grønt](/opskrifter/airfryer-groentsagsmix), så har du en fuld tallerken med gentagelig succes.
+Server med [kartoflebåde](/opskrifter/airfryer-kartofler-i-baade) og evt. [bagt grønt](/opskrifter/airfryer-groentsagsmix) til en fuld tallerken.

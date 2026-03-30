@@ -28,7 +28,9 @@ if (!site) {
 
 const canonicalPath = `/opskrifter/${recipe.id}`;
 const pageUrl = new URL(canonicalPath, site).toString();
-const absImage = toAbsoluteUrl(site, d.heroImage);
+const absImage = d.heroImage
+	? toAbsoluteUrl(site, d.heroImage)
+	: new URL('/og-default.svg', site).toString();
 
 const totalMinutes = d.prepMinutes + d.cookMinutes;
 
@@ -137,7 +139,7 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 	title={d.title}
 	description={d.description}
 	canonicalPath={canonicalPath}
-	ogImage={absImage}
+	ogImage={d.heroImage ? absImage : undefined}
 	ogType="article"
 	jsonLd={jsonLdWithArticle}
 >
@@ -152,15 +154,32 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 			</nav>
 
 			<div class="recipe-hero">
-				<div class="recipe-hero-img">
-					<img
-						src={d.heroImage}
-						alt={d.heroAlt}
-						width="1200"
-						height="900"
-						fetchpriority="high"
-						decoding="async"
-					/>
+				<div
+					class:list={[
+						'recipe-hero-img',
+						!d.heroImage && 'recipe-hero-img--placeholder',
+					]}
+				>
+					{
+						d.heroImage ? (
+							<img
+								src={d.heroImage}
+								alt={d.heroAlt ?? d.title}
+								width="1200"
+								height="900"
+								fetchpriority="high"
+								decoding="async"
+							/>
+						) : (
+							<div
+								class="recipe-placeholder-inner"
+								role="img"
+								aria-label="Billede til opskriften kommer snart"
+							>
+								<span class="recipe-placeholder-label">Billede på vej</span>
+							</div>
+						)
+					}
 				</div>
 				<div>
 					<h1 class="recipe-title">{d.title}</h1>
@@ -190,12 +209,8 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 							)
 						}
 					</div>
-					<p style="font-size: 1.125rem; color: var(--color-muted); margin: 0 0 var(--space-6)">
+					<p style="font-size: 1.125rem; color: var(--color-muted); margin: 0">
 						{d.description}
-					</p>
-					<p style="margin: 0; font-size: 0.875rem; color: var(--color-muted)">
-						<strong style="color: var(--color-text)">Nøgleord:</strong>
-						{d.keywords.join(', ')}
 					</p>
 				</div>
 			</div>
@@ -238,7 +253,7 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 			}
 
 			<section class="prose" style="margin-bottom: var(--space-12)">
-				<h2 class="block-title">Det siger teksten om retten</h2>
+				<h2 class="block-title">Lidt mere om retten</h2>
 				<Content />
 			</section>
 

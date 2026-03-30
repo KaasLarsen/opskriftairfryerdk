@@ -1,10 +1,8 @@
 ---
 title: 'Airfryer kyllingebryst (saftigt) – nem hverdagsopskrift på 25 min'
-description: 'Saftigt kyllingebryst i airfryer uden tør kant. Tider, temperatur og trin til en nem aftensmad – perfekt til søgninger som airfryer kylling og hurtig hverdagsmad.'
+description: 'Saftigt kyllingebryst i airfryer uden tør kant – med tider, temperatur og trin til en nem aftensmad.'
 pubDate: 2025-03-01
 updatedDate: 2025-03-15
-heroImage: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=1200&q=80'
-heroAlt: 'Saftigt kyllingebryst med urter – nem airfryer hverdagsret'
 prepMinutes: 10
 cookMinutes: 15
 servings: '4 portioner'
@@ -46,6 +44,6 @@ faq:
     answer: 'Ofte pga. for lang tid, for høj temperatur eller for meget kylling på én gang. Læg i ét lag og brug termometer.'
 ---
 
-Det her er en **nem airfryer-aftensmad** til hverdagen: få ingredienser, klar på under en halv time og med fokus på **saft** frem for tør kant. Opskriften er skrevet, så du hurtigt kan scanne tider og temperatur – og stadig få de små detaljer, der gør forskellen.
+Det her er en **nem airfryer-aftensmad** til hverdagen: få ingredienser, klar på under en halv time og med fokus på **saft** frem for tør kant.
 
 Hvis du også vil have noget nemt tilbehør, passer [kartofler i airfryer](/opskrifter/airfryer-kartofler-i-baade) eller et [hurtigt grøntsagsmix](/opskrifter/airfryer-groentsagsmix) fint til samme hverdagssituation.

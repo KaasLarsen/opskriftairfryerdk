@@ -3,8 +3,6 @@ title: 'Airfryer grøntsagsmix – hurtigt sundt tilbehør'
 description: 'Bagt grønt i airfryer med ens stegning og masser af smag. Perfekt som nemt sundt tilbehør til hverdagens kød og fisk.'
 pubDate: 2025-03-04
 updatedDate: 2025-03-15
-heroImage: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=80'
-heroAlt: 'Farverigt grøntsagsmix tilberedt i airfryer'
 prepMinutes: 12
 cookMinutes: 14
 servings: '4 portioner'
@@ -49,6 +47,6 @@ faq:
     answer: '190 °C er et godt udgangspunkt for et mix – du kan gå op til 200 °C de sidste minutter for ekstra farve.'
 ---
 
-Et **airfryer grøntsagsmix** er den nemme måde at få mere grønt på tallerkenen uden at stå og vende pande i evigheder. Det her setup rammer den søgeintention, folk har på Google: **hurtigt sundt tilbehør**, **bagte grøntsager** og **airfryer grøntsager** uden kompromis på smag.
+Et **airfryer grøntsagsmix** er en nem måde at få mere grønt på tallerkenen uden at stå og vende pande i lang tid – **hurtigt tilbehør** med masser af smag.
 
 Server sammen med [laks i airfryer](/opskrifter/airfryer-laks) eller [kylling](/opskrifter/airfryer-kyllingebryst) – og brug resterne i madpakken næste dag.

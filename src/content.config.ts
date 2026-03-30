@@ -12,11 +12,13 @@ const recipes = defineCollection({
 		description: z.string(),
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
-		heroImage: z.union([
-			z.string().url(),
-			z.string().regex(/^\//, 'Brug absolut URL eller sti fra rod (/)'),
-		]),
-		heroAlt: z.string(),
+		heroImage: z
+			.union([
+				z.string().url(),
+				z.string().regex(/^\//, 'Brug absolut URL eller sti fra rod (/)'),
+			])
+			.optional(),
+		heroAlt: z.string().optional(),
 		prepMinutes: z.number(),
 		cookMinutes: z.number(),
 		servings: z.string(),

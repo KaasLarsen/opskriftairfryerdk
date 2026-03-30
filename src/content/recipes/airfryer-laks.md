@@ -1,10 +1,8 @@
 ---
 title: 'Airfryer laks – hurtig aftensmad på 15 minutter'
-description: 'Laks i airfryer med sprød kant og mør midte. Tider, temperatur og trin til en nem hverdagsret med høj succes-rate.'
+description: 'Laks i airfryer med sprød kant og mør midte – tider, temperatur og trin til en nem hverdagsret.'
 pubDate: 2025-03-03
 updatedDate: 2025-03-15
-heroImage: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=80'
-heroAlt: 'Stegt laks med citron og krydderurter fra airfryer'
 prepMinutes: 5
 cookMinutes: 10
 servings: '4 portioner'
@@ -46,6 +44,6 @@ faq:
     answer: 'Ja, men tør godt af efter optøning og forvent 1–3 minutter ekstra. Fisk skal være helt optøet inden stegning for jævn varme.'
 ---
 
-**Airfryer laks** er en klassiker i travle hverdage: kort forberedelse, korte kogetider og et måltid de fleste kan lide. Opskriften er målrettet folk, der søger **hurtig laks**, **airfryer fisk** og en **nem aftensmad** med få ingredienser.
+**Airfryer laks** er en klassiker i travle hverdage: kort forberedelse, korte kogetider og et måltid de fleste kan lide – med få ingredienser.
 
 Kompletér med [grøntsager i airfryer](/opskrifter/airfryer-groentsagsmix) og eventuelt de sprøde [kartoflebåde](/opskrifter/airfryer-kartofler-i-baade).

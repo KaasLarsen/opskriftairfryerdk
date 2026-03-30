@@ -12,15 +12,23 @@ const href = `/opskrifter/${recipe.id}`;
 ---
 
 <a class="recipe-card" href={href}>
-	<div class="recipe-card-image">
-		<img
-			src={heroImage}
-			alt={heroAlt}
-			width="640"
-			height="400"
-			loading="lazy"
-			decoding="async"
-		/>
+	<div class:list={['recipe-card-image', !heroImage && 'recipe-card-image--placeholder']}>
+		{
+			heroImage ? (
+				<img
+					src={heroImage}
+					alt={heroAlt ?? title}
+					width="640"
+					height="400"
+					loading="lazy"
+					decoding="async"
+				/>
+			) : (
+				<div class="recipe-placeholder-inner">
+					<span class="recipe-placeholder-label">Billede på vej</span>
+				</div>
+			)
+		}
 	</div>
 	<div class="recipe-card-body">
 		<h3>{title}</h3>

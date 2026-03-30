@@ -10,8 +10,8 @@ const featured = allRecipes
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 5);
 
-const heroImage =
-	'https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1200&q=80';
+const site = Astro.site ?? new URL(SITE_URL);
+const ogImage = new URL('/og-default.svg', site).toString();
 
 const jsonLd = {
 	'@context': 'https://schema.org',
@@ -34,35 +34,28 @@ const jsonLd = {
 	title={`${SITE_NAME} – ${SITE_TAGLINE}`}
 	description={DEFAULT_DESCRIPTION}
 	canonicalPath="/"
-	ogImage={heroImage}
+	ogImage={ogImage}
 	jsonLd={jsonLd['@graph'] as Record<string, unknown>[]}
 >
 	<section class="hero">
 		<div class="container hero-grid">
 			<div>
-				<span class="hero-badge">SEO-first • Hurtig • Nem hverdag</span>
-				<h1>Nemme airfryer-opskrifter, der faktisk virker i hverdagen</h1>
+				<span class="hero-badge">Nem hverdag • Tydelige tider</span>
+				<h1>Nemme airfryer-opskrifter til hverdagen</h1>
 				<p class="hero-lead">
-					Tydelige tider, realistiske temperaturer og trin du kan følge på 10
-					minutters travlhed. Perfekt til danske søgninger som <strong
-						>airfryer aftensmad</strong
-					>, <strong>hurtig hverdagsmad</strong> og <strong>nem opskrift airfryer</strong
-					>.
+					Tydelige tider, realistiske temperaturer og trin du kan følge, også når det går stærkt.
+					Her samler vi opskrifter, der er lige til at gå til.
 				</p>
 				<div class="hero-actions">
-					<a class="btn btn-primary" href="/opskrifter">Se de 5 startopskrifter</a>
-					<a class="btn btn-ghost" href="/om">Sådan arbejder vi med kvalitet</a>
+					<a class="btn btn-primary" href="/opskrifter">Se alle opskrifter</a>
 				</div>
 			</div>
-			<div class="hero-visual">
-				<img
-					src={heroImage}
-					alt="Airfryer med appetitligt måltid – fokus på nem hverdagsmad"
-					width="1200"
-					height="900"
-					fetchpriority="high"
-					decoding="async"
-				/>
+			<div
+				class="hero-visual hero-visual--placeholder"
+				role="img"
+				aria-label="Plads til foto – kommer snart"
+			>
+				<span class="hero-placeholder-label">Foto til forsiden kommer snart</span>
 			</div>
 		</div>
 	</section>
@@ -71,38 +64,14 @@ const jsonLd = {
 		<div class="container">
 			<div class="section-head">
 				<p class="section-kicker">Udvalgte opskrifter</p>
-				<h2>Start stærkt med 5 hverdagsklassikere</h2>
+				<h2>Start med disse fem hverdagsfavoritter</h2>
 				<p>
-					Disse sider er skrevet til informationssøgende brugere: korte svar øverst,
-					detaljer og FAQ længere nede – klar til Google og featured snippets.
+					Hurtige retter med få ingredienser – gode som aftensmad eller når du vil have styr på
+					tid og temperatur.
 				</p>
 			</div>
 			<div class="recipe-grid">
 				{featured.map((recipe) => <RecipeCard recipe={recipe} />)}
-			</div>
-		</div>
-	</section>
-
-	<section class="section" style="padding-top: 0">
-		<div class="container">
-			<div
-				class="section-head"
-				style="background: white; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-8); box-shadow: var(--shadow-sm)"
-			>
-				<p class="section-kicker">Hvorfor faldt kurven?</p>
-				<h2>Teknisk SEO og stabilt indhold genskaber tillid</h2>
-				<p>
-					En stejl nedgang i Google Search Console skyldes ofte et <strong
-						>teknisk brud</strong
-					> (fx forkert <code>robots</code>, domæne-/HTTPS-flytning uden redirects,
-					eller masser af 404) – eller et indholds-/kvalitetsproblem efter en opdatering.
-				</p>
-				<p style="margin-bottom: 0">
-					Denne relancering bruger <strong>hurtige statiske sider</strong>, korrekt
-					kanonical-struktur, <strong>sitemap</strong>, tydelig{' '}
-					<strong>Recipe- og FAQ-schema</strong>, og en overskuelig URL-struktur så Google
-					kan genskabe signals over tid.
-				</p>
 			</div>
 		</div>
 	</section>

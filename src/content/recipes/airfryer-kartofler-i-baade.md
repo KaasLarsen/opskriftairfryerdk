@@ -3,8 +3,6 @@ title: 'Airfryer kartofler i både – sprøde og nemme hverdagskartofler'
 description: 'Sprøde kartoflebåde i airfryer uden friture. Tydelige tider og temperatur, så du rammer hverdagstricket: sprød kant og mør midte.'
 pubDate: 2025-03-02
 updatedDate: 2025-03-15
-heroImage: 'https://images.unsplash.com/photo-1598515214210-9ed31337304b?auto=format&fit=crop&w=1200&q=80'
-heroAlt: 'Sprøde kartoflebåde som nemt tilbehør fra airfryer'
 prepMinutes: 10
 cookMinutes: 22
 servings: '4 portioner'
@@ -45,6 +43,6 @@ faq:
     answer: 'Ét lag i kurven. Til en familie på 4 er 800 g typisk fint – ellers to omgange for bedste resultat.'
 ---
 
-Disse **airfryer kartofler i både** er et af de mest søgte tilbehør i hverdagen: lidt olie, høj varme og tørre kartofler – så får du både **mør midte** og **sprød kant** uden at stå med friture.
+Disse **airfryer kartofler i både** er et hit som tilbehør i hverdagen: lidt olie, høj varme og tørre kartofler – så får du både **mør midte** og **sprød kant** uden friture.
 
-Server til [kylling i airfryer](/opskrifter/airfryer-kyllingebryst) eller alongside [frikadeller](/opskrifter/airfryer-frikadeller) for en klassisk dansk tallerken uden stress.
+Server til [kylling i airfryer](/opskrifter/airfryer-kyllingebryst) eller [frikadeller](/opskrifter/airfryer-frikadeller) for en klassisk dansk tallerken.
