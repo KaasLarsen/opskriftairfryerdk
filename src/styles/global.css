@@ -593,7 +593,7 @@ a:hover {
 	gap: var(--space-4);
 }
 
-ol.step-list li::marker {
+.step-list li::marker {
 	content: none;
 }
 
@@ -633,8 +633,9 @@ ol.step-list li::marker {
 	line-height: 1.55;
 }
 
-.step-list li > span:last-child {
+.step-list .step-text {
 	padding-right: var(--space-2);
+	min-width: 0;
 }
 
 .step-num {

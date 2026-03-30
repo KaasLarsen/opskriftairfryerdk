@@ -228,16 +228,16 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 				</section>
 				<section aria-labelledby="steps-heading">
 					<h2 id="steps-heading" class="block-title">Sådan gør du</h2>
-					<ol class="step-list">
+					<ul class="step-list">
 						{
 							d.instructions.map((step, idx) => (
 								<li>
 									<span class="step-num">{idx + 1}</span>
-									<span>{step.text}</span>
+									<span class="step-text">{step.text}</span>
 								</li>
 							))
 						}
-					</ol>
+					</ul>
 				</section>
 			</div>
 

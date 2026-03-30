@@ -2,7 +2,9 @@
 title: 'Airfryer frikadeller – sprød kant og hurtig familieaftensmad'
 description: 'Frikadeller i airfryer med bedre hverdagsstyring af fedt og stadig masser af smag. Tider, temperatur og tips til ensartet resultat.'
 pubDate: 2025-03-05
-updatedDate: 2025-03-15
+updatedDate: 2025-03-30
+heroImage: '/images/recipes/airfryer-frikadeller.png'
+heroAlt: 'Gyldne frikadeller i airfryer-kurv med bacon, svampe og persille – kartofler og tilbehør i baggrunden'
 prepMinutes: 15
 cookMinutes: 18
 servings: '4 portioner (12–14 små frikadeller)'
