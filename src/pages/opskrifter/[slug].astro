@@ -219,7 +219,11 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 				<section aria-labelledby="ingredients-heading">
 					<h2 id="ingredients-heading" class="block-title">Ingredienser</h2>
 					<ul class="ingredient-list">
-						{d.ingredients.map((ing) => <li>{ing.text}</li>)}
+						{d.ingredients.map((ing) => (
+							<li>
+								<span class="ingredient-text">{ing.text}</span>
+							</li>
+						))}
 					</ul>
 				</section>
 				<section aria-labelledby="steps-heading">
@@ -245,7 +249,9 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						</h2>
 						<ul class="ingredient-list">
 							{d.tips.map((t) => (
-								<li>{t}</li>
+								<li>
+									<span class="ingredient-text">{t}</span>
+								</li>
 							))}
 						</ul>
 					</section>
