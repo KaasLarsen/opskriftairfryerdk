@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer kyllingebryst (saftigt) – nem hverdagsopskrift på 25 min'
-description: 'Saftigt kyllingebryst i airfryer uden tør kant – med tider, temperatur og trin til en nem aftensmad.'
+description: 'Saftigt kyllingebryst fra airfryer uden tør kant. Trin, temperatur og hviletid – så lykkes du med kylling i hverdagen.'
 pubDate: 2025-03-01
-updatedDate: 2025-03-15
+updatedDate: 2025-03-30
 prepMinutes: 10
 cookMinutes: 15
 servings: '4 portioner'
@@ -17,6 +17,18 @@ keywords:
   - nem hverdagsmad
   - hurtig opskrift airfryer
 featured: true
+intro: |
+  Kyllingebryst er hverdags-klassiker nummer ét, men det er også en ingrediens, der hurtigt bliver tør, hvis tid eller temperatur ikke passer til stykkets tykkelse. Airfryerens varmluft giver en fin, gylden kant, men kræver at du respekterer ét lag i kurven og helst et køkkentermometer første gang, du prøver din maskine af.
+
+  I denne opskrift lander vi omkring 190 °C og en relativt kort stegning med vending midtvejs, efterfulgt af kort hvile. Hviledelen er ikke “pyt”: den lader saften fordele sig og gør kødet mere mørt at skære i.
+
+  Læs indledningen som kontekst, følg trinene, og brug FAQ hvis du vil vide mere om optøning, krydderier eller genvarmning.
+conclusion: |
+  Et vellykket kyllingebryst fra airfryer er gennemstegt uden at være overskåret, med en ydre der har farve og smag. Gem evt. rester kølet i 2 dage eller frys dem; genvarm skånsomt, så kødet ikke bliver gummiagtigt.
+
+  Har du første gang airfryer, anbefaler vi at skrive tider ned for netop din maskine – så gentager du successen næste gang uden gætteri.
+
+  Med denne fremgangsmåde får du en hverdagsret, der er nem at kombinere med kartofler, salat eller grønt – og som de fleste i familien kan spise uden snak om tør kylling.
 ingredients:
   - text: '600 g kyllingebryst (ca. 4 stk.)'
   - text: '2 spsk olivenolie'
@@ -37,13 +49,27 @@ tips:
   - 'Undgå at fylde kurven for meget – luftcirkulation = sprød overflade og jævn varme.'
 faq:
   - question: 'Hvor lang tid tager kyllingebryst i airfryer?'
-    answer: 'Ved 190 °C og ca. 600 g fordelt på 4 bryster typisk 13–15 minutter i alt efter opvarmning, plus hvile. Mål altid 74 °C i den tykkeste del.'
-  - question: 'Skal jeg bruge olie på kylling i airfryer?'
-    answer: 'En lille smule olie hjælper med farve og smag og mindsker risiko for tør overflade. Du kan gå ned i mængde, hvis du foretrækker det.'
+    answer: 'Ved 190 °C og omkring 600 g fordelt på fire bryster ligger total tid ofte omkring 13–15 minutters stegning plus 3–5 minutters hvile. Mål altid 74 °C i den tykkeste del – tynde bryster kan være færdige hurtigere.'
+  - question: 'Skal jeg bruge olie på kylling i airfryeren?'
+    answer: 'En lille mængde olie hjælper med farve og smag og mindsker risikoen for en helt tør overflade. Vil du spare, kan du nøjes med meget tyndt lag eller pensling kun på den side, der vendes op.'
   - question: 'Hvorfor bliver kylling tør i airfryer?'
-    answer: 'Ofte pga. for lang tid, for høj temperatur eller for meget kylling på én gang. Læg i ét lag og brug termometer.'
+    answer: 'Typisk for lang tid, for høj temperatur over for tykkelsen, eller for meget kød på én gang uden luft mellem stykkerne. Brug ét lag, vend midtvejs og lad kødet hvile.'
+  - question: 'Må jeg stege frossen kylling direkte?'
+    answer: 'Airfryer kan ofte klare optøet eller delvist optøet kød bedre end stenhård frost. Følg fødevaremyndighedernes anbefalinger: helst fuldt optøet kød til ens stegning, ellers længere tid og omhyggelig temperaturkontrol.'
+  - question: 'Hvordan skærer jeg kylling, så det ser proft ud?'
+    answer: 'Skær på skrå efter hvilen, så fibrene ikke “flænses” – det giver et mere mørt indtryk.'
+  - question: 'Hvilke krydderier passer ud over salt og peber?'
+    answer: 'Paprika, hvidløg, timian, rosmarin eller en anelse citronskal – hold det enkelt første gang, så du lærer din maskines tider at kende.'
 ---
 
-Det her er en **nem airfryer-aftensmad** til hverdagen: få ingredienser, klar på under en halv time og med fokus på **saft** frem for tør kant.
+### Fra panden til airfryer
 
-Hvis du også vil have noget nemt tilbehør, passer [kartofler i airfryer](/opskrifter/airfryer-kartofler-i-baade) eller et [hurtigt grøntsagsmix](/opskrifter/airfryer-groentsagsmix) fint til samme hverdagssituation.
+Mange skifter til airfryer til kylling, fordi **rengøring og stænk** bliver mindre, og fordi varmen cirkulerer jævnt omkring kødet. Du får ikke helt samme “pan sauce” som på panden, men du kan kompensere med dressing eller let sovs ved siden af.
+
+### Servering
+
+Kyllingen passer til næsten alt hverdagstilbehør: [kartofler i både](/opskrifter/airfryer-kartofler-i-baade), kogte bulgur- eller risretter, eller et [grøntsagsmix](/opskrifter/airfryer-groentsagsmix). En klassisk salat med yoghurt dressing eller en kold kartoffelsalat gør det hele sommervenligt.
+
+### Tip til børnefamilien
+
+Skær kyllingen i mindre skiver efter hvile – så er det hurtigere at køle ned til madpakke næste dag. Hold serveringstemperaturen i tankerne ved genbrug af køl.

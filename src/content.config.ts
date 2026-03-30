@@ -27,6 +27,8 @@ const recipes = defineCollection({
 		cuisine: z.string().default('Dansk'),
 		keywords: z.array(z.string()),
 		temperatureC: z.number().optional(),
+		intro: z.string().optional(),
+		conclusion: z.string().optional(),
 		ingredients: z.array(z.object({ text: z.string() })),
 		instructions: z.array(z.object({ text: z.string() })),
 		tips: z.array(z.string()).optional(),

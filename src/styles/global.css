@@ -519,6 +519,19 @@ a:hover {
 	color: var(--color-muted);
 }
 
+.recipe-prose h3 {
+	font-family: var(--font-display);
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: var(--space-8) 0 var(--space-3);
+	color: var(--color-text);
+	letter-spacing: -0.02em;
+}
+
+.recipe-prose h3:first-of-type {
+	margin-top: var(--space-2);
+}
+
 .recipe-article {
 	padding-top: var(--space-10) !important;
 	padding-bottom: var(--space-16) !important;
@@ -831,6 +844,43 @@ a:hover {
 	font-size: 1.25rem;
 	font-weight: 600;
 	margin: 0 0 var(--space-4);
+}
+
+.recipe-section {
+	margin-bottom: var(--space-16);
+	max-width: 48rem;
+}
+
+.recipe-intro-block {
+	margin-top: calc(var(--space-4) * -1);
+}
+
+.recipe-rich-text p {
+	margin: 0 0 var(--space-5);
+	font-size: 1.0625rem;
+	line-height: 1.75;
+	color: var(--color-muted);
+}
+
+.recipe-rich-text p:last-child {
+	margin-bottom: 0;
+}
+
+.recipe-conclusion-block {
+	padding: var(--space-8) var(--space-8);
+	background: linear-gradient(
+		160deg,
+		rgb(248 250 252) 0%,
+		rgb(241 245 249) 45%,
+		rgb(236 253 245) 100%
+	);
+	border-radius: 1rem;
+	border: 1px solid var(--color-border);
+	box-shadow: 0 4px 20px rgb(15 23 42 / 5%);
+}
+
+.recipe-conclusion-block .recipe-block-title {
+	margin-bottom: var(--space-6);
 }
 
 .recipe-prose {

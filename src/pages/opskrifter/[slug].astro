@@ -34,6 +34,17 @@ const absImage = d.heroImage
 
 const totalMinutes = d.prepMinutes + d.cookMinutes;
 
+function splitParagraphs(text: string | undefined): string[] {
+	if (!text?.trim()) return [];
+	return text
+		.split(/\n\s*\n/)
+		.map((p) => p.trim())
+		.filter(Boolean);
+}
+
+const introParagraphs = splitParagraphs(d.intro);
+const conclusionParagraphs = splitParagraphs(d.conclusion);
+
 const recipeJson: Record<string, unknown> = {
 	'@type': 'Recipe',
 	'@id': `${pageUrl}#recipe`,
@@ -213,6 +224,24 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 				</div>
 			</div>
 
+			{
+				introParagraphs.length > 0 && (
+					<section
+						class="recipe-section recipe-intro-block"
+						aria-labelledby="recipe-intro-heading"
+					>
+						<h2 id="recipe-intro-heading" class="block-title recipe-block-title">
+							Indledning
+						</h2>
+						<div class="recipe-rich-text">
+							{introParagraphs.map((p) => (
+								<p>{p}</p>
+							))}
+						</div>
+					</section>
+				)
+			}
+
 			<div class="two-col recipe-body-columns">
 				<section class="recipe-block" aria-labelledby="ingredients-heading">
 					<h2 id="ingredients-heading" class="block-title recipe-block-title">Ingredienser</h2>
@@ -263,9 +292,27 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 			}
 
 			<section class="prose recipe-prose">
-				<h2 class="block-title recipe-block-title">Lidt mere om retten</h2>
+				<h2 class="block-title recipe-block-title">Baggrund og servering</h2>
 				<Content />
 			</section>
+
+			{
+				conclusionParagraphs.length > 0 && (
+					<section
+						class="recipe-section recipe-conclusion-block"
+						aria-labelledby="recipe-conclusion-heading"
+					>
+						<h2 id="recipe-conclusion-heading" class="block-title recipe-block-title">
+							Konklusion
+						</h2>
+						<div class="recipe-rich-text">
+							{conclusionParagraphs.map((p) => (
+								<p>{p}</p>
+							))}
+						</div>
+					</section>
+				)
+			}
 
 			{
 				d.faq && d.faq.length > 0 && (
