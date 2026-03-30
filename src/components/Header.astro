@@ -1,0 +1,29 @@
+---
+import { SITE_NAME } from '../consts';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+function isActive(href: string): boolean {
+	if (href === '/') return pathname === '/';
+	return pathname === href || pathname.startsWith(`${href}/`);
+}
+---
+
+<header class="site-header">
+	<div class="container header-inner">
+		<a class="logo" href="/">{SITE_NAME}</a>
+		<nav class="nav" aria-label="Hovednavigation">
+			<a href="/" aria-current={isActive('/') ? 'page' : undefined}>Forside</a>
+			<a href="/opskrifter" aria-current={isActive('/opskrifter') ? 'page' : undefined}
+				>Opskrifter</a
+			>
+			<a href="/om" aria-current={isActive('/om') ? 'page' : undefined}>Om os</a>
+			<a href="/kontakt" aria-current={isActive('/kontakt') ? 'page' : undefined}
+				>Kontakt</a
+			>
+			<a class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.875rem" href="/opskrifter"
+				>Se opskrifter</a
+			>
+		</nav>
+	</div>
+</header>

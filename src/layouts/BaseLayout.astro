@@ -1,0 +1,58 @@
+---
+import '@fontsource-variable/dm-sans/index.css';
+import '@fontsource-variable/fraunces/index.css';
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_NAME } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	canonicalPath: string;
+	ogImage?: string;
+	ogType?: 'website' | 'article';
+	noindex?: boolean;
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+	title,
+	description,
+	canonicalPath,
+	ogImage,
+	ogType = 'website',
+	noindex,
+	jsonLd,
+} = Astro.props;
+
+const fullTitle =
+	title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+---
+
+<!doctype html>
+<html lang="da">
+	<head>
+		<SeoHead
+			title={fullTitle}
+			description={description}
+			canonicalPath={canonicalPath}
+			ogImage={ogImage}
+			ogType={ogType}
+			noindex={noindex}
+			jsonLd={jsonLd}
+		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#0ea5e9" />
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Spring til indhold</a>
+		<Header />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

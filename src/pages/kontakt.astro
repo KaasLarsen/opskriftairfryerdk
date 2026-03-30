@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../consts';
+
+const description =
+	'Kontakt Opskrift Airfryer vedr. samarbejde, tips eller tekniske spørgsmål om sitet.';
+---
+
+<BaseLayout
+	title={`Kontakt | ${SITE_NAME}`}
+	{description}
+	canonicalPath="/kontakt"
+>
+	<section class="section" style="padding-top: var(--space-12)">
+		<div class="container prose">
+			<h1 class="recipe-title">Kontakt</h1>
+			<p>
+				Du kan bruge denne side som <strong>forankring for kontakt</strong> (e-mail eller
+				formular tilføjes efter dit valg). For SEO er det vigtigt med en tydelig side og et
+				konsekvent link i sidens footer – det er på plads.
+			</p>
+			<p>
+				<strong>E-mail (placeholder):</strong>
+				<a href="mailto:kontakt@opskriftairfryer.dk">kontakt@opskriftairfryer.dk</a>
+			</p>
+		</div>
+	</section>
+</BaseLayout>

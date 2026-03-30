@@ -1,0 +1,39 @@
+---
+import { SITE_NAME, SITE_URL } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div class="container footer-grid">
+		<div>
+			<p class="footer-brand">{SITE_NAME}</p>
+			<p style="margin: 0; font-size: 0.9375rem; opacity: 0.85; max-width: 22rem">
+				Nemme airfryer-opskrifter med tid, temperatur og tydelige trin – bygget til
+				Google og danske søgninger.
+			</p>
+		</div>
+		<div class="footer-col">
+			<h4>Navigation</h4>
+			<ul>
+				<li><a href="/">Forside</a></li>
+				<li><a href="/opskrifter">Alle opskrifter</a></li>
+				<li><a href="/om">Om os</a></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+		<div class="footer-col">
+			<h4>SEO &amp; kvalitet</h4>
+			<ul>
+				<li><a href="/opskrifter">Hverdagsretter</a></li>
+				<li>
+					<a href={SITE_URL}>Primær webadresse</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container footer-bottom">
+		<p style="margin: 0">
+			&copy; {year} {SITE_NAME}. Indhold må deles med tydeligt link tilbage til kilden.
+		</p>
+	</div>
+</footer>

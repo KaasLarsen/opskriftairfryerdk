@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+import { isoDurationFromMinutes, toAbsoluteUrl } from '../../utils/seo';
+
+export async function getStaticPaths() {
+	const recipes = await getCollection('recipes');
+	return recipes.map((recipe) => ({
+		params: { slug: recipe.id },
+		props: { recipe },
+	}));
+}
+
+interface Props {
+	recipe: CollectionEntry<'recipes'>;
+}
+
+const { recipe } = Astro.props;
+const { Content } = await render(recipe);
+const d = recipe.data;
+const site = Astro.site;
+
+if (!site) {
+	throw new Error('Konfigurer site i astro.config.mjs (site: https://opskriftairfryer.dk)');
+}
+
+const canonicalPath = `/opskrifter/${recipe.id}`;
+const pageUrl = new URL(canonicalPath, site).toString();
+const absImage = toAbsoluteUrl(site, d.heroImage);
+
+const totalMinutes = d.prepMinutes + d.cookMinutes;
+
+const recipeJson: Record<string, unknown> = {
+	'@type': 'Recipe',
+	'@id': `${pageUrl}#recipe`,
+	name: d.title,
+	description: d.description,
+	image: [absImage],
+	author: {
+		'@type': 'Organization',
+		name: SITE_NAME,
+		url: SITE_URL,
+	},
+	datePublished: d.pubDate.toISOString(),
+	dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+	prepTime: isoDurationFromMinutes(d.prepMinutes),
+	cookTime: isoDurationFromMinutes(d.cookMinutes),
+	totalTime: isoDurationFromMinutes(totalMinutes),
+	recipeYield: d.servings,
+	recipeCategory: d.category,
+	recipeCuisine: d.cuisine,
+	keywords: d.keywords.join(', '),
+	recipeIngredient: d.ingredients.map((i) => i.text),
+	recipeInstructions: d.instructions.map((step, idx) => ({
+		'@type': 'HowToStep',
+		position: idx + 1,
+		text: step.text,
+	})),
+};
+
+if (d.temperatureC) {
+	recipeJson.cookingMethod = 'Airfryer';
+}
+
+if (d.calories) {
+	recipeJson.nutrition = {
+		'@type': 'NutritionInformation',
+		calories: d.calories,
+	};
+}
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{
+			'@type': 'ListItem',
+			position: 1,
+			name: 'Forside',
+			item: new URL('/', site).toString(),
+		},
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Opskrifter',
+			item: new URL('/opskrifter', site).toString(),
+		},
+		{
+			'@type': 'ListItem',
+			position: 3,
+			name: d.title,
+			item: pageUrl,
+		},
+	],
+};
+
+const faqJson =
+	d.faq && d.faq.length > 0
+		? {
+				'@type': 'FAQPage',
+				mainEntity: d.faq.map((f) => ({
+					'@type': 'Question',
+					name: f.question,
+					acceptedAnswer: { '@type': 'Answer', text: f.answer },
+				})),
+			}
+		: null;
+
+const jsonLdGraph: Record<string, unknown>[] = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	recipeJson,
+	breadcrumbJson,
+	...(faqJson ? [faqJson] : []),
+];
+
+const others = (await getCollection('recipes'))
+	.filter((r) => r.id !== recipe.id)
+	.slice(0, 3);
+
+const articleLd = {
+	'@type': 'Article',
+	headline: d.title,
+	description: d.description,
+	image: [absImage],
+	datePublished: d.pubDate.toISOString(),
+	dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+};
+
+const jsonLdWithArticle = [...jsonLdGraph, articleLd];
+---
+
+<BaseLayout
+	title={d.title}
+	description={d.description}
+	canonicalPath={canonicalPath}
+	ogImage={absImage}
+	ogType="article"
+	jsonLd={jsonLdWithArticle}
+>
+	<article class="section" style="padding-top: var(--space-8)">
+		<div class="container">
+			<nav class="recipe-meta-row" aria-label="Brødkrummer" style="margin-bottom: var(--space-6)">
+				<a href="/">Forside</a>
+				<span aria-hidden="true">/</span>
+				<a href="/opskrifter">Opskrifter</a>
+				<span aria-hidden="true">/</span>
+				<span style="color: var(--color-text)">{d.title}</span>
+			</nav>
+
+			<div class="recipe-hero">
+				<div class="recipe-hero-img">
+					<img
+						src={d.heroImage}
+						alt={d.heroAlt}
+						width="1200"
+						height="900"
+						fetchpriority="high"
+						decoding="async"
+					/>
+				</div>
+				<div>
+					<h1 class="recipe-title">{d.title}</h1>
+					<div class="recipe-stats">
+						<div class="stat-pill">
+							<strong>Forberedelse</strong>
+							{d.prepMinutes} min
+						</div>
+						<div class="stat-pill">
+							<strong>Tilberedning</strong>
+							{d.cookMinutes} min
+						</div>
+						<div class="stat-pill">
+							<strong>I alt</strong>
+							{totalMinutes} min
+						</div>
+						<div class="stat-pill">
+							<strong>Portioner</strong>
+							{d.servings}
+						</div>
+						{
+							d.temperatureC !== undefined && (
+								<div class="stat-pill">
+									<strong>Airfryer</strong>
+									{d.temperatureC} °C
+								</div>
+							)
+						}
+					</div>
+					<p style="font-size: 1.125rem; color: var(--color-muted); margin: 0 0 var(--space-6)">
+						{d.description}
+					</p>
+					<p style="margin: 0; font-size: 0.875rem; color: var(--color-muted)">
+						<strong style="color: var(--color-text)">Nøgleord:</strong>
+						{d.keywords.join(', ')}
+					</p>
+				</div>
+			</div>
+
+			<div class="two-col" style="margin-bottom: var(--space-12)">
+				<section aria-labelledby="ingredients-heading">
+					<h2 id="ingredients-heading" class="block-title">Ingredienser</h2>
+					<ul class="ingredient-list">
+						{d.ingredients.map((ing) => <li>{ing.text}</li>)}
+					</ul>
+				</section>
+				<section aria-labelledby="steps-heading">
+					<h2 id="steps-heading" class="block-title">Sådan gør du</h2>
+					<ol class="step-list">
+						{
+							d.instructions.map((step, idx) => (
+								<li>
+									<span class="step-num">{idx + 1}</span>
+									<span>{step.text}</span>
+								</li>
+							))
+						}
+					</ol>
+				</section>
+			</div>
+
+			{
+				d.tips && d.tips.length > 0 && (
+					<section style="margin-bottom: var(--space-12)" aria-labelledby="tips-heading">
+						<h2 id="tips-heading" class="block-title">
+							Eksperttips (bedre resultat hver gang)
+						</h2>
+						<ul class="ingredient-list">
+							{d.tips.map((t) => (
+								<li>{t}</li>
+							))}
+						</ul>
+					</section>
+				)
+			}
+
+			<section class="prose" style="margin-bottom: var(--space-12)">
+				<h2 class="block-title">Det siger teksten om retten</h2>
+				<Content />
+			</section>
+
+			{
+				d.faq && d.faq.length > 0 && (
+					<section class="faq" aria-labelledby="faq-heading">
+						<h2 id="faq-heading" class="block-title">
+							Ofte stillede spørgsmål
+						</h2>
+						{d.faq.map((item) => (
+							<details>
+								<summary>{item.question}</summary>
+								<p>{item.answer}</p>
+							</details>
+						))}
+					</section>
+				)
+			}
+
+			<section class="related-grid" aria-labelledby="related-heading">
+				<h2 id="related-heading" class="block-title">Prøv også</h2>
+				<div class="recipe-grid">
+					{others.map((r) => (
+						<RecipeCard recipe={r} />
+					))}
+				</div>
+				<p style="margin-top: var(--space-6)">
+					<a href="/opskrifter">← Tilbage til alle opskrifter</a>
+				</p>
+			</section>
+		</div>
+	</article>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeCard from '../../components/RecipeCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE_NAME } from '../../consts';
+
+const recipes = (await getCollection('recipes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = `Alle airfryer-opskrifter`;
+const description =
+	'Komplet oversigt over airfryer-opskrifter til hverdagen: kylling, fisk, kartofler, grønt og mere. Nemme tider og temperaturer – optimeret til Google.';
+
+const jsonLd = {
+	'@type': 'ItemList',
+	itemListElement: recipes.map((r, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		url: new URL(`/opskrifter/${r.id}`, Astro.site).toString(),
+		name: r.data.title,
+	})),
+};
+---
+
+<BaseLayout
+	title={`${title} | ${SITE_NAME}`}
+	{description}
+	canonicalPath="/opskrifter"
+	jsonLd={jsonLd}
+>
+	<section class="section" style="padding-top: var(--space-12)">
+		<div class="container">
+			<div class="section-head">
+				<p class="section-kicker">Opskrifter</p>
+				<h1>Alle airfryer-opskrifter</h1>
+				<p>
+					Hurtige retter til travle hverdage – med fokus på danske søgeord som airfryer
+					aftensmad, nem hverdagsmad og tydelige temperaturer.
+				</p>
+			</div>
+			<div class="recipe-grid">
+				{recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

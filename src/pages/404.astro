@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<BaseLayout
+	title={`Siden findes ikke | ${SITE_NAME}`}
+	description="Vi kunne ikke finde den side du leder efter. Gå til forsiden eller se alle airfryer-opskrifter."
+	canonicalPath="/"
+	noindex={true}
+>
+	<section class="section" style="padding-top: var(--space-16); padding-bottom: var(--space-16)">
+		<div class="container prose">
+			<h1 class="recipe-title">Siden findes ikke (404)</h1>
+			<p>
+				URL’en findes ikke længere, eller der er skrevet forkert. På et migreret site er det vigtigt
+				at opdatere interne links og sikre 301-redirects fra gamle adresser.
+			</p>
+			<p style="margin-bottom: 0">
+				<a class="btn btn-primary" href="/">Til forsiden</a>
+				{' '}
+				<a class="btn btn-ghost" href="/opskrifter">Alle opskrifter</a>
+			</p>
+		</div>
+	</section>
+</BaseLayout>

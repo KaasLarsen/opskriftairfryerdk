@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	recipe: CollectionEntry<'recipes'>;
+}
+
+const { recipe } = Astro.props;
+const { title, description, heroImage, heroAlt, prepMinutes, cookMinutes } = recipe.data;
+const total = prepMinutes + cookMinutes;
+const href = `/opskrifter/${recipe.id}`;
+---
+
+<a class="recipe-card" href={href}>
+	<div class="recipe-card-image">
+		<img
+			src={heroImage}
+			alt={heroAlt}
+			width="640"
+			height="400"
+			loading="lazy"
+			decoding="async"
+		/>
+	</div>
+	<div class="recipe-card-body">
+		<h3>{title}</h3>
+		<div class="recipe-meta-row">
+			<span>Forberedelse: {prepMinutes} min</span>
+			<span>Tilberedning: {cookMinutes} min</span>
+			<span>I alt: {total} min</span>
+		</div>
+		<p>{description}</p>
+	</div>
+</a>

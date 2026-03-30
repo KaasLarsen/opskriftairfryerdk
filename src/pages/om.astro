@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../consts';
+
+const description =
+	'Læs om Opskrift Airfryer: vores fokus på troværdige tider, teknisk SEO og danske hverdagsretter i airfryer.';
+---
+
+<BaseLayout
+	title={`Om ${SITE_NAME}`}
+	{description}
+	canonicalPath="/om"
+>
+	<section class="section" style="padding-top: var(--space-12)">
+		<div class="container prose">
+			<h1 class="recipe-title">Om {SITE_NAME}</h1>
+			<p>
+				Vi laver <strong>praktiske airfryer-opskrifter</strong> til den danske hverdag – uden
+				unødvigt snak og med realistiske tider. Hvert opskrifts-layout er bygget til både
+				læseren og Google: tydelig struktur, FAQ og schema der matcher indholdet.
+			</p>
+			<p>
+				<strong>SEO-first</strong> betynder ikke “søgeords-fyld”, men at teknisk kvalitet (hastighed,
+				indeksering, stabile URL’er) og brugervenlighed går hånd i hånd. Det er netop den
+				kombination, der hjælper med at genopbygge synlighed efter et stort fald i Search
+				Console.
+			</p>
+			<p>
+				Har du spørgsmål om samarbejde eller indhold?
+				<a href="/kontakt">Skriv via kontakt</a>.
+			</p>
+		</div>
+	</section>
+</BaseLayout>

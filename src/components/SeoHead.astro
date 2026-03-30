@@ -1,0 +1,64 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	canonicalPath: string;
+	ogImage?: string;
+	ogType?: 'website' | 'article';
+	noindex?: boolean;
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+	title,
+	description,
+	canonicalPath,
+	ogImage,
+	ogType = 'website',
+	noindex = false,
+	jsonLd,
+} = Astro.props;
+
+const siteUrl = Astro.site?.origin ?? 'https://opskriftairfryer.dk';
+const pathNorm = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
+const canonical = new URL(pathNorm, siteUrl).toString();
+const resolvedOg =
+	ogImage ??
+	`${siteUrl}/og-default.svg`;
+
+const ldJson =
+	jsonLd === undefined
+		? null
+		: {
+				'@context': 'https://schema.org',
+				'@graph': Array.isArray(jsonLd) ? jsonLd : [jsonLd],
+			};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<title>{title}</title>
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content={ogType} />
+<meta property="og:locale" content="da_DK" />
+<meta property="og:image" content={resolvedOg} />
+<meta property="og:site_name" content="Opskrift Airfryer" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={resolvedOg} />
+
+<link rel="alternate" hreflang="da-DK" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+{ldJson && (
+	<script type="application/ld+json" set:html={JSON.stringify(ldJson)} />
+)}
