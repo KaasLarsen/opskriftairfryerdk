@@ -1,0 +1,46 @@
+---
+---
+
+<div class="header-auth-slot" data-header-auth>
+	<a href="/login" class="btn btn-primary btn-nav-cta" data-auth-guest>Log ind</a>
+	<a href="/konto" class="btn btn-primary btn-nav-cta" data-auth-user hidden>Min konto</a>
+</div>
+
+<script>
+	import { getSupabase, isSupabaseConfigured } from '../lib/supabase.client';
+
+	async function init() {
+		if (!isSupabaseConfigured()) return;
+
+		const guestEl = document.querySelector('[data-auth-guest]');
+		const userEl = document.querySelector('[data-auth-user]');
+		if (!(guestEl instanceof HTMLElement) || !(userEl instanceof HTMLElement)) return;
+
+		let supabase;
+		try {
+			supabase = getSupabase();
+		} catch {
+			return;
+		}
+
+		async function update() {
+			const {
+				data: { session },
+			} = await supabase.auth.getSession();
+			if (session?.user) {
+				guestEl.setAttribute('hidden', '');
+				userEl.removeAttribute('hidden');
+			} else {
+				guestEl.removeAttribute('hidden');
+				userEl.setAttribute('hidden', '');
+			}
+		}
+
+		await update();
+		supabase.auth.onAuthStateChange(() => {
+			void update();
+		});
+	}
+
+	void init();
+</script>

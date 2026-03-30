@@ -19,7 +19,7 @@ const {
 	jsonLd,
 } = Astro.props;
 
-const siteUrl = Astro.site?.origin ?? 'https://opskriftairfryer.dk';
+const siteUrl = Astro.site?.origin ?? 'https://www.opskrift-airfryer.dk';
 const pathNorm = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
 const canonical = new URL(pathNorm, siteUrl).toString();
 const resolvedOg =

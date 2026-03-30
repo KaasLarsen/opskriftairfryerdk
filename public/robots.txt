@@ -1,5 +1,6 @@
-# https://opskriftairfryer.dk
+# https://www.opskrift-airfryer.dk
 User-agent: *
 Allow: /
 
-Sitemap: https://opskriftairfryer.dk/sitemap-index.xml
+Sitemap: https://www.opskrift-airfryer.dk/sitemap.xml
+Sitemap: https://www.opskrift-airfryer.dk/sitemap-index.xml

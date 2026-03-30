@@ -7,13 +7,14 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/copy-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
+    "@supabase/supabase-js": "^2.101.0",
     "astro": "^6.1.1"
   }
 }

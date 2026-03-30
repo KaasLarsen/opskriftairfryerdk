@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../../consts';
+---
+
+<BaseLayout
+	title={`Logger ind… | ${SITE_NAME}`}
+	description="Fuldfører log ind."
+	canonicalPath="/auth/callback"
+	noindex={true}
+>
+	<section class="section section--tight-top">
+		<div class="container prose">
+			<h1 class="recipe-title">Logger ind…</h1>
+			<p data-callback-status>Vent et øjeblik, mens vi sikrer din session.</p>
+			<p data-callback-error hidden class="auth-alert auth-alert--error"></p>
+			<p>
+				<a href="/login" data-callback-back-login hidden>Tilbage til log ind</a>
+			</p>
+		</div>
+	</section>
+</BaseLayout>
+
+<script>
+	import { getSupabase, isSupabaseConfigured } from '../../lib/supabase.client';
+
+	const statusEl = document.querySelector('[data-callback-status]');
+	const errEl = document.querySelector('[data-callback-error]');
+	const backEl = document.querySelector('[data-callback-back-login]');
+
+	async function run() {
+		if (!isSupabaseConfigured()) {
+			if (statusEl) statusEl.textContent = 'Supabase er ikke konfigureret på sitet.';
+			if (errEl) {
+				errEl.removeAttribute('hidden');
+				errEl.textContent = 'Sæt PUBLIC_SUPABASE_URL og PUBLIC_SUPABASE_ANON_KEY.';
+			}
+			if (backEl) backEl.removeAttribute('hidden');
+			return;
+		}
+
+		const supabase = getSupabase();
+		try {
+			const url = new URL(window.location.href);
+			if (url.searchParams.has('code')) {
+				const { error } = await supabase.auth.exchangeCodeForSession(window.location.href);
+				if (error) throw error;
+			}
+			const {
+				data: { session },
+			} = await supabase.auth.getSession();
+			if (session) {
+				window.location.replace('/konto');
+				return;
+			}
+			throw new Error('Ingen aktiv session efter log ind.');
+		} catch (e) {
+			const msg = e instanceof Error ? e.message : 'Kunne ikke fuldføre log ind.';
+			if (statusEl) statusEl.setAttribute('hidden', '');
+			if (errEl) {
+				errEl.removeAttribute('hidden');
+				errEl.textContent = msg;
+			}
+			if (backEl) backEl.removeAttribute('hidden');
+		}
+	}
+
+	void run();
+</script>

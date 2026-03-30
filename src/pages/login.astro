@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME, SITE_URL } from '../consts';
+
+const description = `Log ind eller opret bruger på ${SITE_NAME}.`;
+const hasSupabase =
+	Boolean(import.meta.env.PUBLIC_SUPABASE_URL?.trim()) &&
+	Boolean(import.meta.env.PUBLIC_SUPABASE_ANON_KEY?.trim());
+
+const redirectUrl = `${SITE_URL}/auth/callback`;
+---
+
+<BaseLayout
+	title={`Log ind | ${SITE_NAME}`}
+	{description}
+	canonicalPath="/login"
+	noindex={true}
+>
+	<section class="section section--tight-top">
+		<div class="container auth-page">
+			<h1 class="recipe-title">Log ind</h1>
+
+			{
+				!hasSupabase && (
+					<div class="auth-alert auth-alert--error" role="alert">
+						<p>
+							<strong>Supabase er ikke sat op endnu.</strong> Opret et projekt på{' '}
+							<a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer">
+								Supabase
+							</a>
+							, og tilføj disse variabler i <code>.env</code> (se <code>.env.example</code>):
+						</p>
+						<ul>
+							<li>
+								<code>PUBLIC_SUPABASE_URL</code>
+							</li>
+							<li>
+								<code>PUBLIC_SUPABASE_ANON_KEY</code>
+							</li>
+						</ul>
+						<p>
+							I Supabase: <strong>Authentication → URL Configuration</strong> – sæt <em>Redirect URLs</em>{' '}
+							til <code>{redirectUrl}</code> og <code>http://localhost:4321/auth/callback</code> til
+							lokal test.
+						</p>
+					</div>
+				)
+			}
+
+			{
+				hasSupabase && (
+					<>
+						<div class="auth-panels">
+							<div class="auth-panel">
+								<h2 class="auth-panel-title">Log ind</h2>
+								<form class="auth-form" data-form="sign-in">
+									<label class="auth-label" for="signin-email">
+										E-mail
+									</label>
+									<input
+										class="auth-input"
+										id="signin-email"
+										name="email"
+										type="email"
+										autocomplete="email"
+										required
+									/>
+
+									<label class="auth-label" for="signin-password">
+										Adgangskode
+									</label>
+									<input
+										class="auth-input"
+										id="signin-password"
+										name="password"
+										type="password"
+										autocomplete="current-password"
+										required
+									/>
+
+									<p class="auth-error" data-error="sign-in" hidden />
+									<button type="submit" class="btn btn-primary auth-submit">
+										Log ind
+									</button>
+								</form>
+							</div>
+
+							<div class="auth-panel">
+								<h2 class="auth-panel-title">Opret konto</h2>
+								<form class="auth-form" data-form="sign-up">
+									<label class="auth-label" for="signup-email">
+										E-mail
+									</label>
+									<input
+										class="auth-input"
+										id="signup-email"
+										name="email"
+										type="email"
+										autocomplete="email"
+										required
+									/>
+
+									<label class="auth-label" for="signup-password">
+										Adgangskode
+									</label>
+									<input
+										class="auth-input"
+										id="signup-password"
+										name="password"
+										type="password"
+										autocomplete="new-password"
+										minlength={6}
+										required
+									/>
+
+									<p class="auth-hint">Mindst 6 tegn. Du kan få bekræftelsesmail afhængigt af Supabase-indstillinger.</p>
+									<p class="auth-error" data-error="sign-up" hidden />
+									<p class="auth-success" data-success="sign-up" hidden />
+									<button type="submit" class="btn btn-primary auth-submit">
+										Opret konto
+									</button>
+								</form>
+							</div>
+						</div>
+						<p class="auth-footer-note">
+							<a href="/kontakt">Problemer med log ind?</a> ·{' '}
+							<a href="/opskrifter">Tilbage til opskrifter</a>
+						</p>
+					</>
+				)
+			}
+		</div>
+	</section>
+</BaseLayout>
+
+{
+	hasSupabase && (
+		<script define:vars={{ redirectUrl }}>
+			import { getSupabase } from '../lib/supabase.client';
+
+			const supabase = getSupabase();
+
+			const signInForm = document.querySelector('[data-form="sign-in"]');
+			const signUpForm = document.querySelector('[data-form="sign-up"]');
+			const errIn = document.querySelector('[data-error="sign-in"]');
+			const errUp = document.querySelector('[data-error="sign-up"]');
+			const okUp = document.querySelector('[data-success="sign-up"]');
+
+			function showErr(el, msg) {
+				if (!el) return;
+				if (!msg) {
+					el.setAttribute('hidden', '');
+					el.textContent = '';
+					return;
+				}
+				el.removeAttribute('hidden');
+				el.textContent = msg;
+			}
+
+			signInForm?.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				showErr(errIn, '');
+				const fd = new FormData(e.target);
+				const email = String(fd.get('email') ?? '');
+				const password = String(fd.get('password') ?? '');
+				const { error } = await supabase.auth.signInWithPassword({ email, password });
+				if (error) {
+					showErr(errIn, error.message);
+					return;
+				}
+				window.location.href = '/konto';
+			});
+
+			signUpForm?.addEventListener('submit', async (e) => {
+				e.preventDefault();
+				showErr(errUp, '');
+				if (okUp) {
+					okUp.setAttribute('hidden', '');
+					okUp.textContent = '';
+				}
+				const fd = new FormData(e.target);
+				const email = String(fd.get('email') ?? '');
+				const password = String(fd.get('password') ?? '');
+				const { error } = await supabase.auth.signUp({
+					email,
+					password,
+					options: { emailRedirectTo: redirectUrl },
+				});
+				if (error) {
+					showErr(errUp, error.message);
+					return;
+				}
+				if (okUp) {
+					okUp.removeAttribute('hidden');
+					okUp.textContent =
+						'Tjek din e-mail for bekræftelseslink (hvis e-mail-bekræftelse er slået til i Supabase).';
+				}
+			});
+		</script>
+	)
+}

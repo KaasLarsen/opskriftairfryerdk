@@ -1,6 +1,6 @@
 export const SITE_NAME = 'Opskrift Airfryer';
 export const SITE_TAGLINE = 'Nemme airfryer-opskrifter til hverdagen';
-export const SITE_URL = 'https://opskriftairfryer.dk';
+export const SITE_URL = 'https://www.opskrift-airfryer.dk';
 export const DEFAULT_DESCRIPTION =
 	'Find nemme og hurtige airfryer-opskrifter til hverdagen – med tider, temperatur og trin du kan følge.';
 export const ORGANIZATION_JSON = {
