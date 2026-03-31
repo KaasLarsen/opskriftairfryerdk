@@ -20,7 +20,7 @@ npm run build
 npm run preview
 ```
 
-`npm run build` genererer bl.a. `dist/sitemap.xml` (så Google kan finde sitemap’et på roden efter deploy).
+`npm run build` genererer `dist/sitemap.xml` som **én flad liste** af alle offentlige URL’er (ikke et indeks), så Search Console viser det rigtige antal sider.
 
 ## Indhold
 
@@ -50,7 +50,7 @@ Det repo “fixer” kun koden. **Du** skal knappe tre ting sammen i dashboards 
 ## Domæne & SEO
 
 - `site` er sat i [`astro.config.mjs`](astro.config.mjs) til `https://www.opskrift-airfryer.dk` (sitemap + kanoniske URL’er).
-- [`public/robots.txt`](public/robots.txt) peger på `sitemap.xml` og `sitemap-index.xml`.
+- [`public/robots.txt`](public/robots.txt) peger på `sitemap.xml` (primær). Astro lægger stadig `sitemap-index.xml` / `sitemap-0.xml` i `dist` til intern brug.
 - [`vercel.json`](vercel.json) har 301 fra typiske **`.html`‑URL’er** til rene stier (hjælper ved migrering fra statisk HTML).
 
 ## Efter deploy

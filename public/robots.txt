@@ -3,4 +3,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.opskrift-airfryer.dk/sitemap.xml
-Sitemap: https://www.opskrift-airfryer.dk/sitemap-index.xml
