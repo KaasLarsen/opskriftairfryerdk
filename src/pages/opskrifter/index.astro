@@ -58,14 +58,14 @@ const jsonLd = {
 			<div class="recipe-filters" aria-label="Filtrer opskrifter">
 				<label>
 					Kategori
-					<select id="filter-category">
+					<select id="filter-category" class="filter-select">
 						<option value="">Alle kategorier</option>
 						{categories.map((category) => <option value={category}>{category}</option>)}
 					</select>
 				</label>
 				<label>
 					Sæson
-					<select id="filter-season">
+					<select id="filter-season" class="filter-select">
 						<option value="">Alle sæsoner</option>
 						<option value="påske">Påske</option>
 						<option value="jul">Jul</option>
@@ -75,14 +75,14 @@ const jsonLd = {
 				</label>
 				<label>
 					Maks tid
-					<select id="filter-max-time">
+					<select id="filter-max-time" class="filter-select">
 						<option value="">Alle tider</option>
 						<option value="20">Under 20 min</option>
 						<option value="30">Under 30 min</option>
 						<option value="45">Under 45 min</option>
 					</select>
 				</label>
-				<button id="filter-reset" type="button" class="btn btn-ghost">Nulstil</button>
+				<button id="filter-reset" type="button" class="btn btn-ghost filter-reset-btn">Nulstil</button>
 			</div>
 			<p id="filter-count" class="filter-count" aria-live="polite">
 				Viser {recipes.length} opskrifter
@@ -157,7 +157,8 @@ const jsonLd = {
 		if (resetVisibleLimit) visibleLimit = INITIAL_VISIBLE;
 		const selectedCategory = category instanceof HTMLSelectElement ? category.value : '';
 		const selectedSeason = season instanceof HTMLSelectElement ? season.value : '';
-		const selectedMaxTime = maxTime instanceof HTMLSelectElement ? Number(maxTime.value) : NaN;
+		const selectedMaxTime =
+			maxTime instanceof HTMLSelectElement && maxTime.value ? Number(maxTime.value) : NaN;
 
 		const matched = [];
 		for (const item of items) {
@@ -230,15 +231,16 @@ const jsonLd = {
 		color: var(--muted-foreground);
 	}
 
-	.recipe-filters select {
+	.recipe-filters .filter-select {
 		width: 100%;
-		padding: 0.45rem 0.55rem;
+		padding: 0.35rem 0.5rem;
 		border: 1px solid var(--border-color);
 		border-radius: 0.5rem;
 		background: var(--surface);
 		color: var(--foreground);
-		font-size: 0.9rem;
-		min-height: 2.25rem;
+		font-size: 0.84rem;
+		line-height: 1.2;
+		min-height: 1.95rem;
 	}
 
 	.filter-count {
@@ -251,9 +253,10 @@ const jsonLd = {
 		margin: 0 0 0.75rem;
 	}
 
-	#filter-reset {
-		min-height: 2.25rem;
-		padding: 0.45rem 0.7rem;
+	#filter-reset.filter-reset-btn {
+		min-height: 1.95rem;
+		padding: 0.3rem 0.6rem;
+		font-size: 0.84rem;
 	}
 
 	.filter-empty {
