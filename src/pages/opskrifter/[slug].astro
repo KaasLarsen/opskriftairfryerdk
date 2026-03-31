@@ -51,6 +51,8 @@ const recipeJson: Record<string, unknown> = {
 	name: d.title,
 	description: d.description,
 	image: [absImage],
+	mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+	inLanguage: 'da-DK',
 	author: {
 		'@type': 'Organization',
 		name: SITE_NAME,
@@ -69,6 +71,7 @@ const recipeJson: Record<string, unknown> = {
 	recipeInstructions: d.instructions.map((step, idx) => ({
 		'@type': 'HowToStep',
 		position: idx + 1,
+		name: `Trin ${idx + 1}`,
 		text: step.text,
 	})),
 };
@@ -136,6 +139,7 @@ const articleLd = {
 	headline: d.title,
 	description: d.description,
 	image: [absImage],
+	inLanguage: 'da-DK',
 	datePublished: d.pubDate.toISOString(),
 	dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
 	author: { '@id': `${SITE_URL}/#organization` },

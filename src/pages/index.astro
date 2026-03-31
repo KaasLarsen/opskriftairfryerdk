@@ -10,6 +10,37 @@ const featured = allRecipes
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 5);
 
+const popular = allRecipes
+	.filter((r) => r.data.featured !== false)
+	.sort(
+		(a, b) =>
+			(b.data.updatedDate ?? b.data.pubDate).valueOf() -
+			(a.data.updatedDate ?? a.data.pubDate).valueOf(),
+	)
+	.slice(0, 6);
+
+function hasRecipeKeyword(
+	recipe: (typeof allRecipes)[number],
+	pattern: RegExp,
+): boolean {
+	const haystack = [recipe.data.title, recipe.data.category, ...recipe.data.keywords].join(' ');
+	return pattern.test(haystack.toLowerCase());
+}
+
+const easter = allRecipes
+	.filter((r) =>
+		hasRecipeKeyword(
+			r,
+			/(påske|fisk|laks|kartof|medister|flæskesteg|ribbensteg|kyllingelår)/i,
+		),
+	)
+	.slice(0, 6);
+
+const quick = allRecipes
+	.filter((r) => r.data.prepMinutes + r.data.cookMinutes <= 30)
+	.sort((a, b) => a.data.prepMinutes + a.data.cookMinutes - (b.data.prepMinutes + b.data.cookMinutes))
+	.slice(0, 6);
+
 const site = Astro.site ?? new URL(SITE_URL);
 const ogImage = new URL('/images/hero-forside.png', site).toString();
 
@@ -76,6 +107,45 @@ const jsonLd = {
 			</div>
 			<div class="recipe-grid">
 				{featured.map((recipe) => <RecipeCard recipe={recipe} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--tight-top">
+		<div class="container">
+			<div class="section-head">
+				<p class="section-kicker">Sæson</p>
+				<h2>Påske-favoritter</h2>
+				<p>Klassiske retter og tilbehør, som passer godt til påskebordet.</p>
+			</div>
+			<div class="recipe-grid">
+				{easter.map((recipe) => <RecipeCard recipe={recipe} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--tight-top">
+		<div class="container">
+			<div class="section-head">
+				<p class="section-kicker">Populært</p>
+				<h2>Mest populære lige nu</h2>
+				<p>Opskrifter vi fremhæver mest, og som besøgende typisk starter med.</p>
+			</div>
+			<div class="recipe-grid">
+				{popular.map((recipe) => <RecipeCard recipe={recipe} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--tight-top">
+		<div class="container">
+			<div class="section-head">
+				<p class="section-kicker">Hurtigt</p>
+				<h2>Under 30 minutter</h2>
+				<p>Når det skal gå stærkt, men stadig smage af noget.</p>
+			</div>
+			<div class="recipe-grid">
+				{quick.map((recipe) => <RecipeCard recipe={recipe} />)}
 			</div>
 		</div>
 	</section>
