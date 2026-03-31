@@ -69,3 +69,11 @@ Nuggets har høj søgeinteresse og er en stærk hverdagsopskrift, fordi den er e
 ### Forslag til dip
 
 Prøv klassisk ketchup, honning-sennep, mild aioli eller yoghurt-dip med citron og purløg.
+
+### Sådan får du ens nuggets hver gang
+
+Skær stykkerne nogenlunde samme størrelse, så de bliver færdige samtidig. Hvis nogle nuggets er meget større, bliver de små let tørre, mens de store mangler tid. Ens størrelse er den nemmeste vej til et stabilt resultat.
+
+### Gode serveringsidéer
+
+Nuggets fungerer både som hovedret og snack. Servér med grove fritter, grønt og to slags dip, så alle ved bordet kan vælge. Det gør retten ekstra anvendelig i familier med forskellige præferencer.

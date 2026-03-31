@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer broccoli – sprød og grøn på 12 minutter'
 description: 'Broccoli i airfryer med let sprød kant og saftig bid. Nem tilbehørsopskrift med tid, temperatur og krydring.'
+heroImage: '/images/recipes/airfryer-broccoli.png'
+heroAlt: 'Sprødstegt broccoli med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 6
@@ -56,3 +58,11 @@ faq:
 ### Hurtigt grønt med høj relevans
 
 Broccoli er et populært "sundt tilbehør"-søgeord og giver god intern linking til mange hovedretter.
+
+### Undgå blød broccoli
+
+Våd broccoli damper i kurven og mister den lette sprødhed. Sørg derfor for at tørre buketterne efter skylning, og brug kun en lille mængde olie. Et enkelt lag i kurven gør en større forskel end de fleste tror.
+
+### Nem variation med ekstra smag
+
+Prøv at afslutte med revet citronskal, chiliflager eller ristede sesamfrø. Små toppings gør broccoli mere interessant og kan få grøntsager til at glide lettere ned hos både børn og voksne.

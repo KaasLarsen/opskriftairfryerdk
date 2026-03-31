@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer falafler – sprøde uden friture'
 description: 'Falafler i airfryer med sprød yderside og blød midte. Nem vegetarisk opskrift med tid, temperatur og tips.'
+heroImage: '/images/recipes/airfryer-falafler.png'
+heroAlt: 'Sprøde gyldne falafler med dip og friske grøntsager på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 20
@@ -63,3 +65,11 @@ faq:
 ### Stærk vegetar-trafik
 
 Falafler er en populær vegetarisk søgning og supplerer jeres eksisterende kød/fisk-opskrifter godt.
+
+### Form og størrelse betyder meget
+
+Mindre falafler får mere overflade og bliver hurtigere sprøde. Hvis du ønsker en blødere midte, kan du lave dem lidt større og fladere. Test én første omgang, og justér form og tid til præcis den tekstur du foretrækker.
+
+### Servering i hverdagen
+
+Falafler er ideelle til pita med salat, tomat og dressing, men de fungerer også godt i en bowl med ris eller bulgur. Lav gerne en dobbelt portion, så du har hurtig vegetarprotein klar til næste dags frokost.

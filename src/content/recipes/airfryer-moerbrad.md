@@ -67,3 +67,11 @@ Søgninger som **"mørbrad i airfryer tid"** og **"svinemørbrad temperatur"** e
 ### Smagsvariationer
 
 Skift krydring til sennep/honning, hvidløg/smør eller urter alt efter sæson og tilbehør.
+
+### Skæring og hvile gør forskellen
+
+Selv en perfekt stegt mørbrad kan virke tør, hvis den skæres med det samme. Lad den hvile, og skær derefter på tværs af fibrene i jævne skiver. Det giver en tydeligt mere mør og saftig spiseoplevelse.
+
+### Variation i krydring
+
+Du kan bruge samme grundopskrift året rundt og blot variere krydderier: timian/rosmarin til klassisk stil, paprika/hvidløg til hverdagsversion eller sennep/honning til en sød-syrlig profil.

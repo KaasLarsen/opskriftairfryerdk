@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer blomkål – gyldne buketter med masser af smag'
 description: 'Blomkål i airfryer med sprøde kanter og mør midte. Nem opskrift med tid, temperatur og krydring.'
+heroImage: '/images/recipes/airfryer-blomkaal.png'
+heroAlt: 'Gyldne sprøde blomkålsbuketter med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 8
@@ -56,3 +58,11 @@ faq:
 ### Sundt tilbehør med stabil søgning
 
 Blomkål i airfryer matcher brugere, der søger hurtige grøntsager med lav indsats.
+
+### Konsistens: mør eller med bid
+
+Vil du have blomkål med mere bid, så tag den ud i den lave ende af tidsintervallet. Vil du have en blødere, mere "ovnbagt" version, kan du give 2-3 minutter ekstra. Det gør det let at tilpasse opskriften til børn eller voksne.
+
+### Krydderier der passer godt
+
+Blomkål tager godt imod varme krydderier som paprika, karry og spidskommen. Du kan også gå i en frisk retning med citron og persille. Skift krydring efter hovedret, så blomkålen fungerer som aktivt tilbehør i stedet for neutralt fyld.

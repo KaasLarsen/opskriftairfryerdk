@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer bacon – sprødt bacon på få minutter'
 description: 'Sprødt bacon i airfryer med kort tid og enkel metode. Nem guide til temperatur, stegning i hold og rengøring.'
+heroImage: '/images/recipes/airfryer-bacon.png'
+heroAlt: 'Sprøde stegte baconskiver på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 3
@@ -52,3 +54,11 @@ faq:
 ### Lille opskrift med stor trafik
 
 Bacon er en klassisk "hurtigt svar"-søgning, som mange klikker på for præcis tid og temperatur.
+
+### Tykkelse og stegning i praksis
+
+Bacon varierer meget mellem mærker. Tynd morgenmadsbacon bliver hurtigt færdig, mens kraftige skiver kræver længere tid for at blive sprøde i midten. Start derfor altid med laveste anbefalede tid og giv 1 minut ad gangen, indtil du rammer den sprødhed du vil have.
+
+### Brug bacon i flere retter
+
+Sprødt bacon er perfekt som topping på salat, kartoffelretter, æg og supper. Knus baconen groft lige før servering, så den holder sin tekstur længere. Hvis du meal prepper, så opbevar den separat fra fugtige ingredienser.

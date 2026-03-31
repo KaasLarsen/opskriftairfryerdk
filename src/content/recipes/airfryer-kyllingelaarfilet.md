@@ -69,3 +69,11 @@ Brugere søger ofte meget konkret efter **"kyllingelårfilet airfryer tid"** og 
 ### Sådan undgår du tør kylling
 
 Selv lårfilet kan blive tør ved for lang tid. Tjek derfor tidligt, især hvis fileterne er små eller tynde.
+
+### Hurtig meal prep med lårfilet
+
+Kyllingelårfilet er oplagt til meal prep, fordi kødet holder sig saftigt efter opvarmning. Skær i strimler og brug i wraps, pastasalat eller risbowls. Det gør det nemt at bygge flere måltider på én tilberedning.
+
+### Smagsretninger du kan skifte mellem
+
+Prøv klassisk paprika/hvidløg til hverdagen, eller gå med karry, chili og lime for en mere krydret version. Den samme grundteknik i airfryer kan bruges til mange forskellige profiler uden at ændre tid ret meget.

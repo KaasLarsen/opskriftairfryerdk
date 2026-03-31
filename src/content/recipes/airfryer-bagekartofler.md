@@ -64,3 +64,11 @@ Søgningen på bagekartofler er stabil året rundt. Derfor er denne type opskrif
 ### Variationer du kan lave hurtigt
 
 Prøv kryddersmør, hvidløgscreme eller chili-olie på toppen for at variere uden at ændre grundmetoden.
+
+### Vælg kartofler med samme størrelse
+
+Ens størrelse betyder ens tilberedning. Hvis én kartoffel er markant større end de andre, bliver den ofte underfærdig i midten, mens de små bliver for tørre. Hold derfor kartoflerne inden for nogenlunde samme vægt, så hele portionen er klar samtidigt.
+
+### Fyld der løfter retten
+
+En god bagekartoffel kan gå fra simpelt til rigtig lækkert med få toppings: smør og flagesalt, cremefraiche med urter, revet ost eller en tuncreme med citron. Når kartoflen er dampet op indeni med gaffel, optager den smag bedre.

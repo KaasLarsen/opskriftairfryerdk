@@ -65,3 +65,11 @@ Søgninger som **"medister i airfryer"** og **"medister tid airfryer"** er meget
 ### Serveringsforslag
 
 Prøv med [airfryer bagekartofler](/opskrifter/airfryer-bagekartofler), stuvet grønt eller klassisk rødkål for en dansk tallerken.
+
+### Hvorfor medister passer godt i airfryer
+
+Medister har naturligt fedtindhold, som gør den velegnet til varmluft. Når pølsen vendes undervejs, får du mere ensartet overflade og stabil gennemstegning. Metoden er enkel og kræver minimal aktiv tid.
+
+### Tilbehør der matcher
+
+Medister er god med både klassiske og lettere sider. Prøv fx kartofler og rødkål, eller en grøn salat med syrlig dressing for balance. Den milde pølsesmag er nem at kombinere med mange typer tilbehør.

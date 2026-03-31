@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer hakkebøf – saftig bøf uden stegepande'
 description: 'Hakkebøf i airfryer med god stegeskorpe og saftig midte. Nem opskrift med tid, temperatur og tips til formning.'
+heroImage: '/images/recipes/airfryer-hakkeboef.png'
+heroAlt: 'Saftig hakkebøf med brun sovs og kartofler på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10
@@ -58,3 +60,11 @@ faq:
 ### Klassisk dansk comfort food
 
 Hakkebøf er en genkendelig ret med stærk søgeintention i hverdage.
+
+### Vælg den rigtige fars
+
+Fars med lidt fedt giver mere saftige bøffer. Meget mager fars kan sagtens bruges, men kræver kortere tid og mere præcis overvågning. Når bøfferne formes med let fordybning i midten, holder de formen bedre under stegning.
+
+### Klassiske danske sides
+
+Hvis du vil gå helt klassisk, så server med bløde løg, brun sovs og kartofler. Til en lettere version kan du vælge grøn salat og syltede rødløg. Hakkebøf er fleksibel og passer til begge retninger.

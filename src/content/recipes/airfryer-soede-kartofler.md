@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer søde kartofler – sprøde fries og både'
 description: 'Søde kartofler i airfryer med karamelliseret kant og blød midte. Nem opskrift med tid, temperatur og krydderiforslag.'
+heroImage: '/images/recipes/airfryer-soede-kartofler.png'
+heroAlt: 'Sprøde søde kartoffelfritter med cremet dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10
@@ -57,3 +59,11 @@ faq:
 ### Populær long-tail opskrift
 
 Søgeord om søde kartofler i airfryer er stabile og matcher sundere hverdags-intent.
+
+### Sådan får du bedre overflade
+
+Søde kartofler indeholder mere sukker og bliver derfor hurtigere mørke end almindelige kartofler. Hold øje i de sidste minutter, og steg i mindre hold for at undgå blød tekstur. Et lille drys stivelse kan give mere bid i kanten.
+
+### Smagskombinationer
+
+Søde kartofler passer godt med både stærke og syrlige dips. Prøv chipotle-mayo, lime-yoghurt eller en klassisk hvidløgsdip. Det gør dem til et alsidigt tilbehør til både fisk, kylling og vegetarretter.

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer BBQ kyllingelår – sticky glaze og sprød kant'
 description: 'BBQ kyllingelår i airfryer med karamelliseret glaze og saftigt kød. Nem opskrift med tid, temperatur og serveringsforslag.'
+heroImage: '/images/recipes/airfryer-bbq-kyllingelaar.png'
+heroAlt: 'BBQ-glaserede kyllingelår med blank overflade, dip og citron på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10
@@ -60,3 +62,11 @@ faq:
 ### Long-tail variant med høj intent
 
 Denne opskrift rammer søgninger med "bbq" + "airfryer", som ofte har høj klikvillighed.
+
+### Sådan får du balance i BBQ-smagen
+
+Mange BBQ-saucer er søde. For en bedre balance kan du tilsætte lidt syre i form af æblecidereddike eller citron ved servering. Det fremhæver kødet og gør retten mindre tung, især hvis du serverer den med kartofler eller brød.
+
+### Ekstra idé til servering
+
+Lav en hurtig coleslaw med kål, gulerod og en let dressing ved siden af. Den sprøde, friske side passer virkelig godt til den karamelliserede overflade på kyllingelårene og giver en mere komplet tallerken.

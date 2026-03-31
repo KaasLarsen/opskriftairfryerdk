@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer ribbensteg – sprød svær og saftigt kød'
 description: 'Ribbensteg i airfryer med fokus på sprød svær, saftigt kød og korrekt kernetemperatur. Trin-for-trin guide.'
+heroImage: '/images/recipes/airfryer-ribbensteg.png'
+heroAlt: 'Skåret ribbensteg med sprød svær, kartofler, rødkål og sovs på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 15
@@ -59,3 +61,11 @@ faq:
 ### En klassisk dansk søgning
 
 Ribbensteg er en stærk sæson- og weekendopskrift med høj intent, især omkring højtider.
+
+### Planlægning til weekend og højtid
+
+Ribbensteg er oplagt, når du vil servere noget klassisk uden at bruge hele ovnen. Med airfryer kan du få god kontrol over både kernetemperatur og svær, og samtidig holde resten af køkkenet fri til tilbehør.
+
+### Brug rester smart
+
+Rester af ribbensteg kan skæres i tynde skiver og bruges i sandwich med syrligt tilbehør. Det giver en ny ret dagen efter og reducerer madspild.

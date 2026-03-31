@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingespyd – saftige spyd med hurtig marinade'
 description: 'Kyllingespyd i airfryer med saftig midte og let stegeskorpe. Nem opskrift med tid, temperatur og tips til marinering.'
+heroImage: '/images/recipes/airfryer-kyllingespyd.png'
+heroAlt: 'Saftige grillede kyllingespyd med peberfrugt og rødløg på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 15
@@ -61,3 +63,11 @@ faq:
 ### Perfekt til hurtig hverdagsmad
 
 Kyllingespyd matcher stærk søgeintention, fordi mange vil have "noget nemt med kylling" uden at gå på kompromis med smag.
+
+### Træspyd eller metalspyd
+
+Træspyd er nemme og billige, men skal udblødes for ikke at tørre ud i varmen. Metalspyd er mere holdbare og kan genbruges mange gange. Uanset valg er det vigtigt, at der er luft mellem kødstykkerne.
+
+### Marinade med mere dybde
+
+Vil du have mere smag, kan du tilføje lidt yoghurt til marinaden. Det giver en mild syre og hjælper kødet med at holde sig saftigt. Tør dog overskydende marinade af før stegning for bedre farve.

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer koteletter – saftige koteletter med sprød stegeskorpe'
 description: 'Koteletter i airfryer med tydelig tid og temperatur, så de bliver gennemstegte uden at blive tørre. Nem hverdagsopskrift.'
+heroImage: '/images/recipes/airfryer-koteletter.png'
+heroAlt: 'Saftige stegte koteletter med kartofler og sovs på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 8
@@ -59,3 +61,11 @@ faq:
 ### God hverdagsopskrift med høj intent
 
 Søgninger på "koteletter i airfryer" er ofte konkrete og tæt på madlavning nu og her.
+
+### Tykke vs. tynde koteletter
+
+Tynde koteletter kræver kortere tid og bør tjekkes tidligt for at undgå tørhed. Tykke koteletter kan tåle lidt mere varme og tid. Derfor er det en fordel at købe koteletter med nogenlunde ens tykkelse i samme pakke.
+
+### Marinade eller tør krydring
+
+Tør krydring er hurtigst og giver god stegeskorpe. En kort marinade med olie, hvidløg og citron kan give mere smag, men tør kødet af før stegning, så overfladen stadig kan karamellisere pænt.
