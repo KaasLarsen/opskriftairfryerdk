@@ -1,0 +1,74 @@
+---
+title: 'Airfryer flæskesteg – sådan får du sprød svær'
+description: 'Flæskesteg i airfryer med fokus på sprød svær, saftigt kød og korrekt kernetemperatur. Nem trin-for-trin guide til både hverdag og gæster.'
+pubDate: 2026-03-31
+updatedDate: 2026-03-31
+prepMinutes: 15
+cookMinutes: 55
+servings: '4-6 portioner'
+calories: 'Ca. 520 kcal pr. portion'
+category: 'Hovedret'
+cuisine: 'Dansk'
+temperatureC: 180
+keywords:
+  - airfryer flæskesteg
+  - flæskesteg i airfryer
+  - sprød svær airfryer
+  - flæskesteg tid airfryer
+  - dansk flæskesteg
+featured: true
+intro: |
+  Flæskesteg i airfryer kan give overraskende sprød svær, hvis du forbereder rigtigt: snit helt ned til fedtet (ikke kødet), salt grundigt mellem sværene og sørg for at stegen ligger i vater.
+
+  Mange oplever, at sværen bliver blød i stedet for sprød. Det skyldes ofte for lidt salt, ujævn placering eller at stegen får for lav slutvarme. Derfor bruger vi en todelt metode med rolig stegning først og højere varme til sidst.
+
+  Resultatet er en flæskesteg, der både fungerer til søndag og til mindre julemenuer, hvor du ikke vil fylde hele ovnen.
+conclusion: |
+  Når stegen har hvilet, får du pænere skiver og mindre safttab på skærebrættet. Husk at skære mellem sværene med en skarp kniv, så de ikke knækker af i store stykker.
+
+  Server klassisk med kartofler, rødkål og sovs, eller lav en enklere hverdagsversion med grov salat og ovnbagte rodfrugter.
+
+  Har du rester, er flæskesteg genialt i sandwich dagen efter.
+ingredients:
+  - text: '1,2-1,5 kg svinekam med ridset svær'
+  - text: '2-3 tsk groft salt'
+  - text: 'Friskkværnet peber'
+  - text: '1 løg i både (valgfrit, til aroma)'
+  - text: '2 dl vand til bunden (i form/skuffe, hvis din model tillader det)'
+instructions:
+  - text: 'Kontrollér at sværene er skåret helt ned til fedtlaget. Dup stegen tør.'
+  - text: 'Gnid salt grundigt ned mellem alle svær. Krydr let med peber på kødsiden.'
+  - text: 'Læg stegen så sværen ligger så vandret som muligt. Brug evt. en lille folieklods under den ene side.'
+  - text: 'Forvarm airfryeren til 180 °C.'
+  - text: 'Steg 45-50 minutter ved 180 °C.'
+  - text: 'Mål kernetemperaturen i midten af kødet. Sigt efter 63-65 °C før sidste fase.'
+  - text: 'Skru op til 200 °C og giv 8-12 minutter, til sværen bobler og bliver sprød. Hold tæt øje.'
+  - text: 'Lad stegen hvile 10 minutter før udskæring.'
+tips:
+  - 'Salt mellem hver eneste svær er vigtigere end ekstra krydderier.'
+  - 'Hvis enkelte svær er bløde, kan du give 2-3 minutter ekstra med fokus på toppen.'
+  - 'Brug altid termometer. Det gør resultatet langt mere stabilt.'
+faq:
+  - question: 'Kan man virkelig lave flæskesteg i airfryer?'
+    answer: 'Ja. En god airfryer kan give både sprød svær og saftigt kød, hvis stegen er korrekt forberedt og ligger jævnt under stegning.'
+  - question: 'Hvilken temperatur er bedst til flæskesteg i airfryer?'
+    answer: 'En kombination virker bedst: cirka 180 °C til gennemstegning og 200 °C til sidst for at poppe sværen.'
+  - question: 'Hvor lang tid skal flæskesteg have i airfryer?'
+    answer: 'Ofte 55-65 minutter i alt for 1,2-1,5 kg, men tid varierer efter model og tykkelse. Brug kernetemperatur som primær kontrol.'
+  - question: 'Hvad gør jeg hvis sværen ikke bliver sprød?'
+    answer: 'Tjek først om sværen er saltet mellem alle riller og ligger vandret. Giv derefter kort ekstra tid ved høj varme under opsyn.'
+  - question: 'Kan jeg lave sovs af stegesky?'
+    answer: 'Ja, hvis din model og opsætning giver opsamlet væske. Ellers kan du lave en separat hurtig sovs i gryde.'
+---
+
+### Fokusord folk søger på
+
+Opskriften rammer typiske spørgsmål som **"sprød svær airfryer"**, **"flæskesteg temperatur"** og **"hvor lang tid flæskesteg i airfryer"**.
+
+### Sådan får du ensartet svær
+
+Hvis stegen hælder, bliver den ene side ofte blød. Brug derfor en lille støtte under stegen, så sværen ligger plant mod varmeflowet.
+
+### Restemad med flæskesteg
+
+Skær rester i tynde skiver og brug dem i sandwich med syltede agurker, rødkål og sennepsmayo.
