@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer honning-gulerødder – sødt og sprødt påske-tilbehør'
 description: 'Gulerødder i airfryer med honning, timian og let karamellisering. Nem opskrift til påske, hverdagsmad og gæstemenu.'
+heroImage: '/images/recipes/airfryer-honning-guleroedder.png'
+heroAlt: 'Glaserede honning-gulerødder med timian på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 8

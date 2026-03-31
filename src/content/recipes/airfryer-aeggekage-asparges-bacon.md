@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer æggekage med asparges og bacon – nem påskebrunch'
 description: 'Nem æggekage i airfryer med sprød bacon og grønne asparges. Perfekt til påskefrokost eller brunch med få ingredienser.'
+heroImage: '/images/recipes/airfryer-aeggekage-asparges-bacon.png'
+heroAlt: 'Luftig æggekage toppet med grønne asparges og sprød bacon på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10

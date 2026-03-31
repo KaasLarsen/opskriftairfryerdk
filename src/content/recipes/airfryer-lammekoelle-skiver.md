@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer lammekølle i skiver – saftig påskemiddag uden ovn'
 description: 'Lammekølle i skiver i airfryer med hvidløg, rosmarin og præcis kernetemperatur. Nem påskeopskrift med tid og temperatur.'
+heroImage: '/images/recipes/airfryer-lammekoelle-skiver.png'
+heroAlt: 'Skiver af saftig lammekølle med kartofler og grønne bønner på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 12

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer påskeskinke i skiver – glaseret med honning og sennep'
 description: 'Saftige skiver påskeskinke i airfryer med sød-skarp glasering. Nem opskrift med tid, temperatur og serveringsidéer til påske.'
+heroImage: '/images/recipes/airfryer-paaskeskinke.png'
+heroAlt: 'Glaseret påskeskinke i skiver på skærebræt med kartofler og cornichoner'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 8

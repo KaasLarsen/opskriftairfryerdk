@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer varm kartoffelsalat – sprøde kartofler og frisk dressing'
 description: 'Varm kartoffelsalat i airfryer med sprøde kartofler, urter og sennepsdressing. Perfekt til påske, grill og hverdagsmad.'
+heroImage: '/images/recipes/airfryer-varm-kartoffelsalat.png'
+heroAlt: 'Varm kartoffelsalat med urter og sennepsdressing i skål på træbord foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 12
