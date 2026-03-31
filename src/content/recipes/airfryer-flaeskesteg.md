@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer flæskesteg – sådan får du sprød svær'
 description: 'Flæskesteg i airfryer med fokus på sprød svær, saftigt kød og korrekt kernetemperatur. Nem trin-for-trin guide til både hverdag og gæster.'
+heroImage: '/images/recipes/airfryer-flaeskesteg.png'
+heroAlt: 'Flæskesteg med sprød svær, brun sovs, kartofler og rødkål serveret foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 15

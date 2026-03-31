@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingelårfilet – saftig kylling med sprød kant'
 description: 'Kyllingelårfilet i airfryer med masser af smag, kort tilberedningstid og høj saftighed. Nem opskrift med temperatur, tid og kernetemperatur.'
+heroImage: '/images/recipes/airfryer-kyllingelaarfilet.png'
+heroAlt: 'Saftige stegte kyllingelårfileter i skiver med citron, grøn salat og dip foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10

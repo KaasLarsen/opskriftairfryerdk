@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer fiskefilet – sprød panering uden friture'
 description: 'Fiskefilet i airfryer med gylden panering og saftig fisk. Nem opskrift med tid, temperatur og tips til at undgå tør fisk eller løs panering.'
+heroImage: '/images/recipes/airfryer-fiskefilet.png'
+heroAlt: 'Sprøde panerede fiskefileter med citron og persille på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 15

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer bagekartofler – sprød skræl og blød midte'
 description: 'Bagekartofler i airfryer med perfekt tekstur. Nem guide til størrelse, tid, temperatur og fyld.'
+heroImage: '/images/recipes/airfryer-bagekartofler.png'
+heroAlt: 'Fire sprøde bagekartofler med smør, cremefraiche og purløg på en tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 5

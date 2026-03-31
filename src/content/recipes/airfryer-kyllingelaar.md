@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingelår – sprødt skind og saftigt kød'
 description: 'Kyllingelår i airfryer med sprød overflade og saftig midte. Komplet guide med tid, temperatur, kernetemperatur og fejl du skal undgå.'
+heroImage: '/images/recipes/airfryer-kyllingelaar.png'
+heroAlt: 'Sprøde gyldne kyllingelår med citron og urtedip serveret foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10
