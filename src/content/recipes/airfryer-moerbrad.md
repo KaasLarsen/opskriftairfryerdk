@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer mørbrad af svin – mør og saftig hver gang'
 description: 'Svinemørbrad i airfryer med flot stegeskorpe og saftig midte. Tydelig guide med temperatur, stegetid og hviletid.'
+heroImage: '/images/recipes/airfryer-moerbrad.png'
+heroAlt: 'Saftig skåret svinemørbrad med kartofler og grøn salat på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10

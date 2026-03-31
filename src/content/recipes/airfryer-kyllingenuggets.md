@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingenuggets – hjemmelavede og sprøde'
 description: 'Hjemmelavede nuggets i airfryer med sprød panering og saftig kylling. Nem opskrift med tid, temperatur og børnevenlige tips.'
+heroImage: '/images/recipes/airfryer-kyllingenuggets.png'
+heroAlt: 'Sprøde hjemmelavede kyllingenuggets med ketchup og dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 15

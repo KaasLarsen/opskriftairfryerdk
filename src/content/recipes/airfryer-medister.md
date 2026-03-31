@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer medister – saftig pølse med sprød overflade'
 description: 'Medister i airfryer med korrekt tid og temperatur, så den bliver gennemstegt og saftig. Nem dansk hverdagsopskrift.'
+heroImage: '/images/recipes/airfryer-medister.png'
+heroAlt: 'Skiver af saftig medister med sovs, kartofler og rødkål på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 5

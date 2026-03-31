@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingevinger – crispy wings uden friture'
 description: 'Kyllingevinger i airfryer med sprød overflade og saftigt kød. Nem opskrift med tid, temperatur, krydring og sauce-idéer.'
+heroImage: '/images/recipes/airfryer-kyllingevinger.png'
+heroAlt: 'Sprøde krydrede kyllingevinger med dip og citron på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10

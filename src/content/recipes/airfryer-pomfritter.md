@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer pomfritter – sprøde pommes frites fra kartofler'
 description: 'Hjemmelavede pomfritter i airfryer med sprød yderside og blød midte. Guide til udskæring, udvanding, tid og temperatur.'
+heroImage: '/images/recipes/airfryer-pomfritter.png'
+heroAlt: 'Sprøde gyldne pomfritter med ketchup og dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 20
