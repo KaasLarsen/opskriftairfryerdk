@@ -87,6 +87,7 @@ const jsonLd = {
 			<p id="filter-count" class="filter-count" aria-live="polite">
 				Viser {recipes.length} opskrifter
 			</p>
+			<p id="filter-empty" class="filter-empty" hidden>Ingen opskrifter matcher dine filtre endnu.</p>
 			<div class="recipe-grid" id="recipes-grid">
 				{
 					recipes.map((recipe) => (
@@ -101,6 +102,9 @@ const jsonLd = {
 					))
 				}
 			</div>
+			<div class="load-more-wrap">
+				<button id="load-more" type="button" class="btn btn-secondary">Vis flere</button>
+			</div>
 		</div>
 	</section>
 </BaseLayout>
@@ -111,7 +115,12 @@ const jsonLd = {
 	const maxTime = document.getElementById('filter-max-time');
 	const reset = document.getElementById('filter-reset');
 	const count = document.getElementById('filter-count');
+	const empty = document.getElementById('filter-empty');
+	const loadMore = document.getElementById('load-more');
 	const items = Array.from(document.querySelectorAll('.filter-item'));
+	const INITIAL_VISIBLE = 30;
+	const STEP_VISIBLE = 12;
+	let visibleLimit = INITIAL_VISIBLE;
 
 	function updateUrl() {
 		const params = new URLSearchParams(window.location.search);
@@ -144,12 +153,13 @@ const jsonLd = {
 		if (maxTid && maxTime instanceof HTMLSelectElement) maxTime.value = maxTid;
 	}
 
-	function applyFilters() {
+	function applyFilters(resetVisibleLimit = false) {
+		if (resetVisibleLimit) visibleLimit = INITIAL_VISIBLE;
 		const selectedCategory = category instanceof HTMLSelectElement ? category.value : '';
 		const selectedSeason = season instanceof HTMLSelectElement ? season.value : '';
 		const selectedMaxTime = maxTime instanceof HTMLSelectElement ? Number(maxTime.value) : NaN;
 
-		let visible = 0;
+		const matched = [];
 		for (const item of items) {
 			const itemCategory = item.getAttribute('data-category') ?? '';
 			const itemSeason = item.getAttribute('data-season') ?? '';
@@ -159,26 +169,48 @@ const jsonLd = {
 			const matchSeason = !selectedSeason || itemSeason === selectedSeason;
 			const matchTime = Number.isNaN(selectedMaxTime) || itemTotalMinutes <= selectedMaxTime;
 
-			const show = matchCategory && matchSeason && matchTime;
-			item.toggleAttribute('hidden', !show);
-			if (show) visible += 1;
+			const isMatch = matchCategory && matchSeason && matchTime;
+			if (isMatch) matched.push(item);
 		}
 
-		if (count) count.textContent = `Viser ${visible} opskrifter`;
+		for (const item of items) item.hidden = true;
+		for (const item of matched.slice(0, visibleLimit)) item.hidden = false;
+
+		const shown = Math.min(visibleLimit, matched.length);
+		if (count) {
+			count.textContent =
+				matched.length > shown
+					? `Viser ${shown} af ${matched.length} opskrifter`
+					: `Viser ${shown} opskrifter`;
+		}
+
+		if (empty) empty.toggleAttribute('hidden', matched.length !== 0);
+
+		if (loadMore instanceof HTMLButtonElement) {
+			const hasMore = matched.length > shown;
+			loadMore.hidden = !hasMore;
+			loadMore.textContent = hasMore ? `Vis flere (${matched.length - shown} tilbage)` : 'Vis flere';
+		}
+
 		updateUrl();
 	}
 
 	hydrateFromUrl();
-	applyFilters();
+	applyFilters(true);
 
-	category?.addEventListener('change', applyFilters);
-	season?.addEventListener('change', applyFilters);
-	maxTime?.addEventListener('change', applyFilters);
+	category?.addEventListener('change', () => applyFilters(true));
+	season?.addEventListener('change', () => applyFilters(true));
+	maxTime?.addEventListener('change', () => applyFilters(true));
 	reset?.addEventListener('click', () => {
 		if (category instanceof HTMLSelectElement) category.value = '';
 		if (season instanceof HTMLSelectElement) season.value = '';
 		if (maxTime instanceof HTMLSelectElement) maxTime.value = '';
-		applyFilters();
+		applyFilters(true);
+	});
+
+	loadMore?.addEventListener('click', () => {
+		visibleLimit += STEP_VISIBLE;
+		applyFilters(false);
 	});
 </script>
 
@@ -186,25 +218,27 @@ const jsonLd = {
 	.recipe-filters {
 		display: grid;
 		grid-template-columns: repeat(4, minmax(0, 1fr));
-		gap: 0.75rem;
+		gap: 0.5rem;
 		margin: 0 0 0.75rem;
 		align-items: end;
 	}
 
 	.recipe-filters label {
 		display: grid;
-		gap: 0.35rem;
-		font-size: 0.9rem;
+		gap: 0.2rem;
+		font-size: 0.82rem;
 		color: var(--muted-foreground);
 	}
 
 	.recipe-filters select {
 		width: 100%;
-		padding: 0.65rem 0.75rem;
+		padding: 0.45rem 0.55rem;
 		border: 1px solid var(--border-color);
-		border-radius: 0.65rem;
+		border-radius: 0.5rem;
 		background: var(--surface);
 		color: var(--foreground);
+		font-size: 0.9rem;
+		min-height: 2.25rem;
 	}
 
 	.filter-count {
@@ -215,6 +249,22 @@ const jsonLd = {
 
 	.filter-links {
 		margin: 0 0 0.75rem;
+	}
+
+	#filter-reset {
+		min-height: 2.25rem;
+		padding: 0.45rem 0.7rem;
+	}
+
+	.filter-empty {
+		margin: 0 0 1rem;
+		color: var(--muted-foreground);
+	}
+
+	.load-more-wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 1rem;
 	}
 
 	@media (max-width: 900px) {
