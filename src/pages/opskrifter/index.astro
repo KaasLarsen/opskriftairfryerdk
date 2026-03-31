@@ -8,6 +8,20 @@ const recipes = (await getCollection('recipes')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+function inferSeason(recipe: (typeof recipes)[number]): string {
+	const haystack = [recipe.data.title, recipe.data.category, ...recipe.data.keywords]
+		.join(' ')
+		.toLowerCase();
+	if (/(påske|lam|skinke|asparges)/.test(haystack)) return 'påske';
+	if (/(jul|and|flæskesteg|ribbensteg)/.test(haystack)) return 'jul';
+	if (/(grill|sommer|salat)/.test(haystack)) return 'sommer';
+	return 'hele-året';
+}
+
+const categories = [...new Set(recipes.map((r) => r.data.category))].sort((a, b) =>
+	a.localeCompare(b, 'da'),
+);
+
 const title = `Alle airfryer-opskrifter`;
 const description =
 	'Oversigt over airfryer-opskrifter til hverdagen – kylling, fisk, kartofler, grønt og mere. Tydelige tider og temperaturer.';
@@ -38,9 +52,180 @@ const jsonLd = {
 					Hurtige idéer til travle dage – find noget, der passer til din airfryer og din tid.
 				</p>
 			</div>
-			<div class="recipe-grid">
-				{recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+			<div class="filter-links">
+				<a href="/opskrifter/saeson/paaske">Se alle Påske-opskrifter</a>
+			</div>
+			<div class="recipe-filters" aria-label="Filtrer opskrifter">
+				<label>
+					Kategori
+					<select id="filter-category">
+						<option value="">Alle kategorier</option>
+						{categories.map((category) => <option value={category}>{category}</option>)}
+					</select>
+				</label>
+				<label>
+					Sæson
+					<select id="filter-season">
+						<option value="">Alle sæsoner</option>
+						<option value="påske">Påske</option>
+						<option value="jul">Jul</option>
+						<option value="sommer">Sommer</option>
+						<option value="hele-året">Hele året</option>
+					</select>
+				</label>
+				<label>
+					Maks tid
+					<select id="filter-max-time">
+						<option value="">Alle tider</option>
+						<option value="20">Under 20 min</option>
+						<option value="30">Under 30 min</option>
+						<option value="45">Under 45 min</option>
+					</select>
+				</label>
+				<button id="filter-reset" type="button" class="btn btn-ghost">Nulstil</button>
+			</div>
+			<p id="filter-count" class="filter-count" aria-live="polite">
+				Viser {recipes.length} opskrifter
+			</p>
+			<div class="recipe-grid" id="recipes-grid">
+				{
+					recipes.map((recipe) => (
+						<div
+							class="filter-item"
+							data-category={recipe.data.category}
+							data-season={inferSeason(recipe)}
+							data-total-minutes={recipe.data.prepMinutes + recipe.data.cookMinutes}
+						>
+							<RecipeCard recipe={recipe} />
+						</div>
+					))
+				}
 			</div>
 		</div>
 	</section>
 </BaseLayout>
+
+<script>
+	const category = document.getElementById('filter-category');
+	const season = document.getElementById('filter-season');
+	const maxTime = document.getElementById('filter-max-time');
+	const reset = document.getElementById('filter-reset');
+	const count = document.getElementById('filter-count');
+	const items = Array.from(document.querySelectorAll('.filter-item'));
+
+	function updateUrl() {
+		const params = new URLSearchParams(window.location.search);
+		const selectedCategory = category instanceof HTMLSelectElement ? category.value : '';
+		const selectedSeason = season instanceof HTMLSelectElement ? season.value : '';
+		const selectedMaxTime = maxTime instanceof HTMLSelectElement ? maxTime.value : '';
+
+		if (selectedCategory) params.set('kategori', selectedCategory);
+		else params.delete('kategori');
+
+		if (selectedSeason) params.set('saeson', selectedSeason);
+		else params.delete('saeson');
+
+		if (selectedMaxTime) params.set('maxTid', selectedMaxTime);
+		else params.delete('maxTid');
+
+		const qs = params.toString();
+		const nextUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+		window.history.replaceState({}, '', nextUrl);
+	}
+
+	function hydrateFromUrl() {
+		const params = new URLSearchParams(window.location.search);
+		const kategori = params.get('kategori');
+		const saeson = params.get('saeson');
+		const maxTid = params.get('maxTid');
+
+		if (kategori && category instanceof HTMLSelectElement) category.value = kategori;
+		if (saeson && season instanceof HTMLSelectElement) season.value = saeson;
+		if (maxTid && maxTime instanceof HTMLSelectElement) maxTime.value = maxTid;
+	}
+
+	function applyFilters() {
+		const selectedCategory = category instanceof HTMLSelectElement ? category.value : '';
+		const selectedSeason = season instanceof HTMLSelectElement ? season.value : '';
+		const selectedMaxTime = maxTime instanceof HTMLSelectElement ? Number(maxTime.value) : NaN;
+
+		let visible = 0;
+		for (const item of items) {
+			const itemCategory = item.getAttribute('data-category') ?? '';
+			const itemSeason = item.getAttribute('data-season') ?? '';
+			const itemTotalMinutes = Number(item.getAttribute('data-total-minutes') ?? '0');
+
+			const matchCategory = !selectedCategory || itemCategory === selectedCategory;
+			const matchSeason = !selectedSeason || itemSeason === selectedSeason;
+			const matchTime = Number.isNaN(selectedMaxTime) || itemTotalMinutes <= selectedMaxTime;
+
+			const show = matchCategory && matchSeason && matchTime;
+			item.toggleAttribute('hidden', !show);
+			if (show) visible += 1;
+		}
+
+		if (count) count.textContent = `Viser ${visible} opskrifter`;
+		updateUrl();
+	}
+
+	hydrateFromUrl();
+	applyFilters();
+
+	category?.addEventListener('change', applyFilters);
+	season?.addEventListener('change', applyFilters);
+	maxTime?.addEventListener('change', applyFilters);
+	reset?.addEventListener('click', () => {
+		if (category instanceof HTMLSelectElement) category.value = '';
+		if (season instanceof HTMLSelectElement) season.value = '';
+		if (maxTime instanceof HTMLSelectElement) maxTime.value = '';
+		applyFilters();
+	});
+</script>
+
+<style>
+	.recipe-filters {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 0.75rem;
+		margin: 0 0 0.75rem;
+		align-items: end;
+	}
+
+	.recipe-filters label {
+		display: grid;
+		gap: 0.35rem;
+		font-size: 0.9rem;
+		color: var(--muted-foreground);
+	}
+
+	.recipe-filters select {
+		width: 100%;
+		padding: 0.65rem 0.75rem;
+		border: 1px solid var(--border-color);
+		border-radius: 0.65rem;
+		background: var(--surface);
+		color: var(--foreground);
+	}
+
+	.filter-count {
+		margin: 0 0 1rem;
+		color: var(--muted-foreground);
+		font-size: 0.95rem;
+	}
+
+	.filter-links {
+		margin: 0 0 0.75rem;
+	}
+
+	@media (max-width: 900px) {
+		.recipe-filters {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.recipe-filters {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

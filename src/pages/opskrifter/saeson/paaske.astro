@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RecipeCard from '../../../components/RecipeCard.astro';
+import { getCollection } from 'astro:content';
+import { SITE_NAME, SITE_URL } from '../../../consts';
+
+const allRecipes = (await getCollection('recipes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+function isEasterRecipe(recipe: (typeof allRecipes)[number]): boolean {
+	const haystack = [recipe.data.title, recipe.data.category, ...recipe.data.keywords]
+		.join(' ')
+		.toLowerCase();
+	return /(påske|lam|skinke|asparges)/.test(haystack);
+}
+
+const recipes = allRecipes.filter(isEasterRecipe);
+
+const title = 'Påske-opskrifter i airfryer';
+const description =
+	'Samling af påske-opskrifter i airfryer: lam, skinke, tilbehør og brunch med tydelige tider og temperaturer.';
+
+const jsonLd = {
+	'@type': 'ItemList',
+	itemListElement: recipes.map((r, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		url: new URL(`/opskrifter/${r.id}`, Astro.site ?? SITE_URL).toString(),
+		name: r.data.title,
+	})),
+};
+---
+
+<BaseLayout
+	title={`${title} | ${SITE_NAME}`}
+	{description}
+	canonicalPath="/opskrifter/saeson/paaske"
+	jsonLd={jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<div class="section-head">
+				<p class="section-kicker">Sæson</p>
+				<h1>Påske-opskrifter i airfryer</h1>
+				<p>
+					Favoritter til påskebordet: nemme hovedretter, grønt tilbehør og brunch-idéer med
+					tydelige tider.
+				</p>
+			</div>
+			<p class="back-link"><a href="/opskrifter">← Tilbage til alle opskrifter</a></p>
+			<div class="recipe-grid">
+				{recipes.map((recipe) => <RecipeCard recipe={recipe} />)}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.back-link {
+		margin: 0 0 1rem;
+	}
+</style>
