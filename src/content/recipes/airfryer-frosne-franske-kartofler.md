@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer frosne franske kartofler – sprøde fritter hver gang'
 description: 'Frosne franske kartofler i airfryer med korrekt tid, temperatur og mængde i kurven. Nem guide til ekstra sprøde fritter.'
+heroImage: '/images/recipes/airfryer-frosne-franske-kartofler.png'
+heroAlt: 'Sprøde gyldne frosne franske kartofler i skål med ketchup og mayo ved siden af'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 2

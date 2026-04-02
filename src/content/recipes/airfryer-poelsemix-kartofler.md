@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer pølsemix med kartofler – hurtig aftensmad i én kurv'
 description: 'Nem pølsemix i airfryer med kartofler, løg og peberfrugt. Hurtig hverdagsret med tydelig tid, temperatur og serveringstips.'
+heroImage: '/images/recipes/airfryer-poelsemix-kartofler.png'
+heroAlt: 'Pølsemix med stegte kartofler og løg serveret i skål foran en airfryer'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 10

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer squash – hurtigt grønt tilbehør med masser af smag'
 description: 'Squash i airfryer med sprøde kanter og mør midte. Nem opskrift med tid, temperatur og krydring til hverdag og gæster.'
+heroImage: '/images/recipes/airfryer-squash.png'
+heroAlt: 'Skiver af squash stegt i airfryer med urter og let gylden overflade'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 6

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kyllingelår uden ben – saftigt kød og sprød krydring'
 description: 'Kyllingelår uden ben i airfryer med tid, temperatur og kernetemperatur. Nem hverdagsopskrift med saftigt resultat.'
+heroImage: '/images/recipes/airfryer-kyllingelaar-uden-ben.png'
+heroAlt: 'Saftige airfryer kyllingelår uden ben serveret med citron og grøn salat'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 8

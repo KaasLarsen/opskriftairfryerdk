@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer frossen laks – direkte fra fryser til aftensmad'
 description: 'Frossen laks i airfryer med tid, temperatur og tips til saftigt resultat. Nem opskrift når du glemmer at tø fisken op.'
+heroImage: '/images/recipes/airfryer-frossen-laks.png'
+heroAlt: 'Frossen laks tilberedt i airfryer serveret med broccoli og citron på tallerken'
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
 prepMinutes: 4
