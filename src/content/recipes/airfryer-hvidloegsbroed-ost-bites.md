@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer hvidløgsbrød med ost – crispy bites'
 description: 'Hvidløgsbrød i airfryer med ost, sprød overflade og blød midte. Nem “café-bites” opskrift med tid og temperatur.'
+heroImage: '/images/recipes/airfryer-hvidloegsbroed-ost-bites.png'
+heroAlt: 'Crispy hvidløgsbrød-bites med smeltet ost og krydderi på fad'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 10

@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer halloumi – sprød café-halloumi med honning og citron'
 description: 'Halloumi i airfryer med sprød overflade. Honning og citron giver den “café-style” smag. Tid og temperatur med tips til sprødhed.'
+heroImage: '/images/recipes/airfryer-halloumi-honning-citron.png'
+heroAlt: 'Sprød airfryer halloumi med honning og citron på tallerken'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 8

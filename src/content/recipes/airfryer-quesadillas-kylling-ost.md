@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer quesadillas med kylling og ost – sprød tortilla'
 description: 'Quesadillas i airfryer med kylling og smeltet ost. Sprøde kanter uden pande — perfekt café-mad hjemme.'
+heroImage: '/images/recipes/airfryer-quesadillas-kylling-ost.png'
+heroAlt: 'Sprøde airfryer quesadillas med kylling og smeltet ost skåret i trekanter med salsa'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 12

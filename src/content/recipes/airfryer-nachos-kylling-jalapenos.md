@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer nachos med kylling og jalapenos – sprøde chips og ost'
 description: 'Nachos i airfryer med kylling, ost og jalapenos. Sprøde tortilla-chips, smeltet ost og nem servering som café-mad.'
+heroImage: '/images/recipes/airfryer-nachos-kylling-jalapenos.png'
+heroAlt: 'Airfryer nachos med kylling, jalapenos og smeltet ost på bakke med creme'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 10

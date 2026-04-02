@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer loaded fries med jalapenos og ost – café-stil'
 description: 'Loaded fries i airfryer med sprøde pommes frites fra bunden, ost, jalapenos og topping. Nem metode med tid, temperatur og sprødhed.'
+heroImage: '/images/recipes/airfryer-loaded-fries-jalapenos-ost.png'
+heroAlt: 'Loaded fries med smeltet ost, jalapenos, bacontern og creme på fad'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 10
