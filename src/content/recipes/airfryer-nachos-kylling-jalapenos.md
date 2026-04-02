@@ -1,0 +1,74 @@
+---
+title: 'Airfryer nachos med kylling og jalapenos – sprøde chips og ost'
+description: 'Nachos i airfryer med kylling, ost og jalapenos. Sprøde tortilla-chips, smeltet ost og nem servering som café-mad.'
+pubDate: 2026-04-02
+updatedDate: 2026-04-02
+prepMinutes: 10
+cookMinutes: 12
+servings: '4 portioner'
+calories: 'Ca. 520 kcal pr. portion'
+category: 'Hovedret'
+cuisine: 'Mexicansk inspireret'
+temperatureC: 190
+keywords:
+  - nachos airfryer
+  - nachos med kylling airfryer
+  - tortilla chips airfryer
+  - nachos tid og temperatur
+  - jalapenos nachos
+featured: false
+intro: |
+  Airfryer nachos er den nemme måde at få “café-nachos” hjemme: sprøde tortilla-chips, varm kylling og ost der smelter ensartet uden at chipsene bliver bløde.
+
+  I traditionel ovn bliver nachos ofte ujævnt: nogle områder bliver hårde, mens andre bliver slatne. Airfryeren cirkulerer varmen, så du får bedre sprødhed og hurtigere smeltning.
+
+  Denne opskrift tager udgangspunkt i færdig-grillet kylling eller kylling i små stykker, så du kan lave nachos på kort tid.
+conclusion: |
+  Servér nachos straks med salsa, cremefraiche (eller guacamole) og evt. ekstra jalapenos.
+
+  Vil du lave det til gæster, så kan du forberede toppings i skåle og først samle nachos i airfryeren lige før servering.
+
+  Nachos er også perfekte til film-aften, fordi du kan justere styrke uden at ændre grundmetoden.
+ingredients:
+  - text: '250 g færdig tilberedt kylling i strimler eller tern'
+  - text: '200 g tortilla-chips (evt. let salte)'
+  - text: '200 g revet ost (fx cheddar eller blanding)'
+  - text: '1 dl salsa (til servering)'
+  - text: '1/2 dl jalapenos (drænede)'
+  - text: '1/2 løg, i tynde skiver (valgfrit)'
+  - text: '1 tsk olie'
+  - text: '1 tsk tacokrydderi'
+  - text: '1 knsp salt (valgfrit)'
+instructions:
+  - text: 'Forvarm airfryeren til 190 °C.'
+  - text: 'Vend kyllingen med olie, tacokrydderi og evt. et lille knsp salt.'
+  - text: 'Fordel tortilla-chips i ét jævnt lag i en airfryer-egnet form eller kurv (eventuelt på bagepapir tilpasset).'
+  - text: 'Top med kylling, jalapenos og evt. løg. Slut med revet ost.'
+  - text: 'Steg 7-9 minutter, til osten bobler og chipsene stadig er sprøde.'
+  - text: 'Tag ud og lad hvile 1 minut. Servér med salsa og creme/guacamole ved siden af.'
+tips:
+  - 'Overfyld ikke: for meget topping gør chips bløde.'
+  - 'Er chipsene meget tynde, så start med 7 minutter og øg med 1 minut ad gangen.'
+  - 'Hvis du vil have ekstra sprød kant, så steg uden ost 2 minutter før du tilføjer osten sidste omgang.'
+faq:
+  - question: 'Kan man lave nachos i airfryer uden forvarmning?'
+    answer: 'Ja, men sprødheden bliver ofte bedst med forvarmning. Hvis du springer over, så steg typisk 1-2 minutter længere.'
+  - question: 'Hvor lang tid skal nachos have?'
+    answer: 'Typisk 7-9 minutter ved 190 °C, afhængigt af mængde og hvor “tykke” chipsene er.'
+  - question: 'Hvad gør nachos sprøde i airfryer?'
+    answer: 'Airfryerens luftflow og at du holder toppings i et jævnt lag. Undgå for meget væske ovenpå chipsene.'
+  - question: 'Kan jeg bruge hjemmelavede nachos?'
+    answer: 'Ja. Brug hvad du normalt ville bruge som chips (tortilla-trekants). Lav gerne i små portioner for ensartet sprødhed.'
+---
+
+### Derfor bliver airfryer-nachos bedre
+
+Når du bruger airfryer, får du en mere kontrolleret varmefordeling: chipsene får “sprød-respons” samtidig med at osten smelter hurtigt.
+
+### Caféstil uden stress
+
+Du kan opskalere ved at lave nachos i hold eller bruge en stor, flad form. Det vigtigste er at undgå at stable chips ovenpå hinanden.
+
+### Smag der passer til alle
+
+Hold jalapenos til siden for dem der vil have stærkt, og lav resten mildt med tacokrydderi og salsa.
