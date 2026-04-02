@@ -10,6 +10,8 @@ calories: 'Ca. 420 kcal pr. portion'
 category: 'Hovedret'
 cuisine: 'Balkansk'
 temperatureC: 200
+heroImage: '/images/recipes/airfryer-cevapi.png'
+heroAlt: 'Ćevapi på fladbrød med hakket løg, ajvar og cremet dip på tallerken'
 keywords:
   - cevapi airfryer
   - ćevapi airfryer

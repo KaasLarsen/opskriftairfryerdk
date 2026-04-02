@@ -10,6 +10,8 @@ calories: 'Ca. 380 kcal pr. portion'
 category: 'Hovedret'
 cuisine: 'Balkansk'
 temperatureC: 190
+heroImage: '/images/recipes/airfryer-kylling-ajvar.png'
+heroAlt: 'Kylling med gylden ajvar, løgringe og persille på tallerken med ekstra ajvar og brød'
 keywords:
   - kylling ajvar airfryer
   - ajvar marinade airfryer

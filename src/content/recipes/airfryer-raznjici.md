@@ -10,6 +10,8 @@ calories: 'Ca. 450 kcal pr. portion'
 category: 'Hovedret'
 cuisine: 'Balkansk'
 temperatureC: 200
+heroImage: '/images/recipes/airfryer-raznjici.png'
+heroAlt: 'Tre spyd med kylling, squash og peberfrugt på tallerken med ajvar, cremet dip og brød'
 keywords:
   - raznjici airfryer
   - kødspyd airfryer
@@ -33,6 +35,7 @@ ingredients:
   - text: '600 g svinekotelet uden ben eller schnitzel, skåret i ca. 3-4 cm tern (eller kyllingelårfilet)'
   - text: '1 rød peberfrugt, i store tern'
   - text: '1 mellemstor rødløg, i kvarte/lag'
+  - text: '1 lille squash, i skiver (valgfrit — godt til kyllingespyd som på foto)'
   - text: '3 spsk olivenolie'
   - text: '2 spsk citronsaft'
   - text: '1 tsk paprika (sød)'
@@ -42,7 +45,7 @@ ingredients:
   - text: '1/2 tsk tørret oregano (valgfrit)'
 instructions:
   - text: 'Bland olie, citron, paprika, salt, peber, hvidløg og oregano. Vend kød og grøntsager i marinaden og lad trække 20-60 minutter på køl.'
-  - text: 'Træk vekselvis kød, løg og peber på metalspyd (eller træspyd, gennemvædet i vand).'
+  - text: 'Træk vekselvis kød, løg, peber og evt. squash på metalspyd (eller træspyd, gennemvædet i vand).'
   - text: 'Forvarm airfryeren til 200 °C.'
   - text: 'Læg spyd i kurven så der er luft mellem — brug evt. spydholder eller læg dem over en rist hvis din model tillader det.'
   - text: 'Steg 7 minutter. Vend spydene og steg 5-7 minutter mere, til kød er gennemstegt (svin typisk ca. 63-68 °C+ efter hvile — følg Fødevarestyrelsens anbefaling for svinekød) og grøntsager har kanter.'

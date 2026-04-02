@@ -10,6 +10,8 @@ calories: 'Ca. 520 kcal pr. portion'
 category: 'Hovedret'
 cuisine: 'Balkansk'
 temperatureC: 200
+heroImage: '/images/recipes/airfryer-pljeskavica.png'
+heroAlt: 'Pljeskavica i fladbrød med ajvar, cremet sauce, løg og persille samt pommes frites'
 keywords:
   - pljeskavica airfryer
   - balkan bøf airfryer

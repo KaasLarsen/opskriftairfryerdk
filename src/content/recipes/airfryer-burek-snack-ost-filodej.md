@@ -10,6 +10,8 @@ calories: 'Ca. 320 kcal pr. portion'
 category: 'Appetizer'
 cuisine: 'Balkansk'
 temperatureC: 190
+heroImage: '/images/recipes/airfryer-burek-snack-ost-filodej.png'
+heroAlt: 'Sprøde burek-snacks af filodej med ostefyld, sesam og yoghurtdip på tallerken'
 keywords:
   - burek airfryer
   - filodej airfryer
