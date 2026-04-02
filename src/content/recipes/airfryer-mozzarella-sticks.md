@@ -10,6 +10,8 @@ calories: 'Ca. 380 kcal pr. portion'
 category: 'Hovedret'
 cuisine: 'International'
 temperatureC: 190
+heroImage: '/images/recipes/airfryer-mozzarella-sticks.png'
+heroAlt: 'Sprøde airfryer mozzarella sticks med marinara på tallerken'
 keywords:
   - mozzarella sticks airfryer
   - ostestænger airfryer

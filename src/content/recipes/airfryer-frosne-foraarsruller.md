@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer frosne forårsruller – sprøde snack uden fritte'
 description: 'Frosne forårsruller i airfryer med sprød overflade. Nem opskrift med tid, temperatur og tips til at undgå bløde ruller.'
+heroImage: '/images/recipes/airfryer-frosne-foraarsruller.png'
+heroAlt: 'Sprøde frosne forårsruller fra airfryer med sauce og urter på fad'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 12

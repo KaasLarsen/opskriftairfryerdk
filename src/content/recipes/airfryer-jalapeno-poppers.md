@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer jalapeno poppers – sprøde spicy bites med ost'
 description: 'Jalapeno poppers i airfryer med sprød panering og varm ostefyld. Nem opskrift med tid, temperatur og tips til at undgå at fyldet løber.'
+heroImage: '/images/recipes/airfryer-jalapeno-poppers.png'
+heroAlt: 'Sprøde jalapeno poppers med ostefyld og dip'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 15

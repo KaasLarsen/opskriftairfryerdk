@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer corn dogs – sprød pølse i majsdej'
 description: 'Corn dogs i airfryer med sprød majsdej og saftig pølse. Nem café-snack opskrift med tid, temperatur og tips til sprødhed.'
+heroImage: '/images/recipes/airfryer-corn-dogs.png'
+heroAlt: 'Sprøde airfryer corn dogs med ketchup og sennep på tallerken'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 10

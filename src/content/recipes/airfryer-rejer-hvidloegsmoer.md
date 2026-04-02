@@ -10,6 +10,8 @@ calories: 'Ca. 210 kcal pr. portion'
 category: 'Appetizer'
 cuisine: 'Dansk'
 temperatureC: 200
+heroImage: '/images/recipes/airfryer-rejer-hvidloegsmoer.png'
+heroAlt: 'Sprøde airfryer rejer med hvidløgssmør og citron'
 keywords:
   - rejer airfryer
   - hvidløgssmør rejer airfryer
