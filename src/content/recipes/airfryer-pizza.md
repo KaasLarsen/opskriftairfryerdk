@@ -1,76 +1,80 @@
 ---
-title: 'Airfryer pizza – sprød mini-pizza med ost og tomat'
-description: 'Lav hurtig pizza i airfryer med lille bund (tortilla eller færdig pizzadej), tomatsauce og ost. Tid, temperatur og tips til sprød kant uden at brænde topping.'
+title: 'Airfryer pizza – mini pepperoni med mozzarella og basilikum'
+description: 'Hurtig pizza i airfryer med lille bund, tomatsauce, mozzarella, pepperoni og cherrytomater. Tider til pizzadej eller tortilla — sprød kant uden brændt topping.'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
-prepMinutes: 12
-cookMinutes: 9
+prepMinutes: 14
+cookMinutes: 11
 servings: '2 små pizzaer (1 person pr. pizza)'
-calories: 'Ca. 480 kcal pr. pizza (varierer med bund og ost)'
+calories: 'Ca. 550 kcal pr. pizza (med pepperoni — varierer med bund)'
 category: 'Hovedret'
-cuisine: 'Italiensk inspireret / hverdag'
+cuisine: 'Italiensk inspireret / amerikansk inspireret'
 temperatureC: 200
+heroImage: '/images/recipes/airfryer-pizza.png'
+heroAlt: 'Lille pepperoni-pizza med smeltet ost, cherrytomater, rødløg og frisk basilikum på træfad'
 keywords:
   - pizza airfryer
+  - pepperoni pizza airfryer
   - mini pizza airfryer
   - tortilla pizza airfryer
   - hurtig pizza airfryer
-  - sprød pizzabund airfryer
 featured: false
 intro: |
-  Pizza i airfryer er oplagt, når du vil have sprød bund og smeltet ost på få minutter — uden at tænde ovn eller vente på sten.
+  Pizza i airfryer er oplagt, når du vil have sprød bund og smeltet ost på få minutter — uden ovn eller bagesten.
 
-  Nøglen er størrelse og varmestyring: en **lille** pizza (eller en tynd bund) giver bedre luftflow og mindre risiko for at toppingen brænder, før midten er gennemvarm.
+  Nøglen er størrelse og varmestyring: **små pizzaer** (ca. 18-20 cm) giver bedre luftflow, så pepperoni og ost kan tage farve uden at bunden bliver våd.
 
-  Denne opskrift er bygget til “hverdags-pizza” med enten store tortillias som ultra-tynd bund eller et udrullet lag færdig pizzadej, der passer i kurven.
+  Du kan både bruge **færdig pizzadej** (mest som på billedet) eller **store tortillas** til en ultra-tynd, ekstra sprød variant.
 conclusion: |
-  Skær pizzaen ud og servér straks — sprødheden er bedst de første minutter.
+  Skær pizzaen ud og servér straks — oste-snørren og bunden er bedst de første minutter.
 
-  Vil du lave en større menu, så kombiner med [pommes frites i airfryer](/opskrifter/airfryer-pomfritter) eller en simpel [grøntsagsmix](/opskrifter/airfryer-groentsagsmix).
+  Vil du lave en større menu, så kombiner med pommes frites eller en simpel grøntsagsmix (se jeres opskrifter under samme site).
 
-  Rester smager bedst genopvarmet 2-3 minutter ved 180 °C — men vær opmærksom på at osten kan blive gummi-agtig ved for lang tid.
+  Rester kan genopvarmes 2-3 minutter ved 180 °C; forvent at osten bliver mere “gummi” end første gang.
 ingredients:
-  - text: '2 store fuldkornstortillas eller 1 kugle færdig pizzadej (udrullet til 2 små bunde, ca. 18-20 cm)'
+  - text: '1 kugle færdig pizzadej (udrul til 2 bunde à ca. 18-20 cm) — eller 2 store tortillias til tynd bund'
   - text: '4 spsk tomatpassata eller pizzasauce'
   - text: '2 fed hvidløg, presset (valgfrit)'
-  - text: '1/2 tsk tørret oregano'
-  - text: '150 g revet mozzarella (eller blandet ost)'
-  - text: '40 g parmesan, revet (valgfrit)'
-  - text: '1 håndfuld cherrytomater, halveret (valgfrit)'
-  - text: '1 spsk olivenolie (til tortilla/kant)'
-  - text: 'Frisk basilikum (valgfrit)'
+  - text: '1/2 tsk tørret oregano + lidt ekstra til pynt (valgfrit)'
+  - text: '160 g revet mozzarella'
+  - text: '30 g parmesan, revet (valgfrit)'
+  - text: '80-100 g pepperoni i skiver (eller pepperonisalampølse i tynde skiver)'
+  - text: '1/2 rødløg i tynde halvmåner (valgfrit)'
+  - text: '8-10 cherrytomater, halveret (røde og gule efter smag)'
+  - text: '1 spsk olivenolie (til pensling af kant — især ved pizzadej)'
+  - text: 'Frisk basilikum og evt. et nip chiliflager (valgfrit)'
 instructions:
-  - text: 'Bland passata med hvidløg og oregano. Smag til med lidt salt/peber.'
-  - text: 'Hvis du bruger tortilla: pensl den let med olie på den side, der vender nedad først (giver ekstra sprødhed).'
+  - text: 'Bland passata med hvidløg og oregano. Smag til med lidt salt og peber.'
+  - text: 'Udrul eller form to små bunde. Ved pizzadej: pensl kanterne let med olie for pæn farve.'
   - text: 'Forvarm airfryeren til 200 °C.'
-  - text: 'Smør et tyndt lag sauce på bunden — undgå for våd midte (for meget sauce gør bunden slap).'
-  - text: 'Fordel ost, evt. parmesan og cherrytomater.'
-  - text: 'Læg én pizza ad gangen (eller begge hvis din kurv er bred nok uden overlap).'
-  - text: 'Steg 7 minutter. Tjek bund og topping — giv 1-3 minutter mere til gylden ost og sprød kant (modellen betyder meget).'
-  - text: 'Tag ud, drys basilikum og gentag for næste pizza hvis du steger i serier.'
+  - text: 'Smør et tyndt, jævnt lag sauce på hver bund — undgå “sø” midte; for meget sauce gør bunden slap.'
+  - text: 'Fordel revet ost, derefter rødløg, pepperoni og halverede cherrytomater. Drys evt. lidt ekstra oregano på toppen.'
+  - text: 'Læg én pizza ad gangen med luft omkring (eller begge i én kurv hvis der er plads uden overlap).'
+  - text: 'Steg 8 minutter. Tjek bund og ost — giv 2-4 minutter mere til gylden skorpe og boblende ost (pizzadej tager ofte lidt længere end tortilla).'
+  - text: 'Tag ud, top med frisk basilikum og evt. chiliflager. Gentag for næste pizza ved seriestegning.'
 tips:
-  - 'Tortilla bliver hurtigst sprød — perfekt til “snack-pizza”. Pizzadej giver mere “klassisk” bid, men kræver ofte lidt længere tid.'
-  - 'Hold topping simpel: for meget væskegivende fyld (fx meget frugtgrønt) kan gøre midten fugtig.'
-  - 'Hvis toppen bliver mørk før osten smelter: sænk til 190 °C og forlæng 1-2 minutter.'
+  - 'Tortilla: start med 6-7 minutter og forlæng kort — den bliver hurtigere sprød end pizzadej.'
+  - 'Pepperoni kan blive mørk i kanterne: ved meget tynde skiver, sænk til 190 °C de sidste minutter.'
+  - 'Cherrytomater: halver dem så de afgiver mindre damp under den korte stegning.'
 faq:
-  - question: 'Hvorfor min pizza bund blød i midten?'
-    answer: 'Oftest for meget sauce, for kraftigt fyld eller for tæt “dække” af topping. Brug tyndt lag og lad luft cirkulere.'
-  - question: 'Kan man fryse pizzadej og bage i airfryer?'
-    answer: 'Ja. Optø og rul tyndt. Start med kortere tid og forlæng, indtil bund og ost ser rigtige ud.'
+  - question: 'Hvorfor bliver min pizzabund blød i midten?'
+    answer: 'Oftest for meget sauce, for meget fyld på én gang eller manglende luft under/omkring pizzaen. Hold sauce og toppings moderate.'
+  - question: 'Kan man undlade pepperoni?'
+    answer: 'Ja — brug kun ost, tomat og grønt, eller vegetariske skiver. Tilpas tiden en anelse ned hvis toppen er lavere på fedt.'
   - question: 'Hvor længe skal pizza have i airfryer?'
-    answer: 'Typisk 8-11 minutter ved 200 °C for tortilla/tynd bund — afhænger af størrelse og model.'
-  - question: 'Passer det til børn?'
-    answer: 'Ja. Brug mild ost og en enkel sauce uden for meget hvidløg.'
+    answer: 'Ofte 9-12 minutter ved 200 °C for lille pizzadej — tortilla ofte 7-10 minutter. Tjek ud fra farve og bund.'
+  - question: 'Kan børn spise med?'
+    answer: 'Brug mild sauce, skær ned på hvidløg og chiliflager, og vælg en mild pepperoni.'
 ---
 
-### Hvorfor “mini” vinder i airfryer
+### Hvorfor små pizzaer vinder
 
-Luftcirkulationen virker bedst, når maden ikke dækker hele bunden som et “loft”. To små pizzaer giver ofte bedre sprødhed end én stor.
+Luftcirkulationen virker bedst, når kurven ikke er ét stort “loft” af dej. To små pizzaer giver typisk mere jævn varme end én stor.
 
-### Bund-valg: tortilla vs. pizzadej
+### Pizzadej vs. tortilla
 
-Tortilla er den nemmeste vej til crunch på kort tid. Pizzadej giver mere tygge og du kan lettere ramme “takeaway-følelse”, hvis du holder den relativt tynd.
+Pizzadej matcher bedst “klassisk” pizza med fyld som pepperoni og tomater. Tortilla er den hurtigste vej til ekstra sprød bund.
 
-### Smagsløft uden avanceret fyld
+### Topping-rækkefølge
 
-Et drys parmesan, gode tomater og lidt frisk basilikum giver meget smag for få minutters ekstra arbejde.
+Ost først fanger tomater og løg bedre, og pepperoni ovenpå får direkte varme, så den kan kruse lidt i kanten — præcis som på en god minipizza.

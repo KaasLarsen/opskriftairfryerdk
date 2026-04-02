@@ -1,72 +1,76 @@
 ---
-title: 'Airfryer asparges – sprøde spyd med citron og parmesan'
-description: 'Asparges i airfryer på få minutter: sprød uden at blive slatne. Med olie, citron, salt og revet parmesan — nemt tilbehør til kød og fisk.'
+title: 'Airfryer asparges i baconsvøb – parmesan og citron'
+description: 'Grønne asparges i baconsvøb i airfryer: sprød bacon og møre spidser. Med parmesan, citron og urter — nemt tilbehør der imponerer.'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
-prepMinutes: 6
-cookMinutes: 8
-servings: '4 portioner som tilbehør'
-calories: 'Ca. 90 kcal pr. portion (med parmesan – uden ca. 60 kcal)'
+prepMinutes: 12
+cookMinutes: 11
+servings: '4 portioner som tilbehør (5 bundter)'
+calories: 'Ca. 180 kcal pr. portion (med bacon og parmesan)'
 category: 'Tilbehør'
 cuisine: 'Dansk / hverdag'
 temperatureC: 190
+heroImage: '/images/recipes/airfryer-asparges.png'
+heroAlt: 'Asparges bundter pakket ind i sprød bacon med revet parmesan og citron på tallerken'
 keywords:
   - asparges airfryer
+  - asparges baconsvøb airfryer
+  - bacon asparges airfryer
   - grønne asparges airfryer
-  - asparges tid temperatur airfryer
   - nemt tilbehør airfryer
-  - parmesan asparges airfryer
 featured: false
 intro: |
-  Asparges bliver hurtigt for vilde: enten for rå, for slatne — eller perfekte med lidt bid og sødme i spidserne. Airfryer er stærk til netop den korte, varme “steg”, der giver farve uden at koge vandet ud af stilken.
+  Asparges i baconsvøb er et af de mest populære airfryer-tilbehør, fordi du får både salt sprødhed fra baconen og sødme i aspargesspidserne — på få minutter og uden grill.
 
-  Denne opskrift er bevidst simpel: lidt olie, salt, citron til sidst og parmesan som valgfrit løft.
+  Udfordringen er balance: bacon skal have bid, men asparges må ikke blive slatne eller brændte i spidserne. Derfor arbejder vi med **ét lag**, moderat temperatur og en kort sidste fase, hvor du kan justere efter din airfryer.
 
-  Passer perfekt til [kyllingebryst](/opskrifter/airfryer-kyllingebryst), [laks](/opskrifter/airfryer-laks) eller som supplement til jeres [æggekage med asparges og bacon](/opskrifter/airfryer-aeggekage-asparges-bacon).
+  Passer perfekt til [kyllingebryst](/opskrifter/airfryer-kyllingebryst), [laks](/opskrifter/airfryer-laks) eller som companion til [æggekage med asparges og bacon](/opskrifter/airfryer-aeggekage-asparges-bacon).
 conclusion: |
-  Servér straks — asparges mister sine bedste minutter hurtigt.
+  Servér straks med citronbåde, ekstra parmesan og et drys finthakket persille.
 
-  Vil du gøre det mere “søndag”: drys med citronskal og server med et skvat cremefraiche med dild.
+  Vil du have en kold modpol: et skvat cremefraiche med citronskal og dild klæder salt bacon godt.
 
-  Har du rester? Brug dem koldt i salat dagen efter — genopvarmede asparges bliver sjældent helt lige så gode.
+  Rester kan spises kolde i salat, men bacon taber sprødhed ved genopvarmning — derfor er dette tilbehør bedst friskt.
 ingredients:
-  - text: '500 g grønne asparges'
-  - text: '1 spsk olivenolie'
-  - text: '1/2 tsk salt'
-  - text: '1/4 tsk peber'
-  - text: '1 tsk citronsaft (efter stegning)'
-  - text: '20 g parmesan, groft revet (valgfrit)'
-  - text: 'Skal af 1/2 usprøjtet citron (valgfrit)'
+  - text: '20-25 grønne asparges (ca. 500 g — lav 5 bundter à 4-5 asparges)'
+  - text: '10 skiver bacon (alt afhængigt af tykkelse — ca. 2 lette skiver pr. bundt)'
+  - text: '1/2 tsk sort peber'
+  - text: '1/4 tsk salt (valgfrit — bacon er ofte salt nok)'
+  - text: '1 spsk olivenolie (valgfrit pensling af spidser)'
+  - text: '30 g parmesan, revet (til servering)'
+  - text: '1 citron, i både'
+  - text: '1 spsk finthakket persille (valgfrit)'
 instructions:
-  - text: 'Snit de træagtige ender af asparges (typisk 2-3 cm nederst afhængigt af kvalitet).'
-  - text: 'Vend asparges med olie, salt og peber i en skål — fordel jævnt uden store oliepølle.'
+  - text: 'Snit de træagtige ender af asparges (typisk 2-3 cm nederst). Dup dem let tørre.'
+  - text: 'Del asparges i 5 bundter med 4-5 stilke pr. bundt. Wrap bacon stramt om midten af hvert bundt, så spidser og ender stadig kan få luft (start eventuelt med halve skiver hvis bacon er meget tykt).'
+  - text: 'Pensl evt. spidserne med en anelse olie og drys med peber — hold igen med ekstra salt.'
   - text: 'Forvarm airfryeren til 190 °C.'
-  - text: 'Læg asparges i ét lag i kurven — gerne på tværs så de ikke falder gennem risten.'
-  - text: 'Steg 6 minutter. Ryst kurven og steg 1-3 minutter mere afhængigt af tykkelse; spidserne skal have farve men ikke være sorte.'
-  - text: 'Tag ud dryp citronsaft over, drys parmesan og evt. citronskal. Smag til med salt.'
+  - text: 'Læg bundterne i ét lag med afstand, spidser vendt mod midten af kurven hvis din model har tendens til at brænde i kanterne.'
+  - text: 'Steg 6 minutter. Vend bundterne forsigtigt og steg 3-5 minutter mere, til bacon er sprød og asparges stadig har bid.'
+  - text: 'Tag ud, drys med parmesan, persille og et dryp citron. Smag til.'
 tips:
-  - 'Tynde asparges er færdige hurtigere; tykke kræver 1-2 minutter ekstra.'
-  - 'For ekstra “rost”: én dråbe balsamico efter stegning (ikke før — det brænder nemt).'
-  - 'Undgå at lægge et “tæppe” af asparges — ét lag giver bedre sprødhed.'
+  - 'Meget tykt bacon: brug færre omgange eller sænk til 185 °C, så asparges ikke overtilberedes.'
+  - 'Tynde asparges: giv 1 minut mindre i slutfasen; tykke kan kræve 1 minut ekstra.'
+  - 'Hold ét lag — ellers bliver bacon dampet i stedet for sprødt.'
 faq:
-  - question: 'Skal asparges blancheres før airfryer?'
-    answer: 'Som regel nej. Airfryer giver nok varme på kort tid, så blanchering sjældent er nødvendig.'
-  - question: 'Hvorfor bliver mine asparges slatne?'
-    answer: 'Oftest overtid, eller for høj fugtighed i kurven (for mange lag/ingen luft).'
-  - question: 'Kan jeg bruge hvide asparges?'
-    answer: 'Ja — skræl den nederste del og giv typisk lidt længere tid end grønne.'
-  - question: 'Hvad passer asparges til?'
-    answer: 'Fisk, kylling, bacon, æg og lette saucer med citron eller urter passer særligt godt.'
+  - question: 'Kan man lave asparges i airfryer uden bacon?'
+    answer: 'Ja. Steg asparges i ét lag med olie, salt og peber 6-9 minutter ved 190 °C og dryp citron og parmesan på til sidst.'
+  - question: 'Hvorfor bliver bacon ikke sprødt?'
+    answer: 'Oftest for tæt pakket kurv eller for kort tid. Luft omkring hvert bundt er afgørende.'
+  - question: 'Hvorfor bliver spidserne sorte?'
+    answer: 'Placering tæt på varmeelement eller for høj slutvarme. Prøv 185 °C eller dæk spidserne med et lille stykke folie de sidste minutter.'
+  - question: 'Passer det til hvide asparges?'
+    answer: 'Ja — skræl stilken og giv lidt længere tid. Baconen fungerer på samme måde.'
 ---
 
-### Hvorfor kort tid er en fordel
+### Hvorfor “bundter” fungerer i airfryer
 
-Asparges indeholder meget vand i stilken. Længere “ovn-tid” uden høj fugtighed kan give fiber/stringy fornemmelse. En kort, varm fase bevarer mere tekstur.
+Et bundt samler varmen omkring stilken, mens spidserne stadig får ilt. Det giver ofte mere ens tilberedning end enkelte stilke der ligger løst.
 
-### Parmesan på den rigtige måde
+### Bacon som smag og tekstur
 
-Ost til allerslut giver smag uden at brænde for hårdt. Uden parmesan er retten stadig stærk som basis-tilbehør.
+Baconens salt og smeltede fedt fra skiven “smører” aspargesene lidt undervejs — præcis som mange kender fra ovn og grill.
 
-### Farve = smag — men pas spidserne
+### Parmesan og citron til sidst
 
-Spidserne karamelliserer hurtigst. Hvis du ser for meget mørkning, sænk temperaturen til 185 °C næste gang eller forkort tid med 1 minut.
+Ost og syre efter stegning giver friskhed og løfter saltheden uden at ost brænder på i kurven.

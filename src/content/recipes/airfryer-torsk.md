@@ -1,51 +1,59 @@
 ---
 title: 'Airfryer torsk – mør filet med citron og urter'
-description: 'Torsk i airfryer uden tør kød: korte tider, moderat varme og fugtighedstips. Med citron, smør og dild — klassisk dansk hverdagsfisk.'
+description: 'Torsk i airfryer uden tør kød: moderat varme, smør og citron, drys med persille. Valgfrie små kartofler som på tallerken — klar tid og tips.'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
-prepMinutes: 12
-cookMinutes: 10
+prepMinutes: 15
+cookMinutes: 18
 servings: '4 portioner'
-calories: 'Ca. 220 kcal pr. portion'
+calories: 'Ca. 320 kcal pr. portion med små kartofler (ca. 220 uden)'
 category: 'Hovedret'
 cuisine: 'Dansk'
 temperatureC: 180
+heroImage: '/images/recipes/airfryer-torsk.png'
+heroAlt: 'To torskefileter med persille, citron og små ristede kartofler på hvid tallerken'
 keywords:
   - torsk airfryer
   - torskefilet airfryer
   - fisk airfryer torsk
   - torsk tid temperatur airfryer
   - hvid fisk airfryer
+  - torsk persille airfryer
 featured: false
 intro: |
   Torsk er mild, populær og nem at overse i airfryer: få minutter for meget, og fileten bliver tør og “hø”. Derfor arbejder vi med **moderat temperatur**, **ens tykkelse** og typisk en smule **fedt/citronsaft** for at bevare fugt.
 
   Denne opskrift er tænkt til frisk eller optøet torskefilet (uden skind fungerer også), serveret med en enkel urtesmag.
 
-  Kombinér med [asparges i airfryer](/opskrifter/airfryer-asparges) og evt. [ovn/agtige kartofler](/opskrifter/airfryer-kartofler-i-baade) for et komplet måltid.
+  Som på fotoet passer små hele kartofler og masser af frisk persille — du kan tilberede kartoflerne i airfryer lige før fisken eller holde dem varme under folie.
+
+  Asparges i baconsvøb eller kartofler i både fra jeres andre opskrifter kan også bruges som tilbehør.
 conclusion: |
-  Servér straks med ekstra citron og evt. en ske cremefraiche med dild.
+  Anret med citronbåde, persille og evt. den sidste smør fra fadet — server straks.
 
-  Rester kan blive til fiskefrikadeller dagen efter, men som hel filet er torsk bedst frisktilberedt.
+  Rester af fisk kan blive til fiskefrikadeller; som hel filet er torsk bedst frisk.
 
-  Vil du skifte fisk, så lad jeres [laks-opskrift](/opskrifter/airfryer-laks) inspirere til varianter med mere fedt i fisken.
+  Vil du skifte fisk, kan laks i airfryer give mere fedt at “bygge” på, men tidsstyringen er anderledes.
 ingredients:
-  - text: '600 g torskefilet (ca. 150 g pr. portion), evt. uden skind'
-  - text: '2 spsk smør, smeltet (eller olivenolie)'
-  - text: '1 citron: saft af 1/2 + skiver af resten'
+  - text: '600 g torskefilet (ca. 150 g pr. portion), gerne uden skind'
+  - text: '500 g små nye kartofler, hele og børstede (valgfrit — som på fotoet)'
+  - text: '1 spsk olivenolie + nip salt til kartofler (hvis du bruger dem)'
+  - text: '3 spsk smør, smeltet (eller olivenolie til fisk)'
+  - text: '1 citron: saft af 1/2 + både til servering'
   - text: '1/2 tsk salt'
-  - text: '1/4 tsk peber'
-  - text: '2 spsk finthakket dild (eller persille)'
-  - text: '1 fed hvidløg, finthakket (valgfrit)'
+  - text: '1/4 tsk friskkværnet peber'
+  - text: '2 fed hvidløg, finthakket'
+  - text: '4 spsk finthakket persille (plus ekstra til pynt)'
+  - text: '1 spsk finthakket dild (valgfrit, sammen med persille)'
 instructions:
-  - text: 'Dup fisken tør med køkkenrulle og lad den temperere 10 minutter på køkkenbord (især hvis den er meget kold).'
-  - text: 'Skær store ender til mere ens tykkelse for jævn tilberedning.'
-  - text: 'Bland smeltet smør med citronsaft, hvidløg, salt og peber.'
-  - text: 'Forvarm airfryeren til 180 °C.'
-  - text: 'Læg fisk i ét lag i en airfryer-form/ovnfad der passer (metal eller silicone — undgå at de ligger helt fladt uden støtte hvis stykkerne er tynde).'
-  - text: 'Pensl med smørblandingen og læg evt. et tyndt citronskive-stykke ovenpå hver portion.'
-  - text: 'Steg 6 minutter. Tjek flagerne — fisken skal slippe let og være gennemvarm. Giv 1-4 minutter mere afhængigt af tykkelse.'
-  - text: 'Tag ud, drys dild og dryp evt. lidt ekstra citron. Smag til med salt.'
+  - text: 'Valgfrit kartofler: vend små kartofler med olie og salt. Forvarm airfryer til 185 °C og steg kartoflerne 14-18 minutter under omrystning halvvejs, til de er møre og gyldne. Tag ud og hold lune under folie.'
+  - text: 'Dup fisken tør med køkkenrulle og lad den temperere 10 minutter på køkkenbord ved behov.'
+  - text: 'Skær fileterne til ens tykkelse på den tykkeste del for jævn tilberedning.'
+  - text: 'Bland smeltet smør med citronsaft, hvidløg, halvdelen af den hakkede persille, salt og peber.'
+  - text: 'Sænk eller forvarm til 180 °C til fisk.'
+  - text: 'Læg fileter i ét lag i form/foliebakke med kanter så smør ikke ryger væk.'
+  - text: 'Pensl med smørblandingen. Steg 6 minutter, tjek om kødet flager — giv 1-4 minutter mere efter tykkelse.'
+  - text: 'Tag ud, drys resterende persille (og evt. dild), anret med citronbåde og kartofler. Smag til med salt og peber.'
 tips:
   - 'Tynde fileter kan være færdige på 6-8 minutter i alt; tyk natural behøver mere.'
   - 'Hvis du ikke har en form: brug foliebakke med kanter, så smør/saft ikke ryger væk.'
@@ -58,7 +66,7 @@ faq:
   - question: 'Kan jeg bruge frossen torsk?'
     answer: 'Optø helt og dup tør. Optøning i mikrobølge kan gøre kødet uens.'
   - question: 'Passer panering?'
-    answer: 'Ja, men det ændrer tid og kræver typisk 190-200 °C og kortere intervaller — se jeres [fiskefilet-guide](/opskrifter/airfryer-fiskefilet) som udgangspunkt.'
+    answer: 'Ja, men det ændrer tid og kræver typisk 190-200 °C og kortere intervaller — se opskriften på airfryer fiskefilet som udgangspunkt.'
 ---
 
 ### Moderat varme beskytter hvid fisk
@@ -71,4 +79,4 @@ En lille smule citron og smør fordeles som smagsfilm. Det er ikke samme som at 
 
 ### Servering med syre og urter
 
-Dild + citron er den danske klassiker. Vil du have mere kant, kan du tilføje kapriskapers eller finthakket purløg efter stegning.
+Persille og citron giver friskhed som på klassiske tallerkenfoto. Dild kan tilføjes for mere “dansk fisk”. Kapriskapers eller purløg efter stegning giver ekstra kant.

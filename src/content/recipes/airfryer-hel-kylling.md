@@ -10,6 +10,8 @@ calories: 'Ca. 320 kcal pr. portion uden tilbehør (varierer med udskæringer)'
 category: 'Hovedret'
 cuisine: 'Dansk'
 temperatureC: 180
+heroImage: '/images/recipes/airfryer-hel-kylling.png'
+heroAlt: 'Hel stegt kylling med gyldent skind, rosmarin, citron og små ristede kartofler på hvid tallerken'
 keywords:
   - hel kylling airfryer
   - hele kylling airfryer
@@ -26,7 +28,7 @@ intro: |
 conclusion: |
   Lad kyllingen hvile 10 minutter under folie før udskæring — saften fordeler sig og skindet holder bedre.
 
-  Server med [bagekartofler](/opskrifter/airfryer-bagekartofler), [søde kartofler](/opskrifter/airfryer-soede-kartofler) eller en simpel salat.
+  Server med små ristede kartofler (se trin — mens kyllingen hviler), citronbåde og persille som på et samlet fad — eller med [bagekartofler](/opskrifter/airfryer-bagekartofler), [søde kartofler](/opskrifter/airfryer-soede-kartofler) eller salat.
 
   Vil du have hurtigere og mere ens tilberedning næste gang, kan du klippe kyllingen ud (spatchcock) — men denne guide er skrevet til klassisk hel fugl der passer en mellemstor kurv.
 ingredients:
@@ -37,7 +39,9 @@ ingredients:
   - text: '1 tsk paprika (sød, valgfrit for farve)'
   - text: '1 citron, halveret (valgfrit, i hulrum)'
   - text: '3 fed hvidløg, hele med skal (valgfrit, i hulrum)'
-  - text: '1 bundt timian eller rosmarin (valgfrit)'
+  - text: '2-3 kviste frisk rosmarin (valgfrit — også til pynt på bryst ved servering)'
+  - text: '600 g små nye kartofler, børstede og halverede (valgfrit — steges mens kyllingen hviler)'
+  - text: '1 bundt persille, groft hakket (til servering)'
 instructions:
   - text: 'Tag kyllingen ud af køleskab 30-45 minutter før (kold kylling kan give ujævn tilberedning). Dup den tør med køkkenrulle (tørrere skind giver bedre sprødhed).'
   - text: 'Gnid olie, salt, peber og evt. paprika ind under skindet og udvendig uden at rive skindet.'
@@ -47,7 +51,10 @@ instructions:
   - text: 'Placér kylling **bryst ned** (hvis din model har plads) og steg 25 minutter.'
   - text: 'Vend forsigtigt til bryst op og steg 25-30 minutter mere, til lår er ca. 75 °C i den tykkeste del uden at ramme ben.'
   - text: 'Ønsker du gyldnere skind: sidste 3-5 minutter ved 200 °C — pas på at bryst ikke taber for meget saft.'
-  - text: 'Hvil 10 minutter før udskæring.'
+  - text: 'Valgfrit: læg en frisk rosmarinkvist på brystet de sidste 5 minutter (pynt og aroma — pas på den ikke brænder).'
+  - text: 'Tag kyllingen ud og lad den hvile 10 minutter under løs folie før udskæring.'
+  - text: 'Valgfrit små kartofler som på foto: mens kyllingen hviler, vend halverede kartofler med 1 spsk olie, lidt salt og hakket rosmarin og steg i airfryer ved 190-200 °C i 12-18 minutter til møre og gyldne — ryst kurven halvvejs.'
+  - text: 'Skær evt. ekstra citron i både og anret med persille ved siden af kylling og kartofler.'
 tips:
   - 'Passer kyllingen ikke i kurven “liggende”, så vælg en mindre fugl eller brug spatchcock-metoden (udklippet rygben).'
   - 'Hvis bryst bliver mørkt før lår er færdige: læg et lille stykke folie løst over brystet de sidste minutter.'

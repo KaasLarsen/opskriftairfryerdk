@@ -10,6 +10,8 @@ calories: 'Ca. 380 kcal pr. hotdog (med brød og ketchup – varierer)'
 category: 'Hovedret'
 cuisine: 'Dansk / hverdag'
 temperatureC: 190
+heroImage: '/images/recipes/airfryer-grillpoelser-hotdog.png'
+heroAlt: 'To fyldte hotdogs med ketchup, sennep, sprøde løg og purløg samt pommes frites i baggrunden'
 keywords:
   - grillpølser airfryer
   - hotdog airfryer
@@ -24,7 +26,7 @@ intro: |
 
   Perfekt sammen med [pommes frites](/opskrifter/airfryer-pomfritter) eller jeres [pølsemix med kartofler](/opskrifter/airfryer-poelsemix-kartofler), hvis du vil have “klassisk bøfhus-menu”.
 conclusion: |
-  Byg hotdogs med sennep, ketchup, pickle-relish og evt. sprøde ristede løg.
+  Byg hotdogs med sennep, ketchup, relish — og gerne et lag sprøde ristede løg plus purløg som i en klassisk, fyldt hotdog.
 
   Vil du have mere “grillkant”, så giv pølserne 1-2 minutter ved 200 °C til sidst — men hold øje for sprækker i skindet.
 
@@ -35,6 +37,8 @@ ingredients:
   - text: '1 løg, i tynde både (valgfrit til “ristet løg”)'
   - text: '1 tsk olie (til løg, valgfrit)'
   - text: 'Ketchup, sennep, relish (til servering)'
+  - text: 'Sprøde ristede løg fra pose eller egen fremstilling (valgfrit — som klassisk hotdog)'
+  - text: 'Purløg, snittet (valgfrit)'
 instructions:
   - text: 'Forvarm airfryeren til 190 °C.'
   - text: 'Læg pølser i ét lag med lidt afstand. Steg 6 minutter.'
@@ -42,7 +46,7 @@ instructions:
   - text: 'Tag pølserne ud og tildæk dem let (så de ikke størkner).'
   - text: 'Hvis du vil have løg: vend løg med lidt olie i airfryer ved 190 °C i 6-8 minutter i et lille fad eller foliebakke der passer i kurven (hvis din model tillader det). Alternativt steg løg i pande.'
   - text: 'Varm brød: læg brød kort i airfryer 1-2 minutter ved 160-170 °C — stop før de bliver hårde.'
-  - text: 'Samle hotdog og servér straks.'
+  - text: 'Kom pølsen i brødet, top med ketchup, sennep, relish, ristede løg og purløg. Servér straks — gerne med pommes frites som tilbehør.'
 tips:
   - 'Tynde pølser bliver færdige hurtigere; tykke chorizo-lignende varianter kræver mere tid.'
   - 'Undgå at skære dybe snit i pølsen før tid — det kan få fyld til at løbe ud hos fyldte varianter.'
