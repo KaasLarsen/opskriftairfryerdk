@@ -30,7 +30,9 @@ Opskrifter ligger i [`src/content/recipes/`](src/content/recipes/) som Markdown 
 
 `/shop` viser **kun** luftfriture/airfryere og **tilbehør dertil** — øvrige varelinjer fra leverandør-feeds filtreres fra ved sync (`scripts/shop-airfryer-classify.mjs`). Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet. Eksempel-feeds findes i [`.env.example`](.env.example); kopier til `.env` eller sæt variablen hos Vercel.
 
-**Note:** `public/data/shop-products.json` er **gitignoreret** (filen kan blive meget stor efter sync). Uden den lokalt: kør `node scripts/sync-shop-products.mjs` én gang (evt. med tom `PARTNERADS_FEED_URLS` for en tom liste).
+**Note:** `public/data/shop-products.json` er **gitignoreret** (filen kan blive meget stor efter sync). Uden den lokalt: kør `node scripts/sync-shop-products.mjs` én gang.
+
+**Vercel:** Hvis `PARTNERADS_FEED_URLS` ikke er sat, bruger build automatisk standard-feeds fra [`scripts/default-shop-feed-urls.mjs`](scripts/default-shop-feed-urls.mjs), så shoppen ikke er tom. Overstyr altid med `PARTNERADS_FEED_URLS` på projektet når I vil skifte feeds. Sæt `SKIP_SHOP_DEFAULT_FEEDS=1` for at undlå standard-feeds på host.
 
 For **daglig opdatering uden manuelt deploy**: opret et **Deploy Hook** hos Vercel og sæt GitHub-secret `VERCEL_DEPLOY_HOOK_URL` — se [`/.github/workflows/daily-vercel-deploy.yml`](.github/workflows/daily-vercel-deploy.yml).
 

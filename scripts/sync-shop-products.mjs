@@ -3,14 +3,15 @@
  * Hent PartnerAds XML-feeds (PARTNERADS_FEED_URLS kommasepareret) og skriv
  * public/data/shop-products.json til brug på /shop.
  *
- * - Ingen URL'er: skriv tom liste (exit 0) så build kan køre lokalt uden feeds.
- * - URL'er sat: fejl ved fetch/parse → exit 1 (undgå stille tom produktion).
+ * - Lokalt uden env: tom liste (hurtigt). På Vercel/CI uden env: standard-feeds fra default-shop-feed-urls.mjs.
+ * - PARTNERADS_FEED_URLS sat: bruges altid. Fejl ved fetch/parse → exit 1.
  */
 
 import { mkdirSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fetchPartnerAdsFeed } from './partnerads-feeds.mjs';
 import { isAirfryerShopRelevant } from './shop-airfryer-classify.mjs';
+import { DEFAULT_SHOP_FEED_URLS } from './default-shop-feed-urls.mjs';
 
 function loadDotEnv() {
 	const p = resolve(process.cwd(), '.env');
@@ -38,13 +39,34 @@ loadDotEnv();
 const OUT_DIR = resolve(process.cwd(), 'public/data');
 const OUT_FILE = resolve(OUT_DIR, 'shop-products.json');
 
-function parseFeedUrls() {
+function parseFeedUrlsFromEnv() {
 	const raw = process.env.PARTNERADS_FEED_URLS?.trim() ?? '';
 	if (!raw) return [];
 	return raw
 		.split(',')
 		.map((s) => s.trim())
 		.filter(Boolean);
+}
+
+/**
+ * Lokalt: kun feeds hvis .env / miljø sætter PARTNERADS_FEED_URLS (hurtigere byg uden net).
+ * Vercel/CI: brug env hvis sat, ellers de checkede standard-feeds så shop ikke er tom.
+ */
+function resolveFeedUrls() {
+	const fromEnv = parseFeedUrlsFromEnv();
+	if (fromEnv.length > 0) return { urls: fromEnv, source: 'env' };
+
+	if (process.env.SKIP_SHOP_DEFAULT_FEEDS === '1') return { urls: [], source: 'none' };
+
+	const onHost =
+		process.env.VERCEL === '1' ||
+		process.env.CI === 'true' ||
+		process.env.CONTINUOUS_INTEGRATION === 'true';
+	if (onHost) {
+		return { urls: DEFAULT_SHOP_FEED_URLS.slice(), source: 'default' };
+	}
+
+	return { urls: [], source: 'none' };
 }
 
 function previewUrl(u) {
@@ -57,7 +79,7 @@ function previewUrl(u) {
 }
 
 async function main() {
-	const urls = parseFeedUrls();
+	const { urls, source } = resolveFeedUrls();
 	mkdirSync(OUT_DIR, { recursive: true });
 
 	if (urls.length === 0) {
@@ -66,11 +88,17 @@ async function main() {
 			sources: [],
 			products: [],
 			message:
-				'Ingen PARTNERADS_FEED_URLS sat — tom produktliste. Sæt feed-URL\'er i miljø for at fylde shop.',
+				'Ingen feed-URL\'er — tom shop. Lokalt: sæt PARTNERADS_FEED_URLS eller byg på Vercel (standard-feeds).',
 		};
 		writeFileSync(OUT_FILE, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-		console.warn('sync-shop-products: PARTNERADS_FEED_URLS er tom — skriver tom shop-products.json');
+		console.warn('sync-shop-products: ingen feeds konfigureret — skriver tom shop-products.json');
 		return;
+	}
+
+	if (source === 'default') {
+		console.warn(
+			'sync-shop-products: bruger indbyggede standard-feeds (sæt PARTNERADS_FEED_URLS for at overstyre)',
+		);
 	}
 
 	/** @type {{ index: number, urlPreview: string, count: number }[]} */
@@ -102,6 +130,7 @@ async function main() {
 
 	const payload = {
 		generatedAt: new Date().toISOString(),
+		feedConfigSource: source,
 		sources,
 		products,
 		filterNote: 'Kun airfryere og relateret tilbehør i dette udvalg.',
