@@ -5,13 +5,15 @@ import { getCollection } from 'astro:content';
 import { DEFAULT_DESCRIPTION, ORGANIZATION_JSON, SITE_NAME, SITE_TAGLINE, SITE_URL } from '../consts';
 
 const allRecipes = await getCollection('recipes');
-const featured = allRecipes
-	.filter((r) => r.data.featured !== false)
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 5);
+const featuredPool = allRecipes
+	.filter((r) => r.data.featured === true)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featured = featuredPool.slice(0, 5);
+const featuredIds = new Set(featured.map((r) => r.id));
 
 const popular = allRecipes
-	.filter((r) => r.data.featured !== false)
+	.filter((r) => r.data.featured === true && !featuredIds.has(r.id))
 	.sort(
 		(a, b) =>
 			(b.data.updatedDate ?? b.data.pubDate).valueOf() -
@@ -95,21 +97,27 @@ const jsonLd = {
 		</div>
 	</section>
 
-	<section class="section">
-		<div class="container">
-			<div class="section-head">
-				<p class="section-kicker">Udvalgte opskrifter</p>
-				<h2>Start med disse fem hverdagsfavoritter</h2>
-				<p>
-					Hurtige retter med få ingredienser – gode som aftensmad eller når du vil have styr på
-					tid og temperatur.
-				</p>
-			</div>
-			<div class="recipe-grid">
-				{featured.map((recipe) => <RecipeCard recipe={recipe} />)}
-			</div>
-		</div>
-	</section>
+	{
+		featured.length > 0 && (
+			<section class="section">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Udvalgte opskrifter</p>
+						<h2>Start med disse fem hverdagsfavoritter</h2>
+						<p>
+							Hurtige retter med få ingredienser – gode som aftensmad eller når du vil have styr på
+							tid og temperatur.
+						</p>
+					</div>
+					<div class="recipe-grid">
+						{featured.map((recipe) => (
+							<RecipeCard recipe={recipe} />
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
 
 	<section class="section section--tight-top">
 		<div class="container">
@@ -124,18 +132,24 @@ const jsonLd = {
 		</div>
 	</section>
 
-	<section class="section section--tight-top">
-		<div class="container">
-			<div class="section-head">
-				<p class="section-kicker">Populært</p>
-				<h2>Mest populære lige nu</h2>
-				<p>Opskrifter vi fremhæver mest, og som besøgende typisk starter med.</p>
-			</div>
-			<div class="recipe-grid">
-				{popular.map((recipe) => <RecipeCard recipe={recipe} />)}
-			</div>
-		</div>
-	</section>
+	{
+		popular.length > 0 && (
+			<section class="section section--tight-top">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Populært</p>
+						<h2>Mest populære lige nu</h2>
+						<p>Opskrifter vi fremhæver mest, og som besøgende typisk starter med.</p>
+					</div>
+					<div class="recipe-grid">
+						{popular.map((recipe) => (
+							<RecipeCard recipe={recipe} />
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
 
 	<section class="section section--tight-top">
 		<div class="container">
