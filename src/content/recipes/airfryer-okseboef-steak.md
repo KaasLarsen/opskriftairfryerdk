@@ -1,7 +1,8 @@
 ---
 title: 'Airfryer oksebøf – mør steak (entrecôte eller yderfilet)'
 description: 'Oksebøf i airfryer med sprød stegeskorpe og rosa midte. Temperatur, hviletid og tykkelse – så undgår du overcooked steak.'
-heroAlt: 'Skåret oksebøf med rosa midte, urter og flagesalt på skærebræt'
+heroImage: '/images/recipes/airfryer-okseboef-steak.png'
+heroAlt: 'Skåret oksebøf med rosa midte, urtesmør og persille ved siden af små ristede kartofler, rosmarin og citron på hvid tallerken'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 15
@@ -27,7 +28,7 @@ intro: |
 conclusion: |
   Hvil kødet 5 minutter under folie før du skærer – saften fordeles og skorpen bliver bedre.
 
-  Server med [airfryer pomfritter](/opskrifter/airfryer-pomfritter) eller [airfryer kartofler i både](/opskrifter/airfryer-kartofler-i-baade) og en salat.
+  Server som på fotoet med **små hele kartofler** fra airfryer ([bagekartofler](/opskrifter/airfryer-bagekartofler) eller [kartofler i både](/opskrifter/airfryer-kartofler-i-baade)), et drys persille, citron og evt. et skvæt af stegefedtet. Eller klassisk med [pomfritter](/opskrifter/airfryer-pomfritter) og salat.
 
   Sammenlign gerne med [airfryer hakkebøf](/opskrifter/airfryer-hakkeboef) – samme maskine, anden teknik og tid.
 ingredients:
@@ -37,6 +38,7 @@ ingredients:
   - text: '1/2 tsk friskkværnet peber'
   - text: '1 fed hvidløg (valgfrit, knust til pensling til sidst)'
   - text: '1 spsk smør (valgfrit, til at smøre på efter stegning)'
+  - text: 'Valgfrit urtesmør til servering: 50 g blødt smør, 1 spsk finthakket persille, 1 tsk citronsaft, nip salt og peber'
 instructions:
   - text: 'Tag bøfferne ud af køleskab 20-30 minutter før – kold midte giver ujævn stegning.'
   - text: 'Dup kødet tørt med køkkenrulle. Gnid med olie, salt og peber på begge sider.'
@@ -46,6 +48,7 @@ instructions:
   - text: 'Valgfrit: sidste 1 minut med knust hvidløg og smør i en lille foliebakke under rist.'
   - text: 'Tag ud, hæld evt. smeltet smør over, og hvil 5 minutter under løst folie før skæring.'
 tips:
+  - 'Urtesmør som på fotoet: rør persille og citron i blødt smør, form en lille klat og læg på den varme, skivede bøf.'
   - 'Medium-rare: kernen ca. 52-55 °C før hvile; efter hvile stiger den typisk 3-4 grader.'
   - 'Medium: ca. 58-60 °C før hvile.'
   - 'Meget tynde bøffer: sænk til 185-190 °C og kortere intervaller.'

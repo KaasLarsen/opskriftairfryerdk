@@ -1,7 +1,8 @@
 ---
-title: 'Airfryer æg – spejlæg og æggemuffins på få minutter'
-description: 'Æg i airfryer: spejlæg i silikoneform og nemme æggemuffins med ost og grønt. Tider, temperatur og tips så de ikke bliver gummiagtige.'
-heroAlt: 'Spejlæg og små æggemuffins i airfryer-forme på køkkenbord'
+title: 'Airfryer æg – blødkogte i skal, spejlæg og æggemuffins'
+description: 'Æg i airfryer: blødkogte i skal til brunch, spejlæg i silikoneform og æggemuffins. Tider, temperatur og tips – inkl. toaststrimler som tilbehør.'
+heroImage: '/images/recipes/airfryer-aeg.png'
+heroAlt: 'Blødkogte æg i hvide æggebægre med flydende blomme, toaststrimler og purløg på hvid tallerken'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 8
@@ -13,23 +14,25 @@ cuisine: 'Dansk'
 temperatureC: 165
 keywords:
   - airfryer æg
+  - blødkogte æg airfryer
+  - æg i skal airfryer
   - spejlæg airfryer
   - æg i airfryer
   - æggemuffins airfryer
   - airfryer morgenmad
 featured: true
 intro: |
-  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. Du kan lave både spejlæg-lignende æg i små silikoneforme og fyldte æggemuffins i én omgang.
+  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. Du kan lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – eller spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
 
-  Nøglen er **moderat varme** og **forme med kanter**, så hviden samler sig pænt. For høj temperatur giver ofte gummiagtig hvide og tørre blommer.
+  Til æg i skal holder du en **lav til mellem temperatur** og accepterer, at minutter præcis skal tilpasses din model og æggestørrelse.
 
-  Brug gerne forme der tåler airfryer – silikone er nemmest at få æggene ud af.
+  Til æg i forme er nøglen **moderat varme** og **forme med kanter**, så hviden samler sig pænt. For høj temperatur giver ofte gummiagtig hvide og tørre blommer. Silikone er nemmest at få æggene ud af.
 conclusion: |
-  Server spejlæg på rugbrød eller toast, og muffins som madpakke-snack eller brunch.
+  Server blødkogte æg i æggebægre med topskåret af, drys med purløg og peber, og **toaststrimler** – steg smalle skiver toast i airfryer ved 180 °C i 3-4 minutter, eller brug [airfryer toast](/opskrifter/airfryer-toast-grillet-ost)-metoden på almindeligt brød og skær i stave.
 
-  Rester af muffins kan opbevares på køl 2 dage og varmes 1-2 minutter ved 160 °C.
+  Spejlæg fra form passer på rugbrød; muffins som madpakke-snack eller brunch. Rester af muffins kan opbevares på køl 2 dage og varmes 1-2 minutter ved 160 °C.
 
-  Kombinér med [airfryer bacon](/opskrifter/airfryer-bacon) eller [airfryer toast med ost](/opskrifter/airfryer-toast-grillet-ost) for en hurtig tallerken.
+  Kombinér med [airfryer bacon](/opskrifter/airfryer-bacon) for en klassisk tallerken.
 ingredients:
   - text: '4 hele æg (2 til spejlæg-stil, 2 til muffins – eller fordobl én variant)'
   - text: '2 små silikoneforme til spejlæg (eller muffin-huller med god nonstick)'
@@ -46,9 +49,10 @@ instructions:
   - text: 'Steg 8-10 minutter til hviden er stivnet og blommen stadig er lidt cremet – tjek 1 minut før tid ved tynde æg.'
   - text: 'Lad hvile 1 minut før du løsner med en smal paletkniv.'
 tips:
+  - 'Blødkogte i skal: for hård blomme, skru 1-2 minutter ned næste gang; for for rå, giv 1 minut mere.'
   - 'Tynde silikoneforme kræver ofte kortere tid end tykke keramikskåle.'
-  - 'Vil du have fast blomme, giv 1-2 minutter ekstra ved 160 °C.'
-  - 'Undgå 190 °C+ til rene æg – de bliver hurtigt gummiagtige.'
+  - 'Vil du have fast blomme i form-æg, giv 1-2 minutter ekstra ved 160 °C.'
+  - 'Undgå 190 °C+ til rene æg i form – de bliver hurtigt gummiagtige.'
 faq:
   - question: 'Kan man lave spejlæg i airfryer?'
     answer: 'Ja, i små smurte forme ved ca. 165 °C får du et resultat tæt på spejlæg; blommen kan holdes cremet ved at stoppe tidligt.'
@@ -58,11 +62,23 @@ faq:
     answer: 'Oftest for høj temperatur eller for lang tid. Prøv 160-165 °C og tjek oftere mod slutningen.'
   - question: 'Kan jeg bruge metalforme?'
     answer: 'Kun hvis producenten godkender det til jeres airfryer. Silikone er ofte nemmere og mere skånsomt.'
+  - question: 'Kan man lave blødkogte æg i airfryer?'
+    answer: 'Ja – læg hele æg i skal i kurven ved ca. 120 °C og giv typisk 10-14 minutter fra køl; afkøl i isvand og tilpas tid efter første forsøg.'
 ---
 
-### To måder på samme princip
+### Blødkogte æg i skal (brunch som på billedet)
 
-**Spejlæg-stil** giver en klassisk morgenmad; **muffins** er gode til meal prep og børn. Samme temperatur, forskellig fyld.
+1. Tag æg ud af køleskab 5-10 minutter før (mindre risiko for sprækker) eller brug dem koldt og giv lidt ekstra tid.
+2. Læg æggene forsigtigt i airfryer-kurven med lidt mellemrum – ikke mod den varmeste væg alene; nogle modeller får bedst resultat med en lille rist/bakke.
+3. Forvarm til **120 °C** og tilbered **10-13 minutter** for blød til halvblød blomme (fra køl). Tjek ét æg efter 10 minutter: køl det hurtigt, pil og vurder.
+4. Tag alle æg ud og sæt dem i iskoldt vand 1 minut – stopper tilberedningen og gør pillingen nemmere.
+5. Knæk toppen af med en kniv eller æggetopper og sæt i æggebægre. Server med toaststrimler, salt, peber og purløg.
+
+**Vigtigt:** Airfryere varierer meget. Første gang: brug ét prøveæg og notér den tid der rammer jeres yndlings-blomme.
+
+### Spejlæg og æggemuffins i forme
+
+**Spejlæg-stil** giver en klassisk morgenmad; **muffins** er gode til meal prep og børn. Samme temperatur (ca. 165 °C), forskellig fyld.
 
 ### Forme og stabilitet
 

@@ -1,7 +1,8 @@
 ---
 title: 'Airfryer pølsehorn (frost) – sprød dej og varm pølse'
 description: 'Frosne pølsehorn i airfryer: temperatur, tid og tips så dejen bliver sprød uden rå midte. Til frost fra supermarked og bageri.'
-heroAlt: 'Gyldne pølsehorn på rist med ketchup til dip'
+heroImage: '/images/recipes/airfryer-poelsehorn-frost.png'
+heroAlt: 'Gyldne pølsehorn med sesam på tallerken ved ketchup, flere horn i airfryer-kurv, display viser 180 grader'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 2
@@ -10,7 +11,7 @@ servings: '4 pølsehorn (tilpas antal efter kurv)'
 calories: 'Ca. 280 kcal pr. pølsehorn (typisk supermarked – tjek emballage)'
 category: 'Hovedret'
 cuisine: 'Dansk'
-temperatureC: 170
+temperatureC: 180
 keywords:
   - pølsehorn i airfryer
   - frosne pølsehorn airfryer
@@ -42,12 +43,13 @@ instructions:
   - text: 'Ved store bager-pølsehorn: brug nedre del af intervallet først og forlæng.'
   - text: 'Lad hvile 1 minut før børn spiser – fyldet er meget varmt.'
 tips:
+  - 'Som på fotoet: mange frost-horn har allerede sesam på toppen – ellers kan du pensle med lidt æg og drysse sesam før sidste 2-3 minutter.'
   - 'Poser mærket "skal fuldbages" kræver typisk længere tid end forvarmede horn.'
   - 'Vend ikke for aggressivt – dejen kan revne; ryst kurven forsigtigt.'
   - 'Hvis dejen bruner for hurtigt: sænk 10-15 grader og forlæng tid.'
 faq:
   - question: 'Hvor længe skal frosne pølsehorn have i airfryer?'
-    answer: 'Ofte 10-14 minutter ved 165-175 °C for standard størrelse – tjek posens vejledning og justér efter model.'
+    answer: 'Ofte 10-14 minutter ved 170-180 °C for standard størrelse – tjek posens vejledning og justér efter model (fx Philips og andre mærker varierer).'
   - question: 'Skal pølsehorn optø før airfryer?'
     answer: 'Som udgangspunkt nej, medmindre producenten anbefaler det – frost direkte giver ofte bedre tekstur.'
   - question: 'Hvorfor er min dej rå i midten?'

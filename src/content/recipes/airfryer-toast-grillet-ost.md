@@ -1,7 +1,8 @@
 ---
 title: 'Airfryer toast og grillet ost – sprød på få minutter'
 description: 'Toast og grillet ost i airfryer med sprød skorpe og smeltet midte. Tider til toast, ostemad og toast med skinke – uden at brænde osten.'
-heroAlt: 'Gylden grillet ost og toast med smeltet ost på tallerken'
+heroImage: '/images/recipes/airfryer-toast-grillet-ost.png'
+heroAlt: 'To stablede grillede ostetoasts med gyldent brød, flydende gul ost og ketchup til dip på tallerken'
 pubDate: 2026-04-02
 updatedDate: 2026-04-02
 prepMinutes: 5
@@ -36,6 +37,7 @@ ingredients:
   - text: '2 tsk smør eller mayonnaise på ydersider (smør giver mest smag)'
   - text: 'Salt og peber (lidt på osten)'
   - text: 'Valgfrit pålæg: 2 skiver skinke, 4 skiver tomat, sennep eller pesto'
+  - text: 'Valgfrit til pynt: tørret persille eller oregano og et nip peber på tallerkenen'
 instructions:
   - text: 'Til simpel toast: Smør én side af hver skive let. Læg i airfryer i ét lag (evt. i to omgange).'
   - text: 'Forvarm til 180 °C. Toast 3-4 minutter til gylden – vend halvvejs hvis modellen kræver det.'
@@ -44,6 +46,7 @@ instructions:
   - text: 'Valgfrit trick: Læg et lille stykke folie løst over sandwich de første 3 minutter for at holde på varmen til osten.'
   - text: 'Skær over og server straks.'
 tips:
+  - 'Som på fotoet: groft brød og rigeligt med revet cheddar giver den klassiske ostestreng-effekt – skær diagonalt og stabl kort til servering.'
   - 'Mozzarella smelter hurtigere end hårde oste – justér tid.'
   - 'Surdej kan kræve 1-2 minutter ekstra pga. tykkere skive.'
   - 'Undgå at overfylde med fyld – så varmer midten dårligere.'
