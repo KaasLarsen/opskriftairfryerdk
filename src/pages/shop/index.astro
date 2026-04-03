@@ -26,7 +26,7 @@ const accessories = allProducts
 
 const title = `Shop – airfryere og tilbehør | ${SITE_NAME}`;
 const description =
-	'Udvalgte airfryere og tilbehør til airfryer. Produkter hentes fra PartnerAds-feeds hos vores partnere — priser kan ændre sig. Affiliate-links.';
+	'Find airfryere og praktisk tilbehør til din airfryer. Udvalg af produkter med vejledende priser — se altid aktuel pris hos forhandleren.';
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/shop" ogType="website">
@@ -39,19 +39,12 @@ const description =
 			</nav>
 
 			<div class="section-head shop-section-head">
-				<p class="section-kicker">Affiliate shop</p>
-				<h1 class="recipe-title">Shop – airfryere og tilbehør</h1>
+				<p class="section-kicker">Shop</p>
+				<h1 class="recipe-title">Airfryere og tilbehør</h1>
 				<p>
-					Her finder du udvalgte produkter baseret på vores PartnerAds-feeds. Når du køber via vores
-					links, kan vi modtage en lille kommission uden ekstra omkostning for dig. Priser og
-					lagerstatus står altid hos forhandleren — de kan ændre sig løbende.
+					Her samler vi gode bud på airfryere og tilbehør, så du nemt kan sammenligne og gå videre
+					hos forhandleren. Priser og lager kan ændre sig — tjek altid hos butikken før du køber.
 				</p>
-			</div>
-
-			<div class="shop-affiliate-disclosure" role="note">
-				<strong>Affiliate og feeds:</strong> Produkterne vises som de leveres fra annoncørernes
-				produktfeeds via PartnerAds. Vi viser ikke fulde brødtekstbeskrivelser her af hensyn til
-				søgemaskiner og ophavsret — klik ind til forhandleren for detaljer.
 			</div>
 
 			<div class="shop-search-panel" data-shop-page>
@@ -72,8 +65,7 @@ const description =
 					<button type="button" class="shop-chip" data-shop-scope="accessory">Tilbehør</button>
 				</div>
 				<p class="shop-search-hint" data-shop-hint>
-					Søg kun blandt airfryere og airfryer-tilbehør (filtreret fra PartnerAds-feeds). Opdateres ved
-					hvert build.
+					Søg blandt airfryere og tilbehør i udvalget her — listen opdateres med jævne mellemrum.
 				</p>
 				<div id="shop-search-results" class="recipe-grid shop-search-results" hidden></div>
 			</div>
@@ -87,7 +79,7 @@ const description =
 					<div class="section-head">
 						<p class="section-kicker">Udvalg</p>
 						<h2 id="shop-af-heading">Udvalgte airfryere</h2>
-						<p>Automatisk udvalg fra feed ud fra produktnavn og kategori (airfryer/varmluft m.m.).</p>
+						<p>Vejledende udvalg — find flere via søgningen ovenfor.</p>
 					</div>
 					<div class="recipe-grid">
 						{airfryers.map((p) => (
@@ -114,10 +106,7 @@ const description =
 					<div class="section-head">
 						<p class="section-kicker">Udvalg</p>
 						<h2 id="shop-acc-heading">Udvalgt tilbehør</h2>
-						<p>
-							Kurve, forme, indsatser og lignende knyttet til airfryer — ud fra navn og kategori i
-							feedet.
-						</p>
+						<p>Kurve, forme, indsatser og andet praktisk tilbehør til airfryer.</p>
 					</div>
 					<div class="recipe-grid">
 						{accessories.map((p) => (
@@ -143,9 +132,8 @@ const description =
 				<div class="container">
 					<div class="shop-empty-state">
 						<p>
-							Der er ingen airfryere eller tilbehør der matcher vores filter i feedet lige nu. Når{' '}
-							<code>PARTNERADS_FEED_URLS</code> er sat og feeds indeholder relevante varer, bygges
-							listen automatisk.
+							Der er ingen produkter i shoppen lige nu — udvalget fyldes op igen, så snart der er nyt
+							at vise.
 						</p>
 					</div>
 				</div>
@@ -269,7 +257,7 @@ const description =
 			const meta = priceStr
 				? `${onSale ? `Tilbud ${priceStr}` : priceStr}${p.category ? ` · ${esc(p.category)}` : ''}`
 				: 'Pris hos forhandler';
-			return `<a class="recipe-card" href="${esc(p.productUrl)}" target="_blank" rel="sponsored noopener noreferrer">${img}<div class="recipe-card-body">${brand}<h3>${esc(p.title)}</h3><div class="recipe-meta-row"><span>${meta}</span></div><p>Se hos forhandler (affiliate-link).</p></div></a>`;
+			return `<a class="recipe-card" href="${esc(p.productUrl)}" target="_blank" rel="sponsored noopener noreferrer">${img}<div class="recipe-card-body">${brand}<h3>${esc(p.title)}</h3><div class="recipe-meta-row"><span>${meta}</span></div><p>Se hos forhandler</p></div></a>`;
 		}
 
 		const root = document.querySelector('[data-shop-page]');

@@ -1480,24 +1480,9 @@ a:hover {
 	flex: 0 0 auto;
 }
 
-/* Shop (PartnerAds feeds) */
+/* Shop */
 .shop-section-head {
 	margin-bottom: var(--space-6);
-}
-
-.shop-affiliate-disclosure {
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	color: var(--color-muted);
-	background: var(--color-accent-soft);
-	border: 1px solid rgb(251 191 36 / 35%);
-	border-radius: var(--radius-lg);
-	padding: var(--space-5) var(--space-6);
-	margin-bottom: var(--space-10);
-}
-
-.shop-affiliate-disclosure strong {
-	color: var(--color-text);
 }
 
 .shop-search-panel {

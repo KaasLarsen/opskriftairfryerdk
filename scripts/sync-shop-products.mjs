@@ -104,8 +104,7 @@ async function main() {
 		generatedAt: new Date().toISOString(),
 		sources,
 		products,
-		filterNote:
-			'Kun produkter med airfryer-/varmluftsfriture-kontekst (apparat eller tilbehør). Se scripts/shop-airfryer-classify.mjs.',
+		filterNote: 'Kun airfryere og relateret tilbehør i dette udvalg.',
 		stats: {
 			mergedUnique: deduped.length,
 			afterAirfryerScope: products.length,

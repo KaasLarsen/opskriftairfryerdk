@@ -26,9 +26,9 @@ npm run preview
 
 Opskrifter ligger i [`src/content/recipes/`](src/content/recipes/) som Markdown med Zod-validering i [`src/content.config.ts`](src/content.config.ts).
 
-## Shop (PartnerAds)
+## Shop
 
-`/shop` viser **kun** luftfriture/airfryere og **tilbehør dertil** — alt andet fra PartnerAds-feeds filtreres fra ved sync (`scripts/shop-airfryer-classify.mjs`). Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet. Eksempel-feeds findes i [`.env.example`](.env.example); kopier til `.env` eller sæt variablen hos Vercel.
+`/shop` viser **kun** luftfriture/airfryere og **tilbehør dertil** — øvrige varelinjer fra leverandør-feeds filtreres fra ved sync (`scripts/shop-airfryer-classify.mjs`). Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet. Eksempel-feeds findes i [`.env.example`](.env.example); kopier til `.env` eller sæt variablen hos Vercel.
 
 **Note:** `public/data/shop-products.json` er **gitignoreret** (filen kan blive meget stor efter sync). Uden den lokalt: kør `node scripts/sync-shop-products.mjs` én gang (evt. med tom `PARTNERADS_FEED_URLS` for en tom liste).
 
