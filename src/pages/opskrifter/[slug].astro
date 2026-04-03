@@ -9,6 +9,7 @@ import {
 	SITE_NAME,
 	SITE_URL,
 } from '../../consts';
+import { pickRelatedRecipes } from '../../utils/relatedRecipes';
 import { isoDurationFromMinutes, toAbsoluteUrl } from '../../utils/seo';
 
 export async function getStaticPaths() {
@@ -162,9 +163,8 @@ const jsonLdGraph: Record<string, unknown>[] = [
 	...(faqJson ? [faqJson] : []),
 ];
 
-const others = (await getCollection('recipes'))
-	.filter((r) => r.id !== recipe.id)
-	.slice(0, 3);
+const allRecipes = await getCollection('recipes');
+const others = pickRelatedRecipes(recipe, allRecipes, 3);
 
 const articleLd = {
 	'@type': 'Article',
