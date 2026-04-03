@@ -11,7 +11,12 @@ interface Props {
 	description: string;
 	canonicalPath: string;
 	ogImage?: string;
+	ogImageAlt?: string;
+	ogImageWidth?: number;
+	ogImageHeight?: number;
 	ogType?: 'website' | 'article';
+	articlePublishedTime?: string;
+	articleModifiedTime?: string;
 	noindex?: boolean;
 	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -21,7 +26,12 @@ const {
 	description,
 	canonicalPath,
 	ogImage,
+	ogImageAlt,
+	ogImageWidth,
+	ogImageHeight,
 	ogType = 'website',
+	articlePublishedTime,
+	articleModifiedTime,
 	noindex,
 	jsonLd,
 } = Astro.props;
@@ -38,7 +48,12 @@ const fullTitle =
 			description={description}
 			canonicalPath={canonicalPath}
 			ogImage={ogImage}
+			ogImageAlt={ogImageAlt}
+			ogImageWidth={ogImageWidth}
+			ogImageHeight={ogImageHeight}
 			ogType={ogType}
+			articlePublishedTime={articlePublishedTime}
+			articleModifiedTime={articleModifiedTime}
 			noindex={noindex}
 			jsonLd={jsonLd}
 		/>

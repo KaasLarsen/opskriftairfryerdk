@@ -4,7 +4,12 @@ interface Props {
 	description: string;
 	canonicalPath: string;
 	ogImage?: string;
+	ogImageAlt?: string;
+	ogImageWidth?: number;
+	ogImageHeight?: number;
 	ogType?: 'website' | 'article';
+	articlePublishedTime?: string;
+	articleModifiedTime?: string;
 	noindex?: boolean;
 	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
@@ -14,7 +19,12 @@ const {
 	description,
 	canonicalPath,
 	ogImage,
+	ogImageAlt,
+	ogImageWidth,
+	ogImageHeight,
 	ogType = 'website',
+	articlePublishedTime,
+	articleModifiedTime,
 	noindex = false,
 	jsonLd,
 } = Astro.props;
@@ -39,7 +49,11 @@ const ldJson =
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{noindex ? (
+	<meta name="robots" content="noindex, nofollow" />
+) : (
+	<meta name="robots" content="index, follow" />
+)}
 
 <title>{title}</title>
 
@@ -49,12 +63,22 @@ const ldJson =
 <meta property="og:type" content={ogType} />
 <meta property="og:locale" content="da_DK" />
 <meta property="og:image" content={resolvedOg} />
+{ogImageWidth != null && <meta property="og:image:width" content={String(ogImageWidth)} />}
+{ogImageHeight != null && <meta property="og:image:height" content={String(ogImageHeight)} />}
+{ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
 <meta property="og:site_name" content="Opskrift Airfryer" />
+{ogType === 'article' && articlePublishedTime && (
+	<meta property="article:published_time" content={articlePublishedTime} />
+)}
+{ogType === 'article' && articleModifiedTime && (
+	<meta property="article:modified_time" content={articleModifiedTime} />
+)}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={resolvedOg} />
+{ogImageAlt && <meta name="twitter:image:alt" content={ogImageAlt} />}
 
 <link rel="alternate" hreflang="da-DK" href={canonical} />
 <link rel="alternate" hreflang="x-default" href={canonical} />

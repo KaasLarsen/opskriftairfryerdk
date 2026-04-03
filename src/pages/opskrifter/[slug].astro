@@ -2,7 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+import {
+	ORGANIZATION_JSON,
+	RECIPE_OG_IMAGE_HEIGHT,
+	RECIPE_OG_IMAGE_WIDTH,
+	SITE_NAME,
+	SITE_URL,
+} from '../../consts';
 import { isoDurationFromMinutes, toAbsoluteUrl } from '../../utils/seo';
 
 export async function getStaticPaths() {
@@ -32,6 +38,18 @@ const absImage = d.heroImage
 	? toAbsoluteUrl(site, d.heroImage)
 	: new URL('/og-default.svg', site).toString();
 
+const recipeImageLd: (string | Record<string, unknown>)[] = d.heroImage
+	? [
+			{
+				'@type': 'ImageObject',
+				url: absImage,
+				width: RECIPE_OG_IMAGE_WIDTH,
+				height: RECIPE_OG_IMAGE_HEIGHT,
+				caption: d.heroAlt ?? d.title,
+			},
+		]
+	: [absImage];
+
 const totalMinutes = d.prepMinutes + d.cookMinutes;
 
 function splitParagraphs(text: string | undefined): string[] {
@@ -45,13 +63,26 @@ function splitParagraphs(text: string | undefined): string[] {
 const introParagraphs = splitParagraphs(d.intro);
 const conclusionParagraphs = splitParagraphs(d.conclusion);
 
+const webPageJson: Record<string, unknown> = {
+	'@type': 'WebPage',
+	'@id': pageUrl,
+	url: pageUrl,
+	name: d.title,
+	description: d.description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: d.pubDate.toISOString(),
+	dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+	mainEntity: { '@id': `${pageUrl}#recipe` },
+};
+
 const recipeJson: Record<string, unknown> = {
 	'@type': 'Recipe',
 	'@id': `${pageUrl}#recipe`,
 	name: d.title,
 	description: d.description,
-	image: [absImage],
-	mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+	image: recipeImageLd,
+	mainEntityOfPage: { '@id': pageUrl },
 	inLanguage: 'da-DK',
 	author: {
 		'@type': 'Organization',
@@ -125,6 +156,7 @@ const faqJson =
 
 const jsonLdGraph: Record<string, unknown>[] = [
 	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
 	recipeJson,
 	breadcrumbJson,
 	...(faqJson ? [faqJson] : []),
@@ -138,13 +170,13 @@ const articleLd = {
 	'@type': 'Article',
 	headline: d.title,
 	description: d.description,
-	image: [absImage],
+	image: recipeImageLd,
 	inLanguage: 'da-DK',
 	datePublished: d.pubDate.toISOString(),
 	dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
 	author: { '@id': `${SITE_URL}/#organization` },
 	publisher: { '@id': `${SITE_URL}/#organization` },
-	mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+	mainEntityOfPage: { '@id': pageUrl },
 };
 
 const jsonLdWithArticle = [...jsonLdGraph, articleLd];
@@ -155,7 +187,12 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 	description={d.description}
 	canonicalPath={canonicalPath}
 	ogImage={d.heroImage ? absImage : undefined}
+	ogImageAlt={d.heroAlt ?? d.title}
+	ogImageWidth={d.heroImage ? RECIPE_OG_IMAGE_WIDTH : undefined}
+	ogImageHeight={d.heroImage ? RECIPE_OG_IMAGE_HEIGHT : undefined}
 	ogType="article"
+	articlePublishedTime={d.pubDate.toISOString()}
+	articleModifiedTime={(d.updatedDate ?? d.pubDate).toISOString()}
 	jsonLd={jsonLdWithArticle}
 >
 	<article class="section recipe-article">
