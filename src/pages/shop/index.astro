@@ -72,7 +72,8 @@ const description =
 					<button type="button" class="shop-chip" data-shop-scope="accessory">Tilbehør</button>
 				</div>
 				<p class="shop-search-hint" data-shop-hint>
-					Skriv for at søge i alle produkter fra feed. Data opdateres ved hvert site-build.
+					Søg kun blandt airfryere og airfryer-tilbehør (filtreret fra PartnerAds-feeds). Opdateres ved
+					hvert build.
 				</p>
 				<div id="shop-search-results" class="recipe-grid shop-search-results" hidden></div>
 			</div>
@@ -142,8 +143,9 @@ const description =
 				<div class="container">
 					<div class="shop-empty-state">
 						<p>
-							Der er endnu ingen produkter i shop-feedet. Når <code>PARTNERADS_FEED_URLS</code> er
-							sat i miljøet og sitet bygges, fyldes listen automatisk.
+							Der er ingen airfryere eller tilbehør der matcher vores filter i feedet lige nu. Når{' '}
+							<code>PARTNERADS_FEED_URLS</code> er sat og feeds indeholder relevante varer, bygges
+							listen automatisk.
 						</p>
 					</div>
 				</div>
@@ -154,19 +156,83 @@ const description =
 
 <script>
 	(function () {
-		/**
-		 * Hold logikken konsistent med src/data/shop-curation.ts (airfryer vs tilbehør til søgning).
-		 */
-		const AIRFRYER_HINT =
-			/airfryer|varmluft|varmlufts|friture|fritös|frituregryde|air fryer|airoven|airovn|dual.?zone|hot air|varmluftsovn/i;
-		const ACCESSORY_HINT =
-			/tilbehør|tilbehor|basket|kurv|form|papir|indsats|rist|riste|bakke|silicone|silikone|måtte|matte|lining|pergament|spyd/i;
+		/** Kopi af scripts/shop-airfryer-classify.mjs — ved ændring opdater begge steder. */
+		const AIRFRYER_CONTEXT = new RegExp(
+			[
+				'air[- ]?fry(?:er)?',
+				'\\bairfryers?\\b',
+				'varmluft(?:sfriture|sovn|\\sfriture)',
+				'\\bvarmluft\\b',
+				'frituregryde',
+				'fritös',
+				'airovn',
+				'airoven',
+				'hot[- ]air',
+				'dual[- ]?zone',
+				'\\b(?:easy|xl|xxl)[- ]fry',
+				'(?:crisp|crisper).{0,16}(?:fry|frit)',
+				'fry.{0,12}(?:crisp|crisper)',
+				'foodi',
+				'\\bvortex\\b',
+				'\\bcosori\\b',
+				'actifry',
+				'philips.{0,40}(?:air[- ]?fry|airfry|essential|hd9\\d)',
+				'tefal.{0,35}(?:easy[- ]?fry|fry|actifry|ultimate)',
+				'moulinex.{0,35}(?:easy|fry|uno)',
+				'instant\\s+pot.{0,25}vortex',
+				'ninja.{0,30}(?:air|foodi|fry|grill|speedi|dual|max|crisp)',
+				'gourmia',
+				'emerio.{0,20}(?:aaf|fry|air)',
+				'russell\\s+hobbs.{0,30}(?:cyclofry|satisfry|air[- ]?fry)',
+				'kenwood.{0,25}(?:hfp|air[- ]?fry)',
+			].join('|'),
+			'i',
+		);
+		const ACCESSORY_MARKER = new RegExp(
+			[
+				'\\btilbeh[oø]r\\b',
+				'pergament',
+				'bagepapir',
+				'silikone',
+				'silicone(?:\\s|$)',
+				'\\bindsats\\b',
+				'indsats',
+				'dampindsats',
+				'grillrist',
+				'\\brist(?:e|er)?\\b',
+				'(?:^|[^\\p{L}\\p{N}])kurv(?:[^\\p{L}\\p{N}]|$)',
+				'kurv\\s+til',
+				'\\bbasket\\b',
+				'\\bliner\\b',
+				'måtte',
+				'matte',
+				'non[- ]?stick',
+				'parchment',
+				'spyd',
+				'dobbeltkurv',
+				'multi[- ]kurv',
+				'snackkurv',
+				'divider',
+				'separator',
+				'reservedel',
+				'papirkurve',
+				'\\bforme\\s+til\\b',
+				'oliesprayer',
+				'til\\s+(?:din\\s+)?air[- ]?fry',
+				'for\\s+air[- ]?fryer',
+				'mods?tning',
+				'trådkurv',
+				'netkurv',
+			].join('|'),
+			'iu',
+		);
 
 		function shelfOf(p) {
-			const hay = `${p.title || ''} ${p.category || ''}`;
-			if (AIRFRYER_HINT.test(hay)) return 'airfryer';
-			if (ACCESSORY_HINT.test(hay)) return 'accessory';
-			return 'other';
+			const hay = `${p.title || ''} ${p.category || ''} ${p.brand || ''}`.trim();
+			if (!hay) return 'other';
+			if (!AIRFRYER_CONTEXT.test(hay)) return 'other';
+			if (ACCESSORY_MARKER.test(hay)) return 'accessory';
+			return 'airfryer';
 		}
 
 		function esc(s) {

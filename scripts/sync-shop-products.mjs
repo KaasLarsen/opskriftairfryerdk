@@ -10,6 +10,7 @@
 import { mkdirSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fetchPartnerAdsFeed } from './partnerads-feeds.mjs';
+import { isAirfryerShopRelevant } from './shop-airfryer-classify.mjs';
 
 function loadDotEnv() {
 	const p = resolve(process.cwd(), '.env');
@@ -86,22 +87,34 @@ async function main() {
 	}
 
 	const seen = new Set();
-	const products = all.filter((p) => {
+	const deduped = all.filter((p) => {
 		const u = typeof p.productUrl === 'string' ? p.productUrl : '';
 		if (!u || seen.has(u)) return false;
 		seen.add(u);
 		return true;
 	});
 
+	const products = deduped.filter((p) =>
+		isAirfryerShopRelevant(
+			/** @type {{ title?: string; category?: string; brand?: string }} */ (p),
+		),
+	);
+
 	const payload = {
 		generatedAt: new Date().toISOString(),
 		sources,
 		products,
+		filterNote:
+			'Kun produkter med airfryer-/varmluftsfriture-kontekst (apparat eller tilbehør). Se scripts/shop-airfryer-classify.mjs.',
+		stats: {
+			mergedUnique: deduped.length,
+			afterAirfryerScope: products.length,
+		},
 	};
 
 	writeFileSync(OUT_FILE, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 	console.log(
-		`sync-shop-products: skrev ${products.length} produkt(er) fra ${sources.length} feed(s) → public/data/shop-products.json`,
+		`sync-shop-products: ${deduped.length} unik(e) → ${products.length} airfryer-relevante → public/data/shop-products.json (${sources.length} feed(s))`,
 	);
 }
 

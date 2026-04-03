@@ -1,7 +1,9 @@
 /**
- * Kuratering af shop: fastpinede id'er (når I kender dem fra feed) + søgeord som fallback,
- * fordi PartnerAds-felter varierer mellem annoncører.
+ * Kuratering af shop: fastpinede id'er + regex fra scripts/shop-airfryer-classify.mjs.
+ * Kun luftfriture og tilbehør — alt andet filtreres fra ved sync og klassificeres som 'other'.
  */
+
+import { classifyShopProductBase } from '../../scripts/shop-airfryer-classify.mjs';
 
 export type ShopProductJson = {
 	id: string;
@@ -20,21 +22,12 @@ export const PINNED_AIRFRYER_IDS: string[] = [];
 
 export const PINNED_ACCESSORY_IDS: string[] = [];
 
-const AIRFRYER_HINT =
-	/airfryer|varmluft|varmlufts|friture|fritös|frituregryde|air fryer|airoven|airovn|dual.?zone|hot air|varmluftsovn/i;
-
-const ACCESSORY_HINT =
-	/tilbehør|tilbehor|basket|kurv|form|papir|indsats|rist|riste|bakke|silicone|silikone|måtte|matte|lining|pergament|spyd/i;
-
 export type ShopShelf = 'airfryer' | 'accessory' | 'other';
 
-export function classifyShopProduct(p: Pick<ShopProductJson, 'id' | 'title' | 'category'>): ShopShelf {
+export function classifyShopProduct(
+	p: Pick<ShopProductJson, 'id' | 'title' | 'category' | 'brand'>,
+): ShopShelf {
 	if (PINNED_AIRFRYER_IDS.includes(p.id)) return 'airfryer';
 	if (PINNED_ACCESSORY_IDS.includes(p.id)) return 'accessory';
-
-	const hay = `${p.title} ${p.category}`.trim();
-	if (!hay) return 'other';
-	if (AIRFRYER_HINT.test(hay)) return 'airfryer';
-	if (ACCESSORY_HINT.test(hay)) return 'accessory';
-	return 'other';
+	return classifyShopProductBase(p);
 }
