@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer courgette-fritter – sprøde med parmesan og hvidløg'
 description: 'Courgette “fries” i airfryer med sprød skorpe. Let parmesanpanering og hvidløgssmag.'
+heroImage: '/images/recipes/airfryer-courgette-parmesan-fritter.png'
+heroAlt: 'Sprøde airfryer courgette-fritter med parmesan og hvidløg på tallerken'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 12
