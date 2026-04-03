@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer teriyaki-svine tern – sticky glaze og sprød kant'
 description: 'Teriyaki-svine tern i airfryer med sprød overflade og “sticky” glaze. Nem måltidsret med soya, ingefær og hvidløg.'
+heroImage: '/images/recipes/airfryer-svinekoed-teriyaki-tern.png'
+heroAlt: 'Sticky teriyaki svine tern med sesam, forårsløg og lime i skål ved airfryer'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 15
