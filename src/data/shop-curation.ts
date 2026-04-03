@@ -10,6 +10,12 @@ export type ShopProductJson = {
 	title: string;
 	brand: string;
 	category: string;
+	/** PartnerAds `forhandler` — butiksnavn til CTA */
+	retailer?: string;
+	color?: string;
+	sizeLabel?: string;
+	/** Udledt fra titel/størrelsesfelt (liter), til kurv-filter */
+	capacityLiters?: number | null;
 	price: number | null;
 	listPrice: number | null;
 	imageUrl: string | null;

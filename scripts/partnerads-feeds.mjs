@@ -2,12 +2,8 @@
  * PartnerAds / shop: hent XML-feeds og normalisér til ét fælles JSON-format.
  *
  * Normaliseret produkt:
- * - id: partner-id / ean / hash af productUrl
- * - title, brand, category (strings)
- * - price, listPrice: number | null
- * - imageUrl: string | null
- * - productUrl: string (påkrævet)
- * - sourceIndex: hvilket feed i listen (0-baseret)
+ * - id, title, brand, category, retailer (forhandler), color, sizeLabel, capacityLiters
+ * - price, listPrice, imageUrl, productUrl, sourceIndex (feed-index)
  *
  * XML strukturer varierer; vi prøver kendte mønstre først, derefter bred scanning.
  */
@@ -147,6 +143,44 @@ function firstNum(obj, keys) {
 }
 
 /**
+ * PartnerAds feeds er annonceret som iso-8859-1 — res.text() som UTF-8 giver mojibake (�).
+ * @param {ArrayBuffer} buf
+ */
+function decodeFeedXml(buf) {
+	const u8 = new Uint8Array(buf);
+	let head = '';
+	for (let i = 0; i < Math.min(800, u8.length); i++)
+		head += String.fromCharCode(u8[i]);
+	const m = head.match(/encoding=["']([^"']+)["']/i);
+	const enc = (m?.[1] ?? 'utf-8').toLowerCase().replace(/\s/g, '');
+	if (
+		enc === 'iso-8859-1' ||
+		enc === 'iso8859-1' ||
+		enc === 'latin1' ||
+		enc === 'iso88591'
+	) {
+		return new TextDecoder('iso-8859-1').decode(buf);
+	}
+	if (enc.includes('1252') || enc === 'windows-1252' || enc === 'cp1252') {
+		return new TextDecoder('windows-1252').decode(buf);
+	}
+	return new TextDecoder('utf-8').decode(buf);
+}
+
+/**
+ * @param {string} title
+ * @param {string} sizeLabel
+ */
+function extractCapacityLiters(title, sizeLabel) {
+	const s = `${title} ${sizeLabel}`;
+	const m = s.match(/(\d+[,.]?\d*)\s*(l|liter|ltr)\b/i);
+	if (!m) return null;
+	const n = Number.parseFloat(m[1].replace(',', '.'));
+	if (!Number.isFinite(n) || n <= 0 || n > 55) return null;
+	return n;
+}
+
+/**
  * @param {unknown} raw
  * @returns {Record<string, unknown>[]}
  */
@@ -191,6 +225,16 @@ function normalizeOneProduct(o, sourceIndex) {
 	if (!title || !productUrl) return null;
 
 	const brand = firstStr(o, ['brand', 'Brand', 'mærke', 'Brandname', 'brand_name']);
+	const retailer = firstStr(o, ['forhandler', 'Forhandler', 'Merchant', 'merchant']);
+	const color = firstStr(o, ['color', 'Color', 'farve', 'Farve']);
+	const sizeLabel = firstStr(o, [
+		'size',
+		'Size',
+		'størrelse',
+		'Størrelse',
+		'storrelse',
+		'Str',
+	]);
 	const category = firstStr(o, [
 		'kategorinavn',
 		'Kategorinavn',
@@ -240,11 +284,17 @@ function normalizeOneProduct(o, sourceIndex) {
 			'gtin',
 		]) || hashId(productUrl);
 
+	const capacityLiters = extractCapacityLiters(title, sizeLabel);
+
 	return {
 		id,
 		title,
 		brand,
 		category,
+		retailer,
+		color,
+		sizeLabel,
+		capacityLiters,
 		price,
 		listPrice,
 		imageUrl: imageUrl || null,
@@ -374,6 +424,7 @@ export async function fetchPartnerAdsFeed(url, sourceIndex) {
 	if (!res.ok) {
 		throw new Error(`Feed HTTP ${res.status} for index ${sourceIndex}: ${url.slice(0, 96)}`);
 	}
-	const text = await res.text();
+	const buf = await res.arrayBuffer();
+	const text = decodeFeedXml(buf);
 	return parsePartnerAdsXml(text, sourceIndex);
 }

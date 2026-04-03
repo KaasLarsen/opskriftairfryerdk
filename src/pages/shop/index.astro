@@ -69,8 +69,73 @@ const description =
 					<button type="button" class="shop-chip" data-shop-scope="airfryer">Airfryere</button>
 					<button type="button" class="shop-chip" data-shop-scope="accessory">Tilbehør</button>
 				</div>
+				<div class="shop-filters" data-shop-filters hidden>
+					<p class="shop-filters-title">Flere filtre</p>
+					<div class="shop-filters-grid">
+						<div class="shop-filter-field">
+							<label for="shop-price-min">Pris min (kr)</label>
+							<input
+								type="number"
+								id="shop-price-min"
+								class="shop-filter-input"
+								min="0"
+								step="1"
+								placeholder="Fx 500"
+							/>
+						</div>
+						<div class="shop-filter-field">
+							<label for="shop-price-max">Pris max (kr)</label>
+							<input
+								type="number"
+								id="shop-price-max"
+								class="shop-filter-input"
+								min="0"
+								step="1"
+								placeholder="Fx 2500"
+							/>
+						</div>
+						<div class="shop-filter-field">
+							<label for="shop-cap-min">Kurv min (liter)</label>
+							<input
+								type="number"
+								id="shop-cap-min"
+								class="shop-filter-input"
+								min="0"
+								step="0.1"
+								placeholder="Fx 4"
+							/>
+						</div>
+						<div class="shop-filter-field">
+							<label for="shop-cap-max">Kurv max (liter)</label>
+							<input
+								type="number"
+								id="shop-cap-max"
+								class="shop-filter-input"
+								min="0"
+								step="0.1"
+								placeholder="Fx 8"
+							/>
+						</div>
+						<div class="shop-filter-field shop-filter-field--wide">
+							<label for="shop-color-filter">Farve</label>
+							<input
+								type="search"
+								id="shop-color-filter"
+								class="shop-filter-input"
+								placeholder="Fx sort, hvid, stål…"
+								autocomplete="off"
+							/>
+						</div>
+					</div>
+					<fieldset class="shop-filter-brands-fieldset">
+						<legend>Mærke</legend>
+						<div id="shop-brand-boxes" class="shop-brand-boxes"></div>
+					</fieldset>
+					<button type="button" class="shop-filter-reset" id="shop-filter-reset">Nulstil filtre</button>
+				</div>
 				<p class="shop-search-hint" data-shop-hint>
-					Søg blandt airfryere og tilbehør i udvalget her — listen opdateres med jævne mellemrum.
+					Søg eller brug filtre ovenfor (pris, kurvstørrelse, farve, mærke) — listen opdateres ved hvert
+					build.
 				</p>
 				<div id="shop-search-results" class="recipe-grid shop-search-results" hidden></div>
 			</div>
@@ -95,6 +160,7 @@ const description =
 								title={p.title}
 								brand={p.brand}
 								category={p.category}
+								retailer={p.retailer}
 								price={p.price}
 								listPrice={p.listPrice}
 								imageUrl={p.imageUrl}
@@ -125,6 +191,7 @@ const description =
 								title={p.title}
 								brand={p.brand}
 								category={p.category}
+								retailer={p.retailer}
 								price={p.price}
 								listPrice={p.listPrice}
 								imageUrl={p.imageUrl}
@@ -153,205 +220,4 @@ const description =
 	}
 </BaseLayout>
 
-<script>
-	(function () {
-		/** Kopi af scripts/shop-airfryer-classify.mjs — ved ændring opdater begge steder. */
-		const AIRFRYER_CONTEXT = new RegExp(
-			[
-				'air[- ]?fry(?:er)?',
-				'\\bairfryers?\\b',
-				'varmluft(?:sfriture|sovn|\\sfriture)',
-				'\\bvarmluft\\b',
-				'frituregryde',
-				'fritös',
-				'airovn',
-				'airoven',
-				'hot[- ]air',
-				'dual[- ]?zone',
-				'\\b(?:easy|xl|xxl)[- ]fry',
-				'(?:crisp|crisper).{0,16}(?:fry|frit)',
-				'fry.{0,12}(?:crisp|crisper)',
-				'foodi',
-				'\\bvortex\\b',
-				'\\bcosori\\b',
-				'actifry',
-				'philips.{0,40}(?:air[- ]?fry|airfry|essential|hd9\\d)',
-				'tefal.{0,35}(?:easy[- ]?fry|fry|actifry|ultimate)',
-				'moulinex.{0,35}(?:easy|fry|uno)',
-				'instant\\s+pot.{0,25}vortex',
-				'ninja.{0,30}(?:air|foodi|fry|grill|speedi|dual|max|crisp)',
-				'gourmia',
-				'emerio.{0,20}(?:aaf|fry|air)',
-				'russell\\s+hobbs.{0,30}(?:cyclofry|satisfry|air[- ]?fry)',
-				'kenwood.{0,25}(?:hfp|air[- ]?fry)',
-			].join('|'),
-			'i',
-		);
-		const ACCESSORY_MARKER = new RegExp(
-			[
-				'\\btilbeh[oø]r\\b',
-				'pergament',
-				'bagepapir',
-				'silikone',
-				'silicone(?:\\s|$)',
-				'\\bindsats\\b',
-				'indsats',
-				'dampindsats',
-				'grillrist',
-				'\\brist(?:e|er)?\\b',
-				'(?:^|[^\\p{L}\\p{N}])kurv(?:[^\\p{L}\\p{N}]|$)',
-				'kurv\\s+til',
-				'\\bbasket\\b',
-				'\\bliner\\b',
-				'måtte',
-				'matte',
-				'non[- ]?stick',
-				'parchment',
-				'spyd',
-				'dobbeltkurv',
-				'multi[- ]kurv',
-				'snackkurv',
-				'divider',
-				'separator',
-				'reservedel',
-				'papirkurve',
-				'\\bforme\\s+til\\b',
-				'oliesprayer',
-				'til\\s+(?:din\\s+)?air[- ]?fry',
-				'for\\s+air[- ]?fryer',
-				'mods?tning',
-				'trådkurv',
-				'netkurv',
-			].join('|'),
-			'iu',
-		);
-
-		function shelfOf(p) {
-			const hay = `${p.title || ''} ${p.category || ''} ${p.brand || ''}`.trim();
-			if (!hay) return 'other';
-			if (!AIRFRYER_CONTEXT.test(hay)) return 'other';
-			if (ACCESSORY_MARKER.test(hay)) return 'accessory';
-			return 'airfryer';
-		}
-
-		function esc(s) {
-			return String(s)
-				.replace(/&/g, '&amp;')
-				.replace(/</g, '&lt;')
-				.replace(/"/g, '&quot;');
-		}
-
-		function formatDk(n) {
-			if (n == null || typeof n !== 'number') return '';
-			try {
-				return new Intl.NumberFormat('da-DK', {
-					style: 'currency',
-					currency: 'DKK',
-					maximumFractionDigits: 0,
-				}).format(n);
-			} catch {
-				return String(n);
-			}
-		}
-
-		/** @param {any} p */
-		function cardHtml(p) {
-			const img = p.imageUrl
-				? `<div class="recipe-card-image"><img src="${esc(p.imageUrl)}" alt="${esc(p.title)}" width="640" height="400" loading="lazy" decoding="async" /></div>`
-				: `<div class="recipe-card-image recipe-card-image--placeholder"><div class="recipe-placeholder-inner"><span class="recipe-placeholder-label">Intet billede</span></div></div>`;
-			const brand = p.brand
-				? `<div class="recipe-card-badges"><span class="recipe-card-badge">${esc(p.brand)}</span></div>`
-				: '';
-			const priceStr = formatDk(p.price);
-			const listStr = formatDk(p.listPrice);
-			const onSale = p.price != null && p.listPrice != null && p.listPrice > p.price;
-			const meta = priceStr
-				? `${onSale ? `Tilbud ${priceStr}` : priceStr}${p.category ? ` · ${esc(p.category)}` : ''}`
-				: 'Pris hos forhandler';
-			return `<a class="recipe-card" href="${esc(p.productUrl)}" target="_blank" rel="sponsored noopener noreferrer">${img}<div class="recipe-card-body">${brand}<h3>${esc(p.title)}</h3><div class="recipe-meta-row"><span>${meta}</span></div><p>Se hos forhandler</p></div></a>`;
-		}
-
-		const root = document.querySelector('[data-shop-page]');
-		if (!root) return;
-		const input = root.querySelector('#shop-search-input');
-		const results = root.querySelector('#shop-search-results');
-		const hint = root.querySelector('[data-shop-hint]');
-		const chips = root.querySelectorAll('[data-shop-scope]');
-		if (!(input instanceof HTMLInputElement) || !(results instanceof HTMLElement)) return;
-
-		let products = [];
-		let scope = 'all';
-		let t = 0;
-
-		function setScope(next) {
-			scope = next;
-			for (const b of chips) {
-				if (!(b instanceof HTMLButtonElement)) continue;
-				const s = b.getAttribute('data-shop-scope') || '';
-				const active = s === scope;
-				b.classList.toggle('shop-chip--active', active);
-				b.setAttribute('aria-pressed', active ? 'true' : 'false');
-			}
-			render();
-		}
-
-		function matchesScope(p) {
-			if (scope === 'all') return true;
-			const s = shelfOf(p);
-			if (scope === 'airfryer') return s === 'airfryer';
-			if (scope === 'accessory') return s === 'accessory';
-			return true;
-		}
-
-		function render() {
-			const q = input.value.trim().toLowerCase();
-			if (!products.length) {
-				results.innerHTML = '';
-				results.hidden = true;
-				return;
-			}
-			const filtered = products.filter((p) => {
-				if (!matchesScope(p)) return false;
-				if (!q) return false;
-				const hay = `${p.title || ''} ${p.brand || ''} ${p.category || ''}`.toLowerCase();
-				return hay.includes(q);
-			});
-			if (!q) {
-				results.innerHTML = '';
-				results.hidden = true;
-				if (hint instanceof HTMLElement) hint.hidden = false;
-				return;
-			}
-			if (hint instanceof HTMLElement) hint.hidden = true;
-			results.hidden = false;
-			if (filtered.length === 0) {
-				results.innerHTML =
-					'<p class="shop-no-results">Ingen produkter matchede din søgning. Prøv andre ord.</p>';
-				return;
-			}
-			results.innerHTML = filtered.slice(0, 60).map(cardHtml).join('');
-		}
-
-		for (const b of chips) {
-			b.addEventListener('click', () => {
-				const s = b.getAttribute('data-shop-scope') || 'all';
-				setScope(s);
-			});
-		}
-
-		input.addEventListener('input', () => {
-			window.clearTimeout(t);
-			t = window.setTimeout(render, 200);
-		});
-
-		fetch('/data/shop-products.json')
-			.then((r) => r.json())
-			.then((data) => {
-				products = Array.isArray(data.products) ? data.products : [];
-				render();
-			})
-			.catch(() => {
-				products = [];
-			});
-	})();
-</script>
+<script src="/shop-page.js" defer></script>

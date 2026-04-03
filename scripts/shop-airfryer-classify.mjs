@@ -1,19 +1,18 @@
 /**
  * Klassifikation til shop: kun luftfriture + tilbehør dertil (filtrer alt andet fra).
- * Bruges ved build (sync) og spejles i src/data/shop-curation.ts + shop-siden script.
+ * Bruges ved build (sync) og spejles i shop-siden script.
  */
 
 /** @typedef {'airfryer' | 'accessory' | 'other'} ShopShelf */
 
-/** Skal matche titel/kategori — luftfriture-kontekst eller kendte airfryer-linjer. */
+/** Luftfriture / kendte produktlinjer — ikke ren "varmluft" eller fedtfriture. */
 const AIRFRYER_CONTEXT = new RegExp(
 	[
 		'air[- ]?fry(?:er)?',
 		'\\bairfryers?\\b',
-		'varmluft(?:sfriture|sovn|\\sfriture)',
-		'\\bvarmluft\\b',
-		'frituregryde',
-		'fritös',
+		'varmluftsfriture',
+		'varmluft\\s+friture',
+		'varmluftsovn',
 		'airovn',
 		'airoven',
 		'hot[- ]air',
@@ -38,7 +37,79 @@ const AIRFRYER_CONTEXT = new RegExp(
 	'i',
 );
 
-/** Tilbehør kun hvis der allerede er airfryer-kontekst (undgå generiske kurve, forme osv.). */
+const AIR_SIGNAL = new RegExp(
+	[
+		'\\bair[- ]?fry(?:er)?s?\\b',
+		'\\bairfry',
+		'\\bvarmluft',
+		'hot[- ]air',
+		'\\bairovn\\b',
+		'\\bfoodi\\b',
+		'\\bvortex\\b',
+		'dual[- ]?zone',
+	].join('|'),
+	'i',
+);
+
+/** Fedtfriture, ovn/komfur uden airfry, klassisk frituregryde uden luftsignal. */
+function excludeFromAirfryerShop(hay) {
+	if (/\b(fedtfriture|oliefriture)\b/i.test(hay)) return true;
+	if (/\bdeep[- ]fat\b/i.test(hay)) return true;
+	if (
+		/\b(?:(?:mini|mini[- ])?frituregryde|friture gryde|fritös|friteuse)\b/i.test(hay) &&
+		!AIR_SIGNAL.test(hay)
+	) {
+		return true;
+	}
+	if (
+		/\b(bageovn|stegeovn|induktionsovn|indbygningsovn|pyrolyse|komfur|induktionskomfur)\b/i.test(
+			hay,
+		) &&
+		!AIR_SIGNAL.test(hay)
+	) {
+		return true;
+	}
+	if (/\bvarmluftsovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
+	if (/\bel[- ]?ovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
+	return false;
+}
+
+/** Tydeligt hovedapparat — da ikke under "kun tilbehør" pga. ord som "kurv" i titel. */
+const MAIN_UNIT = new RegExp(
+	[
+		'\\bair[- ]?fry(?:er)?s?\\b',
+		'\\bvarmluftsfriture\\b',
+		'hot[- ]air',
+		'\\bairovn\\b',
+		'foodi',
+		'vortex',
+		'philips.{0,40}(?:air[- ]?fry|airfry|hd9\\d)',
+		'ninja.{0,30}(?:air|foodi|dual|max|crisp|grill)',
+		'tefal.{0,35}(?:easy|actifry)',
+		'\\bcosori\\b',
+		'instant.{0,20}vortex',
+		'actifry',
+		'\\b(?:easy|xl|xxl)[- ]fry',
+	].join('|'),
+	'i',
+);
+
+function strongAccessoryIntent(hay) {
+	return /\b(pergament|bagepapir|parchment|reservedel|erstatning|erstatnings|replacement|tilbehørspakke|kurv\s+til|rist\s+til|indsats\s+til|original\s*(?:kurv|del))\b/i.test(
+		hay,
+	);
+}
+
+function tilbehorMedDel(hay) {
+	return (
+		/\btilbeh[oø]r\b/i.test(hay) &&
+		/(kurv|indsats|pergament|bagepapir|rist|liner|basket|dobbeltkurv|snackkurv|grillrist|måtte|spyd|papir)/i.test(
+			hay,
+		)
+	);
+}
+
+/** Tilbehør: undgå "matte" (mat sort), brede "rist"-matches m.m. */
 const ACCESSORY_MARKER = new RegExp(
 	[
 		'\\btilbeh[oø]r\\b',
@@ -47,17 +118,17 @@ const ACCESSORY_MARKER = new RegExp(
 		'silikone',
 		'silicone(?:\\s|$)',
 		'\\bindsats\\b',
-		'indsats',
 		'dampindsats',
 		'grillrist',
-		'\\brist(?:e|er)?\\b',
+		'\\bkurvrist\\b',
 		'(?:^|[^\\p{L}\\p{N}])kurv(?:[^\\p{L}\\p{N}]|$)',
 		'kurv\\s+til',
 		'\\bbasket\\b',
 		'\\bliner\\b',
-		'måtte',
-		'matte',
-		'non[- ]?stick',
+		'\\bmåtte\\b',
+		'silikone[- ]?måtte',
+		'bage[- ]?måtte',
+		'non[- ]?stick(?:\\s+(?:mat|måtte))?',
 		'parchment',
 		'spyd',
 		'dobbeltkurv',
@@ -80,13 +151,17 @@ const ACCESSORY_MARKER = new RegExp(
 
 /**
  * Regex-baseret hylde (uden fastpinede id'er — de håndteres i shop-curation.ts).
- * @param {{ title?: string, category?: string }} p
+ * @param {{ title?: string, category?: string, brand?: string }} p
  * @returns {ShopShelf}
  */
 export function classifyShopProductBase(p) {
 	const hay = _hay(p);
 	if (!hay) return 'other';
 	if (!AIRFRYER_CONTEXT.test(hay)) return 'other';
+	if (excludeFromAirfryerShop(hay)) return 'other';
+
+	if (tilbehorMedDel(hay)) return 'accessory';
+	if (MAIN_UNIT.test(hay) && !strongAccessoryIntent(hay)) return 'airfryer';
 	if (ACCESSORY_MARKER.test(hay)) return 'accessory';
 	return 'airfryer';
 }

@@ -3,13 +3,14 @@ interface Props {
 	title: string;
 	brand: string;
 	category: string;
+	retailer?: string;
 	price: number | null;
 	listPrice: number | null;
 	imageUrl: string | null;
 	productUrl: string;
 }
 
-const { title, brand, category, price, listPrice, imageUrl, productUrl } = Astro.props;
+const { title, brand, category, retailer, price, listPrice, imageUrl, productUrl } = Astro.props;
 
 function formatDk(n: number | null): string {
 	if (n == null) return '';
@@ -27,6 +28,7 @@ const onSale =
 const leadBits: string[] = [];
 if (onSale && listStr) leadBits.push(`før ${listStr}`);
 if (category) leadBits.push(category);
+const ctaLabel = (retailer ?? '').trim() ? `Se hos ${(retailer ?? '').trim()}` : 'Se hos butikken';
 ---
 
 <a
@@ -79,6 +81,6 @@ if (category) leadBits.push(category);
 				)
 			}
 		</div>
-		<p>Se hos forhandler</p>
+		<p>{ctaLabel}</p>
 	</div>
 </a>
