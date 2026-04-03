@@ -1,8 +1,6 @@
 ---
 title: 'Airfryer pastinakfritter – sprød og let med lime-yoghurt'
 description: 'Pastinakfritter i airfryer med sprød overflade og frisk lime-yoghurt dip. Tider, temperatur og tips til at undgå bløde fritter.'
-heroImage: '/images/recipes/airfryer-pastinak-fritter-lime-yoghurt.png'
-heroAlt: 'Sprøde airfryer pastinakfritter med lime-yoghurt dip på bordet ved siden af airfryer'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 12

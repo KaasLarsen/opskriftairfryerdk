@@ -1,8 +1,6 @@
 ---
 title: 'Airfryer rødbede-chips – sprøde skiver med feta og citron'
 description: 'Rødbede-chips i airfryer: tynde, sprøde skiver med feta-crumble og citron. Tider, temperatur og tips til perfekt tykkelse.'
-heroImage: '/images/recipes/airfryer-roedbede-feta-citron-chips.png'
-heroAlt: 'Sprøde airfryer rødbede-chips med feta og citron på bordet'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 15

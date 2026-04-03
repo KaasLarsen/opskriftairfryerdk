@@ -1,8 +1,6 @@
 ---
 title: 'Airfryer sriracha-rejer – sprød kant med hvidløgslime'
 description: 'Sriracha-rejer i airfryer med kort tilberedning og frisk hvidløgslime glaze. Perfekt som tapas/appetizer.'
-heroImage: '/images/recipes/airfryer-rejer-sriracha-hvidloegslime.png'
-heroAlt: 'Sprøde sriracha-rejer fra airfryer med hvidløgslime og limebåde'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 10
