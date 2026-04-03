@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer rødbede-chips – sprøde skiver med feta og citron'
 description: 'Rødbede-chips i airfryer: tynde, sprøde skiver med feta-crumble og citron. Tider, temperatur og tips til perfekt tykkelse.'
+heroImage: '/images/recipes/airfryer-roedbede-feta-citron-chips.png'
+heroAlt: 'Sprøde airfryer rødbede-chips med feta, citron og dip i skål foran airfryer'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 15
@@ -56,7 +58,7 @@ faq:
     answer: 'Ja, 2-3 minutter ved 190 °C, men de er bedst helt sprøde og uden toppings.'
 ---
 
-### Daarom virker airfryer-metoden
+### Derfor virker airfryer-metoden
 Rødbeder indeholder meget vand. I airfryer får du varme fra alle sider, så skiverne tørrer ud og bliver sprøde, hvis de er skåret tyndt nok.
 
 ### Feta og citron som “afslutning”
