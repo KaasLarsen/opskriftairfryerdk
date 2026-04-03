@@ -82,7 +82,7 @@ async function main() {
 		console.log(`sync-shop-products: henter feed ${i + 1}/${urls.length} …`);
 		const rows = await fetchPartnerAdsFeed(url, i);
 		sources.push({ index: i, urlPreview: previewUrl(url), count: rows.length });
-		all.push(...rows);
+		for (let j = 0; j < rows.length; j++) all.push(rows[j]);
 	}
 
 	const seen = new Set();

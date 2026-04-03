@@ -28,7 +28,9 @@ Opskrifter ligger i [`src/content/recipes/`](src/content/recipes/) som Markdown 
 
 ## Shop (PartnerAds)
 
-`/shop` viser produkter fra PartnerAds XML-feeds. Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet.
+`/shop` viser produkter fra PartnerAds XML-feeds. Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet. Eksempel-feeds findes i [`.env.example`](.env.example); kopier til `.env` eller sæt variablen hos Vercel.
+
+**Note:** `public/data/shop-products.json` er **gitignoreret** (filen kan blive meget stor efter sync). Uden den lokalt: kør `node scripts/sync-shop-products.mjs` én gang (evt. med tom `PARTNERADS_FEED_URLS` for en tom liste).
 
 For **daglig opdatering uden manuelt deploy**: opret et **Deploy Hook** hos Vercel og sæt GitHub-secret `VERCEL_DEPLOY_HOOK_URL` — se [`/.github/workflows/daily-vercel-deploy.yml`](.github/workflows/daily-vercel-deploy.yml).
 

@@ -14,13 +14,78 @@
 
 import { XMLParser } from 'fast-xml-parser';
 
-const parser = new XMLParser({
+const xmlParserOptions = {
 	ignoreAttributes: false,
 	attributeNamePrefix: '@_',
 	textNodeName: '#text',
 	trimValues: true,
 	parseTagValue: true,
-});
+	// Store feeds har tusindvis af &amp; / &gt; — standard maxTotalExpansions (1000) fejler.
+	processEntities: {
+		maxTotalExpansions: 10_000_000,
+		maxEntityCount: 500_000,
+		maxExpandedLength: 50_000_000,
+	},
+};
+
+/** Fuld dokument-parse (små/mellemstore feeds). */
+const parser = new XMLParser(xmlParserOptions);
+/** Én <produkt>-blok ad gangen (PartnerAds produkter-layout — undgår OOM). */
+const chunkParser = new XMLParser(xmlParserOptions);
+
+/**
+ * @param {string} xmlText
+ */
+function isProdukterFeed(xmlText) {
+	return /<produkter\b/i.test(xmlText.slice(0, 8000));
+}
+
+/**
+ * @param {string} xmlText
+ * @returns {Generator<string>}
+ */
+function* eachProduktElement(xmlText) {
+	const openRe = /<produkt\b[^>]*>/gi;
+	let m;
+	while ((m = openRe.exec(xmlText)) !== null) {
+		const innerStart = m.index + m[0].length;
+		const tail = xmlText.slice(innerStart);
+		const closeMatch = tail.match(/<\/produkt\s*>/i);
+		if (!closeMatch || closeMatch.index == null) break;
+		const elEnd = innerStart + closeMatch.index + closeMatch[0].length;
+		yield xmlText.slice(m.index, elEnd);
+		openRe.lastIndex = elEnd;
+	}
+}
+
+/**
+ * @param {string} xmlText
+ * @param {number} sourceIndex
+ */
+function parseProdukterChunked(xmlText, sourceIndex) {
+	/** @type {ReturnType<typeof normalizeOneProduct>[]} */
+	const normalized = [];
+	const seen = new Set();
+
+	for (const block of eachProduktElement(xmlText)) {
+		try {
+			const parsed = chunkParser.parse(block);
+			const root = /** @type {Record<string, unknown>} */ (parsed);
+			const o = root.produkt ?? root.Produkt;
+			if (!o || typeof o !== 'object') continue;
+			const n = normalizeOneProduct(/** @type {Record<string, unknown>} */ (o), sourceIndex);
+			if (!n) continue;
+			const u = n.productUrl;
+			if (seen.has(u)) continue;
+			seen.add(u);
+			normalized.push(n);
+		} catch {
+			// ignorer enkelt defekt blok
+		}
+	}
+
+	return normalized;
+}
 
 /** @param {unknown} v */
 function str(v) {
@@ -102,13 +167,14 @@ function asObjectArray(raw) {
  */
 function normalizeOneProduct(o, sourceIndex) {
 	const title = firstStr(o, [
+		'produktnavn',
+		'Produktnavn',
 		'title',
 		'Title',
 		'name',
 		'Name',
 		'productname',
 		'ProductName',
-		'Produktnavn',
 		'navn',
 	]);
 	const productUrl = firstStr(o, [
@@ -126,6 +192,8 @@ function normalizeOneProduct(o, sourceIndex) {
 
 	const brand = firstStr(o, ['brand', 'Brand', 'mærke', 'Brandname', 'brand_name']);
 	const category = firstStr(o, [
+		'kategorinavn',
+		'Kategorinavn',
 		'category',
 		'Category',
 		'kategori',
@@ -158,8 +226,19 @@ function normalizeOneProduct(o, sourceIndex) {
 		'beforediscount',
 	]);
 	const id =
-		firstStr(o, ['id', 'ID', 'productid', 'ProductID', 'sku', 'SKU', 'ean', 'EAN', 'gtin']) ||
-		hashId(productUrl);
+		firstStr(o, [
+			'produktid',
+			'Produktid',
+			'id',
+			'ID',
+			'productid',
+			'ProductID',
+			'sku',
+			'SKU',
+			'ean',
+			'EAN',
+			'gtin',
+		]) || hashId(productUrl);
 
 	return {
 		id,
@@ -230,6 +309,19 @@ function extractProducts(parsed, sourceIndex) {
 			rawItems = asObjectArray(p.product);
 		}
 
+		if (rawItems.length === 0) {
+			const produkterNode = p.produkter ?? p.Produkter;
+			if (produkterNode && typeof produkterNode === 'object') {
+				const pn = /** @type {Record<string, unknown>} */ (produkterNode);
+				const prod = pn.produkt ?? pn.Produkt;
+				rawItems = asObjectArray(prod);
+			}
+		}
+
+		if (rawItems.length === 0 && 'produkt' in p) {
+			rawItems = asObjectArray(p.produkt);
+		}
+
 		if (rawItems.length === 0 && 'item' in p) {
 			rawItems = asObjectArray(p.item);
 		}
@@ -239,7 +331,10 @@ function extractProducts(parsed, sourceIndex) {
 				if (k.startsWith('@_')) continue;
 				const val = p[k];
 				const arr = asObjectArray(val);
-				if (arr.length >= 2 && arr.some((row) => firstStr(row, ['VareURL', 'url', 'link']))) {
+				if (
+					arr.length >= 2 &&
+					arr.some((row) => firstStr(row, ['VareURL', 'vareurl', 'url', 'link']))
+				) {
 					rawItems = arr;
 					break;
 				}
@@ -258,6 +353,9 @@ function extractProducts(parsed, sourceIndex) {
  * @param {number} sourceIndex
  */
 export function parsePartnerAdsXml(xmlText, sourceIndex) {
+	if (isProdukterFeed(xmlText)) {
+		return parseProdukterChunked(xmlText, sourceIndex);
+	}
 	const parsed = parser.parse(xmlText);
 	return extractProducts(parsed, sourceIndex);
 }

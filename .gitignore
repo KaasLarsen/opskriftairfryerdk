@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Shop: genereres ved build fra PartnerAds-feeds (kan være hundrede MB — commit ikke)
+public/data/shop-products.json
