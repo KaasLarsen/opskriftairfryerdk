@@ -2,7 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ShopProductCard from '../../components/ShopProductCard.astro';
 import { SITE_NAME } from '../../consts';
-import { classifyShopProduct, type ShopProductJson } from '../../data/shop-curation';
+import {
+	type ShopProductJson,
+	pickFeaturedShopProducts,
+	SHOP_FEATURED_ACCESSORY_LIMIT,
+	SHOP_FEATURED_AIRFRYER_LIMIT,
+} from '../../data/shop-curation';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -17,12 +22,12 @@ if (fs.existsSync(fp)) {
 	}
 }
 
-const airfryers = allProducts
-	.filter((p) => classifyShopProduct(p) === 'airfryer')
-	.slice(0, 12);
-const accessories = allProducts
-	.filter((p) => classifyShopProduct(p) === 'accessory')
-	.slice(0, 12);
+const airfryers = pickFeaturedShopProducts(allProducts, 'airfryer', SHOP_FEATURED_AIRFRYER_LIMIT);
+const accessories = pickFeaturedShopProducts(
+	allProducts,
+	'accessory',
+	SHOP_FEATURED_ACCESSORY_LIMIT,
+);
 
 const title = `Shop – airfryere og tilbehør | ${SITE_NAME}`;
 const description =
@@ -79,7 +84,10 @@ const description =
 					<div class="section-head">
 						<p class="section-kicker">Udvalg</p>
 						<h2 id="shop-af-heading">Udvalgte airfryere</h2>
-						<p>Vejledende udvalg — find flere via søgningen ovenfor.</p>
+						<p>
+							Udvalgt på tværs af flere butikker, så du får bredt spredning — der findes flere via
+							søgningen.
+						</p>
 					</div>
 					<div class="recipe-grid">
 						{airfryers.map((p) => (
@@ -106,7 +114,10 @@ const description =
 					<div class="section-head">
 						<p class="section-kicker">Udvalg</p>
 						<h2 id="shop-acc-heading">Udvalgt tilbehør</h2>
-						<p>Kurve, forme, indsatser og andet praktisk tilbehør til airfryer.</p>
+						<p>
+							Udvalgt tilbehør fra flere kilder — kurve, forme, indsatser og lignende til din
+							airfryer.
+						</p>
 					</div>
 					<div class="recipe-grid">
 						{accessories.map((p) => (
