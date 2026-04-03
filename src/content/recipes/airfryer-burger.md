@@ -1,7 +1,8 @@
 ---
 title: 'Airfryer burger – saftig bøf og varm bolle'
 description: 'Burger i airfryer: steg bøffen i kurven og giv bollerne sidste minutter med ost. Tider til okseburger med sprød skorpe og minimal fedt på komfur.'
-heroAlt: 'Airfryer burger med smeltet ost, salat og klassisk bolle'
+heroImage: '/images/recipes/airfryer-burger.png'
+heroAlt: 'Høj gourmet-burger med sesam-bolle, smeltet ost, salat, tomat, syltet agurk og rødløg foran airfryer med display 200 grader, ketchup og pomfritter'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 12
@@ -10,7 +11,7 @@ servings: '4 burgere'
 calories: 'Ca. 520 kcal pr. burger (med bolle og ost)'
 category: 'Hovedret'
 cuisine: 'International'
-temperatureC: 190
+temperatureC: 200
 keywords:
   - airfryer burger
   - hamburger i airfryer
@@ -35,13 +36,13 @@ ingredients:
   - text: '1 tsk salt + 1/2 tsk peber'
   - text: '1 tsk paprika eller grillkrydderi (valgfrit)'
   - text: '1 spsk Worcestershire sauce eller soya (valgfrit)'
-  - text: '4 burgerboller (del dem hvis de er meget høje)'
+  - text: '4 burgerboller med sesam (brioche eller klassisk – del hvis meget høje)'
   - text: '4 skiver ost (cheddar eller amerikaner smelter pænt)'
-  - text: 'Til servering: salat, tomat, løg, ketchup, sennep, mayonnaise'
+  - text: 'Til servering: salat, tomat, rødløg i ringe, syltede agurkeskiver, ketchup, sennep, mayonnaise eller burgerdressing'
 instructions:
   - text: 'Ved hjemmelavet fars: bland kort med salt, peber og evt. krydderi/sauce. Form 4 flade bøffer ca. 2 cm tykke (lidt større end bolle – de trækker sig).'
-  - text: 'Forvarm airfryeren til 190 °C.'
-  - text: 'Læg bøfferne i ét lag med luft omkring. Steg 6 minutter, vend forsigtigt, steg 4-5 minutter til kernen er gennemstegt (til lykkelig medium: brug termometer eller skær én bøf prøve).'
+  - text: 'Forvarm airfryeren til 200 °C (eller 190 °C ved burger der bruner hurtigt).'
+  - text: 'Læg bøfferne i ét lag med luft omkring. Steg 5-6 minutter, vend forsigtigt, steg 4-5 minutter til kernen er gennemstegt (til lykkelig medium: brug termometer eller skær én bøf prøve).'
   - text: 'Tag bøfferne ud og hold dem lune under folie. Halvér bollerne og læg ost på underside af topstykker.'
   - text: 'Læg boller i airfryer (undgå at presse top og bund sammen – ost på top-skiven). 2-3 minutter ved 175-180 °C til ost smelter og kanten er lidt ristet.'
   - text: 'Saml burger og server straks.'
@@ -51,7 +52,7 @@ tips:
   - 'Undgå at knække bøffen ved vending – brug spatel.'
 faq:
   - question: 'Hvor længe skal burgerbøf have i airfryer?'
-    answer: 'Ofte 10-12 minutter ved 190 °C for hjemmelavede bøffer på ca. 2 cm – afhænger af fedt, form og model.'
+    answer: 'Ofte 10-12 minutter ved 190-200 °C for hjemmelavede bøffer på ca. 2 cm – afhænger af fedt, form og model (som på airfryer-display er 200 °C et godt udgangspunkt).'
   - question: 'Kan jeg stege hele burgeren samlet i airfryer?'
     answer: 'Ikke anbefalet: salat og dressing klasker. Steg bøf og bolle/ost, og saml til sidst.'
   - question: 'Hvorfor bliver min burgerbøf tør?'

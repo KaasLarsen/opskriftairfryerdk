@@ -1,7 +1,8 @@
 ---
 title: 'Airfryer løgringe – sprøde uden friture'
 description: 'Løgringe i airfryer med panering der bliver gylden og sprød. Bedre end fedtbad, tydelige tider og tips så de ikke bliver bløde.'
-heroAlt: 'Gyldne sprøde løgringe på tallerken med dip'
+heroImage: '/images/recipes/airfryer-loegringe.png'
+heroAlt: 'Skål med gyldne panerede løgringe, ketchup og hvid dip, persille og airfryer med 200 grader i baggrunden'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 prepMinutes: 20
@@ -10,7 +11,7 @@ servings: '4 portioner som snack'
 calories: 'Ca. 220 kcal pr. portion (afhænger af panering og olie)'
 category: 'Tilbehør'
 cuisine: 'International'
-temperatureC: 190
+temperatureC: 200
 keywords:
   - airfryer løgringe
   - løgringe i airfryer
@@ -42,10 +43,11 @@ instructions:
   - text: 'Dup ringene tørre med køkkenrulle – klistrede overflader giver klumpet panering.'
   - text: 'Vend først i krydret mel, derefter i æg, til sidst i panko/rasp. Tryk panering let fast.'
   - text: 'Læg på en tallerken og spray eller pensl meget let med olie på begge sider.'
-  - text: 'Forvarm airfryeren til 190 °C.'
-  - text: 'Fordel ringe i ét lag med mellemrum (steg i 2-3 omgange ved behov). Steg 7-8 minutter, vend forsigtigt med tang, steg 7-8 minutter mere til gyldne og sprøde.'
+  - text: 'Forvarm airfryeren til 200 °C (eller 190 °C hvis paneringen bruner for hurtigt).'
+  - text: 'Fordel ringe i ét lag med mellemrum (steg i 2-3 omgange ved behov). Steg 7 minutter, vend forsigtigt med tang, steg 6-8 minutter mere til gyldne og sprøde – justér efter tykkelse.'
   - text: 'Salt let ved servering.'
 tips:
+  - 'Som på fotoet: server i skål med bagepapir, ketchup + cremet dip og lidt persille – gæster kan dyppe i begge saucer.'
   - 'For tynde ringe: kortere tid og hold øje så rasp ikke brænder.'
   - 'Våde ringe = blød panering. Tør grundigt.'
   - 'Kan fryses ubagte på bagepapir i lag – steg fra frost med 2-3 minutter ekstra.'

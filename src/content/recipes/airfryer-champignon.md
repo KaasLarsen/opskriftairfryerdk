@@ -1,75 +1,82 @@
 ---
-title: 'Airfryer champignon – fyldte med ost og hvidløg'
-description: 'Champignon i airfryer: hele hatte fyldt med ostecreme eller hvidløgssmør. Saftige, brune og klar som tilbehør på 15-18 minutter.'
-heroAlt: 'Bagte champignon med smeltet ost og urter på hvid tallerken'
+title: 'Airfryer champignon – hele svampe i glace og fyldte hatte'
+description: 'Champignon i airfryer: hele brune svampe med soya-balsamico-glace (som på fotoet) eller fyldte hatte med ostecreme. Tider til 200 °C og ca. 15 minutter.'
+heroImage: '/images/recipes/airfryer-champignon.png'
+heroAlt: 'Skål med hele ristede champignon i mørk glace, pyntet med persille, airfryer med 200 grader og 15 minutter på display'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
-prepMinutes: 10
-cookMinutes: 14
+prepMinutes: 8
+cookMinutes: 15
 servings: '4 portioner'
-calories: 'Ca. 140 kcal pr. portion (med ostefyld)'
+calories: 'Ca. 95 kcal pr. portion (hele svampe uden fyld)'
 category: 'Tilbehør'
 cuisine: 'International'
-temperatureC: 180
+temperatureC: 200
 keywords:
   - airfryer champignon
   - champignon i airfryer
   - svampe airfryer
+  - hele champignon airfryer
   - fyldte champignon
   - svampe tilbehør
 featured: true
 intro: |
-  Champignon i airfryer bliver **koncentrerede i smag** med lettere brunede kanter – perfekt som tilbehør eller lille forret.
+  Champignon i airfryer bliver **koncentrerede og saftige** med pæn glace, hvis du **dupper dem tørre** og bruger kort marinade af olie, soya og lidt balsamico.
 
-  Her fylder du hattene med en **hurtig ostecreme** med hvidløg; den smelter ned i svampen under tilberedning.
+  **Som på fotoet** er det hele brune champignoner – perfekt som tilbehør med frisk persille og evt. dip.
 
-  God ved siden af [oksebøf](/opskrifter/airfryer-okseboef-steak), [kyllingebryst](/opskrifter/airfryer-kyllingebryst) eller som vegetarisk hovedret med [halloumi](/opskrifter/airfryer-halloumi-honning-citron).
+  Vil du have **ost i hatten**, finder du varianten længere nede på siden under “Fyldte champignon”.
+
+  God ved siden af [oksebøf](/opskrifter/airfryer-okseboef-steak), [kyllingebryst](/opskrifter/airfryer-kyllingebryst) eller med [halloumi](/opskrifter/airfryer-halloumi-honning-citron).
 conclusion: |
-  Drys med purløg eller persille og et nip peber – evt. et skvæt citron.
+  Drys med rigeligt **persille** og et nip peber – server med aioli, cremefraiche med dild eller en lys dip.
 
-  Kombinér med andre grøntsager: [broccoli](/opskrifter/airfryer-broccoli), [blomkål](/opskrifter/airfryer-blomkaal) eller [grøntsagsmix](/opskrifter/airfryer-groentsagsmix) i samme måltid.
+  Kombinér med [broccoli](/opskrifter/airfryer-broccoli), [blomkål](/opskrifter/airfryer-blomkaal) eller [grøntsagsmix](/opskrifter/airfryer-groentsagsmix).
 
-  Store rester kan skæres i skiver på toast dagen efter.
+  Rester smager godt kolde i salat eller på toast dagen efter.
 ingredients:
-  - text: '400-500 g store champignon (vælg hætte der kan rumme fyld)'
-  - text: '1 spsk olivenolie til pensling'
-  - text: '1/2 tsk salt og 1/4 tsk peber'
-  - text: '80 g flødeost naturel eller ricotta'
-  - text: '60 g revet ost (parmesan eller fast mozzarella)'
-  - text: '1 fed hvidløg, presset (eller 1/2 tsk hvidløgspulver)'
-  - text: '2 spsk finthakket purløg eller persille + ekstra til pynt'
-  - text: 'Valgfrit: 2 spsk rasp på toppen for ekstra sprød hat'
+  - text: '500 g hele brune champignon (stok kan trimmes let)'
+  - text: '1 1/2 spsk olivenolie'
+  - text: '1 spsk soya (mindre hvis salt soya)'
+  - text: '1 tsk balsamico (valgfrit – giver dyb glace)'
+  - text: '2 fed hvidløg, finthakket eller presset'
+  - text: '1/2 tsk salt og 1/4 tsk peber (justér efter soya)'
+  - text: 'Valgfrit: 1/2 tsk tørret timian'
+  - text: '4 spsk finthakket persille til servering'
 instructions:
-  - text: 'Rør fyld sammen: flødeost/ricotta, revet ost, hvidløg og urter. Smag til med salt og peber.'
-  - text: 'Fjern evt. lidt af stokken indvendigt med en lille ske, så hatten kan fyldes (lad være hvis svampen allerede er dyb).'
-  - text: 'Dup champignonerne tørre. Pensl ydersiden let med olie og drys med salt og peber.'
-  - text: 'Fyld hattene med osteblandingen uden at overfylde – 1 tsk rasp på toppen hvis ønsket.'
-  - text: 'Forvarm airfryeren til 180 °C.'
-  - text: 'Stå champignonerne op i kurven (eller læg på rist/ske hvis de vælter). Steg 10 minutter – tjek, giv 3-5 minutter mere til gylden top og møre svampe.'
-  - text: 'Server med friske urter og flagesalt.'
+  - text: 'Rengør svampene med tørt klud eller børste – undgå at gennembløde dem. Dup helt tørre.'
+  - text: 'Pisk olie, soya, balsamico, hvidløg, salt, peber og evt. timian sammen i en skål.'
+  - text: 'Vend champignonerne i marinaden til de er jævnt overtrukne (2-3 minutter trækker smag ind i overfladen).'
+  - text: 'Forvarm airfryeren til 200 °C.'
+  - text: 'Hæld champignoner og rester af marinade i kurven i ét jævnt lag med lidt mellemrum.'
+  - text: 'Steg 8 minutter, ryst kurven, steg 6-7 minutter mere (ca. 15 i alt) til overfladen er mørk og blank og svampene er møre.'
+  - text: 'Vend sammen med hakket persille og smag til – evt. et skvæt citron.'
 tips:
-  - 'Små svampe: kortere tid og hold øje – de tørrer hurtigere ud.'
-  - 'Vand i svampen: undgå at skylle lige før; dup grundigt efter rengøring.'
-  - 'Vegan: brug vegansk ost og flødeost – tid tilsvarende.'
+  - 'For meget væske i bunden: steg lidt længere uden ekstra marinade til sidst, så glace sætter sig.'
+  - 'Små svampe: kortere tid, tjek efter 12 minutter.'
+  - 'Vegan: brug vegansk soya og hold fyldt variant med planteoste nedenfor.'
 faq:
   - question: 'Hvor længe skal champignon have i airfryer?'
-    answer: 'Typisk 13-16 minutter ved 180 °C for mellemstore fyldte hatte afhængigt af størrelse og model.'
-  - question: 'Kan jeg lave champignon uden fyld?'
-    answer: 'Ja – halvér eller brug hele, vend med olie og krydderi; ofte 8-12 minutter ved 185 °C.'
-  - question: 'Hvorfor bliver de våde i bunden?'
-    answer: 'Svampe afgiver væske – stående position eller rist med luft under hjælper; steg til væsken fordamper mod slutningen.'
-  - question: 'Portobello som “burger”?'
-    answer: 'Ja – større hat, længere tid; brug som erstatning for kødbøf med samme fyld eller pesto og ost.'
+    answer: 'Til hele svampe med glace: ofte omkring 14-16 minutter ved 200 °C — som på mange displays er 15 minutter et godt udgangspunkt; tilpas efter størrelse.'
+  - question: 'Kan jeg undlade balsamico?'
+    answer: 'Ja — øg evt. med en anelse soya eller lidt honning for farve og sødme.'
+  - question: 'Hvorfor er mine champignon våde?'
+    answer: 'For meget skyllevand, overfyldt kurv eller for lav temperatur til at fordampe væske — dup tør og giv luft mellem svampene.'
+  - question: 'Portobello som burger?'
+    answer: 'Ja — brug store hatte, lidt længere tid, og fyld med ost/pesto eller brug som erstatning for kødbøf.'
 ---
+
+### Fyldte champignon med ost og hvidløg (alternativ)
+
+1. Rør **80 g flødeost** eller ricotta med **60 g revet parmesan/mozzarella**, **1 fed hvidløg** og **2 spsk urter**. Smag til.
+2. Fjern evt. lidt stok, så hatten kan fyldes. Dup tørre.
+3. Pensl ydersiden med olie, salt og peber. Fyld hatten (valgfrit **2 spsk rasp** på top).
+4. **180 °C** i ca. **13-16 minutter** stående eller på rist til toppen er gylden og svampene møre.
 
 ### Valg af svamp
 
-Champignon med **lukket, fast hætte** holder fyldet bedre. Undgå slatne eller misfarvede eksemplarer.
+Brug **faste, friske** hatte uden slatne kanter — både til hele svampe og fyld.
 
-### Dyb smag uden sovs
+### SEO og klynger
 
-Airfryer **koncentrerer** umami fra svampene. Et lille nip timian i fyldet eller et drys citronskal efter stegning løfter retten uden tung sovs.
-
-### Indholdsstrategi
-
-“Champignon airfryer” supplerer jeres grøntsagsunivers og binder til kødfokus-sider – god til både SEO-cluster og “hvad har vi i køleskabet”-søgning.
+“Champignon airfryer” og “svampe tilbehør” støtter jeres øvrige grønt og kød-sider med naturlige interne links.
