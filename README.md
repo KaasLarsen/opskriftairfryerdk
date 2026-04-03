@@ -26,6 +26,12 @@ npm run preview
 
 Opskrifter ligger i [`src/content/recipes/`](src/content/recipes/) som Markdown med Zod-validering i [`src/content.config.ts`](src/content.config.ts).
 
+## Shop (PartnerAds)
+
+`/shop` viser produkter fra PartnerAds XML-feeds. Ved `npm run build` kører [`scripts/sync-shop-products.mjs`](scripts/sync-shop-products.mjs) først og skriver [`public/data/shop-products.json`](public/data/shop-products.json) ud fra `PARTNERADS_FEED_URLS` (kommasepareret) i miljøet.
+
+For **daglig opdatering uden manuelt deploy**: opret et **Deploy Hook** hos Vercel og sæt GitHub-secret `VERCEL_DEPLOY_HOOK_URL` — se [`/.github/workflows/daily-vercel-deploy.yml`](.github/workflows/daily-vercel-deploy.yml).
+
 ## Log ind (Supabase) – hvad du skal gøre
 
 Det repo “fixer” kun koden. **Du** skal knappe tre ting sammen i dashboards (én gang):

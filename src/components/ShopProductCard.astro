@@ -1,0 +1,84 @@
+---
+interface Props {
+	title: string;
+	brand: string;
+	category: string;
+	price: number | null;
+	listPrice: number | null;
+	imageUrl: string | null;
+	productUrl: string;
+}
+
+const { title, brand, category, price, listPrice, imageUrl, productUrl } = Astro.props;
+
+function formatDk(n: number | null): string {
+	if (n == null) return '';
+	return new Intl.NumberFormat('da-DK', {
+		style: 'currency',
+		currency: 'DKK',
+		maximumFractionDigits: 0,
+	}).format(n);
+}
+
+const priceStr = formatDk(price);
+const listStr = formatDk(listPrice);
+const onSale =
+	price != null && listPrice != null && listPrice > price;
+const leadBits: string[] = [];
+if (onSale && listStr) leadBits.push(`før ${listStr}`);
+if (category) leadBits.push(category);
+---
+
+<a
+	class="recipe-card"
+	href={productUrl}
+	target="_blank"
+	rel="sponsored noopener noreferrer"
+>
+	<div class:list={['recipe-card-image', !imageUrl && 'recipe-card-image--placeholder']}>
+		{
+			imageUrl ? (
+				<img
+					src={imageUrl}
+					alt={title}
+					width="640"
+					height="400"
+					loading="lazy"
+					decoding="async"
+				/>
+			) : (
+				<div class="recipe-placeholder-inner">
+					<span class="recipe-placeholder-label">Intet billede</span>
+				</div>
+			)
+		}
+	</div>
+	<div class="recipe-card-body">
+		{
+			brand && (
+				<div class="recipe-card-badges">
+					<span class="recipe-card-badge">{brand}</span>
+				</div>
+			)
+		}
+		<h3>{title}</h3>
+		<div class="recipe-meta-row">
+			{
+				priceStr ? (
+					<>
+						<span>{onSale ? `Tilbud ${priceStr}` : priceStr}</span>
+						{leadBits.length > 0 && (
+							<>
+								<span>·</span>
+								<span>{leadBits.join(' · ')}</span>
+							</>
+						)}
+					</>
+				) : (
+					<span>Pris hos forhandler</span>
+				)
+			}
+		</div>
+		<p>Se hos forhandler (affiliate-link).</p>
+	</div>
+</a>

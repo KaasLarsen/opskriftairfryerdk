@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/flatten-sitemap.mjs",
+    "build": "node scripts/sync-shop-products.mjs && astro build && node scripts/flatten-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/plus-jakarta-sans": "^5.2.8",
     "@supabase/supabase-js": "^2.101.0",
-    "astro": "^6.1.1"
+    "astro": "^6.1.1",
+    "fast-xml-parser": "^5.5.10"
   }
 }

@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShopProductCard from '../../components/ShopProductCard.astro';
+import { SITE_NAME } from '../../consts';
+import { classifyShopProduct, type ShopProductJson } from '../../data/shop-curation';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const fp = path.join(process.cwd(), 'public/data/shop-products.json');
+let allProducts: ShopProductJson[] = [];
+if (fs.existsSync(fp)) {
+	try {
+		const data = JSON.parse(fs.readFileSync(fp, 'utf8')) as { products?: ShopProductJson[] };
+		allProducts = Array.isArray(data.products) ? data.products : [];
+	} catch {
+		allProducts = [];
+	}
+}
+
+const airfryers = allProducts
+	.filter((p) => classifyShopProduct(p) === 'airfryer')
+	.slice(0, 12);
+const accessories = allProducts
+	.filter((p) => classifyShopProduct(p) === 'accessory')
+	.slice(0, 12);
+
+const title = `Shop – airfryere og tilbehør | ${SITE_NAME}`;
+const description =
+	'Udvalgte airfryere og tilbehør til airfryer. Produkter hentes fra PartnerAds-feeds hos vores partnere — priser kan ændre sig. Affiliate-links.';
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/shop" ogType="website">
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Shop</span>
+			</nav>
+
+			<div class="section-head shop-section-head">
+				<p class="section-kicker">Affiliate shop</p>
+				<h1 class="recipe-title">Shop – airfryere og tilbehør</h1>
+				<p>
+					Her finder du udvalgte produkter baseret på vores PartnerAds-feeds. Når du køber via vores
+					links, kan vi modtage en lille kommission uden ekstra omkostning for dig. Priser og
+					lagerstatus står altid hos forhandleren — de kan ændre sig løbende.
+				</p>
+			</div>
+
+			<div class="shop-affiliate-disclosure" role="note">
+				<strong>Affiliate og feeds:</strong> Produkterne vises som de leveres fra annoncørernes
+				produktfeeds via PartnerAds. Vi viser ikke fulde brødtekstbeskrivelser her af hensyn til
+				søgemaskiner og ophavsret — klik ind til forhandleren for detaljer.
+			</div>
+
+			<div class="shop-search-panel" data-shop-page>
+				<label class="sr-only" for="shop-search-input">Søg i produkter</label>
+				<input
+					id="shop-search-input"
+					class="shop-search-input"
+					type="search"
+					placeholder="Søg efter produkt, brand eller kategori…"
+					autocomplete="off"
+					spellcheck="false"
+				/>
+				<div class="shop-chip-row" role="group" aria-label="Afgræns søgning">
+					<button type="button" class="shop-chip shop-chip--active" data-shop-scope="all">
+						Alle
+					</button>
+					<button type="button" class="shop-chip" data-shop-scope="airfryer">Airfryere</button>
+					<button type="button" class="shop-chip" data-shop-scope="accessory">Tilbehør</button>
+				</div>
+				<p class="shop-search-hint" data-shop-hint>
+					Skriv for at søge i alle produkter fra feed. Data opdateres ved hvert site-build.
+				</p>
+				<div id="shop-search-results" class="recipe-grid shop-search-results" hidden></div>
+			</div>
+		</div>
+	</section>
+
+	{
+		airfryers.length > 0 && (
+			<section class="section section--tight-top" id="udvalgte-airfryere" aria-labelledby="shop-af-heading">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Udvalg</p>
+						<h2 id="shop-af-heading">Udvalgte airfryere</h2>
+						<p>Automatisk udvalg fra feed ud fra produktnavn og kategori (airfryer/varmluft m.m.).</p>
+					</div>
+					<div class="recipe-grid">
+						{airfryers.map((p) => (
+							<ShopProductCard
+								title={p.title}
+								brand={p.brand}
+								category={p.category}
+								price={p.price}
+								listPrice={p.listPrice}
+								imageUrl={p.imageUrl}
+								productUrl={p.productUrl}
+							/>
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
+
+	{
+		accessories.length > 0 && (
+			<section class="section section--tight-top" id="udvalgte-tilbehor" aria-labelledby="shop-acc-heading">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Udvalg</p>
+						<h2 id="shop-acc-heading">Udvalgt tilbehør</h2>
+						<p>
+							Kurve, forme, indsatser og lignende knyttet til airfryer — ud fra navn og kategori i
+							feedet.
+						</p>
+					</div>
+					<div class="recipe-grid">
+						{accessories.map((p) => (
+							<ShopProductCard
+								title={p.title}
+								brand={p.brand}
+								category={p.category}
+								price={p.price}
+								listPrice={p.listPrice}
+								imageUrl={p.imageUrl}
+								productUrl={p.productUrl}
+							/>
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
+
+	{
+		allProducts.length === 0 && (
+			<section class="section section--tight-top">
+				<div class="container">
+					<div class="shop-empty-state">
+						<p>
+							Der er endnu ingen produkter i shop-feedet. Når <code>PARTNERADS_FEED_URLS</code> er
+							sat i miljøet og sitet bygges, fyldes listen automatisk.
+						</p>
+					</div>
+				</div>
+			</section>
+		)
+	}
+</BaseLayout>
+
+<script>
+	(function () {
+		/**
+		 * Hold logikken konsistent med src/data/shop-curation.ts (airfryer vs tilbehør til søgning).
+		 */
+		const AIRFRYER_HINT =
+			/airfryer|varmluft|varmlufts|friture|fritös|frituregryde|air fryer|airoven|airovn|dual.?zone|hot air|varmluftsovn/i;
+		const ACCESSORY_HINT =
+			/tilbehør|tilbehor|basket|kurv|form|papir|indsats|rist|riste|bakke|silicone|silikone|måtte|matte|lining|pergament|spyd/i;
+
+		function shelfOf(p) {
+			const hay = `${p.title || ''} ${p.category || ''}`;
+			if (AIRFRYER_HINT.test(hay)) return 'airfryer';
+			if (ACCESSORY_HINT.test(hay)) return 'accessory';
+			return 'other';
+		}
+
+		function esc(s) {
+			return String(s)
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/"/g, '&quot;');
+		}
+
+		function formatDk(n) {
+			if (n == null || typeof n !== 'number') return '';
+			try {
+				return new Intl.NumberFormat('da-DK', {
+					style: 'currency',
+					currency: 'DKK',
+					maximumFractionDigits: 0,
+				}).format(n);
+			} catch {
+				return String(n);
+			}
+		}
+
+		/** @param {any} p */
+		function cardHtml(p) {
+			const img = p.imageUrl
+				? `<div class="recipe-card-image"><img src="${esc(p.imageUrl)}" alt="${esc(p.title)}" width="640" height="400" loading="lazy" decoding="async" /></div>`
+				: `<div class="recipe-card-image recipe-card-image--placeholder"><div class="recipe-placeholder-inner"><span class="recipe-placeholder-label">Intet billede</span></div></div>`;
+			const brand = p.brand
+				? `<div class="recipe-card-badges"><span class="recipe-card-badge">${esc(p.brand)}</span></div>`
+				: '';
+			const priceStr = formatDk(p.price);
+			const listStr = formatDk(p.listPrice);
+			const onSale = p.price != null && p.listPrice != null && p.listPrice > p.price;
+			const meta = priceStr
+				? `${onSale ? `Tilbud ${priceStr}` : priceStr}${p.category ? ` · ${esc(p.category)}` : ''}`
+				: 'Pris hos forhandler';
+			return `<a class="recipe-card" href="${esc(p.productUrl)}" target="_blank" rel="sponsored noopener noreferrer">${img}<div class="recipe-card-body">${brand}<h3>${esc(p.title)}</h3><div class="recipe-meta-row"><span>${meta}</span></div><p>Se hos forhandler (affiliate-link).</p></div></a>`;
+		}
+
+		const root = document.querySelector('[data-shop-page]');
+		if (!root) return;
+		const input = root.querySelector('#shop-search-input');
+		const results = root.querySelector('#shop-search-results');
+		const hint = root.querySelector('[data-shop-hint]');
+		const chips = root.querySelectorAll('[data-shop-scope]');
+		if (!(input instanceof HTMLInputElement) || !(results instanceof HTMLElement)) return;
+
+		let products = [];
+		let scope = 'all';
+		let t = 0;
+
+		function setScope(next) {
+			scope = next;
+			for (const b of chips) {
+				if (!(b instanceof HTMLButtonElement)) continue;
+				const s = b.getAttribute('data-shop-scope') || '';
+				const active = s === scope;
+				b.classList.toggle('shop-chip--active', active);
+				b.setAttribute('aria-pressed', active ? 'true' : 'false');
+			}
+			render();
+		}
+
+		function matchesScope(p) {
+			if (scope === 'all') return true;
+			const s = shelfOf(p);
+			if (scope === 'airfryer') return s === 'airfryer';
+			if (scope === 'accessory') return s === 'accessory';
+			return true;
+		}
+
+		function render() {
+			const q = input.value.trim().toLowerCase();
+			if (!products.length) {
+				results.innerHTML = '';
+				results.hidden = true;
+				return;
+			}
+			const filtered = products.filter((p) => {
+				if (!matchesScope(p)) return false;
+				if (!q) return false;
+				const hay = `${p.title || ''} ${p.brand || ''} ${p.category || ''}`.toLowerCase();
+				return hay.includes(q);
+			});
+			if (!q) {
+				results.innerHTML = '';
+				results.hidden = true;
+				if (hint instanceof HTMLElement) hint.hidden = false;
+				return;
+			}
+			if (hint instanceof HTMLElement) hint.hidden = true;
+			results.hidden = false;
+			if (filtered.length === 0) {
+				results.innerHTML =
+					'<p class="shop-no-results">Ingen produkter matchede din søgning. Prøv andre ord.</p>';
+				return;
+			}
+			results.innerHTML = filtered.slice(0, 60).map(cardHtml).join('');
+		}
+
+		for (const b of chips) {
+			b.addEventListener('click', () => {
+				const s = b.getAttribute('data-shop-scope') || 'all';
+				setScope(s);
+			});
+		}
+
+		input.addEventListener('input', () => {
+			window.clearTimeout(t);
+			t = window.setTimeout(render, 200);
+		});
+
+		fetch('/data/shop-products.json')
+			.then((r) => r.json())
+			.then((data) => {
+				products = Array.isArray(data.products) ? data.products : [];
+				render();
+			})
+			.catch(() => {
+				products = [];
+			});
+	})();
+</script>

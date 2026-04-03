@@ -1479,3 +1479,105 @@ a:hover {
 .header-auth-slot {
 	flex: 0 0 auto;
 }
+
+/* Shop (PartnerAds feeds) */
+.shop-section-head {
+	margin-bottom: var(--space-6);
+}
+
+.shop-affiliate-disclosure {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--color-muted);
+	background: var(--color-accent-soft);
+	border: 1px solid rgb(251 191 36 / 35%);
+	border-radius: var(--radius-lg);
+	padding: var(--space-5) var(--space-6);
+	margin-bottom: var(--space-10);
+}
+
+.shop-affiliate-disclosure strong {
+	color: var(--color-text);
+}
+
+.shop-search-panel {
+	margin-bottom: var(--space-8);
+}
+
+.shop-search-input {
+	width: 100%;
+	max-width: 32rem;
+	padding: var(--space-3) var(--space-4);
+	font: inherit;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	background: var(--color-surface);
+	margin-bottom: var(--space-4);
+}
+
+.shop-search-input:focus {
+	outline: none;
+	border-color: rgb(180 83 9 / 45%);
+	box-shadow: 0 0 0 3px rgb(251 191 36 / 22%);
+}
+
+.shop-chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-2);
+	margin-bottom: var(--space-4);
+}
+
+.shop-chip {
+	font: inherit;
+	font-size: 0.875rem;
+	font-weight: 600;
+	padding: 0.4rem 0.85rem;
+	border-radius: 999px;
+	border: 1px solid var(--color-border);
+	background: var(--color-surface);
+	color: var(--color-text);
+	cursor: pointer;
+	transition:
+		background 0.15s ease,
+		border-color 0.15s ease;
+}
+
+.shop-chip:hover {
+	border-color: rgb(180 83 9 / 35%);
+}
+
+.shop-chip--active {
+	background: var(--color-accent-soft);
+	border-color: rgb(251 191 36 / 45%);
+	color: var(--color-accent-dark);
+}
+
+.shop-search-hint {
+	margin: 0 0 var(--space-6);
+	font-size: 0.9375rem;
+	color: var(--color-muted);
+}
+
+.shop-search-results {
+	margin-top: var(--space-6);
+}
+
+.shop-no-results {
+	margin: 0;
+	color: var(--color-muted);
+	grid-column: 1 / -1;
+}
+
+.shop-empty-state {
+	padding: var(--space-8);
+	background: var(--color-surface);
+	border: 1px dashed var(--color-border);
+	border-radius: var(--radius-lg);
+	font-size: 0.9375rem;
+	color: var(--color-muted);
+}
+
+.shop-empty-state code {
+	font-size: 0.875em;
+}

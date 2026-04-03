@@ -1,0 +1,30 @@
+# Daglig genbuild på Vercel, så PartnerAds-feeds hentes igen via `npm run build`
+# (scripts/sync-shop-products.mjs kører før `astro build`).
+#
+# Opsætning:
+# 1. Vercel → Project → Settings → Git → Deploy Hooks → opret hook (Branch: production).
+# 2. GitHub → Repository → Settings → Secrets and variables → Actions:
+#    tilføj hemmeligheden VERCEL_DEPLOY_HOOK_URL med webhook-URL'en fra Vercel.
+#
+# Tidsplan: 06:15 UTC dagligt (justér efter behov).
+
+name: Daily Vercel deploy (shop feeds)
+
+on:
+  schedule:
+    - cron: '15 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy hook
+        env:
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK_URL" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL er ikke sat — springer over."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK_URL" -H "Content-Type: application/json" -d '{}' || exit 1
