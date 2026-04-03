@@ -8,7 +8,6 @@
 			'\\bairfryers?\\b',
 			'varmluftsfriture',
 			'varmluft\\s+friture',
-			'varmluftsovn',
 			'airovn',
 			'airoven',
 			'hot[- ]air',
@@ -33,16 +32,19 @@
 		'i',
 	);
 
-	const AIR_SIGNAL = new RegExp(
+	const HAS_AIRFRY_MARK = new RegExp(
 		[
 			'\\bair[- ]?fry(?:er)?s?\\b',
-			'\\bairfry',
-			'\\bvarmluft',
+			'\\bairfryer\\b',
+			'\\bvarmluftsfriture\\b',
+			'varmluft\\s+friture',
+			'\\bfritös\\b',
 			'hot[- ]air',
 			'\\bairovn\\b',
 			'\\bfoodi\\b',
 			'\\bvortex\\b',
 			'dual[- ]?zone',
+			'\\bactifry\\b',
 		].join('|'),
 		'i',
 	);
@@ -52,7 +54,7 @@
 		if (/\bdeep[- ]fat\b/i.test(hay)) return true;
 		if (
 			/\b(?:(?:mini|mini[- ])?frituregryde|friture gryde|fritös|friteuse)\b/i.test(hay) &&
-			!AIR_SIGNAL.test(hay)
+			!HAS_AIRFRY_MARK.test(hay)
 		) {
 			return true;
 		}
@@ -60,12 +62,12 @@
 			/\b(bageovn|stegeovn|induktionsovn|indbygningsovn|pyrolyse|komfur|induktionskomfur)\b/i.test(
 				hay,
 			) &&
-			!AIR_SIGNAL.test(hay)
+			!HAS_AIRFRY_MARK.test(hay)
 		) {
 			return true;
 		}
-		if (/\bvarmluftsovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
-		if (/\bel[- ]?ovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
+		if (/\bvarmluftsovn\b|\bvarmluft\s+ovn\b/i.test(hay) && !HAS_AIRFRY_MARK.test(hay)) return true;
+		if (/\bel[- ]?ovn\b/i.test(hay) && !HAS_AIRFRY_MARK.test(hay)) return true;
 		return false;
 	}
 

@@ -12,7 +12,6 @@ const AIRFRYER_CONTEXT = new RegExp(
 		'\\bairfryers?\\b',
 		'varmluftsfriture',
 		'varmluft\\s+friture',
-		'varmluftsovn',
 		'airovn',
 		'airoven',
 		'hot[- ]air',
@@ -37,16 +36,20 @@ const AIRFRYER_CONTEXT = new RegExp(
 	'i',
 );
 
-const AIR_SIGNAL = new RegExp(
+/** Lufts-/airfry-signal (ikke løst "varmluft" — rammer ovn-kategorier uden airfry). */
+const HAS_AIRFRY_MARK = new RegExp(
 	[
 		'\\bair[- ]?fry(?:er)?s?\\b',
-		'\\bairfry',
-		'\\bvarmluft',
+		'\\bairfryer\\b',
+		'\\bvarmluftsfriture\\b',
+		'varmluft\\s+friture',
+		'\\bfritös\\b',
 		'hot[- ]air',
 		'\\bairovn\\b',
 		'\\bfoodi\\b',
 		'\\bvortex\\b',
 		'dual[- ]?zone',
+		'\\bactifry\\b',
 	].join('|'),
 	'i',
 );
@@ -57,7 +60,7 @@ function excludeFromAirfryerShop(hay) {
 	if (/\bdeep[- ]fat\b/i.test(hay)) return true;
 	if (
 		/\b(?:(?:mini|mini[- ])?frituregryde|friture gryde|fritös|friteuse)\b/i.test(hay) &&
-		!AIR_SIGNAL.test(hay)
+		!HAS_AIRFRY_MARK.test(hay)
 	) {
 		return true;
 	}
@@ -65,12 +68,12 @@ function excludeFromAirfryerShop(hay) {
 		/\b(bageovn|stegeovn|induktionsovn|indbygningsovn|pyrolyse|komfur|induktionskomfur)\b/i.test(
 			hay,
 		) &&
-		!AIR_SIGNAL.test(hay)
+		!HAS_AIRFRY_MARK.test(hay)
 	) {
 		return true;
 	}
-	if (/\bvarmluftsovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
-	if (/\bel[- ]?ovn\b/i.test(hay) && !AIR_SIGNAL.test(hay)) return true;
+	if (/\bvarmluftsovn\b|\bvarmluft\s+ovn\b/i.test(hay) && !HAS_AIRFRY_MARK.test(hay)) return true;
+	if (/\bel[- ]?ovn\b/i.test(hay) && !HAS_AIRFRY_MARK.test(hay)) return true;
 	return false;
 }
 
