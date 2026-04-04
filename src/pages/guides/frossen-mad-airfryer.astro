@@ -9,9 +9,14 @@ const description =
 	'Optø eller direkte fra frosten? Lær gode vaner til frossen mad i airfryer: ét lag, ryst/ vend, brændingsrisiko og links til pommes, laks, pølsehorn og forårsruller.';
 
 const published = '2026-04-03T10:30:00.000Z';
-const modified = published;
+const modified = '2026-04-04T14:00:00.000Z';
 
-const ogImage = `${SITE_URL}/og-default.svg`;
+const heroImagePath = '/images/guides/frossen-mad-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Sort airfryer med sprøde pomfritter i kurven, poser med dybfrosne pommes og chicken nuggets, bakke med frostlag og tallerken med færdig sprød mad og dip';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
 
 const faqItems = [
 	{
@@ -93,7 +98,9 @@ const jsonLd = [
 	{description}
 	{canonicalPath}
 	ogImage={ogImage}
-	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
 	ogType="article"
 	articlePublishedTime={published}
 	articleModifiedTime={modified}
@@ -222,6 +229,20 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
 	.guide-prose {
 		max-width: 48rem;
 	}

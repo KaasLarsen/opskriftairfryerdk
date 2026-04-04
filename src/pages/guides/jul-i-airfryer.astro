@@ -9,9 +9,14 @@ const description =
 	'Brug airfryeren til jul: ovn vs. airfryer, tidsplan når ovnen er optaget, typiske faldgruber og gode opskrifter til flæskesteg, ribbensteg og tilbehør.';
 
 const published = '2026-04-03T10:00:00.000Z';
-const modified = published;
+const modified = '2026-04-04T14:00:00.000Z';
 
-const ogImage = `${SITE_URL}/og-default.svg`;
+const heroImagePath = '/images/guides/jul-i-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Sort airfryer med brunede kartofler i kurven på et juledækket bord med flæskesteg, rødkål, rosenkål, glaserede gulerødder og julepynt med lys';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
 
 const faqItems = [
 	{
@@ -93,7 +98,9 @@ const jsonLd = [
 	{description}
 	{canonicalPath}
 	ogImage={ogImage}
-	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
 	ogType="article"
 	articlePublishedTime={published}
 	articleModifiedTime={modified}
@@ -108,6 +115,18 @@ const jsonLd = [
 				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
 				<span class="recipe-breadcrumbs-current">Jul i airfryer</span>
 			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
 
 			<article class="prose guide-prose">
 				<p class="section-kicker guide-article-kicker">Sæson</p>
@@ -235,6 +254,20 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
 	.guide-prose {
 		max-width: 48rem;
 	}
