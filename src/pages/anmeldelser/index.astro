@@ -17,7 +17,7 @@ const indexEntries = reviews.map((r) => {
 		description: r.data.description,
 		rating: r.data.rating,
 		thumb: r.data.heroImage ?? p?.imageUrl ?? null,
-		brand: (p?.brand ?? '').trim(),
+		brand: (r.data.brandLabel ?? p?.brand ?? '').trim(),
 		capacityLiters: p?.capacityLiters,
 		watts: p ? parseWattsFromTitle(p.title) : null,
 	};

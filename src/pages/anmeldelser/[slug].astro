@@ -77,9 +77,11 @@ const ctaLabel = (product.retailer ?? '').trim()
 	? `Se pris hos ${(product.retailer ?? '').trim()}`
 	: 'Se hos forhandleren';
 
+const brandDisplay = (d.brandLabel ?? product.brand ?? '').trim();
+
 const quickFacts: { label: string; value: string }[] = [];
-if ((product.brand ?? '').trim()) {
-	quickFacts.push({ label: 'Mærke', value: (product.brand ?? '').trim() });
+if (brandDisplay) {
+	quickFacts.push({ label: 'Mærke', value: brandDisplay });
 }
 const watts = parseWattsFromTitle(product.title);
 if (watts != null) {
@@ -223,7 +225,7 @@ const jsonLd = [
 					<p class="section-kicker review-kicker">Airfryer-anmeldelse</p>
 					<h1 class="recipe-title">{d.title}</h1>
 					<p class="review-product-line">
-						<strong>{product.brand}</strong>
+						{brandDisplay ? <strong>{brandDisplay}</strong> : null}
 						{product.capacityLiters != null && (
 							<>
 								{' '}

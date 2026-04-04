@@ -52,6 +52,8 @@ const airfryerReviews = defineCollection({
 		/** Skal matche præcis `productUrl` i shop-products.json efter sync. */
 		shopProductUrl: z.string().url(),
 		feedProductId: z.string().optional(),
+		/** Når feed mangler `brand`: visningsnavn til hero, fakta og JSON-LD. */
+		brandLabel: z.string().optional(),
 		pros: z.array(z.string()).min(3),
 		cons: z.array(z.string()).min(2),
 		/** 1–5 stjerner til schema.org Review (valgfri). */
