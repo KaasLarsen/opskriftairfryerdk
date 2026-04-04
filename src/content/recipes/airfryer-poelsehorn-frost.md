@@ -33,7 +33,7 @@ conclusion: |
   Opvarmede pølsehorn smager bedst med det samme – genopvarm kort ved 160 °C hvis nødvendigt.
 ingredients:
   - text: '4 frosne pølsehorn (ubagte/fuldt gennembagte efter emballage – tilpas tid)'
-  - text: 'Evt. oliespray (meget let – kun hvis dejen virker tør i jeres model)'
+  - text: 'Evt. oliespray (meget let – kun hvis dejen virker tør i din airfryer)'
   - text: 'Til servering: ketchup eller remoulade'
 instructions:
   - text: 'Tag pølsehorn direkte fra frost (ingen optøning medmindre posen siger andet).'
@@ -60,7 +60,7 @@ faq:
 
 ### Frost fra forskellige mærker
 
-Supermarkedshorn og bagerhorn har forskellig dejtykkelse. Behandl **første batch** som test: notér tid og temp der passer til jeres maskine.
+Supermarkedshorn og bagerhorn har forskellig dejtykkelse. Behandl **første batch** som test: notér tid og temperatur, der passer til din maskine.
 
 ### Sikkerhed
 

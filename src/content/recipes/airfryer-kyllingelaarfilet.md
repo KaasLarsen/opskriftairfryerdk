@@ -62,9 +62,9 @@ faq:
     answer: 'Kartofler, ris, salat, grønt og wraps passer godt. Krydderiprofilen er neutral, så den kan bruges bredt.'
 ---
 
-### God opskrift til høj-intent søgninger
+### Saftigt kød med tydelige målepunkter
 
-Brugere søger ofte meget konkret efter **"kyllingelårfilet airfryer tid"** og **"saftig kylling i airfryer"**. Derfor er både tider og kernetemperatur tydelige i opskriften.
+Lårfilet er ofte mere tilgivende end bryst. Tjek alligevel temperaturen i den tykkeste del, så du undgår tør kant – især hvis fileterne er tynde.
 
 ### Sådan undgår du tør kylling
 

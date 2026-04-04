@@ -74,4 +74,4 @@ Når kartoflerne steges i airfryer, får du både blød midte og en let sprød k
 
 ### Fleksibel året rundt
 
-Selvom retten er oplagt til påske, fungerer den også hele året til grillmad, fisk og frikadeller. Du kan derfor bygge trafikken på en opskrift, der har både sæson-top og helårs-relevans.
+Selvom retten er oplagt til påske, fungerer den hele året til grillmad, fisk og frikadeller – samme opskrift, forskellige lejligheder.

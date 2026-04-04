@@ -59,9 +59,9 @@ faq:
     answer: 'Ja, færdig sauce fungerer fint. Vælg en med smag du kan lide, og justér salt efter behov.'
 ---
 
-### Long-tail variant med høj intent
+### BBQ-glaze uden gril
 
-Denne opskrift rammer søgninger med "bbq" + "airfryer", som ofte har høj klikvillighed.
+Sød og røget BBQ-sauce giver grillstemning, selv når du bruger airfryer – vigtigste trick er at tilføje den sent, så sukker ikke brænder fast.
 
 ### Sådan får du balance i BBQ-smagen
 

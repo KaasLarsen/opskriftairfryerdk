@@ -56,9 +56,9 @@ faq:
     answer: 'Det kan lade sig gøre, men kvaliteten bliver normalt bedre i to omgange.'
 ---
 
-### Høj intent og stabil trafik
+### Fra pose til sprød tallerken
 
-Søgningen på frosne fritter i airfryer er klassisk problemløsnings-intent: brugeren vil have et konkret svar på tid og temperatur. Derfor performer denne type side ofte godt i Google.
+Frosne fritter handler om luft mellem stykker, passende temperatur og at undgå at fylde hele kurven, hvis du vil bevare sprødhed i stedet for damp.
 
 ### Gør opskriften reproducerbar
 

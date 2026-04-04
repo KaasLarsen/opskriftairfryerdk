@@ -51,9 +51,9 @@ faq:
     answer: 'Rens kurven mellem hold og undgå for høj temperatur i starten.'
 ---
 
-### Lille opskrift med stor trafik
+### Små stykker, stor effekt
 
-Bacon er en klassisk "hurtigt svar"-søgning, som mange klikker på for præcis tid og temperatur.
+Ristet bacon topper salater, æg og kartofler – i airfryer er det nemt at ramme ens sprødhed, hvis du respekterer tykkelse og tjekker sidst i forløbet.
 
 ### Tykkelse og stegning i praksis
 

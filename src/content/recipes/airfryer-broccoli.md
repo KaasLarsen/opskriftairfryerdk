@@ -55,9 +55,9 @@ faq:
     answer: 'Ja, men den bliver ofte blødere. Tø og tør den gerne først.'
 ---
 
-### Hurtigt grønt med høj relevans
+### Hurtigt grønt til hverdag
 
-Broccoli er et populært "sundt tilbehør"-søgeord og giver god intern linking til mange hovedretter.
+Broccoli i airfryer giver mere smagsdybde end kogt broccoli og er et af de nemmeste grøntsager tilbehør at kombinere med både fisk, kød og vegetar.
 
 ### Undgå blød broccoli
 

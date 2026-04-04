@@ -62,13 +62,13 @@ faq:
     answer: 'Ja, du kan erstatte med squash, gulerod eller helt undlade grønt efter smag.'
 ---
 
-### Hverdagsret med bred målgruppe
+### Hverdagsret med få ting på tallerkenen
 
-Pølsemix er en velkendt “hvad skal vi have i dag?”-ret med høj klikvillighed i søgeresultater. Den er enkel, billig og hurtig, hvilket matcher mange danske husholdninger.
+Pølsemix er en hurtig “hvad har vi i køleskabet?”-ret, der samler protein, kartofler og grønt uden avanceret teknik.
 
 ### Én kurv, mindre opvask
 
-Opskrifter med få redskaber performer ofte godt, fordi de løser både tids- og oprydningsproblemet. Her er airfryerens styrke tydelig.
+Når både pølser og kartofler kan gå gennem airfryer med kort ryst undervejs, slipper du for flere pander og et tungt opvask – særligt på travle hverdage.
 
 ### Nem at tilpasse familiens smag
 

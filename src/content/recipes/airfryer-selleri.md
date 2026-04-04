@@ -73,6 +73,6 @@ Opskriftens **hovedtrin** er knoldselleri i **tern** (som hero-billedet). Stilke
 
 Persille, peber og lidt citron løfter det neutrale rodselleri. Parmesan sidst giver umami uden at dominere.
 
-### Intern linking
+### Andre lette grøntsager
 
-Passer i samme “sundt tilbehør”-klynge som [airfryer broccoli](/opskrifter/airfryer-broccoli) og [airfryer blomkål](/opskrifter/airfryer-blomkaal) – god for både bruger og SEO.
+Vil du variere tallerkenen, kan du skifte mellem selleri, [broccoli](/opskrifter/airfryer-broccoli) og [blomkål](/opskrifter/airfryer-blomkaal) efter sæson og hvad der er i køleskabet.

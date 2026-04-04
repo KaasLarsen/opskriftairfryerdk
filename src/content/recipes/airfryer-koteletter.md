@@ -58,9 +58,9 @@ faq:
     answer: 'Ja, men de kan kræve 1-2 minutter ekstra afhængigt af tykkelse.'
 ---
 
-### God hverdagsopskrift med høj intent
+### Koteletter uden pandesprøjt
 
-Søgninger på "koteletter i airfryer" er ofte konkrete og tæt på madlavning nu og her.
+Koteletter i airfryer giver jævn varme omkring kødet og begrænser fedtsprøjt – praktisk på hverdage, hvor tiden er knap.
 
 ### Tykke vs. tynde koteletter
 

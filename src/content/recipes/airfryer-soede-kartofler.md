@@ -56,9 +56,9 @@ faq:
     answer: 'Det er ikke nødvendigt som ved almindelige kartofler, men du kan teste kort udvanding hvis du ønsker.'
 ---
 
-### Populær long-tail opskrift
+### Sødere kartoffel, kortere tid på komfuret
 
-Søgeord om søde kartofler i airfryer er stabile og matcher sundere hverdags-intent.
+Søde kartofler karamelliserer hurtigt i airfryer, så lidt ekstra opsyn sidst i forløbet sparer ofte en kedelig kant mod blød midte.
 
 ### Sådan får du bedre overflade
 

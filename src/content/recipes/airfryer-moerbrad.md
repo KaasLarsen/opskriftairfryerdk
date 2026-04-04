@@ -60,9 +60,9 @@ faq:
     answer: 'Kartofler, grøntsager, svampesauce og syrligt tilbehør passer rigtig godt.'
 ---
 
-### Hvorfor den her opskrift performer
+### Mørbrad kræver præcision
 
-Søgninger som **"mørbrad i airfryer tid"** og **"svinemørbrad temperatur"** er klassiske, fordi brugeren vil have et præcist svar med det samme.
+Mørbrad bliver hurtigt tør, hvis du går efter tid alene. Et termometer og en kort hvil giver mere sikkerhed end faste minutter, for tykkelse og model varierer.
 
 ### Smagsvariationer
 

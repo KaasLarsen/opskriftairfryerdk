@@ -62,9 +62,9 @@ faq:
     answer: 'Ja, men resultatet bliver ofte blødere. Sørg for at dræne og tørre dem meget grundigt.'
 ---
 
-### Stærk vegetar-trafik
+### Vegetar med sprød skorpe
 
-Falafler er en populær vegetarisk søgning og supplerer jeres eksisterende kød/fisk-opskrifter godt.
+Falafler giver fuld tallerken sammen med salat, pitabrød og dressing – og egner sig til meal prep, fordi de kan genvarmes kort i airfryer dagen efter.
 
 ### Form og størrelse betyder meget
 

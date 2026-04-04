@@ -59,9 +59,9 @@ faq:
     answer: 'Stop så snart fisken flager let, og brug gerne termometer i den tykkeste del.'
 ---
 
-### Praktisk opskrift med høj søgeintention
+### Akut behov for fisk fra frost
 
-“Frossen laks airfryer” er en klassisk situation-søgning, hvor brugeren har et akut behov og vil have præcise trin. Det gør denne side stærk i organisk trafik.
+Når du tager laks ud af fryseren sent på dagen, giver en kort optøningsfase og derefter rolig tilberedning bedre kontrol end at stege iskold fisk ved maksimal varme fra start.
 
 ### To-fase metoden
 

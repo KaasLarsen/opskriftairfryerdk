@@ -57,9 +57,9 @@ faq:
     answer: 'Smør, cremefraiche, purløg, revet ost, bacon og tunmousse er klassiske valg.'
 ---
 
-### En stærk evergreen-opskrift
+### Går aldrig af mode på tallerkenen
 
-Søgningen på bagekartofler er stabil året rundt. Derfor er denne type opskrift god til kontinuerlig trafik.
+Bagekartofler er et tilbehør, de fleste husstande laver igen og igen – særligt når fyld og topping kan varieres uden at ændre grundmetoden.
 
 ### Variationer du kan lave hurtigt
 

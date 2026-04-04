@@ -30,7 +30,7 @@ conclusion: |
 
   Hvis du laver til flere, så hold toppings klar i skåle og top i hold — det gør en stor forskel for kvaliteten.
 
-  Prøv den som snack-menu sammen med [hvidløgsbrød bites](/opskrifter/airfryer-hvidloegsbroed-ost-bites) og [nachos](/opskrift-airfryer-nachos-kylling-jalapenos).
+  Prøv den som snack-menu sammen med [hvidløgsbrød bites](/opskrifter/airfryer-hvidloegsbroed-ost-bites) og [nachos](/opskrifter/airfryer-nachos-kylling-jalapenos).
 ingredients:
   - text: '800 g kartofler til pommes frites (eller frosne fries)'
   - text: '1 1/2 spsk olie'

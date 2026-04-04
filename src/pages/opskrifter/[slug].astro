@@ -10,6 +10,7 @@ import {
 	SITE_URL,
 } from '../../consts';
 import { pickRelatedRecipes } from '../../utils/relatedRecipes';
+import { renderRecipeRichText, recipeSourceToPlainText } from '../../utils/recipeRichText';
 import { isoDurationFromMinutes, toAbsoluteUrl } from '../../utils/seo';
 
 export async function getStaticPaths() {
@@ -150,7 +151,10 @@ const faqJson =
 				mainEntity: d.faq.map((f) => ({
 					'@type': 'Question',
 					name: f.question,
-					acceptedAnswer: { '@type': 'Answer', text: f.answer },
+					acceptedAnswer: {
+						'@type': 'Answer',
+						text: recipeSourceToPlainText(f.answer),
+					},
 				})),
 			}
 		: null;
@@ -276,7 +280,7 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						</h2>
 						<div class="recipe-rich-text">
 							{introParagraphs.map((p) => (
-								<p>{p}</p>
+								<p set:html={renderRecipeRichText(p)} />
 							))}
 						</div>
 					</section>
@@ -290,7 +294,10 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						<ul class="recipe-panel-list recipe-panel-list--ingredients">
 							{d.ingredients.map((ing) => (
 								<li>
-									<span class="recipe-panel-text">{ing.text}</span>
+									<span
+										class="recipe-panel-text"
+										set:html={renderRecipeRichText(ing.text)}
+									/>
 								</li>
 							))}
 						</ul>
@@ -304,7 +311,10 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 							d.instructions.map((step, idx) => (
 								<li>
 									<span class="step-num">{idx + 1}</span>
-									<span class="step-text">{step.text}</span>
+									<span
+										class="step-text"
+										set:html={renderRecipeRichText(step.text)}
+									/>
 								</li>
 							))
 						}
@@ -323,7 +333,10 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 							<ul class="recipe-panel-list recipe-panel-list--tips">
 								{d.tips.map((t) => (
 									<li>
-										<span class="recipe-panel-text">{t}</span>
+										<span
+											class="recipe-panel-text"
+											set:html={renderRecipeRichText(t)}
+										/>
 									</li>
 								))}
 							</ul>
@@ -348,7 +361,7 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						</h2>
 						<div class="recipe-rich-text">
 							{conclusionParagraphs.map((p) => (
-								<p>{p}</p>
+								<p set:html={renderRecipeRichText(p)} />
 							))}
 						</div>
 					</section>
@@ -364,7 +377,7 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 						{d.faq.map((item) => (
 							<details>
 								<summary>{item.question}</summary>
-								<p>{item.answer}</p>
+								<p set:html={renderRecipeRichText(item.answer)} />
 							</details>
 						))}
 					</section>

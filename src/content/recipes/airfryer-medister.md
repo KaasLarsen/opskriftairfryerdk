@@ -58,9 +58,9 @@ faq:
     answer: 'Sigt efter mindst 75 °C i centrum for sikker gennemstegning.'
 ---
 
-### Derfor er medister en god trafikkandidat
+### Hverdags-pølse uden pandesprøjt
 
-Søgninger som **"medister i airfryer"** og **"medister tid airfryer"** er meget konkrete og ofte tæt på handling.
+Medister er oplagt i airfryer: fedtet i pølsen giver saft, og den ens luft gør det nemt at ramme en jævn stegning uden at vende hele tiden.
 
 ### Serveringsforslag
 

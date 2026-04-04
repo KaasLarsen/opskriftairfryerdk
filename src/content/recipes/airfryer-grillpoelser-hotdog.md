@@ -24,7 +24,7 @@ intro: |
 
   Udfordringen er små forskelle i pølsetyper: nogle “snapper” hurtigt i skindet, andre er tykkere og skal have længere tid. Derfor arbejder vi med **mellemvarme**, vending og en kort sidste fase.
 
-  Perfekt sammen med [pommes frites](/opskrifter/airfryer-pomfritter) eller jeres [pølsemix med kartofler](/opskrifter/airfryer-poelsemix-kartofler), hvis du vil have “klassisk bøfhus-menu”.
+  Perfekt sammen med [pommes frites](/opskrifter/airfryer-pomfritter) eller [pølsemix med kartofler](/opskrifter/airfryer-poelsemix-kartofler), hvis du vil have “klassisk bøfhus-menu”.
 conclusion: |
   Byg hotdogs med sennep, ketchup, relish — og gerne et lag sprøde ristede løg plus purløg som i en klassisk, fyldt hotdog.
 
@@ -59,7 +59,7 @@ faq:
   - question: 'Hvorfor sprækker skindet?'
     answer: 'For høj varme eller for lang tid. Prøv 185-190 °C og lidt kortere slutfase.'
   - question: 'Kan man lave bacon omkring pølsen?'
-    answer: 'Ja — men sørg for at baconen sidder tæt og giv lidt ekstra tid. Se også jeres [bacon-opskrift](/opskrifter/airfryer-bacon) for generelle tips.'
+    answer: 'Ja — men sørg for at baconen sidder tæt og giv lidt ekstra tid. Se også [bacon i airfryer](/opskrifter/airfryer-bacon) for generelle tips.'
 ---
 
 ### Airfryer som “mini-grill” til pølser

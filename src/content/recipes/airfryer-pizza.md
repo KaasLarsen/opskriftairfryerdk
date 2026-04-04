@@ -28,7 +28,7 @@ intro: |
 conclusion: |
   Skær pizzaen ud og servér straks — oste-snørren og bunden er bedst de første minutter.
 
-  Vil du lave en større menu, så kombiner med pommes frites eller en simpel grøntsagsmix (se jeres opskrifter under samme site).
+  Vil du lave en større menu, så kombiner med [pomfritter](/opskrifter/airfryer-pomfritter) eller [grøntsagsmix](/opskrifter/airfryer-groentsagsmix).
 
   Rester kan genopvarmes 2-3 minutter ved 180 °C; forvent at osten bliver mere “gummi” end første gang.
 ingredients:

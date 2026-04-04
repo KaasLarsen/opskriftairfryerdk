@@ -61,7 +61,7 @@ faq:
   - question: 'Hvorfor bliver mine airfryer-æg gummiagtige?'
     answer: 'Oftest for høj temperatur eller for lang tid. Prøv 160-165 °C og tjek oftere mod slutningen.'
   - question: 'Kan jeg bruge metalforme?'
-    answer: 'Kun hvis producenten godkender det til jeres airfryer. Silikone er ofte nemmere og mere skånsomt.'
+    answer: 'Kun hvis producenten godkender det til din airfryer. Silikone er ofte nemmere og mere skånsomt.'
   - question: 'Kan man lave blødkogte æg i airfryer?'
     answer: 'Ja – læg hele æg i skal i kurven ved ca. 120 °C og giv typisk 10-14 minutter fra køl; afkøl i isvand og tilpas tid efter første forsøg.'
 ---
@@ -74,7 +74,7 @@ faq:
 4. Tag alle æg ud og sæt dem i iskoldt vand 1 minut – stopper tilberedningen og gør pillingen nemmere.
 5. Knæk toppen af med en kniv eller æggetopper og sæt i æggebægre. Server med toaststrimler, salt, peber og purløg.
 
-**Vigtigt:** Airfryere varierer meget. Første gang: brug ét prøveæg og notér den tid der rammer jeres yndlings-blomme.
+**Vigtigt:** Airfryere varierer meget. Første gang: brug ét prøveæg og notér den tid, der rammer den blomme, du bedst kan lide.
 
 ### Spejlæg og æggemuffins i forme
 

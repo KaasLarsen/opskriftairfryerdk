@@ -62,7 +62,7 @@ faq:
 
 ### Perfekt til hurtig hverdagsmad
 
-Kyllingespyd matcher stærk søgeintention, fordi mange vil have "noget nemt med kylling" uden at gå på kompromis med smag.
+Spyd er en nem måde at få kylling på bordet: samme marinade, kort forberedelse og tydelig portionering direkte fra kurven.
 
 ### Træspyd eller metalspyd
 

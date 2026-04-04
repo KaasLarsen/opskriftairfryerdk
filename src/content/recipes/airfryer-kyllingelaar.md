@@ -65,9 +65,9 @@ faq:
     answer: 'Kartofler, coleslaw, grøn salat og grøntsagsmix fungerer godt. Du kan lave tilbehør i airfryer i hold, mens lårene hviler.'
 ---
 
-### Hvorfor kyllingelår er god SEO-opskrift
+### Tider du kan stole på
 
-Mange søger meget konkret: **"airfryer kyllingelår tid"**, **"sprødt skind airfryer"** og **"hvor mange grader kyllingelår"**. Derfor er opskriften bygget med tydelig temperatur, tidsramme og kernetemperatur.
+Kyllingelår er populære i airfryer, fordi sprødt skind og saftig midte er nemme at ramme, når du holder fast i en temperatur omkring 190 °C, giver plads i kurven og tjekker **75 °C** med termometer ved benet.
 
 ### Sådan undgår du de typiske fejl
 

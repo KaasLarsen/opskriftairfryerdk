@@ -73,4 +73,4 @@ faq:
 
 ### Undgå klister i kurven
 
-Brug gerne airfryer-papir med huller **kun** hvis det er godkendt til jeres model og I overvåger – ellers nonstick-kurv og let smør på ydersider.
+Brug gerne airfryer-papir med huller **kun** hvis producenten godkender det til din model, og du holder øje under tilberedning – ellers nonstick-kurv og let smør på ydersider.

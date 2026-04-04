@@ -27,7 +27,7 @@ intro: |
 
   Som på fotoet passer små hele kartofler og masser af frisk persille — du kan tilberede kartoflerne i airfryer lige før fisken eller holde dem varme under folie.
 
-  Asparges i baconsvøb eller kartofler i både fra jeres andre opskrifter kan også bruges som tilbehør.
+  Asparges i baconsvøb eller [kartofler i både](/opskrifter/airfryer-kartofler-i-baade) kan også bruges som tilbehør.
 conclusion: |
   Anret med citronbåde, persille og evt. den sidste smør fra fadet — server straks.
 

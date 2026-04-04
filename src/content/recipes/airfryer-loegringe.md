@@ -70,6 +70,6 @@ faq:
 
 Luft mellem ringe er vigtigere end ved pomfritter – ellers damper undersiden. Hellere tre omgange med sprødt resultat end én fyldt kurv.
 
-### SEO-note
+### Snack der samler menuen
 
-“Løgringe airfryer” er et tydeligt snack-søgeord med færre danske konkurrenter end pomfritter — god supplement til jeres kartoffel- og snack-klynge.
+Løgringe er oplagt som ekstra til burgere, hotdogs eller filmhygge – og de gør mere væsen end en ekstra skål chips, fordi sprød panering og sødt løg skaber tydelig kontrast til ketchup og dip.

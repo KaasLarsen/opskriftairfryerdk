@@ -63,9 +63,9 @@ faq:
     answer: 'Ja, hvis din model og opsætning giver opsamlet væske. Ellers kan du lave en separat hurtig sovs i gryde.'
 ---
 
-### Fokusord folk søger på
+### Svær, temperatur og tålmodighed
 
-Opskriften rammer typiske spørgsmål som **"sprød svær airfryer"**, **"flæskesteg temperatur"** og **"hvor lang tid flæskesteg i airfryer"**.
+Det afgørende er ofte jævn saltning af sværen, plant overflade mod varmen og at stole på kernetemperatur frem for uret alene – især når vægt og model varierer.
 
 ### Sådan får du ensartet svær
 

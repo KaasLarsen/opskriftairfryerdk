@@ -57,9 +57,9 @@ faq:
     answer: 'Ikke hvis fedtprocent og stegetid passer. Undgå overtilberedning.'
 ---
 
-### Klassisk dansk comfort food
+### Klassisk dansk hverdagsmad
 
-Hakkebøf er en genkendelig ret med stærk søgeintention i hverdage.
+Hakkebøf er en af de retter, mange vender tilbage til, fordi den er hurtig at samle og nem at variere med sovs, løg og kartofler.
 
 ### Vælg den rigtige fars
 

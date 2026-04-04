@@ -58,9 +58,9 @@ faq:
     answer: 'Sigt efter ca. 63-65 °C før hvile, og lad den trække 10 minutter.'
 ---
 
-### En klassisk dansk søgning
+### Weekend- og højtidsret
 
-Ribbensteg er en stærk sæson- og weekendopskrift med høj intent, især omkring højtider.
+Ribbensteg hører ofte til, når der skal samles folk om en klassisk tallerken – airfryer giver kontrol uden at du fylder hele ovnen.
 
 ### Planlægning til weekend og højtid
 

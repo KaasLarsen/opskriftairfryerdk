@@ -60,9 +60,9 @@ faq:
     answer: 'Ja, 30 minutter til flere timer i køleskab giver ekstra smag.'
 ---
 
-### Hvorfor denne udskæring performer godt
+### Hvorfor udbenet lår er praktisk
 
-Mange søger efter udbenede kyllingelår, fordi de ønsker saftigt kød med kort tilberedning. Det gør opskriften stærk på både hverdags- og meal-prep-intent.
+Udbenede lår giver stadig lårets saft uden arbejdet ved benet – og de er nemme at skære i strimler til madpakke eller wrap bagefter.
 
 ### Krydderibase du kan variere
 
