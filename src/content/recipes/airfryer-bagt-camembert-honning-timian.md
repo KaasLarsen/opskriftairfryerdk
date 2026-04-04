@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer bagt camembert med honning og timian – til dip og brød'
 description: 'Blød, bagt camembert i airfryer med honning og timian. Server med brød og groft tilbehør – lille fad, kort tid.'
+heroImage: '/images/recipes/airfryer-bagt-camembert-honning-timian.jpg'
+heroAlt: 'Bagt camembert i trækasse med honning og timian, hånd der dypper ristet brød i den smeltede ost, honning skål og airfryer med 180 °C på display i baggrunden'
 pubDate: 2026-04-03
 prepMinutes: 5
 cookMinutes: 12
