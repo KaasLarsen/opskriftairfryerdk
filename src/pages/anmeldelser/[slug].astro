@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+import { parseWattsFromTitle } from '../../lib/parseWattsFromTitle';
 import { findShopProductByProductUrl } from '../../lib/shopProductsFromJson';
 import { toAbsoluteUrl } from '../../utils/seo';
 import type { ShopProductJson } from '../../data/shop-curation';
@@ -76,6 +77,33 @@ const ctaLabel = (product.retailer ?? '').trim()
 	? `Se pris hos ${(product.retailer ?? '').trim()}`
 	: 'Se hos forhandleren';
 
+const quickFacts: { label: string; value: string }[] = [];
+if ((product.brand ?? '').trim()) {
+	quickFacts.push({ label: 'Mærke', value: (product.brand ?? '').trim() });
+}
+const watts = parseWattsFromTitle(product.title);
+if (watts != null) {
+	quickFacts.push({
+		label: 'Effekt',
+		value: `${new Intl.NumberFormat('da-DK').format(watts)} W`,
+	});
+}
+if (product.capacityLiters != null) {
+	quickFacts.push({
+		label: 'Kapacitet',
+		value: `ca. ${String(product.capacityLiters)} L (kurv)`,
+	});
+}
+if ((product.color ?? '').trim()) {
+	quickFacts.push({ label: 'Farve', value: (product.color ?? '').trim() });
+}
+
+const productSchemaImage = heroSrc
+	? toAbsoluteUrl(site, heroSrc)
+	: product.imageUrl
+		? toAbsoluteUrl(site, product.imageUrl)
+		: undefined;
+
 const breadcrumbJson = {
 	'@type': 'BreadcrumbList',
 	itemListElement: [
@@ -113,7 +141,7 @@ const articleJson = {
 const productJson: Record<string, unknown> = {
 	'@type': 'Product',
 	name: product.title,
-	image: product.imageUrl ? toAbsoluteUrl(site, product.imageUrl) : undefined,
+	image: productSchemaImage,
 	brand: product.brand ? { '@type': 'Brand', name: product.brand } : undefined,
 };
 
@@ -231,6 +259,24 @@ const jsonLd = [
 				</div>
 			</div>
 
+			{
+				quickFacts.length > 0 && (
+					<section class="review-quick-facts" aria-labelledby="review-quick-facts-h">
+						<h2 id="review-quick-facts-h" class="review-quick-facts-heading">
+							På et øjeblik
+						</h2>
+						<dl class="review-quick-facts-dl">
+							{
+								quickFacts.flatMap(({ label, value }) => [
+									<dt>{label}</dt>,
+									<dd>{value}</dd>,
+								])
+							}
+						</dl>
+					</section>
+				)
+			}
+
 			<div class="review-pros-cons">
 				<div class="review-pros">
 					<h2>Fordele</h2>
@@ -263,6 +309,10 @@ const jsonLd = [
 				)
 			}
 
+			<div class="prose review-body">
+				<Content />
+			</div>
+
 			{
 				d.verdict && (
 					<div class="review-verdict">
@@ -271,10 +321,6 @@ const jsonLd = [
 					</div>
 				)
 			}
-
-			<div class="prose review-body">
-				<Content />
-			</div>
 
 			{
 				otherReviews.length > 0 && (
@@ -317,6 +363,35 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	.review-quick-facts {
+		margin: var(--space-10) 0 var(--space-10);
+		padding: var(--space-6) var(--space-7);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+	.review-quick-facts-heading {
+		font-family: var(--font-display);
+		font-size: 1.15rem;
+		margin: 0 0 var(--space-4);
+	}
+	.review-quick-facts-dl {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: var(--space-2) var(--space-6);
+		margin: 0;
+		align-items: baseline;
+	}
+	.review-quick-facts-dl dt {
+		font-size: 0.875rem;
+		font-weight: 650;
+		color: var(--color-muted);
+		margin: 0;
+	}
+	.review-quick-facts-dl dd {
+		margin: 0;
+		font-size: 1rem;
+	}
 	/* Anmeldelses-hero: produktfoto er ofte højformat; undgå 4:3-beskæring fra opskrift-layout */
 	.review-hero .recipe-hero-img img {
 		aspect-ratio: auto;
@@ -422,6 +497,7 @@ const jsonLd = [
 		color: var(--color-muted);
 	}
 	.review-verdict {
+		margin-top: var(--space-10);
 		margin-bottom: var(--space-10);
 		padding: var(--space-6) var(--space-7);
 		border-radius: var(--radius-xl);

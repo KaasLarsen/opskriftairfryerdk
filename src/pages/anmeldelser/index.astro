@@ -2,10 +2,26 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+import { parseWattsFromTitle } from '../../lib/parseWattsFromTitle';
+import { findShopProductByProductUrl } from '../../lib/shopProductsFromJson';
 
 const reviews = (await getCollection('airfryerReviews')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const indexEntries = reviews.map((r) => {
+	const p = findShopProductByProductUrl(r.data.shopProductUrl);
+	return {
+		id: r.id,
+		title: r.data.title,
+		description: r.data.description,
+		rating: r.data.rating,
+		thumb: r.data.heroImage ?? p?.imageUrl ?? null,
+		brand: (p?.brand ?? '').trim(),
+		capacityLiters: p?.capacityLiters,
+		watts: p ? parseWattsFromTitle(p.title) : null,
+	};
+});
 
 const title = `Airfryer-anmeldelser | ${SITE_NAME}`;
 const description =
@@ -38,26 +54,54 @@ const jsonLd = [
 				<p class="section-kicker">Anmeldelser</p>
 				<h1 class="recipe-title">Airfryer-anmeldelser</h1>
 				<p>
-					Vi tester og beskriver modeller med <strong>fordele og ulemper</strong>, så du lettere kan
-					vælge. Produktbillede og pris kommer fra vores{' '}
-					<a href="/shop">partner-feed</a> – tjek altid den aktuelle vareside hos forhandleren. Læs også
-					<a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
+					Vi <strong>vurderer og beskriver</strong> modeller med klare fordele og ulemper, så du
+					lettere kan vælge. Har vi et eget hero-billede, vises det her; ellers bruger vi produktbillede
+					fra vores <a href="/shop">partner-feed</a>. Tjek altid den aktuelle vareside hos forhandleren.
+					Læs også <a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
 				</p>
 			</div>
 
 			<ul class="review-index-list" role="list">
 				{
-					reviews.map((r) => (
+					indexEntries.map((e) => (
 						<li>
-							<a class="review-index-card" href={`/anmeldelser/${r.id}`}>
-								<span class="review-index-kicker">Anmeldelse</span>
-								<span class="review-index-title">{r.data.title}</span>
-								<span class="review-index-desc">{r.data.description}</span>
-								{r.data.rating != null && (
-									<span class="review-index-rating" aria-label={`Vurdering ${r.data.rating} af 5`}>
-										{r.data.rating}/5
-									</span>
+							<a class="review-index-card" href={`/anmeldelser/${e.id}`}>
+								{e.thumb ? (
+									<img
+										class="review-index-thumb"
+										src={e.thumb}
+										alt=""
+										width="140"
+										height="140"
+										loading="lazy"
+										decoding="async"
+									/>
+								) : (
+									<span class="review-index-thumb review-index-thumb--placeholder" aria-hidden="true" />
 								)}
+								<div class="review-index-card-main">
+									<span class="review-index-kicker">Anmeldelse</span>
+									{e.brand || e.capacityLiters != null || e.watts != null ? (
+										<p class="review-index-meta">
+											{e.brand ? <span class="review-index-chip">{e.brand}</span> : null}
+											{e.capacityLiters != null ? (
+												<span class="review-index-chip">ca. {String(e.capacityLiters)} L</span>
+											) : null}
+											{e.watts != null ? (
+												<span class="review-index-chip">
+													{new Intl.NumberFormat('da-DK').format(e.watts)} W
+												</span>
+											) : null}
+										</p>
+									) : null}
+									<span class="review-index-title">{e.title}</span>
+									<span class="review-index-desc">{e.description}</span>
+								</div>
+								{e.rating != null ? (
+									<span class="review-index-rating" aria-label={`Vurdering ${e.rating} af 5`}>
+										{e.rating}/5
+									</span>
+								) : null}
 							</a>
 						</li>
 					))
@@ -72,14 +116,16 @@ const jsonLd = [
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		max-width: 44rem;
+		max-width: 52rem;
 	}
 	.review-index-list li + li {
 		margin-top: var(--space-4);
 	}
 	.review-index-card {
-		display: block;
-		padding: var(--space-6) var(--space-7);
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-5);
+		padding: var(--space-5) var(--space-6);
 		border-radius: var(--radius-xl);
 		border: 1px solid var(--color-border);
 		background: var(--color-surface);
@@ -89,11 +135,26 @@ const jsonLd = [
 		transition:
 			border-color 0.15s ease,
 			box-shadow 0.15s ease;
-		position: relative;
 	}
 	.review-index-card:hover {
 		border-color: rgb(180 83 9 / 28%);
 		box-shadow: var(--shadow-sm);
+	}
+	.review-index-thumb {
+		width: 6.25rem;
+		height: 6.25rem;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+		flex-shrink: 0;
+		border: 1px solid rgb(0 0 0 / 8%);
+	}
+	.review-index-thumb--placeholder {
+		display: block;
+		background: rgb(0 0 0 / 6%);
+	}
+	.review-index-card-main {
+		flex: 1;
+		min-width: 0;
 	}
 	.review-index-kicker {
 		display: block;
@@ -104,27 +165,50 @@ const jsonLd = [
 		color: var(--color-accent-dark);
 		margin-bottom: var(--space-2);
 	}
+	.review-index-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin: 0 0 var(--space-3);
+	}
+	.review-index-chip {
+		display: inline-block;
+		font-size: 0.75rem;
+		font-weight: 600;
+		padding: 0.2rem 0.55rem;
+		border-radius: var(--radius-md);
+		background: rgb(0 0 0 / 6%);
+		color: var(--color-muted);
+	}
 	.review-index-title {
 		display: block;
 		font-family: var(--font-display);
-		font-size: 1.25rem;
+		font-size: 1.2rem;
 		font-weight: 600;
 		color: var(--color-text);
 		margin-bottom: var(--space-3);
-		padding-right: 3rem;
+		line-height: 1.25;
 	}
 	.review-index-desc {
 		display: block;
-		font-size: 1.02rem;
+		font-size: 0.98rem;
 		line-height: 1.6;
 		color: var(--color-muted);
 	}
 	.review-index-rating {
-		position: absolute;
-		top: var(--space-6);
-		right: var(--space-7);
+		flex-shrink: 0;
 		font-weight: 700;
 		font-size: 0.9375rem;
 		color: rgb(180 83 9);
+		line-height: 1.2;
+		padding-top: 0.125rem;
+	}
+	@media (max-width: 520px) {
+		.review-index-card {
+			flex-wrap: wrap;
+		}
+		.review-index-rating {
+			flex-basis: 100%;
+		}
 	}
 </style>
