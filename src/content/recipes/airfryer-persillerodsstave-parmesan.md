@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer persillerodsstave med hvidløg og parmesan'
 description: 'Persillerod i airfryer som sprøde stave med hvidløg og revet parmesan til sidst. Mild smag, god crunch – alternativ til pastinakfritter.'
+heroImage: '/images/recipes/airfryer-persillerodsstave-parmesan.jpg'
+heroAlt: 'Gyldne persillerodsstave på tallerken med revet parmesan, hakket persille og peber, lille skål med hvid dip, airfryer med flere stave i kurven og hele persillerødder i baggrunden'
 pubDate: 2026-04-04
 prepMinutes: 12
 cookMinutes: 18
