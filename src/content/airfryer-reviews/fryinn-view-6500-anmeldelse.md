@@ -1,0 +1,40 @@
+---
+title: 'Fryinn View 6500 airfryer anmeldelse: 6,5 liter med kikkert til maden'
+description: 'Vores vurdering af Fryinn View 6500 (6,5 L, 1700 W): vinduesfunktion, fordele og ulemper – bygget på specs og erfaring med airfryere, med link til pris hos forhandler.'
+pubDate: 2026-04-04
+updatedDate: 2026-04-04
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fryinn-view-6500-airfryer-65-l-1700-w-sort-rustfrit-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
+feedProductId: '1001998'
+rating: 4
+pros:
+  - 'Ca. 6,5 L giver god plads til familien eller større portioner i ét lag'
+  - '“View”-konceptet gør det nemmere at vurdere farve og sprødhed uden at åbne konstant'
+  - '1700 W er tilstrækkeligt til hverdagsretter når du planlægger lidt ekstra tid ved større mængder'
+  - 'Rustfri detaljer passer fint ind i mange køkkener'
+  - 'Én stor kurv – simpelt setup hvis du ikke vil styre to zoner'
+cons:
+  - 'Én kurv betyder én temperatur ad gangen (ingen ægte dual-zone)'
+  - 'Stor enhed = brug lidt bordplads – tjek højde og dybde før køb'
+  - 'Mærket er mindre kendt end de store hvidevarenavne – kig på garanti og forhandler'
+verdict: 'Fryinn View 6500 er et spændende valg i mellem-/store-segmentet, især hvis du vil kunne se maden undervejs. God til husholdninger, der laver mere på én gang, og som kan leve uden to adskilte zoner.'
+---
+
+## Hvem passer Fryinn View 6500 til?
+
+Vurderingen bygger på **vareinformation**, **generel erfaring med airfryere** og **hvad der typisk fungerer** i 6–7 L-klassen – ikke et langt testforløb med én maskine hos os.
+
+Modellen passer godt til dig, der vil have **lidt ekstra volumen** og **bedre overblik** (vindue) når du laver pommes, grønt, kylling eller lettere bagværk. Med **6,5 liter** kan du ofte dække **familie eller gæster** med færre omgange end på en lille 3 L-model.
+
+Vil du have **to temperaturer samtidig** (fx fisk og pommes), er dual-zone eller to små kurve ofte nemmere end én stor.
+
+## Brug i praksis
+
+Tænk **ét lag med luft mellem tingene** og **vending/ryst** undervejs – så undgår du våde “hotspots”. Vinduet hjælper med at se, om overfladen tager farve, men **lugt og damp** kan stadig snyde: et kort kig er ofte bedre end at gætte på tid alene.
+
+## Støj, lugt og rengøring
+
+Som altid i airfryere: **fedt og dryp** ender i skuffen. Giv kurv og drypskål kærlighed efter brug – det holder lugt nede og næste omgang mere ensartet. Følg **fabrikantens anbefalinger** for din model.
+
+## Pris, sammenligning og videre
+
+Tjek **aktuel pris og levering** via knappen øverst. Vil du sammenligne flere modeller, er [shop-siden](/shop) og guiden [hvilken airfryer](/guides/hvilken-airfryer) gode næste skridt.
