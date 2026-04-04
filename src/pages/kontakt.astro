@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_NAME } from '../consts';
+import { SITE_EMAIL, SITE_NAME } from '../consts';
 
 const description = `Kontakt ${SITE_NAME}.`;
 ---
@@ -19,7 +19,7 @@ const description = `Kontakt ${SITE_NAME}.`;
 			</p>
 			<p>
 				<strong>E-mail:</strong>
-				<a href="mailto:kontakt@opskriftairfryer.dk">kontakt@opskriftairfryer.dk</a>
+				<a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
 			</p>
 		</div>
 	</section>
