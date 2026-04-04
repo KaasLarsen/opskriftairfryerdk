@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer fiskefrikadeller – sprøde udenpå og let i køkkenet'
 description: 'Fiskefrikadeller i airfryer med torsk eller sej, dild og citron. Mindre fedt end på panden – stadig med sprød kant og saftig midte.'
+heroImage: '/images/recipes/airfryer-fiskefrikadeller.jpg'
+heroAlt: 'Gyldne fiskefrikadeller på tallerken med remoulade, citron og dild, den ene skåret op med hvid fiskemidte, airfryer med 200 °C på display i baggrunden'
 pubDate: 2026-04-03
 prepMinutes: 20
 cookMinutes: 14
