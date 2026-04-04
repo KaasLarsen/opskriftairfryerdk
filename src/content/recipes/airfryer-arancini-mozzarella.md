@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer arancini – sprøde risottokugler med mozzarella'
 description: 'Brug rester af risotto til arancini i airfryer: sprød skorpe, smeltet ost i midten. Panering og kølig hvile giver bedst resultat.'
+heroImage: '/images/recipes/airfryer-arancini-mozzarella.jpg'
+heroAlt: 'Gyldne panerede arancini på tallerken, den ene åbnet med smeltet mozzarella, dipperskål med tomatsauce, persille og airfryer med 200 °C i baggrunden'
 pubDate: 2026-04-03
 prepMinutes: 35
 cookMinutes: 14
