@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer jordskokke med rosmarin og citron'
 description: 'Jordskokke i airfryer: sprød skorpe, mør midte og krydret med rosmarin og citron. Nemt tilbehør til kød og fisk.'
+heroImage: '/images/recipes/airfryer-jordskokke-rosmarin-citron.jpg'
+heroAlt: 'Skål med gyldne jordskokkeskiver, frisk rosmarin, revet citronskal, citronbåde og groft peber på træbord'
 pubDate: 2026-04-04
 prepMinutes: 10
 cookMinutes: 20
