@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/jul-i-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Jul i airfryer: flæskesteg, tilbehør og planlægning | ${SITE_NAME}`;
+const description =
+	'Brug airfryeren til jul: ovn vs. airfryer, tidsplan når ovnen er optaget, typiske faldgruber og gode opskrifter til flæskesteg, ribbensteg og tilbehør.';
+
+const published = '2026-04-03T10:00:00.000Z';
+const modified = published;
+
+const ogImage = `${SITE_URL}/og-default.svg`;
+
+const faqItems = [
+	{
+		q: 'Kan jeg erstatte ovnen helt med airfryer juleaften?',
+		a: 'Sjældent til alt på én gang: airfryeren har begrænset plads og én kurv ad gangen. Den er derimod stærk som ekstra &quot;ovn&quot; til svær, små kødstykker, grønt og snacks – mens hovedretten eller store forme stadig kan stå i den almindelige ovn.',
+	},
+	{
+		q: 'Hvorfor tager flæskesteg anderledes tid end i min ovn?',
+		a: 'Varmluft cirkulerer tættere om maden, og modeller varierer. Brug altid et køkkentermometer til større kødstykker og tjek et par minutter før anbefalet tid – justér efter din maskine.',
+	},
+	{
+		q: 'Kan jeg lave flere ting samtidig i airfryer?',
+		a: 'Kun hvis de passer i én kurv uden at lægge oven på hinanden. Tunge eller våde ting laver du oftest i serier: færdiggrillede ting kan holdes lune under låg eller i ovn på lav varme, mens næste hold kommer i kurven.',
+	},
+	{
+		q: 'Bliver svær sprød nok i airfryer?',
+		a: 'Ja, hvis kødet er tørt på svær-siden, der er luft omkring stykket, og du følger en god opskrift til temperatur og evt. afsluttende minutter højere mod slutningen. Undgå at proppes ned i kurven.',
+	},
+	{
+		q: 'Hvad med røg og fedt i airfryer ved jul?',
+		a: 'Fedtede retter kræver rene kurve og at varmeelementet ikke er tilstoppet. Tørk overskydende væske af kød før tilberedning og brug evt. rist, så fedt kan løbe fra. Følg altid apparatets sikkerhedsanvisning.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Jul i airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Jul i airfryer: flæskesteg, tilbehør og planlægning',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Jul i airfryer</span>
+			</nav>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Sæson</p>
+				<h1>Jul i airfryer: flæskesteg, tilbehør og planlægning</h1>
+				<p class="guide-lead">
+					Julemiddagen handler ofte om <strong>timing</strong>: ovnen er fuld, gryder koger, og du
+					skulle også lige have sprød svær. Her får du en praktisk vinkel på, hvordan airfryeren kan
+					afhjælpe flaskehalsen – uden at love, at hele julebordet kan presses ind i én kurv.
+				</p>
+
+				<h2>Hvor airfryeren giver mening til jul</h2>
+				<p>
+					Airfryeren er bedst til det, der vinder på <strong>høj, cirkulerende varme</strong> og en
+					relativt tør overflade: svær, medister, ribben med sprød kant, hurtigt grønt, små snacks.
+					Til grød, sauce i stor mængde og fade, der skal langtidspege i ovn, er den almindelige ovn
+					(stadig) oplagt.
+				</p>
+				<p>
+					Tænk på airfryeren som en <strong>ekstra arbejdshorse</strong>: når ovnlågen ikke må åbnes
+					på det forkerte tidspunkt, kan du stadig få noget færdigt med god struktur i maskinen ved
+					siden af.
+				</p>
+
+				<h2>Ovn vs. airfryer på julesteger</h2>
+				<p>
+					Princippet er det samme – varme igennem kødet og reaktion på overfladen – men
+					<strong>tider fra opskrifter til ovn</strong> kan ikke altid kopieres 1:1. Brug vores
+					opskrifter, der er skrevet til airfryer, og et lille køkkentermometer, så du rammer den
+					kerne, du ønsker, uden at gamble på minuttal alene.
+				</p>
+				<p>
+					Læg aldrig et stort steg i så lille kurv, at siderne &quot;dammer&quot;. Der skal være luft,
+					og ofte hjælper det at <strong>skifte sider eller hæve stegen</strong> på rist – se den
+					konkrete opskrift, du følger.
+				</p>
+
+				<h2>En enkel tidsplan for travl juleaften</h2>
+				<ol>
+					<li>
+						<strong>Forbered</strong> dagen før: tjek saltning, tørvægt på kød og hvad der skal ud af
+						køleskab i god tid.
+					</li>
+					<li>
+						<strong>Reservér airfryer</strong> til ting, der kræver sprødhed eller hurtig gennemgang –
+						tilbehør i mindre mængder passer ofte godt.
+					</li>
+					<li>
+						<strong>Kør i hold</strong> hvis kurven er fuld: hellere to omgange med godt resultat end
+						én propfuld kurv og blød svær.
+					</li>
+					<li>
+						<strong>Hviletid</strong> efter steg: lad kødet stå kort, før du skærer – og brug tiden til
+						sidste tilbehør i maskinen.
+					</li>
+				</ol>
+
+				<h2>Typiske faldgruber juleaftens i airfryer</h2>
+				<ul>
+					<li>
+						<strong>For våd overflade</strong> – især på svær: dup tørt, så du undgår damp i stedet
+						for stegeskorpe.
+					</li>
+					<li>
+						<strong>Overfyldt kurv</strong> – alt ligger i ét lag med mellemrum, når målet er sprødhed.
+					</li>
+					<li>
+						<strong>Kun klokken</strong> – store stykker kød: supplér med termometer og lugt/tekstur.
+					</li>
+					<li>
+						<strong>Forglemt rengøring</strong> efter fedtede omgange – næste hold kan ryge eller smage
+						gammelt fedt.
+					</li>
+				</ul>
+
+				<h2>Opskrifter der passer til julebordet</h2>
+				<p>
+					Start med de klassiske steger og byg tilbehør på omkring – mange finder du også på vores
+					<a href="/opskrifter?saeson=jul">opskrifter filtreret på Jul</a> på oversigten:
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-flaeskesteg">Flæskesteg</a> – sprød svær som hovednummer.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-ribbensteg">Ribbensteg</a> – alternativ med svær og saftig
+						kant.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-medister">Medister</a> – hurtig pølseret når grillen er inde.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-moerbrad">Mørbrad</a> – mindre steg med god styring i kurven.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-varm-kartoffelsalat">Varm kartoffelsalat</a> – sprøde kartofler
+						til fadet.
+					</li>
+					<li><a href="/opskrifter/airfryer-broccoli">Broccoli</a> – grønt tilbehør på få minutter.</li>
+					<li>
+						<a href="/opskrifter/airfryer-ristede-noedder-honning-rosmarin">Honning- og rosmarin-nødder</a>
+						– lille snack før eller efter middagen.
+					</li>
+				</ul>
+				<p>
+					Nye til maskinen? Læs også <a href="/guides/airfryer-for-begyndere">Airfryer for begyndere</a>.
+				</p>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

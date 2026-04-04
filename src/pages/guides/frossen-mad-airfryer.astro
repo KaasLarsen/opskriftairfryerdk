@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/frossen-mad-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Frossen mad i airfryer: tid, ét lag og undgå bløde resultater | ${SITE_NAME}`;
+const description =
+	'Optø eller direkte fra frosten? Lær gode vaner til frossen mad i airfryer: ét lag, ryst/ vend, brændingsrisiko og links til pommes, laks, pølsehorn og forårsruller.';
+
+const published = '2026-04-03T10:30:00.000Z';
+const modified = published;
+
+const ogImage = `${SITE_URL}/og-default.svg`;
+
+const faqItems = [
+	{
+		q: 'Skal jeg altid optø før airfryer?',
+		a: 'Nej. Mange produkter er lavet til direkte tilberedning fra frost – men følg emballage og vores opskrifter. Ved store klumper is eller tykt frostlag: bedre med kort optøning og dup tørt, så du undgår damp i kurven.',
+	},
+	{
+		q: 'Hvorfor bliver mine frosne pommes bløde?',
+		a: 'Oftest fordi kurven er overfyldt, der stadig er smeltende is på overfladen, eller tingene ligger oven på hinanden. Ét lag med luft omkring pomfritterne, plus ryst undervejs, giver typisk mere sprødhed end én proppet omgang.',
+	},
+	{
+		q: 'Skal jeg justere temperatur for frost vs. frisk?',
+		a: 'Ofte bruger du samme eller lidt lavere start og lidt længere samlet tid – frost afkøler kurven i starten. Den præcise opskrift er bedst; generelle ovntider for &quot;frisk&quot; er sjældent 1:1 med frost.',
+	},
+	{
+		q: 'Kan paneret frost blive mørkt udenpå og koldt indeni?',
+		a: 'Ja, især ved for høj varme. Brug opskriftens interval, vend eller ryst, og tjek midten. Hellere lidt lavere og længere end sort yderside og rå kerne.',
+	},
+	{
+		q: 'Må jeg lægge frost direkte fra posen uden at adskille klumper?',
+		a: 'Store klumper steget som ét stykke giver uens gennemstegning. Adskil, så luft kan omkring hver del – eller optø let og adskil, hvis posen er fryset sammen.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Frossen mad i airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Frossen mad i airfryer: tid, ét lag og undgå bløde resultater',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Frossen mad i airfryer</span>
+			</nav>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Hverdag og hurtig mad</p>
+				<h1>Frossen mad i airfryer: tid, ét lag og undgå bløde resultater</h1>
+				<p class="guide-lead">
+					Frost ændrer spillet: der skal <strong>fjernes overskydende is</strong>, der skal være
+					<strong>luft</strong> omkring hver bidske, og du skal oftere <strong>ryste eller vende</strong>.
+					Her er vanerne, der gør frossen mad mere pålidelig i airfryer end tilfældig gætteri.
+				</p>
+
+				<h2>Grundidé: undgå damp i kurven</h2>
+				<p>
+					Når frost smelter for hurtigt i et lille rum, samler fugt sig omkring maden – og så får du
+					tekstur som efter kogning, ikke efter varmluft. Dit værktøj er derfor <strong>tørrere
+					overflade</strong> (dup med køkkenrulle, hvis omgivelserne tillader det),
+					<strong>ét lag</strong> og <strong>luft mellem stykker</strong>.
+				</p>
+
+				<h2>Direkte fra frost eller hurtig optøning?</h2>
+				<p>
+					Mange forbrugsvarer er udviklet til at gå <strong>direkte fra fryser</strong> til airfryer eller
+					ovn – men ikke alle. Læs anvisning på posen og sammenhold med en airfryer-opskrift.
+				</p>
+				<p>
+					Vælger du <strong>optø</strong> først (fx tynde fiskefileter eller ting, der er groet
+					sammen), så optø sikkert i køleskab eller mikro efter anvisning og dup tørt. Undgå at lade
+					kød stå længe ved stuetemperatur.
+				</p>
+
+				<h2>Temperatur og tid i praksis</h2>
+				<p>
+					Frost køler starten ned, så <strong>forvent ikke identisk tid med frisk</strong> bare fordi
+					posen ligner. Brug vores opskrifter som udgangspunkt og tjek maden lidt før sluttid første
+					gang du prøver en ny pose på din model.
+				</p>
+				<p>
+					Ved paneret eller sødt lag udenpå: pas på <strong>for høj varme for tidligt</strong> – ellers
+					brankes ydersiden, mens kernen stadig er kold.
+				</p>
+
+				<h2>Vaner der løfter næsten alt fra frost</h2>
+				<ul>
+					<li>
+						<strong>Ét lag</strong> – undtagelser findes (små bælg), men hovedreglen er luft hele vejen
+						rundt.
+					</li>
+					<li>
+						<strong>Ryst eller vend</strong> halvvejs – så ingen side ligger og damper mod bunden.
+					</li>
+					<li>
+						<strong>Lidt olie på ting, der skal knase</strong> – mange frost-pommes får bedre ydre med
+						et tyndt, jævnt lag efter fabrikantens retningslinjer.
+					</li>
+					<li>
+						<strong>Tilpas mængde</strong> – hellere to omgange end én overbelastet kurv.
+					</li>
+				</ul>
+
+				<h2>Madtypespecifikt (kort)</h2>
+				<p>
+					<strong>Pommes og snacks</strong> lever af sprødhed – prioriter én lag og ryst.
+					<strong>Fisk</strong> fra frost kan blive fantastisk eller tør: følg dedikerede tider og undgå
+					at stege for længe uden tjek.
+					<strong>Brød og dej fra frost</strong> skal ofte have plads til at hæve i varmen – se den
+					enkelte opskrift.
+				</p>
+
+				<h2>Prøv det på vores frost-opskrifter</h2>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-frosne-franske-kartofler">Frosne franske kartofler</a> –
+						klassiker fra pose.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-frossen-laks">Frossen laks</a> – direkte fra fryser til
+						aftensmad.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-poelsehorn-frost">Pølsehorn (frost)</a> – sprød dej og varm
+						pølse.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-frosne-foraarsruller">Frosne forårsruller</a> – sprød snack uden
+						friture.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-fiskefilet">Fiskefilet</a> – god reference til paneret fisk
+						(frisk; sammenlign teknik med dine frost-fileter).
+					</li>
+				</ul>
+				<p>
+					Grundvaner finder du også i <a href="/guides/airfryer-for-begyndere">Airfryer for begyndere</a>.
+				</p>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
