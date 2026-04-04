@@ -9,9 +9,14 @@ const description =
 	'Airfryer-tilbehør: perforeret papir, silikonemåtte, oliespray, rist og spyd – hvornår det hjælper, og hvornår du godt kan undvære. Link til shop med tilbehør.';
 
 const published = '2026-04-05T08:30:00.000Z';
-const modified = published;
+const modified = '2026-04-06T11:00:00.000Z';
 
-const ogImage = `${SITE_URL}/og-default.svg`;
+const heroImagePath = '/images/guides/tilbehoer-til-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Sort airfryer med pomfritter i kurven, bagforme, rist, pizzaform, muffinbakke og silikoneindsatser med mad – tilbehør til airfryer';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
 
 const faqItems = [
 	{
@@ -109,25 +114,37 @@ const jsonLd = [
 				<span class="recipe-breadcrumbs-current">Tilbehør til airfryer</span>
 			</nav>
 
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
 			<article class="prose guide-prose">
 				<p class="section-kicker guide-article-kicker">Udstyr</p>
 				<h1>Tilbehør til airfryer: hvad er pengene værd?</h1>
 				<p class="guide-lead">
-					Målet med tilbehør er simpelt: <strong>mindre friktion</strong> (rengøring, fastbrændt fedt),
-					<strong>bedre luft</strong> omkring maden, eller nemmere håndtering af små ting. Her er en
-					jordnær prioritering – og hvad du roligt kan springe over.
+					Målet med tilbehør er simpelt: <strong>mindre friktion</strong> (rengøring, fastbrændt
+					fedt), <strong>bedre luft</strong> omkring maden, eller nemmere håndtering af små ting. Her
+					er en jordnær prioritering – og hvad du roligt kan springe over.
 				</p>
 
 				<h2>Det, mange faktisk får glæde af</h2>
 				<ul>
 					<li>
 						<strong>Oliespray eller sprayer:</strong> et jævnt lag giver ofte pænere farve end at
-						hælde olie i klumper. Vælg en du kan fylde selv, hvis du vil styre olivetype – se også
+						hælde olie i klumper. Vælg en du kan fylde selv, hvis du vil styre olivetype – se også{' '}
 						<a href="/guides/sproed-med-mindre-olie">sprødhed med mindre olie</a>.
 					</li>
 					<li>
 						<strong>Perforeret papir / liners:</strong> praktisk til pommes og tørre ting, når
-						produceren tillader det og papiret ikke blokerer cirkulation. Samme tema som i
+						produceren tillader det og papiret ikke blokerer cirkulation. Samme tema som i{' '}
 						<a href="/guides/airfryer-for-begyndere">begynderguidens FAQ om bagepapir</a>.
 					</li>
 					<li>
@@ -143,7 +160,7 @@ const jsonLd = [
 				<h2>Nice-to-have: spyd, små forme og ekstra kurv</h2>
 				<p>
 					<strong>Spyd og små forme</strong> er gode til grøntsagstern, små kødbidder og æg – se fx
-					vores <a href="/opskrifter/airfryer-kyllingespyd">kyllingespyd</a> eller
+					vores <a href="/opskrifter/airfryer-kyllingespyd">kyllingespyd</a> eller{' '}
 					<a href="/opskrifter/airfryer-mozzarella-sticks">mozzarella sticks</a>, hvor ensartet varme
 					omkring alle sider betyder noget.
 				</p>
@@ -166,7 +183,7 @@ const jsonLd = [
 
 				<h2>Find tilbehør via shop (partnere)</h2>
 				<p>
-					Vi kuraterer airfryere og tilbehør fra vores <strong>produktfeeds</strong> på
+					Vi kuraterer airfryere og tilbehør fra vores <strong>produktfeeds</strong> på{' '}
 					<a href="/shop">shop-siden</a>. Vælg fanen <strong>Tilbehør</strong> i søgefeltets chips, og
 					brug søgning på fx &quot;liner&quot;, &quot;spray&quot; eller &quot;rist&quot; – produkter og
 					priser kan skifte, så tjek altid den aktuelle vareside hos forhandleren.
@@ -199,6 +216,20 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
 	.guide-prose {
 		max-width: 48rem;
 	}
