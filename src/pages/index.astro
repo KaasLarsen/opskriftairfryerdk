@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import { DEFAULT_DESCRIPTION, ORGANIZATION_JSON, SITE_NAME, SITE_TAGLINE, SITE_URL } from '../consts';
 
 const allRecipes = await getCollection('recipes');
+const reviewCount = (await getCollection('airfryerReviews')).length;
 const featuredPool = allRecipes
 	.filter((r) => r.data.featured === true)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -82,6 +83,9 @@ const jsonLd = {
 				<div class="hero-actions">
 					<a class="btn btn-primary" href="/opskrifter">Se alle opskrifter</a>
 					<a class="btn btn-ghost" href="/guides">Guides til airfryer</a>
+					<a class="btn btn-ghost" href="/anmeldelser">
+						Airfryer-anmeldelser ({reviewCount})
+					</a>
 				</div>
 			</div>
 			<div class="hero-visual">

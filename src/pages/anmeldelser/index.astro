@@ -76,18 +76,36 @@ const jsonLd = [
 				<p class="section-kicker">Anmeldelser</p>
 				<h1 class="recipe-title">Airfryer-anmeldelser</h1>
 				<p>
-					Vi <strong>vurderer og beskriver</strong> modeller med klare fordele og ulemper, så du
+					Du finder <strong>{reviews.length} anmeldelser</strong> på denne side under filtrene – vælg
+					<em>Alle mærker</em>, <em>Alle størrelser</em> og <em>Alle</em> under vurdering for at se hele
+					listen. Vi <strong>vurderer og beskriver</strong> modeller med klare fordele og ulemper, så du
 					lettere kan vælge. Har vi et eget hero-billede, vises det her; ellers bruger vi produktbillede
 					fra vores <a href="/shop">partner-feed</a>. Tjek altid den aktuelle vareside hos forhandleren.
 					Læs også <a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
 				</p>
 			</div>
 
-			<div class="review-index-filters" id="review-index-filters" aria-label="Filtrer anmeldelser">
+			<form
+				class="review-index-filters"
+				id="review-index-filters"
+				aria-label="Filtrer anmeldelser"
+				autocomplete="off"
+				onsubmit="return false;"
+			>
+				<p class="review-index-filters-hint">
+					Filtrene kræver JavaScript. Ser du færre end {reviews.length} kort, eller en tom liste? Vælg
+					<strong>Alle</strong> i dropdowns og klik <strong>Nulstil filtre</strong> – fx giver «5 stjerner»
+					kun modeller med topvurdering.
+				</p>
 				<div class="review-index-filters-row">
 					<div class="review-index-filter">
 						<label class="review-index-filter-label" for="filter-review-brand">Mærke</label>
-						<select class="review-index-select" id="filter-review-brand" data-filter-brand>
+						<select
+							class="review-index-select"
+							id="filter-review-brand"
+							data-filter-brand
+							autocomplete="off"
+						>
 							<option value="">Alle mærker</option>
 							{
 								brandOptions.map((b) => (
@@ -103,7 +121,12 @@ const jsonLd = [
 					</div>
 					<div class="review-index-filter">
 						<label class="review-index-filter-label" for="filter-review-cap">Kapacitet (kurv)</label>
-						<select class="review-index-select" id="filter-review-cap" data-filter-cap>
+						<select
+							class="review-index-select"
+							id="filter-review-cap"
+							data-filter-cap
+							autocomplete="off"
+						>
 							<option value="">Alle størrelser</option>
 							<option value="lt5">Under 5 L</option>
 							<option value="5-7">5–7 L</option>
@@ -113,7 +136,12 @@ const jsonLd = [
 					</div>
 					<div class="review-index-filter">
 						<label class="review-index-filter-label" for="filter-review-rating">Mindst vurdering</label>
-						<select class="review-index-select" id="filter-review-rating" data-filter-rating>
+						<select
+							class="review-index-select"
+							id="filter-review-rating"
+							data-filter-rating
+							autocomplete="off"
+						>
 							<option value="">Alle</option>
 							<option value="4">4 stjerner eller mere</option>
 							<option value="5">5 stjerner</option>
@@ -121,7 +149,12 @@ const jsonLd = [
 					</div>
 					<div class="review-index-filter">
 						<label class="review-index-filter-label" for="filter-review-sort">Sortering</label>
-						<select class="review-index-select" id="filter-review-sort" data-filter-sort>
+						<select
+							class="review-index-select"
+							id="filter-review-sort"
+							data-filter-sort
+							autocomplete="off"
+						>
 							<option value="date-desc">Nyeste først</option>
 							<option value="date-asc">Ældste først</option>
 							<option value="cap-desc">Størst kapacitet</option>
@@ -133,7 +166,7 @@ const jsonLd = [
 					<button type="button" class="review-index-reset" data-filter-reset>Nulstil filtre</button>
 					<p class="review-index-filter-status" data-filter-status aria-live="polite" />
 				</div>
-			</div>
+			</form>
 
 			<ul class="review-index-list" id="review-index-list" role="list">
 				{
@@ -297,6 +330,11 @@ const jsonLd = [
 			apply();
 		});
 
+		// Ryd evt. gendannede formulardata (ellers kan «kun 5 stjerner» el.l. skjule næsten alt)
+		brandSel.value = '';
+		capSel.value = '';
+		ratingSel.value = '';
+		sortSel.value = 'date-desc';
 		apply();
 	})();
 </script>
@@ -309,6 +347,12 @@ const jsonLd = [
 		border-radius: var(--radius-xl);
 		border: 1px solid var(--color-border);
 		background: var(--color-surface);
+	}
+	.review-index-filters-hint {
+		margin: 0 0 var(--space-5);
+		font-size: 0.9rem;
+		line-height: 1.55;
+		color: var(--color-muted);
 	}
 	.review-index-filters-row {
 		display: flex;
