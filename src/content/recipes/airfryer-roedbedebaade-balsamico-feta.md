@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer rødbedebåde med balsamico og feta'
 description: 'Saftige rødbedebåde i airfryer med balsamico-glaze og feta. Tykke skiver – ikke chips – til varm tallerken eller salat.'
+heroImage: '/images/recipes/airfryer-roedbedebaade-balsamico-feta.jpg'
+heroAlt: 'Ristede rødbedebåde på fad med smuldret feta, mørk balsamico-glaze og friske urter, airfryer med flere både i kurven og små skåle med feta og glaze i baggrunden'
 pubDate: 2026-04-04
 prepMinutes: 12
 cookMinutes: 22
