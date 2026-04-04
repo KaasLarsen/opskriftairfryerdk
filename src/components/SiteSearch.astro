@@ -3,12 +3,12 @@
 ---
 
 <div class="site-search" data-site-search>
-	<label class="sr-only" for="site-search-input">Søg efter opskrift</label>
+	<label class="sr-only" for="site-search-input">Søg på sitet</label>
 	<input
 		type="search"
 		id="site-search-input"
 		class="site-search-input"
-		placeholder="Søg opskrifter…"
+		placeholder="Søg opskrifter og anmeldelser…"
 		autocomplete="off"
 		spellcheck="false"
 		aria-autocomplete="list"
@@ -90,15 +90,18 @@
 			if (hits.length === 0) {
 				panel.hidden = false;
 				panel.innerHTML =
-					'<p class="site-search-empty" role="presentation">Ingen opskrifter fundet.</p>';
+					'<p class="site-search-empty" role="presentation">Ingen resultater fundet.</p>';
 				input.setAttribute('aria-expanded', 'true');
 				return;
 			}
 			const links = hits
-				.map(
-					(item) =>
-						`<a role="option" class="site-search-hit" href="/opskrifter/${item.slug}">${escapeHtml(item.title)}<span class="site-search-hit-meta">${escapeHtml(item.category)}</span></a>`,
-				)
+				.map((item) => {
+					const href =
+						item.kind === 'review'
+							? `/anmeldelser/${item.slug}`
+							: `/opskrifter/${item.slug}`;
+					return `<a role="option" class="site-search-hit" href="${href}">${escapeHtml(item.title)}<span class="site-search-hit-meta">${escapeHtml(item.category)}</span></a>`;
+				})
 				.join('');
 			panel.innerHTML = links;
 			panel.hidden = false;

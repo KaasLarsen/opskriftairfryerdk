@@ -42,6 +42,12 @@ function isActive(href: string): boolean {
 				>
 				<a
 					class="nav-link"
+					href="/anmeldelser"
+					aria-current={isActive('/anmeldelser') ? 'page' : undefined}
+					>Anmeldelser</a
+				>
+				<a
+					class="nav-link"
 					href="/shop"
 					aria-current={isActive('/shop') ? 'page' : undefined}>Shop</a
 				>

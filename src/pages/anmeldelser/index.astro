@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const reviews = (await getCollection('airfryerReviews')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = `Airfryer-anmeldelser | ${SITE_NAME}`;
+const description =
+	'Praktiske airfryer-anmeldelser: fordele, ulemper og hvem modellen passer til – med link til forhandler og vejledende pris fra vores produktfeed.';
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	{
+		'@type': 'WebPage',
+		'@id': `${SITE_URL}/anmeldelser#webpage`,
+		url: `${SITE_URL}/anmeldelser`,
+		name: title.replace(` | ${SITE_NAME}`, ''),
+		description,
+		inLanguage: 'da-DK',
+		isPartOf: { '@id': `${SITE_URL}/#website` },
+	},
+];
+---
+
+<BaseLayout title={title} {description} canonicalPath="/anmeldelser" jsonLd={jsonLd}>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Anmeldelser</span>
+			</nav>
+
+			<div class="section-head">
+				<p class="section-kicker">Anmeldelser</p>
+				<h1 class="recipe-title">Airfryer-anmeldelser</h1>
+				<p>
+					Vi tester og beskriver modeller med <strong>fordele og ulemper</strong>, så du lettere kan
+					vælge. Produktbillede og pris kommer fra vores{' '}
+					<a href="/shop">partner-feed</a> – tjek altid den aktuelle vareside hos forhandleren. Læs også
+					<a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
+				</p>
+			</div>
+
+			<ul class="review-index-list" role="list">
+				{
+					reviews.map((r) => (
+						<li>
+							<a class="review-index-card" href={`/anmeldelser/${r.id}`}>
+								<span class="review-index-kicker">Anmeldelse</span>
+								<span class="review-index-title">{r.data.title}</span>
+								<span class="review-index-desc">{r.data.description}</span>
+								{r.data.rating != null && (
+									<span class="review-index-rating" aria-label={`Vurdering ${r.data.rating} af 5`}>
+										{r.data.rating}/5
+									</span>
+								)}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.review-index-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		max-width: 44rem;
+	}
+	.review-index-list li + li {
+		margin-top: var(--space-4);
+	}
+	.review-index-card {
+		display: block;
+		padding: var(--space-6) var(--space-7);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		box-shadow: var(--shadow-xs);
+		text-decoration: none;
+		color: inherit;
+		transition:
+			border-color 0.15s ease,
+			box-shadow 0.15s ease;
+		position: relative;
+	}
+	.review-index-card:hover {
+		border-color: rgb(180 83 9 / 28%);
+		box-shadow: var(--shadow-sm);
+	}
+	.review-index-kicker {
+		display: block;
+		font-size: 0.8125rem;
+		font-weight: 650;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--color-accent-dark);
+		margin-bottom: var(--space-2);
+	}
+	.review-index-title {
+		display: block;
+		font-family: var(--font-display);
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--space-3);
+		padding-right: 3rem;
+	}
+	.review-index-desc {
+		display: block;
+		font-size: 1.02rem;
+		line-height: 1.6;
+		color: var(--color-muted);
+	}
+	.review-index-rating {
+		position: absolute;
+		top: var(--space-6);
+		right: var(--space-7);
+		font-weight: 700;
+		font-size: 0.9375rem;
+		color: rgb(180 83 9);
+	}
+</style>
