@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer ristede nødder med honning, salt og rosmarin'
 description: 'Hurtig snack: mandler eller cashew ristet i airfryer med honning og urter. Små portioner for at undgå at de branker.'
+heroImage: '/images/recipes/airfryer-ristede-noedder-honning-rosmarin.jpg'
+heroAlt: 'Skål med glaserede ristede nødder, rosmarin og groft salt, honningglas og træske ved siden af, airfryer med 180 °C på display i baggrunden'
 pubDate: 2026-04-03
 prepMinutes: 5
 cookMinutes: 8

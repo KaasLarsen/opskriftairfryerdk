@@ -1,6 +1,8 @@
 ---
 title: 'Airfryer kylling schnitzel – sprød panering og saftig midte'
 description: 'Kyllingebryst som schnitzel i airfryer med rasp eller panko. Trinvise temperaturer for farve uden tør kylling.'
+heroImage: '/images/recipes/airfryer-kylling-schnitzel.jpg'
+heroAlt: 'Panerede kyllingeschnitzler på tallerken med salat, dippersauce, citron og persille, den ene skåret i skiver med hvid kylling indeni, airfryer med 200 °C på display i baggrunden'
 pubDate: 2026-04-03
 prepMinutes: 15
 cookMinutes: 16
