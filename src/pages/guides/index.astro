@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const title = `Guides | ${SITE_NAME}`;
+const description =
+	'Praktiske guides til airfryer: kom godt i gang med temperatur, tid og gode vaner – og find nemt videre til opskrifter.';
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	{
+		'@type': 'WebPage',
+		'@id': `${SITE_URL}/guides#webpage`,
+		url: `${SITE_URL}/guides`,
+		name: title,
+		description,
+		inLanguage: 'da-DK',
+		isPartOf: { '@id': `${SITE_URL}/#website` },
+	},
+];
+---
+
+<BaseLayout title={title} description={description} canonicalPath="/guides" jsonLd={jsonLd}>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Guides</span>
+			</nav>
+
+			<div class="section-head">
+				<p class="section-kicker">Guides</p>
+				<h1 class="recipe-title">Guides til airfryer</h1>
+				<p>
+					Korte, praktiske artikler der supplerer vores <a href="/opskrifter">opskrifter</a>: gode
+					vaner, temperatur og fejl, mange undgår første gang.
+				</p>
+			</div>
+
+			<ul class="guide-list" role="list">
+				<li>
+					<a class="guide-card" href="/guides/airfryer-for-begyndere">
+						<span class="guide-card-kicker">Kom godt i gang</span>
+						<span class="guide-card-title">Airfryer for begyndere</span>
+						<span class="guide-card-desc">
+							Temperatur, tid, forvarmning, ét lag i kurven og typiske fejl – så du rammer god
+							resultat fra start.
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		max-width: 40rem;
+	}
+	.guide-card {
+		display: block;
+		padding: var(--space-6) var(--space-7);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		box-shadow: var(--shadow-xs);
+		text-decoration: none;
+		color: inherit;
+		transition:
+			border-color 0.15s ease,
+			box-shadow 0.15s ease;
+	}
+	.guide-card:hover {
+		border-color: rgb(180 83 9 / 28%);
+		box-shadow: var(--shadow-sm);
+	}
+	.guide-card-kicker {
+		display: block;
+		font-size: 0.8125rem;
+		font-weight: 650;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--color-accent-dark);
+		margin-bottom: var(--space-2);
+	}
+	.guide-card-title {
+		display: block;
+		font-family: var(--font-display);
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: var(--space-3);
+	}
+	.guide-card-desc {
+		display: block;
+		font-size: 1.02rem;
+		line-height: 1.6;
+		color: var(--color-muted);
+	}
+</style>

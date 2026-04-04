@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-for-begyndere';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Airfryer for begyndere: temperatur, tid og typiske fejl | ${SITE_NAME}`;
+const description =
+	'Kom godt i gang med airfryer: forvarmning, ét lag i kurven, temperatur og tid – plus syv fejl, mange laver i starten. Praktisk guide med links til opskrifter.';
+
+const published = '2026-04-04T08:00:00.000Z';
+const modified = published;
+
+const ogImage = `${SITE_URL}/og-default.svg`;
+
+const faqItems = [
+	{
+		q: 'Skal airfryer altid forvarmes?',
+		a: 'Ikke altid. Ved panering, hurtige snacks og tynde ting giver forvarmning ofte mere ensartet resultat. Ved store stykker kød kan du følge opskriften – nogle bruger kort forvarm, andre ikke.',
+	},
+	{
+		q: 'Hvor meget olie skal jeg bruge?',
+		a: 'Langt mindre end på panden – ofte et tyndt lag oliespray eller en spiseske olie fordelt på hele overfladen er nok for at få farve og sprødhed.',
+	},
+	{
+		q: 'Hvorfor bliver maden blød i airfryer?',
+		a: 'Oftest fordi kurven er overfyldt (tingene damper i stedet for at blive ristede), overfladen er for våd, eller der er for lidt varmluft mellem stykkerne. Steg i mindre hold.',
+	},
+	{
+		q: 'Kan jeg bruge almindelig bagepapir i airfryer?',
+		a: 'Kun hvis producenten tillader det til din model, og papiret vejes ned og ikke dækker hele bunden – ellers kan det flyve op i varmeelementet. Brug hellere perforeret airfryer-papir godkendt til din maskine.',
+	},
+	{
+		q: 'Er airfryer det samme som varmluftsovn?',
+		a: 'Princippet er varmluft, men en airfryer cirkulerer luften tættere om maden og varmer ofte hurtigere. Tider fra ovn kan derfor ikke altid kopieres 1:1.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Airfryer for begyndere', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Airfryer for begyndere: temperatur, tid og typiske fejl',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Airfryer for begyndere</span>
+			</nav>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Kom godt i gang</p>
+				<h1>Airfryer for begyndere: temperatur, tid og typiske fejl</h1>
+				<p class="guide-lead">
+					Den her guide er til dig, der lige har fået airfryer – eller vil have færre
+					&quot;næsten-godt&quot;-omgange. Målet er enkel: forstå <strong>hvad</strong> maskinen
+					gør, og hvilke <strong>vaner</strong> der løfter næsten alt, du lægger i kurven.
+				</p>
+
+				<h2>Hvad er en airfryer egentlig?</h2>
+				<p>
+					En airfryer er en lille ovn med kraftig varmluft, der blæser rundt om maden. Du flyver ikke
+					mad i olie som ved friture – du bruger varme + lidt fedt (eller det fedt, der allerede er i
+					maden) til at få sprød overflade og jævn bagning.
+				</p>
+				<p>
+					Det betyder også, at du skal respektere <strong>plads</strong>: hvis luften ikke kan
+					cirkulere, får du damp i stedet for stegeskorpe.
+				</p>
+
+				<h2>Grundregler der løfter de fleste retter</h2>
+				<ul>
+					<li>
+						<strong>Forvarm når det giver mening.</strong> Ved pommes, panering og små ting er 2–5
+						minutters forvarm ofte en nem gevinst. Ved tykke kødstykker kan du følge den konkrete
+						opskrift.
+					</li>
+					<li>
+						<strong>Ét lag med mellemrum.</strong> Læg ting, så der er luft imellem. Hellere to
+						omgange med godt resultat end én proppet kurv.
+					</li>
+					<li>
+						<strong>Ryst eller vend halvvejs.</strong> Pommes, grøntsager og små bidder gevinnes af en
+						kurvryst – kød vendes for jævn farve.
+					</li>
+					<li>
+						<strong>Lidt fedt, når overfladen skal knase.</strong> Et tyndt lag olie eller spray giver
+						ofte bedre farve end helt tørt – især på kartofler og panering.
+					</li>
+				</ul>
+
+				<h2>Temperatur og tid uden at gætte alene</h2>
+				<p>
+					Brug vores <a href="/opskrifter">opskrifter</a> som udgangspunkt: de er skrevet med typiske
+					tider for almindelige modeller. Første gang du laver noget nyt: tjek maden
+					<strong>et minut eller to før</strong> anbefalet sluttid – airfryere varierer.
+				</p>
+				<p>
+					Til <strong>kød</strong> er et lille køkkentermometer ofte den hurtigste måde at undgå både
+					rå midte og tør kant – særligt ved kylling og tykke bøffer.
+				</p>
+
+				<h2>Syv typiske fejl i starten</h2>
+				<ol>
+					<li><strong>Overfyldt kurv</strong> – blød tekstur og uens farve.</li>
+					<li><strong>Våde overflader</strong> – dup kartofler, fjærkræ og grønt tørt inden olie.</li>
+					<li>
+						<strong>For høj varme på panering</strong> – ydersiden bliver sort, mens midten er rå.
+						Sænk eller brug kortere intervaller.
+					</li>
+					<li>
+						<strong>Ingen hvile efter kød</strong> – saft løber ud, når du skærer med det samme.
+					</li>
+					<li><strong>Springer rengøring over</strong> – lugt og røg næste gang.</li>
+					<li>
+						<strong>Bruger ovnens tider direkte</strong> – airfryer er ofte hurtigere; justér efter
+						opskrift rettet til airfryer.
+					</li>
+					<li>
+						<strong>Panering uden hvile</strong> – lad paneret mad sidde kort efter panering, så laget
+						sætter sig.
+					</li>
+				</ol>
+
+				<h2>Frossen vs. frisk</h2>
+				<p>
+					Frossen mad kan ofte tilberedes – men <strong>klumper af frost</strong> giver damp. Brug
+					opskrifter, der explicit siger &quot;fra frost&quot;, eller optø og dup tørt. Regn med lidt
+					længere tid ift. frisk, især i midten.
+				</p>
+
+				<h2>Rengøring og lugt (kort)</h2>
+				<p>
+					Skyl kurv og skuffe, når de er afkølede nok til at kunne håndteres sikkert. Undgå ståluld og
+					hård skuring i coatede kurve, så belægningen ikke beskadiges. Brug kun airfryer-papir efter
+					fabrikantens anvisning og under opsyn.
+				</p>
+
+				<h2>Næste skridt: prøv det i praksis</h2>
+				<p>Her er fem opskrifter, der lærer dig maskinen hurtigt og dækker både tilbehør og hovedret:</p>
+				<ul>
+					<li><a href="/opskrifter/airfryer-pomfritter">Pomfritter</a> – repetér ét lag og ryst.</li>
+					<li>
+						<a href="/opskrifter/airfryer-kyllingelaar">Kyllingelår</a> – tid, temperatur og saft.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-groentsagsmix">Grøntsagsmix</a> – mange små bidder og én kurv
+						ad gangen.
+					</li>
+					<li><a href="/opskrifter/airfryer-broccoli">Broccoli</a> – hurtigt grønt tilbehør.</li>
+					<li>
+						<a href="/opskrifter/airfryer-frosne-franske-kartofler">Frosne pommes</a> – typisk
+						hverdags-situation fra pose.
+					</li>
+				</ul>
+				<p>
+					Vil du se <strong>udstyr og tilbehør</strong> til din maskine, findes vores neutrale
+					oversigt på <a href="/shop">shop-siden</a>.
+				</p>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
