@@ -9,19 +9,41 @@ const reviews = (await getCollection('airfryerReviews')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
+function capacityBucket(liters: number | null | undefined): string {
+	if (liters == null || !Number.isFinite(Number(liters))) return 'unknown';
+	const v = Number(liters);
+	if (v < 5) return 'lt5';
+	if (v <= 7) return '5-7';
+	return 'gt7';
+}
+
+function brandKey(brand: string): string {
+	const t = brand.trim().toLowerCase();
+	if (!t) return 'ukendt';
+	return t.replace(/\s+/g, '-');
+}
+
 const indexEntries = reviews.map((r) => {
 	const p = findShopProductByProductUrl(r.data.shopProductUrl);
+	const brand = (r.data.brandLabel ?? p?.brand ?? '').trim();
 	return {
 		id: r.id,
 		title: r.data.title,
 		description: r.data.description,
 		rating: r.data.rating,
 		thumb: r.data.heroImage ?? p?.imageUrl ?? null,
-		brand: (r.data.brandLabel ?? p?.brand ?? '').trim(),
+		brand,
+		brandFilter: brandKey(brand),
 		capacityLiters: p?.capacityLiters,
+		capBucket: capacityBucket(p?.capacityLiters ?? null),
 		watts: p ? parseWattsFromTitle(p.title) : null,
+		pubDateMs: r.data.pubDate.valueOf(),
 	};
 });
+
+const brandOptions = [
+	...new Set(indexEntries.map((e) => e.brand).filter((b) => b.length > 0)),
+].sort((a, b) => a.localeCompare(b, 'da', { sensitivity: 'base' }));
 
 const title = `Airfryer-anmeldelser | ${SITE_NAME}`;
 const description =
@@ -61,10 +83,69 @@ const jsonLd = [
 				</p>
 			</div>
 
-			<ul class="review-index-list" role="list">
+			<div class="review-index-filters" id="review-index-filters" aria-label="Filtrer anmeldelser">
+				<div class="review-index-filters-row">
+					<div class="review-index-filter">
+						<label class="review-index-filter-label" for="filter-review-brand">Mærke</label>
+						<select class="review-index-select" id="filter-review-brand" data-filter-brand>
+							<option value="">Alle mærker</option>
+							{
+								brandOptions.map((b) => (
+									<option value={brandKey(b)}>{b}</option>
+								))
+							}
+							{
+								indexEntries.some((e) => !e.brand) ? (
+									<option value="ukendt">Ikke angivet i feed</option>
+								) : null
+							}
+						</select>
+					</div>
+					<div class="review-index-filter">
+						<label class="review-index-filter-label" for="filter-review-cap">Kapacitet (kurv)</label>
+						<select class="review-index-select" id="filter-review-cap" data-filter-cap>
+							<option value="">Alle størrelser</option>
+							<option value="lt5">Under 5 L</option>
+							<option value="5-7">5–7 L</option>
+							<option value="gt7">Over 7 L</option>
+							<option value="unknown">Ikke angivet i feed</option>
+						</select>
+					</div>
+					<div class="review-index-filter">
+						<label class="review-index-filter-label" for="filter-review-rating">Mindst vurdering</label>
+						<select class="review-index-select" id="filter-review-rating" data-filter-rating>
+							<option value="">Alle</option>
+							<option value="4">4 stjerner eller mere</option>
+							<option value="5">5 stjerner</option>
+						</select>
+					</div>
+					<div class="review-index-filter">
+						<label class="review-index-filter-label" for="filter-review-sort">Sortering</label>
+						<select class="review-index-select" id="filter-review-sort" data-filter-sort>
+							<option value="date-desc">Nyeste først</option>
+							<option value="date-asc">Ældste først</option>
+							<option value="cap-desc">Størst kapacitet</option>
+							<option value="cap-asc">Mindst kapacitet</option>
+						</select>
+					</div>
+				</div>
+				<div class="review-index-filters-actions">
+					<button type="button" class="review-index-reset" data-filter-reset>Nulstil filtre</button>
+					<p class="review-index-filter-status" data-filter-status aria-live="polite" />
+				</div>
+			</div>
+
+			<ul class="review-index-list" id="review-index-list" role="list">
 				{
 					indexEntries.map((e) => (
-						<li>
+						<li
+							data-review-item
+							data-brand={e.brandFilter}
+							data-cap-bucket={e.capBucket}
+							data-rating={e.rating ?? ''}
+							data-liters={e.capacityLiters != null ? String(e.capacityLiters) : ''}
+							data-date={String(e.pubDateMs)}
+						>
 							<a class="review-index-card" href={`/anmeldelser/${e.id}`}>
 								{e.thumb ? (
 									<img
@@ -111,7 +192,188 @@ const jsonLd = [
 	</section>
 </BaseLayout>
 
+<script is:inline>
+	(function () {
+		const root = document.getElementById('review-index-filters');
+		const list = document.getElementById('review-index-list');
+		if (!root || !list) return;
+
+		const brandSel = root.querySelector('[data-filter-brand]');
+		const capSel = root.querySelector('[data-filter-cap]');
+		const ratingSel = root.querySelector('[data-filter-rating]');
+		const sortSel = root.querySelector('[data-filter-sort]');
+		const resetBtn = root.querySelector('[data-filter-reset]');
+		const statusEl = root.querySelector('[data-filter-status]');
+		if (
+			!(brandSel instanceof HTMLSelectElement) ||
+			!(capSel instanceof HTMLSelectElement) ||
+			!(ratingSel instanceof HTMLSelectElement) ||
+			!(sortSel instanceof HTMLSelectElement) ||
+			!(resetBtn instanceof HTMLButtonElement) ||
+			!(statusEl instanceof HTMLElement)
+		) {
+			return;
+		}
+
+		function getItems() {
+			return Array.prototype.slice.call(list.querySelectorAll('[data-review-item]'));
+		}
+
+		function sortItems(mode) {
+			const items = getItems();
+			function score(li) {
+				const raw = li.dataset.liters || '';
+				const n = parseFloat(String(raw).replace(',', '.'));
+				return Number.isFinite(n) ? n : -1;
+			}
+			function date(li) {
+				return parseInt(li.dataset.date || '0', 10) || 0;
+			}
+			items.sort(function (a, b) {
+				if (mode === 'date-asc') return date(a) - date(b);
+				if (mode === 'date-desc') return date(b) - date(a);
+				if (mode === 'cap-asc') {
+					var va = score(a);
+					var vb = score(b);
+					if (va < 0 && vb < 0) return date(b) - date(a);
+					if (va < 0) return 1;
+					if (vb < 0) return -1;
+					return va - vb;
+				}
+				if (mode === 'cap-desc') {
+					var v1 = score(a);
+					var v2 = score(b);
+					if (v1 < 0 && v2 < 0) return date(b) - date(a);
+					if (v1 < 0) return 1;
+					if (v2 < 0) return -1;
+					return v2 - v1;
+				}
+				return date(b) - date(a);
+			});
+			var frag = document.createDocumentFragment();
+			for (var i = 0; i < items.length; i++) frag.appendChild(items[i]);
+			list.appendChild(frag);
+		}
+
+		function apply() {
+			sortItems(sortSel.value);
+			var items = getItems();
+			var wantBrand = brandSel.value;
+			var wantCap = capSel.value;
+			var wantRating = ratingSel.value;
+			var shown = 0;
+			for (var j = 0; j < items.length; j++) {
+				var li = items[j];
+				var ok = true;
+				if (wantBrand && (li.dataset.brand || '') !== wantBrand) ok = false;
+				if (wantCap && (li.dataset.capBucket || '') !== wantCap) ok = false;
+				if (wantRating) {
+					var r = parseFloat(li.dataset.rating || '');
+					var min = parseFloat(wantRating);
+					if (!Number.isFinite(r) || r < min) ok = false;
+				}
+				li.hidden = !ok;
+				if (ok) shown++;
+			}
+			if (shown === items.length) {
+				statusEl.textContent = '';
+			} else {
+				statusEl.textContent =
+					shown === 0
+						? 'Ingen anmeldelser matcher – prøv at lempe filtrene.'
+						: shown + ' af ' + items.length + ' anmeldelser matcher.';
+			}
+		}
+
+		brandSel.addEventListener('change', apply);
+		capSel.addEventListener('change', apply);
+		ratingSel.addEventListener('change', apply);
+		sortSel.addEventListener('change', apply);
+		resetBtn.addEventListener('click', function () {
+			brandSel.value = '';
+			capSel.value = '';
+			ratingSel.value = '';
+			sortSel.value = 'date-desc';
+			apply();
+		});
+
+		apply();
+	})();
+</script>
+
 <style>
+	.review-index-filters {
+		max-width: 52rem;
+		margin: var(--space-8) 0 var(--space-10);
+		padding: var(--space-6) var(--space-6);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+	.review-index-filters-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-5) var(--space-6);
+		align-items: flex-end;
+	}
+	.review-index-filter {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		min-width: min(100%, 11rem);
+		flex: 1 1 10rem;
+	}
+	.review-index-filter-label {
+		font-size: 0.8125rem;
+		font-weight: 650;
+		color: var(--color-muted);
+	}
+	.review-index-select {
+		font: inherit;
+		font-size: 0.9375rem;
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text);
+		cursor: pointer;
+		width: 100%;
+	}
+	.review-index-select:focus {
+		outline: 2px solid rgb(180 83 9 / 45%);
+		outline-offset: 2px;
+	}
+	.review-index-filters-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-4);
+		margin-top: var(--space-5);
+		padding-top: var(--space-4);
+		border-top: 1px solid rgb(0 0 0 / 6%);
+	}
+	.review-index-reset {
+		font: inherit;
+		font-size: 0.875rem;
+		font-weight: 600;
+		padding: var(--space-2) var(--space-4);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--color-border);
+		background: transparent;
+		color: var(--color-text);
+		cursor: pointer;
+	}
+	.review-index-reset:hover {
+		border-color: rgb(180 83 9 / 35%);
+		color: rgb(120 53 15);
+	}
+	.review-index-filter-status {
+		margin: 0;
+		font-size: 0.875rem;
+		color: var(--color-muted);
+		flex: 1;
+		min-width: 12rem;
+	}
 	.review-index-list {
 		list-style: none;
 		margin: 0;
