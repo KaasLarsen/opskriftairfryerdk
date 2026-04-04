@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/tilbehoer-til-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Tilbehør til airfryer: hvad er pengene værd? | ${SITE_NAME}`;
+const description =
+	'Airfryer-tilbehør: perforeret papir, silikonemåtte, oliespray, rist og spyd – hvornår det hjælper, og hvornår du godt kan undvære. Link til shop med tilbehør.';
+
+const published = '2026-04-05T08:30:00.000Z';
+const modified = published;
+
+const ogImage = `${SITE_URL}/og-default.svg`;
+
+const faqItems = [
+	{
+		q: 'Skal jeg købe perforeret airfryer-papir?',
+		a: 'Det kan mindske snask i kurven og gøre rengøring nemmere til pommes og lignende – men kun hvis din producent tillader det, papiret ikke blokerer luften helt, og det vejes ned så det ikke flyver op i varmeelementet. Brug altid under opsyn.',
+	},
+	{
+		q: 'Er silikonemåtte det samme som papir?',
+		a: 'Silikonemåtter kan genbruges og er gode til nogle typer mad, men de ændrer også varmeledning og cleanup. Tjek at form og størrelse passer din kurv.',
+	},
+	{
+		q: 'Hvad med ekstra kurv eller rist?',
+		a: 'En ekstra kurv eller rist giver mening, hvis du ofte laver to hold i træk eller vil løfte mad fra fedt i bunden. Sørg for kompatibilitet med din model.',
+	},
+	{
+		q: 'Er oliespray nødvendig?',
+		a: 'Nej – men et jævnt, tyndt lag olie eller god spray giver ofte bedre gylden overflade på kartofler og panering end helt tørt. Se også vores guide om mindre olie og sprødhed.',
+	},
+	{
+		q: 'Hvor finder jeg tilbehør, der matcher airfryer?',
+		a: 'På vores shop under tilbehør viser vi produkter fra partnere, der typisk kurateres som airfryer-relevante – tjek altid titel og mål mod din maskine før køb.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Tilbehør til airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Tilbehør til airfryer: hvad er pengene værd?',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Tilbehør til airfryer</span>
+			</nav>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Udstyr</p>
+				<h1>Tilbehør til airfryer: hvad er pengene værd?</h1>
+				<p class="guide-lead">
+					Målet med tilbehør er simpelt: <strong>mindre friktion</strong> (rengøring, fastbrændt fedt),
+					<strong>bedre luft</strong> omkring maden, eller nemmere håndtering af små ting. Her er en
+					jordnær prioritering – og hvad du roligt kan springe over.
+				</p>
+
+				<h2>Det, mange faktisk får glæde af</h2>
+				<ul>
+					<li>
+						<strong>Oliespray eller sprayer:</strong> et jævnt lag giver ofte pænere farve end at
+						hælde olie i klumper. Vælg en du kan fylde selv, hvis du vil styre olivetype – se også
+						<a href="/guides/sproed-med-mindre-olie">sprødhed med mindre olie</a>.
+					</li>
+					<li>
+						<strong>Perforeret papir / liners:</strong> praktisk til pommes og tørre ting, når
+						produceren tillader det og papiret ikke blokerer cirkulation. Samme tema som i
+						<a href="/guides/airfryer-for-begyndere">begynderguidens FAQ om bagepapir</a>.
+					</li>
+					<li>
+						<strong>Silikonemåtte eller genanvendelig overflade:</strong> god til bestemte snacks og
+						når du vil slippe for engangspapir – tjek at hullet/mønsteret matcher din kurv.
+					</li>
+					<li>
+						<strong>Rist eller løft til kød:</strong> løfter mad fra fedt i bunden og kan give mere
+						ens stegning på visse typer stykker.
+					</li>
+				</ul>
+
+				<h2>Nice-to-have: spyd, små forme og ekstra kurv</h2>
+				<p>
+					<strong>Spyd og små forme</strong> er gode til grøntsagstern, små kødbidder og æg – se fx
+					vores <a href="/opskrifter/airfryer-kyllingespyd">kyllingespyd</a> eller
+					<a href="/opskrifter/airfryer-mozzarella-sticks">mozzarella sticks</a>, hvor ensartet varme
+					omkring alle sider betyder noget.
+				</p>
+				<p>
+					<strong>Ekstra kurv eller skuffe</strong> er et quality-of-life-køb, hvis du ofte laver to
+					hold i træk eller vil have én i opvaskemaskinen, mens den anden er i brug.
+				</p>
+
+				<h2>Det du ofte ikke behøver på dag ét</h2>
+				<ul>
+					<li>
+						<strong>Dubletter af alt:</strong> start med original kurv og ét godt redskab; udvid når du
+						ved, hvad du laver oftest.
+					</li>
+					<li>
+						<strong>&quot;Universal&quot;-sæt uden mål:</strong> airfryere varierer – mål din indvendige
+						kurv før du køber indsatser.
+					</li>
+				</ul>
+
+				<h2>Find tilbehør via shop (partnere)</h2>
+				<p>
+					Vi kuraterer airfryere og tilbehør fra vores <strong>produktfeeds</strong> på
+					<a href="/shop">shop-siden</a>. Vælg fanen <strong>Tilbehør</strong> i søgefeltets chips, og
+					brug søgning på fx &quot;liner&quot;, &quot;spray&quot; eller &quot;rist&quot; – produkter og
+					priser kan skifte, så tjek altid den aktuelle vareside hos forhandleren.
+				</p>
+
+				<h2>Opskrifter der tester dit udstyr</h2>
+				<ul>
+					<li><a href="/opskrifter/airfryer-frosne-franske-kartofler">Frosne pommes</a> – god test af ét lag og ryst.</li>
+					<li><a href="/opskrifter/airfryer-kylling-schnitzel">Kylling schnitzel</a> – panering uden friture.</li>
+					<li><a href="/opskrifter/airfryer-loegringe">Løgringe</a> – små ting der kræver plads.</li>
+				</ul>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

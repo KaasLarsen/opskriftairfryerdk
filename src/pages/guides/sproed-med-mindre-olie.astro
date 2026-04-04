@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/sproed-med-mindre-olie';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Sprødhed med mindre olie: spray, panering og airfryer | ${SITE_NAME}`;
+const description =
+	'Sådan får du sprød overflade i airfryer uden friture: oliespray vs. pensling, panering uden sort skorpe, og hvordan luft og ét lag betyder mere end oliesjat.';
+
+const published = '2026-04-05T09:00:00.000Z';
+const modified = published;
+
+const ogImage = `${SITE_URL}/og-default.svg`;
+
+const faqItems = [
+	{
+		q: 'Er airfryer sundere end friture?',
+		a: 'Du bruger typisk markant mindre olie end ved nedsænkning i friture, fordi varmluft bærer varmen. &quot;Sundt&quot; afhænger stadig af hele kosten – men fedt og kalorier fra olie bliver ofte lavere.',
+	},
+	{
+		q: 'Kan jeg undvære olie helt og stadig få sprødt?',
+		a: 'Nogle ting med naturligt fedt (fx kylling med skind) kan blive fine. Ved kartofler og tør panering giver et tyndt lag olie ofte bedre farve og knas end helt tørt.',
+	},
+	{
+		q: 'Hvorfor bliver min panering sort før midten er færdig?',
+		a: 'Oftest for høj varme i forhold til tykkelsen. Skru ned, brug kortere intervaller, og tjek midten – forsiden og krummer branker hurtigere end en tyk kyllingestykke.',
+	},
+	{
+		q: 'Er sprays med bobletryk bedre end pensel?',
+		a: 'Spray fordeler ofte mere jævnt og hurtigt; pensel kan også – det vigtigste er et tyndt, jævnt lag uden pool i bunden af kurven.',
+	},
+	{
+		q: 'Hvor køber jeg oliespray til køkkenet?',
+		a: 'Mange køkken- og airfryer-tilbehørsprodukter finder du via vores shop-feed på /shop under tilbehør; sammenlign altid ingredienser og anvisning med din airfryers manual.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Sprød med mindre olie', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Sprødhed med mindre olie: spray, panering og airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt="Opskrift Airfryer – illustration til guide"
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Sprød med mindre olie</span>
+			</nav>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Sprødhed med mindre olie: spray, panering og airfryer</h1>
+				<p class="guide-lead">
+					Airfryer er ikke magi – den er <strong>varmluft plus lidt fedt</strong> (eller det fedt, maden
+					allere har). Når du forstår det, er det lettere at få gylden skorpe uden at hælde halv flaske
+					olie i kurven.
+				</p>
+
+				<h2>Hvorfor lidt olie stadig hjælper</h2>
+				<p>
+					Varme alene tørrer overfladen, men et <strong>tyndt fedtlag</strong> leder varmen og giver ofte
+					bedre Maillard-farve på kartofler og panering end helt tør overflade. Det er stadig langt mindre
+					end ved friture.
+				</p>
+
+				<h2>Spray, pensel eller skål med olie?</h2>
+				<ul>
+					<li>
+						<strong>Spray:</strong> hurtig, jævn fordeling – vælg gerne en spray til madlavning, du kan
+						fylde selv, hvis du vil styre oliven- eller rapsolie. Se udvalg blandt tilbehør på
+						<a href="/shop">shop-siden</a>.
+					</li>
+					<li>
+						<strong>Pensel:</strong> god kontrol på kanter og panering; tag lidt ad gangen.
+					</li>
+					<li>
+						<strong>For meget olie:</strong> pool i bunden giver røg, lugt og uens resultat – swipe
+						overskud væk med køkkenrulle.
+					</li>
+				</ul>
+
+				<h2>Panering uden sort yder og rå midte</h2>
+				<p>
+					Start hellere lidt lavere og byg op end max-varme fra sekund ét. Vend eller flyt midtvejs.
+					Lad paneringen <strong>sætte sig kort</strong> før kurv, så laget ikke klatter af – som nævnt i
+					<a href="/guides/airfryer-for-begyndere">begynderguiden</a>.
+				</p>
+
+				<h2>Luft og ét lag slår oliesjat</h2>
+				<p>
+					En overfyldt kurv damper – uanset hvor meget olie du tilsætter. Samme princip som ved
+					<a href="/guides/frossen-mad-airfryer">frossen mad</a>: <strong>mellemrum</strong> mellem
+					stykker og en kurvryst undervejs giver mere sprødhed end ekstra olie.
+				</p>
+
+				<h2>Brug vores opskrifter som udgangspunkt</h2>
+				<ul>
+					<li><a href="/opskrifter/airfryer-pomfritter">Pomfritter</a> – basal teknik på kartofler.</li>
+					<li><a href="/opskrifter/airfryer-fiskefilet">Fiskefilet</a> – paneret uden friture.</li>
+					<li><a href="/opskrifter/airfryer-kylling-schnitzel">Kylling schnitzel</a> – tykkere panering.</li>
+					<li><a href="/opskrifter/airfryer-kyllingenuggets">Kyllingenuggets</a> – små bidder og jævn varme.</li>
+					<li><a href="/opskrifter/airfryer-loegringe">Løgringe</a> – tynd panering, høj risiko for brank hvis for varmt.</li>
+				</ul>
+
+				<h2>Tilbehør der understøtter (ikke erstatter) teknik</h2>
+				<p>
+					Åben kurv, god sprayer og evt. non-stick-overflade gør hverdagen nemmere – se
+					<a href="/guides/tilbehoer-til-airfryer">tilbehørsguiden</a> for en rolig prioritering.
+				</p>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
