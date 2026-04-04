@@ -5,6 +5,8 @@ pubDate: 2026-04-07
 updatedDate: 2026-04-07
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/severin-fr-2445-varmluftsfriture-sort-2000-w-5-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '839766'
+heroImage: '/images/reviews/severin-fr-2445.jpg'
+heroAlt: 'Severin FR 2445 airfryer i sort med digital touch-skærm, temperatur 200 °C og sølvfarvet frontgreb'
 rating: 4
 pros:
   - 'Klart angivet 5 L kurv – god mellemstørrelse til par og små familier'

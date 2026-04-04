@@ -28,6 +28,20 @@ const { review, product } = Astro.props;
 const { Content } = await render(review);
 const d = review.data;
 
+const allReviews = await getCollection('airfryerReviews');
+const otherReviews = allReviews
+	.filter((r) => r.id !== review.id)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 6)
+	.map((r) => {
+		const p = findShopProductByProductUrl(r.data.shopProductUrl);
+		return {
+			id: r.id,
+			title: r.data.title,
+			thumb: r.data.heroImage ?? p?.imageUrl ?? null,
+		};
+	});
+
 const site = Astro.site;
 if (!site) {
 	throw new Error('Konfigurer site i astro.config.mjs');
@@ -36,7 +50,7 @@ if (!site) {
 const canonicalPath = `/anmeldelser/${review.id}`;
 const pageUrl = new URL(canonicalPath, site).toString();
 
-const heroSrc = product.imageUrl ?? d.heroImage ?? null;
+const heroSrc = d.heroImage ?? product.imageUrl ?? null;
 const heroAlt = d.heroAlt ?? product.title;
 const ogImageAbs = heroSrc
 	? toAbsoluteUrl(site, heroSrc)
@@ -161,8 +175,8 @@ const jsonLd = [
 							<img
 								src={heroSrc}
 								alt={heroAlt}
-								width="640"
-								height="400"
+								width="859"
+								height="1024"
 								fetchpriority="high"
 								decoding="async"
 							/>
@@ -262,6 +276,39 @@ const jsonLd = [
 				<Content />
 			</div>
 
+			{
+				otherReviews.length > 0 && (
+					<aside class="review-see-also" aria-labelledby="review-see-also-heading">
+						<h2 id="review-see-also-heading" class="review-see-also-heading">
+							Se også
+						</h2>
+						<p class="review-see-also-lead">Andre airfryer-anmeldelser på sitet:</p>
+						<ul class="review-see-also-list" role="list">
+							{otherReviews.map((o) => (
+								<li>
+									<a class="review-see-also-card" href={`/anmeldelser/${o.id}`}>
+										{o.thumb ? (
+											<img
+												class="review-see-also-thumb"
+												src={o.thumb}
+												alt=""
+												width="96"
+												height="96"
+												loading="lazy"
+												decoding="async"
+											/>
+										) : (
+											<span class="review-see-also-fallback" aria-hidden="true" />
+										)}
+										<span class="review-see-also-title">{o.title}</span>
+									</a>
+								</li>
+							))}
+						</ul>
+					</aside>
+				)
+			}
+
 			<p class="review-back">
 				<a href="/anmeldelser">← Tilbage til alle anmeldelser</a>
 			</p>
@@ -270,6 +317,14 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	/* Anmeldelses-hero: produktfoto er ofte højformat; undgå 4:3-beskæring fra opskrift-layout */
+	.review-hero .recipe-hero-img img {
+		aspect-ratio: auto;
+		height: auto;
+		max-height: min(62vh, 36rem);
+		object-fit: contain;
+		background: var(--color-surface);
+	}
 	.review-kicker {
 		margin-bottom: var(--space-2);
 	}
@@ -383,6 +438,71 @@ const jsonLd = [
 	}
 	.review-body {
 		margin-top: var(--space-10);
+	}
+	.review-see-also {
+		margin-top: var(--space-12);
+		padding: var(--space-7) var(--space-6);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+	.review-see-also-heading {
+		font-family: var(--font-display);
+		font-size: 1.2rem;
+		margin: 0 0 var(--space-2);
+	}
+	.review-see-also-lead {
+		margin: 0 0 var(--space-5);
+		font-size: 0.9375rem;
+		color: var(--color-muted);
+		line-height: 1.5;
+	}
+	.review-see-also-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: var(--space-3);
+	}
+	@media (min-width: 520px) {
+		.review-see-also-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	.review-see-also-card {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-lg);
+		border: 1px solid rgb(0 0 0 / 8%);
+		background: var(--color-bg);
+		text-decoration: none;
+		color: var(--color-text);
+		transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	}
+	.review-see-also-card:hover {
+		border-color: rgb(180 83 9 / 35%);
+		box-shadow: var(--shadow-sm);
+	}
+	.review-see-also-thumb {
+		width: 4.5rem;
+		height: 4.5rem;
+		object-fit: cover;
+		border-radius: var(--radius-md);
+		flex-shrink: 0;
+	}
+	.review-see-also-fallback {
+		width: 4.5rem;
+		height: 4.5rem;
+		flex-shrink: 0;
+		border-radius: var(--radius-md);
+		background: rgb(0 0 0 / 6%);
+	}
+	.review-see-also-title {
+		font-weight: 600;
+		font-size: 0.9375rem;
+		line-height: 1.4;
 	}
 	.review-back {
 		margin-top: var(--space-12);
