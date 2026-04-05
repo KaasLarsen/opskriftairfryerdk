@@ -1303,6 +1303,34 @@ a:hover {
 	margin-bottom: var(--space-6);
 }
 
+.recipe-airfryer-spotlight {
+	margin-bottom: var(--space-16);
+	max-width: 52rem;
+}
+
+.recipe-spotlight-lead {
+	margin: 0 0 var(--space-3);
+	font-size: 1rem;
+	line-height: 1.55;
+	color: var(--color-text-muted, #555);
+}
+
+.recipe-spotlight-links {
+	margin: 0 0 var(--space-6);
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+
+.recipe-spotlight-links a {
+	color: var(--color-accent-strong, #b45309);
+	text-decoration: underline;
+	text-underline-offset: 0.12em;
+}
+
+.recipe-spotlight-links a:hover {
+	text-decoration-thickness: 2px;
+}
+
 .recipe-faq {
 	margin-bottom: var(--space-16);
 	max-width: 48rem;

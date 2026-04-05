@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceRunnerProductWidget from '../../components/PriceRunnerProductWidget.astro';
 import RecipeCard from '../../components/RecipeCard.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { pickRecipeAirfryerSpotlight } from '../../data/recipeAirfryerSpotlight';
+import { parsePriceRunnerProductId } from '../../lib/parsePriceRunnerProductId';
 import {
 	ORGANIZATION_JSON,
 	RECIPE_OG_IMAGE_HEIGHT,
@@ -169,6 +172,15 @@ const jsonLdGraph: Record<string, unknown>[] = [
 
 const allRecipes = await getCollection('recipes');
 const others = pickRelatedRecipes(recipe, allRecipes, 3);
+
+const recipeAirfryerSpotlight = pickRecipeAirfryerSpotlight(recipe.id);
+const recipeAirfryerProductId = parsePriceRunnerProductId(recipeAirfryerSpotlight.compareUrl);
+if (!recipeAirfryerProductId) {
+	throw new Error(
+		`Opskrift «${recipe.id}»: ugyldig PriceRunner-URL i recipeAirfryerSpotlight: ${recipeAirfryerSpotlight.compareUrl}`,
+	);
+}
+const recipeAirfryerWidgetDomId = `pr-recipe-airfryer-${recipe.id}`;
 
 const articleLd = {
 	'@type': 'Article',
@@ -367,6 +379,29 @@ const jsonLdWithArticle = [...jsonLdGraph, articleLd];
 					</section>
 				)
 			}
+
+
+			<section
+				class="recipe-airfryer-spotlight recipe-block"
+				aria-label={`Airfryer: ${recipeAirfryerSpotlight.label}`}
+			>
+				<p class="recipe-spotlight-lead">
+					Her får du priser på <strong>{recipeAirfryerSpotlight.label}</strong> via PriceRunner — vi
+					viser skiftevis et lille udvalg af populære modeller fra opskrift til opskrift.
+				</p>
+				<p class="recipe-spotlight-links">
+					<a href="/anmeldelser">Alle anmeldelser</a>
+					{' · '}
+					<a href="/shop">Shop med airfryere</a>
+					{' · '}
+					<a href="/guides/hvilken-airfryer">Hvilken airfryer?</a>
+				</p>
+				<PriceRunnerProductWidget
+					productId={recipeAirfryerProductId}
+					widgetDomId={recipeAirfryerWidgetDomId}
+					compareUrl={recipeAirfryerSpotlight.compareUrl}
+				/>
+			</section>
 
 			{
 				d.faq && d.faq.length > 0 && (
