@@ -1,8 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceRunnerProductWidget from '../../components/PriceRunnerProductWidget.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+import {
+	ORGANIZATION_JSON,
+	REVIEW_METHODOLOGY_PARAGRAPHS,
+	REVIEW_METHODOLOGY_TITLE,
+	SITE_NAME,
+	SITE_URL,
+} from '../../consts';
+import { parsePriceRunnerProductId } from '../../lib/parsePriceRunnerProductId';
 import { parseWattsFromTitle } from '../../lib/parseWattsFromTitle';
+import { faqAnswerToHtml } from '../../lib/faqAnswerToHtml';
+import { resolvePriceRunnerCompareUrl } from '../../lib/resolvePriceRunnerCompareUrl';
 import { findShopProductByProductUrl } from '../../lib/shopProductsFromJson';
 import { toAbsoluteUrl } from '../../utils/seo';
 import type { ShopProductJson } from '../../data/shop-curation';
@@ -14,6 +24,13 @@ export async function getStaticPaths() {
 		if (!product) {
 			throw new Error(
 				`Anmeldelse «${review.id}»: ingen vare i shop-products.json matcher shopProductUrl. Kør npm run build (med sync) eller opdatér URL i frontmatter.`,
+			);
+		}
+		const compareUrl = resolvePriceRunnerCompareUrl(review);
+		const prProductId = parsePriceRunnerProductId(compareUrl);
+		if (!prProductId) {
+			throw new Error(
+				`Anmeldelse «${review.id}»: ugyldig eller ikke-PriceRunner compare-URL (kunne ikke finde produkt-id): ${compareUrl}`,
 			);
 		}
 		return { params: { slug: review.id }, props: { review, product } };
@@ -77,6 +94,15 @@ const ctaLabel = (product.retailer ?? '').trim()
 	? `Se pris hos ${(product.retailer ?? '').trim()}`
 	: 'Se hos forhandleren';
 
+const priceRunnerCompareUrl = resolvePriceRunnerCompareUrl(review);
+const priceRunnerProductId = parsePriceRunnerProductId(priceRunnerCompareUrl);
+if (!priceRunnerProductId) {
+	throw new Error(
+		`Intern fejl: mangler PriceRunner productId efter validering i getStaticPaths for «${review.id}».`,
+	);
+}
+const priceRunnerWidgetDomId = `pr-product-widget-${review.id}`;
+
 const brandDisplay = (d.brandLabel ?? product.brand ?? '').trim();
 
 const quickFacts: { label: string; value: string }[] = [];
@@ -106,6 +132,25 @@ const productSchemaImage = heroSrc
 		? toAbsoluteUrl(site, product.imageUrl)
 		: undefined;
 
+const reviewLead = (d.intro?.trim() || d.description).trim();
+const modifiedTime = d.updatedDate ?? d.pubDate;
+const priceValidUntilIso =
+	product.price != null
+		? new Date(modifiedTime.valueOf() + 60 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10)
+		: undefined;
+const retailerName = (product.retailer ?? '').trim();
+
+const reviewBodyForSchema = [
+	d.verdict?.trim(),
+	d.description.trim(),
+	d.intro?.trim(),
+]
+	.filter(Boolean)
+	.join(' ')
+	.replace(/\s+/g, ' ')
+	.trim()
+	.slice(0, 8000);
+
 const breadcrumbJson = {
 	'@type': 'BreadcrumbList',
 	itemListElement: [
@@ -125,6 +170,7 @@ const webPageJson = {
 	isPartOf: { '@id': `${SITE_URL}/#website` },
 	datePublished: published,
 	dateModified: modified,
+	mainEntity: { '@id': `${pageUrl}#review` },
 };
 
 const articleJson = {
@@ -135,6 +181,7 @@ const articleJson = {
 	inLanguage: 'da-DK',
 	datePublished: published,
 	dateModified: modified,
+	articleSection: 'Airfryer-anmeldelser',
 	author: { '@id': `${SITE_URL}/#organization` },
 	publisher: { '@id': `${SITE_URL}/#organization` },
 	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
@@ -142,23 +189,42 @@ const articleJson = {
 
 const productJson: Record<string, unknown> = {
 	'@type': 'Product',
+	'@id': `${pageUrl}#product`,
 	name: product.title,
+	description: d.description,
 	image: productSchemaImage,
 	brand: product.brand ? { '@type': 'Brand', name: product.brand } : undefined,
+	sku: (d.feedProductId ?? product.id).trim() || undefined,
 };
 
-const reviewJson: Record<string, unknown> = {
-	'@type': 'Review',
+if (product.price != null && Number.isFinite(product.price)) {
+	productJson.offers = {
+		'@type': 'Offer',
+		url: product.productUrl,
+		priceCurrency: 'DKK',
+		price: product.price,
+		...(priceValidUntilIso ? { priceValidUntil: priceValidUntilIso } : {}),
+		availability: 'https://schema.org/InStock',
+		...(retailerName
+			? { seller: { '@type': 'Organization', name: retailerName } }
+			: {}),
+	};
+}
+
+const productReviewJson: Record<string, unknown> = {
+	'@type': 'ProductReview',
 	'@id': `${pageUrl}#review`,
-	itemReviewed: productJson,
+	name: d.title,
+	itemReviewed: { '@id': `${pageUrl}#product` },
 	author: { '@id': `${SITE_URL}/#organization` },
-	reviewBody: d.verdict ?? d.description,
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	reviewBody: reviewBodyForSchema || d.description,
 	datePublished: published,
 	inLanguage: 'da-DK',
 };
 
 if (d.rating != null) {
-	reviewJson.reviewRating = {
+	productReviewJson.reviewRating = {
 		'@type': 'Rating',
 		ratingValue: d.rating,
 		bestRating: 5,
@@ -166,13 +232,33 @@ if (d.rating != null) {
 	};
 }
 
-const jsonLd = [
+const faqJsonLd: Record<string, unknown> | null =
+	d.faq && d.faq.length > 0
+		? {
+				'@type': 'FAQPage',
+				mainEntity: d.faq.map((item) => ({
+					'@type': 'Question',
+					name: item.question,
+					acceptedAnswer: {
+						'@type': 'Answer',
+						text: item.answer,
+					},
+				})),
+			}
+		: null;
+
+const jsonLd: Record<string, unknown>[] = [
 	ORGANIZATION_JSON as Record<string, unknown>,
-	webPageJson,
-	articleJson,
-	breadcrumbJson,
-	reviewJson,
+	webPageJson as Record<string, unknown>,
+	articleJson as Record<string, unknown>,
+	breadcrumbJson as Record<string, unknown>,
+	productJson,
+	productReviewJson,
 ];
+
+if (faqJsonLd) {
+	jsonLd.push(faqJsonLd);
+}
 ---
 
 <BaseLayout
@@ -261,6 +347,31 @@ const jsonLd = [
 				</div>
 			</div>
 
+			<p class="review-lead">{reviewLead}</p>
+
+			<section class="review-methodology" aria-labelledby="review-methodology-h">
+				<h2 id="review-methodology-h" class="review-methodology-heading">
+					{REVIEW_METHODOLOGY_TITLE}
+				</h2>
+				{
+					REVIEW_METHODOLOGY_PARAGRAPHS.map((p) => (
+						<p class="review-methodology-p">{p}</p>
+					))
+				}
+			</section>
+
+			<p class="review-next-reads">
+				<a href="/guides/hvilken-airfryer">Hvilken airfryer?</a>
+				<span class="review-next-reads-sep" aria-hidden="true">
+					·
+				</span>
+				<a href="/shop">Shop med airfryere</a>
+				<span class="review-next-reads-sep" aria-hidden="true">
+					·
+				</span>
+				<a href="/anmeldelser">Alle anmeldelser</a>
+			</p>
+
 			{
 				quickFacts.length > 0 && (
 					<section class="review-quick-facts" aria-labelledby="review-quick-facts-h">
@@ -325,6 +436,28 @@ const jsonLd = [
 			}
 
 			{
+				d.faq && d.faq.length > 0 && (
+					<section class="review-faq" aria-labelledby="review-faq-h">
+						<h2 id="review-faq-h" class="review-faq-heading">
+							Ofte stillede spørgsmål
+						</h2>
+						<dl class="review-faq-dl">
+							{d.faq.flatMap((item) => [
+								<dt>{item.question}</dt>,
+								<dd set:html={faqAnswerToHtml(item.answer)} />,
+							])}
+						</dl>
+					</section>
+				)
+			}
+
+			<PriceRunnerProductWidget
+				productId={priceRunnerProductId}
+				widgetDomId={priceRunnerWidgetDomId}
+				compareUrl={priceRunnerCompareUrl}
+			/>
+
+			{
 				otherReviews.length > 0 && (
 					<aside class="review-see-also" aria-labelledby="review-see-also-heading">
 						<h2 id="review-see-also-heading" class="review-see-also-heading">
@@ -365,6 +498,84 @@ const jsonLd = [
 </BaseLayout>
 
 <style>
+	.review-lead {
+		margin: 0 0 var(--space-8);
+		font-size: 1.125rem;
+		line-height: 1.65;
+		color: var(--color-text);
+		max-width: 42rem;
+	}
+	.review-methodology {
+		margin: 0 0 var(--space-8);
+		padding: var(--space-6) var(--space-7);
+		border-radius: var(--radius-xl);
+		border: 1px solid rgb(0 0 0 / 8%);
+		background: rgb(0 0 0 / 2.5%);
+		max-width: 42rem;
+	}
+	.review-methodology-heading {
+		font-family: var(--font-display);
+		font-size: 1.05rem;
+		margin: 0 0 var(--space-3);
+		color: var(--color-text);
+	}
+	.review-methodology-p {
+		margin: 0 0 var(--space-3);
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: var(--color-muted);
+	}
+	.review-methodology-p:last-child {
+		margin-bottom: 0;
+	}
+	.review-next-reads {
+		margin: 0 0 var(--space-10);
+		font-size: 0.9375rem;
+		color: var(--color-muted);
+	}
+	.review-next-reads a {
+		color: var(--color-accent-dark);
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.review-next-reads a:hover {
+		text-decoration: underline;
+	}
+	.review-next-reads-sep {
+		margin: 0 var(--space-2);
+		color: var(--color-border);
+		font-weight: 400;
+	}
+	.review-faq {
+		margin: var(--space-12) 0 var(--space-10);
+		padding: var(--space-6) var(--space-7);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		max-width: 42rem;
+	}
+	.review-faq-heading {
+		font-family: var(--font-display);
+		font-size: 1.15rem;
+		margin: 0 0 var(--space-4);
+	}
+	.review-faq-dl {
+		margin: 0;
+		display: grid;
+		gap: var(--space-4);
+	}
+	.review-faq-dl dt {
+		font-weight: 650;
+		font-size: 1rem;
+		margin: 0;
+		line-height: 1.45;
+	}
+	.review-faq-dl dd {
+		margin: 0;
+		font-size: 0.9375rem;
+		line-height: 1.6;
+		color: var(--color-muted);
+	}
 	.review-quick-facts {
 		margin: var(--space-10) 0 var(--space-10);
 		padding: var(--space-6) var(--space-7);

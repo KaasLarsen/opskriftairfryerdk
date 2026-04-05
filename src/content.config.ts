@@ -54,11 +54,29 @@ const airfryerReviews = defineCollection({
 		feedProductId: z.string().optional(),
 		/** Når feed mangler `brand`: visningsnavn til hero, fakta og JSON-LD. */
 		brandLabel: z.string().optional(),
+		/**
+		 * Valgfri fuld PriceRunner «Sammenlign priser»-URL — ellers bruges standard i
+		 * `src/data/airfryerReviewPriceRunnerCompareUrls.ts`.
+		 */
+		priceRunnerCompareUrl: z
+			.string()
+			.url()
+			.refine(
+				(u) => /pricerunner\.dk\/pl\/\d+-\d+/i.test(u),
+				'priceRunnerCompareUrl skal være en gyldig PriceRunner compare-URL (…/pl/<kategori>-<id>/…)',
+			)
+			.optional(),
 		pros: z.array(z.string()).min(3),
 		cons: z.array(z.string()).min(2),
 		/** 1–5 stjerner til schema.org Review (valgfri). */
 		rating: z.number().int().min(1).max(5).optional(),
 		verdict: z.string().optional(),
+		/** Valgfri indledning vist øverst (hvis tom bruges `description`). */
+		intro: z.string().optional(),
+		faq: z
+			.array(z.object({ question: z.string(), answer: z.string() }))
+			.max(12)
+			.optional(),
 		heroImage: z
 			.union([
 				z.string().url(),

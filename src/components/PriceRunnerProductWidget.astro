@@ -1,0 +1,73 @@
+---
+/**
+ * PriceRunner publisher product widget (DK).
+ * partnerId skal altid være PRICE_RUNNER_PARTNER_ID fra consts.
+ */
+import { PRICE_RUNNER_PARTNER_ID } from '../consts';
+
+interface Props {
+	/** PriceRunner produkt-id (kun cifre), fx "3208440524" */
+	productId: string;
+	/** Unik DOM-id, fx pr-product-widget-ninja-flexdrawer-104l-anmeldelse */
+	widgetDomId: string;
+	/** Fuld compare-URL til footer-link (anbefalet – findes på varens PriceRunner-side) */
+	compareUrl: string;
+}
+
+const { productId, widgetDomId, compareUrl } = Astro.props;
+
+const scriptSrc = `https://api.pricerunner.com/publisher-widgets/dk/product.js?onlyInStock=true&offerOrigin=NATIONAL&offerLimit=3&productId=${encodeURIComponent(productId)}&partnerId=${encodeURIComponent(PRICE_RUNNER_PARTNER_ID)}&widgetId=${encodeURIComponent(widgetDomId)}`;
+---
+
+<section class="pr-widget-section" aria-labelledby="pr-widget-heading">
+	<h2 id="pr-widget-heading" class="pr-widget-heading">Sammenlign priser</h2>
+	<p class="pr-widget-lead">
+		Se priser fra flere butikker via PriceRunner. Tilbuddene kan ændre sig – tjek altid den enkelte butik.
+	</p>
+	<div id={widgetDomId} class="pr-widget-mount" style="display: block; width: 100%"></div>
+	<script type="text/javascript" src={scriptSrc} async is:inline></script>
+	<div class="pr-widget-disclosure">
+		<a href={compareUrl} target="_blank" rel="nofollow noopener noreferrer">
+			<p
+				class="pr-widget-disclosure-text"
+				style="font: 14px 'Klarna Text', Helvetica, sans-serif; font-style: italic; color: var(--grayscale100, #666); text-decoration: underline;"
+			>
+				Annonce i samarbejde med <span style="font-weight: bold">PriceRunner</span>
+			</p>
+		</a>
+	</div>
+</section>
+
+<style>
+	.pr-widget-section {
+		margin: var(--space-12) 0;
+		padding: var(--space-7) var(--space-6);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+	}
+	.pr-widget-heading {
+		font-family: var(--font-display);
+		font-size: 1.15rem;
+		margin: 0 0 var(--space-3);
+	}
+	.pr-widget-lead {
+		margin: 0 0 var(--space-5);
+		font-size: 0.95rem;
+		color: var(--color-text-muted, #555);
+		line-height: 1.5;
+	}
+	.pr-widget-mount {
+		min-height: 120px;
+	}
+	.pr-widget-disclosure {
+		display: inline-block;
+		margin-top: var(--space-4);
+	}
+	.pr-widget-disclosure a {
+		color: inherit;
+	}
+	.pr-widget-disclosure-text {
+		margin: 0;
+	}
+</style>
