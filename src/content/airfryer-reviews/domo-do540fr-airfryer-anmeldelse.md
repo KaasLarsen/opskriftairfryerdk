@@ -1,6 +1,6 @@
 ---
 title: 'DOMO DO540FR airfryer anmeldelse: 6 liter mellem størrelse og hverdag'
-description: 'Vores vurdering af DOMO DO540FR (6 L, 1500 W): fordele, ulemper og hvem 6-literskurven passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af DOMO DO540FR (6 L, 1500 W): fordele, ulemper og hvem 6-literskurven passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-04
 updatedDate: 2026-04-04
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-varmluftsfrituregryde-do540fr-6-l-airfryer-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -11,7 +11,7 @@ pros:
   - '1500 W er et kompromis mellem effekt og støjniveau i hverdagen'
   - 'Samme DOMO-univers som 8 L-modellen vi har anmeldt – kendt dansk detailnavn i kategorien'
   - 'Velegnet til ét veldisponeret lag: pommes, grøntsager, kylling og lignende'
-  - 'Prisleje i feedet kan være attraktivt ift. nominel kapacitet'
+  - 'Prisleje hos forhandleren kan være attraktivt ift. nominel kapacitet'
 cons:
   - 'Lavere watt end DOMO 8 L (2850 W) betyder længere opvarmning og lidt mindre “tryk” ved fuld kurv'
   - 'Én zone – ingen synkron dual cooking som på dyrere mærker'
@@ -20,8 +20,6 @@ verdict: 'DOMO DO540FR er et stærkt mellemvalg, hvis du vil have mere volumen e
 ---
 
 ## Hvem passer DOMO DO540FR til?
-
-Vurderingen bygger på **feed-specifikationer**, **sammenligning med DOMO 8 L** og **generel erfaring med airfryere i 6 L-segmentet**.
 
 Modellen giver mening, når **tre–fire personer** skal have **pommes, grønt eller kylling** på samme tid, og du vil undgå **to omgange** i en for lille kurv. Den er mindre “rå” end en 2850 W storebror, men til **normal batch-størrelse** er det ofte acceptabelt.
 
@@ -37,4 +35,4 @@ Hold **drypbakke og filterzone** rene; ellers kommer der hurtigt os og vedvarend
 
 ## Pris, sammenligning og videre
 
-Brug knappen øverst til **aktuel pris** hos forhandler. Feedet viser kun vejledende niveau. Flere valg finder du på [shop-siden](/shop).
+Brug knappen øverst til **aktuel pris** hos forhandler. Den pris vi viser her, er kun vejledende. Flere valg finder du på [shop-siden](/shop).

@@ -1,6 +1,6 @@
 ---
 title: 'Little Balance Crousty Light XL airfryer anmeldelse: 7 liter til familien'
-description: 'Vores vurdering af Little Balance Crousty Light XL (7 L, 1600 W): fordele, ulemper og forskel til 5 L-modellen – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Little Balance Crousty Light XL (7 L, 1600 W): fordele, ulemper og forskel til 5 L-modellen – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/little-balance-crousty-light-xl-airfryer-7-l-1600-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -21,8 +21,6 @@ verdict: 'Crousty Light XL er stærk, når du konkret har brug for 7 L til hverd
 
 ## Hvem passer Crousty Light XL til?
 
-Vi bygger på **produktoplysninger i feedet**, **sammenligning med 5 L-versionen** og **typisk brug af 7 L airfryere**.
-
 XL henvender sig til **små familier** og **meal-prep**, hvor **én omgang** betyder mere end **kompakt størrelse**. Du får ofte bedre plads til **ét bredt lag** eller **lidt mere højde** på grøntsager og protein – alt efter kurvens form på den konkrete vare.
 
 Er **plads på køkkenbordet** det største problem, er 5 L-modellen eller andre kompakte valg mere logiske – se [guiden om airfryer-valg](/guides/hvilken-airfryer).
@@ -37,4 +35,4 @@ Brug **ikke hele 7 L som undskyldning for at proppe kurven**; luft skal stadig r
 
 ## Pris, sammenligning og videre
 
-Sammenlign **aktuel pris** via knappen øverst. Feedprisen er vejledende. Se også [shop-siden](/shop).
+Sammenlign **aktuel pris** via knappen øverst. Den viste pris er vejledende. Se også [shop-siden](/shop).

@@ -1,6 +1,6 @@
 ---
 title: 'Severin FR 2445 airfryer anmeldelse: 5 liter til hverdagen'
-description: 'Vores vurdering af Severin FR 2445 (5 L, 2000 W): fordele, ulemper og hvem modellen passer til – bygget på specs og praktisk erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Severin FR 2445 (5 L, 2000 W): fordele, ulemper og hvem modellen passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-03
 updatedDate: 2026-04-03
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/severin-fr-2445-varmluftsfriture-sort-2000-w-5-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -23,8 +23,6 @@ verdict: 'Severin FR 2445 er et fornuftigt mellem-valg med 5 L til hverdagen, n�
 
 ## Hvem passer Severin FR 2445 til?
 
-Teksten her bygger på **officiel vare-/modelinformation**, **vores generelle erfaring med airfryere** og **sammenligning med lignende modeller i prislejet** – ikke et langt laboratorieforløb med én maskine.
-
 Modellen rammer bredt, hvis du primært tænker **hverdagsretter** og **mindre mængder ad gangen**: pommes og kartofler, grøntsager, kyllingebidder, fisk og lignende. Med omkring **5 liter** har du ofte luft nok til **ét godt lag** – som vi anbefaler i vores [guide til airfryer for begyndere](/guides/airfryer-for-begyndere).
 
 Har du en stor familie og vil lave **stor mængde på én gang** uden at køre flere omgange, kan du overveje en større kurv eller en anden model – se [hvilken airfryer du skal vælge](/guides/hvilken-airfryer).
@@ -39,4 +37,4 @@ Som med de fleste airfryere: fedt og dryp samler sig i skuffen. **Rengør efter 
 
 ## Pris, sammenligning og videre
 
-Sammenlign **aktuel pris og levering** via knappen øverst – prisen i feedet er kun vejledende. Vil du se flere modeller side om side, kan du også kigge på [shop-siden](/shop) og filtrere efter behov.
+Sammenlign **aktuel pris og levering** via knappen øverst – den pris vi viser, er kun vejledende. Vil du se flere modeller side om side, kan du også kigge på [shop-siden](/shop) og filtrere efter behov.

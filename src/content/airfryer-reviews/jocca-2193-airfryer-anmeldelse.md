@@ -1,6 +1,6 @@
 ---
 title: 'JOCCA 2193 airfryer anmeldelse: 8 liter i rustfrit look'
-description: 'Vores vurdering af JOCCA 2193 (8 L, 1800 W, stål): fordele, ulemper og hvem den store kurv passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af JOCCA 2193 (8 L, 1800 W, stål): fordele, ulemper og hvem den store kurv passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/jocca-2193-airfryer-8-l-1800-w-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -12,7 +12,7 @@ pros:
   - '1800 W er egnet til hverdagsbatch uden at være i absolut top på watt'
   - 'Stål-/rustfri udtryk kan matche andet køkkenudstyr'
   - 'Naturligt skridt op fra [JOCCA 2196 5 L](/anmeldelser/jocca-2196-airfryer-anmeldelse), hvis du ofte mangler plads'
-  - 'Ofte attraktiv pris i feedet ift. angivet kapacitet'
+  - 'Ofte attraktiv pris hos forhandleren ift. angivet kapacitet'
 cons:
   - 'Større kabinet og ofte lidt mere vægt end kompakte modeller'
   - 'Én kurv – ingen dual-zone'
@@ -21,8 +21,6 @@ verdict: 'JOCCA 2193 er et fornuftigt 8 L-valg med 1800 W, når du vil have mere
 ---
 
 ## Hvem passer JOCCA 2193 til?
-
-Teksten bygger på **Boligcenters varedata**, **sammenligning med JOCCA 2196** og **generel erfaring med 8 L airfryere** – ikke et dedikeret laboratorieforløb.
 
 **8 L** giver ofte mening til **tre–fire personer** eller til dig, der laver **meal-prep** og vil have **færre omgange**. **1800 W** er tilstrækkeligt til de fleste hverdagsretter, hvis du **ikke propper kurven**.
 
@@ -38,4 +36,4 @@ Rengør **kurv og dryp** efter princip: **mens det er fugtigt** og inden for hva
 
 ## Pris, sammenligning og videre
 
-Brug **CTA-linket** til aktuel pris – feedprisen er vejledende. Se [shop-siden](/shop).
+Brug **linket øverst** til aktuel pris – den viste pris er vejledende. Se [shop-siden](/shop).

@@ -1,6 +1,6 @@
 ---
 title: 'Little Balance 8765 airfryer anmeldelse: 9 liter og 2460 W'
-description: 'Vores vurdering af Little Balance 8765 (9 L, 2460 W): fordele, ulemper og hvem den store kurv passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Little Balance 8765 (9 L, 2460 W): fordele, ulemper og hvem den store kurv passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/little-balance-8765-airfryer-9-l-2460-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -21,8 +21,6 @@ verdict: 'Little Balance 8765 er et stærkt bud på “stor airfryer til fair pr
 
 ## Hvem passer 8765 til?
 
-Teksten bygger på **feed-data**, **sammenligning med andre Little Balance-modeller** og **generel erfaring med XL airfryere** – ikke et dedikeret laboratorieforløb.
-
 **9 L** giver mening, når du ofte tænker **“én omgang skal række alle”** eller laver **større mængder** om søndagen. Effekten på **ca. 2460 W** hjælper typisk med **opvarmning og genstart**, når du åbner kort undervejs.
 
 Har du **begrænset bordplads**, kan vores [Crousty Light 5 L](/anmeldelser/little-balance-crousty-light-airfryer-anmeldelse) eller [Crousty Light XL 7 L](/anmeldelser/little-balance-crousty-light-xl-airfryer-anmeldelse) være mere passende – eller se [hvilken airfryer du skal vælge](/guides/hvilken-airfryer).
@@ -37,4 +35,4 @@ Rengør **drypskuffe og kurv** ofte – ellers kommer der hurtigt os. Følg **fa
 
 ## Pris, sammenligning og videre
 
-Tjek **aktuel pris** via link øverst – feedprisen er vejledende. Flere valg på [shop-siden](/shop).
+Tjek **aktuel pris** via link øverst – den viste pris er vejledende. Flere valg på [shop-siden](/shop).

@@ -21,8 +21,6 @@ verdict: 'DOMO 8 L med 2850 W er et oplagt valg, hvis du vil have ekstra volumen
 
 ## Hvem passer DOMO 8 L til?
 
-Vurderingen bygger på **specifikationer**, **typisk opførsel** i store airfryere og **hvad høj wattage praktisk betyder** – supplér med forhandlerens manual og varebeskrivelse.
-
 Modellen tiltaler **familier** eller **meal prep**, hvor **5–6 L føles lidt småt**. **Par** med begrænset bordplads kan finde den tung at bo sammen med.
 
 ## Brug i praksis

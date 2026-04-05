@@ -21,8 +21,6 @@ verdict: 'Fryinn 12-i-1 er til dig, der vil have alsidighed og effekt i ét – 
 
 ## Hvem passer Fryinn 12-i-1 til?
 
-Vi bygger på **produkttitel og typisk brug** af “alt-i-én”-luftfriture – se det som en **praktisk vurdering**, ikke en gennemtest af hver eneste tilbehørsdel.
-
 Bedst til **nysgerrige kokke** og **familier**, der vil **variere retter** (ikke kun frosne pommes). Mindre oplagt, hvis du **primært** vil have **hurtigt og enkelt** uden ekstra dele.
 
 ## Brug i praksis

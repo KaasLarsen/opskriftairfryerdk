@@ -21,8 +21,6 @@ verdict: 'BEKO FRL2242B er et stærkt kompaktvalg med 4 L og 1500 W – perfekt 
 
 ## Hvem passer BEKO FRL2242B til?
 
-Vurderingen trækker på **specifikationer** og **hvordan små airfryere bruges** i praksis – ikke udstyrstest på bænk hos os.
-
 Top til **singler**, **par** og **små husholdninger**. Vælg en **større BEKO** eller anden model, hvis I ofte er **fire–fem** og laver **store kartoffelmængder** på én gang.
 
 ## Brug i praksis

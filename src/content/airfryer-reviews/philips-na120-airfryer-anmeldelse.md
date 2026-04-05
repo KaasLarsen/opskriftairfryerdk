@@ -22,8 +22,6 @@ verdict: 'Philips NA120 er et fornuftigt kompaktvalg, når du vil have mærkets 
 
 ## Hvem passer Philips NA120 til?
 
-Vi bygger på **specifikationer**, **Philips’ generelle airfryer-position** og **typisk brug** i 4 L-klassen – det er en praktisk vurdering, ikke en langvarig labtest.
-
 Til **dig der vil have Philips-kvalitet** uden at betale for XXL og dual-kurve. **Single eller par** med fokus på **hverdag og lidt sprødhed** får mest ud af modellen.
 
 ## Brug i praksis

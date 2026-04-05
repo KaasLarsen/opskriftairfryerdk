@@ -22,8 +22,6 @@ verdict: 'Philips 2000 Series NA231 er et solidt hverdagsvalg i 6 L-klassen: nok
 
 ## Hvem passer NA231 til?
 
-Vurderingen kombinerer **feed-data** med **Philips’ placering** på airfryer-markedet – brug den sammen med forhandlerens fotos og mål.
-
 Ideal hvis **4 L føles for småt**, men I ikke vil have **9 L monolitten** på bordet. **Teenagere og pommes**? Planlæg evt. **to små kørsler** frem for én overfyldt.
 
 ## Brug i praksis

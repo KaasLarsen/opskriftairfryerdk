@@ -21,8 +21,6 @@ verdict: 'Continental Edison FRSH1400B er et fornuftigt “første airfryer”- 
 
 ## Hvem passer FRSH1400B til?
 
-Vi bygger på **specifikationer**, **hvordan små airfryere typisk opfører sig**, og **hvem der får mest ud af ~4,5 L** – se det som en praktisk vurdering frem for en laboratorietest.
-
 Perfekt til **studie**, **sommerhus** eller **ét par**, der mest laver **lette måltider**, snacks og mindre kød/tilbehør. Har du **børn og store mængder pommes** på én gang, bliver du ofte gladere for 6 L opad.
 
 ## Brug i praksis

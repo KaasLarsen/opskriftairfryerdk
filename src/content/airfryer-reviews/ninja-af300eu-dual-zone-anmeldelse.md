@@ -17,12 +17,10 @@ cons:
   - 'Fylder mere end én lille kurv – find permanent plads'
   - 'Skal bruges aktivt: køber du dual uden at bruge begge zoner, betaler du for luft'
   - 'Tjek forhandlerens beskrivelse for præcis synkronisering og programmer'
-verdict: 'Ninja AF300EU Dual Zone er et af de mere oplagte valg, hvis du vil have **ægte to-zoners fleksibilitet** med **Ninja’s betjening**. Familier der jonglerer to retter, får ofte mest glæde af den.'
+verdict: 'Ninja AF300EU Dual Zone er et af de mere oplagte valg, hvis du vil have ægte to zoner med Ninjas betjening. Familier der jonglerer to retter, får ofte mest glæde af den.'
 ---
 
 ## Hvem passer AF300EU til?
-
-Vurderingen trækker på **specifikationer** og **erfaring med Dual Zone-konceptet** – ikke hands-on med netop din firmware-version.
 
 Topvalg når **børn** vil have **pommes**, mens **voksne** vil have **grønt eller fisk** – uden alt skal i samme kurv. Mindre til **singler** der aldrig åbner den anden skuffe.
 

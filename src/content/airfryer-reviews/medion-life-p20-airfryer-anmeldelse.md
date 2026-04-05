@@ -1,6 +1,6 @@
 ---
 title: 'Medion LIFE P20 airfryer anmeldelse: 8,7 liter med to kurve'
-description: 'Vores vurdering af Medion LIFE P20 (ca. 8,7 L, 2600 W, to kurve): fordele, ulemper og hvem dual-setup passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Medion LIFE P20 (ca. 8,7 L, 2600 W, to kurve): fordele, ulemper og hvem dual-setup passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-04
 updatedDate: 2026-04-04
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-life-p20-varmluftsfriture-87-l-2-kurve-2600-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -20,8 +20,6 @@ verdict: 'Medion LIFE P20 er stærk, når du vil have stor kapacitet og fleksibi
 ---
 
 ## Hvem passer Medion LIFE P20 til?
-
-Vurderingen bygger på **feedets titel og specifikationer**, **sammenligning med Medion 5 L** og **generel erfaring med to-kurve airfryere**.
 
 LIFE P20 retter sig mod **familier** og alle, der **laver meget på én gang**: fx pommes i den ene side og grønt eller kylling i den anden, afhængigt af hvordan du disponerer. Den højere **effekt** hjælper ofte, når der er **mere masse** i maskinen.
 

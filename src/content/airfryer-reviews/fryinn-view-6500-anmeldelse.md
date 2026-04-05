@@ -1,6 +1,6 @@
 ---
 title: 'Fryinn View 6500 airfryer anmeldelse: 6,5 liter med kikkert til maden'
-description: 'Vores vurdering af Fryinn View 6500 (6,5 L, 1700 W): vinduesfunktion, fordele og ulemper – bygget på specs og erfaring med airfryere, med link til pris hos forhandler.'
+description: 'Vores vurdering af Fryinn View 6500 (6,5 L, 1700 W): vinduesfunktion, fordele og ulemper – med link til pris hos forhandler.'
 pubDate: 2026-04-04
 updatedDate: 2026-04-04
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fryinn-view-6500-airfryer-65-l-1700-w-sort-rustfrit-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -20,8 +20,6 @@ verdict: 'Fryinn View 6500 er et spændende valg i mellem-/store-segmentet, isæ
 ---
 
 ## Hvem passer Fryinn View 6500 til?
-
-Vurderingen bygger på **vareinformation**, **generel erfaring med airfryere** og **hvad der typisk fungerer** i 6–7 L-klassen – ikke et langt testforløb med én maskine hos os.
 
 Modellen passer godt til dig, der vil have **lidt ekstra volumen** og **bedre overblik** (vindue) når du laver pommes, grønt, kylling eller lettere bagværk. Med **6,5 liter** kan du ofte dække **familie eller gæster** med færre omgange end på en lille 3 L-model.
 

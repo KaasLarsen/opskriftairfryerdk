@@ -21,8 +21,6 @@ verdict: 'Ariete 4628 er et stærkt bud i den praktiske familieklasse med 7 L og
 
 ## Hvem passer Ariete 4628 til?
 
-Teksten er skrevet ud fra **modelspecifikationer** og **typisk brug** af luftfriture i 6–8 L-segmentet – et supplement til din egen research og forhandlerens vareinfo.
-
 Ideelt til **familie** eller **par**, der ofte laver **større omgange** eller vil **slippe for ovnens lange opvarmning** til små og mellemstore retter. Med **ét kammer** planlægger du retter, der tåler **samme temperatur**, eller kører **toholds-kørsel**.
 
 ## Brug i praksis
@@ -35,4 +33,4 @@ Store kurve samler også mere fedt – **tøm dryp**, og rengør efter behov så
 
 ## Pris, sammenligning og videre
 
-Klik til forhandler for **vejl. pris** (vores feed opdateres løbende). Sammenlign gerne med andre 7 L-modeller på [shop](/shop) og læs [hvilken airfryer](/guides/hvilken-airfryer).
+Klik til forhandler for **vejl. pris** (priserne vi viser opdateres løbende). Sammenlign gerne med andre 7 L-modeller på [shop](/shop) og læs [hvilken airfryer](/guides/hvilken-airfryer).

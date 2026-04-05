@@ -21,8 +21,6 @@ verdict: 'BEKO FRL3374B er et godt match til den travle husstand, der vil have s
 
 ## Hvem passer BEKO FRL3374B til?
 
-Vi vurderer ud fra **feed/specs** og **typisk adfærd** i store airfryere – brug det som et filter oven på forhandlerens detaljer og din egen smag.
-
 Oplagt når **to voksne + børn** eller **meal prep** med **større mængder kartofler/kylling** er normen. Mindre oplagt, hvis du **sjældent fylder kurven** og prioriterer **minimal bordplads**.
 
 ## Brug i praksis
@@ -35,4 +33,4 @@ Større volumen kan give lidt mere **os** ved fedt – god emhætte og rengørin
 
 ## Pris, sammenligning og videre
 
-Tjek pris via **CTA-linket**. Sammenlign med andre store airfryere på [shop](/shop); læs også [airfryer for begyndere](/guides/airfryer-for-begyndere).
+Tjek pris via **linket øverst**. Sammenlign med andre store airfryere på [shop](/shop); læs også [airfryer for begyndere](/guides/airfryer-for-begyndere).

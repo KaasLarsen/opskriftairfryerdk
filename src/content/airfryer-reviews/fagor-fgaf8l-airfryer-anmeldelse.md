@@ -1,6 +1,6 @@
 ---
 title: 'Fagor FGAF8L airfryer anmeldelse: 8 liter til større portioner'
-description: 'Vores vurdering af Fagor FGAF8L (8 L, 1800 W): fordele, ulemper og hvem den store kurv passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Fagor FGAF8L (8 L, 1800 W): fordele, ulemper og hvem den store kurv passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-04
 updatedDate: 2026-04-04
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fagor-fgaf8l-airfryer-8-l-1800-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -12,7 +12,7 @@ pros:
   - '1800 W er et fornuftigt match til mellemstore og store batch uden ekstremt strømforbrug'
   - 'Sort kabinet skjuler typiske fedtfingre og passer ind i mange køkkener'
   - 'God til klassiske airfryer-retter: pommes, grønt, kylling og større mængder snacks'
-  - 'I feedet ligger prisen ofte attraktivt ift. angivet kapacitet'
+  - 'Hos forhandleren ligger prisen ofte attraktivt ift. angivet kapacitet'
 cons:
   - 'Stor maskine fylder mere på bordet og i skabet end 4–5 L modeller'
   - 'Én kurv – ingen dual-zone til to forskellige temperaturer samtidig'
@@ -21,8 +21,6 @@ verdict: 'Fagor FGAF8L er et oplagt valg, når du vil have rigtig kurvvolumen ti
 ---
 
 ## Hvem passer Fagor FGAF8L til?
-
-Teksten bygger på **varedata i feedet**, **generel erfaring med 8 L airfryere** og **sammenligning med mindre Fagor- og budgetmodeller** – ikke et langt testforløb med én konkret enhed.
 
 Med **8 L** rammer du husstande, der ofte tænker **“én omgang skal række”**: pommes til flere personer, større mængde grønt eller kylling. Du skal stadig **undgå at overproppere**; luft skal kunne cirkulere som beskrevet i vores [airfryer-guide for begyndere](/guides/airfryer-for-begyndere).
 
@@ -38,4 +36,4 @@ Som altid: **fedt samler sig i skuffen**. Rengør aftagelige dele jævnligt for 
 
 ## Pris, sammenligning og videre
 
-Tjek **aktuel pris** via linket øverst – feedprisen er vejledende. Sammenlign med andre store kurve på [shop-siden](/shop).
+Tjek **aktuel pris** via linket øverst – den viste pris er vejledende. Sammenlign med andre store kurve på [shop-siden](/shop).

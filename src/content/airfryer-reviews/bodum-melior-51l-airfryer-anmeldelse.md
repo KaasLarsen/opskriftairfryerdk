@@ -21,8 +21,6 @@ verdict: 'Bodum MELIOR 5,1 L med 2700 W er et attraktivt valg, hvis du vil have 
 
 ## Hvem passer Bodum MELIOR til?
 
-Baseret på **specifikationer** og **segmentering** mellem design-airfryere og rene budgetkasser – brug det sammen med forhandlerens billeder og mål.
-
 Passer til **designbevidste** købere og **aktive airfryer-brugere**, der vil have **højere wattage** end gennemsnittet uden at gå op i kæmpe 8–9 L.
 
 ## Brug i praksis

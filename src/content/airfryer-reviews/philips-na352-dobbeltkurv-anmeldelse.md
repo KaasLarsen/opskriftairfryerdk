@@ -22,8 +22,6 @@ verdict: 'Philips NA352/04 er et oplagt valg til den aktive familie, der vil hav
 
 ## Hvem passer Philips NA352 til?
 
-Vi bygger på **modeldata** og **typisk dual-airfryer-adfærd** – supplér med manual og forhandlerens demo-billeder.
-
 Især når du **ofte laver ret + tilbehør** med forskellig **optimal temperatur** eller **færdiggørelse**. Mindre relevant hvis du **næsten altid** kun fylder **én side**.
 
 ## Brug i praksis
@@ -36,4 +34,4 @@ Dobbelt **dryp** = dobbelt opmærksomhed på rengøring. Følg **Philips’ anvi
 
 ## Pris, sammenligning og videre
 
-Brug **CTA** til opdateret pris. Sammenlign med andre dual-modeller på [shop](/shop).
+Se **aktuel pris** via **linket øverst**. Sammenlign med andre dual-modeller på [shop](/shop).

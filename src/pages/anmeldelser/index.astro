@@ -47,7 +47,7 @@ const brandOptions = [
 
 const title = `Airfryer-anmeldelser | ${SITE_NAME}`;
 const description =
-	'Praktiske airfryer-anmeldelser: fordele, ulemper og hvem modellen passer til – med link til forhandler og vejledende pris fra vores produktfeed.';
+	'Praktiske airfryer-anmeldelser: fordele, ulemper og hvem modellen passer til – med link til forhandler og vejledende pris.';
 
 const jsonLd = [
 	ORGANIZATION_JSON as Record<string, unknown>,
@@ -79,9 +79,8 @@ const jsonLd = [
 					Du finder <strong>{reviews.length} anmeldelser</strong> på denne side under filtrene – vælg
 					<em>Alle mærker</em>, <em>Alle størrelser</em> og <em>Alle</em> under vurdering for at se hele
 					listen. Vi <strong>vurderer og beskriver</strong> modeller med klare fordele og ulemper, så du
-					lettere kan vælge. Har vi et eget hero-billede, vises det her; ellers bruger vi produktbillede
-					fra vores <a href="/shop">partner-feed</a>. Tjek altid den aktuelle vareside hos forhandleren.
-					Læs også <a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
+					lettere kan vælge. Tjek altid den aktuelle vareside hos forhandleren, før du bestemmer dig. Læs
+					også <a href="/guides/hvilken-airfryer">guiden til at vælge airfryer</a>.
 				</p>
 			</div>
 
@@ -114,7 +113,7 @@ const jsonLd = [
 							}
 							{
 								indexEntries.some((e) => !e.brand) ? (
-									<option value="ukendt">Ikke angivet i feed</option>
+									<option value="ukendt">Mærke ikke oplyst</option>
 								) : null
 							}
 						</select>
@@ -131,7 +130,7 @@ const jsonLd = [
 							<option value="lt5">Under 5 L</option>
 							<option value="5-7">5–7 L</option>
 							<option value="gt7">Over 7 L</option>
-							<option value="unknown">Ikke angivet i feed</option>
+							<option value="unknown">Kapacitet ikke oplyst</option>
 						</select>
 					</div>
 					<div class="review-index-filter">

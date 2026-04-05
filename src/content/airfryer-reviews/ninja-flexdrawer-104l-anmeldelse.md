@@ -17,12 +17,10 @@ cons:
   - 'Kabinet og skuffe fylder – mål dybde og skabshøjde nøje'
   - 'Høj effekt: sørg for ordentlig stikkontakt og god udluftning'
   - 'Premium pris – hold øje med kampagner'
-verdict: 'Ninja FlexDrawer 10,4 L er til den seriøse airfryer-bruger, der vil have **maksimal skuffeplads** og **høj effekt**. Ikke til minimalister – men stærkt til husholdninger der faktisk fylder maskinen.'
+verdict: 'Ninja FlexDrawer 10,4 L er til den seriøse airfryer-bruger, der vil have maksimal skuffeplads og høj effekt. Ikke til minimalister – men stærkt til husholdninger der faktisk fylder maskinen.'
 ---
 
 ## Hvem passer FlexDrawer til?
-
-Vi vurderer ud fra **produktdata** og **segmentet for XL skuffe-airfryere** – en praktisk ramme, ikke en lang tids forbrugertest.
 
 **Familie**, **meal prep** eller **buffet** der kræver **ét stort lag**. Mindre oplagt hvis du **sjældent** bruger mere end **halvdelen** af volumen – så er en mindre Ninja ofte nok.
 
@@ -36,4 +34,4 @@ Stor skuffe = **mere overflade til fedt**. Giv den et ekstra efter **grisete** s
 
 ## Pris, sammenligning og videre
 
-Klik til **partnerlink** for pris. Se også [shop](/shop) og [airfryer for begyndere](/guides/airfryer-for-begyndere).
+Se pris via **linket øverst** for pris. Se også [shop](/shop) og [airfryer for begyndere](/guides/airfryer-for-begyndere).

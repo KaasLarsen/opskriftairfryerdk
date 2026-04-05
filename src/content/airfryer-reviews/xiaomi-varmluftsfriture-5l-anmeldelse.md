@@ -1,6 +1,6 @@
 ---
 title: 'Xiaomi airfryer 5 liter anmeldelse: minimalistisk hvid til hverdagen'
-description: 'Vores vurdering af Xiaomis 5 L varmluftsfriture (hvid): fordele, ulemper og hvem modellen passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Xiaomis 5 L varmluftsfriture (hvid): fordele, ulemper og hvem modellen passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-04
 updatedDate: 2026-04-04
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/xiaomi-varmluftsfrituregryde-5-l-hvid?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -11,7 +11,7 @@ pros:
   - '5 L passer mange par og mindre familier, når du arbejder i ét lag'
   - 'Hvid, ren æstetik – oplagt hvis du vil matche lyst køkken og undgå “grej-look”'
   - 'Xiaomi-brandet kender mange fra øvrigt elektronik; her får du typisk et stramt, moderne udtryk i kategorien'
-  - 'Typisk konkurrencedygtig pris i forhold til kapacitet i feedet'
+  - 'Typisk konkurrencedygtig pris i forhold til kapacitet hos forhandleren'
   - 'Velegnet til klassiske airfryer-opgaver: pommes, grønt, kylling, fisk i moderate mængder'
 cons:
   - 'Lys overflade kræver ofte mere synlig rengøring end sort plastik'
@@ -21,8 +21,6 @@ verdict: 'Xiaomis 5 L airfryer er et stærk kandidat til det pæne, mellemstore 
 ---
 
 ## Hvem passer Xiaomis 5 L til?
-
-Vi bygger på **varedata fra feedet**, **typisk Xiaomi-produktoplæg** (ren finish, fokus på brugerflade) og **generel airfryer-viden** – ikke en uafhængig forbrugertest af netop denne batch.
 
 Maskinen er tiltænkt dig, der vil have **5 L’s fleksibilitet** til aftensmad og **et design**, der ikke dominerer bordet. Du får samme grundidé som andre 5-litersmodeller: **ét lag**, god cirkulation og fornuftig effekt til daglig brug.
 

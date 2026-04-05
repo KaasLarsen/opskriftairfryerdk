@@ -21,8 +21,6 @@ verdict: 'Medion 5 L med 1500 W er et balanceret hverdagsvalg med fornuftig stø
 
 ## Hvem passer Medion 5 L til?
 
-Teksten er baseret på **feed-specifikationer** og **typisk brug** i 5 L-segmentet – et supplement til forhandlerens fakta og dine egne præferencer.
-
 God **mellemstation** mellem **kompakt 3–4 L** og **store 7–8 L**. Oplagt til **hverdagsmiddage**, **snacks** og **opvarmning** uden at tænke “pro-køkken”.
 
 ## Brug i praksis

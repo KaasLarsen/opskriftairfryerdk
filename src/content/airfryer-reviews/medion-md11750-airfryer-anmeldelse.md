@@ -1,6 +1,6 @@
 ---
 title: 'Medion MD11750 airfryer anmeldelse: 6,8 liter med 2150 W'
-description: 'Vores vurdering af Medion MD11750 (6,8 L, 2150 W): fordele, ulemper og sammenligning med andre Medion-modeller – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af Medion MD11750 (6,8 L, 2150 W): fordele, ulemper og sammenligning med andre Medion-modeller – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-md11750-airfryer-68-l-2150-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -10,7 +10,7 @@ rating: 4
 pros:
   - '6,8 L er et praktisk mellemtrin mellem standard 5 L og ægte XL'
   - '2150 W giver typisk god respons, når kurven er godt fyldt'
-  - 'Medion har flere varianter i feedet – nemt at sammenligne kapacitet og pris'
+  - 'Medion har flere varianter hos forhandleren – nemt at sammenligne kapacitet og pris'
   - 'Sort finish er hverdagsvenlig'
   - 'God til familiemiddage i ét lag, når du ikke propper kurven'
 cons:
@@ -21,8 +21,6 @@ verdict: 'Medion MD11750 er et stærkt valg til den travle husstand, der vil hav
 ---
 
 ## Hvem passer MD11750 til?
-
-Vurderingen bygger på **Boligcenters varedata**, **sammenligning med Medion 5 L** og **[LIFE P20 med to kurve](/anmeldelser/medion-life-p20-airfryer-anmeldelse)** – ikke et langt testforløb.
 
 Modellen passer til **3–4 personers hverdag**, når du vil have **lidt ekstra luft** i kabinen frem for at køre to omgange i en 4–5 L maskine. **2150 W** gør det ofte lettere at **holde momentum**, når du lægger en fuld, men stadig luftig, fordeling i kurven.
 
@@ -38,4 +36,4 @@ Hold **skuffe og kurv** rene for at undgå røg. Følg **manualen** for MD11750.
 
 ## Pris, sammenligning og videre
 
-Sammenlign **aktuel pris** via link øverst – feedpris er vejledende. Se [shop-siden](/shop).
+Sammenlign **aktuel pris** via link øverst – den viste pris er vejledende. Se [shop-siden](/shop).

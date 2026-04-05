@@ -21,8 +21,6 @@ verdict: 'Continental Edison 9 L med to skuffer er et oplagt valg, hvis du vil h
 
 ## Hvem passer denne dual-skuffe til?
 
-Vurderingen kombinerer **produktdata** med **typisk brug** af to-rums airfryere – altså en praktisk tommelfingerregel, ikke en langtidslabtest på din adresse.
-
 Særligt relevant hvis du **ofte kombinerer** ting med **forskellig optimal temperatur** (fx **grønt** lavere og **protein** højere) eller vil **undgå smags-overførsel** mellem retter. Mindre relevant hvis du **sjældent bruger begge skuffer** – så kan en stor enkelt-kurv være enklere.
 
 ## Brug i praksis
@@ -35,4 +33,4 @@ To skuffer = **dobbelt op** på dryp og små revner – rengør begge kanaler, s
 
 ## Pris, sammenligning og videre
 
-Brug affiliatelinket for **opdateret pris**. Sammenlign med andre dual-modeller på [shop](/shop) og [hvilken airfryer](/guides/hvilken-airfryer).
+Brug linket øverst for **opdateret pris**. Sammenlign med andre dual-modeller på [shop](/shop) og [hvilken airfryer](/guides/hvilken-airfryer).

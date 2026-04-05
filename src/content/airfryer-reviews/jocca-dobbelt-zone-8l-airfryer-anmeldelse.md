@@ -1,6 +1,6 @@
 ---
 title: 'JOCCA airfryer med dobbelt zone anmeldelse: 8 liter i sort'
-description: 'Vores vurdering af JOCCA airfryer med dobbelt zone (8 L, 1700 W): fordele, ulemper og hvem dual-zone passer til – bygget på specs og erfaring med airfryere, med link til aktuel pris hos forhandler.'
+description: 'Vores vurdering af JOCCA airfryer med dobbelt zone (8 L, 1700 W): fordele, ulemper og hvem dual-zone passer til – med link til aktuel pris hos forhandler.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/jocca-varmluftsfrituregryde-med-dobbelt-zone?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
@@ -16,13 +16,11 @@ pros:
 cons:
   - 'Større fodaftryk og mere rengøring end én simpel kurv'
   - 'Budget-/midtsegment – forvent ikke samme software-dybde som topmærker'
-  - 'Læs varekortet for præcis, hvordan zoner styres på denne SKU'
+  - 'Læs varekortet for præcis, hvordan zoner styres på denne model'
 verdict: 'JOCCA med dobbelt zone og 8 L er interessant, hvis du konkret vil have to zoner uden premium-pris. God til travle aftener – mindre meningsfuld, hvis du kun laver små, ensartede portioner.'
 ---
 
 ## Hvem passer JOCCA dobbelt zone til?
-
-Teksten bygger på **Boligcenters produktoplysninger**, **sammenligning med én-kurvs JOCCA** og **typisk dual-zone brug** – ikke et langt testforløb.
 
 Dual-zone giver mest værdi, når du ofte tænker: **“pommes skal have 15 minutter mere end fisken”** eller **“grønt lavere temp end kylling”**. Så slipper du for at **afbryde hele forløbet** og **rode rundt** i én kurv.
 
@@ -38,4 +36,4 @@ Start med **moderate mængder** i begge zoner, til du kender maskinens rytme. **
 
 ## Pris, sammenligning og videre
 
-Tjek **aktuel pris** via link øverst – feedprisen er vejledende. Se [shop-siden](/shop).
+Tjek **aktuel pris** via link øverst – den viste pris er vejledende. Se [shop-siden](/shop).
