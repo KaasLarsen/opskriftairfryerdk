@@ -1,8 +1,10 @@
 ---
 title: 'Tofu i airfryer – sprød skorpe uden dybfriture'
 description: 'Sprød tofu fra airfryer: pres, marinade, majsstivelse og tider. Vegetarisk topping til salater, bowls og nudler.'
+heroImage: '/images/recipes/airfryer-tofu.png'
+heroAlt: 'Skål med gyldne tofu-tern med glaze, sesam og forårsløg på linned, airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 25
 cookMinutes: 18
 servings: '3 portioner'
