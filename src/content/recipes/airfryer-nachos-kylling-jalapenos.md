@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer nachos med kylling og jalapenos – sprøde chips og ost'
-description: 'Nachos i airfryer med kylling, ost og jalapenos. Sprøde tortilla-chips, smeltet ost og nem servering som café-mad.'
+title: 'Nachos i airfryer – med kylling og jalapenos (eller uden kylling)'
+description: 'Nachos i airfryer: samme metode med eller uden kylling — ost, jalapenos og sprøde chips. Café-nachos der ikke bliver slatne.'
 heroImage: '/images/recipes/airfryer-nachos-kylling-jalapenos.png'
 heroAlt: 'Airfryer nachos med kylling, jalapenos og smeltet ost på bakke med creme'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-04-03
 prepMinutes: 10
 cookMinutes: 12
 servings: '4 portioner'
@@ -13,7 +13,9 @@ category: 'Hovedret'
 cuisine: 'Mexicansk inspireret'
 temperatureC: 190
 keywords:
+  - nachos i airfryer
   - nachos airfryer
+  - nachos uden kylling airfryer
   - nachos med kylling airfryer
   - tortilla chips airfryer
   - nachos tid og temperatur
@@ -61,6 +63,10 @@ faq:
     answer: 'Airfryerens luftflow og at du holder toppings i et jævnt lag. Undgå for meget væske ovenpå chipsene.'
   - question: 'Kan jeg bruge hjemmelavede nachos?'
     answer: 'Ja. Brug hvad du normalt ville bruge som chips (tortilla-trekants). Lav gerne i små portioner for ensartet sprødhed.'
+  - question: 'Kan man lave nachos i airfryer uden kylling?'
+    answer: 'Ja. Spring kylling, olie og tacokrydderi over. Fordel chips, ost og jalapenos (eller peber/bønner) i ét lag og steg samme tid — hold evt. 1 minut kortere i starten og tjek at osten bobler uden at chipsene mørkner for meget.'
+  - question: 'Er nachos i airfryer det samme som klassiske nachos?'
+    answer: 'Samme idé, hurtigere og ofte sprødere bund fordi luften cirkulerer. Toppings med meget væske gør chips bløde — hold salsa til servering ved siden af.'
 ---
 
 ### Derfor bliver airfryer-nachos bedre

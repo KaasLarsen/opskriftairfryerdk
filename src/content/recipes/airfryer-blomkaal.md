@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer blomkål – gyldne buketter med masser af smag'
-description: 'Blomkål i airfryer med sprøde kanter og mør midte. Nem opskrift med tid, temperatur og krydring.'
+title: 'Blomkål i airfryer – med ost eller parmesan og sprøde kanter'
+description: 'Blomkål i airfryer på 12-14 min ved 195 °C: basis med paprika, variation med revet ost eller parmesan sidst. FAQ om blomkål med ost og knasende sprødhed.'
 heroImage: '/images/recipes/airfryer-blomkaal.png'
 heroAlt: 'Gyldne sprøde blomkålsbuketter med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-04-03
 prepMinutes: 8
 cookMinutes: 14
 servings: '4 portioner'
@@ -14,17 +14,19 @@ cuisine: 'International'
 temperatureC: 195
 keywords:
   - blomkål i airfryer
+  - blomkål med ost airfryer
+  - blomkål parmesan airfryer
   - airfryer blomkål
   - blomkålsbuketter airfryer
   - grønt tilbehør airfryer
   - nem blomkål opskrift
 featured: true
 intro: |
-  Blomkål i airfryer giver mere smag end kogt blomkål, fordi overfladen får farve og let ristede noter. Det gør grøntsagen mere interessant som hverdags-tilbehør.
+  **Blomkål i airfryer** giver mere smag end kogt blomkål, fordi overfladen karamelliserer og får sprøde kanter — perfekt som hurtigt tilbehør eller som **blomkål med ost/parmesan** (revet ost på de sidste 2 minutter som i tips).
 
-  En enkel krydring med olie, salt og paprika er nok til et godt resultat. Vil du have mere kant, kan du tilføje chili eller karry.
+  Basis-varianten her er olie, salt og paprika. Vil du ramme søgninger som *blomkål med parmesan*, så brug hårdkogt parmesan og lad den smelte kort til sidst uden at brænde.
 
-  Opskriften er nem og hurtig at lave i alle airfryer-størrelser.
+  Opskriften er nem i alle airfryer-størrelser: **12-14 minutter ved 195 °C**, ét lag, ryst halvvejs.
 conclusion: |
   Server blomkålen varm med lidt citron, yoghurt-dressing eller tahin. Den passer både til kød, fisk og vegetarretter.
 
@@ -53,6 +55,10 @@ faq:
     answer: 'Sørg for lidt olie, ét lag i kurven og høj nok varme.'
   - question: 'Kan jeg lave blomkål uden olie?'
     answer: 'Ja, men et lille lag olie giver bedre farve og tekstur.'
+  - question: 'Hvordan laver jeg blomkål med ost eller parmesan i airfryer?'
+    answer: 'Steg buketter som vanligt og drys et tyndt lag revet ost eller parmesan de sidste 1-2 minutter ved samme eller lidt lavere varme, så osten smelter uden at blive bitter. For ekstra lag: vend let i lidt ekstra olie før osten.'
+  - question: 'Blomkål med parmesan – bliver det sprødt?'
+    answer: 'Overfladen bliver gylden og let knasende; parmesan giver salt umami — hold tiden kort efter du tilsætter osten for at undgå brændt ost.'
 ---
 
 ### Sundt tilbehør med stabil søgning

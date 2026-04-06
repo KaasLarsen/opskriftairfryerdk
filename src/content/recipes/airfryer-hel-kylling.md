@@ -1,8 +1,8 @@
 ---
-title: 'Airfryer hel kylling – sprød skind og saftig kød'
-description: 'Hel kylling i airfryer med tydelig plan for temperatur og hvile. Guide til ca. 1,4-1,6 kg kylling, skind der sprøder, og sikker kernevarme.'
+title: 'Hel kylling i airfryer – tid pr. kg, sprødt skind og 75 °C ved lår'
+description: 'Hel kylling i airfryer: tid som tommelfingerregel pr. kg, bund-op start og slutvarme for sprødt skind. Kernetermometer til 75 °C i lår — vejledning til 1,4-1,6 kg.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-04-03
 prepMinutes: 20
 cookMinutes: 55
 servings: '4-6 personer'
@@ -13,18 +13,21 @@ temperatureC: 180
 heroImage: '/images/recipes/airfryer-hel-kylling.png'
 heroAlt: 'Hel stegt kylling med gyldent skind, rosmarin, citron og små ristede kartofler på hvid tallerken'
 keywords:
+  - hel kylling i airfryer
   - hel kylling airfryer
+  - hele kylling i airfryer
   - hele kylling airfryer
+  - hel kylling tid pr kg airfryer
   - kylling sprødt skind airfryer
   - hel kylling tid temperatur airfryer
   - roast kylling airfryer
 featured: false
 intro: |
-  En hel kylling i airfryer kan give overraskende god “søndagsoplevelse” på kortere tid end ovn — hvis du respekterer tre ting: **plads i kurven**, **temperaturforløb** og **kernetermometer**.
+  **Hel kylling i airfryer** kan give en god “søndagsoplevelse” på kortere tid end ovn — hvis du respekterer tre ting: **plads i kurven**, **temperaturforløb** og **kernetermometer**.
 
-  Udfordringen er uens tykkelse: bryst tørrer hurtigere end lår. Derfor er denne metode lagt op omkring moderat varme, bund-op start (typisk for mere jævn varme til lår) og en sidste kort fase, hvor skindet kan tage farve.
+  Som tommelfingerregel for **tid pr. kg** ved 180 °C i denne metode: regn med cirka **35-40 minutters samlet tid pr. kg** for 1,4-1,6 kg hel kylling, men **stol på lår-temperatur**, ikke uret: fjerkræ skal op på **75 °C** i den tykkeste del af låret (Fødevarestyrelsen).
 
-  Brug altid kernetermometer: kyllingen er færdig, når den tykkeste del ved låret når **75 °C** (Fødevarestyrelsens anbefaling ved fjerkræ).
+  Udfordringen er uens tykkelse — bryst tørrer hurtigere end lår. Derfor starter vi **bund-op** (typisk mere jævn varme til lår) og slutter med kort højere varme for skindfarve, hvis du ønsker det.
 conclusion: |
   Lad kyllingen hvile 10 minutter under folie før udskæring — saften fordeler sig og skindet holder bedre.
 
@@ -61,7 +64,9 @@ tips:
   - 'Tør skind er vigtigere end ekstra olie: for meget fedt kan ryge i nogle modeller.'
 faq:
   - question: 'Hvor længe skal hel kylling have i airfryer?'
-    answer: 'Som tommelfingerregel ca. 50-60+ minutter ved 180 °C for 1,4-1,6 kg afhængigt af model — brug kernetermometer frem for ren tid.'
+    answer: 'For 1,4-1,6 kg er 50-55 minutter ved 180 °C ofte et godt udgangspunkt med bryst-ned først, men tid varierer med model og fuglevægt. Som rettesnor: ca. 35-40 min samlet tid pr. kg ved 180 °C — mål altid 75 °C i tykkeste lår.'
+  - question: 'Hvor lang tid pr. kg er hel kylling i airfryer?'
+    answer: 'Omtrent 35-40 minutter pr. kg ved 180 °C med denne metode (bryst ned, derefter bryst op), men brug termometer: 75 °C i lår er afgørende. Lettere fugle pr. liter kurv kan blive færdige lidt hurtigere.'
   - question: 'Hvorfor er mit bryst tørt?'
     answer: 'Ofte overtilberedning eller for tidlig høj slutvarme. Brug thermometer og skån bryst med folie om nødvendigt.'
   - question: 'Kan man lave kylling med fyld i airfryer?'

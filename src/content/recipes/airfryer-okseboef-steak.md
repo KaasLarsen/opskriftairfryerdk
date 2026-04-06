@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer oksebøf – mør steak (entrecôte eller yderfilet)'
-description: 'Oksebøf i airfryer med sprød stegeskorpe og rosa midte. Temperatur, hviletid og tykkelse – så undgår du overcooked steak.'
+title: 'Airfryer oksebøf og ribeye – mør steak (ribeye, entrecôte eller yderfilet)'
+description: 'Oksebøf og ribeye i airfryer med sprød stegeskorpe og rosa midte. Tid efter tykkelse, kernetemperatur og forskel på ribeye og entrecôte.'
 heroImage: '/images/recipes/airfryer-okseboef-steak.png'
 heroAlt: 'Skåret oksebøf med rosa midte, urtesmør og persille ved siden af små ristede kartofler, rosmarin og citron på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-04-03
 prepMinutes: 15
 cookMinutes: 14
 servings: '2 portioner'
@@ -14,17 +14,22 @@ cuisine: 'International'
 temperatureC: 200
 keywords:
   - airfryer oksebøf
+  - ribeye i airfryer
+  - ribeye airfryer
+  - ribeye steg i airfryer
+  - rib eye i airfryer
+  - entrecote i airfryer
   - airfryer steak
   - bøf i airfryer
   - entrecôte airfryer
   - oksekød airfryer
 featured: true
 intro: |
-  Oksebøf i airfryer kan give en fin stegeskorpe og jævn gennemstegning, hvis du respekterer **tykkelse** og **hviletid**. Det er ikke identisk med pandestegning, men er oplagt til hverdag uden sprøjt.
+  Oksebøf og **ribeye** i airfryer kan give en fin stegeskorpe og jævn gennemstegning, hvis du respekterer **tykkelse** og **hviletid**. Det er ikke identisk med pandestegning, men er oplagt til hverdag uden sprøjt.
 
-  Vælg helst bøffer på **2-3 cm** og med lidt fedtkant – det giver bedre smag og mindre risiko for tør kant.
+  **Ribeye** er ofte 2-3 cm og har intramuskulært fedt (“marmor”), så den tåler airfryer godt uden at blive kedelig. **Entrecôte** minder om ribeye, men snittet kan variere – se FAQ nedenfor.
 
-  Et lille køkkentermometer gør det meget lettere at ramme rosa midte hver gang.
+  Vælg helst bøffer på **2-3 cm** med lidt fedtkant. Et lille køkkentermometer gør det meget lettere at ramme rosa midte hver gang.
 conclusion: |
   Hvil kødet 5 minutter under folie før du skærer – saften fordeles og skorpen bliver bedre.
 
@@ -61,7 +66,15 @@ faq:
     answer: 'Ja, men yderfilet er ofte magrere – giv evt. kortere tid og hold øje med temperaturen.'
   - question: 'Skal jeg marinere?'
     answer: 'Valgfrit. Tør marinade af og dup tørt, ellers dampes skorpen.'
+  - question: 'Hvor længe skal ribeye have i airfryer?'
+    answer: 'Ved ca. 2,5 cm og 200 °C: ofte 8-10 minutter samlet (4+4 minutter med vending) til medium-rare — tjek kerne. Tykkere ribeye: 5+5 minutter som udgangspunkt, derefter termometer.'
+  - question: 'Hvad er forskellen på ribeye og entrecôte i airfryer?'
+    answer: 'Ribeye kommer fra tykribben med karakteristisk fedt “øje”. Entrecôte er i mange butikker et ribbens-snittalternativ og kan være tilsvarende, men navnet dækker ikke altid samme snit — steg altid efter tykkelse og kerne-temp, ikke kun tid.'
 ---
+
+### Ribeye i airfryer (tykkelse og tid)
+
+Ribeye på **ca. 2,5 cm** følger hovedtrinene i opskriften: 4 minutter, vend, 4 minutter ved 200 °C og justér efter termometer. **3+ cm**: start med 5 minutter pr. side og tjek kerne tidligt. **Tykkere hel ribeye-stykke** kræver lavere varme eller længere tid med flere vendinger — her er et godt køkkentermometer vigtigere end en fast minuttabel.
 
 ### Forskel fra hakkebøf
 

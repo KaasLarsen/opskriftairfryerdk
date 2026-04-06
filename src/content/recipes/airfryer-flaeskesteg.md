@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer flæskesteg – sådan får du sprød svær'
-description: 'Flæskesteg i airfryer med fokus på sprød svær, saftigt kød og korrekt kernetemperatur. Nem trin-for-trin guide til både hverdag og gæster.'
+title: 'Flæskesteg i airfryer – tid, temperatur og sprød svær (1,2-1,5 kg)'
+description: 'Flæskesteg i airfryer: typisk 55-65 min i alt ved 180 °C + kort sprødfase ved 200 °C. Kernetemperatur, ridset svær og typiske fejl (blød svær, for tidlig høj varme) — og hvordan du undgår dem.'
 heroImage: '/images/recipes/airfryer-flaeskesteg.png'
 heroAlt: 'Flæskesteg med sprød svær, brun sovs, kartofler og rødkål serveret foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-04-03
 prepMinutes: 15
 cookMinutes: 55
 servings: '4-6 portioner'
@@ -20,11 +20,11 @@ keywords:
   - dansk flæskesteg
 featured: true
 intro: |
-  Flæskesteg i airfryer kan give overraskende sprød svær, hvis du forbereder rigtigt: snit helt ned til fedtet (ikke kødet), salt grundigt mellem sværene og sørg for at stegen ligger i vater.
+  **Flæskesteg i airfryer** kan give sprød svær og saftigt kød, når du har styr på tre ting: **riller helt ned til fedtet** (ikke kødet), **salt mellem hver svær** og **kernetemperatur før sprødfasen** (ca. 63-65 °C i kødet, derefter 200 °C til sværen bobler).
 
-  Mange oplever, at sværen bliver blød i stedet for sprød. Det skyldes ofte for lidt salt, ujævn placering eller at stegen får for lav slutvarme. Derfor bruger vi en todelt metode med rolig stegning først og højere varme til sidst.
+  Typisk **tid for 1,2-1,5 kg**: omkring **45-50 minutter ved 180 °C** til kernetemp, plus **8-12 minutter ved 200 °C** til sprød svær — altid under opsyn i slutfasen og gerne med termometer.
 
-  Resultatet er en flæskesteg, der både fungerer til søndag og til mindre julemenuer, hvor du ikke vil fylde hele ovnen.
+  Blød svær skyldes ofte for lidt salt, skæve riller eller for lav slutvarme. Denne guide er skåret til, så du kan stole på både temperatur og tidsintervaller.
 conclusion: |
   Når stegen har hvilet, får du pænere skiver og mindre safttab på skærebrættet. Husk at skære mellem sværene med en skarp kniv, så de ikke knækker af i store stykker.
 

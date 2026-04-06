@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer lammekølle i skiver – saftig påskemiddag uden ovn'
-description: 'Lammekølle i skiver i airfryer med hvidløg, rosmarin og præcis kernetemperatur. Nem påskeopskrift med tid og temperatur.'
+title: 'Airfryer lammekølle (skiver) – også til hel kølle uden at skære før'
+description: 'Lammekølle i skiver i airfryer med hvidløg og rosmarin — eller brug samme marinade til hel lammekølle med ben. Kernetemperatur og tid skaleret.'
 heroImage: '/images/recipes/airfryer-lammekoelle-skiver.png'
 heroAlt: 'Skiver af saftig lammekølle med kartofler og grønne bønner på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-04-03
 prepMinutes: 12
 cookMinutes: 16
 servings: '4 portioner'
@@ -14,17 +14,21 @@ cuisine: 'Nordisk'
 temperatureC: 190
 keywords:
   - lammekølle i skiver airfryer
+  - lammekølle i airfryer
+  - hel lammekølle airfryer
+  - lammekølle med ben airfryer
   - lam i airfryer
+  - lammekoteletter airfryer
   - påske lam opskrift
   - airfryer påskemad
   - kernetemperatur lam
 featured: true
 intro: |
-  Lammekølle i skiver er en smart måde at få klassisk påskesmag på, uden at du skal stege en hel kølle i timevis. I airfryer får du hurtig varme, flot stegeskorpe og god kontrol over kernetemperaturen.
+  Mange søger **hel lammekølle i airfryer** — denne guide starter med **skiver** (kortest tid, nemmest i de fleste kurve), men marinade og temperatur passer også, hvis du vil stege **hel kølle med ben**, så længe køllen passer i kurven og du steger efter kerne-temp.
 
-  Tricket er at arbejde med jævn tykkelse på kødet og give det kort hviletid efter stegning. Så beholder du saftigheden, og smagen af hvidløg og rosmarin træder tydeligt frem.
+  Lammekølle i skiver er en smart måde at få klassisk påskesmag på uden timevis stegetid. I airfryer får du hurtig varme, flot stegeskorpe og god kontrol over kernetemperaturen.
 
-  Opskriften her er ideel, når du vil servere noget ekstra lækkert i påsken, men stadig holde det enkelt.
+  Tricket er jævn tykkelse og kort hviletid efter stegning — så beholder du saftigheden, og smagen af hvidløg og rosmarin træder tydeligt frem.
 conclusion: |
   Når lammeskiverne hviler kort efter stegning, bliver de mere saftige og lettere at skære pænt. Server dem straks med kartofler og en frisk salat.
 
@@ -60,6 +64,10 @@ faq:
     answer: 'Ja, gerne 1-4 timer i køleskab for dybere smag. Tag kødet ud 20 minutter før stegning.'
   - question: 'Hvad passer til lam i påsken?'
     answer: 'Kartofler, gulerødder, grøn salat og en let sauce med citron eller yoghurt passer rigtig godt.'
+  - question: 'Kan jeg stege hel lammekølle i airfryer i stedet for skiver?'
+    answer: 'Ja, hvis køllen passer liggende med luft omkring. Brug samme krydring/marinade, start ved lidt lavere varme (fx 175-180 °C) og steg til kerne ca. 58-65 °C som ved skiver — regn med længere tid pr. kg end skiver. Vend eller roter for jævn farve hvis din model tillader det.'
+  - question: 'Forskel på lammekølle i skiver og hel kølle i airfryer?'
+    answer: 'Skiver giver hurtigere og mere forudsigelig tilberedning i en typisk kurv. Hel kølle tager længere og kræver plads, men kan give flot feststeg — kernetermometer i tykkeste sted er vigtigst.'
 ---
 
 ### Hvorfor lam er oplagt til påske

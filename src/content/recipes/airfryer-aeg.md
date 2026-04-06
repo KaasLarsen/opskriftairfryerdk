@@ -1,6 +1,6 @@
 ---
-title: 'Airfryer æg – blødkogte i skal, spejlæg og æggemuffins'
-description: 'Æg i airfryer: blødkogte i skal til brunch, spejlæg i silikoneform og æggemuffins. Tider, temperatur og tips – inkl. toaststrimler som tilbehør.'
+title: 'Airfryer æg – røræg, blødkogte i skal, spejlæg og muffins'
+description: 'Æg i airfryer: røræg (scrambled) i form, blødkogte i skal, spejlæg og æggemuffins. Tider, temperatur og tips – inkl. toast som tilbehør.'
 heroImage: '/images/recipes/airfryer-aeg.png'
 heroAlt: 'Blødkogte æg i hvide æggebægre med flydende blomme, toaststrimler og purløg på hvid tallerken'
 pubDate: 2026-04-02
@@ -14,6 +14,8 @@ cuisine: 'Dansk'
 temperatureC: 165
 keywords:
   - airfryer æg
+  - røræg i airfryer
+  - scrambled æg i airfryer
   - blødkogte æg airfryer
   - æg i skal airfryer
   - spejlæg airfryer
@@ -22,7 +24,7 @@ keywords:
   - airfryer morgenmad
 featured: true
 intro: |
-  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. Du kan lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – eller spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
+  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. Du kan lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – **røræg / scrambled** i en samlet form, spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
 
   Til æg i skal holder du en **lav til mellem temperatur** og accepterer, at minutter præcis skal tilpasses din model og æggestørrelse.
 
@@ -64,7 +66,18 @@ faq:
     answer: 'Kun hvis producenten godkender det til din airfryer. Silikone er ofte nemmere og mere skånsomt.'
   - question: 'Kan man lave blødkogte æg i airfryer?'
     answer: 'Ja – læg hele æg i skal i kurven ved ca. 120 °C og giv typisk 10-14 minutter fra køl; afkøl i isvand og tilpas tid efter første forsøg.'
+  - question: 'Kan man lave røræg i airfryer?'
+    answer: 'Ja — pisk 3 æg med 2 spsk mælk, salt og peber i en lille ildfast eller silikoneskål (smurt). Kør ved ca. 160 °C og rør med gaffel hver 2.–3. minut i 8–11 minutter, tallene afhænger af skål og model. Stop når massen er cremet og ikke løbende.'
+  - question: 'Røræg i airfryer temperatur?'
+    answer: 'Hold dig til 155–165 °C så ægget ikke “gummier”. Højere varme kræver kortere intervaller og hyppigere omrøring.'
 ---
+
+### Røræg (scrambled) i airfryer
+
+1. Pisk **3 æg** med **2 spsk mælk** (eller fløde), **½ tsk salt** og peber. Du kan tilsætte revet ost eller purløg.
+2. Hæld i en **smurt** lille fad (fx 12–14 cm) der står stabilt i kurven.
+3. Forvarm til **160 °C**. Kør **2 minutter**, rør med gaffel, gentag med **1½–2 minutters** intervaller indtil cremet røræg — typisk **8–11 minutter** i alt.
+4. Tag ud med det samme — residualvarme gør dem tørre hvis de står i skålen.
 
 ### Blødkogte æg i skal (brunch som på billedet)
 
