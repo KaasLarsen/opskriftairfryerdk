@@ -1,8 +1,10 @@
 ---
 title: 'Pulled chicken i airfryer – mørt og nemt til burger og salat'
 description: 'Pulled chicken fra airfryer med krydret rub og kort simretid i folie. Tider, temperatur og hvordan du undgår tør kylling – til wraps, salater og meal prep.'
+heroImage: '/images/recipes/airfryer-pulled-chicken.png'
+heroAlt: 'Skål med trukket kylling med krydret overflade på linned, airfryer og grønt tilbehør i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 10
 cookMinutes: 35
 servings: '4 portioner'
