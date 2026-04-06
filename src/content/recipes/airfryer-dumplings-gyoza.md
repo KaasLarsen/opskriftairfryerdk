@@ -1,8 +1,10 @@
 ---
 title: 'Dumplings og gyoza i airfryer – frosne eller friske'
 description: 'Gyoza og dumplings i airfryer med sprød bund: forvarmning, damp og olie. Sikre tider for frosne kødboller og grøntsagsdumplings.'
+heroImage: '/images/recipes/airfryer-dumplings-gyoza.png'
+heroAlt: 'Gyldne gyoza på fad med sesam, forårsløg og chili-soja, spisepinde løfter en dumpling med fyld, sort airfryer med flere dumplings i åben kurv og dip i lille skål'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 3
 cookMinutes: 14
 servings: '2 portioner (ca. 16 stk.)'
