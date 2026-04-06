@@ -1,8 +1,10 @@
 ---
 title: 'Havregrød i airfryer i portionsform – cremet uden gryde'
 description: 'Havregrød i airfryer i små ildfaste skåle med mælk og kanel. Tider og forhold så grøden ikke koger over eller brænder på.'
+heroImage: '/images/recipes/airfryer-havregroed.png'
+heroAlt: 'Dampende havregrød i skål med blåbær, jordbær, banan, mandler og honning på træbord, honningglas og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 6
 cookMinutes: 22
 servings: '2 portioner'
