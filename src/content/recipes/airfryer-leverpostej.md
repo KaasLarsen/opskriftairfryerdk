@@ -1,8 +1,10 @@
 ---
 title: 'Leverpostej i airfryer – opvarmning og bagning af postej'
 description: 'Leverpostej i airfryer: kernetemperatur, tid for rå og færdigbagt postej, og hvordan du undgår tør skorpe. Praktisk til frokost og pålæg.'
+heroImage: '/images/recipes/airfryer-leverpostej.png'
+heroAlt: 'Bagt leverpostej i hvid ildfast form med brunet top og hakket persille, airfryer og skål med cornichoner i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 5
 cookMinutes: 35
 servings: '6–8 portioner (én postej)'

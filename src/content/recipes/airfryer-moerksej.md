@@ -1,8 +1,10 @@
 ---
 title: 'Mørksej og sejfilet i airfryer – fast fisk uden tør kant'
 description: 'Mørksej i airfryer med citron og dild: tid pr. tykkelse, temperatur og tips så fisken ikke falder fra hinanden. Også til sejfilet.'
+heroImage: '/images/recipes/airfryer-moerksej.png'
+heroAlt: 'To hvide fiskefileter i ovalt fad med urter, citronskiver og let sauce, airfryer og grønt i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 8
 cookMinutes: 10
 servings: '4 portioner'
