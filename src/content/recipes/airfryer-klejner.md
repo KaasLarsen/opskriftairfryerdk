@@ -1,8 +1,10 @@
 ---
 title: 'Klejner i airfryer – sprødere uden frityrgryde'
 description: 'Traditionelle klejner i airfryer: dej, form og tider. Mindre fedt end frityr – gode til jul og fastelavn med stegeskorpe og blød midte.'
+heroImage: '/images/recipes/airfryer-klejner.png'
+heroAlt: 'Skål med gyldne klejner drysset med sukker på linned, flere klejner i åben airfryer-kurv og lille skål med sukker i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 40
 cookMinutes: 18
 servings: 'Ca. 24 klejner'

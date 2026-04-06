@@ -1,8 +1,10 @@
 ---
 title: 'Ristede kikærter i airfryer – sprøde snacks og topping'
 description: 'Kikærter i airfryer: afdryp, tør, krydder og rist til sprøde snacks. Tider, olie og hvorfor batch er vigtig for crunch.'
+heroImage: '/images/recipes/airfryer-kikaerter-roestet.png'
+heroAlt: 'Skål med gyldne ristede kikærter med krydderier, persille og citronbåd på træbord, honningglas og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-06
 prepMinutes: 10
 cookMinutes: 22
 servings: '4 portioner som snack'
