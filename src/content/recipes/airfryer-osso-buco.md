@@ -1,8 +1,10 @@
 ---
 title: 'Osso buco i airfryer – kalveskank i tomatoesauce med gremolata'
 description: 'Osso buco (kalveskank tværs) i airfryer: steg skorpe først, derefter langsom saucetilberedning i lukket fad. Tid, temperatur og tips til mørt kød.'
+heroImage: '/images/recipes/airfryer-osso-buco.png'
+heroAlt: 'Lys high-key: osso buco med tomatsauce og gremolata i skål på lyst træ, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 25
 cookMinutes: 95
 servings: '4 portioner (4 skiver med ben)'

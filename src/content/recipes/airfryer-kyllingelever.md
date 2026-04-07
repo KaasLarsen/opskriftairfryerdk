@@ -1,8 +1,10 @@
 ---
 title: 'Kyllingelever i airfryer – møre og med stegeskorpe'
 description: 'Kyllingelever i airfryer: forberedelse, krydring, typisk tid ved 185–200 °C og kernetemperatur så de ikke bliver tørre. Tips mod bitter smag og oversprøjt.'
+heroImage: '/images/recipes/airfryer-kyllingelever.png'
+heroAlt: 'Lys madfoto: stegte kyllingelever på tallerken med citron og salat, lyst træ, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 12
 cookMinutes: 14
 servings: '3–4 portioner som hovedret eller 4–6 som forret'

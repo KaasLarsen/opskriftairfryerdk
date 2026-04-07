@@ -1,8 +1,10 @@
 ---
 title: 'Gullasch i airfryer – okse simreret med paprika og tomater'
 description: 'Gullasch i airfryer: brunede kødtern, paprika, løg og fond i lukket ildfast fad. Tid ved ca. 160 °C, tykkere sovs og FAQ om kartofler og smag.'
+heroImage: '/images/recipes/airfryer-gullasch.png'
+heroAlt: 'Redaktionelt lys madfoto: damp over gullasch med oksekød, paprika og persille, brød og ske ved siden af, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 25
 cookMinutes: 75
 servings: '4–6 portioner'

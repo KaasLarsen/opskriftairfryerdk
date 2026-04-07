@@ -35,7 +35,7 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 27 | flæskesteg i airfryer | 109, 11697, 1%, 19.6 | optimer | `airfryer-flaeskesteg` — meta + FAQ tid |
 | 28 | gyoza i airfryer | 97, 758, 13%, 5.3 | findes | `airfryer-dumplings-gyoza` (ny) |
 | 29 | blomkål i airfryer med ost | 91, 321, 28%, 2.8 | findes | `airfryer-blomkaal` (+ optimer ost/parmesan) |
-| 30 | osso buco i airfryer | 90, 180, 50%, 2.7 | mangler | niche |
+| 30 | osso buco i airfryer | 90, 180, 50%, 2.7 | findes | `airfryer-osso-buco` |
 | 31 | klejner airfryer | 89, 260, 34%, 2.2 | findes | `airfryer-klejner` |
 | 32 | dumplings i airfryer | 88, 720, 12%, 8.9 | findes | `airfryer-dumplings-gyoza` |
 | 33 | onion boil opskrift dansk | 88, 492, 18%, 5.0 | irrelevant | ikke airfryer-opskrift |
@@ -47,7 +47,7 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 39 | entrecote bøf i airfryer | 76, 455, 17%, 4.5 | findes | `airfryer-okseboef-steak` |
 | 40 | laks i airfryer med asparges | 76, 310, 25%, 3.2 | findes | `airfryer-laks`, `airfryer-aeggekage-asparges-bacon` delvis |
 | 41 | pulled kylling i airfryer | 75, 392, 19%, 3.5 | findes | `airfryer-pulled-chicken` |
-| 42 | spidskål i airfryer casper sobczyk | 75, 295, 25%, 4.7 | mangler | lav senere / groentsagsmix |
+| 42 | spidskål i airfryer casper sobczyk | 75, 295, 25%, 4.7 | findes | `airfryer-spidskaal` |
 | 43 | nachos air fryer | 73, 754, 10%, 5.3 | findes | nachos |
 | 44 | æblechips airfryer | 73, 442, 17%, 4.6 | findes | `airfryer-aeblechips` |
 | 45 | lammekølle airfryer | 73, 288, 25%, 9.9 | optimer | lam-skiver + FAQ hel |

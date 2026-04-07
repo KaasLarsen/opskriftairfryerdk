@@ -1,8 +1,10 @@
 ---
 title: 'Kalveculotte i airfryer – mør kalvesteg med mild smag'
 description: 'Kalveculotte i airfryer: skånsom varme, kort bruning og kernetemperatur så den møre kalv ikke tørrer. Tid for ca. 0,8–1,2 kg og tips til sauce.'
+heroImage: '/images/recipes/airfryer-kalveculotte.png'
+heroAlt: 'Detaljerig kalveculotte: skiver med rosa midte, urter, hvidløg og saltflag på tallerken, dramatisk men lyst lys, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 20
 cookMinutes: 32
 servings: '4 portioner (steg ca. 0,8–1,2 kg)'

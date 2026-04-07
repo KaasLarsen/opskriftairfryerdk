@@ -1,8 +1,10 @@
 ---
 title: 'Oksespidsbryst i airfryer – langtidsstegt, mørt og med saft'
 description: 'Oksespidsbryst (brisket-agtigt) i airfryer: rub, kort varme og lang simretid i lukket fad med fond. Tid til ca. 1–1,3 kg, probe-mørhed og skiveskåret eller trukket.'
+heroImage: '/images/recipes/airfryer-oksespidsbryst.png'
+heroAlt: 'Lys madfoto: skåret oksespidsbryst på bræt med tilbehør, lyst rum, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 25
 cookMinutes: 110
 servings: '4–6 portioner (ca. 1–1,3 kg uden ben)'

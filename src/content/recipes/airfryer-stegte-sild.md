@@ -1,8 +1,10 @@
 ---
 title: 'Stegte sild i airfryer – sprød panering som på panden'
 description: 'Stegte sildefileter i airfryer med mel, æg og rasp. Kortere tid end tykkere fisk, tips til salt sild og servering med citron og remoulade.'
+heroImage: '/images/recipes/airfryer-stegte-sild.png'
+heroAlt: 'Lys nordisk stil: panerede stegte sild med citron og kartoffel på tallerken, lyst træ, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 18
 cookMinutes: 10
 servings: '4 portioner'

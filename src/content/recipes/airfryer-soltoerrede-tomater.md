@@ -1,8 +1,10 @@
 ---
 title: 'Soltørrede tomater i airfryer – koncentreret smag som i ovnen'
 description: 'Tørre eller halvtørre tomater i airfryer ved lav varme: cherry eller plomme, tid ved ca. 110–120 °C og tips hvis din maskine ikke går lavt nok. Opbevaring i olie.'
+heroImage: '/images/recipes/airfryer-soltoerrede-tomater.png'
+heroAlt: 'Glansfulde halvtørre tomater med olie, basilikum og salt, appetitlig makro-stemning på lyst træ, airfryer antydet i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-11
 prepMinutes: 15
 cookMinutes: 80
 servings: 'Ca. 1–1,5 dl færdige tomater efter reduktion'
