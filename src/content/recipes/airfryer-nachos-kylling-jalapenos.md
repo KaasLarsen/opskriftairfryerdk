@@ -1,6 +1,6 @@
 ---
 title: 'Nachos i airfryer – med kylling og jalapenos (eller uden kylling)'
-description: 'Nachos i airfryer: samme metode med eller uden kylling — ost, jalapenos og sprøde chips. Café-nachos der ikke bliver slatne.'
+description: 'Nachos i airfryer med eller uden kylling: ost mellem lag af chips, jalapenos, 7–9 min ved 190 °C — så undgår du slatne chips. FAQ om ost, glutenfri og vegansk.'
 heroImage: '/images/recipes/airfryer-nachos-kylling-jalapenos.png'
 heroAlt: 'Airfryer nachos med kylling, jalapenos og smeltet ost på bakke med creme'
 pubDate: 2026-04-02
@@ -67,6 +67,12 @@ faq:
     answer: 'Ja. Spring kylling, olie og tacokrydderi over. Fordel chips, ost og jalapenos (eller peber/bønner) i ét lag og steg samme tid — hold evt. 1 minut kortere i starten og tjek at osten bobler uden at chipsene mørkner for meget.'
   - question: 'Er nachos i airfryer det samme som klassiske nachos?'
     answer: 'Samme idé, hurtigere og ofte sprødere bund fordi luften cirkulerer. Toppings med meget væske gør chips bløde — hold salsa til servering ved siden af.'
+  - question: 'Osten smelter ikke på nachos i airfryer — hvad gør jeg?'
+    answer: 'Brug ost der smelter godt (cheddar-blanding, mozzarella blandet i), og undgå for tykt lag chips uden ost imellem. Start evt. med 2 minutter solo på chips, så de er varme, og fordel ost i tynde lag mellem chips i stedet for ét bjerg ovenpå.'
+  - question: 'Nachos i airfryer glutenfri?'
+    answer: 'Ja med glutenfri majs-chips — metoden er den samme; de kan brune hurtigere, så hold øje sidste minutter.'
+  - question: 'Veganske nachos i airfryer?'
+    answer: 'Erstat kylling med sorte bønner eller søde kartoffel-tern der er forstegt/kogt og godt afdryppet; brug vegansk ost — ofte kræver det 1–2 minutter ekstra eller lidt lavere varme så osten smelter uden at chipsene branker.'
 ---
 
 ### Derfor bliver airfryer-nachos bedre

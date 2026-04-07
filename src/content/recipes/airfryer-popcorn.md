@@ -1,10 +1,10 @@
 ---
 title: 'Popcorn i airfryer – kan det lade sig gøre? (myter og bedre metoder)'
-description: 'Popcorn i airfryer: hvorfor de fleste airfryere ikke er oplagte popcornmaskiner, og hvordan du evt. prøver små batch hvis din manual tillader det.'
+description: 'Popcorn i airfryer: virker det, brandfare, og hvornår gryde eller maskine er klogere? Ærlig guide med små batch, manual-tjek og bedre alternativer i airfryeren.'
 heroImage: '/images/recipes/airfryer-popcorn.png'
 heroAlt: 'Skål fyldt med frisk popcorn på linned, saltkorn på bordet og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-04-11
 prepMinutes: 3
 cookMinutes: 12
 servings: '2 små portioner (eksperiment)'
@@ -21,6 +21,8 @@ intro: |
   **Popcorn i airfryer** bliver søgt enormt ofte — men **de fleste airfryere er ikke designet som popcornmaskiner**. Popcorn skal have **ens varme**, lidt **fedt** på kernen og plads til at **“poppe”** uden at ramme varmt metal eller blæses ud i ventilationsriste.
 
   Denne side er både **praktisk guide** og **ærligt varsko**: læs **din manual** først. Nogle producenter fraråder popcorn eksplicit.
+
+  **Hvorfor så mange søger emnet?** Popcorn er en hurtig snack; folk håber airfryeren kan erstatte mikro eller gryde. I praksis er **varm luft og små løse kerner** ofte en dårlig kombination — derfor er lav **CTR** på mange søgeresultater: svaret er ofte “måske, men…” frem for et entydigt ja.
 
   Hvis du alligevel eksperimenterer: **meget lille mængde**, **rist eller perforated silikonekurv**, og **hold kurven delvist lukket** hvis sikkerheden tillader det — aldrig uden opsigt.
 conclusion: |
@@ -46,6 +48,16 @@ faq:
     answer: 'Nej. Nogle producenter fraråder det. Læs manualen — luftcirkulation og små løse kerner kan give brandrisiko.'
   - question: 'Popcorn uden olie i airfryer?'
     answer: 'Næsten alle kerner popper bedst med en smule fedt — ellers risiko for brændte u-poppede kerner.'
+  - question: 'Airfryer vs. gryde vs. popcornmaskine — hvad er bedst?'
+    answer: 'Til forudsigelige resultater: gryde med låg eller elektrisk popcornmaskine. Airfryer kan virke på nogle modeller, men er sjældent det mest stabile valg, og manualen siger ofte nej.'
+  - question: 'Hvorfor popper ikke alle kerner i airfryer?'
+    answer: 'Uens fordeling af varme, for tykt lag kerner og for lidt fedt på overfladen giver “gamle maver”. Små batch og ryst/omfordel kun hvis manualen tillader det under kørsel.'
+  - question: 'Kan popcorn i airfryer tage ild?'
+    answer: 'Der er brandrisiko hvis kerner sidder fast i varmelegeme eller olie overophedes. Sluk ved brændt lugt, brug aldrig metalfolie-tricks mod fabrikantens anvisning, og hold børn væk fra åbning ved høj varme.'
+  - question: 'Hvilken temperatur til popcorn i airfryer?'
+    answer: 'Mange manualer angiver en øvre grænse — overskrid den ikke. Eksperiment-guiden her bruger 200 °C som udgangspunkt kun hvis det matcher din model; ellers følg det, producenten anbefaler til små, tørre snacks.'
+  - question: 'Smager popcorn fra airfryer som biograf-popcorn?'
+    answer: 'Sjældent helt samme “coating” som kommerciel friture. Du får mere hjemme-stil; tilsæt smeltet smør eller lidt saltblandingen efter popping som ved andre metoder.'
 ---
 
 ### Sikkerhed

@@ -1,10 +1,10 @@
 ---
 title: 'Flæskesteg i airfryer – tid, temperatur og sprød svær (1,2-1,5 kg)'
-description: 'Flæskesteg i airfryer: typisk 55-65 min i alt ved 180 °C + kort sprødfase ved 200 °C. Kernetemperatur, ridset svær og typiske fejl (blød svær, for tidlig høj varme) — og hvordan du undgår dem.'
+description: 'Flæskesteg i airfryer: samlet tid ofte ca. 55–70 min for 1,2–1,5 kg (180 °C + sprødfase 200 °C). Kernetemperatur, ridset svær, mindre steg og typiske fejl — så du rammer sprød svær og saftigt kød.'
 heroImage: '/images/recipes/airfryer-flaeskesteg.png'
 heroAlt: 'Flæskesteg med sprød svær, brun sovs, kartofler og rødkål serveret foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-04-03
+updatedDate: 2026-04-11
 prepMinutes: 15
 cookMinutes: 55
 servings: '4-6 portioner'
@@ -22,7 +22,9 @@ featured: true
 intro: |
   **Flæskesteg i airfryer** kan give sprød svær og saftigt kød, når du har styr på tre ting: **riller helt ned til fedtet** (ikke kødet), **salt mellem hver svær** og **kernetemperatur før sprødfasen** (ca. 63-65 °C i kødet, derefter 200 °C til sværen bobler).
 
-  Typisk **tid for 1,2-1,5 kg**: omkring **45-50 minutter ved 180 °C** til kernetemp, plus **8-12 minutter ved 200 °C** til sprød svær — altid under opsyn i slutfasen og gerne med termometer.
+  Typisk **tid for 1,2-1,5 kg**: omkring **45-50 minutter ved 180 °C** til kernetemp, plus **8-12 minutter ved 200 °C** til sprød svær — **samlet ofte 55-70 minutter** fra opvarmet maskine. Tilpas altid efter termometer; søgninger efter “flæskesteg airfryer tid” kræver netop den kombination af **uret som vejledning** og **grader i kødet** som dommer.
+
+  **Mindre steg (ca. 800 g-1 kg)** kan være færdig ca. 10-15 minutter før; **større stykker** eller meget kølig start giver længere første fase.
 
   Blød svær skyldes ofte for lidt salt, skæve riller eller for lav slutvarme. Denne guide er skåret til, så du kan stole på både temperatur og tidsintervaller.
 conclusion: |
@@ -61,6 +63,12 @@ faq:
     answer: 'Tjek først om sværen er saltet mellem alle riller og ligger vandret. Giv derefter kort ekstra tid ved høj varme under opsyn.'
   - question: 'Kan jeg lave sovs af stegesky?'
     answer: 'Ja, hvis din model og opsætning giver opsamlet væske. Ellers kan du lave en separat hurtig sovs i gryde.'
+  - question: 'Hvor lang tid tager en mindre flæskesteg i airfryer?'
+    answer: 'Ved ca. 800 g–1 kg og 180 °C i første fase: ofte 35–45 minutter til kernetemp er tæt på, derefter kortere sprødfase (fx 6–10 min ved 200 °C). Mål altid 63–65 °C i kødet før du cracker varmen op på sværen.'
+  - question: 'Skal flæskesteg have optøet helt før airfryer?'
+    answer: 'Helst ja — fuldt optøet kød giver mere forudsigelig tid og jævn kernetemperatur. Frossen steg kræver markant længere tid og hyppigere målinger; følg fødevaremyndighedernes anbefalinger for gennemstegning.'
+  - question: 'Passer en hel flæskesteg i min airfryer?'
+    answer: 'Mål kurvens indre højde og tillad lidt luft over sværen til låget. Sidder stegen for stramt, får du ujævn svær og risiko for at ramme varmeelementet — vælg mindre snit eller del i to omgange.'
 ---
 
 ### Svær, temperatur og tålmodighed
@@ -74,3 +82,7 @@ Hvis stegen hælder, bliver den ene side ofte blød. Brug derfor en lille støtt
 ### Restemad med flæskesteg
 
 Skær rester i tynde skiver og brug dem i sandwich med syltede agurker, rødkål og sennepsmayo.
+
+### Sådan læser du søgeresultatet og snippets
+
+Mange lander på siden efter at have søgt **samlet tid** eller **temperatur**. Brug tabellen i din egen logbog første gang: notér vægt, model og minutter til 63 °C og til færdig svær. Så matcher dit næste forsøg bedre end generiske videoer eller opskrifter uden termometer.

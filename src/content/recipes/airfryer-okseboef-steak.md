@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer oksebøf og ribeye – mør steak (ribeye, entrecôte eller yderfilet)'
-description: 'Oksebøf og ribeye i airfryer med sprød stegeskorpe og rosa midte. Tid efter tykkelse, kernetemperatur og forskel på ribeye og entrecôte.'
+description: 'Oksebøf, entrecôte og ribeye i airfryer: 4+4 min ved 200 °C til medium-rare (ca. 2,5 cm), kernetemperatur og hvile. Plus korte råd til tykkere snit og hele ribeye-stykke.'
 heroImage: '/images/recipes/airfryer-okseboef-steak.png'
 heroAlt: 'Skåret oksebøf med rosa midte, urtesmør og persille ved siden af små ristede kartofler, rosmarin og citron på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-03
+updatedDate: 2026-04-11
 prepMinutes: 15
 cookMinutes: 14
 servings: '2 portioner'
@@ -70,6 +70,12 @@ faq:
     answer: 'Ved ca. 2,5 cm og 200 °C: ofte 8-10 minutter samlet (4+4 minutter med vending) til medium-rare — tjek kerne. Tykkere ribeye: 5+5 minutter som udgangspunkt, derefter termometer.'
   - question: 'Hvad er forskellen på ribeye og entrecôte i airfryer?'
     answer: 'Ribeye kommer fra tykribben med karakteristisk fedt “øje”. Entrecôte er i mange butikker et ribbens-snittalternativ og kan være tilsvarende, men navnet dækker ikke altid samme snit — steg altid efter tykkelse og kerne-temp, ikke kun tid.'
+  - question: 'Entrecôte i airfryer — samme tid som ribeye?'
+    answer: 'Hvis tykkelsen matcher (fx 2,5 cm): ja, samme udgangspunkt (fx 4+4 min ved 200 °C) og justér ud fra termometer. Magrere snit eller tynd kant kan have brug for 30–60 sekunder mindre pr. side.'
+  - question: 'Kan man stege en hel ribeye-steg (helt stykke) i airfryer?'
+    answer: 'Det kan lade sig gøre i store maskiner, men det ligner mere **mini-stegning** end klassisk bøf: bind eventuelt stegen, brug **lavere temperatur** (fx 160–175 °C) og **længere tid** med vending hver 10.–15. minut til ønsket kerne-temp — ellers risiko for mør yderkant og rå midte. For de fleste hjem: skær i bøffer eller brug ovn til hele stykker over ca. 500 g.'
+  - question: 'Hel ribeye steg i airfryer — hvilken kernetemperatur?'
+    answer: 'Som ved andre steg: mål i tykkeste del. Rosa midte efter hvile: typisk **53–58 °C** før hvile afhængigt af præference; medium **58–62 °C** før hvile. Tyk steg stiger 3–6 grader under folie.'
 ---
 
 ### Ribeye i airfryer (tykkelse og tid)
@@ -87,3 +93,7 @@ Pande giver ofte den dybeste Maillard i ét tryk; airfryer kompenserer med prakt
 ### Sovs på siden
 
 Brun smør, pebersovs eller chimichurri passer godt. Hold sovsen uden for kurven – airfryer er til kødet, ikke til emulsioner under stegning.
+
+### Hel ribeye / tyk cuvette som “ministeg”
+
+Har du ét **sammenhængende stykke** (ca. 400–700 g) der næsten fylder kurven: **forvarm til 170 °C**, gnid med olie, salt og peber, læg med fedtkant ned hvis muligt. Steg **12–18 minutter** med **2–3 vendinger**, til den **tykkeste del** nærmer sig **50–54 °C** for rosa efter hvile. Hvil **8–10 minutter**. Juster kraftigt efter form — tynde ender vil altid blive mere gennemstegte; derfor er **tykke bøffer** ofte lettere end ét langt udskåret stykke i luftfriture.

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer æg – røræg, blødkogte i skal, spejlæg og muffins'
-description: 'Æg i airfryer: røræg (scrambled) i form, blødkogte i skal, spejlæg og æggemuffins. Tider, temperatur og tips – inkl. toast som tilbehør.'
+description: 'Æg i airfryer: røræg i skål (8–11 min / 160 °C med omrøring), blødkogte i skal, spejlæg og muffins. Temperatur, tider til din model og toast som tilbehør.'
 heroImage: '/images/recipes/airfryer-aeg.png'
 heroAlt: 'Blødkogte æg i hvide æggebægre med flydende blomme, toaststrimler og purløg på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-04-11
 prepMinutes: 8
 cookMinutes: 10
 servings: '2 personer (2 spejlæg + 4 små muffins)'
@@ -24,7 +24,9 @@ keywords:
   - airfryer morgenmad
 featured: true
 intro: |
-  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. Du kan lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – **røræg / scrambled** i en samlet form, spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
+  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. **Røræg (scrambled)** er en af de mest søgte varianter: du pisker æg i en **lille smurt skål**, kører ved **ca. 160 °C** og **ror hver 2.–3. minut**, så du ender med cremet masse uden at sidde ved panden.
+
+  Du kan også lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
 
   Til æg i skal holder du en **lav til mellem temperatur** og accepterer, at minutter præcis skal tilpasses din model og æggestørrelse.
 
@@ -70,6 +72,10 @@ faq:
     answer: 'Ja — pisk 3 æg med 2 spsk mælk, salt og peber i en lille ildfast eller silikoneskål (smurt). Kør ved ca. 160 °C og rør med gaffel hver 2.–3. minut i 8–11 minutter, tallene afhænger af skål og model. Stop når massen er cremet og ikke løbende.'
   - question: 'Røræg i airfryer temperatur?'
     answer: 'Hold dig til 155–165 °C så ægget ikke “gummier”. Højere varme kræver kortere intervaller og hyppigere omrøring.'
+  - question: 'Hvor meget røræg ad gangen i airfryer?'
+    answer: 'Bedst **3–4 æg** i en skål på ca. 12–14 cm. Flere æg i én skål kræver længere tid og hyppigere omrøring; to skåle samtidig giver ofte ujævn varme — lav i hold eller brug dobbeltkurv med god luft.'
+  - question: 'Kan jeg lave røræg uden mælk?'
+    answer: 'Ja — brug vand, plantemælk eller en ekstra dot fløde. Mælk giver ofte lettest konsistens; uden kan du røre oftere og stoppe tidligere.'
 ---
 
 ### Røræg (scrambled) i airfryer

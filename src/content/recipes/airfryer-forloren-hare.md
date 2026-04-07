@@ -1,10 +1,10 @@
 ---
 title: 'Forloren hare i airfryer – bacon, sovs og klassisk farsbrød'
-description: 'Forloren hare fra airfryer med saftig midte, bacon på toppen og tydelige tider. Perfekt når ovnen er optaget – med tips til gennemstegning og brun sovs.'
+description: 'Forloren hare i airfryer: typisk 34–42 min (750 g flad fars, 170–180 °C i to faser). Saftig midte, sprød bacon, kernetemperatur og brun sovs når ovnen er optaget.'
 heroImage: '/images/recipes/airfryer-forloren-hare.png'
 heroAlt: 'Lys appetitlig madfoto: skiver af forloren hare med bacon på tallerken, lyst træbord, airfryer i blødt fokus i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-10
+updatedDate: 2026-04-11
 prepMinutes: 25
 cookMinutes: 42
 servings: '4 portioner'
@@ -69,6 +69,12 @@ faq:
     answer: 'Typisk **34–42 minutter i alt** ved denne størrelse og 170–180 °C i to faser — første gang: stol på **temperatur i midten** frem for et fast minuttal.'
   - question: 'Passer det til jul eller søndagsmiddag?'
     answer: 'Ja — supplér med [varm kartoffelsalat](/opskrifter/airfryer-varm-kartoffelsalat) eller kogte kartofler; sovs laves som du plejer ved siden af.'
+  - question: 'Hvor mange gram fars passer i en almindelig airfryer?'
+    answer: '750 g som her er et godt udgangspunkt i mellemstore kurve. Over 900–1000 g: form lavere bredere brød eller steg i to omgange, ellers bliver midten svær at gennemstege.'
+  - question: 'Hvorfor falder bacon fra forloren hare i airfryer?'
+    answer: 'For tyk bacon eller for lidt tryk i farsen. Tryk bacon let fast; ved løs bacon kan du sætte et bagepinde-net eller ekstra tyndt baconlag sidst i højere fase.'
+  - question: 'Kan jeg fryse forloren hare bagt i airfryer?'
+    answer: 'Ja i skiver med bakepaper imellem. Optø i køleskab og genvarm i airfryer ved 160–170 °C til kernen er varm — undgå mikro hvis du vil bevare lidt bid i yderkanten.'
 ---
 
 ### Fars vs. ovn — forventningsafstemning

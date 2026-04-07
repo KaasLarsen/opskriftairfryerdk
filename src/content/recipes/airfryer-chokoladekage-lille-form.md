@@ -1,10 +1,10 @@
 ---
-title: 'Kage i airfryer: mørk chokoladekage i lille form (nem)'
-description: 'Lav en lille chokoladekage i airfryer i silicone- eller metalform – perfekt som “kage i airfryer”-svar med tid, temperatur og FAQ om størrelse på form.'
+title: 'Kage i airfryer: mørk chokoladekage i lille form (tid, form, muffins)'
+description: 'Kage i airfryer uden stor ovn: mørk chokoladekage i 15–16 cm form, temperatur 160 °C og pindeprøve. Plus FAQ om muffins, kagemix og hvornår ovn er bedre.'
 heroImage: '/images/recipes/airfryer-chokoladekage-lille-form.png'
 heroAlt: 'Lys high-key stil: lille chokoladekage på off-white tallerken, lyst træ, luftig belysning, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-10
+updatedDate: 2026-04-11
 prepMinutes: 15
 cookMinutes: 28
 servings: '6–8 små stykker (1 lille kage, ca. 15–16 cm)'
@@ -20,9 +20,11 @@ keywords:
   - chokoladekage lille form
   - nem kage airfryer
 intro: |
-  Når folk søger **kage i airfryer**, er behovet ofte det samme: **én lille kage** uden at tænde **store ovn**, eller en **hurtig dessert** på en hverdag. Her får du en **mørk chokoladekage** i **en lille rund form** (ca. **15–16 cm**), der passer mange maskiner — med **blød midte** og pænt, jævnt hæv.
+  Når folk søger **kage i airfryer**, er behovet ofte det samme: **én lille kage** uden at tænde **store ovn**, **hurtig dessert** til uventede gæster, eller en **børnefriendly** chokoladekage der ikke fylder hele køkkenet. Denne side er et **konkret svar**: én velafprøvet **mørk chokoladekage** i **15–16 cm form** med **blød midte**, tydelige minutter og **hvad du gør, hvis toppen bruner for hurtigt**.
 
   Airfryer **cirkulerer varme** hurtigere end ovn; derfor ligger vi i **lidt lavere temperatur** end klassisk bageovn og tjekker med **pindeprøve** sidste minutter. Brug **ovnsikker form** med **lav kant** så låget kan lukkes.
+
+  **Citron-, vanilje- eller lagkage** i flere etager kræver ofte bedre plads og jævnere bundvarme end én lille kurv — se FAQ for korte anbefalinger.
 
   Har du kun **store siliconeforme**, kan du dele dejen i **to mindre** eller bage **31 minutter** til midten er næsten fast og lade kagen sætte sig af kølen — se tips.
 conclusion: |
@@ -67,6 +69,14 @@ faq:
     answer: 'Til små batch og hurtig opvarmning ja — men fin kontrol på meget sarte lagkager er ofte lettere i ovn. Her spiller den simple chokoladekage airfryerens styrker.'
   - question: 'Kan jeg bruge færdig kagemix?'
     answer: 'Ja — følg posen for væske/æg og **start** med 20 min ved 150–160 °C; justér efter model.'
+  - question: 'Kan jeg lave citronkage eller vaniljekage i airfryer på samme måde?'
+    answer: 'Samme princip: lille form, 150–165 °C og pindeprøve. Udskift kakaodelen med mel og tilsæt citronskal + saft eller vanilje; tider kan ændre sig 2–4 minutter — første gang: tjek tidligt.'
+  - question: 'Hvorfor få min chokoladekage ikke hævet i airfryer?'
+    answer: 'Ofte for lav bagepulvermængde ift. dej, eller låget åbnet for ofte (tab af varme). Sørg for friskt bagepulver og undgå at røre luften ud af dejen efter sigtning.'
+  - question: 'Er airfryer god til lagkage eller cheesecakes?'
+    answer: 'Cheesecake i lille form kan lykkes med vandbad-lignende teknik i fad og lav temperatur; flere lag og glasurer er lettere i ovn hvor du har fuld højde og stabil bundvarme.'
+  - question: 'Kan jeg dobbelte opskriften til en større kage?'
+    answer: 'Kun hvis du har to små forme eller bager i to batch — en meget høj dej i én kurv risikerer rå midte og branket top. Ovn er ofte bedre til store festkager.'
 ---
 
 ### Hvorfor 160 °C og ikke 180 °C?
