@@ -1,6 +1,7 @@
 ---
 title: 'Hytteost brød og fladbrød i airfryer – proteinholdigt og hurtigt'
 description: 'Hytteost fladbrød og små hytteost-brød i airfryer uden gryde. Enkle forhold, tid ved 175–180 °C og tips så de ikke brægner fast.'
+heroImage: '/images/recipes/airfryer-hytteost-broed.png'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 prepMinutes: 12
