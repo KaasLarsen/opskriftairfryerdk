@@ -1392,6 +1392,11 @@ a:hover {
 	margin-bottom: var(--space-6);
 }
 
+/* PriceRunner widget i guides (samme blok som opskrifter) */
+.guide-prose .guide-pr-spotlight {
+	margin-top: var(--space-10);
+}
+
 .recipe-airfryer-spotlight {
 	margin-bottom: var(--space-16);
 	max-width: 52rem;

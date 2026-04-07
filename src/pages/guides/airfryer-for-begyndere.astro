@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
 import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
 
 const canonicalPath = '/guides/airfryer-for-begyndere';
@@ -252,6 +253,8 @@ const jsonLd = [
 				<p class="guide-back">
 					<a href="/guides">← Tilbage til alle guides</a>
 				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-for-begyndere" />
 
 				<h2>Ofte stillede spørgsmål</h2>
 				<div class="guide-faq">

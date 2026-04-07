@@ -1,0 +1,43 @@
+---
+import PriceRunnerProductWidget from './PriceRunnerProductWidget.astro';
+import { pickRecipeAirfryerSpotlight } from '../data/recipeAirfryerSpotlight';
+import { parsePriceRunnerProductId } from '../lib/parsePriceRunnerProductId';
+
+export interface Props {
+	/** Stabil slug pr. guide-side, fx "hvilken-airfryer" */
+	guideId: string;
+}
+
+const { guideId } = Astro.props;
+const spotlight = pickRecipeAirfryerSpotlight(`guide:${guideId}`);
+const productId = parsePriceRunnerProductId(spotlight.compareUrl);
+if (!productId) {
+	throw new Error(
+		`Guide «${guideId}»: ugyldig PriceRunner-URL i spotlight: ${spotlight.compareUrl}`,
+	);
+}
+const safeDomId = guideId.replace(/[^a-zA-Z0-9-]/g, '');
+const widgetDomId = `pr-guide-airfryer-${safeDomId}`;
+---
+
+<section
+	class="recipe-airfryer-spotlight recipe-block guide-pr-spotlight"
+	aria-label={`Airfryer: ${spotlight.label}`}
+>
+	<p class="recipe-spotlight-lead">
+		Her får du priser på <strong>{spotlight.label}</strong> via PriceRunner — som på opskrifterne
+		viser vi skiftevis et lille udvalg af populære modeller fra side til side.
+	</p>
+	<p class="recipe-spotlight-links">
+		<a href="/anmeldelser">Alle anmeldelser</a>
+		{' · '}
+		<a href="/shop">Shop med airfryere</a>
+		{' · '}
+		<a href="/guides/hvilken-airfryer">Hvilken airfryer?</a>
+	</p>
+	<PriceRunnerProductWidget
+		productId={productId}
+		widgetDomId={widgetDomId}
+		compareUrl={spotlight.compareUrl}
+	/>
+</section>

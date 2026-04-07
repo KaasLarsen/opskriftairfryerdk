@@ -1,5 +1,6 @@
 /**
- * Fire udvalgte PriceRunner compare-URL'er til roterende produkt-widget på opskrifter.
+ * Fire udvalgte PriceRunner compare-URL'er til roterende produkt-widget på opskrifter og guides.
+ * Guides bruger `pickRecipeAirfryerSpotlight(\`guide:${slug}\`)` for stabil rotation pr. side.
  * Opdatér her ved udgåede varer — valideres ved import (build).
  */
 import { parsePriceRunnerProductId } from '../lib/parsePriceRunnerProductId';
