@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer kikærter med pimentón og citron – sprøde tapas fra dåse'
 description: 'Afdryppede kikærter vendt med olie og røget paprika, ristet i airfryer til de knaser. Perfekt snack og tapas topping.'
-heroImage: '/images/recipes/airfryer-tapas-kikaerter-pimenton.jpg'
+heroImage: '/images/recipes/airfryer-tapas-kikaerter-pimenton.png'
 heroAlt: 'Gyldne ristede kikærter med krydderier i skål til tapas'
 pubDate: 2026-04-07
 prepMinutes: 8

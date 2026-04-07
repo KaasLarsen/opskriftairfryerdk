@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer fyldte champignoner med ost og hvidløg – tapas med saft'
 description: 'Portobello eller store markchampignoner fyldt med ost, hvidløg og urter. Bagt i airfryer som lun tapasbid.'
-heroImage: '/images/recipes/airfryer-tapas-fyldte-champignoner.jpg'
+heroImage: '/images/recipes/airfryer-tapas-fyldte-champignoner.png'
 heroAlt: 'Fyldte bagte champignoner med smeltet ost på tapasfad'
 pubDate: 2026-04-07
 prepMinutes: 15

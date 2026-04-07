@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer crostini med tomat og hvidløg – klassisk pan con tomate-stil'
 description: 'Sprøde brødskiver i airfryer gnides med hvidløg og toppes med moden tomat og olivenolie. Tapas på 15 minutter.'
-heroImage: '/images/recipes/airfryer-tapas-crostini-tomat.jpg'
+heroImage: '/images/recipes/airfryer-tapas-crostini-tomat.png'
 heroAlt: 'Crostini med frisk tomat, basilikum og olivenolie på fad'
 pubDate: 2026-04-07
 prepMinutes: 12

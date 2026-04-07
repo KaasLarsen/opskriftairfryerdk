@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer chorizo med honning og citron – salte-søde tapasbider'
 description: 'Steg chorizo coins i airfryer til kanterne karamelliserer. Honning, citronskal og sort peber gør dem til hurtige tapas.'
-heroImage: '/images/recipes/airfryer-tapas-chorizo-honning.jpg'
+heroImage: '/images/recipes/airfryer-tapas-chorizo-honning.png'
 heroAlt: 'Stegte chorizo-skiver med citron og honning på tapasfad'
 pubDate: 2026-04-07
 prepMinutes: 8

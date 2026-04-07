@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer varme oliven med citron og rosmarin – hurtig tapas'
 description: 'Marinerede oliven lunet i airfryer med citrus, urter og hvidløg. Server på crostini eller som selvstændig snack.'
-heroImage: '/images/recipes/airfryer-tapas-varme-oliven.jpg'
+heroImage: '/images/recipes/airfryer-tapas-varme-oliven.png'
 heroAlt: 'Varme oliven med citron og urter i lille skål til tapas'
 pubDate: 2026-04-07
 prepMinutes: 10

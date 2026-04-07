@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer padron- eller shishito-peber – blærede tapas med havsalt'
 description: 'Blisterede grønne tapas-peber i airfryer på få minutter. Olivenolie, havsalt og citron – som i Spanien.'
-heroImage: '/images/recipes/airfryer-tapas-padron-peber.jpg'
+heroImage: '/images/recipes/airfryer-tapas-padron-peber.png'
 heroAlt: 'Blærede grønne padron-peber med groft salt på fad'
 pubDate: 2026-04-07
 prepMinutes: 5

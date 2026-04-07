@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer patatas bravas – sprøde kartofler med bravassauce'
 description: 'Patatas bravas i airfryer: små kartoffelbite med sprød skorpe og røget paprika-tomatsauce. Tapas der samler en menu uden friture.'
-heroImage: '/images/recipes/airfryer-tapas-patatas-bravas.jpg'
+heroImage: '/images/recipes/airfryer-tapas-patatas-bravas.png'
 heroAlt: 'Gyldne patatas bravas med tomat-paprika sauce på fad'
 pubDate: 2026-04-07
 prepMinutes: 15

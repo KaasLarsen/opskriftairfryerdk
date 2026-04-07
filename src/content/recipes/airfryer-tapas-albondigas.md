@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer albondigas – små spanske kødboller i tomatsauce'
 description: 'Mini-kødboller (albondigas) med paprika og hvidløg, stegt i airfryer og lagt i lun tomatsauce. Tapas til mange.'
-heroImage: '/images/recipes/airfryer-tapas-albondigas.jpg'
+heroImage: '/images/recipes/airfryer-tapas-albondigas.png'
 heroAlt: 'Små kødboller albondigas med tomatsauce og persille'
 pubDate: 2026-04-07
 prepMinutes: 25

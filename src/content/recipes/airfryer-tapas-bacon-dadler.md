@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer baconviklede dadler – salte-søde tapas på 12 minutter'
 description: 'Dadler pakket ind i bacon eller pancetta, stegt i airfryer til baconen er sprød og dadlen varm. Tapas-favorit.'
-heroImage: '/images/recipes/airfryer-tapas-bacon-dadler.jpg'
+heroImage: '/images/recipes/airfryer-tapas-bacon-dadler.png'
 heroAlt: 'Baconviklede dadler med sprød ydre på tapasfad'
 pubDate: 2026-04-07
 prepMinutes: 10

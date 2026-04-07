@@ -1,7 +1,7 @@
 ---
 title: 'Airfryer tortilla-bites – spanske kartoffel-æg tern som tapas'
 description: 'Mini-tern af kold tortilla española med sprøde kanter i airfryer. Velegnet som tapas med aioli eller mojo.'
-heroImage: '/images/recipes/airfryer-tapas-tortilla-bites.jpg'
+heroImage: '/images/recipes/airfryer-tapas-tortilla-bites.png'
 heroAlt: 'Små gyldne tortilla-bites med kartoffel og æg på tapasfad'
 pubDate: 2026-04-07
 prepMinutes: 35
