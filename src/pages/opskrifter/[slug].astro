@@ -14,6 +14,7 @@ import {
 } from '../../consts';
 import { pickRelatedRecipes } from '../../utils/relatedRecipes';
 import { renderRecipeRichText, recipeSourceToPlainText } from '../../utils/recipeRichText';
+import { recipeCaloriesForSchema } from '../../utils/recipeNutrition';
 import { isoDurationFromMinutes, toAbsoluteUrl } from '../../utils/seo';
 
 export async function getStaticPaths() {
@@ -116,10 +117,11 @@ if (d.temperatureC) {
 	recipeJson.cookingMethod = 'Airfryer';
 }
 
-if (d.calories) {
+const caloriesSchema = d.calories ? recipeCaloriesForSchema(d.calories) : null;
+if (caloriesSchema) {
 	recipeJson.nutrition = {
 		'@type': 'NutritionInformation',
-		calories: d.calories,
+		calories: caloriesSchema,
 	};
 }
 
