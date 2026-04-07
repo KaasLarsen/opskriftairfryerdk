@@ -29,6 +29,8 @@ conclusion: |
 
   Server med [bagekartofler](/opskrifter/airfryer-bagekartofler), [kartofler i både](/opskrifter/airfryer-kartofler-i-baade) og en grøn salat eller [honning-gulerødder](/opskrifter/airfryer-honning-guleroedder).
 
+  Er det **kalveculotte** i stedet for okse, brug [kalveculotte i airfryer](/opskrifter/airfryer-kalveculotte) — skånsommere varme og typisk kortere tid.
+
   Vil du have **ense portionsbøffer** i stedet for hel steg, se [oksebøf og ribeye](/opskrifter/airfryer-okseboef-steak) — kortere tid, samme opmærksomhed på temperatur.
 ingredients:
   - text: '1 culottesteg af okse, ca. 1–1,4 kg — gerne med fedtkant; puds kun hårde hinder, behold tynd fedtkappe til smag'
