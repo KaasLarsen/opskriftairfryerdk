@@ -54,8 +54,8 @@ faq:
     answer: 'Ja — giver dybere smag; dejen kan blive mere klistret — køl længere.'
   - question: 'Hvorfor blev de bløde i midten?'
     answer: 'For tykke skiver eller for lav temperatur — skær tyndere og giv **+1 min** med måde.'
-  - question: 'Luft til højtaler-jul?'
-    answer: 'Ja — bage små mængder gør det overskueligt i små køkkener.'
+  - question: 'Passer det, hvis ovnen er optaget til jul?'
+    answer: 'Ja — bag små mængder i airfryeren, mens ovnen bruges til andet.'
 ---
 
 ### Servering
