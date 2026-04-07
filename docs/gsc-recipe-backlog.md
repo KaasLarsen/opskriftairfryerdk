@@ -17,17 +17,17 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 9 | entrecote i airfryer | 258, 2217, 12%, 6.8 | findes | `airfryer-okseboef-steak` |
 | 10 | hel kylling i airfryer casper sobczyk | 244, 1201, 20%, 4.5 | optimer | `airfryer-hel-kylling` — titel/svar på “tid” |
 | 11 | tofu i airfryer | 211, 1023, 21%, 6.8 | findes | `airfryer-tofu` (ny) |
-| 12 | hytteost fladbrød i airfryer | 177, 304, 58%, 1.7 | mangler | lav senere (lav volumen, høj CTR) |
-| 13 | hytteost brød i airfryer | 172, 319, 54%, 1.6 | mangler | lav senere |
+| 12 | hytteost fladbrød i airfryer | 177, 304, 58%, 1.7 | findes | `airfryer-hytteost-broed` (fladbrød + mini-brød) |
+| 13 | hytteost brød i airfryer | 172, 319, 54%, 1.6 | findes | `airfryer-hytteost-broed` |
 | 14 | bananpandekager i airfryer | 165, 262, 63%, 1.5 | findes | dækkes i `airfryer-pandekager` FAQ |
 | 15 | pulled chicken airfryer | 164, 1116, 15%, 8.5 | findes | `airfryer-pulled-chicken` |
 | 16 | havregrød i airfryer | 162, 1133, 14%, 6.6 | findes | `airfryer-havregroed` (ny, sprint 2) |
 | 17 | ribeye airfryer | 144, 816, 18%, 10.4 | optimer | `airfryer-okseboef-steak` |
-| 18 | tunsteak i airfryer | 129, 271, 48%, 2.1 | mangler | evt. fremtidig artikel |
+| 18 | tunsteak i airfryer | 129, 271, 48%, 2.1 | findes | `airfryer-tunboef-tunsteak` |
 | 19 | flæskesteg i airfryer casper sobczyk | 126, 4108, 3%, 9.7 | optimer | `airfryer-flaeskesteg` |
 | 20 | torsk i airfryer | 125, 2405, 5%, 8.0 | findes | `airfryer-torsk` |
-| 21 | lammekrone i airfryer | 125, 1458, 9%, 7.6 | mangler | stort overlap lam — lav senere |
-| 22 | tunbøf i airfryer | 119, 252, 47%, 2.2 | mangler | lav senere |
+| 21 | lammekrone i airfryer | 125, 1458, 9%, 7.6 | findes | `airfryer-lammekrone` |
+| 22 | tunbøf i airfryer | 119, 252, 47%, 2.2 | findes | `airfryer-tunboef-tunsteak` |
 | 23 | ribeye steg i airfryer | 112, 1260, 9%, 4.3 | optimer | `airfryer-okseboef-steak` |
 | 24 | soltørrede tomater i airfryer | 111, 614, 18%, 4.6 | mangler | snack — lav senere |
 | 25 | sejfilet i airfryer | 111, 240, 46%, 2.2 | findes | `airfryer-moerksej` |
