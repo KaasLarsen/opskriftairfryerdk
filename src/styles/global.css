@@ -143,7 +143,7 @@ a:hover {
 	margin-right: auto;
 	display: inline-flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0;
 	font-family: var(--font-display);
 	font-weight: 650;
 	font-size: 1.15rem;
@@ -154,9 +154,14 @@ a:hover {
 
 .logo-icon {
 	flex-shrink: 0;
-	width: 1.58rem;
-	height: 1.58rem;
-	color: inherit;
+	height: 2.55rem;
+	width: auto;
+	max-height: 2.85rem;
+	display: block;
+	object-fit: contain;
+	object-position: center bottom;
+	margin-left: -0.1em;
+	margin-top: 0.05em;
 }
 
 .logo-text {
