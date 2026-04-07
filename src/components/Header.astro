@@ -13,7 +13,42 @@ function isActive(href: string): boolean {
 
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="logo" href="/">{SITE_NAME}</a>
+		<a class="logo" href="/">
+			<svg
+				class="logo-icon"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				aria-hidden="true"
+			>
+				<path
+					stroke="currentColor"
+					stroke-width="1.75"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M5 7.5h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"
+				/>
+				<path
+					stroke="currentColor"
+					stroke-width="1.75"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M4 14h12"
+				/>
+				<path
+					stroke="currentColor"
+					stroke-width="1.75"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M17.25 11.25h2.6v1.5h-2.6"
+				/>
+				<circle cx="8" cy="10" r="1" fill="none" stroke="currentColor" stroke-width="1.75" />
+				<circle cx="12" cy="10" r="1" fill="none" stroke="currentColor" stroke-width="1.75" />
+			</svg>
+			<span class="logo-text">{SITE_NAME}</span>
+		</a>
 		<button
 			class="menu-toggle"
 			type="button"
