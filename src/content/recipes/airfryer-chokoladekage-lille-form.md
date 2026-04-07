@@ -2,8 +2,9 @@
 title: 'Kage i airfryer: mørk chokoladekage i lille form (nem)'
 description: 'Lav en lille chokoladekage i airfryer i silicone- eller metalform – perfekt som “kage i airfryer”-svar med tid, temperatur og FAQ om størrelse på form.'
 heroImage: '/images/recipes/airfryer-chokoladekage-lille-form.png'
-heroAlt: 'Lille mørk chokoladekage på fad med et skåret stykke og airfryer med form i baggrunden'
+heroAlt: 'Lys high-key stil: lille chokoladekage på off-white tallerken, lyst træ, luftig belysning, airfryer i blødt fokus'
 pubDate: 2026-04-07
+updatedDate: 2026-04-10
 prepMinutes: 15
 cookMinutes: 28
 servings: '6–8 små stykker (1 lille kage, ca. 15–16 cm)'

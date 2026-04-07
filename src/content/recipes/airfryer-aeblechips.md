@@ -2,8 +2,9 @@
 title: 'Æblechips i airfryer – sprøde uden sukkerbad'
 description: 'Tynde æblechips i airfryer med kanel og citron – to metoder: hurtig sprød eller langsommere “tørring”. Passer til snack og topping.'
 heroImage: '/images/recipes/airfryer-aeblechips.png'
-heroAlt: 'Skål med gyldne æblechips med kanel og citronskal, airfryer-kurv med æbleskiver i baggrunden'
+heroAlt: 'Lys luftig madfoto: gyldne æblechips i skål, lyst træbord, mild kanel, airfryer i blødt fokus'
 pubDate: 2026-04-07
+updatedDate: 2026-04-10
 prepMinutes: 15
 cookMinutes: 35
 servings: 'Ca. 2 små skåle chips'

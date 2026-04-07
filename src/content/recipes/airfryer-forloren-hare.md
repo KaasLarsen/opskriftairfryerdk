@@ -2,8 +2,9 @@
 title: 'Forloren hare i airfryer – bacon, sovs og klassisk farsbrød'
 description: 'Forloren hare fra airfryer med saftig midte, bacon på toppen og tydelige tider. Perfekt når ovnen er optaget – med tips til gennemstegning og brun sovs.'
 heroImage: '/images/recipes/airfryer-forloren-hare.png'
-heroAlt: 'Skåret forloren hare med bacon på tallerken med kogte kartofler og brun sovs, airfryer med farsbrød i kurv i baggrunden'
+heroAlt: 'Lys appetitlig madfoto: skiver af forloren hare med bacon på tallerken, lyst træbord, airfryer i blødt fokus i baggrunden'
 pubDate: 2026-04-07
+updatedDate: 2026-04-10
 prepMinutes: 25
 cookMinutes: 42
 servings: '4 portioner'

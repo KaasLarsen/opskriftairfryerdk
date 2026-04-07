@@ -2,8 +2,9 @@
 title: 'Grønkålschips i airfryer – sprødt uden at brænde'
 description: 'Grønkålschips fra airfryer med salt, olie og tydelige tider. Undgå bitter smag og bløde blade – ét lag, ryst undervejs, plus variationer.'
 heroImage: '/images/recipes/airfryer-groenkaalschips.png'
-heroAlt: 'Sprøde grønkålschips i skål og i airfryer-kurv med groft salt og citron i baggrunden'
+heroAlt: 'Lys og frisk fotostil: grønkålschips i skål på lyst træ, blød dagslysstemning, airfryer i baggrunden'
 pubDate: 2026-04-07
+updatedDate: 2026-04-10
 prepMinutes: 12
 cookMinutes: 14
 servings: '2 mellemstore skåle snacks'
