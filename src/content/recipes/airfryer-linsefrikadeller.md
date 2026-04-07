@@ -25,7 +25,7 @@ intro: |
 
   Køl farsen 15 minutter hvis den klistrer for meget.
 conclusion: |
-  Server med **grød yoghurtdip** (mynte, hvidløg, citron), coleslaw eller i pitabrød med hummus.
+  Server med **yrte-yoghurtdip** (mynte, hvidløg, citron), coleslaw eller i pitabrød med hummus.
 
   Rester: opvarm ved 170 °C i 5–6 minutter — over 190 °C tørrer de let ud.
 
