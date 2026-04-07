@@ -9,11 +9,24 @@ const recipes = (await getCollection('recipes')).sort(
 );
 
 function inferSeason(recipe: (typeof recipes)[number]): string {
-	const haystack = [recipe.data.title, recipe.data.category, ...recipe.data.keywords]
+	const haystack = [
+		recipe.id,
+		recipe.data.title,
+		recipe.data.category,
+		...recipe.data.keywords,
+	]
 		.join(' ')
 		.toLowerCase();
-	if (/(påske|lam|skinke|asparges)/.test(haystack)) return 'påske';
-	if (/(jul|and|flæskesteg|ribbensteg)/.test(haystack)) return 'jul';
+	if (/(jul|jule|flæskesteg|ribbensteg|\band\b)/.test(haystack)) return 'jul';
+	/** Grønt, let fisk og tidlige kartofler — før klassisk påskebord */
+	if (
+		/(asparges|jordskok|persillerod|groentsagsmix|grøntsagsmix|courgette|squash|honning-gul|bagekartofl|blomkål|broccoli|selleri|rødbede\b|kartofler-i-baade|soede-kartofler|spidskål|radise|forårs|mørksej|torsk|laks\b|fiskefilet|frossen-laks|æblechips|grønkål)/.test(
+			haystack,
+		)
+	) {
+		return 'forår';
+	}
+	if (/(påske|påsk|paaske|skinke|medister|\blam\b|lammekoelle|koteletter)/.test(haystack)) return 'påske';
 	if (/(grill|sommer|salat)/.test(haystack)) return 'sommer';
 	return 'hele-året';
 }
@@ -52,9 +65,19 @@ const jsonLd = {
 					Hurtige idéer til travle dage – find noget, der passer til din airfryer og din tid.
 				</p>
 			</div>
-			<div class="filter-links">
-				<a href="/guides">Guides til airfryer</a>
-				<a href="/opskrifter/saeson/paaske">Se alle Påske-opskrifter</a>
+			<div class="opskrifter-guide-pills">
+				<span class="home-hero-guides-label">Udvalgte guides</span>
+				<div class="home-hero-guides-row">
+					<a class="home-guide-pill" href="/guides/airfryer-for-begyndere">For begyndere</a>
+					<a class="home-guide-pill" href="/guides/hvilken-airfryer">Hvilken airfryer?</a>
+					<a class="home-guide-pill" href="/guides/frossen-mad-airfryer">Frossen mad</a>
+					<a class="home-guide-pill" href="/guides/sproed-med-mindre-olie">Sprød med mindre olie</a>
+					<a class="home-guide-pill home-guide-pill--all" href="/guides">Alle guides</a>
+				</div>
+				<p class="opskrifter-saeson-hint">
+					Tip: vælg <strong>Forår</strong> under sæson for lyse retter — eller se den kuraterede{' '}
+					<a href="/opskrifter/saeson/paaske">påske-samling</a>.
+				</p>
 			</div>
 			<div class="recipe-filters" aria-label="Filtrer opskrifter">
 				<label>
@@ -68,6 +91,7 @@ const jsonLd = {
 					Sæson
 					<select id="filter-season" class="filter-select">
 						<option value="">Alle sæsoner</option>
+						<option value="forår">Forår</option>
 						<option value="påske">Påske</option>
 						<option value="jul">Jul</option>
 						<option value="sommer">Sommer</option>
@@ -250,8 +274,27 @@ const jsonLd = {
 		font-size: 0.95rem;
 	}
 
-	.filter-links {
-		margin: 0 0 0.75rem;
+	.opskrifter-guide-pills {
+		margin: 0 0 var(--space-10);
+		max-width: 40rem;
+	}
+
+	.opskrifter-saeson-hint {
+		margin: var(--space-5) 0 0;
+		font-size: 0.9375rem;
+		line-height: 1.55;
+		color: var(--color-muted);
+	}
+
+	.opskrifter-saeson-hint a {
+		color: var(--color-accent-dark);
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+	}
+
+	.opskrifter-saeson-hint a:hover {
+		text-decoration-thickness: 2px;
 	}
 
 	#filter-reset.filter-reset-btn {
