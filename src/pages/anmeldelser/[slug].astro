@@ -13,6 +13,7 @@ import { parsePriceRunnerProductId } from '../../lib/parsePriceRunnerProductId';
 import { parseWattsFromTitle } from '../../lib/parseWattsFromTitle';
 import { faqAnswerToHtml } from '../../lib/faqAnswerToHtml';
 import { resolvePriceRunnerCompareUrl } from '../../lib/resolvePriceRunnerCompareUrl';
+import { shopProductFallbackFromReview } from '../../lib/shopProductFallback';
 import { findShopProductByProductUrl } from '../../lib/shopProductsFromJson';
 import { toAbsoluteUrl } from '../../utils/seo';
 import type { ShopProductJson } from '../../data/shop-curation';
@@ -20,11 +21,18 @@ import type { ShopProductJson } from '../../data/shop-curation';
 export async function getStaticPaths() {
 	const reviews = await getCollection('airfryerReviews');
 	return reviews.map((review) => {
-		const product = findShopProductByProductUrl(review.data.shopProductUrl);
+		let product = findShopProductByProductUrl(review.data.shopProductUrl);
 		if (!product) {
-			throw new Error(
-				`Anmeldelse «${review.id}»: ingen vare i shop-products.json matcher shopProductUrl. Kør npm run build (med sync) eller opdatér URL i frontmatter.`,
+			console.warn(
+				`anmeldelser: stub shop-vare for «${review.id}» (ingen feed-match — tjek shopProductUrl / sync).`,
 			);
+			product = shopProductFallbackFromReview({
+				id: review.id,
+				shopProductUrl: review.data.shopProductUrl,
+				title: review.data.title,
+				brandLabel: review.data.brandLabel,
+				feedProductId: review.data.feedProductId,
+			});
 		}
 		const compareUrl = resolvePriceRunnerCompareUrl(review);
 		const prProductId = parsePriceRunnerProductId(compareUrl);

@@ -4,7 +4,7 @@
  * public/data/shop-products.json til brug på /shop.
  *
  * - Lokalt uden env: tom liste (hurtigt). På Vercel/CI uden env: standard-feeds fra default-shop-feed-urls.mjs.
- * - PARTNERADS_FEED_URLS sat: bruges altid. Fejl ved fetch/parse → exit 1.
+ * - PARTNERADS_FEED_URLS sat: bruges altid. Fejl på ét feed: logges, øvrige feeds fortsætter.
  */
 
 import { mkdirSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
@@ -101,7 +101,7 @@ async function main() {
 		);
 	}
 
-	/** @type {{ index: number, urlPreview: string, count: number }[]} */
+	/** @type {{ index: number, urlPreview: string, count: number, error?: string }[]} */
 	const sources = [];
 	/** @type {unknown[]} */
 	const all = [];
@@ -109,9 +109,15 @@ async function main() {
 	for (let i = 0; i < urls.length; i++) {
 		const url = urls[i];
 		console.log(`sync-shop-products: henter feed ${i + 1}/${urls.length} …`);
-		const rows = await fetchPartnerAdsFeed(url, i);
-		sources.push({ index: i, urlPreview: previewUrl(url), count: rows.length });
-		for (let j = 0; j < rows.length; j++) all.push(rows[j]);
+		try {
+			const rows = await fetchPartnerAdsFeed(url, i);
+			sources.push({ index: i, urlPreview: previewUrl(url), count: rows.length });
+			for (let j = 0; j < rows.length; j++) all.push(rows[j]);
+		} catch (err) {
+			const msg = err instanceof Error ? err.message : String(err);
+			console.error(`sync-shop-products: feed ${i + 1} fejlede — fortsætter uden den (${msg})`);
+			sources.push({ index: i, urlPreview: previewUrl(url), count: 0, error: msg });
+		}
 	}
 
 	const seen = new Set();
@@ -128,6 +134,7 @@ async function main() {
 		),
 	);
 
+	const failedFeeds = sources.filter((s) => s.error);
 	const payload = {
 		generatedAt: new Date().toISOString(),
 		feedConfigSource: source,
@@ -137,6 +144,7 @@ async function main() {
 		stats: {
 			mergedUnique: deduped.length,
 			afterAirfryerScope: products.length,
+			feedErrors: failedFeeds.length,
 		},
 	};
 
@@ -144,9 +152,14 @@ async function main() {
 	console.log(
 		`sync-shop-products: ${deduped.length} unik(e) → ${products.length} airfryer-relevante → public/data/shop-products.json (${sources.length} feed(s))`,
 	);
+	if (failedFeeds.length > 0) {
+		console.warn(
+			`sync-shop-products: advarsel — ${failedFeeds.length} feed(s) fejlede (shop kan være delvis/tom). Site bygger stadig.`,
+		);
+	}
 }
 
 main().catch((err) => {
-	console.error('sync-shop-products: FEJL', err);
+	console.error('sync-shop-products: uventet FEJL', err);
 	process.exit(1);
 });

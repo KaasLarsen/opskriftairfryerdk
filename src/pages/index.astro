@@ -36,10 +36,12 @@ const springIdsOrdered = [
 	'airfryer-soede-kartofler',
 ];
 const recipeById = new Map(allRecipes.map((r) => [r.id, r]));
-const spring = springIdsOrdered
-	.map((id) => recipeById.get(id))
-	.filter((r): r is NonNullable<typeof r> => Boolean(r))
-	.slice(0, 6);
+const spring = [];
+for (const id of springIdsOrdered) {
+	const r = recipeById.get(id);
+	if (r) spring.push(r);
+	if (spring.length >= 6) break;
+}
 
 const quick = allRecipes
 	.filter((r) => r.data.prepMinutes + r.data.cookMinutes <= 30)
