@@ -24,7 +24,7 @@ keywords:
   - airfryer morgenmad
 featured: true
 intro: |
-  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. **Røræg (scrambled)** er en af de mest søgte varianter: du pisker æg i en **lille smurt skål**, kører ved **ca. 160 °C** og **ror hver 2.–3. minut**, så du ender med cremet masse uden at sidde ved panden.
+  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. **Røræg (scrambled)** er en af de mest søgte varianter: du pisker æg i en **lille smurt skål**, kører ved **ca. 160 °C** og **rører hver 2.–3. minut**, så du ender med cremet masse uden at sidde ved panden.
 
   Du kan også lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
 
