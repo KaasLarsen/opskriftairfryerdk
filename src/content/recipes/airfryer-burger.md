@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer burger – saftig bøf og varm bolle'
-description: 'Burger i airfryer: steg bøffen i kurven og giv bollerne sidste minutter med ost. Tider til okseburger med sprød skorpe og minimal fedt på komfur.'
+title: 'Hamburger i airfryer – saftig bøf og varm bolle'
+description: 'Hamburger og burger i airfryer: steg bøffen i kurven og giv bollerne sidste minutter med ost. Tider til oksehamburger med sprød skorpe uden meget fedt på komfur.'
 heroImage: '/images/recipes/airfryer-burger.png'
 heroAlt: 'Høj gourmet-burger med sesam-bolle, smeltet ost, salat, tomat, syltet agurk og rødløg foran airfryer med display 200 grader, ketchup og pomfritter'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-04-07
 prepMinutes: 12
 cookMinutes: 14
 servings: '4 burgere'
@@ -13,14 +13,15 @@ category: 'Hovedret'
 cuisine: 'International'
 temperatureC: 200
 keywords:
-  - airfryer burger
   - hamburger i airfryer
+  - airfryer hamburger
+  - airfryer burger
   - burgerboller airfryer
   - okseburger airfryer
   - bøf i airfryer burger
 featured: true
 intro: |
-  Burger i airfryer er praktisk: **bøffen** får jævn varme og fin overflade, og du kan **varme bollerne med ost** de sidste minutter i samme maskine (i to omgange hvis kurven er lille).
+  **Hamburger** (burger med oksebøf) i airfryer er praktisk: **bøffen** får jævn varme og fin overflade, og du kan **varme bollerne med ost** de sidste minutter i samme maskine (i to omgange hvis kurven er lille).
 
   Brug enten **hjemmeformede bøffer** af hakket oksekød eller køb færdige – justér tid efter tykkelse.
 
@@ -51,6 +52,8 @@ tips:
   - 'Frosne færdigbøffer: følg emballage som udgangspunkt og tilpas 2-3 minutter.'
   - 'Undgå at knække bøffen ved vending – brug spatel.'
 faq:
+  - question: 'Hvordan laver man hamburger i airfryer?'
+    answer: 'Form eller brug færdige oksebøffer, forvarm til ca. 200 °C, steg bøfferne i ét lag ca. 10–12 minutter i alt med vending midtvejs, og varm boller med ost kort til sidst. Saml med salat, tomat og dressing — se trinene ovenfor.'
   - question: 'Hvor længe skal burgerbøf have i airfryer?'
     answer: 'Ofte 10-12 minutter ved 190-200 °C for hjemmelavede bøffer på ca. 2 cm – afhænger af fedt, form og model (som på airfryer-display er 200 °C et godt udgangspunkt).'
   - question: 'Kan jeg stege hele burgeren samlet i airfryer?'
