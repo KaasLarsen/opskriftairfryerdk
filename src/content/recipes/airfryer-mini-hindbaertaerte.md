@@ -41,7 +41,7 @@ instructions:
   - text: 'Bag **10 min**, tjek — **3–5 min** mere til gylden kant og boblet fyld; **folie løst over** hvis bær bruner før dej.'
   - text: 'Afkøl 10 min før løsning fra form.'
 tips:
-  - 'Købte **tærtedejbund**: fyld og **−3 min** total tid.'
+  - '**Færdig tærtebund**: fyld og **−3 min** total tid.'
   - 'For **crumble top**: smuldre 40 g smør + 40 g mel + 30 g sukker ovenpå fyld.'
   - 'Silikoneforme: **let at løsne** — metal: smør grundigt.'
 faq:
