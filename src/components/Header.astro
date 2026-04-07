@@ -14,6 +14,7 @@ function isActive(href: string): boolean {
 <header class="site-header">
 	<div class="container header-inner">
 		<a class="logo" href="/">
+			<span class="logo-text">{SITE_NAME}</span>
 			<svg
 				class="logo-icon"
 				xmlns="http://www.w3.org/2000/svg"
@@ -23,31 +24,60 @@ function isActive(href: string): boolean {
 				fill="none"
 				aria-hidden="true"
 			>
+				<!-- Kabinet: rundet top + skuffe-kasse (klassisk airfryer-forside) -->
 				<path
 					stroke="currentColor"
-					stroke-width="1.75"
+					stroke-width="1.55"
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					d="M5 7.5h11a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"
+					d="M7.25 9.75C7.25 6.45 9.35 4.35 12 4.35c2.65 0 4.75 2.1 4.75 5.4V19.1a1.85 1.85 0 0 1-1.85 1.85H9.1a1.85 1.85 0 0 1-1.85-1.85V9.75z"
 				/>
+				<!-- Skuffe / kurv: vandret sprække -->
 				<path
 					stroke="currentColor"
-					stroke-width="1.75"
+					stroke-width="1.55"
 					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M4 14h12"
+					d="M8.15 14.35h7.7"
 				/>
+				<!-- Trækgreb på skuffe -->
+				<rect
+					x="9.35"
+					y="16.05"
+					width="5.3"
+					height="2.15"
+					rx="1.05"
+					stroke="currentColor"
+					stroke-width="1.55"
+					fill="none"
+				/>
+				<!-- Panel: drejerknap -->
+				<circle
+					cx="8.85"
+					cy="9.35"
+					r="1"
+					stroke="currentColor"
+					stroke-width="1.55"
+					fill="none"
+				/>
+				<!-- Panel: lille display -->
+				<rect
+					x="11.15"
+					y="8.6"
+					width="5.1"
+					height="1.55"
+					rx="0.4"
+					stroke="currentColor"
+					stroke-width="1.55"
+					fill="none"
+				/>
+				<!-- Varmluft: korte striber over toppen -->
 				<path
 					stroke="currentColor"
-					stroke-width="1.75"
+					stroke-width="1.35"
 					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M17.25 11.25h2.6v1.5h-2.6"
+					d="M10.3 3.15h1.1M12.6 3.15h1.1"
 				/>
-				<circle cx="8" cy="10" r="1" fill="none" stroke="currentColor" stroke-width="1.75" />
-				<circle cx="12" cy="10" r="1" fill="none" stroke="currentColor" stroke-width="1.75" />
 			</svg>
-			<span class="logo-text">{SITE_NAME}</span>
 		</a>
 		<button
 			class="menu-toggle"
