@@ -1,8 +1,10 @@
 ---
 title: 'Culottesteg i airfryer – oksesteg med saft og fin stegeskorpe'
 description: 'Culottesteg i airfryer: forberedelse med fedtkant, fordeling af varme i kurven, kernetemperatur efter ønsket stegegrad og typisk tid pr. vægt.'
+heroImage: '/images/recipes/airfryer-culottesteg.png'
+heroAlt: 'Skåret culottesteg med rosa midte på grå tallerken med kogte kartofler, persille og brun sovs, sort airfryer i blødt fokus bagved og mørkt træbord'
 pubDate: 2026-04-07
-updatedDate: 2026-04-07
+updatedDate: 2026-04-09
 prepMinutes: 20
 cookMinutes: 40
 servings: '4–6 portioner (steg ca. 1–1,4 kg)'

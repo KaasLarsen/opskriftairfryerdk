@@ -29,7 +29,7 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 21 | lammekrone i airfryer | 125, 1458, 9%, 7.6 | findes | `airfryer-lammekrone` |
 | 22 | tunbøf i airfryer | 119, 252, 47%, 2.2 | findes | `airfryer-tunboef-tunsteak` |
 | 23 | ribeye steg i airfryer | 112, 1260, 9%, 4.3 | optimer | `airfryer-okseboef-steak` |
-| 24 | soltørrede tomater i airfryer | 111, 614, 18%, 4.6 | mangler | snack — lav senere |
+| 24 | soltørrede tomater i airfryer | 111, 614, 18%, 4.6 | findes | `airfryer-soltoerrede-tomater` |
 | 25 | sejfilet i airfryer | 111, 240, 46%, 2.2 | findes | `airfryer-moerksej` |
 | 26 | pandekager i airfryer | 110, 1982, 6%, 6.5 | findes | `airfryer-pandekager` (ny) |
 | 27 | flæskesteg i airfryer | 109, 11697, 1%, 19.6 | optimer | `airfryer-flaeskesteg` — meta + FAQ tid |
@@ -41,7 +41,7 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 33 | onion boil opskrift dansk | 88, 492, 18%, 5.0 | irrelevant | ikke airfryer-opskrift |
 | 34 | leverpostej i airfryer | 85, 3235, 3%, 6.6 | findes | `airfryer-leverpostej` (ny) |
 | 35 | popcorn i airfryer | 82, 7541, 1%, 7.8 | findes | `airfryer-popcorn` (ny, myte/fakta) |
-| 36 | grønkålschips airfryer | 81, 1265, 6%, 4.7 | mangler | snack — lav senere |
+| 36 | grønkålschips airfryer | 81, 1265, 6%, 4.7 | findes | `airfryer-groenkaalschips` |
 | 37 | entrecote airfryer | 77, 562, 14%, 19.2 | optimer | `airfryer-okseboef-steak` |
 | 38 | nachos airfryer | 77, 544, 14%, 8.9 | findes | nachos-opskrift |
 | 39 | entrecote bøf i airfryer | 76, 455, 17%, 4.5 | findes | `airfryer-okseboef-steak` |
@@ -49,12 +49,12 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 | 41 | pulled kylling i airfryer | 75, 392, 19%, 3.5 | findes | `airfryer-pulled-chicken` |
 | 42 | spidskål i airfryer casper sobczyk | 75, 295, 25%, 4.7 | mangler | lav senere / groentsagsmix |
 | 43 | nachos air fryer | 73, 754, 10%, 5.3 | findes | nachos |
-| 44 | æblechips airfryer | 73, 442, 17%, 4.6 | mangler | snack — lav senere |
+| 44 | æblechips airfryer | 73, 442, 17%, 4.6 | findes | `airfryer-aeblechips` |
 | 45 | lammekølle airfryer | 73, 288, 25%, 9.9 | optimer | lam-skiver + FAQ hel |
 | 46 | lammekølle med ben i airfryer | 73, 267, 27%, 6.0 | optimer | lam FAQ |
-| 47 | forloren hare i airfryer | 70, 3347, 2%, 9.1 | mangler | stor efterspørgsel — kandidat næste bølge |
+| 47 | forloren hare i airfryer | 70, 3347, 2%, 9.1 | findes | `airfryer-forloren-hare` (+ evt. optimer meta/CTR efter deploy) |
 | 48 | casper sobczyk airfryer anmeldelse | 70, 1700, 4%, 6.1 | findes | anmeldelser-site, ikke opskrift |
-| 49 | kage i airfryer | 67, 3115, 2%, 11.0 | mangler | bred kategori — lav senere |
+| 49 | kage i airfryer | 67, 3115, 2%, 11.0 | findes | `airfryer-chokoladekage-lille-form` (chokolade i lille form; + evt. flere kage-varianter senere) |
 | 50 | hel ribeye steg i airfryer | 66, 527, 13%, 3.9 | optimer | `airfryer-okseboef-steak` |
 
 ---
