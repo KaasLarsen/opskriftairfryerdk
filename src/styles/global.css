@@ -141,9 +141,6 @@ a:hover {
 .logo {
 	flex: 0 0 auto;
 	margin-right: auto;
-	display: inline-flex;
-	align-items: center;
-	gap: 0.42em;
 	font-family: var(--font-display);
 	font-weight: 650;
 	font-size: 1.15rem;
@@ -151,21 +148,6 @@ a:hover {
 	text-decoration: none;
 	letter-spacing: -0.02em;
 	line-height: 1.2;
-}
-
-.logo-mark {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	flex-shrink: 0;
-	color: var(--color-accent-dark);
-	opacity: 0.92;
-}
-
-.logo-airfryer-svg {
-	width: 1.28em;
-	height: 1.28em;
-	display: block;
 }
 
 .header-menu {
@@ -264,11 +246,6 @@ a:hover {
 
 .logo:hover {
 	color: var(--color-accent-dark);
-}
-
-.logo:hover .logo-mark {
-	color: var(--color-accent);
-	opacity: 1;
 }
 
 .nav {

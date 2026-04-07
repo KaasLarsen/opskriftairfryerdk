@@ -12,26 +12,7 @@ function isActive(href: string): boolean {
 
 <header class="site-header">
 	<div class="container header-inner">
-		<a class="logo" href="/">
-			<span class="logo-mark" aria-hidden="true">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round" class="logo-airfryer-svg">
-					<!-- kabinet + typisk afrundet «låg» -->
-					<path
-						d="M4.85 12.1Q12 4.65 19.15 12.1L19.15 18.15l-.75.75H5.6l-.75-.75V12.1z"
-					/>
-					<!-- skuffelinje -->
-					<path d="M5.85 14.35h12.3" />
-					<!-- kurvgitter -->
-					<path d="M8.85 15.45v3.35M12 15.45v3.35M15.15 15.45v3.35" stroke-width="1.35" />
-					<!-- håndtag -->
-					<path d="M9.85 19.15h4.3" stroke-width="1.65" />
-					<!-- små «knapper» på toppen -->
-					<circle cx="9.35" cy="9.35" r="0.55" fill="currentColor" stroke="none" />
-					<circle cx="14.65" cy="9.35" r="0.55" fill="currentColor" stroke="none" />
-				</svg>
-			</span>
-			{SITE_NAME}
-		</a>
+		<a class="logo" href="/">{SITE_NAME}</a>
 		<button
 			class="menu-toggle"
 			type="button"
