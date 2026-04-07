@@ -22,21 +22,23 @@ const popular = allRecipes
 	)
 	.slice(0, 6);
 
-function hasRecipeKeyword(
-	recipe: (typeof allRecipes)[number],
-	pattern: RegExp,
-): boolean {
-	const haystack = [recipe.data.title, recipe.data.category, ...recipe.data.keywords].join(' ');
-	return pattern.test(haystack.toLowerCase());
-}
-
-const easter = allRecipes
-	.filter((r) =>
-		hasRecipeKeyword(
-			r,
-			/(påske|fisk|laks|kartof|medister|flæskesteg|ribbensteg|kyllingelår)/i,
-		),
-	)
+/** Kurateret forår: grønt, fisk og let tilbehør — rækkefølge = ønsket prioritering på forsiden */
+const springIdsOrdered = [
+	'airfryer-asparges',
+	'airfryer-aeggekage-asparges-bacon',
+	'airfryer-groentsagsmix',
+	'airfryer-laks',
+	'airfryer-bagekartofler',
+	'airfryer-honning-guleroedder',
+	'airfryer-blomkaal',
+	'airfryer-courgette-parmesan-fritter',
+	'airfryer-jordskokke-rosmarin-citron',
+	'airfryer-soede-kartofler',
+];
+const recipeById = new Map(allRecipes.map((r) => [r.id, r]));
+const spring = springIdsOrdered
+	.map((id) => recipeById.get(id))
+	.filter((r): r is NonNullable<typeof r> => Boolean(r))
 	.slice(0, 6);
 
 const quick = allRecipes
@@ -124,18 +126,27 @@ const jsonLd = {
 		)
 	}
 
-	<section class="section section--tight-top">
-		<div class="container">
-			<div class="section-head">
-				<p class="section-kicker">Sæson</p>
-				<h2>Påske-favoritter</h2>
-				<p>Klassiske retter og tilbehør, som passer godt til påskebordet.</p>
-			</div>
-			<div class="recipe-grid">
-				{easter.map((recipe) => <RecipeCard recipe={recipe} />)}
-			</div>
-		</div>
-	</section>
+	{
+		spring.length > 0 && (
+			<section class="section section--tight-top">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Sæson</p>
+						<h2>Forår i airfryer</h2>
+						<p>
+							Grønt, lettere fisk og tilbehør der passer til lysere aftener — også når det skal gå
+							stærkt.
+						</p>
+					</div>
+					<div class="recipe-grid">
+						{spring.map((recipe) => (
+							<RecipeCard recipe={recipe} />
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
 
 	{
 		popular.length > 0 && (
