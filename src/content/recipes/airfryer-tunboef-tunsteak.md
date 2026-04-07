@@ -1,6 +1,8 @@
 ---
 title: 'Tunbøf og tunsteak i airfryer – hurtig stegeskorpe, rosa midte'
 description: 'Tunsteak og tunbøf i airfryer med kort tid efter tykkelse. Sesam- eller paprika-rub, sikker kernetemperatur og FAQ om rå middel vs. gennemstegt tun.'
+heroImage: '/images/recipes/airfryer-tunboef-tunsteak.png'
+heroAlt: 'Sesam- og peberkrydret tunsteak med rosa midte, citronbåde og friske urter på tallerken foran airfryer.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-06
 prepMinutes: 8
