@@ -1,7 +1,6 @@
 ---
 import { SITE_NAME } from '../consts';
 import AuthHeader from './AuthHeader.astro';
-import SiteSearch from './SiteSearch.astro';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 
@@ -117,9 +116,6 @@ function isActive(href: string): boolean {
 					aria-current={isActive('/shop') ? 'page' : undefined}>Shop</a
 				>
 			</nav>
-			<div class="header-search-wrap">
-				<SiteSearch />
-			</div>
 			<AuthHeader />
 		</div>
 	</div>
