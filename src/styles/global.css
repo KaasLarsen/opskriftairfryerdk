@@ -493,6 +493,28 @@ a:hover {
 	line-height: 1.65;
 }
 
+.hero-copy {
+	position: relative;
+	z-index: 2;
+}
+
+.hero-search {
+	margin: calc(-1 * var(--space-2)) 0 var(--space-8);
+	max-width: min(36rem, 100%);
+}
+
+.site-search--hero .site-search-input {
+	font-size: 1.0625rem;
+	padding: 0.8rem 1.05rem;
+	border-radius: var(--radius-lg);
+	box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.site-search--hero .site-search-results {
+	z-index: 30;
+	max-height: min(19rem, 50vh);
+}
+
 .hero-actions {
 	display: flex;
 	flex-wrap: wrap;

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
+import SiteSearch from '../components/SiteSearch.astro';
 import { getCollection } from 'astro:content';
 import { DEFAULT_DESCRIPTION, ORGANIZATION_JSON, SITE_NAME, SITE_TAGLINE, SITE_URL } from '../consts';
 
@@ -77,13 +78,16 @@ const jsonLd = {
 >
 	<section class="hero">
 		<div class="container hero-grid">
-			<div>
+			<div class="hero-copy">
 				<span class="hero-badge">Nem hverdag • Tydelige tider</span>
 				<h1>Nemme airfryer-opskrifter til hverdagen</h1>
 				<p class="hero-lead">
 					Tydelige tider, realistiske temperaturer og trin du kan følge, også når det går stærkt.
 					Her samler vi opskrifter, der er lige til at gå til.
 				</p>
+				<div class="hero-search">
+					<SiteSearch variant="hero" />
+				</div>
 				<div class="hero-actions">
 					<a class="btn btn-primary" href="/opskrifter">Se alle opskrifter</a>
 					<a class="btn btn-ghost" href="/guides">Guides til airfryer</a>
