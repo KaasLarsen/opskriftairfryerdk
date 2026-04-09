@@ -1,6 +1,8 @@
 ---
 title: 'Kammuslinger med bacon i airfryer – hurtig forret'
 description: 'Kammuslinger og bacon i airfryer: kort tid, sprødt bacon og møre muslinger. Server straks.'
+heroImage: '/images/recipes/airfryer-kammuslinger-bacon.png'
+heroAlt: 'Gyldne kammuslinger med sprødt bacon som forret'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 10

@@ -1,6 +1,8 @@
 ---
 title: 'Hummer i airfryer – hale og kløer med saft og smag'
 description: 'Hummerhaler og hummer i airfryer: kort stegning, smør/hvidløg og præcis tid så kødet ikke bliver sejt.'
+heroImage: '/images/recipes/airfryer-hummer.png'
+heroAlt: 'Tilberedte hummerhaler med urter og citron på hvid tallerken'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 15

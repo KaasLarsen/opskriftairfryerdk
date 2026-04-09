@@ -1,6 +1,8 @@
 ---
 title: 'Kaninfilet i airfryer – mørt vildtkød med sprød kant'
 description: 'Kaninfilet i airfryer: temperatur, tid og tips til saftigt resultat uden tør kød. Nem hverdags-vildtret.'
+heroImage: '/images/recipes/airfryer-kanin-filet.png'
+heroAlt: 'Skåret kaninfilet med urter på tallerken – airfryer resultat med gylden kant'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 15

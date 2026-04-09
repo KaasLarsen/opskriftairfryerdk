@@ -1,6 +1,8 @@
 ---
 title: 'Mini-croissanter med fyld i airfryer – hurtige snacks'
 description: 'Mini-croissanter med ost, skinke eller nutella i airfryer: brug butterdej eller færdige minicroissanter. Sprød uden ovn.'
+heroImage: '/images/recipes/airfryer-mini-croissanter-fyld.png'
+heroAlt: 'Gyldne mini-croissanter med fyld på bagepapir'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 15

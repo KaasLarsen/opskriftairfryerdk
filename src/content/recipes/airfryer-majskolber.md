@@ -1,6 +1,8 @@
 ---
 title: 'Majs i airfryer – smøristede kolber med salt'
 description: 'Majs på kolbe i airfryer: smør, salt og kort tid pr. omgang. Sød smag og let sprød kant på kernerne.'
+heroImage: '/images/recipes/airfryer-majskolber.png'
+heroAlt: 'Smøristede majskolber med salt på fad'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 5

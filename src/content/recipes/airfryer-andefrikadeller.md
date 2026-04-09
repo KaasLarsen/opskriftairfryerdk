@@ -1,6 +1,8 @@
 ---
 title: 'Andefrikadeller i airfryer – saftige kødboller med sprød skorpe'
 description: 'Andefrikadeller i airfryer: mindre fedt end panden, fin skorpe og ens tilberedning. Server med sovs og rødkål.'
+heroImage: '/images/recipes/airfryer-andefrikadeller.png'
+heroAlt: 'Gyldne andefrikadeller med persille på tallerken'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 20

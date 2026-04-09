@@ -1,6 +1,8 @@
 ---
 title: 'Vildsvin i airfryer – koteletter og mørbrad med sprød kant'
 description: 'Vildsvinskoteletter eller mørbrad i airfryer: moderat varme, marinering og hvile for mørt vildtkød.'
+heroImage: '/images/recipes/airfryer-vildsvin-kotelet.png'
+heroAlt: 'Vildsvinskoteletter med rosmarin og gylden skorpe'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 25

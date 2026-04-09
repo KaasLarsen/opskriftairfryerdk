@@ -1,6 +1,8 @@
 ---
 title: 'Bagt hvidløg med parmesan i airfryer – cremet spread'
 description: 'Hele hvidløg i airfryer med olie og parmesan: bløde fed, sød smag og perfekt til brød eller kartofler.'
+heroImage: '/images/recipes/airfryer-bagt-hvidloeg-parmesan.png'
+heroAlt: 'Bagt helt hvidløg med parmesan og urter i lille fad'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 5

@@ -1,6 +1,8 @@
 ---
 title: 'Karamelliseret ananas i airfryer – honning, kanel og let dessert'
 description: 'Ananas i airfryer med honning og kanel: sprød kant, sød karamel og server på 15 minutter.'
+heroImage: '/images/recipes/airfryer-karamel-ananas.png'
+heroAlt: 'Karamelliseret ananas med honningglace på desserttallerken'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 8

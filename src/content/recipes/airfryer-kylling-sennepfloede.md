@@ -1,6 +1,8 @@
 ---
 title: 'Kylling i sennep-flødesauce i airfryer – kartofler og bønner i samme fad'
 description: 'Etfadskylling med sennep og fløde i airfryer: brug ovnfast fad i kurven og tilsæt grønne bønner til sidst.'
+heroImage: '/images/recipes/airfryer-kylling-sennepfloede.png'
+heroAlt: 'Kylling i cremet sennepssauce med kartofler og grønne bønner i skål'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 20

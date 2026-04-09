@@ -1,6 +1,8 @@
 ---
 title: 'Bao buns i airfryer – varme, bløde boller og sprødt fyld'
 description: 'Sådan varmer du færdige bao buns i airfryer og giver fyldet sprød kant. Nem streetfood derhjemme.'
+heroImage: '/images/recipes/airfryer-bao-buns.png'
+heroAlt: 'Bløde bao boller med fyld på fad'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 10

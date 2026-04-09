@@ -1,6 +1,8 @@
 ---
 title: 'Skipperlabskovs i airfryer – hurtig klassiker med fisk og kartofler'
 description: 'Skipperlabskovs i airfryer: rist kartoffeltern og varm torskestykker med løg og smør. Hurtig udgave af klassikeren.'
+heroImage: '/images/recipes/airfryer-skipperlabskovs.png'
+heroAlt: 'Skipperlabskovs med kartofler, fisk og persille i skål'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 15

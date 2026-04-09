@@ -1,6 +1,8 @@
 ---
 title: 'Ål i airfryer – sprød skind og mør filet'
 description: 'Ål i airfryer: kort tid, moderat varme og ét lag i kurven. Så få du sprødt skind uden at kødet bliver sejt.'
+heroImage: '/images/recipes/airfryer-aal-filet.png'
+heroAlt: 'Ålefilet med sprødt skind og citron på tallerken'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 10

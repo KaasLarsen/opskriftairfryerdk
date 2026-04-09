@@ -1,6 +1,8 @@
 ---
 title: 'Kåldolmere med oksekød i airfryer – sprød kål og mør fars'
 description: 'Kåldolmere i airfryer: fyldt hvidkål, marinara og ost i sidste minut. Sparer fedt fra panden.'
+heroImage: '/images/recipes/airfryer-kaaldolmere.png'
+heroAlt: 'Kåldolmere i tomatsauce med smeltet ost i ovnfast fad'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 35

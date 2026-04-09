@@ -1,6 +1,8 @@
 ---
 title: 'Oksehjerte i airfryer – mørt indre og smagfuld skorpe'
 description: 'Oksehjerte (eller kalvehjerte) i airfryer: skær ud, fjern hinder og steg i bundter. Kort hvile som organ-kød.'
+heroImage: '/images/recipes/airfryer-oksehjerte.png'
+heroAlt: 'Skiver af tilberedt oksehjerte med urter på bræt'
 pubDate: 2026-04-09
 updatedDate: 2026-04-09
 prepMinutes: 20
