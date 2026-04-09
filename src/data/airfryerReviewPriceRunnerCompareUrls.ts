@@ -22,6 +22,10 @@ export const AIRFRYER_REVIEW_PRICE_RUNNER_COMPARE_URLS: Record<string, string> =
 		'https://www.pricerunner.dk/pl/81-3381506535/Frituregryder-Airfryere/Braun-MultiFry-3-Varmluftsteger-4.3-L-Sammenlign-Priser',
 	'continental-edison-9l-dual-skuffer-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3208363447/Frituregryder/Casper-Sobczyk-Dual-Zone-Airfryer-9L-Sammenlign-Priser',
+	'cosori-caf-tf101s-airfryer-anmeldelse':
+		'https://www.pricerunner.dk/pl/81-3320113707/Frituregryder/Cosori-CAF-TF101S-Sammenlign-Priser',
+	'cosori-turbo-tower-pro-108l-airfryer-anmeldelse':
+		'https://www.pricerunner.dk/pl/81-3405094270/Frituregryder/Cosori-Turbo-Tower-Pro-Smart-10.8L-Gold-Sammenlign-Priser',
 	'cuisinart-afd10-oble-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3419350575/Frituregryder-Airfryere/Cuisinart-Hot-Air-Fryer-AFD10OBLE-Kraftfuld-2400W-Sammenlign-Priser',
 	'continental-edison-frsh1400b-anmeldelse':
@@ -68,16 +72,22 @@ export const AIRFRYER_REVIEW_PRICE_RUNNER_COMPARE_URLS: Record<string, string> =
 		'https://www.pricerunner.dk/pl/81-3213916723/Frituregryder-Airfryere/Medion-Life-E40-XL-Heissluftfritteuse-5.2-Liter-Sammenlign-Priser',
 	'ninja-af300eu-dual-zone-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3434622775/Frituregryder/Ninja-Foodi-AF300-Sammenlign-Priser',
+	'ninja-af451eu-airfryer-anmeldelse':
+		'https://www.pricerunner.dk/pl/81-3206566758/Frituregryder/Ninja-AF451EU-Sammenlign-Priser',
 	'ninja-crispi-fn101-beige-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3418187538/Frituregryder/Ninja-CRISPi-4-i-1-FN101EUGY-Sammenlign-Priser',
 	'ninja-flexdrawer-104l-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3208440524/Frituregryder/Ninja-Foodi-FlexDrawer-AF500EU-Sammenlign-Priser',
 	'ninja-speedi-on400eu-airfryer-anmeldelse':
 		'https://www.pricerunner.dk/pl/249-3207716893/Madkogere/Ninja-Speedi-ON400EU-Sammenlign-Priser',
+	'obh-nordica-easy-fry-mega-ag8558-airfryer-anmeldelse':
+		'https://www.pricerunner.dk/pl/81-3334809198/Frituregryder/OBH-Nordica-Easy-Fry-Mega-Airfryer-AG8558N0-Sammenlign-Priser',
 	'philips-na120-airfryer-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3314420067/Frituregryder/Philips-NA120-00-Sammenlign-Priser',
 	'philips-na231-2000-series-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3267327609/Frituregryder/Philips-2000-Series-Sammenlign-Priser',
+	'philips-na342-3000-series-airfryer-anmeldelse':
+		'https://www.pricerunner.dk/pl/81-3340445627/Frituregryder/Philips-3000-Series-Airfryer-7.2-L-NA342-00-Sammenlign-Priser',
 	'philips-na352-dobbeltkurv-anmeldelse':
 		'https://www.pricerunner.dk/pl/81-3231353404/Frituregryder/Philips-3000-Series-NA352-00-Sammenlign-Priser',
 	'philips-na555-5000-series-anmeldelse':
