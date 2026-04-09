@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/pommes-og-fritter-i-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Sprøde pommes og fritter i airfryer: ét lag, ryst og fryseposer | ${SITE_NAME}`;
+const description =
+	'Få sprøde pommes og kartoffelfritter i airfryer uden dampet kurv: tør overflade, temperatur, ryst undervejs, frosne vs hjemmelavet — med opskriftslinks.';
+
+const published = '2026-04-09T12:00:00.000Z';
+const modified = '2026-04-09T12:00:00.000Z';
+
+const heroImagePath = '/images/guides/pommes-og-fritter-i-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt = 'Gyldne pommes fritter i kurv med salt — guide til sprødhed i airfryer';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvorfor bliver mine pommes bløde?',
+		a: 'Næsten altid damp: for meget på én gang, ikke tørret overflade, eller aldrig rystet midtvejs. Se kapacitetsguiden — ét lag slår “lidt ekstra i samme tur”.',
+	},
+	{
+		q: 'Frosne eller friske — hvad er nemmest?',
+		a: 'Frosne er hverdags-vinder: fabrikken har ofte allerede stivet overfladen. Hjemmelavet kan blive sprødere, men kræver tørt snit og ofte kortere forkog eller god tør.',
+	},
+	{
+		q: 'Skal jeg bruge olie?',
+		a: 'Et tyndt lag olie eller spray giver ofte bedre farve og bid. For meget olie giver fedtede kanter — se olieguiden.',
+	},
+	{
+		q: 'Hvilken temperatur?',
+		a: 'Mange frosne pommes lykkes omkring 180–200 °C afhængigt af tykkelse og mærke. Start midt i feltet og juster: blød midte → længere tid i små hop; branket ydre → lidt ned eller kortere intervaller.',
+	},
+	{
+		q: 'Kan premade spice-blandinger brænde?',
+		a: 'Ja — sukker og hvidløgspulver kan mørknere hurtigere. Tilsæt sidste par minutter eller bland med lidt olie og overvåg.',
+	},
+	{
+		q: 'Airfryer vs ovn til store mængder?',
+		a: 'Til ét kilo i ét fad vinder ovn ofte i arbejdstid. Airfryer excellerer i hurtige batch hvor luft rammer alle sider — del i to hold frem for at proppe.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Pommes og fritter', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Sprøde pommes og fritter i airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Pommes og fritter</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Sprøde pommes og fritter i airfryer</h1>
+				<p class="guide-lead">
+					<strong>Damp er fjenden</strong> når du vil have pommes med knas. Airfryeren cirkulerer varm luft
+					— men hvis kartoflerne ligger oven på hinanden som i en gryde, får du steamsauna i stedet for
+					ristning. Denne guide samler vanerne der faktisk virker, med link til
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet og batch</a>.
+				</p>
+
+				<h2>Grundtrek (uanset frosne eller hjemmelavet)</h2>
+				<ul>
+					<li>
+						<strong>Tør overflade</strong> — dup hjemmeskårne pinde, tø frost-is let af med køkkenrulle
+						hvis de “sveder”.
+					</li>
+					<li>
+						<strong>Ét lag</strong> — fyld ikke kurven halvvejs op; lav to hurtige batch hvis det haster.
+					</li>
+					<li>
+						<strong>Ryst</strong> midtvejs så nye flader møder varmen — samme trick som fabrikken antyder på
+						fryseposer.
+					</li>
+					<li>
+						<strong>Tyndt olie-lag</strong> hvis du vil have gyldenfarve uden friture — se
+						<a href="/guides/sproed-med-mindre-olie">sprød med mindre olie</a>.
+					</li>
+				</ul>
+
+				<h2>Konkrete opskrifter hos os</h2>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-frosne-franske-kartofler">Frosne pommes</a> — hverdagsklassiker.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-pomfritter">Hjemmelavede pomfritter</a> — når du vil skære selv.
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-kartofler-i-baade">Hasselback og både</a> — samme logik om luft
+						rundt om.
+					</li>
+					<li>
+						<a href="/guides/frossen-mad-airfryer">Frossen mad generelt</a> — hvis du blander pommes med
+						kylling i samme kurv for tidligt.
+					</li>
+				</ul>
+
+				<h2>Hjemmeskårne: undgå lim-kartofler</h2>
+				<p>
+					Skær ens tykkelse, skyld stivelse af hvis du vil (valgfrit), og <strong>tør grundigt</strong> før
+					olie. For tykke stænger: ofte bedre med et kort “forvarm uden olie” eller lavere starttemp — din
+					maskine lærer du ved at skrive noter.
+				</p>
+
+				<h2>Wedges og krydrede varianter</h2>
+				<p>
+					Øg ikke salt før sidst hvis du ser fugt trække ud. Krydderier med sukker (barbecue) sidder bedst
+					sidste 2–3 min under opsyn.
+				</p>
+
+				<h2>Genopvarmning i mikro dræber sprødhed</h2>
+				<p>
+					Vil du have rester i knas igen: følg <a href="/guides/genopvarmning-i-airfryer">genopvarmning</a> i
+					korte intervaller ved moderat varme.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="pommes-og-fritter-i-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

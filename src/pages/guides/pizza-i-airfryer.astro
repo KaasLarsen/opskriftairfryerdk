@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/pizza-i-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Pizza i airfryer: sprød bund, topping og typiske fejl | ${SITE_NAME}`;
+const description =
+	'Sådan får du bedre pizza fra airfryer: tynd bund, ét lag, forvarmning og hvornår bagepapir hjælper eller blokerer varmen — plus link til klar opskrift.';
+
+const published = '2026-04-09T12:00:00.000Z';
+const modified = '2026-04-09T12:00:00.000Z';
+
+const heroImagePath = '/images/guides/pizza-i-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt = 'Sprød pizza i airfryer-kontekst på træbord — guide til bund og topping';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvorfor bliver min pizzabund blød?',
+		a: 'Ofte for tyk dej, for meget sauce, overfyldt kurv eller damp der ikke slipper væk. Prøv tyndere bund, mindre topping først og ét lag — se også kapacitetsguiden.',
+	},
+	{
+		q: 'Skal jeg bruge bagepapir?',
+		a: 'Det kan mindske at dejen sidder fast, men kan også isolere bunden. Brug helst perforeret papir eller prik huller så luft kan slippe til — luft i bunden giver mere crisp.',
+	},
+	{
+		q: 'Hvilken temperatur er god at starte med?',
+		a: 'Mange små pizzaer fungerer omkring 180–200 °C afhængigt af dej og maskine. Start midt i feltet og juster: for mørk kant før midten er varm → lidt ned; blød bund → længere tid eller højere bundkontakt.',
+	},
+	{
+		q: 'Kan jeg lave frysepizza direkte?',
+		a: 'Ja — følg emballagen som udgangspunkt og juster 10–20 °C lavere hvis dine kanter branker. Ryst ikke kurven mens osten er flydende.',
+	},
+	{
+		q: 'Passer airfryer til familiepizza?',
+		a: 'Sjældent én stor. Tænk små person-pizzaer eller halvere dejen to gange. Dobbeltzone kan lave to forskellige — stadig typisk mindre end ovn.',
+	},
+	{
+		q: 'Hvad med pizzasten?',
+		a: 'Kun hvis stenen er godkendt til din model og der er plads. Mange oplever bedre bund med forvarmet rist/kurv og tynd dej frem for tunge sten i små kurve.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Pizza', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Pizza i airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Pizza</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Middag</p>
+				<h1>Pizza i airfryer</h1>
+				<p class="guide-lead">
+					Airfryer er god til <strong>små, tynde pizzaer</strong> med hurtig varme fra alle sider —
+					dårlig til én kæmpe familiepizza som i ovn. Nøglen er: <strong>tynd bund, mådehold med sauce,
+					ét lag i kurven</strong> og tålmodighed første gang du finder din models søde spot.
+				</p>
+
+				<h2>Start med en konkret opskrift</h2>
+				<p>
+					Vi har en <a href="/opskrifter/airfryer-pizza">klar airfryer-pizzaopskrift</a> med tider og
+					temperatur. Brug den som baseline, justér 20–30 sekunder ad gangen på kanter og ost — maskiner
+					varierer.
+				</p>
+
+				<h2>De fem vigtigste vaner</h2>
+				<ol>
+					<li>
+						<strong>Rul tyndt</strong> — tyk dej bliver ofte “doughy”, fordi luften ikke når ind til
+						midten som i en brad ovn.
+					</li>
+					<li>
+						<strong>Forvarm efter behov</strong> — mange får bedre bund med kort forvarm; se
+						<a href="/guides/airfryer-for-begyndere">begynderguiden</a> om din model.
+					</li>
+					<li>
+						<strong>Ét lag</strong> — som forklaret under
+						<a href="/guides/kapacitet-damp-batch-airfryer">damp og kapacitet</a>.
+					</li>
+					<li>
+						<strong>Dup mozzarelle</strong> og undgå vandfyldt frisk ost uden aftørring — ellers damp i
+						kurven.
+					</li>
+					<li>
+						<strong>Følg med sidste minut</strong> — ost går fra perfekt til branket hurtigt.
+					</li>
+				</ol>
+
+				<h2>Topping der virker godt</h2>
+				<p>
+					Stykker der allerede er kogt eller hurtigt griller — pepperoni, skinke, cherrytomat halveret,
+					lidt pesto efter bagning. Undgå tunge, våde center-loads af revet grønt før du kender tiderne.
+				</p>
+
+				<h2>Naan og tortillas som hurtig bund</h2>
+				<p>
+					<a href="/opskrifter/airfryer-naan-pitabroed">Naan/pita</a> kan bruges som cheat-bund: mindre
+					gærarbejde, hurtig hverdags-pizza — stadig med mådehold med sauce så den ikke bliver slap.
+				</p>
+
+				<h2>Genopvarmning af pizzarester</h2>
+				<p>
+					Se <a href="/guides/genopvarmning-i-airfryer">genopvarmningsguiden</a>: 160–170 °C, korte
+					intervaller, ét lag — ofte bedre end mikrobølge til pizzabund.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="pizza-i-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
