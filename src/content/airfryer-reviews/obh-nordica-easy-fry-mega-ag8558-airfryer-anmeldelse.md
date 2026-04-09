@@ -4,7 +4,7 @@ description: 'OBH Nordica AG8558N0 Easy Fry Mega: ca. 2020 W, attraktiv pris og 
 intro: 'OBH Nordica Easy Fry Mega rammer bredt: prisvenlig stor kurv, kendt nordisk brand og funktioner der dækker hverdagen uden at konkurrere med top-premium.'
 pubDate: 2026-04-12
 updatedDate: 2026-04-12
-shopProductUrl: 'https://www.pricerunner.dk/pl/81-3334809198/Frituregryder/OBH-Nordica-Easy-Fry-Mega-Airfryer-AG8558N0-Sammenlign-Priser'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=104140&partnerid=52794&htmlurl=https://grydeguru.dk/easy-fry-mega-air-fryer-7-5-l-black.html'
 brandLabel: 'OBH Nordica'
 rating: 4
 pros:
@@ -22,8 +22,8 @@ faq:
     answer: 'Variation mellem enheder; 2000 W-klassen er typisk mere rolig end de højeste effekter — stil på fast underlag og undgå resonans mod skab.'
   - question: 'Kan jeg få reservedele?'
     answer: 'Kontakt OBH Nordica eller forhandler — kurve og non-stick slides som på alle mærker. Behandl belægningen skånsomt for længere levetid.'
-  - question: 'Hvorfor link til PriceRunner?'
-    answer: 'Priser svinger — sammenligningen samler markedet. Vi opdaterer ikke priser manuelt i teksten.'
+  - question: 'Hvorfor både butikslink og PriceRunner?'
+    answer: 'Butik-linket er et partnerlink til den viste forhandler. PriceRunner-widgetten er et separat samarbejde med prissammenligning — vi opdaterer ikke priser manuelt i teksten.'
 heroImage: '/images/reviews/obh-nordica-easy-fry-mega-ag8558-airfryer.png'
 heroAlt: 'Hvid familie-airfryer på lys træbord i dansk køkkenstil'
 ---
@@ -42,4 +42,4 @@ Sammenlign med [Philips 2000-serie](/anmeldelser/philips-na231-2000-series-anmel
 
 ## Konklusion
 
-Easy Fry Mega er **fornuft og volumen** — køb den hvis tallene på PriceRunner giver mening, og du kan leve uden dobbelte zoner.
+Easy Fry Mega er **fornuft og volumen** — køb den hvis prisen via linket giver mening, og du kan leve uden dobbelte zoner.

@@ -4,7 +4,7 @@ description: 'Vores vurdering af Cosori Turbo Tower Pro (ca. 10,8 L): lodret fod
 intro: 'Cosori Turbo Tower Pro hitter hos dem der vil have stor kapacitet uden at brede sig på hele bordpladen. Tårnformatet ændrer arbejdsgangen — her er fordele og faldgruber.'
 pubDate: 2026-04-12
 updatedDate: 2026-04-12
-shopProductUrl: 'https://www.pricerunner.dk/pl/81-3405094270/Frituregryder/Cosori-Turbo-Tower-Pro-Smart-10.8L-Gold-Sammenlign-Priser'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/frituregryder/airfryer-cosori-turbo-tower-pro-smart-108-l-2630-w-sort-guld-1944540?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 brandLabel: 'Cosori'
 rating: 4
 pros:
@@ -21,8 +21,8 @@ faq:
     answer: 'Varierer efter modelhøjde og dit skabsfald. Mål fra bordplade til underskab og træk ca. 10–15 cm ekstra til luft/damp — og tjek om fronten kan åbnes frit.'
   - question: 'Kan jeg stege lag på lag i en tower-airfryer?'
     answer: 'Brug producentens riste/indlæg hvis medfølgende; ellers risikerer du uens stegning. Luft skal kunne cirkulere — undgå at lukke designet helt til.'
-  - question: 'Hvorfor står der både annoncelinks og PriceRunner på siden?'
-    answer: 'Priser hentes via PriceRunner-samarbejdet; konkrete kampagner kan afvige — verificer altid hos forhandleren.'
+  - question: 'Hvorfor står der både butikslink og PriceRunner på siden?'
+    answer: 'Butik-linket er et partnerlink til den viste forhandler. PriceRunner-widgetten er et separat samarbejde med prissammenligning — pris og lager kan afvige. Verificer altid hos forhandleren før køb.'
 heroImage: '/images/reviews/cosori-turbo-tower-pro-108l-airfryer.png'
 heroAlt: 'Høj tårn-lignende airfryer med guldaccent på køkkenbord'
 ---

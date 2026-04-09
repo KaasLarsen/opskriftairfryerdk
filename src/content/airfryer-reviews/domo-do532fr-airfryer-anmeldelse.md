@@ -4,7 +4,7 @@ description: 'Vores vurdering af DOMO DO532FR (4 L / ca. 1,2 kg, 1500 W): fordel
 intro: 'Vi tager DOMO DO532FR under luppen som praktisk airfryer: hvem modellen typisk passer til, hvordan du får bedre luftcirkulation i kurven, og hvornår det giver mening at skrue op for kapacitet eller vælge dual zone.'
 pubDate: 2026-04-06
 updatedDate: 2026-04-08
-shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-do532fr-airfryer-sort-4-l-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-do532fr-airfryer-sort-4-l-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1485951'
 brandLabel: 'DOMO'
 rating: 4

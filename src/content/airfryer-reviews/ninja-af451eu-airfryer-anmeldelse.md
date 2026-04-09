@@ -4,7 +4,7 @@ description: 'Ninja Foodi MAX Dual Zone AF451EU: to uafhængige zoner, ca. 9,5 L
 intro: 'Ninja AF451EU er en Foodi MAX Dual Zone med to skuffer — tænk forskellige temperaturer og SYNC så måltidet mødes. Her er styrkerne og hvornår FlexDrawer stadig vinder på formfaktor.'
 pubDate: 2026-04-12
 updatedDate: 2026-04-12
-shopProductUrl: 'https://www.pricerunner.dk/pl/81-3206566758/Frituregryder/Ninja-AF451EU-Sammenlign-Priser'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/airfryer-ninja-foodi-af451-max-dual-zone-95-l-inkl-termometer?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 brandLabel: 'Ninja'
 rating: 4
 pros:
@@ -22,8 +22,8 @@ faq:
     answer: 'FlexDrawer (AF500-serien) er én lang skuffe — god til stege/kylling i ét stort lag. AF451EU er to separate zoner i mere kasseret form. Vælg ud fra om du laver “én stor flade” eller “to forskellige programmer”.'
   - question: 'Er Ninja højlydt?'
     answer: 'Kraftige Foodi-modeller larmer mere end 1500 W-kompakte. Forvent ventilatorlyd som en kraftig ovn med varmluft.'
-  - question: 'Hvorfor PriceRunner-link?'
-    answer: 'Vi henviser til sammenligning så du ser realtid på tværs af butikker; specifikationer kan opdateres af forhandler — dobbelttjek inden køb.'
+  - question: 'Hvorfor både butikslink og PriceRunner?'
+    answer: 'Butik-linket går til en konkret forhandler via partner. PriceRunner-widgetten viser tilbud på tværs af flere butikker — specifikationer og pris kan afvige; dobbelttjek altid inden køb.'
 heroImage: '/images/reviews/ninja-af451eu-airfryer.png'
 heroAlt: 'Ninja-lignende sort dual-zone airfryer med to skuffer på mørk køkkenbordplade'
 ---

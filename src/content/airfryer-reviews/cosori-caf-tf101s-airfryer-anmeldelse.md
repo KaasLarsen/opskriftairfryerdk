@@ -4,7 +4,7 @@ description: 'Vurdering af Cosori CAF-TF101S: ca. 2800 W, familiekapacitet og ty
 intro: 'Cosori CAF-TF101S er en af de kraftigere luftfriture-modeller på markedet med høj effekt og plads til større portioner. Her er hvad der betyder noget i praksis — og hvornår du bør kigge mod dobbeltkurv i stedet.'
 pubDate: 2026-04-12
 updatedDate: 2026-04-12
-shopProductUrl: 'https://www.pricerunner.dk/pl/81-3320113707/Frituregryder/Cosori-CAF-TF101S-Sammenlign-Priser'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hvidevarer/komfur-og-ovne/komfur/cosori-dual-blaze-twinfry-airfryer-10-l-hvid?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 brandLabel: 'Cosori'
 rating: 4
 pros:
@@ -22,8 +22,10 @@ faq:
     answer: 'I én kurv med omtrent samme temperatur ja — du balancerer med vending og lag. Til forskellige temperaturer samtidig er to zoner eller to maskiner nemmere.'
   - question: 'Betyder 2800 W mere støj?'
     answer: 'Ofte lidt mere vindstøj end svagere modeller, men oplevelsen varierer. Stil maskinen på plan overflade og undgå kontakt med vægge der forstærker vibration.'
-  - question: 'Hvorfor står der både annoncelinks og PriceRunner på siden?'
-    answer: 'Linket kan pege på prissammenligning. PriceRunner-widgetten er et separat samarbejde — tjek altid den enkelte butik før køb.'
+  - question: 'Hvorfor står der både butikslink og PriceRunner på siden?'
+    answer: 'Butik-linket er et partnerlink til den viste forhandler. PriceRunner-widgetten er et separat samarbejde med prissammenligning — pris og lager kan afvige. Tjek altid den enkelte butik før køb.'
+  - question: 'Hvorfor hedder varen fx «Twinfry» på forhandlerens side?'
+    answer: 'Handelsnavnet kan afvige fra modelbetegnelsen CAF-TF101S; varebeskrivelsen hos forhandleren matcher typisk den konkrete model.'
 heroImage: '/images/reviews/cosori-caf-tf101s-airfryer.png'
 heroAlt: 'Cosori-lignende sort airfryer på køkkenbord med damp, neutral baggrund'
 ---

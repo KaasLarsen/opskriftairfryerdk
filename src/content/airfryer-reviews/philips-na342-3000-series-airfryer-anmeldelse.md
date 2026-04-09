@@ -4,7 +4,7 @@ description: 'Philips NA342 (3000-serien, ca. 7,2 L): Rapid Air, vindue til kurv
 intro: 'Philips NA342 udvider 3000-serien med mere liter og ofte vindue i fronten — praktisk når du vil følge farve uden at åbne og miste varme.'
 pubDate: 2026-04-12
 updatedDate: 2026-04-12
-shopProductUrl: 'https://www.pricerunner.dk/pl/81-3340445627/Frituregryder/Philips-3000-Series-Airfryer-7.2-L-NA342-00-Sammenlign-Priser'
+shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/philips-airfryer-na342-00-72-l-2000-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 brandLabel: 'Philips'
 rating: 4
 pros:
@@ -22,8 +22,8 @@ faq:
     answer: 'NA352 (dual kurv) giver to temperaturer/zoner; NA342 er typisk én stor kurv med vindue. Vælg efter madvaner — ikke kun liter.'
   - question: 'Er vindue svært at rengøre?'
     answer: 'Fedt og kondens sætter sig — aftør efter brug og følg Philips’ rengøringsguide; undgå grove skraper der ridser.'
-  - question: 'Hvorfor står der PriceRunner på siden?'
-    answer: 'Widgetten viser priser på tværs af forhandlere. Vi linker til sammenligning så du kan se markedet — ikke én fast pris.'
+  - question: 'Hvorfor står der både butikslink og PriceRunner?'
+    answer: 'Butik-linket er et partnerlink til den viste forhandler. PriceRunner-widgetten viser priser på tværs af flere forhandlere — de to kan vise forskellig pris; tjek altid butikken før køb.'
 heroImage: '/images/reviews/philips-na342-3000-series-airfryer.png'
 heroAlt: 'Sort Philips-lignende airfryer med stort vindue ved siden af grøntsager på bord'
 ---
