@@ -35,6 +35,8 @@ function normalizeWpSlugFromPath(p) {
 	const raw = p.startsWith('/') ? p.slice(1) : p;
 	let s = decodeURIComponent(raw).toLowerCase();
 	s = s.replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE00}-\u{FE0F}]/gu, '');
+	/* Flag (regional indicators, fx 🇬🇷) */
+	s = s.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '');
 	s = s.replace(/\/$/u, '');
 	s = s.replace(/^-+|-+$/gu, '');
 	return s;

@@ -7,6 +7,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/%E2%9C%A8-princess-182065-airfryer-ovn-en-alsidig-og-rummelig-airfryer",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%87%AC%F0%9F%87%B7-graeske-frikadeller-i-airfryer-sproede-saftige-og-fyldt-med-smag",
+			"destination": "/opskrifter/airfryer-pljeskavica",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%8C%85-saadan-genvokser-du-foraarsloeg-nemt-og-hurtigt-i-vand-eller-jord",
 			"destination": "/",
 			"permanent": true
@@ -32,8 +42,18 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%8C%BD-airfryer-majs-med-kryddersmoer-og-parmesan-perfekt-til-sommerens-grillstemning",
+			"destination": "/opskrifter/airfryer-groentsagsmix",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%8C%BF-saadan-dyrker-du-basilikum-fra-afklip-i-vand-og-videre-i-jord",
 			"destination": "/",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%8D%84-cremet-svamperisotto-med-parmesan-og-spinat-i-airfryer-nem-groen-og-uimodstaaelig",
+			"destination": "/opskrifter/airfryer-one-pot-orzo-tomat-mozzarella",
 			"permanent": true
 		},
 		{
@@ -82,8 +102,18 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%8D%9E-airfryer-hveder-til-store-bededag-lune-bloede-og-nostalgiske",
+			"destination": "/opskrifter/airfryer-pandekager",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%8D%9E-stenalderbroed-i-airfryer-nemt-sundt-og-fyldt-med-kerner",
 			"destination": "/opskrifter/airfryer-hytteost-broed",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%8D%A0-airfryer-hasselback-sweet-potatoes-smagfulde-sproede-og-karamelliserede",
+			"destination": "/opskrifter/airfryer-soede-kartofler",
 			"permanent": true
 		},
 		{
@@ -112,6 +142,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%8D%A9-sunde-doughnuts-i-airfryer-bagt-med-havregryn-og-banan-uden-friture",
+			"destination": "/opskrifter/airfryer-aege-muffins",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%8D%B3-spejlaeg-i-airfryer-perfekt-resultat-paa-faa-minutter",
 			"destination": "/opskrifter/airfryer-aeg",
 			"permanent": true
@@ -124,6 +159,11 @@
 		{
 			"source": "/%F0%9F%90%91-airfryer-lammekoelle-moert-og-saftigt-lam-med-sproed-overflade",
 			"destination": "/opskrifter/airfryer-lammekoelle-skiver",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%90%93-butter-chicken-med-spinat-og-ris-i-en-gryde-i-airfryer-cremet-krydret-og-komplet",
+			"destination": "/opskrifter/airfryer-one-pot-marokkansk-kylling-kikaerter",
 			"permanent": true
 		},
 		{
@@ -147,6 +187,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%90%9F-fiskefrikadeller-i-airfryer-klassisk-opskrift-med-citron-og-dild",
+			"destination": "/opskrifter/airfryer-fiskefrikadeller",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%90%9F-laks-i-airfryer-med-asparges-og-dilddressing-sundt-og-smagfuldt",
 			"destination": "/opskrifter/airfryer-laks",
 			"permanent": true
@@ -154,6 +199,11 @@
 		{
 			"source": "/%F0%9F%90%9F-moerksej-i-airfryer-saftig-sund-og-smagfuld-fiskeret-paa-faa-minutter",
 			"destination": "/opskrifter/airfryer-moerksej",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%94%A5-airfryer-smores-den-ultimative-nemme-dessertsnack",
+			"destination": "/opskrifter/airfryer-chokoladekage-lille-form",
 			"permanent": true
 		},
 		{
@@ -179,6 +229,11 @@
 		{
 			"source": "/%F0%9F%A5%93-stegt-flaesk-i-airfryer-sproed-svaer-og-nem-aftensmad",
 			"destination": "/opskrifter/airfryer-bacon",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%A5%93%F0%9F%8D%8F-aebleflaesk-i-airfryer-en-dansk-klassiker-med-et-moderne-twist",
+			"destination": "/opskrifter/airfryer-flaeskesteg",
 			"permanent": true
 		},
 		{
@@ -217,6 +272,21 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%A5%A6-airfryer-groentsags-tempura-sproede-groentsager-uden-friture",
+			"destination": "/opskrifter/airfryer-groentsagsmix",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%A5%A9-bbq-marinerede-short-ribs-i-airfryer-moere-karamelliserede-ribben-med-intens-smag",
+			"destination": "/opskrifter/airfryer-ribbensteg",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%A5%AC-groentsagsfrikadeller-i-airfryer-med-squash-gulerod-og-urter",
+			"destination": "/opskrifter/airfryer-linsefrikadeller",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%A5%AC-saadan-dyrker-du-din-egen-ingefaer-derhjemme",
 			"destination": "/",
 			"permanent": true
@@ -232,8 +302,18 @@
 			"permanent": true
 		},
 		{
+			"source": "/%F0%9F%A5%AF-proteinbagels-i-airfryer-glutenfri-low-carb-og-klar-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"permanent": true
+		},
+		{
 			"source": "/%F0%9F%A6%90-pizza-med-rejer-og-hvidloeg-middelhavsinspireret-og-sommerlig",
 			"destination": "/opskrifter/airfryer-rejer-hvidloegsmoer",
+			"permanent": true
+		},
+		{
+			"source": "/%F0%9F%A7%80-burrata-med-bagte-tomater-i-airfryer-en-cremet-og-intens-smagsoplevelse-%F0%9F%8D%85%E2%9C%A8",
+			"destination": "/opskrifter/airfryer-soltoerrede-tomater",
 			"permanent": true
 		},
 		{
@@ -342,6 +422,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/anmeldelse-af-xiaomi-mi-smart-air-fryer-en-moderne-tilgang-til-madlavning",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
 			"source": "/asiatiske-retter-du-kan-lave-i-din-airfryer-nemme-og-laekre-opskrifter",
 			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
 			"permanent": true
@@ -359,6 +444,21 @@
 		{
 			"source": "/bagte-aebler-med-kanel-og-sukker-i-airfryer-en-nem-og-laekker-efteraarsdessert",
 			"destination": "/opskrifter/airfryer-aeblechips",
+			"permanent": true
+		},
+		{
+			"source": "/bagte-aeg-i-avocado-i-airfryer-sund-og-laekker-morgenmad",
+			"destination": "/opskrifter/airfryer-aeg",
+			"permanent": true
+		},
+		{
+			"source": "/bagte-kartofler-i-airfryer-perfekt-tilbehoer-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-bagekartofler",
+			"permanent": true
+		},
+		{
+			"source": "/bananbroed-muffins-til-boern-i-airfryer-laekker-og-sund-snack-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-bananbroed",
 			"permanent": true
 		},
 		{
@@ -389,6 +489,11 @@
 		{
 			"source": "/brownie-bites-nem-cafe-klassiker-i-airfryer",
 			"destination": "/opskrifter/airfryer-chokoladekage-lille-form",
+			"permanent": true
+		},
+		{
+			"source": "/brunede-kartofler-i-airfryer",
+			"destination": "/guides/jul-i-airfryer",
 			"permanent": true
 		},
 		{
@@ -452,6 +557,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/crispy-fish-tacos-i-airfryer-sproed-smagfuld-frisk-%F0%9F%8C%AE%F0%9F%94%A5",
+			"destination": "/opskrifter/airfryer-fiskefilet",
+			"permanent": true
+		},
+		{
 			"source": "/dan-grill-valhal-310-cs-en-solid-og-prisvenlig-gasgrill-til-hverdagsbrug",
 			"destination": "/anmeldelser",
 			"permanent": true
@@ -489,6 +599,11 @@
 		{
 			"source": "/de-bedste-typer-af-koed-til-airfryeren-sproede-saftige-og-nemme-retter",
 			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"permanent": true
+		},
+		{
+			"source": "/de-mest-populaere-airfryers-i-2024",
+			"destination": "/guides/hvilken-airfryer",
 			"permanent": true
 		},
 		{
@@ -567,6 +682,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/hasselback-kartofler-i-airfryer-sproed-perfektion-hver-gang",
+			"destination": "/opskrifter/airfryer-kartofler-i-baade",
+			"permanent": true
+		},
+		{
 			"source": "/havregroed-muffins-i-airfryer-sund-og-nem-morgenmad-paa-farten",
 			"destination": "/opskrifter/airfryer-aege-muffins",
 			"permanent": true
@@ -577,8 +697,18 @@
 			"permanent": true
 		},
 		{
+			"source": "/hjemmelavede-bananchips-i-airfryer-sproede-sunde-%F0%9F%8D%8C%F0%9F%94%A5",
+			"destination": "/opskrifter/airfryer-aeblechips",
+			"permanent": true
+		},
+		{
 			"source": "/hjemmelavede-havregrynskager-i-airfryer",
 			"destination": "/opskrifter/airfryer-pebernoder",
+			"permanent": true
+		},
+		{
+			"source": "/hjemmelavede-muslibarer-i-airfryer-%F0%9F%8D%AF%F0%9F%8C%B0-sproede-sunde-og-uimodstaaelige",
+			"destination": "/opskrifter/airfryer-aege-muffins",
 			"permanent": true
 		},
 		{
@@ -617,8 +747,23 @@
 			"permanent": true
 		},
 		{
+			"source": "/hurtige-og-nemme-syltede-roedloeg-i-airfryer-klar-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-loegringe",
+			"permanent": true
+		},
+		{
 			"source": "/hurtige-og-sproede-popcorn-i-airfryer-klar-paa-faa-minutter",
 			"destination": "/opskrifter/airfryer-popcorn",
+			"permanent": true
+		},
+		{
+			"source": "/hvordan-du-kan-kombinere-keto-kost-med-din-airfryer",
+			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"permanent": true
+		},
+		{
+			"source": "/julebagvaerk-fra-airfryeren-nemt-hurtigt-og-fyldt-med-hygge",
+			"destination": "/opskrifter/airfryer-klejner",
 			"permanent": true
 		},
 		{
@@ -697,6 +842,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/lav-det-perfekte-udekoekken-med-cozze-den-ultimative-guide",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
 			"source": "/le-feu-turtle-2-0-pizzaovn-en-stilfuld-og-effektiv-pizzaovn-til-enhver-lejlighed",
 			"destination": "/anmeldelser",
 			"permanent": true
@@ -704,6 +854,11 @@
 		{
 			"source": "/leverpostej-i-airfryer-nem-opskrift-med-perfekt-resultat",
 			"destination": "/opskrifter/airfryer-leverpostej",
+			"permanent": true
+		},
+		{
+			"source": "/luftig-og-laekker-aeggekage-i-airfryer-nemme-variationer-til-enhver-smag-%F0%9F%8D%B3",
+			"destination": "/opskrifter/airfryer-aeggekage-asparges-bacon",
 			"permanent": true
 		},
 		{
@@ -724,6 +879,21 @@
 		{
 			"source": "/luftigt-naanbroed-i-airfryer-perfekt-til-indiske-retter-og-mere",
 			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"permanent": true
+		},
+		{
+			"source": "/lune-paaskeboller-med-chokolade-i-airfryer-%F0%9F%8D%AB%F0%9F%A5%AF",
+			"destination": "/opskrifter/airfryer-klejner",
+			"permanent": true
+		},
+		{
+			"source": "/marcipan-og-chokoladesmaakager-den-perfekte-soede-bid-fra-din-airfryer",
+			"destination": "/opskrifter/airfryer-mini-hindbaertaerte",
+			"permanent": true
+		},
+		{
+			"source": "/medister-i-airfryer-en-nem-og-laekker-loesning",
+			"destination": "/opskrifter/airfryer-medister",
 			"permanent": true
 		},
 		{
@@ -757,6 +927,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/morsoe-forno-gasgrill-elegance-og-funktionalitet-til-udendoers-madlavning",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/morsoe-forno-spin-en-stilfuld-og-effektiv-pizzaovn-til-det-moderne-udekoekken",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
 			"source": "/napoleon-freestyle-365-kvalitet-og-fleksibilitet-til-den-serioese-griller",
 			"destination": "/anmeldelser",
 			"permanent": true
@@ -787,8 +967,38 @@
 			"permanent": true
 		},
 		{
+			"source": "/ninja-af160eu-airfryer-kraftfuld-alsidig-og-brugervenlig-madlavning",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/ninja-double-stack-xl-sl400-en-alsidig-airfryer-til-store-portioner",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/ninja-foodi-af300eu-en-grundig-anmeldelse-af-en-alsidig-airfryer",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/ninja-foodi-flexdrawer-af500eu-perfekt-til-fleksibel-madlavning",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
+			"source": "/ninja-foodi-max-af400eu-den-ultimative-dobbelt-rums-airfryer-til-store-maaltider",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
 			"source": "/noedder-du-kan-tilberede-i-din-airfryer-en-guide-til-smagfulde-snacks",
 			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"permanent": true
+		},
+		{
+			"source": "/nybegynderen-tips-til-dig-der-overvejer-at-koebe-din-foerste-airfryer",
+			"destination": "/guides/airfryer-for-begyndere",
 			"permanent": true
 		},
 		{
@@ -874,6 +1084,11 @@
 		{
 			"source": "/opskrifter/bagt-havregroed-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-havregroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bagte-porrer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-porre-baade-bacon",
 			"permanent": true
 		},
 		{
@@ -982,6 +1197,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/gratineret-hummer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-laks",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/gratineret-oesters-i-airfryer.html",
+			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/groenkaal-med-bacon-og-perleloeg-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-groenkaalschips",
 			"permanent": true
@@ -1029,6 +1254,16 @@
 		{
 			"source": "/opskrifter/hel-kylling-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-hel-kylling",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hel-makrel-i-airfryer-citron-og-urter.html",
+			"destination": "/opskrifter/airfryer-makrelfilet",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/helleflynder-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-torsk",
 			"permanent": true
 		},
 		{
@@ -1128,6 +1363,11 @@
 		},
 		{
 			"source": "/opskrifter/lammekoteletter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-lammekoelle-skiver",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammeskank-i-fad-smaa-stykker-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-lammekoelle-skiver",
 			"permanent": true
 		},
@@ -1327,6 +1567,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/tebirkes-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-aebleskiver",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/tempura-rejer-i-airfryer-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-rejer-hvidloegsmoer",
 			"permanent": true
@@ -1377,6 +1622,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/pebernoedder-i-airfryer-klassiske-julesmaakager-paa-en-nem-maade",
+			"destination": "/opskrifter/airfryer-pebernoder",
+			"permanent": true
+		},
+		{
 			"source": "/perfekt-culottesteg-i-airfryer-nemt-saftigt-og-sproedt",
 			"destination": "/opskrifter/airfryer-culottesteg",
 			"permanent": true
@@ -1422,6 +1672,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/princess-pizzaovn-pro-en-alsidig-og-kompakt-pizzaovn-til-hjemmebrug",
+			"destination": "/anmeldelser",
+			"permanent": true
+		},
+		{
 			"source": "/proteinpandekager-i-airfryer-nemt-sundt-og-laekkert",
 			"destination": "/opskrifter/airfryer-pandekager",
 			"permanent": true
@@ -1457,6 +1712,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/rosenkaal-i-airfryer-den-perfekte-kombination-af-sproedhed-og-smag",
+			"destination": "/opskrifter/airfryer-rosenkaal",
+			"permanent": true
+		},
+		{
 			"source": "/saftig-moerbrad-i-airfryer-nem-og-laekker-opskrift-paa-faa-minutter",
 			"destination": "/opskrifter/airfryer-moerbrad",
 			"permanent": true
@@ -1464,6 +1724,11 @@
 		{
 			"source": "/saftig-og-smagfuld-hamburgerryg-i-airfryer-nem-og-hurtig-tilberedning",
 			"destination": "/opskrifter/airfryer-hamburgerryg-glaseret",
+			"permanent": true
+		},
+		{
+			"source": "/saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang",
+			"destination": "/opskrifter/airfryer-culottesteg",
 			"permanent": true
 		},
 		{
@@ -1482,6 +1747,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/soed-kartoffel-toast-med-avocado-i-airfryer",
+			"destination": "/opskrifter/airfryer-soede-kartofler",
+			"permanent": true
+		},
+		{
 			"source": "/sproed-blomkaal-med-smeltet-ost-i-airfryer-nemt-og-laekkert-tilbehoer",
 			"destination": "/opskrifter/airfryer-blomkaal",
 			"permanent": true
@@ -1492,6 +1762,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/sproede-brunkager-i-airfryer-den-nemmeste-vej-til-julens-laekre-smaakager",
+			"destination": "/opskrifter/airfryer-pebernoder",
+			"permanent": true
+		},
+		{
 			"source": "/sproede-falafler-i-airfryer-lav-dine-egne-eller-brug-faerdiglavede",
 			"destination": "/opskrifter/airfryer-falafler",
 			"permanent": true
@@ -1499,6 +1774,11 @@
 		{
 			"source": "/sproede-fiskefileter-i-airfryer-nem-opskrift-paa-klassisk-fiskeret",
 			"destination": "/opskrifter/airfryer-fiskefilet",
+			"permanent": true
+		},
+		{
+			"source": "/sproede-foraarsruller-i-airfryer-den-perfekte-snack-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-frosne-foraarsruller",
 			"permanent": true
 		},
 		{
@@ -1529,6 +1809,16 @@
 		{
 			"source": "/sproede-og-saftige-airfryer-rejer-med-hvidloeg-og-citron-en-hurtig-og-laekker-ret",
 			"destination": "/opskrifter/airfryer-rejer-hvidloegsmoer",
+			"permanent": true
+		},
+		{
+			"source": "/sproede-og-saftige-kyllingelaar-i-airfryer-nemt-og-laekkert-paa-under-30-minutter",
+			"destination": "/opskrifter/airfryer-kyllingelaar",
+			"permanent": true
+		},
+		{
+			"source": "/sproede-plantebaserede-nuggets-i-airfryer-%F0%9F%8C%B1%F0%9F%8D%97",
+			"destination": "/opskrifter/airfryer-tempeh-biter",
 			"permanent": true
 		},
 		{
@@ -1592,6 +1882,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/toerrede-roedbeder-i-airfryer-sproede-og-farverige-chips-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-roedbede-feta-citron-chips",
+			"permanent": true
+		},
+		{
 			"source": "/toerret-groenkaal-i-airfryer-sproed-og-sund-snack-paa-ingen-tid",
 			"destination": "/opskrifter/airfryer-groenkaalschips",
 			"permanent": true
@@ -1599,6 +1894,11 @@
 		{
 			"source": "/tortilla-chips-i-airfryer-sproedt-og-hjemmelavet-paa-ingen-tid",
 			"destination": "/opskrifter/airfryer-tortilla-chips",
+			"permanent": true
+		},
+		{
+			"source": "/veganske-nuggets-i-airfryer-perfekt-sproede-paa-ingen-tid",
+			"destination": "/opskrifter/airfryer-tempeh-biter",
 			"permanent": true
 		},
 		{

@@ -125,7 +125,50 @@
 		"chorizo-og-aeg-quesadilla-i-airfryer-nem-og-smagfuld-morgenmad": "airfryer-quesadillas-kylling-ost",
 		"brownie-bites-nem-cafe-klassiker-i-airfryer": "airfryer-chokoladekage-lille-form",
 		"sproede-gulerodsfritter-med-krydret-aioli-en-sundere-snack-med-masser-af-smag": "airfryer-honning-guleroedder",
-		"opskrifter/t-bone-steak-i-airfryer.html": "airfryer-okseboef-steak"
+		"opskrifter/t-bone-steak-i-airfryer.html": "airfryer-okseboef-steak",
+		"airfryer-majs-med-kryddersmoer-og-parmesan-perfekt-til-sommerens-grillstemning": "airfryer-groentsagsmix",
+		"rosenkaal-i-airfryer-den-perfekte-kombination-af-sproedhed-og-smag": "airfryer-rosenkaal",
+		"aebleflaesk-i-airfryer-en-dansk-klassiker-med-et-moderne-twist": "airfryer-flaeskesteg",
+		"luftig-og-laekker-aeggekage-i-airfryer-nemme-variationer-til-enhver-smag": "airfryer-aeggekage-asparges-bacon",
+		"burrata-med-bagte-tomater-i-airfryer-en-cremet-og-intens-smagsoplevelse": "airfryer-soltoerrede-tomater",
+		"graeske-frikadeller-i-airfryer-sproede-saftige-og-fyldt-med-smag": "airfryer-pljeskavica",
+		"saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang": "airfryer-culottesteg",
+		"veganske-nuggets-i-airfryer-perfekt-sproede-paa-ingen-tid": "airfryer-tempeh-biter",
+		"sproede-brunkager-i-airfryer-den-nemmeste-vej-til-julens-laekre-smaakager": "airfryer-pebernoder",
+		"medister-i-airfryer-en-nem-og-laekker-loesning": "airfryer-medister",
+		"hjemmelavede-bananchips-i-airfryer-sproede-sunde": "airfryer-aeblechips",
+		"hjemmelavede-muslibarer-i-airfryer--sproede-sunde-og-uimodstaaelige": "airfryer-aege-muffins",
+		"bananbroed-muffins-til-boern-i-airfryer-laekker-og-sund-snack-paa-ingen-tid": "airfryer-bananbroed",
+		"groentsagsfrikadeller-i-airfryer-med-squash-gulerod-og-urter": "airfryer-linsefrikadeller",
+		"proteinbagels-i-airfryer-glutenfri-low-carb-og-klar-paa-ingen-tid": "airfryer-naan-pitabroed",
+		"airfryer-hveder-til-store-bededag-lune-bloede-og-nostalgiske": "airfryer-pandekager",
+		"airfryer-smores-den-ultimative-nemme-dessertsnack": "airfryer-chokoladekage-lille-form",
+		"hurtige-og-nemme-syltede-roedloeg-i-airfryer-klar-paa-ingen-tid": "airfryer-loegringe",
+		"lune-paaskeboller-med-chokolade-i-airfryer": "airfryer-klejner",
+		"marcipan-og-chokoladesmaakager-den-perfekte-soede-bid-fra-din-airfryer": "airfryer-mini-hindbaertaerte",
+		"opskrifter/hel-makrel-i-airfryer-citron-og-urter.html": "airfryer-makrelfilet",
+		"sproede-og-saftige-kyllingelaar-i-airfryer-nemt-og-laekkert-paa-under-30-minutter": "airfryer-kyllingelaar",
+		"fiskefrikadeller-i-airfryer-klassisk-opskrift-med-citron-og-dild": "airfryer-fiskefrikadeller",
+		"julebagvaerk-fra-airfryeren-nemt-hurtigt-og-fyldt-med-hygge": "airfryer-klejner",
+		"butter-chicken-med-spinat-og-ris-i-en-gryde-i-airfryer-cremet-krydret-og-komplet": "airfryer-one-pot-marokkansk-kylling-kikaerter",
+		"crispy-fish-tacos-i-airfryer-sproed-smagfuld-frisk": "airfryer-fiskefilet",
+		"opskrifter/helleflynder-i-airfryer.html": "airfryer-torsk",
+		"bagte-kartofler-i-airfryer-perfekt-tilbehoer-paa-ingen-tid": "airfryer-bagekartofler",
+		"pebernoedder-i-airfryer-klassiske-julesmaakager-paa-en-nem-maade": "airfryer-pebernoder",
+		"hasselback-kartofler-i-airfryer-sproed-perfektion-hver-gang": "airfryer-kartofler-i-baade",
+		"airfryer-hasselback-sweet-potatoes-smagfulde-sproede-og-karamelliserede": "airfryer-soede-kartofler",
+		"soed-kartoffel-toast-med-avocado-i-airfryer": "airfryer-soede-kartofler",
+		"sproede-plantebaserede-nuggets-i-airfryer": "airfryer-tempeh-biter",
+		"opskrifter/tebirkes-i-airfryer.html": "airfryer-aebleskiver",
+		"opskrifter/bagte-porrer-i-airfryer.html": "airfryer-porre-baade-bacon",
+		"opskrifter/lammeskank-i-fad-smaa-stykker-i-airfryer.html": "airfryer-lammekoelle-skiver",
+		"bbq-marinerede-short-ribs-i-airfryer-moere-karamelliserede-ribben-med-intens-smag": "airfryer-ribbensteg",
+		"sunde-doughnuts-i-airfryer-bagt-med-havregryn-og-banan-uden-friture": "airfryer-aege-muffins",
+		"sproede-foraarsruller-i-airfryer-den-perfekte-snack-paa-ingen-tid": "airfryer-frosne-foraarsruller",
+		"toerrede-roedbeder-i-airfryer-sproede-og-farverige-chips-paa-ingen-tid": "airfryer-roedbede-feta-citron-chips",
+		"bagte-aeg-i-avocado-i-airfryer-sund-og-laekker-morgenmad": "airfryer-aeg",
+		"airfryer-groentsags-tempura-sproede-groentsager-uden-friture": "airfryer-groentsagsmix",
+		"cremet-svamperisotto-med-parmesan-og-spinat-i-airfryer-nem-groen-og-uimodstaaelig": "airfryer-one-pot-orzo-tomat-mozzarella"
 	},
 	"keywordRoutes": [
 		[
@@ -362,10 +405,38 @@
 		{
 			"prefix": "dan-grill-",
 			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "morsoe-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "ninja-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "princess-",
+			"destination": "/anmeldelser"
 		}
 	],
 	"staticPathRedirects": {
 		"/anmeldelse-af-obh-nordica-ag905bs0-dual-easy-fry-grill-en-alsidig-airfryer-til-enhver-lejlighed": "/anmeldelser",
-		"/din-komplette-guide-til-airfryer-tilbehoer-faa-det-bedste-ud-af-din-madlavning": "/guides/tilbehoer-til-airfryer"
+		"/din-komplette-guide-til-airfryer-tilbehoer-faa-det-bedste-ud-af-din-madlavning": "/guides/tilbehoer-til-airfryer",
+		"/nybegynderen-tips-til-dig-der-overvejer-at-koebe-din-foerste-airfryer": "/guides/airfryer-for-begyndere",
+		"/bedste-airfryer-i-2025-stor-guide-til-valg-test-og-anbefalinger": "/guides/hvilken-airfryer",
+		"/de-mest-populaere-airfryers-i-2024": "/guides/hvilken-airfryer",
+		"/pizza-carbonara-i-pizzaovn-luksurioes-og-fyldig": "/anmeldelser",
+		"/kebabpizza-i-pizzaovn-saftig-og-smagfuld-oplevelse": "/anmeldelser",
+		"/5-udvalgte-pizzaovne-til-sommeren-2025-find-din-perfekte-model": "/anmeldelser",
+		"/lav-det-perfekte-udekoekken-med-cozze-den-ultimative-guide": "/anmeldelser",
+		"/anmeldelse-af-xiaomi-mi-smart-air-fryer-en-moderne-tilgang-til-madlavning": "/anmeldelser",
+		"/hvordan-du-kan-kombinere-keto-kost-med-din-airfryer": "/guides/hvad-kan-man-lave-i-en-airfryer",
+		"/madplan-1-uges-nem-og-laekker-aftensmad-i-airfryer-til-hele-familien": "/guides/hvad-kan-man-lave-i-en-airfryer",
+		"/dyrk-din-egen-mad-derhjemme-7-nemme-ting-du-kan-gro-indendoers": "/",
+		"/airfryer-hvidloeg-citron-shot-naturligt-staerkt-og-immunboostende": "/guides/hvad-kan-man-lave-i-en-airfryer",
+		"/spareribs-paa-grill-moere-saftige-og-smaekfyldt-med-smag": "/anmeldelser",
+		"/brunede-kartofler-i-airfryer": "/guides/jul-i-airfryer",
+		"/opskrifter/gratineret-oesters-i-airfryer.html": "/guides/hvad-kan-man-lave-i-en-airfryer",
+		"/opskrifter/gratineret-hummer-i-airfryer.html": "/guides/hvad-kan-man-lave-i-en-airfryer"
 	}
 }

@@ -1,72 +1,12 @@
 {
-	"generated": "2026-04-09T09:53:48.297Z",
-	"count": 453,
+	"generated": "2026-04-09T11:59:40.068Z",
+	"count": 393,
 	"items": [
-		{
-			"url": "https://www.opskrift-airfryer.dk/🌽-airfryer-majs-med-kryddersmoer-og-parmesan-perfekt-til-sommerens-grillstemning/",
-			"clicks": 28,
-			"path": "/%F0%9F%8C%BD-airfryer-majs-med-kryddersmoer-og-parmesan-perfekt-til-sommerens-grillstemning",
-			"slugNorm": "airfryer-majs-med-kryddersmoer-og-parmesan-perfekt-til-sommerens-grillstemning"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/rosenkaal-i-airfryer-den-perfekte-kombination-af-sproedhed-og-smag/",
-			"clicks": 28,
-			"path": "/rosenkaal-i-airfryer-den-perfekte-kombination-af-sproedhed-og-smag",
-			"slugNorm": "rosenkaal-i-airfryer-den-perfekte-kombination-af-sproedhed-og-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🥓🍏-aebleflaesk-i-airfryer-en-dansk-klassiker-med-et-moderne-twist/",
-			"clicks": 28,
-			"path": "/%F0%9F%A5%93%F0%9F%8D%8F-aebleflaesk-i-airfryer-en-dansk-klassiker-med-et-moderne-twist",
-			"slugNorm": "aebleflaesk-i-airfryer-en-dansk-klassiker-med-et-moderne-twist"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/ninja-foodi-flexdrawer-af500eu-perfekt-til-fleksibel-madlavning/",
-			"clicks": 27,
-			"path": "/ninja-foodi-flexdrawer-af500eu-perfekt-til-fleksibel-madlavning",
-			"slugNorm": "ninja-foodi-flexdrawer-af500eu-perfekt-til-fleksibel-madlavning"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/luftig-og-laekker-aeggekage-i-airfryer-nemme-variationer-til-enhver-smag-🍳/",
-			"clicks": 27,
-			"path": "/luftig-og-laekker-aeggekage-i-airfryer-nemme-variationer-til-enhver-smag-%F0%9F%8D%B3",
-			"slugNorm": "luftig-og-laekker-aeggekage-i-airfryer-nemme-variationer-til-enhver-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🧀-burrata-med-bagte-tomater-i-airfryer-en-cremet-og-intens-smagsoplevelse-🍅✨/",
-			"clicks": 27,
-			"path": "/%F0%9F%A7%80-burrata-med-bagte-tomater-i-airfryer-en-cremet-og-intens-smagsoplevelse-%F0%9F%8D%85%E2%9C%A8",
-			"slugNorm": "burrata-med-bagte-tomater-i-airfryer-en-cremet-og-intens-smagsoplevelse"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🇬🇷-graeske-frikadeller-i-airfryer-sproede-saftige-og-fyldt-med-smag/",
-			"clicks": 26,
-			"path": "/%F0%9F%87%AC%F0%9F%87%B7-graeske-frikadeller-i-airfryer-sproede-saftige-og-fyldt-med-smag",
-			"slugNorm": "🇬🇷-graeske-frikadeller-i-airfryer-sproede-saftige-og-fyldt-med-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/nybegynderen-tips-til-dig-der-overvejer-at-koebe-din-foerste-airfryer/",
-			"clicks": 24,
-			"path": "/nybegynderen-tips-til-dig-der-overvejer-at-koebe-din-foerste-airfryer",
-			"slugNorm": "nybegynderen-tips-til-dig-der-overvejer-at-koebe-din-foerste-airfryer"
-		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/🏆-bedste-airfryer-i-2025-stor-guide-til-valg-test-og-anbefalinger/",
 			"clicks": 23,
 			"path": "/%F0%9F%8F%86-bedste-airfryer-i-2025-stor-guide-til-valg-test-og-anbefalinger",
 			"slugNorm": "bedste-airfryer-i-2025-stor-guide-til-valg-test-og-anbefalinger"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang/",
-			"clicks": 23,
-			"path": "/saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang",
-			"slugNorm": "saftig-roastbeef-i-airfryer-nem-og-perfekt-tilberedt-hver-gang"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/veganske-nuggets-i-airfryer-perfekt-sproede-paa-ingen-tid/",
-			"clicks": 23,
-			"path": "/veganske-nuggets-i-airfryer-perfekt-sproede-paa-ingen-tid",
-			"slugNorm": "veganske-nuggets-i-airfryer-perfekt-sproede-paa-ingen-tid"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/🥓-pizza-carbonara-i-pizzaovn-luksurioes-og-fyldig/",
@@ -75,244 +15,16 @@
 			"slugNorm": "pizza-carbonara-i-pizzaovn-luksurioes-og-fyldig"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/sproede-brunkager-i-airfryer-den-nemmeste-vej-til-julens-laekre-smaakager/",
-			"clicks": 23,
-			"path": "/sproede-brunkager-i-airfryer-den-nemmeste-vej-til-julens-laekre-smaakager",
-			"slugNorm": "sproede-brunkager-i-airfryer-den-nemmeste-vej-til-julens-laekre-smaakager"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/medister-i-airfryer-en-nem-og-laekker-loesning/",
-			"clicks": 22,
-			"path": "/medister-i-airfryer-en-nem-og-laekker-loesning",
-			"slugNorm": "medister-i-airfryer-en-nem-og-laekker-loesning"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/hjemmelavede-bananchips-i-airfryer-sproede-sunde-🍌🔥/",
-			"clicks": 22,
-			"path": "/hjemmelavede-bananchips-i-airfryer-sproede-sunde-%F0%9F%8D%8C%F0%9F%94%A5",
-			"slugNorm": "hjemmelavede-bananchips-i-airfryer-sproede-sunde"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/hjemmelavede-muslibarer-i-airfryer-🍯🌰-sproede-sunde-og-uimodstaaelige/",
-			"clicks": 16,
-			"path": "/hjemmelavede-muslibarer-i-airfryer-%F0%9F%8D%AF%F0%9F%8C%B0-sproede-sunde-og-uimodstaaelige",
-			"slugNorm": "hjemmelavede-muslibarer-i-airfryer--sproede-sunde-og-uimodstaaelige"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/bananbroed-muffins-til-boern-i-airfryer-laekker-og-sund-snack-paa-ingen-tid/",
-			"clicks": 16,
-			"path": "/bananbroed-muffins-til-boern-i-airfryer-laekker-og-sund-snack-paa-ingen-tid",
-			"slugNorm": "bananbroed-muffins-til-boern-i-airfryer-laekker-og-sund-snack-paa-ingen-tid"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🥬-groentsagsfrikadeller-i-airfryer-med-squash-gulerod-og-urter/",
-			"clicks": 16,
-			"path": "/%F0%9F%A5%AC-groentsagsfrikadeller-i-airfryer-med-squash-gulerod-og-urter",
-			"slugNorm": "groentsagsfrikadeller-i-airfryer-med-squash-gulerod-og-urter"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🥯-proteinbagels-i-airfryer-glutenfri-low-carb-og-klar-paa-ingen-tid/",
-			"clicks": 16,
-			"path": "/%F0%9F%A5%AF-proteinbagels-i-airfryer-glutenfri-low-carb-og-klar-paa-ingen-tid",
-			"slugNorm": "proteinbagels-i-airfryer-glutenfri-low-carb-og-klar-paa-ingen-tid"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/morsoe-forno-spin-en-stilfuld-og-effektiv-pizzaovn-til-det-moderne-udekoekken/",
-			"clicks": 15,
-			"path": "/morsoe-forno-spin-en-stilfuld-og-effektiv-pizzaovn-til-det-moderne-udekoekken",
-			"slugNorm": "morsoe-forno-spin-en-stilfuld-og-effektiv-pizzaovn-til-det-moderne-udekoekken"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🍞-airfryer-hveder-til-store-bededag-lune-bloede-og-nostalgiske/",
-			"clicks": 15,
-			"path": "/%F0%9F%8D%9E-airfryer-hveder-til-store-bededag-lune-bloede-og-nostalgiske",
-			"slugNorm": "airfryer-hveder-til-store-bededag-lune-bloede-og-nostalgiske"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/🧄-airfryer-hvidloeg-citron-shot-naturligt-staerkt-og-immunboostende/",
 			"clicks": 15,
 			"path": "/%F0%9F%A7%84-airfryer-hvidloeg-citron-shot-naturligt-staerkt-og-immunboostende",
 			"slugNorm": "airfryer-hvidloeg-citron-shot-naturligt-staerkt-og-immunboostende"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/🔥-airfryer-smores-den-ultimative-nemme-dessertsnack/",
-			"clicks": 15,
-			"path": "/%F0%9F%94%A5-airfryer-smores-den-ultimative-nemme-dessertsnack",
-			"slugNorm": "airfryer-smores-den-ultimative-nemme-dessertsnack"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/hurtige-og-nemme-syltede-roedloeg-i-airfryer-klar-paa-ingen-tid/",
-			"clicks": 14,
-			"path": "/hurtige-og-nemme-syltede-roedloeg-i-airfryer-klar-paa-ingen-tid",
-			"slugNorm": "hurtige-og-nemme-syltede-roedloeg-i-airfryer-klar-paa-ingen-tid"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/lune-paaskeboller-med-chokolade-i-airfryer-🍫🥯/",
-			"clicks": 14,
-			"path": "/lune-paaskeboller-med-chokolade-i-airfryer-%F0%9F%8D%AB%F0%9F%A5%AF",
-			"slugNorm": "lune-paaskeboller-med-chokolade-i-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/lav-det-perfekte-udekoekken-med-cozze-den-ultimative-guide/",
-			"clicks": 14,
-			"path": "/lav-det-perfekte-udekoekken-med-cozze-den-ultimative-guide",
-			"slugNorm": "lav-det-perfekte-udekoekken-med-cozze-den-ultimative-guide"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/ninja-double-stack-xl-sl400-en-alsidig-airfryer-til-store-portioner/",
-			"clicks": 14,
-			"path": "/ninja-double-stack-xl-sl400-en-alsidig-airfryer-til-store-portioner",
-			"slugNorm": "ninja-double-stack-xl-sl400-en-alsidig-airfryer-til-store-portioner"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/marcipan-og-chokoladesmaakager-den-perfekte-soede-bid-fra-din-airfryer/",
-			"clicks": 14,
-			"path": "/marcipan-og-chokoladesmaakager-den-perfekte-soede-bid-fra-din-airfryer",
-			"slugNorm": "marcipan-og-chokoladesmaakager-den-perfekte-soede-bid-fra-din-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/hel-makrel-i-airfryer-citron-og-urter.html",
-			"clicks": 14,
-			"path": "/opskrifter/hel-makrel-i-airfryer-citron-og-urter.html",
-			"slugNorm": "opskrifter/hel-makrel-i-airfryer-citron-og-urter.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/gratineret-oesters-i-airfryer.html",
-			"clicks": 14,
-			"path": "/opskrifter/gratineret-oesters-i-airfryer.html",
-			"slugNorm": "opskrifter/gratineret-oesters-i-airfryer.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/sproede-og-saftige-kyllingelaar-i-airfryer-nemt-og-laekkert-paa-under-30-minutter/",
-			"clicks": 13,
-			"path": "/sproede-og-saftige-kyllingelaar-i-airfryer-nemt-og-laekkert-paa-under-30-minutter",
-			"slugNorm": "sproede-og-saftige-kyllingelaar-i-airfryer-nemt-og-laekkert-paa-under-30-minutter"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🐟-fiskefrikadeller-i-airfryer-klassisk-opskrift-med-citron-og-dild/",
-			"clicks": 13,
-			"path": "/%F0%9F%90%9F-fiskefrikadeller-i-airfryer-klassisk-opskrift-med-citron-og-dild",
-			"slugNorm": "fiskefrikadeller-i-airfryer-klassisk-opskrift-med-citron-og-dild"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/julebagvaerk-fra-airfryeren-nemt-hurtigt-og-fyldt-med-hygge/",
-			"clicks": 13,
-			"path": "/julebagvaerk-fra-airfryeren-nemt-hurtigt-og-fyldt-med-hygge",
-			"slugNorm": "julebagvaerk-fra-airfryeren-nemt-hurtigt-og-fyldt-med-hygge"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/de-mest-populaere-airfryers-i-2024/",
-			"clicks": 13,
-			"path": "/de-mest-populaere-airfryers-i-2024",
-			"slugNorm": "de-mest-populaere-airfryers-i-2024"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/pebernoedder-i-airfryer-klassiske-julesmaakager-paa-en-nem-maade/",
-			"clicks": 13,
-			"path": "/pebernoedder-i-airfryer-klassiske-julesmaakager-paa-en-nem-maade",
-			"slugNorm": "pebernoedder-i-airfryer-klassiske-julesmaakager-paa-en-nem-maade"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🐓-butter-chicken-med-spinat-og-ris-i-en-gryde-i-airfryer-cremet-krydret-og-komplet/",
-			"clicks": 13,
-			"path": "/%F0%9F%90%93-butter-chicken-med-spinat-og-ris-i-en-gryde-i-airfryer-cremet-krydret-og-komplet",
-			"slugNorm": "butter-chicken-med-spinat-og-ris-i-en-gryde-i-airfryer-cremet-krydret-og-komplet"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/crispy-fish-tacos-i-airfryer-sproed-smagfuld-frisk-🌮🔥/",
-			"clicks": 13,
-			"path": "/crispy-fish-tacos-i-airfryer-sproed-smagfuld-frisk-%F0%9F%8C%AE%F0%9F%94%A5",
-			"slugNorm": "crispy-fish-tacos-i-airfryer-sproed-smagfuld-frisk"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/helleflynder-i-airfryer.html",
-			"clicks": 13,
-			"path": "/opskrifter/helleflynder-i-airfryer.html",
-			"slugNorm": "opskrifter/helleflynder-i-airfryer.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/bagte-kartofler-i-airfryer-perfekt-tilbehoer-paa-ingen-tid/",
-			"clicks": 12,
-			"path": "/bagte-kartofler-i-airfryer-perfekt-tilbehoer-paa-ingen-tid",
-			"slugNorm": "bagte-kartofler-i-airfryer-perfekt-tilbehoer-paa-ingen-tid"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/anmeldelse-af-xiaomi-mi-smart-air-fryer-en-moderne-tilgang-til-madlavning/",
-			"clicks": 12,
-			"path": "/anmeldelse-af-xiaomi-mi-smart-air-fryer-en-moderne-tilgang-til-madlavning",
-			"slugNorm": "anmeldelse-af-xiaomi-mi-smart-air-fryer-en-moderne-tilgang-til-madlavning"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🥩-bbq-marinerede-short-ribs-i-airfryer-moere-karamelliserede-ribben-med-intens-smag/",
-			"clicks": 12,
-			"path": "/%F0%9F%A5%A9-bbq-marinerede-short-ribs-i-airfryer-moere-karamelliserede-ribben-med-intens-smag",
-			"slugNorm": "bbq-marinerede-short-ribs-i-airfryer-moere-karamelliserede-ribben-med-intens-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🍩-sunde-doughnuts-i-airfryer-bagt-med-havregryn-og-banan-uden-friture/",
-			"clicks": 12,
-			"path": "/%F0%9F%8D%A9-sunde-doughnuts-i-airfryer-bagt-med-havregryn-og-banan-uden-friture",
-			"slugNorm": "sunde-doughnuts-i-airfryer-bagt-med-havregryn-og-banan-uden-friture"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/sproede-foraarsruller-i-airfryer-den-perfekte-snack-paa-ingen-tid/",
-			"clicks": 11,
-			"path": "/sproede-foraarsruller-i-airfryer-den-perfekte-snack-paa-ingen-tid",
-			"slugNorm": "sproede-foraarsruller-i-airfryer-den-perfekte-snack-paa-ingen-tid"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/hasselback-kartofler-i-airfryer-sproed-perfektion-hver-gang/",
-			"clicks": 11,
-			"path": "/hasselback-kartofler-i-airfryer-sproed-perfektion-hver-gang",
-			"slugNorm": "hasselback-kartofler-i-airfryer-sproed-perfektion-hver-gang"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/🥓-spareribs-paa-grill-moere-saftige-og-smaekfyldt-med-smag/",
 			"clicks": 11,
 			"path": "/%F0%9F%A5%93-spareribs-paa-grill-moere-saftige-og-smaekfyldt-med-smag",
 			"slugNorm": "spareribs-paa-grill-moere-saftige-og-smaekfyldt-med-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🍠-airfryer-hasselback-sweet-potatoes-smagfulde-sproede-og-karamelliserede/",
-			"clicks": 11,
-			"path": "/%F0%9F%8D%A0-airfryer-hasselback-sweet-potatoes-smagfulde-sproede-og-karamelliserede",
-			"slugNorm": "airfryer-hasselback-sweet-potatoes-smagfulde-sproede-og-karamelliserede"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/soed-kartoffel-toast-med-avocado-i-airfryer/",
-			"clicks": 11,
-			"path": "/soed-kartoffel-toast-med-avocado-i-airfryer",
-			"slugNorm": "soed-kartoffel-toast-med-avocado-i-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/sproede-plantebaserede-nuggets-i-airfryer-🌱🍗/",
-			"clicks": 11,
-			"path": "/sproede-plantebaserede-nuggets-i-airfryer-%F0%9F%8C%B1%F0%9F%8D%97",
-			"slugNorm": "sproede-plantebaserede-nuggets-i-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/tebirkes-i-airfryer.html",
-			"clicks": 11,
-			"path": "/opskrifter/tebirkes-i-airfryer.html",
-			"slugNorm": "opskrifter/tebirkes-i-airfryer.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/bagte-porrer-i-airfryer.html",
-			"clicks": 11,
-			"path": "/opskrifter/bagte-porrer-i-airfryer.html",
-			"slugNorm": "opskrifter/bagte-porrer-i-airfryer.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/gratineret-hummer-i-airfryer.html",
-			"clicks": 11,
-			"path": "/opskrifter/gratineret-hummer-i-airfryer.html",
-			"slugNorm": "opskrifter/gratineret-hummer-i-airfryer.html"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/opskrifter/lammeskank-i-fad-smaa-stykker-i-airfryer.html",
-			"clicks": 11,
-			"path": "/opskrifter/lammeskank-i-fad-smaa-stykker-i-airfryer.html",
-			"slugNorm": "opskrifter/lammeskank-i-fad-smaa-stykker-i-airfryer.html"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/5-udvalgte-pizzaovne-til-sommeren-2025-find-din-perfekte-model-🍕🔥/",
@@ -325,24 +37,6 @@
 			"clicks": 10,
 			"path": "/%F0%9F%A5%99-kebabpizza-i-pizzaovn-saftig-og-smagfuld-oplevelse",
 			"slugNorm": "kebabpizza-i-pizzaovn-saftig-og-smagfuld-oplevelse"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/✨-princess-182065-airfryer-ovn-en-alsidig-og-rummelig-airfryer/",
-			"clicks": 10,
-			"path": "/%E2%9C%A8-princess-182065-airfryer-ovn-en-alsidig-og-rummelig-airfryer",
-			"slugNorm": "princess-182065-airfryer-ovn-en-alsidig-og-rummelig-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/hvordan-du-kan-kombinere-keto-kost-med-din-airfryer/",
-			"clicks": 10,
-			"path": "/hvordan-du-kan-kombinere-keto-kost-med-din-airfryer",
-			"slugNorm": "hvordan-du-kan-kombinere-keto-kost-med-din-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/toerrede-roedbeder-i-airfryer-sproede-og-farverige-chips-paa-ingen-tid/",
-			"clicks": 10,
-			"path": "/toerrede-roedbeder-i-airfryer-sproede-og-farverige-chips-paa-ingen-tid",
-			"slugNorm": "toerrede-roedbeder-i-airfryer-sproede-og-farverige-chips-paa-ingen-tid"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/opskrifter/bao-buns-varmning-crisp-fyld-i-airfryer.html",
@@ -363,34 +57,10 @@
 			"slugNorm": "opskrifter/havkat-filet-i-airfryer.html"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/brunede-kartofler-i-airfryer/",
-			"clicks": 9,
-			"path": "/brunede-kartofler-i-airfryer",
-			"slugNorm": "brunede-kartofler-i-airfryer"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/bagte-aeg-i-avocado-i-airfryer-sund-og-laekker-morgenmad/",
-			"clicks": 9,
-			"path": "/bagte-aeg-i-avocado-i-airfryer-sund-og-laekker-morgenmad",
-			"slugNorm": "bagte-aeg-i-avocado-i-airfryer-sund-og-laekker-morgenmad"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🥦-airfryer-groentsags-tempura-sproede-groentsager-uden-friture/",
-			"clicks": 9,
-			"path": "/%F0%9F%A5%A6-airfryer-groentsags-tempura-sproede-groentsager-uden-friture",
-			"slugNorm": "airfryer-groentsags-tempura-sproede-groentsager-uden-friture"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/🗓️-madplan-1-uges-nem-og-laekker-aftensmad-i-airfryer-til-hele-familien/",
 			"clicks": 9,
 			"path": "/%F0%9F%97%93%EF%B8%8F-madplan-1-uges-nem-og-laekker-aftensmad-i-airfryer-til-hele-familien",
 			"slugNorm": "madplan-1-uges-nem-og-laekker-aftensmad-i-airfryer-til-hele-familien"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/🍄-cremet-svamperisotto-med-parmesan-og-spinat-i-airfryer-nem-groen-og-uimodstaaelig/",
-			"clicks": 9,
-			"path": "/%F0%9F%8D%84-cremet-svamperisotto-med-parmesan-og-spinat-i-airfryer-nem-groen-og-uimodstaaelig",
-			"slugNorm": "cremet-svamperisotto-med-parmesan-og-spinat-i-airfryer-nem-groen-og-uimodstaaelig"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/🪴-dyrk-din-egen-mad-derhjemme-7-nemme-ting-du-kan-gro-indendoers/",
@@ -421,12 +91,6 @@
 			"clicks": 7,
 			"path": "/banankage-i-airfryer-nem-og-saftig-opskrift",
 			"slugNorm": "banankage-i-airfryer-nem-og-saftig-opskrift"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/morsoe-forno-gasgrill-elegance-og-funktionalitet-til-udendoers-madlavning/",
-			"clicks": 7,
-			"path": "/morsoe-forno-gasgrill-elegance-og-funktionalitet-til-udendoers-madlavning",
-			"slugNorm": "morsoe-forno-gasgrill-elegance-og-funktionalitet-til-udendoers-madlavning"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/🍠-soed-kartoffel-hummus-bowl-i-airfryer-cremet-sproed-og-fuld-af-farve/",
@@ -753,12 +417,6 @@
 			"slugNorm": "ooni-koda-16-professionel-pizzabagning-hjemme-paa-terrassen"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/ninja-foodi-af300eu-en-grundig-anmeldelse-af-en-alsidig-airfryer/",
-			"clicks": 4,
-			"path": "/ninja-foodi-af300eu-en-grundig-anmeldelse-af-en-alsidig-airfryer",
-			"slugNorm": "ninja-foodi-af300eu-en-grundig-anmeldelse-af-en-alsidig-airfryer"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/🍪-bloede-cookies-med-moerk-chokolade-i-airfryer-klar-paa-8-minutter/",
 			"clicks": 4,
 			"path": "/%F0%9F%8D%AA-bloede-cookies-med-moerk-chokolade-i-airfryer-klar-paa-8-minutter",
@@ -775,12 +433,6 @@
 			"clicks": 4,
 			"path": "/%F0%9F%8D%9D-gnocchi-i-tomatsauce-med-mozzarella-og-spinat-i-airfryer-bloed-boblende-og-fuld-af-smag",
 			"slugNorm": "gnocchi-i-tomatsauce-med-mozzarella-og-spinat-i-airfryer-bloed-boblende-og-fuld-af-smag"
-		},
-		{
-			"url": "https://www.opskrift-airfryer.dk/princess-pizzaovn-pro-en-alsidig-og-kompakt-pizzaovn-til-hjemmebrug/",
-			"clicks": 4,
-			"path": "/princess-pizzaovn-pro-en-alsidig-og-kompakt-pizzaovn-til-hjemmebrug",
-			"slugNorm": "princess-pizzaovn-pro-en-alsidig-og-kompakt-pizzaovn-til-hjemmebrug"
 		},
 		{
 			"url": "https://www.opskrift-airfryer.dk/hjemmelavede-kyllingenuggets-til-boern-i-airfryer-sproede-og-sunde/",
@@ -1545,12 +1197,6 @@
 			"slugNorm": "hvordan-kombinerer-du-airfryeren-med-smarthome-teknologi"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/ninja-af160eu-airfryer-kraftfuld-alsidig-og-brugervenlig-madlavning/",
-			"clicks": 1,
-			"path": "/ninja-af160eu-airfryer-kraftfuld-alsidig-og-brugervenlig-madlavning",
-			"slugNorm": "ninja-af160eu-airfryer-kraftfuld-alsidig-og-brugervenlig-madlavning"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/laekre-paaskeretter-i-airfryeren-nemme-og-velsmagende/",
 			"clicks": 1,
 			"path": "/laekre-paaskeretter-i-airfryeren-nemme-og-velsmagende",
@@ -2283,12 +1929,6 @@
 			"slugNorm": "pizza-dej-til-pizzaovn-sproed-let-og-luksurioes"
 		},
 		{
-			"url": "https://www.opskrift-airfryer.dk/ninja-foodi-max-af400eu-den-ultimative-dobbelt-rums-airfryer-til-store-maaltider/",
-			"clicks": 0,
-			"path": "/ninja-foodi-max-af400eu-den-ultimative-dobbelt-rums-airfryer-til-store-maaltider",
-			"slugNorm": "ninja-foodi-max-af400eu-den-ultimative-dobbelt-rums-airfryer-til-store-maaltider"
-		},
-		{
 			"url": "https://www.opskrift-airfryer.dk/🧆-falafler-i-airfryer-med-pitabroed-og-yoghurtdressing-nem-og-koedfri-hverdag/",
 			"clicks": 0,
 			"path": "/%F0%9F%A7%86-falafler-i-airfryer-med-pitabroed-og-yoghurtdressing-nem-og-koedfri-hverdag",
@@ -2401,6 +2041,324 @@
 			"clicks": 0,
 			"path": "/%F0%9F%8C%B6-airfryer-chili-ingefaer-tonic-base-staerk-citrusfrisk-og-fuld-af-power",
 			"slugNorm": "airfryer-chili-ingefaer-tonic-base-staerk-citrusfrisk-og-fuld-af-power"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/aeggmuffins-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/aeggmuffins-i-airfryer.html",
+			"slugNorm": "opskrifter/aeggmuffins-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/lammeculotte-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/lammeculotte-i-airfryer.html",
+			"slugNorm": "opskrifter/lammeculotte-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🌿-airfryer-mynteshot-med-lime-og-sukker-frisk-soed-og-perfekt-til-mocktails/",
+			"clicks": 0,
+			"path": "/%F0%9F%8C%BF-airfryer-mynteshot-med-lime-og-sukker-frisk-soed-og-perfekt-til-mocktails",
+			"slugNorm": "airfryer-mynteshot-med-lime-og-sukker-frisk-soed-og-perfekt-til-mocktails"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/bagte-rodfrugter-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/bagte-rodfrugter-i-airfryer.html",
+			"slugNorm": "opskrifter/bagte-rodfrugter-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/taco-skaller-i-airfryer-hjemmelavede.html",
+			"clicks": 0,
+			"path": "/opskrifter/taco-skaller-i-airfryer-hjemmelavede.html",
+			"slugNorm": "opskrifter/taco-skaller-i-airfryer-hjemmelavede.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/vare/onyx-cookware-airfryer-dual/",
+			"clicks": 0,
+			"path": "/vare/onyx-cookware-airfryer-dual",
+			"slugNorm": "vare/onyx-cookware-airfryer-dual"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/kyllingefilet-med-honning-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/kyllingefilet-med-honning-i-airfryer.html",
+			"slugNorm": "opskrifter/kyllingefilet-med-honning-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/varemærke/onyx/",
+			"clicks": 0,
+			"path": "/varem%C3%A6rke/onyx",
+			"slugNorm": "varemærke/onyx"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🥩-boefbowl-med-peberrodssauce-i-airfryer-saftig-sproed-og-fyldt-med-smag/",
+			"clicks": 0,
+			"path": "/%F0%9F%A5%A9-boefbowl-med-peberrodssauce-i-airfryer-saftig-sproed-og-fyldt-med-smag",
+			"slugNorm": "boefbowl-med-peberrodssauce-i-airfryer-saftig-sproed-og-fyldt-med-smag"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/culotte-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/culotte-i-airfryer.html",
+			"slugNorm": "opskrifter/culotte-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/vare/onyx-cookware-airfryer-8l-2/",
+			"clicks": 0,
+			"path": "/vare/onyx-cookware-airfryer-8l-2",
+			"slugNorm": "vare/onyx-cookware-airfryer-8l-2"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🥩-steg-i-airfryer-saftig-og-moer-oksesteg-med-sproed-kant/",
+			"clicks": 0,
+			"path": "/%F0%9F%A5%A9-steg-i-airfryer-saftig-og-moer-oksesteg-med-sproed-kant",
+			"slugNorm": "steg-i-airfryer-saftig-og-moer-oksesteg-med-sproed-kant"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/top/top-5-snacks-under-30-min.html",
+			"clicks": 0,
+			"path": "/top/top-5-snacks-under-30-min.html",
+			"slugNorm": "top/top-5-snacks-under-30-min.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/vare-tag/onyx/",
+			"clicks": 0,
+			"path": "/vare-tag/onyx",
+			"slugNorm": "vare-tag/onyx"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/instant-vortex-airfryer-8-5-liter-stor-kapacitet-og-sund-madlavning-gjort-enkelt/",
+			"clicks": 0,
+			"path": "/instant-vortex-airfryer-8-5-liter-stor-kapacitet-og-sund-madlavning-gjort-enkelt",
+			"slugNorm": "instant-vortex-airfryer-8-5-liter-stor-kapacitet-og-sund-madlavning-gjort-enkelt"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/kategori.html?navn=Lam",
+			"clicks": 0,
+			"path": "/kategori.html",
+			"slugNorm": "kategori.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/pita-pizza-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/pita-pizza-i-airfryer.html",
+			"slugNorm": "opskrifter/pita-pizza-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/sproede-foraarsruller-i-airfryer-nem-og-laekker-opskrift/",
+			"clicks": 0,
+			"path": "/sproede-foraarsruller-i-airfryer-nem-og-laekker-opskrift",
+			"slugNorm": "sproede-foraarsruller-i-airfryer-nem-og-laekker-opskrift"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/gulerodsfritter-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/gulerodsfritter-i-airfryer.html",
+			"slugNorm": "opskrifter/gulerodsfritter-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/author/denniskl/page/15/",
+			"clicks": 0,
+			"path": "/author/denniskl/page/15",
+			"slugNorm": "author/denniskl/page/15"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/perfekte-bagekartofler-i-airfryer-sproede-og-laekre-paa-ingen-tid/",
+			"clicks": 0,
+			"path": "/perfekte-bagekartofler-i-airfryer-sproede-og-laekre-paa-ingen-tid",
+			"slugNorm": "perfekte-bagekartofler-i-airfryer-sproede-og-laekre-paa-ingen-tid"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🧆-falafler-i-airfryer-sproede-sunde-og-perfekte-til-sommerens-maaltider/",
+			"clicks": 0,
+			"path": "/%F0%9F%A7%86-falafler-i-airfryer-sproede-sunde-og-perfekte-til-sommerens-maaltider",
+			"slugNorm": "falafler-i-airfryer-sproede-sunde-og-perfekte-til-sommerens-maaltider"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/kategori.html?navn=Kalkun",
+			"clicks": 0,
+			"path": "/kategori.html",
+			"slugNorm": "kategori.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/bagte-tomater-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/bagte-tomater-i-airfryer.html",
+			"slugNorm": "opskrifter/bagte-tomater-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/makrel-i-folie-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/makrel-i-folie-i-airfryer.html",
+			"slugNorm": "opskrifter/makrel-i-folie-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/☕️-airfryer-krydret-chaiblanding-intens-varmende-og-fuld-af-dybde/",
+			"clicks": 0,
+			"path": "/%E2%98%95%EF%B8%8F-airfryer-krydret-chaiblanding-intens-varmende-og-fuld-af-dybde",
+			"slugNorm": "airfryer-krydret-chaiblanding-intens-varmende-og-fuld-af-dybde"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/vare/onyx-cookware-airfryer-8l/",
+			"clicks": 0,
+			"path": "/vare/onyx-cookware-airfryer-8l",
+			"slugNorm": "vare/onyx-cookware-airfryer-8l"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🥑-mexicansk-bowl-i-airfryer-farverig-maettende-og-fuld-af-smag/",
+			"clicks": 0,
+			"path": "/%F0%9F%A5%91-mexicansk-bowl-i-airfryer-farverig-maettende-og-fuld-af-smag",
+			"slugNorm": "mexicansk-bowl-i-airfryer-farverig-maettende-og-fuld-af-smag"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/veganske-nuggets-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/veganske-nuggets-i-airfryer.html",
+			"slugNorm": "opskrifter/veganske-nuggets-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/okse-boef-bbq-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/okse-boef-bbq-i-airfryer.html",
+			"slugNorm": "opskrifter/okse-boef-bbq-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/svinekam-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/svinekam-i-airfryer.html",
+			"slugNorm": "opskrifter/svinekam-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🍄-skovens-skat-pizza-med-svampe-troeffel-og-frisk-timian/",
+			"clicks": 0,
+			"path": "/%F0%9F%8D%84-skovens-skat-pizza-med-svampe-troeffel-og-frisk-timian",
+			"slugNorm": "skovens-skat-pizza-med-svampe-troeffel-og-frisk-timian"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/krydrede-kartoffelbaade-i-airfryer-sproede-smagfulde-🥔🔥/",
+			"clicks": 0,
+			"path": "/krydrede-kartoffelbaade-i-airfryer-sproede-smagfulde-%F0%9F%A5%94%F0%9F%94%A5",
+			"slugNorm": "krydrede-kartoffelbaade-i-airfryer-sproede-smagfulde"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/calamari-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/calamari-i-airfryer.html",
+			"slugNorm": "opskrifter/calamari-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/author/denniskl/page/9/",
+			"clicks": 0,
+			"path": "/author/denniskl/page/9",
+			"slugNorm": "author/denniskl/page/9"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/author/denniskl/",
+			"clicks": 0,
+			"path": "/author/denniskl",
+			"slugNorm": "author/denniskl"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/sproed-rosti-kartoffelroesti-i-airfryer-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/sproed-rosti-kartoffelroesti-i-airfryer-i-airfryer.html",
+			"slugNorm": "opskrifter/sproed-rosti-kartoffelroesti-i-airfryer-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/spareribs-i-airfryer-karamelliseret-bbq.html",
+			"clicks": 0,
+			"path": "/opskrifter/spareribs-i-airfryer-karamelliseret-bbq.html",
+			"slugNorm": "opskrifter/spareribs-i-airfryer-karamelliseret-bbq.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/kategori.html?navn=Tilbeh%C3%B8r",
+			"clicks": 0,
+			"path": "/kategori.html",
+			"slugNorm": "kategori.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🫐-butterdejstaerter-med-baer-og-vanilje-sproede-soede-og-nemme-i-airfryer/",
+			"clicks": 0,
+			"path": "/%F0%9F%AB%90-butterdejstaerter-med-baer-og-vanilje-sproede-soede-og-nemme-i-airfryer",
+			"slugNorm": "butterdejstaerter-med-baer-og-vanilje-sproede-soede-og-nemme-i-airfryer"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/kategori.html?navn=Fisk",
+			"clicks": 0,
+			"path": "/kategori.html",
+			"slugNorm": "kategori.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/roesti-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/roesti-i-airfryer.html",
+			"slugNorm": "opskrifter/roesti-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/kategori.html?navn=Dessert",
+			"clicks": 0,
+			"path": "/kategori.html",
+			"slugNorm": "kategori.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/blomkaalsgratin-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/blomkaalsgratin-i-airfryer.html",
+			"slugNorm": "opskrifter/blomkaalsgratin-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/seneste.html?tag=forlorenhare",
+			"clicks": 0,
+			"path": "/seneste.html",
+			"slugNorm": "seneste.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/foccacia-broed-med-rosmarin-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/foccacia-broed-med-rosmarin-i-airfryer.html",
+			"slugNorm": "opskrifter/foccacia-broed-med-rosmarin-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🥯-sproede-proteinbagels-med-floedeost-og-avocado-maettende-luftige-og-klar-i-en-fart/",
+			"clicks": 0,
+			"path": "/%F0%9F%A5%AF-sproede-proteinbagels-med-floedeost-og-avocado-maettende-luftige-og-klar-i-en-fart",
+			"slugNorm": "sproede-proteinbagels-med-floedeost-og-avocado-maettende-luftige-og-klar-i-en-fart"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/syltede-blomkaal-i-airfryer-sproedt-og-syrligt-tilbehoer-paa-ingen-tid/",
+			"clicks": 0,
+			"path": "/syltede-blomkaal-i-airfryer-sproedt-og-syrligt-tilbehoer-paa-ingen-tid",
+			"slugNorm": "syltede-blomkaal-i-airfryer-sproedt-og-syrligt-tilbehoer-paa-ingen-tid"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/sproede-loegringe-i-airfryer-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/sproede-loegringe-i-airfryer-i-airfryer.html",
+			"slugNorm": "opskrifter/sproede-loegringe-i-airfryer-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/🧀-luftige-ostehapsere-med-smeltet-cheddar-en-uimodstaaelig-snack-i-airfryer/",
+			"clicks": 0,
+			"path": "/%F0%9F%A7%80-luftige-ostehapsere-med-smeltet-cheddar-en-uimodstaaelig-snack-i-airfryer",
+			"slugNorm": "luftige-ostehapsere-med-smeltet-cheddar-en-uimodstaaelig-snack-i-airfryer"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/kalv-filet-bbq-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/kalv-filet-bbq-i-airfryer.html",
+			"slugNorm": "opskrifter/kalv-filet-bbq-i-airfryer.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/oksefilet-i-airfryer-fest.html",
+			"clicks": 0,
+			"path": "/opskrifter/oksefilet-i-airfryer-fest.html",
+			"slugNorm": "opskrifter/oksefilet-i-airfryer-fest.html"
+		},
+		{
+			"url": "https://www.opskrift-airfryer.dk/opskrifter/oksekoed-quesadilla-i-airfryer.html",
+			"clicks": 0,
+			"path": "/opskrifter/oksekoed-quesadilla-i-airfryer.html",
+			"slugNorm": "opskrifter/oksekoed-quesadilla-i-airfryer.html"
 		}
 	]
 }
