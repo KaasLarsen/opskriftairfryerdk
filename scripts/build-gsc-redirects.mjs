@@ -156,6 +156,65 @@ function maybeListFallback(slugNorm) {
 	return null;
 }
 
+/** WP-URL kan have emoji/præfiks i pathname; static keys er normaliserede (/slug). */
+function resolveStaticRedirect(pathname, slugNorm) {
+	const p = pathname.startsWith('/') ? pathname : '/' + pathname;
+	const n = slugNorm && slugNorm.startsWith('/') ? slugNorm : slugNorm ? '/' + slugNorm.replace(/^\/+/u, '') : null;
+	return (
+		staticPathRedirects[p] ??
+		staticPathRedirects[p + '/'] ??
+		(n ? staticPathRedirects[n] ?? staticPathRedirects[n + '/'] : null)
+	);
+}
+
+/**
+ * Artikeltyper der ikke må ramme keyword→opskrift (fx pizzaovn → pizza).
+ * Konservative mønstre: helst underspecifik landing frem for forkert opskrift.
+ */
+function slugPatternDestination(slugNorm) {
+	if (!slugNorm) return null;
+	if (/(^|-)(pizzaovn|pizza-oven)|gaspizzaovn/u.test(slugNorm)) return '/anmeldelser';
+	if (/spareribs-paa-grill/u.test(slugNorm)) return '/anmeldelser';
+	if (/^vare\//u.test(slugNorm) || /^vare-tag\//u.test(slugNorm) || /^varemærke\//u.test(slugNorm)) {
+		return '/shop';
+	}
+	if (/^author\//u.test(slugNorm)) return '/';
+	if (slugNorm === 'om-os') return '/om';
+	if (slugNorm === 'kurv') return '/shop';
+	if (slugNorm === 'seneste.html' || slugNorm === 'kategori.html') return '/opskrifter';
+	if (/^page\/\d+$/u.test(slugNorm)) return '/opskrifter';
+	if (slugNorm === 'sider/opskrifter.html') return '/opskrifter';
+	if (slugNorm === 'guides-sitemap.xml') return '/guides';
+	if (/^top\//u.test(slugNorm)) return '/guides/hvad-kan-man-lave-i-en-airfryer';
+	if (slugNorm === 'black-friday-airfryer-tilbud.html') return '/guides/hvilken-airfryer';
+	if (
+		/-shot-naturligt-staerkt|ingefaershot|ingefaer-shot|gulerod-ingefaer-shot|aebleshot|blaabaer-ingefaer-shot|mynteshot|lavendel-citron-drik|chili-ingefaer-tonic|krydret-chaiblanding|citronsirup|appelsin-ingefaer-eliksir|soendag-aeg-og-groent/u.test(
+			slugNorm,
+		)
+	) {
+		return '/guides/hvad-kan-man-lave-i-en-airfryer';
+	}
+	/* Gamle WP-opskrifter uden direkte match – samlet guide frem for vild 301 til tilfældig fisk/kød */
+	if (
+		/^opskrifter\/(kanin-|aal-i-|hummer|kammuslinger-|bao-buns|andefrikadeller-|kaaldolmere-|oksehjerte-|vildsvin-|skipperlabskovs-)/u.test(
+			slugNorm,
+		)
+	) {
+		return '/guides/hvad-kan-man-lave-i-en-airfryer';
+	}
+	if (/^bagt-hvidloeg-med-parmesan/u.test(slugNorm)) {
+		return '/guides/hvad-kan-man-lave-i-en-airfryer';
+	}
+	if (
+		/^kylling-i-sennepsfloedesauce-|^karamelliseret-ananas-med-honning-|^mini-croissanter-med-fyld-|^majskolber-i-airfryer-/u.test(
+			slugNorm,
+		)
+	) {
+		return '/guides/hvad-kan-man-lave-i-en-airfryer';
+	}
+	return null;
+}
+
 if (!fs.existsSync(csvPath)) {
 	console.error('Mangler', csvPath);
 	process.exit(1);
@@ -185,12 +244,12 @@ for (const line of lines) {
 
 	let recipeId = null;
 	let destPath =
-		staticPathRedirects[pathname] ??
-		staticPathRedirects[pathname + '/'] ??
+		resolveStaticRedirect(pathname, slugNorm) ??
+		slugPatternDestination(slugNorm) ??
 		resolvePrefixRedirect(slugNorm) ??
 		null;
 
-	if (!destPath && /(dyrker|mangotrae|jordbaer|romainesalat|vokser)/u.test(slugNorm)) {
+	if (!destPath && /(dyrker|mangotrae|avocadotrae|jordbaer|romainesalat|vokser)/u.test(slugNorm)) {
 		destPath = '/';
 	}
 
