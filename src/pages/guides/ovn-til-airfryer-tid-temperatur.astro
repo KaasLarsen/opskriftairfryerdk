@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/ovn-til-airfryer-tid-temperatur';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Fra ovn til airfryer: tid, temperatur og forvarmning | ${SITE_NAME}`;
+const description =
+	'Konverter ovnopskrifter til airfryer: typiske tidsforskel, samme eller lavere temperatur, forvarmning og hvordan du tjekker uden at brænde ydersiden.';
+
+const published = '2026-04-09T12:00:00.000Z';
+const modified = '2026-04-09T12:00:00.000Z';
+
+const heroImagePath = '/images/guides/ovn-til-airfryer-tid-temperatur.png';
+const heroImageWidth = 1376;
+const heroImageHeight = 768;
+const heroAlt =
+	'Ovn og airfryer på køkkenbord — konvertering af tid og temperatur mellem ovn og airfryer';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Kan jeg bruge samme temperatur i airfryer som i ovn?',
+		a: 'Ofte ja til at starte med — især mellem 160-200 °C. Små forskelle kan skyldes model og om kurven er fuld. Juster efter første forsøg.',
+	},
+	{
+		q: 'Hvor meget kortere er tiden typisk?',
+		a: 'Mange retter er 15-25 % kortere end ovn ved åben varmluft — men det afhænger af tykkelse, vandindhold og om du forvarmer. Brug tid som interval og tjek.',
+	},
+	{
+		q: 'Skal jeg altid forvarme?',
+		a: 'Ikke altid. Kort forvarmning giver ofte mere ensartet start på pommes og panering; tynde ting og genopvarmning kan klare sig uden eller med kort opvarmning.',
+	},
+	{
+		q: 'Hvorfor bliver ydersiden færdig før midten?',
+		a: 'Airfryer arbejder tæt på varmen og med intens luft. Skru ned, forlæng tid i små trin — og mål kød med termometer som i kernetemperatur-guiden.',
+	},
+	{
+		q: 'Virker bagning og kager?',
+		a: 'Ja i små forme og med plads omkring. Start konservativt: samme temperatur, kortere tid, og brug stikkeprøve som i ovn.',
+	},
+	{
+		q: 'Hvad med papir og aluminium i stedet for bageplade?',
+		a: 'Følg fabrikantens regler for din maskine og lad luft passere — se også guiden om tilbehør til airfryer.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Ovn til airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Fra ovn til airfryer: tid og temperatur',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Ovn til airfryer</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Fra ovn til airfryer: tid, temperatur og forvarmning</h1>
+				<p class="guide-lead">
+					Du har en ovnopskrift — og vil have resultat i airfryer. Den gode nyhed er at{' '}
+					<strong>mange ting flytter ret direkte</strong>. Den mindre gode er at tid sjældent er identisk:
+					airfryer varmer hurtigere omkring maden, og små mængder “springer” ofte før ovn tidsangivelser.
+				</p>
+
+				<h2>Hvorfor 25 min i ovn ikke altid er 25 min i airfryer</h2>
+				<p>
+					I ovn ligger mad ofte tykkere på pladen, og der er mere termisk masse i rummet. I airfryer er
+					varmen tættere på overfladen, og luften cirkulerer målrettet — derfor <strong>stiger indre
+					temperatur hurtigere</strong> på tynde og små stykker. Store klumper kød eller fyldte forme kan
+					dog stadig kræve tålmodighed som i ovn — med mindre du deler dem op.
+				</p>
+
+				<h2>Tommelfingerregler der er et praktisk sted at starte</h2>
+				<ul>
+					<li>
+						<strong>Tid:</strong> prøv ca. <strong>15-25 % kortere</strong> end ovn med varmluft og tjek
+						2-3 min før “ovn-slut”. Justér efter første forsøg og skriv din egen note på opskriften.
+					</li>
+					<li>
+						<strong>Temperatur:</strong> behold samme mål-temperatur i mange tilfælde (fx 180 °C → 180 °C).
+						Hvis ydersiden mørkner for hurtigt, <strong>skru 10-15 °C ned</strong> og giv lidt længere tid.
+					</li>
+					<li>
+						<strong>Ét lag og plads</strong> — samme idé som i{' '}
+						<a href="/guides/airfryer-for-begyndere">begynderguiden</a>: luft skal kunne cirkulere.
+					</li>
+				</ul>
+
+				<h2>Forvarmning: ja, nej — og hvorfor det betyder noget</h2>
+				<p>
+					Kort forvarmning giver ofte ensartet “start” på pommes, panering og små kødstykker. Ved tynde
+					grøntsager kan du ofte nøjes med at lade maskinen køre 1-2 min før du smider mad i. Følg din models
+					anvisning som udgangspunkt.
+				</p>
+
+				<h2>Sådan tjekker du uden at brænde skorpen</h2>
+				<ul>
+					<li>
+						<strong>Ryst kurven</strong> midtvejs på ting der skal være jævne (pommes, små bider).
+					</li>
+					<li>
+						<strong>Kortere intervaller</strong> sidste 5-8 min: åbn, se, luk — især første gang du
+						konverterer en ret.
+					</li>
+					<li>
+						<strong>Kød:</strong> stik et termometer i — se{' '}
+						<a href="/guides/kernetemperatur-airfryer">kernetemperatur i airfryer</a> for kylling, okse,
+						fisk.
+					</li>
+				</ul>
+
+				<h2>Når ovnopskriften bruger bageplade eller fad</h2>
+				<p>
+					Tænk over <strong>højde og kontakt</strong>. I airfryer får du ofte mere varme på den side der
+					vender mod elementet. Bag småkager eller brød med plads; store våde kager kan kræve lavere kurv
+					eller mindre portion pr. gang.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="ovn-til-airfryer-tid-temperatur" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

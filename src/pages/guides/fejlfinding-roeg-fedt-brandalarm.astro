@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/fejlfinding-roeg-fedt-brandalarm';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Fejlfinding i airfryer: røg, fedt og brandalarm | ${SITE_NAME}`;
+const description =
+	'Når airfryer ryger, fedter eller brandalarmen reagerer: hvad der ofte er normalt, hvad du skal stoppe med det samme, og hvordan du forebygger det.';
+
+const published = '2026-04-09T12:00:00.000Z';
+const modified = '2026-04-09T12:00:00.000Z';
+
+const heroImagePath = '/images/guides/fejlfinding-roeg-fedt-brandalarm.png';
+const heroImageWidth = 1376;
+const heroImageHeight = 768;
+const heroAlt =
+	'Airfryer på køkkenbord med let damp fra kurven — fejlfinding ved røg, fedt og brandalarm';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Er lidt hvid “røg” altid farligt?',
+		a: 'Ofte er det damp eller fedtdamp ved start — især hvis kurven er våd eller der er olie på varme zoner. Tyk, mørk røg med lugt af brændt plast er et andet signal: stop og tjek fabrikantens vejledning.',
+	},
+	{
+		q: 'Hvorfor ryger det første minut og så stopper det?',
+		a: 'Restfedt eller vand der fordamper hurtigt er almindeligt. Hvis det fortsætter ud over de første minutter, eller bliver kraftigere, skru ned eller stop.',
+	},
+	{
+		q: 'Kan brandalarmen udløses af airfryer selv uden brand?',
+		a: 'Ja — damp og små fedtpartikler kan trigge optiske røgalarme placeret tæt på køkkenet. Flyt luft, åbn vindue, brug emhætte — og overvej alarms placering ift. brugsvejledning.',
+	},
+	{
+		q: 'Hvad gør jeg ved synlige oliesmag på bunden af skuffen?',
+		a: 'Sluk/strøm fra, lad maskinen køle af, fjern og aftørr overskydende fedt, og rengør som i rengøringsguiden — akkumuleret fedt øger røg næste gang.',
+	},
+	{
+		q: 'Hjælper mindre olie?',
+		a: 'Ja — for meget flydende olie eller marinade der drypper ned kan ryge kraftigt. Brug tynde lag og fjern overskydende væske fra overfladen før tilberedning.',
+	},
+	{
+		q: 'Må jeg hælde vand i skuffen for at undgå røg?',
+		a: 'Det afhænger af modellen. Mange luftfriture-apparater er ikke designet til vand i bunden som en ovn — følg manualen; forkert brug kan give damp, sprøjt eller skader.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Fejlfinding', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Fejlfinding: røg, fedt og brandalarm',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Fejlfinding</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Sikkerhed</p>
+				<h1>Fejlfinding: røg, fedt og brandalarm</h1>
+				<p class="guide-lead">
+					Den første gang noget “ryger” fra airfryer, er det nemt at tro det værste. Ofte handler det om{' '}
+					<strong>damp</strong>, <strong>for meget olie</strong> eller <strong>gamle fedtrester</strong> der
+					hitter en varm overflade — men du skal også kende tegnene på at <strong>stoppe</strong>.
+				</p>
+
+				<h2>Røg, damp eller fedtdamp?</h2>
+				<p>
+					Let, hvid “sky” ved start kan være vand der fordamper eller fedt der fordamper fra mad og små
+					rester i kurven. <strong>Mørk, tæt røg</strong> der ikke aftager, lugt af noget forkert (fx brændt
+					elektronik eller plast), eller gnister er ikke “normal drift” — sluk/strøm fra og tjek manualen.
+				</p>
+
+				<h2>Typiske årsager til røg og kraftig lugt</h2>
+				<ul>
+					<li>
+						<strong>For meget olie eller marinade</strong> der drypper ned og rammer en meget varm zone.
+						Tænk tynde lag, som i{' '}
+						<a href="/guides/sproed-med-mindre-olie">sprød med mindre olie</a>, og dryp marinaden af.
+					</li>
+					<li>
+						<strong>Smeltet ost</strong> der løber ned på bunden — læg rist/papir efter modelregler, eller
+						brug form der opsamler.
+					</li>
+					<li>
+						<strong>Gammelt fedt og belægning</strong> på varmzoner — rengør grundigt; se{' '}
+						<a href="/guides/rengoering-lugt-airfryer">rengøring og lugt</a>.
+					</li>
+					<li>
+						<strong>For høj temperatur</strong> på små restfedtpletter — første minut kan ryge, derefter bør
+						det falde.
+					</li>
+				</ul>
+
+				<h2>Brandalarmen piper — uden at noget brænder</h2>
+				<p>
+					Optiske røgalarme reagerer på partikler i luften, inkl. fedt og damp. Praktisk: <strong>åbn
+					vindue</strong>, tænd emhætte på fornuftig styrke, undgå at åbne lågen direkte under alarmen mod
+					loftet (kort åbn/luk kan dog afhjælpe ved damp). På længere sigt: placering af alarm ift. køkken
+					ifølge producentens anbefaling.
+				</p>
+
+				<h2>Hvad gør du før du starter næste gang</h2>
+				<ul>
+					<li>Tøm og aftør overskydende fedt fra skuffe/bund — ikke lad det samle sig.</li>
+					<li>
+						Undgå at fylde kurven så meget at fedt “presses ud” — se{' '}
+						<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet og damp</a>.
+					</li>
+					<li>Følg temperaturloft for olier du bruger; undgå spraymod direkte på varme dele hvis manual fraråder det.</li>
+				</ul>
+
+				<h2>Når du bør stoppe og søge service</h2>
+				<p>
+					Gentagne problemer med lugt af brændt elektronik, løse dele inde i kabinettet, eller røg der
+					fortsætter efter rengøring og konservativ brug — <strong>stop brug</strong> og kontakt
+					fabrikant/forhandler efter garantivejledning.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="fejlfinding-roeg-fedt-brandalarm" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
