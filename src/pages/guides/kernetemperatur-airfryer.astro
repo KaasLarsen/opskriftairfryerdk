@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/kernetemperatur-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Kernetemperatur i airfryer: sikkert kød, fisk og fjerkræ | ${SITE_NAME}`;
+const description =
+	'Brug kernetemperatur når du laver kylling, kød og fisk i airfryer: mål korrekt, typiske temperaturer, hviletid og hvorfor farve lyver.';
+
+const published = '2026-04-09T09:00:00.000Z';
+const modified = '2026-04-09T09:00:00.000Z';
+
+const heroImagePath = '/images/guides/kernetemperatur-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Digitalt stegetermometer i kylling ved siden af airfryer — sikker kernetemperatur';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvor koldt skal kylling være i kernen når den er færdig?',
+		a: 'Som udgangspunkt mindst 75 °C i den tykkeste del uden ben (Fødevarestyrelsen anbefaler fuldt gennemstegt kylling). Mål med termometer — ikke Instagram-farve.',
+	},
+	{
+		q: 'Gælder samme regler i airfryer som i ovn?',
+		a: 'Ja — bakterier kender ikke varmekilden. Airfryer kan brune yderside hurtigere end midten gennemvarmes, så termometer er ekstra nyttigt.',
+	},
+	{
+		q: 'Hvilken termometer-type er bedst?',
+		a: 'Digital stegegaffel med spids der er fødevaregodkendt og hurtig aflæsning. Undgå at ramme ben på knogler — mål i kødfyldet.',
+	},
+	{
+		q: 'Skal jeg hvile kød efter airfryer?',
+		a: 'Ja, 3-10 min afhængigt af tykkelse — safte fordeler sig. Fortsat varmefordeling kan løfte et par grader, så du kan stoppe lidt under slutmål på okse hvis du styrer efter opskrift.',
+	},
+	{
+		q: 'Fisk — hvornår er den færdig?',
+		a: 'Mange hvide fisk: ca. 52-58 °C kerne efter smag; det er under pasteur — serve straks. Kig efter flagen og gennemsigtighed der skifter.',
+	},
+	{
+		q: 'Hvorfor er mit kyllingebryst lyserødt ved benet?',
+		a: 'Hemoglobin nær knogle kan farve kød pink selv ved sikker temperatur — mål i tykkeste køddele væk fra benet.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Kernetemperatur', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Kernetemperatur i airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Kernetemperatur</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Sikker mad</p>
+				<h1>Kernetemperatur i airfryer</h1>
+				<p class="guide-lead">
+					Airfryer kan <strong>brune ydersiden hurtigere end midten når op</strong>. Derfor er et billigt
+					digitalt stegetermometer den bedste forsikring mod rå midte i kylling og for tidlig udskæring af
+					kød.
+				</p>
+				<p>
+					<strong>Vigtigt:</strong> følg altid Fødevarestyrelsens anbefalinger; tabellen her er
+					praktiske udgangspunkter du kan kombinere med dine opskrifters tider.
+				</p>
+
+				<h2>Sådan måler du rigtigt</h2>
+				<ul>
+					<li>Stik i den <strong>tykkeste del</strong> uden ben — undgå sprækker med fedt der koger.</li>
+					<li>Hold spidsen <strong>midt i kødmassen</strong>, ikke op ad kurvens bund.</li>
+					<li>Aflæs når tallet <strong>stabiliserer</strong> 2-3 sek — især ved billige termometre.</li>
+					<li>
+						Ved store stykker: tjek <strong>to steder</strong> hvis formen er uens, fx
+						<a href="/opskrifter/airfryer-hel-kylling">hel kylling</a>.
+					</li>
+				</ul>
+
+				<h2>Typiske kernetemperaturer (vejledende)</h2>
+				<ul>
+					<li>
+						<strong>Kylling / kalkun (ingen rosa i kernen):</strong> typisk <strong>75 °C</strong> i
+						tykkeste kød hjemme hos de fleste — som Fødevarestyrelsen anbefaler til fjerkræ.
+					</li>
+					<li>
+						<strong>Okse / kalv (stegegrader):</strong> medium ca. <strong>55-60 °C</strong> før hvile —
+						smagsvalg; sikkerhed vs. madkultur — læs om parasitrisiko ved ikke helstegt.
+					</li>
+					<li>
+						<strong>Svinekød:</strong> traditionelt godt gennemstegt <strong>75 °C</strong> i danske
+						husholdninger; moderne dansk vejledning har åbnet for lavere ved visse udskæringer — tjek
+						Fødevarestyrelsen.
+					</li>
+					<li>
+						<strong>Fisk:</strong> ofte <strong>52-58 °C</strong> for fast hvide fisk ved servering eller
+						klassisk flage-prove — se vores{' '}
+						<a href="/opskrifter/airfryer-torsk">torskeopskrift</a> og{' '}
+						<a href="/opskrifter/airfryer-laks">laks</a>.
+					</li>
+				</ul>
+
+				<h2>Hviletid</h2>
+				<p>
+					Tag store kødstykker ud lidt før mål og lad dem stå — <strong>eftervarme</strong> løfter
+					temperaturen. Ved små nuggets og tynde schnitzler er effekten minimal.
+				</p>
+
+				<h2>Airfryer vs. farve</h2>
+				<p>
+					Gylden panering betyder ikke automatisk gennemstegt kylling. Det er derfor vi i opskrifter ofte
+					bruger <strong>to temp-trin</strong> eller lavere start — som ved{' '}
+					<a href="/opskrifter/airfryer-kylling-schnitzel">schnitzel</a>.
+				</p>
+
+				<h2>Genopvarmning og sikkerhed</h2>
+				<p>
+					Rester skal <strong>hedes helt igennem</strong> før servering — samme termometerlogik. Se{' '}
+					<a href="/guides/genopvarmning-i-airfryer">genopvarmningsguiden</a>.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="kernetemperatur-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

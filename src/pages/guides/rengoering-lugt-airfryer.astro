@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/rengoering-lugt-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Rengøring og lugt i airfryer: kurv, filter og gode rutiner | ${SITE_NAME}`;
+const description =
+	'Sådan holder du airfryer ren og mindsker fedtlugt: rutine efter brug, rengøring af kurv og bund, filter, og hvad manualen typisk fraråder.';
+
+const published = '2026-04-09T09:00:00.000Z';
+const modified = '2026-04-09T09:00:00.000Z';
+
+const heroImagePath = '/images/guides/rengoering-lugt-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Airfryer og rengøring: kurv, klud og sprayflaske ved siden af åben maskine i lyst køkken';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvorfor lugter min airfryer af gammelt fedt?',
+		a: 'Oftest accumuleret fedt og madrester på varme elementer, i kanter og i filter/dæksler. Regelmæssig afkøling + aftørring og ugentlig grundrens reducerer lugten markant.',
+	},
+	{
+		q: 'Må kurven i opvaskemaskinen?',
+		a: 'Det afhænger af model og belægning — følg altid producentens manual. Mange non-stick-kurve tåler maskine, men håndvask forlænger ofte belægningens levetid.',
+	},
+	{
+		q: 'Kan jeg bruge skuremiddel og ståluld?',
+		a: 'Undgå aggressiv skuring på non-stick. Brug blød svamp, varmligt vand og evt. mild opvask, eller bicarbonat-pasta på kraftige belægninger — grundskyl efter.',
+	},
+	{
+		q: 'Hvordan undgår jeg røg næste gang jeg tænder?',
+		a: 'Tør bund og vinduer for overskydende olie, tøm drypbakke hvis din model har den, og undgå at starte på max med fedt i spalterne.',
+	},
+	{
+		q: 'Skal filter skiftes?',
+		a: 'Nogle modeller har udskiftelige eller vaskbare luftfiltre. Tjek manualen — et tilstoppet filter kan give dårlig luftgennemstrømning og mere lugt.',
+	},
+	{
+		q: 'Hjælper citron eller eddike mod lugt?',
+		a: 'Kort opvarmning med vand + citron kan neutralisere let lugt efter rengøring, men det erstatter ikke fjernelse af fedt. Start altid med mekanisk rengøring.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Rengøring og lugt', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Rengøring og lugt i airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Rengøring og lugt</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Vedligeholdelse</p>
+				<h1>Rengøring og lugt i airfryer</h1>
+				<p class="guide-lead">
+					Airfryer <strong>samler fedt og små sprut</strong> ligesom en ovn — bare ofte tættere på
+					maden og med en blæser der cirkulerer varme og lugt. Gode vaner efter hver brug og en ugentlig
+					dybere tur holder lugt og røg nede.
+				</p>
+
+				<h2>Efter hver brug (5 minutter der betaler sig)</h2>
+				<ul>
+					<li>
+						<strong>Lad maskinen køle af</strong> før du tager kurven ud — undgå brændte fingre og
+						sub smeltet plastik.
+					</li>
+					<li>
+						Tøm <strong>krummer og dryp</strong>. Har du drypbakke under kurven, skyl den — størknet
+						fedt lugter mere næste gang.
+					</li>
+					<li>
+						Tør overskydende <strong>olie på vægge</strong> med køkkenrulle: et tyndt film giver ofte
+						røg ved næste forvarmning.
+					</li>
+					<li>
+						Skyl kurv og eventuel rist i <strong>varmt vand samme aften</strong>, hvis du har brugt
+						marineret kød, ost eller panering.
+					</li>
+				</ul>
+
+				<h2>Ugentlig eller ved synlig fedt: grundrens</h2>
+				<p>
+					Brug opvaskemiddel og blød svamp. Ved brune belægninger: <strong>iblødsætning</strong> 15 min
+					før du gnider — mindre slid på non-stick. Tør helt tør før næste brug for at undgå fedtsprut.
+				</p>
+				<p>
+					Har du model hvor <strong>overdel / varmelegeme</strong> kan åbnes efter manual: aftør forsigtigt
+					— der samler sig ofte de værste lugte. Sluk og kold apparat før du rører indvendige dele.
+				</p>
+
+				<h2>Filter, blæser og kanter</h2>
+				<p>
+					Fabrikanter lægger ikke ens — læs <strong>din manual</strong> om aftageligt filter eller rengøring
+					af luftkanaler. Et filter der er tilstoppet af fedtduft kan genkaste lugt i hvert program.
+				</p>
+
+				<h2>Hvad med opvaskemaskine?</h2>
+				<p>
+					Det er fristende, men <strong>høje temperaturer og sterke tabletter</strong> kan slide belægning
+					ved gentagen brug. Håndvask er ofte det skånsomste, medmindre dokumentationen siger maskine.
+				</p>
+
+				<h2>Lugt-trick efter rengøring</h2>
+				<p>
+					Når alt fedt er fjernet mekanisk, kan du <strong>køre et tomt program</strong> 3-5 min ved
+					moderat varme med en skål vand + citronsaft — det er kosmetik på luft, ikke erstatning for
+					rens. Se også <a href="/guides/tilbehoer-til-airfryer">tilbehørsguiden</a> om åbne kurve og
+					spray du faktisk ønsker i maden.
+				</p>
+
+				<h2>Forbind til mad og mindre spild</h2>
+				<p>
+					Mindre fedt i bunden giver nemmere rengøring. Vores guide om{' '}
+					<a href="/guides/sproed-med-mindre-olie">sprød med mindre olie</a> og{' '}
+					<a href="/guides/frossen-mad-airfryer">frossen mad</a> (ét lag, ryst) mindsker både resultatryk
+					og rengøringsbehov.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="rengoering-lugt-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

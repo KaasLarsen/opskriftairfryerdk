@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/genopvarmning-i-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Genopvarmning i airfryer: undgå slat pizza, pommes og panering | ${SITE_NAME}`;
+const description =
+	'Genopvarm rester og takeaway i airfryer med bedre tekstur end mikrobølge: temperatur, tid, ét lag og hvordan du rammer sprød vs. blød.';
+
+const published = '2026-04-09T09:00:00.000Z';
+const modified = '2026-04-09T09:00:00.000Z';
+
+const heroImagePath = '/images/guides/genopvarmning-i-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 818;
+const heroAlt =
+	'Rester og pizza ved siden af airfryer — genopvarmning med bedre tekstur end mikrobølge';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Er airfryer bedre end mikrobølge til genopvarmning?',
+		a: 'Til ting hvor du vil have knas eller fast yderside — ofte ja. Til supper og saucer der skal være helt flydende er mikro ofte hurtigere.',
+	},
+	{
+		q: 'Hvorfor bliver genopvarmet kød tørt?',
+		a: 'For høj temperatur for længe eller for små stykker uden pause. Skru ned, brug kortere intervaller, og tjek midten med ét minuts mellemrum.',
+	},
+	{
+		q: 'Må bøtte med sauce i airfryer?',
+		a: 'Kun hvis beholderen tåler varme og står stabilt. Tænk på at sausen kan koge over — lav skål, del portion, eller brug gryde til flydende retter.',
+	},
+	{
+		q: 'Skal jeg forvarme airfryer til genopvarmning?',
+		a: 'Kort forvarmning giver ofte mere ensartet yderside på pommes og panering; til små mængder kan du undvære og blot tilføje 30-60 sek.',
+	},
+	{
+		q: 'Kan fisk genopvarmes uden at lugte?',
+		a: 'Kort tid ved moderat varme. Ved genopvarmning af fisk undgå maxvarme — 150-160 °C i korte intervaller ofte bedre end lang blast.',
+	},
+	{
+		q: 'Virker det til ris og pasta?',
+		a: 'Det kan — tilføj en smule vand under låg eller stanniol-hat for damp, ellers tørrer ris ud. Mikro er ofte nemmere til pure damp.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Genopvarmning', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Genopvarmning i airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Genopvarmning</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Hverdag</p>
+				<h1>Genopvarmning i airfryer</h1>
+				<p class="guide-lead">
+					Mikrobølge varmer hurtigt, men <strong>ødelægger ofte sprødhed</strong>. Airfryer rammer igen
+					den varme, tørre luft der gav dig sprød panering og pommes første gang — hvis du holder igen
+					på tid og undgår damp i kurven.
+				</p>
+
+				<h2>Fælles principper der virker</h2>
+				<ul>
+					<li>
+						<strong>Ét lag</strong> — stable ikke pizza oven på pizza; luft skal ramme siderne.
+					</li>
+					<li>
+						<strong>Korte intervaller</strong> — start med 2-3 min ved 160-175 °C, tjek, forlæng.
+					</li>
+					<li>
+						<strong>Ingen låg der fanger al damp</strong> hvis du vil have sprødt; undtagelse: ris/pasta
+						kan have gavn af lidt fugt (se FAQ).
+					</li>
+					<li>
+						<strong>Oliespray i mikroskopisk lag</strong> på tør pommes kan genaktivere skorpe — som ved{' '}
+						<a href="/guides/sproed-med-mindre-olie">olieguiden</a>.
+					</li>
+				</ul>
+
+				<h2>Pizza og brød</h2>
+				<p>
+					Start <strong>160-170 °C</strong>, 3-5 min for en enkelt skive afhængigt af tykkelse. Bunden
+					tager farve fra kontakt med kurv/rist — et bagepapirsstykke under kan hindre sved, men kan også
+					sænke bundens crisp; prøv begge.
+				</p>
+
+				<h2>Pommes og kartofler</h2>
+				<p>
+					Ryst kurven midway — samme logik som når du laver{' '}
+					<a href="/opskrifter/airfryer-frosne-franske-kartofler">frosne pommes</a> eller{' '}
+					<a href="/opskrifter/airfryer-pomfritter">hjemmelavede pomfritter</a>. Ved helt kolde pommes fra
+					køleskab kan du starte 30 sek lavere og øge til sidst.
+				</p>
+
+				<h2>Paneret kylling og nuggets</h2>
+				<p>
+					<strong>165-175 °C</strong> så panering ikke branker før kødet er gennemvarmt. Tynde snacks som
+					<a href="/opskrifter/airfryer-kyllingenuggets">nuggets</a> hurtigere end tyk
+					<a href="/opskrifter/airfryer-fiskefilet">fiskefilet</a>.
+				</p>
+
+				<h2>Kød uden panering (bøffer, strimler)</h2>
+				<p>
+					Skær i mindre skiver før genopvarmning eller brug lavere temperatur og læg evt. smørskive på
+					top sidste minut for saft — ellers ender du ofte med grå overflade.
+				</p>
+
+				<h2>Grønt og snacks</h2>
+				<p>
+					Korte programmer — de har ofte allerede mistet vand første gang. Vend hurtigt og undgå at
+					“glemme” dem i 200 °C.
+				</p>
+
+				<h2>Hvornår er mikro smartere?</h2>
+				<p>
+					Suppe, karry med sauce, chili — ting hvor du bare vil have varme igennem uden at koge væsken væk.
+					Airfryer er værktøjet når <strong>tekstur</strong> er problemet.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="genopvarmning-i-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
