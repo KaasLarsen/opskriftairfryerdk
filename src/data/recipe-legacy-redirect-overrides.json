@@ -1,0 +1,4 @@
+{
+	"description": "Ekstra 301 fra gamle URL'er der ikke følger {slug}-i-airfryer. Tilføj fra GSC/404-liste — kør derefter `node scripts/generate-vercel-redirects.mjs`.",
+	"redirects": []
+}
