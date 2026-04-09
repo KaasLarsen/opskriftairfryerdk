@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/hvad-kan-man-lave-i-en-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Hvad kan man lave i en airfryer? Idéer og kategorier | ${SITE_NAME}`;
+const description =
+	'Oversigt: kød, fisk, grønt, pommes, bagning, vegetar og meal-prep i airfryer — med konkrete opskriftslinks og korte tips om hvad der ikke hører hjemme i kurven.';
+
+const published = '2026-04-12T08:00:00.000Z';
+const modified = '2026-04-12T08:00:00.000Z';
+
+const heroImagePath = '/images/guides/hvad-kan-man-lave-i-en-airfryer.png';
+const heroImageWidth = 1024;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Varieret mad i og omkring en airfryer-kurv: grønt, protein og tilbehør på lyst køkkenbord';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvad kan man ikke lave i en airfryer?',
+		a: 'Undgå løs, let papir eller folie der kan blæse op i varmeelementet. Store mængder våd dej uden form, meget fedt der sprøjter, og retter der kræver kogende væske (ris/pasta uden gryde eller form) er dårlige kandidater. Følg altid din models manual.',
+	},
+	{
+		q: 'Kan man lave alt i airfryer som i ovn?',
+		a: 'Mange ting overlapper, men luftcirkulationen er stærkere og volumen mindre. Tider og temperatur fra ovn skal ofte justeres — brug airfryer-opskrifter som udgangspunkt.',
+	},
+	{
+		q: 'Er airfryer kun til pommes og nuggets?',
+		a: 'Nej. Du kan lave alt fra hele kyllinger og steger til grønt, fisk, pitabrød, små kager og snacks — se kategorierne nedenfor.',
+	},
+	{
+		q: 'Kan man lave mad til hele familien på én gang?',
+		a: 'Det afhænger af kurvens størrelse. Mange laver i to hold eller vælger dual-zone. Se vores guide om valg af størrelse og zoner.',
+	},
+	{
+		q: 'Kan vegetarer bruge airfryer?',
+		a: 'Ja — tofu, falafler, grøntsagsbøffer, ost, grønt og brød fungerer godt. Se vegetar-afsnittet med links.',
+	},
+	{
+		q: 'Hvor finder jeg konkrete tider?',
+		a: 'Under hver opskrift på sitet er der temperatur og trin. Start et minut før sluttid første gang og notér, hvad der passede til din maskine.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Hvad kan man lave i en airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Hvad kan man lave i en airfryer? Idéer, kategorier og opskrifter',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Hvad kan man lave i en airfryer</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Inspiration</p>
+				<h1>Hvad kan man lave i en airfryer?</h1>
+				<p class="guide-lead">
+					Kort sagt: alt det, hvor <strong>varm luft</strong> kan give sprød kant, jævn varme eller
+					hurtig gennemstegning i en <strong>lille kammer</strong> — fra rå kylling og pommes til
+					grønt, fisk, brød og mindre kager. Denne side samler <strong>kategorier</strong> og
+					direkte links til vores opskrifter, så du kan gå fra idé til køkkenbord.
+				</p>
+				<p>
+					Fælles tråd for gode resultater: <strong>ét lag</strong> med luft imellem,{' '}
+					<strong>dup tør</strong> hvor maden ellers damper, og{' '}
+					<a href="/guides/airfryer-for-begyndere">begynderguiden</a> i ryggen når noget fejler første
+					gang.
+				</p>
+
+				<h2>Fjerkræ og kød</h2>
+				<p>
+					Airfryer er stærk til <strong>klassiske kødretter</strong>, hvor du vil have farve og
+					gennemstegning uden at fylde hele ovnen.
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-kyllingebryst">Kyllingebryst</a>,{' '}
+						<a href="/opskrifter/airfryer-kyllingelaar">kyllingelår</a>,{' '}
+						<a href="/opskrifter/airfryer-hel-kylling">hel kylling</a>,{' '}
+						<a href="/opskrifter/airfryer-pulled-chicken">pulled chicken</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-okseboef-steak">Oksebøf / steak</a>,{' '}
+						<a href="/opskrifter/airfryer-flaeskesteg">flæskesteg</a>,{' '}
+						<a href="/opskrifter/airfryer-koteletter">koteletter</a>,{' '}
+						<a href="/opskrifter/airfryer-frikadeller">frikadeller</a>,{' '}
+						<a href="/opskrifter/airfryer-medister">medister</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-forloren-hare">Forloren hare</a>,{' '}
+						<a href="/opskrifter/airfryer-karbonader">karbonader</a> — typisk i batch eller flad form
+					</li>
+				</ul>
+
+				<h2>Fisk og skaldyr</h2>
+				<p>
+					Korte programmer passer godt til <strong>fileter og små bidder</strong> — undgå at pakke
+					for tæt, så fisken ikke dampes.
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-laks">Laks</a>, <a href="/opskrifter/airfryer-torsk">torsk</a>,{' '}
+						<a href="/opskrifter/airfryer-moerksej">mørksej</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-rejer-hvidloegsmoer">Rejer</a>,{' '}
+						<a href="/opskrifter/airfryer-tunboef-tunsteak">tunbøf</a>
+					</li>
+				</ul>
+
+				<h2>Grønt, kartofler og tilbehør</h2>
+				<p>
+					Her får mange øje op for airfryer første gang: <strong>hurtigt tilbehør</strong> med lidt
+					karamelisering.
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-pomfritter">Pomfritter</a>,{' '}
+						<a href="/opskrifter/airfryer-kartofler-i-baade">kartofler i både</a>,{' '}
+						<a href="/opskrifter/airfryer-bagekartofler">bagekartofler</a>,{' '}
+						<a href="/opskrifter/airfryer-frosne-franske-kartofler">frosne pommes</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-broccoli">Broccoli</a>,{' '}
+						<a href="/opskrifter/airfryer-groentsagsmix">grøntsagsmix</a>,{' '}
+						<a href="/opskrifter/airfryer-blomkaal">blomkål</a>,{' '}
+						<a href="/opskrifter/airfryer-gronne-boenner">grønne bønner</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-hash-browns">Hash browns</a>,{' '}
+						<a href="/opskrifter/airfryer-croutoner">croutoner</a>
+					</li>
+				</ul>
+
+				<h2>Vegetar og planteprotein</h2>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-tofu">Tofu</a>, <a href="/opskrifter/airfryer-falafler">falafler</a>,{' '}
+						<a href="/opskrifter/airfryer-tempeh-biter">tempeh</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-aubergine-parmesan">Aubergine parmesan</a>,{' '}
+						<a href="/opskrifter/airfryer-linsefrikadeller">linsefrikadeller</a>,{' '}
+						<a href="/opskrifter/airfryer-halloumi-honning-citron">halloumi</a>
+					</li>
+				</ul>
+
+				<h2>Snacks, brunch og “hurtigt”</h2>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-nachos-kylling-jalapenos">Nachos</a>,{' '}
+						<a href="/opskrifter/airfryer-mozzarella-sticks">mozzarella sticks</a>,{' '}
+						<a href="/opskrifter/airfryer-kikaerter-roestet">ristede kikærter</a>
+					</li>
+					<li>
+						<a href="/opskrifter/airfryer-aeg">Æg</a> (blødkogt i skal, form, røræg),{' '}
+						<a href="/opskrifter/airfryer-bacon">bacon</a>,{' '}
+						<a href="/opskrifter/airfryer-toast-grillet-ost">toast</a>
+					</li>
+				</ul>
+
+				<h2>Bagning og sødt (i små mængder)</h2>
+				<p>
+					Airfryer kan klare <strong>små batch</strong> — brug ovnfast form med plads til låg og luft.
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-chokoladekage-lille-form">Chokoladekage i lille form</a>,{' '}
+						<a href="/opskrifter/airfryer-pandekager">pandekager</a>,{' '}
+						<a href="/opskrifter/airfryer-klejner">klejner</a>
+					</li>
+				</ul>
+
+				<h2>“Gryde” og one-pot i beholder</h2>
+				<p>
+					Når din maskine og tilbehør tillader det, kan du lave <strong>simre- og bage-retter</strong> i
+					ovnfast beholder — igen: luft og ikke fyld til kanten.
+				</p>
+				<ul>
+					<li>
+						<a href="/opskrifter/airfryer-one-pot-chili-con-carne">Chili con carne</a>,{' '}
+						<a href="/opskrifter/airfryer-one-pot-linsegryde-kokos-karry">linsegryde med kokos</a>
+					</li>
+				</ul>
+
+				<h2>Frost og genopvarmning</h2>
+				<p>
+					Mange retter fra frost kan direkte ind — med <strong>længere tid</strong> og evt. ryst undervejs.
+					Læs vores dedikerede guide og de enkelte opskrifter markeret “frost”.
+				</p>
+				<p>
+					<a href="/guides/frossen-mad-airfryer">Frossen mad i airfryer</a> — principper for damp, ét lag
+					og tider.
+				</p>
+
+				<h2>Hvad med ting, der typisk fejler?</h2>
+				<ul>
+					<li>
+						<strong>Bløde, våde overflader</strong> uden tørring — dup grønt og kød, halver mængden i
+						kurven.
+					</li>
+					<li>
+						<strong>Ren væske eller løbende dej</strong> uden form — brug ildfast fad eller vælg panden.
+					</li>
+					<li>
+						<strong>For høj varme på panering</strong> — skru ned og brug kortere intervaller (
+						<a href="/guides/sproed-med-mindre-olie">sprød-guide</a>).
+					</li>
+				</ul>
+
+				<h2>Næste skridt</h2>
+				<p>
+					Vil du have <strong>struktur i de første uger</strong>, følg ugen i{' '}
+					<a href="/guides/airfryer-for-begyndere">Airfryer for begyndere</a>. Skal du vælge maskine, er{' '}
+					<a href="/guides/hvilken-airfryer">Hvilken airfryer?</a> det rigtige stop — og på{' '}
+					<a href="/opskrifter">opskriftsoversigten</a> kan du søge og filtrere videre.
+				</p>
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="hvad-kan-man-lave-i-en-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
