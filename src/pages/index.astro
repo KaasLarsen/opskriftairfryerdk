@@ -3,10 +3,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import RecipeCard from '../components/RecipeCard.astro';
 import SiteSearch from '../components/SiteSearch.astro';
 import { getCollection } from 'astro:content';
+import { HOME_FEATURED_GUIDES, HOME_FEATURED_REVIEW_IDS } from '../data/homeFeatured';
+import { findShopProductByProductUrl } from '../lib/shopProductsFromJson';
 import { DEFAULT_DESCRIPTION, ORGANIZATION_JSON, SITE_NAME, SITE_TAGLINE, SITE_URL } from '../consts';
 
 const allRecipes = await getCollection('recipes');
-const reviewCount = (await getCollection('airfryerReviews')).length;
+const allReviews = await getCollection('airfryerReviews');
+const reviewCount = allReviews.length;
+
+const reviewById = new Map(allReviews.map((r) => [r.id, r]));
+const featuredReviews = HOME_FEATURED_REVIEW_IDS.map((id) => {
+	const r = reviewById.get(id);
+	if (!r) return null;
+	const p = findShopProductByProductUrl(r.data.shopProductUrl);
+	const thumb = r.data.heroImage ?? p?.imageUrl ?? null;
+	const brand = (r.data.brandLabel ?? p?.brand ?? '').trim();
+	return {
+		id: r.id,
+		href: `/anmeldelser/${r.id}`,
+		title: r.data.title,
+		description: r.data.description,
+		rating: r.data.rating,
+		thumb,
+		thumbAlt: r.data.heroAlt ?? r.data.title,
+		brand,
+	};
+}).filter(Boolean) as {
+	id: string;
+	href: string;
+	title: string;
+	description: string;
+	rating?: number;
+	thumb: string | null;
+	thumbAlt: string;
+	brand: string;
+}[];
 const featuredPool = allRecipes
 	.filter((r) => r.data.featured === true)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -133,6 +164,47 @@ const jsonLd = {
 	}
 
 	{
+		HOME_FEATURED_GUIDES.length > 0 && (
+			<section class="section section--tight-top">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Guides</p>
+						<h2>Praktiske guides til airfryer</h2>
+						<p>
+							Korte artikler om temperatur, valg af maskine, hverdag og frys — ud over selve
+							opskrifterne. <a href="/guides">Se alle guides</a>
+						</p>
+					</div>
+					<div class="recipe-grid">
+						{HOME_FEATURED_GUIDES.map((g) => (
+							<a class="recipe-card" href={g.href}>
+								<div class="recipe-card-image">
+									<img
+										src={g.image}
+										alt={g.imageAlt}
+										width="640"
+										height="400"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<div class="recipe-card-body">
+									<div class="recipe-card-badges">
+										<span class="recipe-card-badge">{g.kicker}</span>
+										<span class="recipe-card-badge recipe-card-badge--muted">Guide</span>
+									</div>
+									<h3>{g.title}</h3>
+									<p>{g.description}</p>
+								</div>
+							</a>
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
+
+	{
 		spring.length > 0 && (
 			<section class="section section--tight-top">
 				<div class="container">
@@ -185,4 +257,62 @@ const jsonLd = {
 			</div>
 		</div>
 	</section>
+
+	{
+		featuredReviews.length > 0 && (
+			<section class="section section--tight-top">
+				<div class="container">
+					<div class="section-head">
+						<p class="section-kicker">Anmeldelser</p>
+						<h2>Udvalgte airfryer-anmeldelser</h2>
+						<p>
+							Vurderinger med fordele, ulemper og hvem modellen passer til — plus link til pris hos
+							forhandler.
+							<a href="/anmeldelser"> Se alle {reviewCount} anmeldelser</a>
+						</p>
+					</div>
+					<div class="recipe-grid">
+						{featuredReviews.map((rev) => (
+							<a class="recipe-card" href={rev.href}>
+								<div
+									class:list={['recipe-card-image', !rev.thumb && 'recipe-card-image--placeholder']}
+								>
+									{rev.thumb ? (
+										<img
+											src={rev.thumb}
+											alt={rev.thumbAlt}
+											width="640"
+											height="400"
+											loading="lazy"
+											decoding="async"
+										/>
+									) : (
+										<div class="recipe-placeholder-inner">
+											<span class="recipe-placeholder-label">Billede på vej</span>
+										</div>
+									)}
+								</div>
+								<div class="recipe-card-body">
+									<div class="recipe-card-badges">
+										{rev.brand ? (
+											<span class="recipe-card-badge">{rev.brand}</span>
+										) : (
+											<span class="recipe-card-badge">Anmeldelse</span>
+										)}
+										{rev.rating != null ? (
+											<span class="recipe-card-badge recipe-card-badge--muted">
+												{rev.rating}/5 stjerner
+											</span>
+										) : null}
+									</div>
+									<h3>{rev.title}</h3>
+									<p>{rev.description}</p>
+								</div>
+							</a>
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
 </BaseLayout>
