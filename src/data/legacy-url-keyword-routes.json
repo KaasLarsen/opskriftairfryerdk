@@ -1,0 +1,371 @@
+{
+	"description": "Gamle WP/GSC → recipe id",
+	"exactSlugs": {
+		"perfekt-stegt-ribeye-i-airfryer-saftig-og-sproed-hver-gang": "airfryer-okseboef-steak",
+		"entrecote-i-airfryer-saftig-og-moer-paa-den-nemme-maade": "airfryer-okseboef-steak",
+		"new-york-strip-cote-de-boeuf-i-airfryer-saftig-og-smagfuld": "airfryer-okseboef-steak",
+		"t-bone-steak-i-airfryer-perfekt-stegeskorpe-og-saftigt-koed": "airfryer-okseboef-steak",
+		"ribeye-steak-i-airfryer": "airfryer-okseboef-steak",
+		"pulled-chicken-i-airfryer-nemt-laekkert-og-saftigt": "airfryer-pulled-chicken",
+		"luftige-roeraeg-i-airfryer-nem-og-laekker-morgenmad-paa-faa-minutter": "airfryer-aeg",
+		"fladbroed-med-hytteost-og-aeg-i-airfryer-sundt-luftigt-og-nemt": "airfryer-hytteost-broed",
+		"perfekt-tunsteak-i-airfryer-moer-saftig-og-nem-opskrift": "airfryer-tunboef-tunsteak",
+		"klejner-den-sproede-juleklassiker-i-airfryeren": "airfryer-klejner",
+		"kinesiske-dumplings-gyoza-i-airfryer-sproed-og-laekker-opskrift": "airfryer-dumplings-gyoza",
+		"sproed-og-smagfuld-marineret-tofu-i-airfryer": "airfryer-tofu",
+		"nem-og-sproed-sejfilet-i-airfryer-perfekt-til-hverdagen": "airfryer-moerksej",
+		"perfekt-tilberedt-torsk-i-airfryer-nem-og-sund-opskrift": "airfryer-torsk",
+		"bananpandekager-i-airfryer-nem-og-sund-snack": "airfryer-pandekager",
+		"leverpostej-i-airfryer-nem-opskrift-med-perfekt-resultat": "airfryer-leverpostej",
+		"sproed-blomkaal-med-smeltet-ost-i-airfryer-nemt-og-laekkert-tilbehoer": "airfryer-blomkaal",
+		"hjemmelavede-soltoerrede-tomater-i-airfryer-klar-paa-ingen-tid": "airfryer-soltoerrede-tomater",
+		"helstegt-kylling-i-airfryer-saftig-og-sproed-paa-ingen-tid": "airfryer-hel-kylling",
+		"perfekt-flaeskesteg-med-sproed-svaer-i-airfryer-nem-og-hurtig": "airfryer-flaeskesteg",
+		"ristet-broed-med-aeg-egg-in-a-hole-i-airfryer": "airfryer-toast-grillet-ost",
+		"luftige-pandekager-i-airfryer-nemt-og-laekkert": "airfryer-pandekager",
+		"nem-og-laekker-koedsovs-til-spaghetti-i-airfryer-klar-paa-ingen-tid": "airfryer-one-pot-chili-con-carne",
+		"sproede-groenkaalschips-i-airfryer-en-sund-og-laekker-snack": "airfryer-groenkaalschips",
+		"kalvelever-i-airfryer-laekker-sund-og-alsidig-tilberedning": "airfryer-kalvelever",
+		"eriyaki-kyllingespyd-i-airfryer-nem-og-smagfuld-opskrift": "airfryer-kyllingespyd",
+		"one-pot-pasta-i-airfryer-den-ultimative-nemme-ret": "airfryer-one-pot-orzo-tomat-mozzarella",
+		"sunde-og-sproede-aeblechips-i-airfryer-den-perfekte-snack": "airfryer-aeblechips",
+		"bagte-aebler-med-kanel-og-sukker-i-airfryer-en-nem-og-laekker-efteraarsdessert": "airfryer-aeblechips",
+		"havregroed-muffins-i-airfryer-sund-og-nem-morgenmad-paa-farten": "airfryer-aege-muffins",
+		"forloren-hare-i-airfryer-saftig-smagfuld-og-nem-at-lave": "airfryer-forloren-hare",
+		"sproede-og-saftige-airfryer-rejer-med-hvidloeg-og-citron-en-hurtig-og-laekker-ret": "airfryer-rejer-hvidloegsmoer",
+		"proteinpandekager-i-airfryer-nemt-sundt-og-laekkert": "airfryer-pandekager",
+		"sproede-kikaerter-i-airfryer-sund-og-laekker-snack-paa-ingen-tid": "airfryer-kikaerter-roestet",
+		"kartoffelchips-i-airfryer-sproede-nemme-og-sunde-alternativer": "airfryer-kartoffelskind-med-ost",
+		"peberfrugter-smagfulde-og-moere-i-airfryer": "airfryer-poelse-peberfrugt",
+		"smagfulde-fyldte-champignon-i-airfryer": "airfryer-tapas-fyldte-champignoner",
+		"mini-bruschetta-i-airfryer-en-hurtig-og-laekker-forret": "airfryer-tapas-crostini-tomat",
+		"hjemmelavede-rodfrugtchips-i-airfryer-sproede-og-sunde-snacks": "airfryer-kartoffelskind-med-ost",
+		"hurtig-og-laekker-lasagne-i-airfryer-perfekt-til-hverdagen": "airfryer-one-pot-orzo-tomat-mozzarella",
+		"svinekoteletter-i-airfryer-moere-og-saftige": "airfryer-koteletter",
+		"honningglaserede-guleroedder-i-airfryer-en-soed-og-laekker-tilfoejelse-til-julebordet": "airfryer-honning-guleroedder",
+		"roedbedefritter-i-airfryer-sproede-og-sunde": "airfryer-roedbedebaade-balsamico-feta",
+		"boenner-i-airfryer-sproed-og-nem-tilberedning-af-baade-frosne-og-friske-boenner": "airfryer-groenne-boenner",
+		"sproede-saltede-mandler-i-airfryer-nem-og-laekker-snack": "airfryer-ristede-noedder-honning-rosmarin",
+		"saftig-og-smagfuld-hamburgerryg-i-airfryer-nem-og-hurtig-tilberedning": "airfryer-hamburgerryg-glaseret",
+		"blomkaal-i-airfryer-perfekt-til-sproede-blomkaalsvinger": "airfryer-blomkaal",
+		"squash-zucchini-sproede-zucchini-fritter-i-airfryer": "airfryer-squash",
+		"chicken-tenders-med-aioli-i-airfryer-sproede-og-saftige-hapsere": "airfryer-kyllingenuggets",
+		"sproede-mozzarella-sticks-i-airfryer-perfekt-til-dip-og-hygge": "airfryer-mozzarella-sticks",
+		"koreansk-bbq-svinekoed-bulgogi-i-airfryer-nem-og-smagfuld-opskrift": "airfryer-svinekoed-teriyaki-tern",
+		"grillet-panini-med-mozzarella-og-pesto-i-airfryer": "airfryer-toast-grillet-ost",
+		"asparges-i-airfryer-hurtig-og-laekker-sideret": "airfryer-asparges",
+		"pulled-pork-i-airfryer-laekker-og-saftig-paa-en-nem-maade": "airfryer-pulled-pork",
+		"tortilla-chips-i-airfryer-sproedt-og-hjemmelavet-paa-ingen-tid": "airfryer-tortilla-chips",
+		"klassisk-oksegryde-i-airfryer-nem-og-velsmagende-komfortmad-til-kolde-dage": "airfryer-one-pot-chili-con-carne",
+		"sproede-loegringe-i-airfryer-perfekt-snack": "airfryer-loegringe",
+		"saftig-moerbrad-i-airfryer-nem-og-laekker-opskrift-paa-faa-minutter": "airfryer-moerbrad",
+		"omelet-i-airfryer-luftig-og-fyldt-med-groentsager-og-ost": "airfryer-aeggekage-asparges-bacon",
+		"saftige-og-smagfulde-svinekoteletter-i-airfryer-perfekte-til-hverdag-og-weekend": "airfryer-koteletter",
+		"mini-butterdejstaerter-med-fyld-i-airfryer": "airfryer-mini-hindbaertaerte",
+		"luftigt-naanbroed-i-airfryer-perfekt-til-indiske-retter-og-mere": "airfryer-naan-pitabroed",
+		"broccoli-nemt-sundt-og-sproedt-i-airfryer": "airfryer-broccoli",
+		"hjemmelavede-havregrynskager-i-airfryer": "airfryer-pebernoder",
+		"nem-opskrift-paa-sproedt-stegt-flaesk-i-airfryer-perfekt-hver-gang": "airfryer-bacon",
+		"kyllingevinger-i-airfryer-sproede-saftige-og-nemme": "airfryer-kyllingevinger",
+		"andelaar-og-andebryst-i-airfryer-saftigt-og-sproedt": "airfryer-andebryst",
+		"perfekt-culottesteg-i-airfryer-nemt-saftigt-og-sproedt": "airfryer-culottesteg",
+		"biksemad-i-airfryer-klassisk-ret-med-sproed-og-moderne-twist": "airfryer-skinke-kartofler-tern",
+		"chips-paa-kartoffelskraeler-i-airfryer-en-laekker-og-baeredygtig-snack": "airfryer-kartoffelskind-med-ost",
+		"tempura-groentsager-i-airfryer-sproed-og-laekker-opskrift": "airfryer-groentsagsmix",
+		"toerrede-guleroedder-i-airfryer-sproede-og-sunde-chips-paa-ingen-tid": "airfryer-honning-guleroedder",
+		"groenkaalschips-i-airfryer-sproede-sunde-og-nemme-at-lave": "airfryer-groenkaalschips",
+		"bagt-camembert-i-airfryer-cremet-sproed": "airfryer-bagt-camembert-honning-timian",
+		"svensk-poelseret-i-airfryer-nem-og-laekker-hverdagsklassiker": "airfryer-svenske-koedboller",
+		"sproede-pommes-frites-med-troeffel-og-parmesan-luksus-snack-i-din-airfryer": "airfryer-frosne-franske-kartofler",
+		"guleroedder-i-airfryer-med-cremet-feta-sundt-nemt-og-laekkert": "airfryer-honning-guleroedder",
+		"nachos-i-airfryer-sproede-og-laekre-med-forskellige-variationer": "airfryer-nachos-kylling-jalapenos",
+		"plantebaserede-boeffer-i-airfryer-sproed-ydre-og-saftig-indre": "airfryer-groentsagsboefter",
+		"farsbroed-i-airfryer-saftigt-og-laekkert-paa-rekordtid": "airfryer-forloren-hare",
+		"hurtige-og-sproede-popcorn-i-airfryer-klar-paa-faa-minutter": "airfryer-popcorn",
+		"hurtig-og-nem-kage-i-airfryer-perfekt-til-den-soede-tand": "airfryer-chokoladekage-lille-form",
+		"forloren-hare-i-airfryer-saftig-smagfuld-og-nem-at-lave-": "airfryer-forloren-hare",
+		"one-pot-pasta-i-airfryer-den-ultimative-nemme-ret-": "airfryer-one-pot-orzo-tomat-mozzarella",
+		"grillet-spidskaal-i-airfryer--sproedt-saftigt-og-supernemt": "airfryer-spidskaal",
+		"-stenalderbroed-i-airfryer-nemt-sundt-og-fyldt-med-kerner": "airfryer-hytteost-broed",
+		"-airfryer-onion-boils-tiktok-favoritten-der-smelter-paa-tungen": "airfryer-loegringe",
+		"fasanbryst-i-airfryer-en-elegant-og-nem-opskrift": "airfryer-fasanbryst",
+		"smeltende-chokoladefondanter-i-airfryer-den-perfekte-dessert-til-enhver-anledning": "airfryer-chokoladekage-lille-form",
+		"knaekbroed-i-airfryer-sundt-sproedt-og-fyldt-med-smag": "airfryer-pebernoder",
+		"hjortefilet-i-airfryer-moert-saftigt-og-perfekt-tilberedt": "airfryer-hjortefilet",
+		"raadyrboeffer-i-airfryer-moer-og-smagfuld-vildtoplevelse-paa-den-nemme-maade": "airfryer-raadyrfilet",
+		"opskrift-paa-taerte-i-airfryer-nemt-hurtigt-og-laekkert": "airfryer-mini-hindbaertaerte",
+		"chips-paa-kartoffelskraeller-i-airfryer-en-laekker-og-baeredygtig-snack": "airfryer-kartoffelskind-med-ost",
+		"opskrifter/raadyr-filet-klassisk-i-airfryer.html": "airfryer-raadyrfilet",
+		"opskrifter/bagt-fennikel-i-airfryer.html": "airfryer-groentsagsmix",
+		"sproede-fiskefileter-i-airfryer-nem-opskrift-paa-klassisk-fiskeret": "airfryer-fiskefilet",
+		"grillede-groentsager-med-dip-i-airfryer-nem-og-laekker-opskrift": "airfryer-groentsagsmix",
+		"marinerede-kyllingelaar-paa-grill-saftige-sproede-og-fulde-af-smag": "airfryer-bbq-kyllingelaar",
+		"opskrift-paa-chokoladekage-i-airfryer-nem-luftig-og-laekker": "airfryer-chokoladekage-lille-form",
+		"spejlaeg-i-airfryer-perfekt-resultat-paa-faa-minutter": "airfryer-aeg",
+		"fastelavnsboller-i-airfryer-den-ultimative-guide-til-moderne-og-klassiske-udgaver": "airfryer-klejner",
+		"mini-tacoskaller-med-fyld-i-airfryer-perfekte-til-nytaarsbordet": "airfryer-nachos-kylling-jalapenos",
+		"karamelliserede-figner-med-honning-i-airfryer": "airfryer-gedeost-honning-bagt",
+		"opskrift-paa-droemmekage-i-airfryer-den-klassiske-favorit": "airfryer-chokoladekage-lille-form",
+		"mini-julekringle-med-marcipan-og-remonce-i-airfryer": "airfryer-klejner",
+		"koedfrie-alternativer-perfekte-til-plantebaserede-proteiner-i-airfryeren": "airfryer-groentsagsboefter",
+		"citronkylling-med-kartofler-rosmarin-og-hvidloegssauce-i-airfryer-saftig-gylden-og-fuld-af-smag": "airfryer-kyllingebryst",
+		"opskrifter/pulled-duck-i-airfryer.html": "airfryer-andebryst",
+		"opskrifter/perlehoenebryst-i-airfryer.html": "airfryer-kalkunbryst",
+		"sproede-og-laekre-rodfrugter-i-airfryer-nemt-tilbehoer-paa-ingen-tid": "airfryer-honning-guleroedder",
+		"groentsagsfritter-i-airfryer-sproedt-sundt-og-nemt": "airfryer-courgette-parmesan-fritter",
+		"opskrifter/kullerfilet-i-airfryer.html": "airfryer-torsk",
+		"sproede-falafler-i-airfryer-lav-dine-egne-eller-brug-faerdiglavede": "airfryer-falafler",
+		"kanel-og-kardemommeboller-saftige-og-smagfulde-bagt-i-airfryeren": "airfryer-pandekager",
+		"perfekte-aeg-i-airfryer-nemt-og-hurtigt": "airfryer-aeg",
+		"pasta-alfredo-med-kylling-og-broccoli-i-airfryer-cremet-mild-og-uimodstaaelig": "airfryer-one-pot-kylling-porre-fløde",
+		"opskrifter/svineskank-i-airfryer-sproed-svaer-og-moert-koed.html": "airfryer-ribbensteg",
+		"grillede-ferskner-med-honning-i-airfryer-den-nemmeste-sommerdessert": "airfryer-aeblechips",
+		"hjemmelavet-poelsemix-i-airfryer-sproedt-laekkert-og-nemt": "airfryer-poelsemix-kartofler",
+		"sund-sproed-pizza-i-airfryer-den-perfekte-smagsoplevelse": "airfryer-pizza",
+		"chorizo-og-aeg-quesadilla-i-airfryer-nem-og-smagfuld-morgenmad": "airfryer-quesadillas-kylling-ost",
+		"brownie-bites-nem-cafe-klassiker-i-airfryer": "airfryer-chokoladekage-lille-form",
+		"sproede-gulerodsfritter-med-krydret-aioli-en-sundere-snack-med-masser-af-smag": "airfryer-honning-guleroedder",
+		"opskrifter/t-bone-steak-i-airfryer.html": "airfryer-okseboef-steak"
+	},
+	"keywordRoutes": [
+		[
+			"ribeye",
+			"airfryer-okseboef-steak"
+		],
+		[
+			"entrecote",
+			"airfryer-okseboef-steak"
+		],
+		[
+			"lammekoelle",
+			"airfryer-lammekoelle-skiver"
+		],
+		[
+			"lammekrone",
+			"airfryer-lammekrone"
+		],
+		[
+			"moerksej",
+			"airfryer-moerksej"
+		],
+		[
+			"havregroed",
+			"airfryer-havregroed"
+		],
+		[
+			"laks",
+			"airfryer-laks"
+		],
+		[
+			"laksefilet",
+			"airfryer-laks"
+		],
+		[
+			"klejner",
+			"airfryer-klejner"
+		],
+		[
+			"nachos",
+			"airfryer-nachos-kylling-jalapenos"
+		],
+		[
+			"tunsteak",
+			"airfryer-tunboef-tunsteak"
+		],
+		[
+			"dumplings",
+			"airfryer-dumplings-gyoza"
+		],
+		[
+			"gyoza",
+			"airfryer-dumplings-gyoza"
+		],
+		[
+			"torsk",
+			"airfryer-torsk"
+		],
+		[
+			"tofu",
+			"airfryer-tofu"
+		],
+		[
+			"leverpostej",
+			"airfryer-leverpostej"
+		],
+		[
+			"soltoerrede-tomater",
+			"airfryer-soltoerrede-tomater"
+		],
+		[
+			"flaeskesteg",
+			"airfryer-flaeskesteg"
+		],
+		[
+			"groenkaal",
+			"airfryer-groenkaalschips"
+		],
+		[
+			"aeblechips",
+			"airfryer-aeblechips"
+		],
+		[
+			"popcorn",
+			"airfryer-popcorn"
+		],
+		[
+			"pulled-chicken",
+			"airfryer-pulled-chicken"
+		],
+		[
+			"pulled-pork",
+			"airfryer-pulled-pork"
+		],
+		[
+			"lammekoteletter",
+			"airfryer-lammekoelle-skiver"
+		],
+		[
+			"sejfilet",
+			"airfryer-moerksej"
+		],
+		[
+			"rejer",
+			"airfryer-rejer-hvidloegsmoer"
+		],
+		[
+			"kikaerter",
+			"airfryer-kikaerter-roestet"
+		],
+		[
+			"gullasch",
+			"airfryer-gullasch"
+		],
+		[
+			"roedkaal",
+			"airfryer-roedkaal"
+		],
+		[
+			"sild",
+			"airfryer-stegte-sild"
+		],
+		[
+			"guleroedder",
+			"airfryer-honning-guleroedder"
+		],
+		[
+			"moerbrad",
+			"airfryer-moerbrad"
+		],
+		[
+			"culottesteg",
+			"airfryer-culottesteg"
+		],
+		[
+			"naan",
+			"airfryer-naan-pitabroed"
+		],
+		[
+			"pandekager",
+			"airfryer-pandekager"
+		],
+		[
+			"roeraeg",
+			"airfryer-aeg"
+		],
+		[
+			"fladbroed",
+			"airfryer-hytteost-broed"
+		],
+		[
+			"hytteost",
+			"airfryer-hytteost-broed"
+		],
+		[
+			"bulgogi",
+			"airfryer-svinekoed-teriyaki-tern"
+		],
+		[
+			"svinekoteletter",
+			"airfryer-koteletter"
+		],
+		[
+			"stegt-flaesk",
+			"airfryer-bacon"
+		],
+		[
+			"fiskefilet",
+			"airfryer-fiskefilet"
+		],
+		[
+			"fennikel",
+			"airfryer-groentsagsmix"
+		],
+		[
+			"falafel",
+			"airfryer-falafler"
+		]
+	],
+	"nonRecipeFallbacks": {
+		"prefixes": [
+			"de-5-bedste-",
+			"de-bedste-",
+			"vildt-du-kan-",
+			"6-boernevenlige-",
+			"5-laekre-fiskeretter-",
+			"gryderetter-du-kan-",
+			"asiatiske-retter-du-kan-",
+			"nytaarsforretter-",
+			"10-sunde-laekre-airfryer-opskrifter-",
+			"morgenmad-du-kan-",
+			"de-bedste-toerrede-groentsager-",
+			"3-uimodstaaelige-opskrifter-",
+			"noedder-du-kan-",
+			"3-laekre-opskrifter-paa-maettende-proteiner-",
+			"5-overraskende-retter-",
+			"billige-maaltider-du-kan-lave-i-din-airfryer-"
+		],
+		"destination": "/guides/hvad-kan-man-lave-i-en-airfryer"
+	},
+	"pathPrefixRedirects": [
+		{
+			"prefix": "casper-sobczyk",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "weber-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "char-broil-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "napoleon-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "le-feu-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "wattson-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "everdure-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "cozze-",
+			"destination": "/anmeldelser"
+		},
+		{
+			"prefix": "dan-grill-",
+			"destination": "/anmeldelser"
+		}
+	],
+	"staticPathRedirects": {
+		"/anmeldelse-af-obh-nordica-ag905bs0-dual-easy-fry-grill-en-alsidig-airfryer-til-enhver-lejlighed": "/anmeldelser",
+		"/din-komplette-guide-til-airfryer-tilbehoer-faa-det-bedste-ud-af-din-madlavning": "/guides/tilbehoer-til-airfryer"
+	}
+}
