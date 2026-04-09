@@ -43,11 +43,13 @@ function readGscRedirects() {
 	const raw = JSON.parse(fs.readFileSync(gscPath, 'utf8'));
 	const list = raw.redirects;
 	if (!Array.isArray(list)) return [];
-	return list.map((row) => ({
-		source: row.source,
-		destination: row.destination,
-		permanent: row.permanent !== false,
-	}));
+	return list
+		.filter((row) => row.source && row.source !== '/')
+		.map((row) => ({
+			source: row.source,
+			destination: row.destination,
+			permanent: row.permanent !== false,
+		}));
 }
 
 function legacyRedirectsFromRecipes() {

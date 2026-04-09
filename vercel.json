@@ -7,11 +7,6 @@
 			"permanent": true
 		},
 		{
-			"source": "/",
-			"destination": "/opskrifter/airfryer-loegringe",
-			"permanent": true
-		},
-		{
 			"source": "/%E2%9C%A8-casper-sobczyk-slim-airfryer-8l-en-elegant-og-rummelig-airfryer",
 			"destination": "/anmeldelser",
 			"permanent": true

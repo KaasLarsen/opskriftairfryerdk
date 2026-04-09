@@ -93,6 +93,7 @@ function isSkippedPath(p) {
 		/^\/(category|tag|anmeldelser|shop|guides|login|auth)(\/|$)/u.test(p) ||
 		/^\/\d+(-\d+)?$/u.test(p) ||
 		p === '/opskrifter' ||
+		p === '/' ||
 		p === ''
 	);
 }
@@ -107,6 +108,7 @@ const staticPathRedirects = routes.staticPathRedirects ?? {};
 const sortedKeywords = [...keywordRoutes].sort((a, b) => b[0].length - a[0].length);
 
 function resolveExactSlug(slugNorm) {
+	if (!slugNorm) return null;
 	if (exactSlugs[slugNorm]) return exactSlugs[slugNorm];
 	// Efter emoji-fjernelse blev ledende bindestreg trimmet væk; WP-nøgler har ofte "-slug…"
 	if (exactSlugs['-' + slugNorm]) return exactSlugs['-' + slugNorm];
