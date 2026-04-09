@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import RecipeFavoriteHeart from './RecipeFavoriteHeart.astro';
 
 interface Props {
 	recipe: CollectionEntry<'recipes'>;
@@ -19,36 +20,43 @@ const total = prepMinutes + cookMinutes;
 const href = `/opskrifter/${recipe.id}`;
 ---
 
-<a class="recipe-card" href={href}>
-	<div class:list={['recipe-card-image', !heroImage && 'recipe-card-image--placeholder']}>
-		{
-			heroImage ? (
-				<img
-					src={heroImage}
-					alt={heroAlt ?? title}
-					width="640"
-					height="400"
-					loading="lazy"
-					decoding="async"
-				/>
-			) : (
-				<div class="recipe-placeholder-inner">
-					<span class="recipe-placeholder-label">Billede på vej</span>
-				</div>
-			)
-		}
-	</div>
+<article class="recipe-card">
+	<a class="recipe-card-media" href={href} tabindex="-1" aria-hidden="true">
+		<div class:list={['recipe-card-image', !heroImage && 'recipe-card-image--placeholder']}>
+			{
+				heroImage ? (
+					<img
+						src={heroImage}
+						alt=""
+						width="640"
+						height="400"
+						loading="lazy"
+						decoding="async"
+					/>
+				) : (
+					<div class="recipe-placeholder-inner">
+						<span class="recipe-placeholder-label">Billede på vej</span>
+					</div>
+				)
+			}
+		</div>
+	</a>
 	<div class="recipe-card-body">
-		<div class="recipe-card-badges">
-			<span class="recipe-card-badge">{category}</span>
-			<span class="recipe-card-badge recipe-card-badge--muted">{total} min i alt</span>
+		<div class="recipe-card-badges-row">
+			<div class="recipe-card-badges">
+				<span class="recipe-card-badge">{category}</span>
+				<span class="recipe-card-badge recipe-card-badge--muted">{total} min i alt</span>
+			</div>
+			<RecipeFavoriteHeart recipeId={recipe.id} variant="inline" />
 		</div>
-		<h3>{title}</h3>
-		<div class="recipe-meta-row">
-			<span>Forberedelse {prepMinutes} min</span>
-			<span>·</span>
-			<span>Tilberedning {cookMinutes} min</span>
-		</div>
-		<p>{description}</p>
+		<a class="recipe-card-text-block" href={href}>
+			<h3>{title}</h3>
+			<div class="recipe-meta-row">
+				<span>Forberedelse {prepMinutes} min</span>
+				<span>·</span>
+				<span>Tilberedning {cookMinutes} min</span>
+			</div>
+			<p>{description}</p>
+		</a>
 	</div>
-</a>
+</article>
