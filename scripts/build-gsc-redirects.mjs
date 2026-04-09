@@ -194,24 +194,6 @@ function slugPatternDestination(slugNorm) {
 	) {
 		return '/guides/hvad-kan-man-lave-i-en-airfryer';
 	}
-	/* Gamle WP-opskrifter uden direkte match – samlet guide frem for vild 301 til tilfældig fisk/kød */
-	if (
-		/^opskrifter\/(kanin-|aal-i-|hummer|kammuslinger-|bao-buns|andefrikadeller-|kaaldolmere-|oksehjerte-|vildsvin-|skipperlabskovs-)/u.test(
-			slugNorm,
-		)
-	) {
-		return '/guides/hvad-kan-man-lave-i-en-airfryer';
-	}
-	if (/^bagt-hvidloeg-med-parmesan/u.test(slugNorm)) {
-		return '/guides/hvad-kan-man-lave-i-en-airfryer';
-	}
-	if (
-		/^kylling-i-sennepsfloedesauce-|^karamelliseret-ananas-med-honning-|^mini-croissanter-med-fyld-|^majskolber-i-airfryer-/u.test(
-			slugNorm,
-		)
-	) {
-		return '/guides/hvad-kan-man-lave-i-en-airfryer';
-	}
 	return null;
 }
 

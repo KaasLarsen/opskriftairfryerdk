@@ -183,7 +183,7 @@
 		},
 		{
 			"source": "/%F0%9F%8D%8D-karamelliseret-ananas-med-honning-og-kanel-en-soed-og-let-dessert-med-eksotisk-twist",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-karamel-ananas",
 			"permanent": true
 		},
 		{
@@ -273,7 +273,7 @@
 		},
 		{
 			"source": "/%F0%9F%8D%97-kylling-i-sennepsfloedesauce-med-kartofler-og-groenne-boenner-i-airfryer-cremet-velsmagende-og-helt-i-en-gryde",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-kylling-sennepfloede",
 			"permanent": true
 		},
 		{
@@ -503,7 +503,7 @@
 		},
 		{
 			"source": "/%F0%9F%A5%90-mini-croissanter-med-fyld-i-airfryer-hurtige-sproede-og-uimodstaaelige",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-mini-croissanter-fyld",
 			"permanent": true
 		},
 		{
@@ -953,7 +953,7 @@
 		},
 		{
 			"source": "/bagt-hvidloeg-med-parmesan-cremet-aromatisk-%F0%9F%A7%84%F0%9F%A7%80%F0%9F%94%A5",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-bagt-hvidloeg-parmesan",
 			"permanent": true
 		},
 		{
@@ -1598,7 +1598,7 @@
 		},
 		{
 			"source": "/majskolber-i-airfryer-soede-saftige-smoerstegte-%F0%9F%8C%BD%F0%9F%94%A5",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-majskolber",
 			"permanent": true
 		},
 		{
@@ -1798,7 +1798,7 @@
 		},
 		{
 			"source": "/opskrifter/aal-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-aal-filet",
 			"permanent": true
 		},
 		{
@@ -1853,7 +1853,7 @@
 		},
 		{
 			"source": "/opskrifter/andefrikadeller-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-andefrikadeller",
 			"permanent": true
 		},
 		{
@@ -1963,7 +1963,7 @@
 		},
 		{
 			"source": "/opskrifter/bao-buns-varmning-crisp-fyld-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-bao-buns",
 			"permanent": true
 		},
 		{
@@ -2358,12 +2358,12 @@
 		},
 		{
 			"source": "/opskrifter/hummer-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-hummer",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/hummerhaler-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-hummer",
 			"permanent": true
 		},
 		{
@@ -2378,7 +2378,7 @@
 		},
 		{
 			"source": "/opskrifter/kaaldolmere-med-oksekoed-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-kaaldolmere",
 			"permanent": true
 		},
 		{
@@ -2473,17 +2473,17 @@
 		},
 		{
 			"source": "/opskrifter/kammuslinger-med-bacon-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-kammuslinger-bacon",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/kanin-filet-bbq-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-kanin-filet",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/kanin-filet-klassisk-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-kanin-filet",
 			"permanent": true
 		},
 		{
@@ -2743,7 +2743,7 @@
 		},
 		{
 			"source": "/opskrifter/oksehjerte-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-oksehjerte",
 			"permanent": true
 		},
 		{
@@ -3098,7 +3098,7 @@
 		},
 		{
 			"source": "/opskrifter/skipperlabskovs-hurtig-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-skipperlabskovs",
 			"permanent": true
 		},
 		{
@@ -3313,17 +3313,17 @@
 		},
 		{
 			"source": "/opskrifter/vildsvin-moerbrad-klassisk-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-vildsvin-kotelet",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/vildsvin-steak-klassisk-i-airfryer.html",
-			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
+			"destination": "/opskrifter/airfryer-vildsvin-kotelet",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/vildsvinekoteletter-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-koteletter",
+			"destination": "/opskrifter/airfryer-vildsvin-kotelet",
 			"permanent": true
 		},
 		{
@@ -3408,7 +3408,7 @@
 		},
 		{
 			"source": "/perfekte-grillede-vildsvinekoteletter-i-airfryer-nemt-og-laekkert",
-			"destination": "/opskrifter/airfryer-koteletter",
+			"destination": "/opskrifter/airfryer-vildsvin-kotelet",
 			"permanent": true
 		},
 		{
