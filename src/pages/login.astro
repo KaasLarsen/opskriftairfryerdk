@@ -168,7 +168,13 @@ const redirectUrl = `${SITE_URL}/auth/callback`;
 					showErr(errIn, error.message);
 					return;
 				}
-				window.location.href = '/konto';
+				const next = new URLSearchParams(window.location.search).get('next');
+				const safe =
+					next &&
+					next.startsWith('/') &&
+					!next.startsWith('//') &&
+					!next.includes(':');
+				window.location.href = safe ? next : '/konto';
 			});
 
 			signUpForm?.addEventListener('submit', async (e) => {

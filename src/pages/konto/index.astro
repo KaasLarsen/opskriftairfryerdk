@@ -33,6 +33,15 @@ const description = `Min konto på ${SITE_NAME}.`;
 				<p>
 					<button type="button" class="btn btn-ghost" data-konto-signout>Log ud</button>
 				</p>
+
+				<div class="konto-saved-block" data-konto-saved-wrap>
+					<h2 class="konto-saved-heading">Gemte opskrifter</h2>
+					<p class="konto-saved-hint" data-konto-saved-loading hidden>Henter…</p>
+					<p class="konto-saved-hint" data-konto-saved-empty hidden>
+						Du har ingen gemte opskrifter endnu. Tryk på hjertet på en opskriftsside når du er logget ind.
+					</p>
+					<ul class="konto-saved-list" data-konto-saved-list></ul>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -41,11 +50,70 @@ const description = `Min konto på ${SITE_NAME}.`;
 <script>
 	import { getSupabase, isSupabaseConfigured } from '../../lib/supabase.client';
 
+	const TABLE = 'saved_recipes';
+
 	const cfg = document.querySelector('[data-konto-config]');
 	const guest = document.querySelector('[data-konto-guest]');
 	const userBox = document.querySelector('[data-konto-user]');
 	const emailEl = document.querySelector('[data-konto-email]');
 	const signOutBtn = document.querySelector('[data-konto-signout]');
+	const savedLoading = document.querySelector('[data-konto-saved-loading]');
+	const savedEmpty = document.querySelector('[data-konto-saved-empty]');
+	const savedList = document.querySelector('[data-konto-saved-list]');
+
+	async function loadSavedRecipes(supabase: ReturnType<typeof getSupabase>, userId: string) {
+		if (!savedList || !savedEmpty || !savedLoading) return;
+		savedLoading.removeAttribute('hidden');
+		savedEmpty.setAttribute('hidden', '');
+		savedList.innerHTML = '';
+
+		const [{ data: rows, error }, indexRes] = await Promise.all([
+			supabase
+				.from(TABLE)
+				.select('recipe_slug, created_at')
+				.eq('user_id', userId)
+				.order('created_at', { ascending: false }),
+			fetch('/search-index.json'),
+		]);
+
+		savedLoading.setAttribute('hidden', '');
+
+		if (error) {
+			console.warn('Gemte opskrifter:', error.message);
+			return;
+		}
+
+		const slugs = rows?.map((r) => r.recipe_slug) ?? [];
+		if (slugs.length === 0) {
+			savedEmpty.removeAttribute('hidden');
+			return;
+		}
+
+		let titleBySlug = new Map<string, string>();
+		if (indexRes.ok) {
+			try {
+				const items = (await indexRes.json()) as {
+					slug: string;
+					title: string;
+					kind: string;
+				}[];
+				for (const it of items) {
+					if (it.kind === 'recipe') titleBySlug.set(it.slug, it.title);
+				}
+			} catch {
+				/* ignore */
+			}
+		}
+
+		for (const slug of slugs) {
+			const li = document.createElement('li');
+			const a = document.createElement('a');
+			a.href = `/opskrifter/${encodeURIComponent(slug)}`;
+			a.textContent = titleBySlug.get(slug) ?? slug.replace(/^airfryer-/u, '').replace(/-/g, ' ');
+			li.appendChild(a);
+			savedList.appendChild(li);
+		}
+	}
 
 	async function refresh() {
 		if (!isSupabaseConfigured()) {
@@ -70,6 +138,7 @@ const description = `Min konto på ${SITE_NAME}.`;
 			guest.setAttribute('hidden', '');
 			userBox.removeAttribute('hidden');
 			emailEl.textContent = session.user.email ?? 'bruger';
+			void loadSavedRecipes(supabase, session.user.id);
 		} else if (guest instanceof HTMLElement && userBox instanceof HTMLElement) {
 			guest.removeAttribute('hidden');
 			userBox.setAttribute('hidden', '');

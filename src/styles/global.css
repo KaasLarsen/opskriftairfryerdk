@@ -1021,10 +1021,73 @@ a:hover {
 }
 
 .recipe-hero-img {
+	position: relative;
 	border-radius: var(--radius-xl);
 	overflow: hidden;
 	border: 1px solid rgb(0 0 0 / 6%);
 	box-shadow: var(--shadow-md);
+}
+
+.recipe-favorite-wrap {
+	position: absolute;
+	top: var(--space-3);
+	right: var(--space-3);
+	z-index: 2;
+}
+
+.recipe-favorite-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.85rem;
+	height: 2.85rem;
+	padding: 0;
+	margin: 0;
+	border: 1px solid rgb(255 255 255 / 55%);
+	border-radius: 9999px;
+	background: rgb(255 255 255 / 28%);
+	color: rgb(120 53 15 / 92%);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
+	cursor: pointer;
+	transition:
+		background 0.18s ease,
+		color 0.18s ease,
+		border-color 0.18s ease,
+		transform 0.15s ease;
+}
+
+.recipe-favorite-btn:hover {
+	background: rgb(255 255 255 / 42%);
+	border-color: rgb(255 255 255 / 70%);
+	color: rgb(154 52 18 / 95%);
+}
+
+.recipe-favorite-btn:focus-visible {
+	outline: 2px solid rgb(180 83 9 / 55%);
+	outline-offset: 3px;
+}
+
+.recipe-favorite-btn:active {
+	transform: scale(0.96);
+}
+
+.recipe-favorite-path {
+	transition:
+		fill 0.18s ease,
+		stroke 0.18s ease;
+}
+
+.recipe-favorite-btn--saved {
+	background: rgb(254 243 199 / 55%);
+	border-color: rgb(252 211 77 / 65%);
+	color: rgb(180 83 9);
+}
+
+.recipe-favorite-btn--saved .recipe-favorite-path {
+	fill: rgb(202 138 4 / 0.85);
+	stroke: rgb(146 64 14 / 0.9);
 }
 
 .recipe-hero-img img {
@@ -1616,6 +1679,45 @@ a:hover {
 	flex: 0 0 auto;
 }
 
+.konto-saved-block {
+	margin-top: var(--space-10);
+	padding-top: var(--space-8);
+	border-top: 1px solid var(--color-border);
+}
+
+.konto-saved-heading {
+	font-family: var(--font-display);
+	font-size: 1.25rem;
+	font-weight: 650;
+	margin: 0 0 var(--space-4);
+}
+
+.konto-saved-hint {
+	margin: 0 0 var(--space-4);
+	font-size: 0.9375rem;
+	color: var(--color-muted);
+}
+
+.konto-saved-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+}
+
+.konto-saved-list a {
+	color: rgb(180 83 9);
+	font-weight: 550;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.konto-saved-list a:hover {
+	color: rgb(146 64 14);
+}
+
 /* Shop */
 .shop-section-head {
 	margin-bottom: var(--space-6);
@@ -1628,6 +1730,9 @@ a:hover {
 
 .shop-partner-banner-link {
 	display: block;
+	width: fit-content;
+	max-width: 100%;
+	margin-inline: auto;
 	line-height: 0;
 	border-radius: var(--radius-lg);
 	overflow: hidden;

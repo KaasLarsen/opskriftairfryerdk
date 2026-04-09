@@ -1,0 +1,146 @@
+---
+interface Props {
+	recipeId: string;
+}
+
+const { recipeId } = Astro.props;
+const configured =
+	Boolean(import.meta.env.PUBLIC_SUPABASE_URL?.trim()) &&
+	Boolean(import.meta.env.PUBLIC_SUPABASE_ANON_KEY?.trim());
+---
+
+{
+	configured && (
+		<div class="recipe-favorite-wrap">
+			<button
+				type="button"
+				class="recipe-favorite-btn"
+				data-recipe-favorite
+				data-recipe-id={recipeId}
+				aria-pressed="false"
+				aria-label="Gem opskrift"
+			>
+				<svg
+					class="recipe-favorite-svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<path
+						class="recipe-favorite-path"
+						d="M12 20.35l-1.45-1.32C5.4 14.36 2 11.28 2 7.5 2 5.42 3.42 4 5.5 4c1.74 0 3.41 1.01 4.25 2.59h.05C10.59 5.01 12.26 4 14 4c2.08 0 3.5 1.42 3.5 3.5 0 3.78-3.4 6.86-8.55 11.54L12 20.35z"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.75"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			</button>
+		</div>
+	)
+}
+
+{
+	configured && (
+		<script>
+			import { getSupabase, isSupabaseConfigured } from '../lib/supabase.client';
+
+			const TABLE = 'saved_recipes';
+
+			function setPressed(btn: HTMLButtonElement, on: boolean) {
+				btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+				btn.setAttribute('aria-label', on ? 'Fjern gemt opskrift' : 'Gem opskrift');
+				btn.classList.toggle('recipe-favorite-btn--saved', on);
+			}
+
+			async function syncSavedState(btn: HTMLButtonElement, supabase: ReturnType<typeof getSupabase>) {
+				const recipeSlug = btn.dataset.recipeId;
+				if (!recipeSlug) return;
+
+				const {
+					data: { session },
+				} = await supabase.auth.getSession();
+				if (!session?.user) {
+					setPressed(btn, false);
+					return;
+				}
+
+				const { data, error } = await supabase
+					.from(TABLE)
+					.select('id')
+					.eq('user_id', session.user.id)
+					.eq('recipe_slug', recipeSlug)
+					.maybeSingle();
+
+				if (error) {
+					console.warn('saved_recipes læsning:', error.message);
+					return;
+				}
+				setPressed(btn, Boolean(data));
+			}
+
+			async function init() {
+				const btn = document.querySelector<HTMLButtonElement>('[data-recipe-favorite]');
+				if (!btn || !isSupabaseConfigured()) return;
+
+				let supabase: ReturnType<typeof getSupabase>;
+				try {
+					supabase = getSupabase();
+				} catch {
+					return;
+				}
+
+				await syncSavedState(btn, supabase);
+
+				supabase.auth.onAuthStateChange(() => {
+					void syncSavedState(btn, supabase);
+				});
+
+				btn.addEventListener('click', async () => {
+					const recipeSlug = btn.dataset.recipeId;
+					if (!recipeSlug) return;
+
+					const {
+						data: { session },
+					} = await supabase.auth.getSession();
+					if (!session?.user) {
+						const next = encodeURIComponent(window.location.pathname + window.location.search);
+						window.location.href = `/login?next=${next}`;
+						return;
+					}
+
+					const userId = session.user.id;
+					const pressed = btn.getAttribute('aria-pressed') === 'true';
+
+					if (pressed) {
+						const { error } = await supabase
+							.from(TABLE)
+							.delete()
+							.eq('user_id', userId)
+							.eq('recipe_slug', recipeSlug);
+						if (error) {
+							console.warn('Kunne ikke fjerne gemt opskrift:', error.message);
+							return;
+						}
+						setPressed(btn, false);
+						return;
+					}
+
+					const { error } = await supabase.from(TABLE).insert({
+						user_id: userId,
+						recipe_slug: recipeSlug,
+					});
+					if (error) {
+						console.warn('Kunne ikke gemme opskrift:', error.message);
+						return;
+					}
+					setPressed(btn, true);
+				});
+			}
+
+			void init();
+		</script>
+	)
+}
