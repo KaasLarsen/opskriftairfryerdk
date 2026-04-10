@@ -1,6 +1,8 @@
 ---
 title: 'Mini-lasagne i airfryer – portioner i små forme'
 description: 'Mini-lasagne i airfryer i ramekin eller engangsforme: kødsauce, lasagneplader og ost i lag. Tid og temperatur uden at brænde toppen.'
+heroImage: '/images/recipes/airfryer-mini-lasagne.png'
+heroAlt: 'To små lasagner i ramekin med gylden ost og basilikum på marmor'
 pubDate: 2026-04-09
 prepMinutes: 25
 cookMinutes: 22

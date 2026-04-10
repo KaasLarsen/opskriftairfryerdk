@@ -1,6 +1,8 @@
 ---
 title: 'Panini i airfryer – pressed sandwich med sprød skorpe'
 description: 'Panini i airfryer med ciabatta eller flute, ost og fyld. Sådan holder du sandwich sammen og får sprød skorpe uden paninijern.'
+heroImage: '/images/recipes/airfryer-panini.png'
+heroAlt: 'Ciabatta-panini skåret over med ost, pesto og tomat — rustikt bræt'
 pubDate: 2026-04-09
 prepMinutes: 10
 cookMinutes: 10

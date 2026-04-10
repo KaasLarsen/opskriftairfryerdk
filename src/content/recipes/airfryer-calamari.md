@@ -1,6 +1,8 @@
 ---
 title: 'Calamari i airfryer – sprøde blæksprutteringe uden friture'
 description: 'Calamari i airfryer med let panering: rene ringe, kort tid og høj varme. Undgå gummiagtig tekstur med tør overflade og ét lag.'
+heroImage: '/images/recipes/airfryer-calamari.png'
+heroAlt: 'Sprøde calamari-ringe med citron, persille og dip på tallerken'
 pubDate: 2026-04-09
 prepMinutes: 20
 cookMinutes: 8

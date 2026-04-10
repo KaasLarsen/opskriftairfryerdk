@@ -1,6 +1,8 @@
 ---
 title: 'Croque monsieur i airfryer – sprød toast med skinke og bechamel'
 description: 'Croque monsieur i airfryer med dijonsennep, skinke, ost og tynd bechamel på toppen. Temperatur så osten smelter uden at brødet branker.'
+heroImage: '/images/recipes/airfryer-croque-monsieur.png'
+heroAlt: 'Gylden croque monsieur skåret diagonalt med smeltet ost og cornichoner'
 pubDate: 2026-04-09
 prepMinutes: 15
 cookMinutes: 12

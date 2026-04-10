@@ -1,6 +1,8 @@
 ---
 title: 'Brownies i airfryer – fudgy i lille form'
 description: 'Brownies i airfryer i ca. 15 cm form: tid, temperatur og pindeprøve så midten bliver fugtig. FAQ om større form og kakaointensitet.'
+heroImage: '/images/recipes/airfryer-brownies.png'
+heroAlt: 'Fudgy brownies på tallerken med airfryer i blødt fokus — lyst køkken'
 pubDate: 2026-04-09
 prepMinutes: 15
 cookMinutes: 26

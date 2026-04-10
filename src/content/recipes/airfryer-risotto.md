@@ -1,6 +1,8 @@
 ---
 title: 'Risotto i airfryer – cremet arborio i ildfast fad'
 description: 'Risotto i airfryer med arborio, bouillon og parmesan i lukket fad. Omrøring i to trin giver cremet tekstur uden konstant gryde.'
+heroImage: '/images/recipes/airfryer-risotto.png'
+heroAlt: 'Cremet parmesanrisotto i skål med peber og revet ost — lyst køkken'
 pubDate: 2026-04-09
 prepMinutes: 15
 cookMinutes: 45

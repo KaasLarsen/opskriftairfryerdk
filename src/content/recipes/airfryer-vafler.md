@@ -1,6 +1,8 @@
 ---
 title: 'Vafler i airfryer – belgiske vafler i silikoneform'
 description: 'Belgiske vafler i airfryer med silikone vaffelform: dej, temperatur og tid så de hæver og bliver gyldne. FAQ om formstørrelse og sprødhed.'
+heroImage: '/images/recipes/airfryer-vafler.png'
+heroAlt: 'Belgisk vaffel med bær og sirup, lyst køkken og airfryer i blødt fokus'
 pubDate: 2026-04-09
 prepMinutes: 15
 cookMinutes: 14

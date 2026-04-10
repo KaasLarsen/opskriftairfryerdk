@@ -1,6 +1,8 @@
 ---
 title: 'Biksemad i airfryer – kartofler, løg og pølse i ét lag'
 description: 'Biksemad i airfryer med små kartoffeltern, løg og pølse. Sprøde kanter og stegesovs på siden – dansk comfort uden stor pande.'
+heroImage: '/images/recipes/airfryer-biksemad.png'
+heroAlt: 'Biksemad med kartofler, pølse og løg i skål — sprøde kanter, hjemlig stemning'
 pubDate: 2026-04-09
 prepMinutes: 20
 cookMinutes: 28

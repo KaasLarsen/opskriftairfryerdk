@@ -1,6 +1,8 @@
 ---
 title: 'Halloumi fries i airfryer – ostestænger med dip'
 description: 'Halloumi fries i airfryer: skær ost i stænger, let panering og kort stegning. Sprød skorpe uden at smelte osten ud af formen.'
+heroImage: '/images/recipes/airfryer-halloumi-fries.png'
+heroAlt: 'Gyldne halloumi fries med dip og citron på keramiktallerken'
 pubDate: 2026-04-09
 prepMinutes: 15
 cookMinutes: 12

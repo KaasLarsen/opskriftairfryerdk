@@ -1,6 +1,8 @@
 ---
 title: 'Chokoladecookies i airfryer – små batch med sprød kant'
 description: 'Cookies i airfryer: chokolade cookies i små bunker på bagepapir, temperatur og tid så midten forbliver chewy. FAQ om dej på køl og flere batch.'
+heroImage: '/images/recipes/airfryer-chokoladecookies.png'
+heroAlt: 'Varme chokoladecookies på bagepapir med airfryer i baggrunden'
 pubDate: 2026-04-09
 prepMinutes: 20
 cookMinutes: 12
