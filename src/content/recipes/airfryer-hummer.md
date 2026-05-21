@@ -1,10 +1,10 @@
 ---
 title: 'Hummer i airfryer – hale og kløer med saft og smag'
-description: 'Hummerhaler og hummer i airfryer: kort stegning, smør/hvidløg og præcis tid så kødet ikke bliver sejt.'
+description: 'Rå hummerhale i airfryer: typisk **6 min + 4–8 min ved 180 °C** med penslet smør — stop når kødet er netop **hvid fast** og ikke gummi; optø først eller kør kortere ved kogt hummer.'
 heroImage: '/images/recipes/airfryer-hummer.png'
 heroAlt: 'Tilberedte hummerhaler med urter og citron på hvid tallerken'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 15
 cookMinutes: 14
 servings: '2 portioner'
@@ -16,6 +16,7 @@ keywords:
   - hummer airfryer
   - hummerhale airfryer
   - hummer tid temperatur
+  - lobster tail air fry tid
 featured: false
 intro: |
   Hummerkød tilberedes hurtigt og bliver sejt ved for lang tid. Airfryer er velegnet til halve haler med skal på: varmen giver smag, og du kan pensle med smeltet smør undervejs.
@@ -42,6 +43,8 @@ tips:
 faq:
   - question: 'Hvordan ved jeg, den er færdig?'
     answer: 'Frisk rå hummer skifter til hvid fast kød; stop før den bliver gummiagtig. Tykkelse varierer meget.'
+  - question: 'Virker amerikansk “broiled lobster” som air fry lobster tail?'
+    answer: 'Ja — samme korte høj-ish varme på skal/hal; **pas på overcook** ved små halers tynde ender.'
 ---
 
 ### Gratineret hummer

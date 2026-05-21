@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer hvidløgsbrød med ost – crispy bites'
-description: 'Hvidløgsbrød i airfryer med ost, sprød overflade og blød midte. Nem “café-bites” opskrift med tid og temperatur.'
+description: 'Hvidløgsbrød med ost som airfryer-bites ved ~200 °C (~8–10 min): ens stykker, tynd hvidløgssmur og ost til sidst for sprød kant + smelt uden sod.'
 heroImage: '/images/recipes/airfryer-hvidloegsbroed-ost-bites.png'
 heroAlt: 'Crispy hvidløgsbrød-bites med smeltet ost og krydderi på fad'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 10
 cookMinutes: 8
 servings: '4 portioner'
@@ -18,7 +18,8 @@ keywords:
   - ost bites airfryer
   - crispy hvidløgsbrød
   - snack tilbehør airfryer
-featured: false
+  - hvidløgsbrød airfryer 200 grader
+  - crispy garlic bread bites
 intro: |
   Airfryer hvidløgsbrød er en hurtig måde at få “sprød kant og smeltet ost” uden at tænde ovnen.
 
@@ -59,6 +60,8 @@ faq:
     answer: 'Top med ost til sidst, eller hold dig til den kortere slut-tid og tjek farven midtvejs.'
   - question: 'Hvad passer hvidløgsbrød til?'
     answer: 'Til nachos, quesadillas, burger, kyllingesnacks og dips.'
+  - question: 'Hvorfor er midten stadig fugtig men toppen er mørk?'
+    answer: 'For tykt hvidløgssmør eller for stor brødblok — skær mindre bidder, eller sænk til 190 °C og brug lidt længere tid med et ekstra vendingstrin.'
 ---
 
 ### Hvorfor crisp i airfryer?

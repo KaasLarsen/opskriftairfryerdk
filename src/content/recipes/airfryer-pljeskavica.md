@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer pljeskavica – saftig Balkan-bøf med sprød overflade'
-description: 'Pljeskavica i airfryer: flad, krydret kødbøf med tip til saftighed og stegeskorpe. Tid, temperatur og hold-stegning.'
+description: 'Pljeskavica i airfryer (**200 °C**): typisk **7–8 min + 6–8 min** til **63–70 °C** efter smag — ikke pres bøffen flad i kurven.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 15
 cookMinutes: 16
 servings: '4 portioner (4 bøffer)'
@@ -18,6 +18,7 @@ keywords:
   - oksebøf airfryer
   - saftig kødbøf airfryer
   - burger balkan airfryer
+  - pljeskavica air fry tid
 featured: false
 intro: |
   Pljeskavica er en flad, krydret kødbøf, som mange kender fra Balkan-grill og burgerjoints. I airfryer kan du ramme både stegeskorpe og saft — hvis du ikke presser bøffen flad undervejs og undgår at overfyld kurven.
@@ -59,6 +60,8 @@ faq:
     answer: 'Ofte 14-16 minutter i alt ved 200 °C for ca. 2 cm tykke bøffer — justér efter størrelse og ønsket kerne.'
   - question: 'Hvorfor falder min bøf fra hinanden?'
     answer: 'For lidt fedt i minced, for vådt løg eller for løs form. Udpres løgsaft og køl bøfferne før stegning.'
+  - question: 'Kan jeg kalde pljeskavica for “Balkan smash burger air fry”?'
+    answer: 'Princippet ligner — flad bøf med stegeskorpe — men lad være med at “smashe” i kurven; form og tykkelse holder saften bedre.'
   - question: 'Passer det som burger?'
     answer: 'Ja. Brug brioche eller pitabrød, ajvar, rå løg og sur creme/kajmak-inspireret spread.'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Airfryer pølsemix med kartofler – hurtig aftensmad i én kurv'
-description: 'Nem pølsemix i airfryer med kartofler, løg og peberfrugt. Hurtig hverdagsret med tydelig tid, temperatur og serveringstips.'
+description: 'Pølsemix i airfryer på **circa 195 °C**: kartofler **10 min først**, derefter pølser/løg/peber ca. **9–11 min** — én kurv, klar ret.'
 heroImage: '/images/recipes/airfryer-poelsemix-kartofler.png'
 heroAlt: 'Pølsemix med stegte kartofler og løg serveret i skål foran en airfryer'
 pubDate: 2026-03-31
@@ -18,6 +18,7 @@ keywords:
   - hurtig aftensmad airfryer
   - nem hverdagsret airfryer
   - airfryer pølser tid
+  - sausage potato air fry tid
 featured: true
 intro: |
   Pølsemix med kartofler er en klassisk hurtig ret, der fungerer rigtig godt i airfryer. Du får stegt overflade på både kartofler og pølser uden at stå ved komfuret.
@@ -60,6 +61,8 @@ faq:
     answer: 'Små faste kartofler er nemme at stege jævnt og holder formen godt.'
   - question: 'Kan retten laves uden peberfrugt?'
     answer: 'Ja, du kan erstatte med squash, gulerod eller helt undlade grønt efter smag.'
+  - question: 'Er pølsemix “Air Fry Oven” anderledes?'
+    answer: 'Nej — brug stadig kartofler før pølser og ryst kurven; brede ovne kan kræve 1–2 min extra på kartoflen.'
 ---
 
 ### Hverdagsret med få ting på tallerkenen

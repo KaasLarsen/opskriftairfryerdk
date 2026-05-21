@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer pastinakfritter – sprød og let med lime-yoghurt'
-description: 'Pastinakfritter i airfryer med sprød overflade og frisk lime-yoghurt dip. Tider, temperatur og tips til at undgå bløde fritter.'
+description: 'Pastinakfritter i airfryer ved ca. 200 °C (~18 min + ryst): ens stænger, tør dup og tynd olie (+ evt. lidt majsstivelse) for sprød kant — lime-yoghurt dip til.'
 heroImage: '/images/recipes/airfryer-pastinak-fritter-lime-yoghurt.png'
 heroAlt: 'Sprøde airfryer pastinakfritter med lime-yoghurt dip ved siden af airfryer'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-05-26
 prepMinutes: 12
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,8 @@ keywords:
   - airfryer pastinak
   - lime yoghurt dip
   - vegetar tilbehør
+  - pastinakfritter 200 grader airfryer
+  - pastinakfritter bløde fejl airfryer
 featured: false
 intro: |
   Airfryer pastinakfritter er et rigtig godt alternativ til almindelige pommes, fordi pastinak bliver lækkert sprød i kanten uden at blive “tung”.
@@ -59,6 +61,8 @@ faq:
     answer: 'Oftest pga. for høj mængde i kurven eller for lidt olie/stivelse. Tør stavene godt og hold ét lag.'
   - question: 'Kan jeg genopvarme pastinakfritter?'
     answer: 'Ja, men sprødheden er bedst samme dag. Genopvarm 3-5 minutter ved 200 °C og ryst undervejs.'
+  - question: 'Hvorfor bliver mine pastinakfrittere bløde?'
+    answer: 'Overlæsning og damp i kurven er den typiske årsag. Steg ét lag, dup tør, brug lidt mere olie eller majsstivelse — og lad dem ikke ligge på tallerken før servering.'
 ---
 
 ### Derfor virker airfryer-metoden

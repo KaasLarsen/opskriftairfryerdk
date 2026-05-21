@@ -1,6 +1,6 @@
 ---
 title: 'Airfryer frossen laks – direkte fra fryser til aftensmad'
-description: 'Frossen laks i airfryer med tid, temperatur og tips til saftigt resultat. Nem opskrift når du glemmer at tø fisken op.'
+description: 'Frossen laks i airfryer: **5 min start**, derefter krydret cirka **8–11 min ved 180 °C** i alt cirka **13–16 min** — sigter mod **circa 52–58 °C** i midten for saftighed.'
 heroImage: '/images/recipes/airfryer-frossen-laks.png'
 heroAlt: 'Frossen laks tilberedt i airfryer serveret med broccoli og citron på tallerken'
 pubDate: 2026-03-31
@@ -18,6 +18,7 @@ keywords:
   - laks i airfryer tid
   - nem fisk airfryer
   - hurtig aftensmad fisk
+  - frozen salmon air fry dansk tid
 featured: true
 intro: |
   Frossen laks i airfryer er redningen på de dage, hvor du glemmer at tage fisken op. Metoden er hurtig, men kræver den rigtige rækkefølge: først en kort optøningsfase, derefter krydring og færdigstegning.
@@ -57,6 +58,8 @@ faq:
     answer: 'Normalt ikke nødvendigt, især hvis fileterne ligger stabilt i ét lag.'
   - question: 'Hvordan undgår jeg tør laks?'
     answer: 'Stop så snart fisken flager let, og brug gerne termometer i den tykkeste del.'
+  - question: 'Tø-op først eller direkte fra frost i “air fry”?'
+    answer: 'Her steger du **fra frost**: korte minutter først løfter overfladevand, derefter krydring og steg til mål‑temperatur — optø kan give mere ens krydderi, men er ikke krævet.'
 ---
 
 ### Akut behov for fisk fra frost

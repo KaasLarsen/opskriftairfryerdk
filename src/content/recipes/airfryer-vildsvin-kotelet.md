@@ -1,10 +1,10 @@
 ---
 title: 'Vildsvin i airfryer – koteletter og mørbrad med sprød kant'
-description: 'Vildsvinskoteletter eller mørbrad i airfryer: moderat varme, marinering og hvile for mørt vildtkød.'
+description: 'Vildsvinskoteletter eller -mørbrad i airfryer ved ~175 °C (~14–18 min alt efter tykkelse): marinade + moderat varme holder magert vildtkød mørt — hvile før skær.'
 heroImage: '/images/recipes/airfryer-vildsvin-kotelet.png'
 heroAlt: 'Vildsvinskoteletter med rosmarin og gylden skorpe'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 16
 servings: '4 portioner'
@@ -16,7 +16,8 @@ keywords:
   - vildsvin airfryer
   - vildsvinskoteletter airfryer
   - vildsvin mørbrad airfryer
-featured: false
+  - vildsvin airfryer 175 grader
+  - vildtskød tilberedning airfryer tid
 intro: |
   Vildsvin er magrere end domesticeret gris og tilberedes bedst med marinering og moderat varme.
 
@@ -44,6 +45,8 @@ tips:
 faq:
   - question: 'Kan jeg bruge steakesnit?'
     answer: 'Ja – skær til ens tykkelse og steg lidt kortere; mål temperatur.'
+  - question: 'Hvilken kerne passer til vildsvin fra airfryer?'
+    answer: 'Afhænger af udskæring; brug termometer og gå roligt — magert vildtkød strammer ved for høj slutvarme. Hvil 5–8 min før du skær.'
 ---
 
 ### Alternative skiver

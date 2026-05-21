@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer rødkål – glaseret i ildfast skål (jul og hverdag)'
-description: 'Mørt rødkål i airfryer i lille fad med æble, eddike og krydderier. Perfekt som juletilbehør uden at optage hele ovnen.'
+description: 'Rødkål i airfryer ved ca. 165 °C (~45 min): simrer i lille ildfast skål under låg/folie med æble og eddike — julet tilbehør uden at fylde ovnen op.'
 heroImage: '/images/recipes/airfryer-roedkaal.png'
 heroAlt: 'Glaseret rødkål i skål ved siden af kød og kartofler'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 15
 cookMinutes: 45
 servings: '6 portioner'
@@ -18,6 +18,9 @@ keywords:
   - glaseret rødkål
   - juletilbehør airfryer
   - rødkål opskrift
+  - rødkål airfryer folie låg
+  - airfryer rødkål 165 grader
+featured: false
 intro: |
   Rødkål laver man traditionelt på kogeplade eller i ovn. I airfryer gør du det praktisk i et **lille ildfast fad**, der kan stå i kurven: kålen simrer under låg eller folie og bliver mør og blank.
 
@@ -58,6 +61,8 @@ faq:
     answer: 'Meget tæt på, når du simrer dækket. Konsistensen bliver ofte let hurtigere færdig pga. cirkulerende varme.'
   - question: 'Holder rødkålet sig?'
     answer: 'Ja, 3-4 dage køleskab — smagen udvikler sig ofte.'
+  - question: 'Hvor fint skal rødkålen skæres?'
+    answer: 'Finere strimler bliver hurtigere møre; grovere giver mere bid — justér typisk 5–10 minutter op eller ned i slutningen og tjek med gaffel.'
 ---
 
 ### Hvorfor liddt væske er vigtig

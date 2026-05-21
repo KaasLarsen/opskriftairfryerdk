@@ -1,10 +1,10 @@
 ---
 title: 'Oksespidsbryst i airfryer – langtidsstegt, mørt og med saft'
-description: 'Oksespidsbryst (brisket-agtigt) i airfryer: rub, kort varme og lang simretid i lukket fad med fond. Tid til ca. 1–1,3 kg, probe-mørhed og skiveskåret eller trukket.'
+description: 'Oksespidsbryst i airfryer som **lav “brisket”**: searing + **circa 90–120 min ved 160 °C i lukket fad** til probe-mør (kernen tit **88–95 °C**) — mål må størrelse i kurven.'
 heroImage: '/images/recipes/airfryer-oksespidsbryst.png'
 heroAlt: 'Lys madfoto: skåret oksespidsbryst på bræt med tilbehør, lyst rum, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 110
 servings: '4–6 portioner (ca. 1–1,3 kg uden ben)'
@@ -20,6 +20,7 @@ keywords:
   - langtidstegt spidsbryst airfryer
   - oksespidsbryst tid airfryer
   - pulled oksekød airfryer
+  - beef brisket air fry fad
 intro: |
   **Oksespidsbryst** er et **sejt, fedtmarmoraret** stykke fra brystkassen, der først bliver rigtig mørt efter **lang tid** og **collagen** der smelter — typisk **88–96 °C** i kernen og **“probe tender”** (ingen modstand fra termometerstifter). I airfryer laver du det derfor bedst som **lille portion** i **ildfast fad med låg eller tæt folie** og **væske**, ikke som en kort bøfstegning.
 
@@ -63,6 +64,8 @@ faq:
     answer: 'Meget store partier fylder sjældent i hjemme-airfryere — køb et mindre stykke eller del hos slagteren og brug ovn til de helt store mængder.'
   - question: 'Hvorfor er mit spidsbryst stadig sejt?'
     answer: 'For kort tid, for lidt væske under folie, eller for lav kernetemperatur over tid. Giv 15–30 minutter ekstra med låg og tjek mørhed igen.'
+  - question: 'Dur air fry “beef brisket presets” på min maskine?'
+    answer: 'Brug dem kun som guideline — **lukket fad + probe-mørhed** er mere pålideligt end faste presets for spidsbryst.'
   - question: 'Forskel på spidsbryst og culotte?'
     answer: 'Culotte er mager bagpartssteg med kort, præcis stegning. Spidsbryst er bryst/steg med mere bindevæv og længere tilberedning.'
 ---

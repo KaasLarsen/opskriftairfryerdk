@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer sriracha-rejer – sprød kant med hvidløgslime'
-description: 'Sriracha-rejer i airfryer med kort tilberedning og frisk hvidløgslime glaze. Perfekt som tapas/appetizer.'
+description: 'Sriracha-rejer i airfryer ved ca. 200 °C (~9 min i alt): sprød kant, marinade til sidst så ikke bitter. Hurtig appetizer med hvidløgslime og lime.'
 heroImage: '/images/recipes/airfryer-rejer-sriracha-hvidloegslime.png'
 heroAlt: 'Sriracha-rejer fra airfryer med sesam, urter og lime ved siden af airfryer'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-05-26
 prepMinutes: 10
 cookMinutes: 9
 servings: '4 portioner'
@@ -18,6 +18,8 @@ keywords:
   - tapas rejer
   - sprøde rejer
   - hurtig appetizer airfryer
+  - sriracha rejer 200 grader airfryer
+  - rejer airfryer tid minutter
 featured: false
 intro: |
   Airfryer sriracha-rejer er en “færdig hurtigt”-opskrift, hvor rejerne får sprød overflade, og saucen får karakter uden at brænde.
@@ -56,6 +58,8 @@ faq:
     answer: 'Helst ikke. Optø helt og dup dem tørre for bedst sprødhed.'
   - question: 'Bliver saucen brændt?'
     answer: 'Hvis du tilsætter til sidst og kun giver 1-2 minutter ekstra, bør det være fint. Længere tid kan give bitterhed.'
+  - question: 'Hvorfor bliver mine rejer tørre?'
+    answer: 'For lang tid eller for fyldt kurve (damp). Kør ét lag, dup tør og hold dig til den korte fase på kortegen — justér ±1–2 min. efter størrelse.'
 ---
 
 ### Derfor virker “kort og frisk” i airfryer

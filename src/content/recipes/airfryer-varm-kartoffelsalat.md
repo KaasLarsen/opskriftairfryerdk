@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer varm kartoffelsalat – sprøde kartofler og frisk dressing'
-description: 'Varm kartoffelsalat i airfryer med sprøde kartofler, urter og sennepsdressing. Perfekt til påske, grill og hverdagsmad.'
+description: 'Varm kartoffelsalat i airfryer: små halverede kartofler typisk **22–26 min ved 200 °C** med ryst, derefter lun med sennepsdressing — påske og grillklassiker.'
 heroImage: '/images/recipes/airfryer-varm-kartoffelsalat.png'
 heroAlt: 'Varm kartoffelsalat med urter og sennepsdressing i skål på træbord foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-26
 prepMinutes: 12
 cookMinutes: 24
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - påske tilbehør
   - sennepsdressing kartofler
   - nem kartoffelsalat
+  - warm potato salad air fry
 featured: true
 intro: |
   Varm kartoffelsalat er et stærkt alternativ til den klassiske kolde version, især når du vil servere lam, skinke eller fisk til påske. I airfryer bliver kartoflerne sprøde uden at blive tørre.
@@ -62,6 +63,8 @@ faq:
     answer: 'Ja, steg kartoflerne først og varm dem kort op, før du vender med dressing lige inden servering.'
   - question: 'Passer varm kartoffelsalat til påske?'
     answer: 'Ja, den passer særligt godt til lam, skinke og andre klassiske påskeretter.'
+  - question: 'Skal dressing på mens kartoflerne er rygende?'
+    answer: 'Ja — **lun kartoffel optager smag**; undgår du kogt konsistens, fordeler du først urter/forårsløg og rører derefter dressing i på sidste øjeblik.'
 ---
 
 ### Et moderne påske-tilbehør

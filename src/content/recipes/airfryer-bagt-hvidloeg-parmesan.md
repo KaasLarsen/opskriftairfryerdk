@@ -1,10 +1,10 @@
 ---
 title: 'Bagt hvidløg med parmesan i airfryer – cremet spread'
-description: 'Hele hvidløg i airfryer med olie og parmesan: bløde fed, sød smag og perfekt til brød eller kartofler.'
+description: 'Bagt helt hvidløg med parmesan i airfryer ved ~170 °C (~35 min): langsom fed-blødgøring og tidlig folie/låg så ikke udtør; parmesan i slutfasen.'
 heroImage: '/images/recipes/airfryer-bagt-hvidloeg-parmesan.png'
 heroAlt: 'Bagt helt hvidløg med parmesan og urter i lille fad'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 5
 cookMinutes: 35
 servings: '6–8 som tilbehør'
@@ -16,7 +16,8 @@ keywords:
   - bagt hvidløg airfryer
   - hvidløgsconfit airfryer
   - parmesan hvidløg airfryer
-featured: false
+  - roast garlic airfryer tid
+  - bagt hvidløgsfed airfryer 170 grader
 intro: |
   Når hele hvidløg tilberedes langsomt, bliver fedene søde og cremede. Airfryer kan klare opgaven effektivt, hvis du holder moderat temperatur og dækker toppen med lidt folie først (efter maskinens manual).
 
@@ -43,6 +44,8 @@ tips:
 faq:
   - question: 'Må jeg bruge hvidløg uden folie?'
     answer: 'Ja hvis du pensler med olie og dækker med et løst “låg” af et andet fad, så fedene ikke udtørre.'
+  - question: 'Hvornår tilsætter jeg parmesan til bagt hvidløg i airfryer?'
+    answer: 'I sidste del af tilberedningen så osten ikke branker — hold øje på farven de sidste 5–8 minutter.'
 ---
 
 ### Variation

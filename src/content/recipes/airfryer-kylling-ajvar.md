@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer kylling med ajvar – hurtig Balkan-marineret filet'
-description: 'Kylling i airfryer med ajvar, paprika og citron. Saftig midte og markeret smag; klare tider og temperatur til fileter.'
+description: 'Kylling med ajvar i airfryer ved ~190 °C (~16–18 min filet): paprika/citron-marineret filet med farve uden tør midte — ét lag og termometer i kerne.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 15
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,8 @@ keywords:
   - balkan kylling airfryer
   - kyllingefilet airfryer
   - paprika kylling airfryer
+  - kylling ajvar airfryer tid minutter
+  - balkan kylling filet airfryer
 featured: false
 intro: |
   Ajvar er en røget/peberfrugt-spread, der giver kylling en dyb Balkan-smag uden avanceret tilberedning. I airfryer får du hurtigt farve på marinaden og en fin balance mellem saft og stegeskorpe — hvis du steger i ét lag og undgår at overexpose små fileter.
@@ -62,6 +64,8 @@ faq:
     answer: 'Ca. 16-18 minutter i alt ved 190 °C for mellemstore fileter — brug kernetermometer.'
   - question: 'Får man røg-smag uden grill?'
     answer: 'Ajvar giver røget peberfrugt-karakter. Du kan supplere med et nip røget paprika i marinaden.'
+  - question: 'Skal jeg forvarme airfryer til ajvar-kylling?'
+    answer: 'Hvis manualen anbefaler preheat, gør det 2–3 minutter for mere jævn farve. Uden preheat: forlæng første fase 1–2 minutter og tjek kerne tidligere.'
 ---
 
 ### Hvorfor ajvar fungerer som marinade

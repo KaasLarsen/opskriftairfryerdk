@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer toast og grillet ost – sprød på få minutter'
-description: 'Toast og grillet ost i airfryer med sprød skorpe og smeltet midte. Tider til toast, ostemad og toast med skinke – uden at brænde osten.'
+description: 'Toast og grillet ost i airfryer: klassisk toast **circa 3–5 min ved 180 °C**; grillede sandwich **4 min + evt. 2–3 min ved 160 °C** til smelt ost uden kulsort brød.'
 heroImage: '/images/recipes/airfryer-toast-grillet-ost.png'
 heroAlt: 'To stablede grillede ostetoasts med gyldent brød, flydende gul ost og ketchup til dip på tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 5
 cookMinutes: 8
 servings: '2 portioner'
@@ -18,6 +18,7 @@ keywords:
   - toast i airfryer
   - ostemad airfryer
   - sandwich i airfryer
+  - grilled cheese air fry tid
 featured: true
 intro: |
   Toast i airfryer bliver ofte **ensartet sprød** uden at skulle vende brød på panden. Grillet ost (toast med ost indeni) kræver lidt teknik: for høj varme brænder brødet, før osten er smeltet.
@@ -59,6 +60,8 @@ faq:
     answer: 'Ja – glutenfri brød varierer; start med kortere tid og tjek oftere.'
   - question: 'Skal jeg bruge oliespray?'
     answer: 'Du kan, men et tyndt lag smør eller mayo giver bedst smag og farve.'
+  - question: 'Air fry toast vs toaster — forskel?'
+    answer: 'Airfryer giver mere **jevn sprød ydskive** ved mellem temperatur og egner sig også til lukket sandwich hvor toaster fejler.'
 ---
 
 ### Toast vs. grillet ost

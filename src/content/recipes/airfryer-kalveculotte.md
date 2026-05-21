@@ -1,10 +1,10 @@
 ---
 title: 'Kalveculotte i airfryer – mør kalvesteg med mild smag'
-description: 'Kalveculotte i airfryer: skånsom varme, kort bruning og kernetemperatur så den møre kalv ikke tørrer. Tid for ca. 0,8–1,2 kg og tips til sauce.'
+description: 'Kalveculotte i airfryer: kort startbruning derefter ~175 °C (~22–32 min for 0,8–1,2 kg) — mild kalv tørrer nemt; brug kernetermometer og hvile. Tips til sauce.'
 heroImage: '/images/recipes/airfryer-kalveculotte.png'
 heroAlt: 'Detaljerig kalveculotte: skiver med rosa midte, urter, hvidløg og saltflag på tallerken, dramatisk men lyst lys, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-26
 prepMinutes: 20
 cookMinutes: 32
 servings: '4 portioner (steg ca. 0,8–1,2 kg)'
@@ -20,6 +20,7 @@ keywords:
   - kalvesteg culotte airfryer
   - kalv i airfryer steg
   - kalveculotte kernetemperatur
+  - kalveculotte hviletid airfryer
 intro: |
   **Kalveculotte** er culotte-snittet fra **kalv**: magert, **mørt** og med **mildere smag** end okse. I airfryer skal du passe ekstra på **ikke at stege for længe** — kalv bliver hurtigt **stramt**, hvis kernetemperaturen løber højere end nødvendigt.
 
@@ -62,6 +63,8 @@ faq:
     answer: 'Nej — optø langsomt i køleskab og dup tør for jævn tilberedning og sikker kerne.'
   - question: 'Hvad drikker man til kalveculotte?'
     answer: 'Lys rød med syre eller frisk hvidvin; til hverdag også lemonade eller danskvand med citrus.'
+  - question: 'Hvor længe skal kalveculotten hvile efter airfryer?'
+    answer: '10–15 minutter tildækket er et godt udgangspunkt så saften sætter sig; skær først derefter.'
 ---
 
 ### Skånsom varme frem for “steget på tid”

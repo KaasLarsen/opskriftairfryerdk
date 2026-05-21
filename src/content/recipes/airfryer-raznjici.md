@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer raznjići – kød på spyd med paprika og løg'
-description: 'Raznjići i airfryer: marinerede kødtern med grøntsager på spyd. Tips til jævn stegning, saftighed og hvordan du undgår tør kant.'
+description: 'Raznjići i airfryer på **200 °C**: cirka **7 min + 5–7 min**, spyd med luft rundt — mål bl.a. **kylling til 74 °C** eller tilberedt svin.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 14
 servings: '4 portioner (4 spyd)'
@@ -18,6 +18,7 @@ keywords:
   - balkan spyd airfryer
   - svinekød spyd airfryer
   - paprika marinade airfryer
+  - balkan kebab air fry tid
 featured: false
 intro: |
   Raznjići (kødspyd) er en Balkan-favorit: marinerede terninger med løg og peberfrugt, der får karakter af paprika, hvidløg og citron. Airfryer giver hurtig karamellisering — hvis spydene får plads, så varmen kan cirkulere.
@@ -61,6 +62,8 @@ faq:
     answer: 'For små tern, for lang tid, eller for tæt pakket kurv. Skær større tern og steg med luft omkring.'
   - question: 'Skal spydene vendes?'
     answer: 'Ja — de fleste airfryere giver jævnst bedst resultat med en vending midtvejs.'
+  - question: 'Træspyd vs metalspyd til air fry?'
+    answer: 'Begge virker — **iblødgør træ** så det ikke kulørner/blæser løst; metal giver ofte stabilitet og hurtigere varme ved spydenden.'
   - question: 'Hvor længe tager raznjići i airfryer?'
     answer: 'Typisk 12-14 minutter ved 200 °C for mellemstore kødtern — afhænger af kødtype og model.'
 ---

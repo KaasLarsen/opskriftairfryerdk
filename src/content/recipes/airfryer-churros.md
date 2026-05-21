@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer churros – kanel-sukker pinner uden friture'
-description: 'Churros inspirerede stænger i airfryer med rørt mørdej og groft sukker. Dyp i chokolade — lettere end klassisk friture.'
+description: 'Airfryer churros (uden friture) ved ~180 °C (~22 min): vand-smør-dej og kanel-sukker — mindre “hullede” end tivoli, men sprød uden på og blød indeni. Tid + temperatur.'
 heroImage: '/images/recipes/airfryer-churros.png'
 heroAlt: 'Sprøde churros med kanel og chokoladedip på fad'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 20
 cookMinutes: 22
 servings: '4 portioner'
@@ -18,7 +18,11 @@ keywords:
   - kanel sukker snack
   - dessert airfryer
   - churros uden friture
+  - airfryer churros 180 grader tid
+  - kanel snack airfryer
+featured: false
 intro: |
+
   Autentiske churros er friture og ofte lavet af choux. Her får du en **praktisk airfryer-version**: en kort **vand-mør-smør-dej** uden æg, der kan sprøjtes eller formes i stænger, bages og **vendes i kanel-sukker** som klassisk.
 
   De bliver **mindre hule** end friterede churros, men **sprø udvendigt og bløde indvendigt** med den velkendte smag.
@@ -60,6 +64,8 @@ faq:
     answer: 'Bedst ubagt i rørte stænger — bag direkte fra frost med +2-3 min.'
   - question: 'Glutenfri?'
     answer: 'Udskift mel med glutenfri blandingsmel til brød — tjek konsistens.'
+  - question: 'Hvorfor falder mine churros sammen på midten?'
+    answer: 'De kan være for “våde” eller for hurtigt af køling. Tør lidt ud i massen før sprøjtning, og lad dem sætte skorpe de første minutter uden at røre.'
 ---
 
 ### Bagepapir-trick

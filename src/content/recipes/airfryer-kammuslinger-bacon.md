@@ -1,10 +1,10 @@
 ---
 title: 'Kammuslinger med bacon i airfryer – hurtig forret'
-description: 'Kammuslinger og bacon i airfryer: kort tid, sprødt bacon og møre muslinger. Server straks.'
+description: 'Kammuslinger med bacon i airfryer ved ~190 °C (~8–10 min): kort varme så muslingerne ikke gummier; sprødt bacon — server straks.'
 heroImage: '/images/recipes/airfryer-kammuslinger-bacon.png'
 heroAlt: 'Gyldne kammuslinger med sprødt bacon som forret'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 10
 cookMinutes: 10
 servings: '4 som forret'
@@ -16,7 +16,8 @@ keywords:
   - kammuslinger airfryer
   - bacon muslinger airfryer
   - scallops airfryer
-featured: false
+  - kammuslinger bacon airfryer tid
+  - forret muslinger airfryer
 intro: |
   Kammuslinger tilberedes bedst hurtigt ved høj varme. Bacon i airfryer bliver sprødt på få minutter – du kan lave bacon først og så muslinger i sidste øjeblik, eller kombinere på spyd hvis størrelsen passer.
 
@@ -41,6 +42,8 @@ tips:
 faq:
   - question: 'Kan jeg bruge frosne muslinger?'
     answer: 'Optø helt og dup tørre ellers damper de i stedet for at få kant.'
+  - question: 'Hvordan undgår jeg gummiagtige kammuslinger?'
+    answer: 'Kortere tid bedre end for lang. De skal være matte/hvide og lige akkurat gennemvarme — sluk når de slipper let fra spyd/kurv og server med det samme.'
 ---
 
 ### Uden spyd

@@ -1,10 +1,10 @@
 ---
 title: 'Kylling i sennep-flødesauce i airfryer – kartofler og bønner i samme fad'
-description: 'Etfadskylling med sennep og fløde i airfryer: brug ovnfast fad i kurven og tilsæt grønne bønner til sidst.'
+description: 'Etfads-kylling med sennep og fløde i airfryer ved ~175 °C (~35 min): ovnfast fad i kurven, kartofler + kylling først og grønne bønner til sidst så ikke moses.'
 heroImage: '/images/recipes/airfryer-kylling-sennepfloede.png'
 heroAlt: 'Kylling i cremet sennepssauce med kartofler og grønne bønner i skål'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 20
 cookMinutes: 35
 servings: '4 portioner'
@@ -49,6 +49,8 @@ tips:
 faq:
   - question: 'Hvilket fad skal jeg bruge?'
     answer: 'Lav, bred metal- eller glasform der matcher kurvens indre uden at blokere luft fuldstændigt.'
+  - question: 'Klumper min sennep-flødesauce i airfryer?'
+    answer: 'Rør undervejs med ske og hold en jævn kant på fadet. Er den for tynd eller skilt: reducer kort eller jævn let med maizena på komfur efter opskriftens tip.'
 ---
 
 ### Lettere udgave

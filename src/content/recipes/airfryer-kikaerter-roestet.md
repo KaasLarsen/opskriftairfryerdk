@@ -1,10 +1,10 @@
 ---
 title: 'Ristede kikærter i airfryer – sprøde snacks og topping'
-description: 'Kikærter i airfryer: afdryp, tør, krydder og rist til sprøde snacks. Tider, olie og hvorfor batch er vigtig for crunch.'
+description: 'Ristede kikærter i airfryer på **190 °C**: **14 min + 6–10 min** rystet, **tørre dåsekikærter** og ét lag — sprød snack og topping.'
 heroImage: '/images/recipes/airfryer-kikaerter-roestet.png'
 heroAlt: 'Skål med gyldne ristede kikærter med krydderier, persille og citronbåd på træbord, honningglas og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-26
 prepMinutes: 10
 cookMinutes: 22
 servings: '4 portioner som snack'
@@ -17,6 +17,7 @@ keywords:
   - ristede kikærter i airfryer
   - kikærter airfryer
   - kikærter i airfryer uden olie
+  - roasted chickpeas air fry tid
 intro: |
   **Ristede kikærter** i airfryer er oplagt meal-prep: protein, fiber og **sprød mundfølelse** til salater, suppe eller direkte som snack. Udfordringen er **fugt** — våde kikærter bliver slatne.
 
@@ -49,6 +50,8 @@ faq:
     answer: 'Meget svært at få sprødt uden at brænde. Mindst en tynd film af smør/olie eller silikone-spray giver bedst resultat.'
   - question: 'Er kikærter i airfryer sundt?'
     answer: 'Kikærter giver protein og fiber; sundhed afhænger af salt og mængde olie — sammenlign med chips er de ofte et bedre valg.'
+  - question: 'Hvorfor forbliver mine kikærter seje?'
+    answer: 'Oftest **stadig fugt på bælgene** eller for fyldt kurv — dup med rulle og steg halv portion pr. omgang.'
 ---
 
 ### Krydderier

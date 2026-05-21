@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer naan og pitabrød – blødt flatbrød uden ovn'
-description: 'Hurtigt yoghurt-naan og pitabrød i airfryer: rulle, hæve kort og bage gyldent. Server til gryderet, salat og dip.'
+description: 'Naan og pita i airfryer på **ca. 200 °C**, typisk **3–4 min pr. stk** (vend ved behov) — hurtig yoghurt-naan eller lille gær-pita til karry og kebab.'
 heroImage: '/images/recipes/airfryer-naan-pitabroed.png'
 heroAlt: 'Stak af gyldne naan og pitabrød på bræt'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 16
 servings: '8 små brød'
@@ -18,6 +18,7 @@ keywords:
   - airfryer flatbrød
   - yoghurt naan opskrift
   - hjemmelavet pita
+  - flatbread air fry tid
 intro: |
   Med airfryer kan du bage små flade brød hurtigt uden at tænde ovnen. Dejen her er inspireret af **hurtigt naan**: yoghurt giver smidighed og brun plettering.
 
@@ -57,6 +58,8 @@ faq:
     answer: '1-2 dage i lufttæt pose — genvarm kort i airfryer.'
   - question: 'Forskel på naan og pita i opskriften?'
     answer: 'Naan = yoghurt og hurtig bagepulver-dej. Pita = gærdej med hævning og neutral smag til fyld.'
+  - question: 'Hvorfor bliver mit naan hårdt i airfryer?'
+    answer: 'Ofte **for tykt rullet** eller for lang tid ved 200 °C — rul tæt på **3 mm**, start med **3 min**, og behold fugt ved at pensle smør lige ud af kurven.'
 ---
 
 ### Bagepulver vs. gær

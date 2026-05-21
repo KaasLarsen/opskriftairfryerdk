@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer champignon – hele svampe i glace og fyldte hatte'
-description: 'Champignon i airfryer: hele brune svampe med soya-balsamico-glace (som på fotoet) eller fyldte hatte med ostecreme. Tider til 200 °C og ca. 15 minutter.'
+description: 'Champignon i airfryer: hel svamp med glace cirka **8 + 6–7 min ved 200 °C** (ca. **15 min i alt**) — eller fyldte hatte; dup tør for sprø glace.'
 heroImage: '/images/recipes/airfryer-champignon.png'
 heroAlt: 'Skål med hele ristede champignon i mørk glace, pyntet med persille, airfryer med 200 grader og 15 minutter på display'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-05-26
 prepMinutes: 8
 cookMinutes: 15
 servings: '4 portioner'
@@ -19,6 +19,7 @@ keywords:
   - hele champignon airfryer
   - fyldte champignon
   - svampe tilbehør
+  - mushrooms air fry tid
 featured: true
 intro: |
   Champignon i airfryer bliver **koncentrerede og saftige** med pæn glace, hvis du **dupper dem tørre** og bruger kort marinade af olie, soya og lidt balsamico.
@@ -64,6 +65,8 @@ faq:
     answer: 'For meget skyllevand, overfyldt kurv eller for lav temperatur til at fordampe væske — dup tør og giv luft mellem svampene.'
   - question: 'Portobello som burger?'
     answer: 'Ja — brug store hatte, lidt længere tid, og fyld med ost/pesto eller brug som erstatning for kødbøf.'
+  - question: 'Champignon “air fry” vs. grillede svampe?'
+    answer: 'Samme pointe — **mindre fugt på svampen**, **ét lag** og høj rimelig varme; airfryer giver mere jævn kant end panden.'
 ---
 
 ### Fyldte champignon med ost og hvidløg (alternativ)

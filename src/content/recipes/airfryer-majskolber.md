@@ -1,10 +1,10 @@
 ---
 title: 'Majs i airfryer – smøristede kolber med salt'
-description: 'Majs på kolbe i airfryer: smør, salt og kort tid pr. omgang. Sød smag og let sprød kant på kernerne.'
+description: 'Majskolber i airfryer ved **200 °C**: cirka **7 min + 5–7 min** vendt olie/smør og salt — søde kerners let rist på spidser.'
 heroImage: '/images/recipes/airfryer-majskolber.png'
 heroAlt: 'Smøristede majskolber med salt på fad'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 5
 cookMinutes: 14
 servings: '4 kolber'
@@ -16,6 +16,7 @@ keywords:
   - majs airfryer
   - majskolbe airfryer
   - corn on the cob airfryer
+  - majs kolbe luftfriteuse tid
 featured: false
 intro: |
   Majs tilberedes hurtigt i airfryer – du får dampende kerner og fint “ristet” stedvis hvis du ikke pakker dem ind hele tiden.
@@ -41,6 +42,8 @@ tips:
 faq:
   - question: 'Skal de pakkes i folie?'
     answer: 'Ikke nødvendigt – folie giver mere damp og mindre kant. Brug kun hvis kernerne sprækker meget.'
+  - question: 'Frossen cob i air fry?'
+    answer: 'Tillæg cirka **3–6 min ekstra**, start ved **190 °C** og tjek kernerne med en gaffel før du topper med ost sidste øjeblik.'
 ---
 
 ### Med ost

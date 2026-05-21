@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer pølsehorn (frost) – sprød dej og varm pølse'
-description: 'Frosne pølsehorn i airfryer: temperatur, tid og tips så dejen bliver sprød uden rå midte. Til frost fra supermarked og bageri.'
+description: 'Pølsehorn fra frost i airfryer: starts **circa 170 °C**, ofte **8 min + 2–4 min** til gylden dej og gennemvarm kerne — tjek pose som udgangspunkt.'
 heroImage: '/images/recipes/airfryer-poelsehorn-frost.png'
 heroAlt: 'Gyldne pølsehorn med sesam på tallerken ved ketchup, flere horn i airfryer-kurv, display viser 180 grader'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 2
 cookMinutes: 12
 servings: '4 pølsehorn (tilpas antal efter kurv)'
@@ -18,6 +18,7 @@ keywords:
   - airfryer pølsehorn
   - frost pølsehorn
   - snack airfryer
+  - sausage rolls air fry frost
 featured: true
 intro: |
   Pølsehorn fra frost i airfryer er en klassisk **hurtig-snack** og et af de mest søgte frost-produkter til airfryer i Danmark. Luftcirkulationen giver ofte pænere, mere ensartet sprødhed end mikrobølgeovn.
@@ -56,6 +57,8 @@ faq:
     answer: 'For kort tid eller for høj ydre varme. Prøv lavere temperatur og 2-3 minutter ekstra.'
   - question: 'Kan jeg lave friske pølsehorn på samme måde?'
     answer: 'Friske bagerhorn har ofte kortere tid – de er ikke frosne; følg bageriets anvisning eller start ved 160 °C og tjek ofte.'
+  - question: 'Air fry “bake preset” eller manuel på pølsehorn?'
+    answer: 'Start manuelt ud fra **pose-anbefaling** — presets er grove; du justerer typisk ±2 min ud fra hornstørrelse.'
 ---
 
 ### Frost fra forskellige mærker

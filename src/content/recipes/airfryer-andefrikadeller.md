@@ -1,10 +1,10 @@
 ---
 title: 'Andefrikadeller i airfryer – saftige kødboller med sprød skorpe'
-description: 'Andefrikadeller i airfryer: mindre fedt end panden, fin skorpe og ens tilberedning. Server med sovs og rødkål.'
+description: 'Andefrikadeller i airfryer ved ca. 185 °C (~14–16 min): mindre fedt end panden, rasp + olie giver bid. Kernen skal igennem (ingen rå fars) — server med sovs og rødkål.'
 heroImage: '/images/recipes/airfryer-andefrikadeller.png'
 heroAlt: 'Gyldne andefrikadeller med persille på tallerken'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 20
 cookMinutes: 16
 servings: '4 portioner'
@@ -45,6 +45,8 @@ tips:
 faq:
   - question: 'Kan jeg bruge færdig andefars?'
     answer: 'Ja – smag til med salt; fabrikanter varierer i krydring.'
+  - question: 'Hvorfor falder rasp af andefrikadellerne?'
+    answer: 'Vend forsigtigt med tang og undgå at flytte dem for tidligt. Let oliespray på overfladen og ens størrelse gør skorpen mere stabil.'
 ---
 
 ### Variation

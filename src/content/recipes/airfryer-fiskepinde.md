@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer fiskepinde – hjemmelavet eller frost med sprød panering'
-description: 'Fiskepinde i airfryer med panko-panering og citron. Tid og temperatur for frost og frisk fisk — familievenligt.'
+description: 'Fiskepinde i airfryer ved ~190 °C (~14 min): panko + sprayolie; både hjemmelavet og frost — ryst kurven så skorpen bliver ens. Børnemad med citron/dip.'
 heroImage: '/images/recipes/airfryer-fiskepinde.png'
 heroAlt: 'Gyldne fiskepinde med citron og dip på tallerken'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 14
 servings: '4 portioner'
@@ -18,7 +18,11 @@ keywords:
   - airfryer fisk paneret
   - børnemad airfryer
   - frosne fiskepinde airfryer
+  - fiskepinde airfryer 190 grader
+  - paneret fisk airfryer tid
+featured: false
 intro: |
+
   Fiskepinde er i bund og grund små panerede fiskefileter. I airfryer får du sprød skorpe med sprayolie og **tør fisk** før paneringsbanen — samme princip som vores [fiskefilet](/opskrifter/airfryer-fiskefilet).
 
   Opskriften dækker både **hjemmelavet** og **frosne fra pose** som reference.
@@ -58,6 +62,8 @@ faq:
     answer: 'Samme teknik — pinde er små stykker for hurtigere stegning og små hænder.'
   - question: 'Hvorfor falder panering af?'
     answer: 'For våd fisk, manglende pres af panko, eller for tidlig vending før skorpe har sat sig.'
+  - question: 'Skal frosne fiskepinde have længere tid i airfryer?'
+    answer: 'Typisk +2–4 minutter vs. frisk; ryst halvvejs og tjek at fisken flager og er gennemvarm — ikke gummiagtig.'
 ---
 
 ### Frost vs. hjemmelavet

@@ -1,6 +1,6 @@
 ---
 title: 'Airfryer halloumi – sprød café-halloumi med honning og citron'
-description: 'Halloumi i airfryer med sprød overflade. Honning og citron giver den “café-style” smag. Tid og temperatur med tips til sprødhed.'
+description: 'Halloumi i airfryer ved **200 °C**: cirka **7 min + 3–5 min** vendt i ét lag — café-sprød kant honning og citron til sidst.'
 heroImage: '/images/recipes/airfryer-halloumi-honning-citron.png'
 heroAlt: 'Sprød airfryer halloumi med honning og citron på tallerken'
 pubDate: 2026-04-02
@@ -18,6 +18,7 @@ keywords:
   - honning citron halloumi
   - vegetar snack airfryer
   - halloumi sprødhed
+  - halloumi air fry tid
 featured: false
 intro: |
   Airfryer halloumi er en stærk “café mad”-opskrift, fordi halloumi får en tydelig sprød kant og stadig bevarer saftighed i midten.
@@ -59,6 +60,8 @@ faq:
     answer: 'Overtilberedning er den mest almindelige årsag. Skru ned for tiden og kontrollér undervejs.'
   - question: 'Hvad passer til halloumi med honning og citron?'
     answer: 'Agurk, salat, tomat og et brød eller små skåle dip passer rigtig godt.'
+  - question: 'Hvorfor klæber halloumi i airfryer-kurven?'
+    answer: 'Ofte for tynde skiver uden vending eller fugt på osten — **dup tør**, brug ikke for meget honning før stegning; honning først til sidst.'
 ---
 
 ### Derfor virker airfryer-metoden

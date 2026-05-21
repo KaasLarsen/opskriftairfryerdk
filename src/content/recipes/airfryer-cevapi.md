@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer ćevapi – saftige Balkan-pølser med sprød kant'
-description: 'Ćevapi i airfryer med krydret blandfars og tydelig “grill-kant”. Guide med tid, temperatur og tips, så de ikke tørrer ud.'
+description: 'Ćevapi i airfryer på **200 °C**: typisk **7 min + 5–7 min** vendt — små blandfars-pølser med **groft 72 °C kerne**, ét lag.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-26
 prepMinutes: 25
 cookMinutes: 14
 servings: '4 portioner (ca. 16 små pølser)'
@@ -18,6 +18,7 @@ keywords:
   - balkan pølser airfryer
   - blandfars airfryer
   - grillkant airfryer
+  - cevapi air fry tid
 featured: false
 intro: |
   Ćevapi er små, aromatiske Balkan-pølser af typisk okse- og lammefars. I airfryer kan du få en dejlig sprød overflade og stadig bevare saft, hvis du styrer tid og form.
@@ -59,6 +60,8 @@ faq:
     answer: 'Typisk 12-14 minutter i alt ved 200 °C for små pølser — afhænger af størrelse og model.'
   - question: 'Hvorfor bliver mine ćevapi tørre?'
     answer: 'Oftest overtid, for tæt lag eller for mager fars. Vælg minced med lidt fedt og steg i ét lag.'
+  - question: 'Ćevapi “air fry grill” — er det det samme som airfryer?'
+    answer: 'Ja — brug høj startvarme, ét lag og vending; du får markant “grill”-karamel uden kulrøg.'
   - question: 'Skal man bruge olie?'
     answer: 'Som regel nej på fed fars. Ved meget mager fars kan du spraye kurven let eller pensle pølserne med en dråbe olie.'
 ---

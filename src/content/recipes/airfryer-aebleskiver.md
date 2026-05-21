@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer æbleskiver – små kugler med kagedej i silikoneform'
-description: 'Æbleskive-lignende kugler i airfryer ved hjælp af silikone-halvkugler eller muffinform. Server med syltetøj og flormelis.'
+description: 'Æbleskive-lignende kugler i airfryer (silikonform): **175 °C, ca. 14–18 min** til pindetest — ikke samme pandeteknik men samme krydderi/dessertvibe.'
 heroImage: '/images/recipes/airfryer-aebleskiver.png'
 heroAlt: 'Runde luftige kager drysset med flormelis og syltetøj ved siden af'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 15
 cookMinutes: 18
 servings: 'ca. 18 små kugler'
@@ -18,6 +18,7 @@ keywords:
   - miniebleskiver opskrift
   - silikoneform airfryer kage
   - dansk dessert airfryer
+  - air fry ableskiver silikone tid
 intro: |
   En klassisk æbleskivepande med spej og drej er sin egen kunstart. I airfryer får du **æbleskive-smag og -tekstur** i **små kugler** ved at bage kagedej i **silikone-halvkugler** eller silikone-muffinform der tåler varme og **_passer i din kurv_**.
 
@@ -59,6 +60,8 @@ faq:
     answer: 'For lidt bagepulver, for våd dej eller for lav temperatur. Tjek at dejen ikke er tynd som pandekage.'
   - question: 'Er det rigtige æbleskiver?'
     answer: 'Teknik og tekstur adskiller sig fra panden — det er en praktisk alternativ måde at få æbleskive-smag på.'
+  - question: 'Hvad hvis blæseren flytter på min silikonform?'
+    answer: 'Sæt formen stabilt (rist eller let foliestøtte) så hullene ikke vipper og dejen ikke løber ud — uden at blokere luft helt ud.'
   - question: 'Kan de fryses?'
     answer: 'Ja — opvarm 160 °C 4-5 min i airfryer.'
 ---

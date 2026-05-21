@@ -1,10 +1,10 @@
 ---
 title: 'Oksehjerte i airfryer – mørt indre og smagfuld skorpe'
-description: 'Oksehjerte (eller kalvehjerte) i airfryer: skær ud, fjern hinder og steg i bundter. Kort hvile som organ-kød.'
+description: 'Oksehjerte i airfryer ved ~175 °C (~12–15 min i stykker): trim sener/hinder, mariner kort og undgå at “koge” hjertet tørt — skær mod fiber efter hvile.'
 heroImage: '/images/recipes/airfryer-oksehjerte.png'
 heroAlt: 'Skiver af tilberedt oksehjerte med urter på bræt'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-26
 prepMinutes: 20
 cookMinutes: 15
 servings: '3–4 portioner'
@@ -15,7 +15,8 @@ temperatureC: 175
 keywords:
   - oksehjerte airfryer
   - hjerte indmad airfryer
-featured: false
+  - oksehjerte airfryer tid temperatur
+  - hjerte steak airfryer
 intro: |
   Hjerte er en muskel med struktur som magert kød – det skal skåret ud (trimmes for sener/hinder) og helst marineres kort eller i det mindste saltes for mørfør.
 
@@ -44,6 +45,8 @@ tips:
 faq:
   - question: 'Smager det kraftigt?'
     answer: 'Mindre end lever; soya og krydderi dæmper “indmadssmag”.'
+  - question: 'Hvorfor er mit hjerte sejt?'
+    answer: 'Som regel for lang eller for lav temperatur uden skidt — skær ens tykkelse, dup tør, og prioritér hurtig ens gennemvarme med kortere vinduer på varmen.'
 ---
 
 ### Spyd
