@@ -1,10 +1,10 @@
 ---
-title: 'Kyllingelever i airfryer – møre og med stegeskorpe'
-description: 'Kyllingelever i airfryer: forberedelse, krydring, typisk tid ved 185–200 °C og kernetemperatur så de ikke bliver tørre. Tips mod bitter smag og oversprøjt.'
+title: 'Stegt kyllingelever i airfryer – møre med stegeskorpe'
+description: 'Stegt kyllingelever i airfryer: ét lag, 190 °C, kerne 70–75 °C. Samme type søgning som “stegt lever i airfryer” — kort tid, tør overflade og tang.'
 heroImage: '/images/recipes/airfryer-kyllingelever.png'
 heroAlt: 'Lys madfoto: stegte kyllingelever på tallerken med citron og salat, lyst træ, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 14
 servings: '3–4 portioner som hovedret eller 4–6 som forret'
@@ -13,9 +13,10 @@ category: 'Hovedret'
 cuisine: 'International'
 temperatureC: 190
 keywords:
+  - stegt lever i airfryer
+  - stegt kyllingelever airfryer
   - kyllingelever i airfryer
   - kyllingelever airfryer
-  - stegt kyllingelever airfryer
   - kyllinglever opskrift airfryer
   - lever fra kylling airfryer
   - airfryer indmad kylling
@@ -52,6 +53,8 @@ tips:
   - 'Oplever du bitter smag, skyldes det ofte galdepletter — fjern dem omhyggeligt før tillberedning.'
   - 'Sprødere sidste touch: 1 minut ved 200 °C under opsyn — kun hvis midten allerede har nået mindst ca. 68 °C.'
 faq:
+  - question: 'Stegt lever i airfryer — kylling eller kalv?'
+    answer: 'Kyllingelever og kalvelever kan begge stege kort i airfryer; kylling skal op på ca. 70–75 °C, kalvelever ofte 65–70 °C for rosa. Se også [kalvelever i airfryer](/opskrifter/airfryer-kalvelever).'
   - question: 'Hvor længe skal kyllingelever have i airfryer?'
     answer: 'Ved 190 °C og ét lag: typisk 9–14 minutter i alt, afhængigt af størrelse og model. Brug termometer i tykkeste del — stop når du rammer ca. 70–75 °C.'
   - question: 'Skal kyllingelever være rosa indeni?'

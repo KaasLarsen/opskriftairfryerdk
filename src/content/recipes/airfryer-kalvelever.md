@@ -1,9 +1,10 @@
 ---
-title: 'Kalvelever i airfryer – sprød kant, rosa midte'
-description: 'Kalvelever i skiver i airfryer: kort tid ved høj varme, ét lag og kerne 65–70 °C. Undgå at udtørre med for lang tilberedning.'
+title: 'Stegt kalvelever i airfryer – sprød kant, rosa midte'
+description: 'Stegt kalvelever i airfryer i skiver: kort tid ved 190 °C, kerne 65–70 °C. Passer til søgninger som “stegt lever i airfryer” og klassisk tallerken med løg og citron.'
 heroImage: '/images/recipes/airfryer-kalvelever.png'
 heroAlt: 'Stegte leverstykker på tallerken med citron og urter'
 pubDate: 2026-04-09
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 12
 servings: '3–4 portioner'
@@ -12,10 +13,11 @@ category: 'Hovedret'
 cuisine: 'Dansk'
 temperatureC: 190
 keywords:
+  - stegt lever i airfryer
+  - stegt kalvelever airfryer
   - kalvelever airfryer
   - lever i airfryer
   - kalvelever opskrift
-  - stegt kalvelever
 featured: false
 intro: |
   **Kalvelever** bliver hurtigt tør hvis den får for længe. Airfryer giver **kort varme og luft**, så du kan ramme en **let rosa midte** med sprødere yderside end på panden alene — hvis du skærer i passende skiver og holder øje med kernen.

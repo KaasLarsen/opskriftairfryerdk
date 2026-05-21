@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer koteletter – saftige koteletter med sprød stegeskorpe'
-description: 'Koteletter i airfryer med tydelig tid og temperatur, så de bliver gennemstegte uden at blive tørre. Nem hverdagsopskrift.'
+title: 'Koteletter i airfryer – svinekoteletter med sprød stegeskorpe'
+description: 'Svinekoteletter i airfryer: 195 °C, ca. 14–17 min med vending, kerne 68–70 °C. Airfryer koteletter uden pandesprøjt — FAQ om lammekoteletter.'
 heroImage: '/images/recipes/airfryer-koteletter.png'
 heroAlt: 'Saftige stegte koteletter med kartofler og sovs på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 16
 servings: '4 portioner'
@@ -14,13 +14,14 @@ cuisine: 'Dansk'
 temperatureC: 195
 keywords:
   - koteletter i airfryer
+  - svinekoteletter i airfryer
+  - lammekoteletter i airfryer
   - airfryer koteletter
-  - svinekoteletter airfryer
   - koteletter tid temperatur
   - nem aftensmad
 featured: true
 intro: |
-  Koteletter i airfryer er en af de hurtigste måder at lave svinekød på i hverdagen. Du får pæn stegeskorpe og jævn varme uden at skulle stå ved panden.
+  Denne guide er til **svinekoteletter** (typisk i pakker mærket “koteletter”). Koteletter i airfryer er en af de hurtigste måder at lave svinekød på i hverdagen. Du får pæn stegeskorpe og jævn varme uden at skulle stå ved panden.
 
   Udfordringen med koteletter er ofte tørhed. Derfor bruger vi moderat høj varme, kort stegning og en kort hviletid før servering.
 
@@ -50,6 +51,8 @@ tips:
   - 'Steg i to omgange hvis kurven er lille.'
   - 'Lidt citron ved servering frisker smagen op.'
 faq:
+  - question: 'Lammekoteletter i airfryer – samme opskrift?'
+    answer: 'Lam er slankere og bliver hurtigere tør: brug samme temperatur, men kortere tid og mål kerne (fx 60–65 °C for rosa lam). Se også [lammekrone](/opskrifter/airfryer-lammekrone) til tykkere lam-stykker.'
   - question: 'Hvor længe skal koteletter have i airfryer?'
     answer: 'Typisk 14-17 minutter ved 195 °C afhængigt af tykkelse.'
   - question: 'Hvordan undgår jeg tørre koteletter?'

@@ -1,0 +1,15 @@
+---
+description: Nye opskrifter skal have genereret hero-PNG med det samme — uden at spørge om lov
+alwaysApply: true
+---
+
+# Opskrifter og hero-billeder
+
+Når du **opretter en ny** opskrift under `src/content/recipes/*.md`:
+
+1. **Sæt** `heroImage: '/images/recipes/airfryer-<slug>.png'` og en præcis `heroAlt` i frontmatter (samme slug som filen uden `.md`).
+2. **Generér med det samme** det tilhørende billede (professionelt madfoto, ret der matcher titlen, moderne airfryer i blødt fokus i baggrunden, lyst træ/hvid tallerken som øvrige opskrifter).
+3. **Gem** filen som `public/images/recipes/airfryer-<slug>.png`.
+4. Spørg **ikke** om lov til at generere billedet, når brugeren allerede har bedt om opskrift eller visuelle assets — det er standard workflow.
+
+Hvis opskriften beskriver en bestemt glasur, farve eller tilbehør (fx brunede kartofler, pærer med honning), skal prompten sikre at **motivet matcher** — ikke generisk stock.

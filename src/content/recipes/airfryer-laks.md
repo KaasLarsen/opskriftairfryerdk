@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer laks – hurtig aftensmad på 15 minutter'
-description: 'Laks fra airfryer med sprødt skind og mør kød – kort forberedelse og præcis tid. God til hverdag og gæster.'
+title: 'Laks i airfryer – sprødt skind, rosa midte (7–10 min / 180 °C)'
+description: 'Laks i airfryer med skind: 180 °C, 7–10 min, 52–58 °C i midten. Citron og dild; kombinér med asparges eller grønt — hurtig hverdagsfisk.'
 heroImage: '/images/recipes/airfryer-laks.png'
 heroAlt: 'Stegt laksefilet med krydderi på hvid tallerken, citron, dild, salat og kartofler i baggrunden på træbord'
 pubDate: 2025-03-03
-updatedDate: 2025-03-30
+updatedDate: 2026-05-21
 prepMinutes: 5
 cookMinutes: 10
 servings: '4 portioner'
@@ -13,8 +13,9 @@ category: 'Hovedret'
 cuisine: 'Nordisk'
 temperatureC: 180
 keywords:
-  - airfryer laks
   - laks i airfryer
+  - airfryer laks
+  - laks i airfryer med asparges
   - hurtig fisk aftensmad
   - nem airfryer opskrift
   - sund hverdagsmad
@@ -31,6 +32,8 @@ conclusion: |
   Rester kan bruges koldt i salat næste dag, men opvarmet fisk mister hurtigt kvalitet – lav derfor kun det, I realistisk spiser.
 
   Kombinér gerne med [grøntsager](/opskrifter/airfryer-groentsagsmix) og [kartofler](/opskrifter/airfryer-kartofler-i-baade) for et balanceret måltid uden at stresse i køkkenet.
+
+  Til **laks med asparges**: tilbered [asparges i airfryer](/opskrifter/airfryer-asparges) i et separat, kort hold mens laksen hviler — samme citrus/dild-tema på tallerkenen.
 ingredients:
   - text: '4 laksefileter (ca. 125–150 g pr. stk., med skind)'
   - text: '1 spsk olivenolie'
@@ -50,6 +53,8 @@ tips:
   - 'Hvis skindet ikke bliver sprødt nok, kan du afslutte med 1–2 minutter ved 200 °C – hold øje.'
   - 'Undgå aluminiumsfolie direkte mod varmeelementer; brug airfryer-kurven som tiltænkt.'
 faq:
+  - question: 'Laks med asparges i airfryer — samme kurv?'
+    answer: 'Asparges bliver hurtigere færdig end laks. Brug helst to hold: først laks, mens den hviler kan du køre [asparges](/opskrifter/airfryer-asparges) 6–10 minutter ved 180–190 °C — eller grøntsagsmix hvis du foretrækker én bakke.'
   - question: 'Hvor længe skal laks i airfryer?'
     answer: 'Ved 180 °C typisk 7–10 minutter for fileter omkring 125–150 g. Termometer i den tykkeste del er det sikreste; 52–58 °C er ofte et godt mål for saft uden rå midte.'
   - question: 'Skal laks vendes i airfryer?'

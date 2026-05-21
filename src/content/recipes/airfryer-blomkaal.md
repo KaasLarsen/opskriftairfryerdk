@@ -1,10 +1,10 @@
 ---
 title: 'Blomkål i airfryer – med ost eller parmesan og sprøde kanter'
-description: 'Blomkål i airfryer på 12-14 min ved 195 °C: basis med paprika, variation med revet ost eller parmesan sidst. FAQ om blomkål med ost og knasende sprødhed.'
+description: 'Blomkål i airfryer med ost: 12–14 min / 195 °C som tilbehør; revet parmesan eller ost sidste 2 min. Sprøde kanter, FAQ om blomkål med ost og høj varme.'
 heroImage: '/images/recipes/airfryer-blomkaal.png'
 heroAlt: 'Gyldne sprøde blomkålsbuketter med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-04-03
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 14
 servings: '4 portioner'
@@ -14,6 +14,7 @@ cuisine: 'International'
 temperatureC: 195
 keywords:
   - blomkål i airfryer
+  - blomkål i airfryer med ost
   - blomkål med ost airfryer
   - blomkål parmesan airfryer
   - airfryer blomkål

@@ -1,10 +1,10 @@
 ---
 title: 'Leverpostej i airfryer – opvarmning, bagning og kernetemperatur'
-description: 'Leverpostej i airfryer: rå slagterpostej til 75 °C i midten (ca. 25–35 min ved 160 °C i folie), færdigbagt kun gennemvarmes, fabrik vs. slagter, skiver — undgå tør og sandet skorpe.'
+description: 'Leverpostej i airfryer: opvarm færdig bagt 8–12 min / 150–160 °C; rå slagterpostej til 75 °C i midten (ca. 25–35 min / 160 °C i folie). Fabrik vs. slagter — undgå tør og sandet top.'
 heroImage: '/images/recipes/airfryer-leverpostej.png'
 heroAlt: 'Bagt leverpostej i hvid ildfast form med brunet top og hakket persille, airfryer og skål med cornichoner i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 5
 cookMinutes: 35
 servings: '6–8 portioner (én postej)'
@@ -17,6 +17,7 @@ keywords:
   - bag leverpostej i airfryer
   - bagt leverpostej i airfryer
   - frossen leverpostej i airfryer
+  - hvor længe leverpostej i airfryer
   - kernetemperatur leverpostej airfryer
 intro: |
   **Færdigbagt leverpostej** (kødpålæg fra køledisk) skal du som udgangspunkt **ikke “bage for langt”** — du vil typisk **gennemvarme** til behagelig spisetemperatur eller give en **let brunet top** uden at kernen bliver **tør og sandet**. **Rå leverpostej** fra slagter skal **altid helt igennem** til sikker **kernetemperatur** (minimum ca. **75 °C** i tykkeste del).

@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer pulled pork – mørt svinekød med krydderrub'
-description: 'Langtidsstegt nakkefilet eller picnic i airfryer med folie og rub. Træk kødet fra hinanden til burger, taco og gryder.'
+title: 'Pulled pork i airfryer – mør nakke med rub og folie (92–95 °C)'
+description: 'Pulled pork i airfryer: nakke 1,2–1,6 kg, 160 °C i folie til 92–95 °C, kort finish 200 °C. Trukket svinekød til taco og burger — kerne før uret.'
 heroImage: '/images/recipes/airfryer-pulled-pork.png'
 heroAlt: 'Håndpulled svinekød med salat og brød på tallerken'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-21
 prepMinutes: 20
 cookMinutes: 150
 servings: '6-8 portioner'
@@ -13,6 +13,7 @@ category: 'Aftensmad'
 cuisine: 'International'
 temperatureC: 160
 keywords:
+  - pulled pork i airfryer
   - pulled pork airfryer
   - airfryer nakkefilet langtid
   - trukket svinekød
@@ -51,6 +52,8 @@ tips:
   - 'Ingen termometer? Kødet skal give efter uden modstand når du stikker med gaffel.'
   - 'Tilføj BBQ-glaze sidste 3 min ved åben varme hvis du ønsker sødmere skorpe.'
 faq:
+  - question: 'Pulled pork i airfryer — hvor lang tid?'
+    answer: 'Ca. 90 minutter ved 160 °C i folie som udgangspunkt for 1,2–1,6 kg nakke, derefter hold i 20–30 min intervaller til 92–95 °C i tykkeste del; afslut åbent ved 200 °C i 8–12 min. Første gang: tjek oftere efter 75 min.'
   - question: 'Kan airfryer erstatte smoker til pulled pork?'
     answer: 'Du får ikke samme røgsmag, men mørhed og “pull” kan opnås med folie og lang tid ved moderate grader.'
   - question: 'Hvilken svinekødsudskæring til pulled pork?'

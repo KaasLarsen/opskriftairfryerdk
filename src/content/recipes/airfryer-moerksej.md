@@ -1,10 +1,10 @@
 ---
-title: 'Mørksej og sejfilet i airfryer – fast fisk uden tør kant'
-description: 'Mørksej i airfryer med citron og dild: tid pr. tykkelse, temperatur og tips så fisken ikke falder fra hinanden. Også til sejfilet.'
+title: 'Mørksej i airfryer – og sejfilet (180 °C, kort tid)'
+description: 'Mørksej i airfryer og sejfilet: 6–8 min ved 180 °C for 1,5–2 cm filet. Citron, dild — undgår tør fisk. FAQ om frossen fisk og torsk.'
 heroImage: '/images/recipes/airfryer-moerksej.png'
 heroAlt: 'To hvide fiskefileter i ovalt fad med urter, citronskiver og let sauce, airfryer og grønt i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 10
 servings: '4 portioner'
@@ -15,9 +15,10 @@ temperatureC: 180
 keywords:
   - mørksej i airfryer
   - mørksejfilet i airfryer
-  - sej i airfryer
   - sejfilet i airfryer
+  - sej i airfryer
   - airfryer hvid fisk
+  - mørksej airfryer tid
 intro: |
   **Mørksej** og **sej** er faste, magre fisk som tydeligt viser, hvis airfryeren kører for længe — de går fra saftige til **tørre** på få minutter. Her bruger vi **180 °C**, **olie eller smør på kødsiden** og kort tid efter tykkelse.
 
@@ -43,6 +44,8 @@ instructions:
 tips:
   - 'Panering (panko) beskytter overfladen — se fiskefilet-opskriften på sitet.'
 faq:
+  - question: 'Hvor længe skal mørksej have i airfryer?'
+    answer: 'Ved 180 °C og filet ca. 1,5–2 cm: typisk 6–8 minutter i ét lag. Tyndere 4–6 minutter — tjek at kødet flager, uden gennemkogt midte.'
   - question: 'Frossen mørksej i airfryer?'
     answer: 'Optø helt og tør godt — ellers dampes kødet. Tillæg 1–3 minutter hvis stykket er meget tykt.'
   - question: 'Hvad er forskel på mørksej og torsk i airfryer?'

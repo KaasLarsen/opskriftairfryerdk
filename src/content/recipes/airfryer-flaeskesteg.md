@@ -1,10 +1,10 @@
 ---
 title: 'Flæskesteg i airfryer – tid, temperatur og sprød svær (1,2-1,5 kg)'
-description: 'Flæskesteg i airfryer: samlet tid ofte ca. 55–70 min for 1,2–1,5 kg (180 °C + sprødfase 200 °C). Kernetemperatur, ridset svær, mindre steg og typiske fejl — så du rammer sprød svær og saftigt kød.'
+description: 'Flæskesteg i airfryer: 55–70 min samlet for 1,2–1,5 kg (180 °C + 200 °C sprødfase), riller, salt i svær og kernetemperatur. Virker i de fleste kurve — også Casper airfryer; samme principper for sprød svær.'
 heroImage: '/images/recipes/airfryer-flaeskesteg.png'
 heroAlt: 'Flæskesteg med sprød svær, brun sovs, kartofler og rødkål serveret foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 55
 servings: '4-6 portioner'
@@ -15,12 +15,16 @@ temperatureC: 180
 keywords:
   - airfryer flæskesteg
   - flæskesteg i airfryer
+  - flæskesteg i airfryer casper sobczyk
+  - casper airfryer flæskesteg
   - sprød svær airfryer
   - flæskesteg tid airfryer
   - dansk flæskesteg
 featured: true
 intro: |
   **Flæskesteg i airfryer** kan give sprød svær og saftigt kød, når du har styr på tre ting: **riller helt ned til fedtet** (ikke kødet), **salt mellem hver svær** og **kernetemperatur før sprødfasen** (ca. 63-65 °C i kødet, derefter 200 °C til sværen bobler).
+
+  Mange lander her efter både **“flæskesteg i airfryer”** og **Casper airfryer** — metoden er den samme i alle mærker: **plads i kurven**, **jævn saltning af svær** og **kernetemperatur før du cracker op**. Casper-modeller følger ikke et separat magisk minuttal; brug **tiderne her som udgangspunkt** og **termometer** første gang.
 
   Typisk **tid for 1,2-1,5 kg**: omkring **45-50 minutter ved 180 °C** til kernetemp, plus **8-12 minutter ved 200 °C** til sprød svær — **samlet ofte 55-70 minutter** fra opvarmet maskine. Tilpas altid efter termometer; søgninger efter “flæskesteg airfryer tid” kræver netop den kombination af **uret som vejledning** og **grader i kødet** som dommer.
 
@@ -53,6 +57,8 @@ tips:
   - 'Hvis enkelte svær er bløde, kan du give 2-3 minutter ekstra med fokus på toppen.'
   - 'Brug altid termometer. Det gør resultatet langt mere stabilt.'
 faq:
+  - question: 'Flæskesteg i airfryer Casper Sobczyk — er det anderledes?'
+    answer: 'Nej i grunden. Casper airfryer (og andre mærker) følger samme logik: salt i rillerne, plant svær, 180 °C til kødet er tæt på mål, derefter kort 200 °C til sprød svær. Forskellen er kurvstørrelse og effekt — notér første gang vægt, model og minutter til 63–65 °C i kødet.'
   - question: 'Kan man virkelig lave flæskesteg i airfryer?'
     answer: 'Ja. En god airfryer kan give både sprød svær og saftigt kød, hvis stegen er korrekt forberedt og ligger jævnt under stegning.'
   - question: 'Hvilken temperatur er bedst til flæskesteg i airfryer?'

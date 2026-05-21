@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer kyllingebryst (saftigt) – nem hverdagsopskrift på 25 min'
-description: 'Saftigt kyllingebryst fra airfryer uden tør kant. Trin, temperatur og hviletid – så lykkes du med kylling i hverdagen.'
+title: 'Kyllingefilet og kyllingebryst i airfryer – saftigt på ca. 25 min'
+description: 'Kyllingefilet i airfryer (kyllingebryst): 190 °C, ét lag, vending og hvile — undgår tør kant. Kernetemperatur 73–75 °C, marinade og FAQ om optøning og genvarm.'
 heroImage: '/images/recipes/airfryer-kyllingebryst.png'
 heroAlt: 'Skåret kyllingebryst med krydderi på tallerken sammen med kartofler, salat, citron og timian – airfryer i baggrunden på træbord'
 pubDate: 2025-03-01
-updatedDate: 2025-03-30
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 15
 servings: '4 portioner'
@@ -13,6 +13,8 @@ category: 'Hovedret'
 cuisine: 'Dansk'
 temperatureC: 190
 keywords:
+  - kyllingefilet i airfryer
+  - kyllingebryst i airfryer
   - airfryer kyllingebryst
   - kylling i airfryer
   - airfryer aftensmad
@@ -50,6 +52,8 @@ tips:
   - 'Tynde bryster steger hurtigere: skær store stykker på skrå eller bank dem flade.'
   - 'Undgå at fylde kurven for meget – luftcirkulation = sprød overflade og jævn varme.'
 faq:
+  - question: 'Er kyllingefilet i airfryer det samme som kyllingebryst?'
+    answer: 'I daglig tale ja: denne guide er til hele kyllingebrystfileter. Tynde udskæringer eller inderfilet følger samme princip men kortere tid — mål 73–75 °C i tykkeste del til fuld gennemstegning.'
   - question: 'Hvor lang tid tager kyllingebryst i airfryer?'
     answer: 'Ved 190 °C og omkring 600 g fordelt på fire bryster ligger total tid ofte omkring 13–15 minutters stegning plus 3–5 minutters hvile. Mål altid 74 °C i den tykkeste del – tynde bryster kan være færdige hurtigere.'
   - question: 'Skal jeg bruge olie på kylling i airfryeren?'

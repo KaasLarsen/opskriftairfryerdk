@@ -1,10 +1,10 @@
 ---
 title: 'Kage i airfryer: mørk chokoladekage i lille form (tid, form, muffins)'
-description: 'Kage i airfryer uden stor ovn: mørk chokoladekage i 15–16 cm form, temperatur 160 °C og pindeprøve. Plus FAQ om muffins, kagemix og hvornår ovn er bedre.'
+description: 'Kage i airfryer: mørk chokoladekage i 15–16 cm form, 160 °C og pindeprøve. Virker uden stor ovn. FAQ om muffins, kagemix og hvornår ovn er bedre til stor kage.'
 heroImage: '/images/recipes/airfryer-chokoladekage-lille-form.png'
 heroAlt: 'Lys high-key stil: lille chokoladekage på off-white tallerken, lyst træ, luftig belysning, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 28
 servings: '6–8 små stykker (1 lille kage, ca. 15–16 cm)'

@@ -1,10 +1,10 @@
 ---
-title: 'Æblechips i airfryer – sprøde uden sukkerbad'
-description: 'Tynde æblechips i airfryer med kanel og citron – to metoder: hurtig sprød eller langsommere “tørring”. Passer til snack og topping.'
+title: 'Æblechips i airfryer – sprøde skiver (kanel, ca. 135 °C)'
+description: 'Æblechips i airfryer: tynde skiver, 135 °C og 30–38 min med vending — uden sukkerbad. Kanel, citronbad og FAQ hvis din maskine ikke går under 140 °C.'
 heroImage: '/images/recipes/airfryer-aeblechips.png'
 heroAlt: 'Lys luftig madfoto: gyldne æblechips i skål, lyst træbord, mild kanel, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-04-10
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 35
 servings: 'Ca. 2 små skåle chips'
@@ -13,12 +13,12 @@ category: 'Snack'
 cuisine: 'Dansk'
 temperatureC: 135
 keywords:
+  - æblechips i airfryer
   - æblechips airfryer
   - sprøde æbler airfryer
   - tørrede æbler airfryer
   - sund snack æble
   - kanel æble chips
-  - æbleskiver airfryer
 intro: |
   **Æblechips** er **tynde skiver æble** hvor det meste **vand er væk**, så de **knaser**. I airfryer kan du nærme dig resultatet på to måder: **A)** relativt kort tid ved **moderat varme** med **vågeblænding**, eller **B)** **lavere varme** og **længere tid** tættere på tørring (god hvis maskinen kan **110–130 °C** stabilt).
 
@@ -53,6 +53,8 @@ tips:
   - '**Dobbel portion**: aldrig prop — identisk tykkelse og ens luft er vigtigere end at spare tid.'
   - 'Små æblestumper fra udkærne kan bages som **tern** til kompot i separat skål — anden tid.'
 faq:
+  - question: 'Hvor længe tager æblechips i airfryer?'
+    answer: 'Ved ca. 135 °C og ét lag: typisk 30–38 minutter i alt med vending i 12+10+(8–12) min intervaller — til skiverne er krøllede og næsten knasende; sidste minutter under opsyn.'
   - question: 'Hvorfor blev mine æblechips seje?'
     answer: 'For tykke skiver, for lidt samlet tid, eller for meget fugt i starten — dup grundigt og forlæng sidste fase i 3–5 minutters skridt.'
   - question: 'Min airfryer går ikke under 140 °C — kan jeg stadig?'

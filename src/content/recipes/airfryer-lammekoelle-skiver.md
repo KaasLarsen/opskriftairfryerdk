@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer lammekølle (skiver) – også til hel kølle uden at skære før'
-description: 'Lammekølle i skiver i airfryer med hvidløg og rosmarin — eller brug samme marinade til hel lammekølle med ben. Kernetemperatur og tid skaleret.'
+title: 'Airfryer lammekølle (skiver) – også hel kølle med ben uden at skære før'
+description: 'Lammekølle i airfryer: skiver 13–16 min / 190 °C, eller hel kølle med ben med samme marinade — hvis den passer i kurven. Tid pr. kg, kernetemp og FAQ om lammekølle med ben.'
 heroImage: '/images/recipes/airfryer-lammekoelle-skiver.png'
 heroAlt: 'Skiver af saftig lammekølle med kartofler og grønne bønner på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-04-03
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 16
 servings: '4 portioner'
@@ -15,6 +15,7 @@ temperatureC: 190
 keywords:
   - lammekølle i skiver airfryer
   - lammekølle i airfryer
+  - lammekølle med ben airfryer
   - hel lammekølle airfryer
   - lammekølle med ben airfryer
   - lam i airfryer
@@ -56,6 +57,8 @@ tips:
   - 'Overfyld ikke kurven, ellers koger kødet i stedet for at stege.'
   - 'Har du tyndere skiver, så reducer tiden med 2-3 minutter.'
 faq:
+  - question: 'Lammekølle med ben i airfryer – ekstra tid?'
+    answer: 'Ja. Med ben og tykkere midte skal du regne med længere tid end skiver og bruge kernetemperatur i tykkeste kød (typisk 58–65 °C efter smag). Start fx 175–180 °C til kerne nær mål, kort sidste fase for farve — vend evt. køllen hvis modellen tillader det.'
   - question: 'Hvor længe skal lam i airfryer?'
     answer: 'Lammeskiver på 2-3 cm får typisk 13-16 minutter ved 190 °C i alt, afhængigt af tykkelse og ønsket stegegrad.'
   - question: 'Hvilken kernetemperatur skal lam have?'

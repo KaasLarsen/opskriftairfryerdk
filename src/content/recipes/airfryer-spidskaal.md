@@ -1,9 +1,10 @@
 ---
-title: 'Spidskål i airfryer – sprøde strimler som tilbehør'
-description: 'Spidskål i airfryer med olie, salt og evt. kommen: korte tider, ét lag og ryst så kanten får farve uden at kålen bliver kedelig blød.'
+title: 'Spidskål i airfryer – sprøde strimler (også Casper airfryer)'
+description: 'Spidskål i airfryer: 175 °C, ét lag, 12–14 min med ryst. Samme metode i Casper airfryer og andre kurve — kommen, citron, undgå slatten kål.'
 heroImage: '/images/recipes/airfryer-spidskaal.png'
 heroAlt: 'Strimlet spidskål med gyldne kanter på tallerken med kommen og citron, lyst køkkenlys og airfryer i baggrunden'
 pubDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 14
 servings: '4 portioner tilbehør'
@@ -13,6 +14,7 @@ cuisine: 'Dansk'
 temperatureC: 175
 keywords:
   - spidskål i airfryer
+  - spidskål i airfryer casper sobczyk
   - spidskål airfryer
   - stegt spidskål airfryer
   - kål airfryer tilbehør
@@ -45,6 +47,8 @@ tips:
   - 'Med bacontern: tilsæt **sidst** så de ikke branker.'
   - 'For asiatisk vinkel: 1 spsk soja + lidt sesam **efter** stegning.'
 faq:
+  - question: 'Spidskål i airfryer Casper Sobczyk — særlige indstillinger?'
+    answer: 'Nej: 175 °C, ét lag og ryst halvvejs gælder som udgangspunkt. Store dobbeltkurve: del i to hold så luften når alle strimler — ellers dampes kålen.'
   - question: 'Hvorfor blev min spidskål slatten?'
     answer: 'Ofte for våd start eller for tætpakket kurv — tør grundigt og steg i mindre hold.'
   - question: 'Kan jeg bruge spidskål fra pose?'

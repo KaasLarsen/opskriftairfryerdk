@@ -1,10 +1,10 @@
 ---
 title: 'Nachos i airfryer – med kylling og jalapenos (eller uden kylling)'
-description: 'Nachos i airfryer med eller uden kylling: ost mellem lag af chips, jalapenos, 7–9 min ved 190 °C — så undgår du slatne chips. FAQ om ost, glutenfri og vegansk.'
+description: 'Nachos i airfryer med kylling og jalapenos: 7–9 min / 190 °C, ost mellem lag — sprøde chips. Samme fremgangsmåde i Casper airfryer og andre; FAQ om ost og glutenfri.'
 heroImage: '/images/recipes/airfryer-nachos-kylling-jalapenos.png'
 heroAlt: 'Airfryer nachos med kylling, jalapenos og smeltet ost på bakke med creme'
 pubDate: 2026-04-02
-updatedDate: 2026-04-03
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 12
 servings: '4 portioner'
@@ -14,6 +14,7 @@ cuisine: 'Mexicansk inspireret'
 temperatureC: 190
 keywords:
   - nachos i airfryer
+  - nachos i airfryer casper sobczyk
   - nachos airfryer
   - nachos uden kylling airfryer
   - nachos med kylling airfryer
@@ -55,6 +56,8 @@ tips:
   - 'Er chipsene meget tynde, så start med 7 minutter og øg med 1 minut ad gangen.'
   - 'Hvis du vil have ekstra sprød kant, så steg uden ost 2 minutter før du tilføjer osten sidste omgang.'
 faq:
+  - question: 'Nachos i airfryer Casper Sobczyk — samme tid?'
+    answer: 'Ja, metoden er ens: forvarm hvis din manual anbefaler det, 190 °C og 7–9 minutter i ét lag. Store dobbeltkurve kan kræve at du deler i to portioner så luft når osten.'
   - question: 'Kan man lave nachos i airfryer uden forvarmning?'
     answer: 'Ja, men sprødheden bliver ofte bedst med forvarmning. Hvis du springer over, så steg typisk 1-2 minutter længere.'
   - question: 'Hvor lang tid skal nachos have?'

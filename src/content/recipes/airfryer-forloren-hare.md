@@ -1,10 +1,10 @@
 ---
 title: 'Forloren hare i airfryer – bacon, sovs og klassisk farsbrød'
-description: 'Forloren hare i airfryer: typisk 34–42 min (750 g flad fars, 170–180 °C i to faser). Saftig midte, sprød bacon, kernetemperatur og brun sovs når ovnen er optaget.'
+description: 'Forloren hare i airfryer: 34–42 min for 750 g fars, 170–180 °C, bacon på toppen, kernetemp ca. 72 °C. Dansk farsbrød med brun sovs — tid, temperatur og typiske fejl.'
 heroImage: '/images/recipes/airfryer-forloren-hare.png'
 heroAlt: 'Lys appetitlig madfoto: skiver af forloren hare med bacon på tallerken, lyst træbord, airfryer i blødt fokus i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 25
 cookMinutes: 42
 servings: '4 portioner'
@@ -15,6 +15,7 @@ temperatureC: 170
 keywords:
   - forloren hare i airfryer
   - forloren hare airfryer
+  - forloren hare i airfryer tid
   - farsbrød i airfryer
   - dansk hovedret airfryer
   - bacon farsbrød airfryer

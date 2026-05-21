@@ -897,6 +897,12 @@ a.recipe-card {
 	line-height: 1.65;
 }
 
+.footer-social {
+	margin: var(--space-5) 0 0;
+	font-size: 0.9375rem;
+	opacity: 0.9;
+}
+
 .footer-col h4 {
 	font-size: 0.7rem;
 	text-transform: uppercase;

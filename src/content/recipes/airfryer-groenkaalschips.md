@@ -1,10 +1,10 @@
 ---
-title: 'Grønkålschips i airfryer – sprødt uden at brænde'
-description: 'Grønkålschips fra airfryer med salt, olie og tydelige tider. Undgå bitter smag og bløde blade – ét lag, ryst undervejs, plus variationer.'
+title: 'Grønkålschips i airfryer – sprødt ét lag (155 °C)'
+description: 'Grønkålschips i airfryer: 155 °C, ca. 11–12 min med ryst, tør kål og lidt olie. Sprøde kale chips uden sorte blade — FAQ om batch og frossen kål.'
 heroImage: '/images/recipes/airfryer-groenkaalschips.png'
 heroAlt: 'Lys og frisk fotostil: grønkålschips i skål på lyst træ, blød dagslysstemning, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-10
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 14
 servings: '2 mellemstore skåle snacks'
@@ -13,6 +13,7 @@ category: 'Snack'
 cuisine: 'Nordisk'
 temperatureC: 155
 keywords:
+  - grønkålschips i airfryer
   - grønkålschips airfryer
   - grønkål chips airfryer
   - grønkål i airfryer
@@ -22,7 +23,7 @@ keywords:
 intro: |
   **Grønkålschips** skal være **sprøde**, let **bitre** og saltede — ikke **sorte** og ikke **gummiagtige**. Airfryer er god til opgaven fordi **varmluften** fjerner fugt, men **for høj varme** eller **for meget olie** giver **bløde blade** eller **brank smag**.
 
-  Opskriften her bruger **almindelig grønkål** (lad **stilken** blive eller fjern den tykke — se trin), **lidt olie** og **to temperaturtrin**: først **mild udblæsning**, derefter kort **finish** for den sidste knas. Arbejd i **små batch** — grønkål fylder, men **krymper**.
+  Opskriften her bruger **almindelig grønkål** (lad **stilken** blive eller fjern den tykke — se trin), **lidt olie** og **én stabil temperatur (155 °C)** med **ryst** undervejs. Arbejd i **små batch** — grønkål fylder, men **krymper**.
 
   Luftfritusere **varierer**: første gang, åbn og **smag** på ét blade sidste minut.
 conclusion: |
@@ -53,6 +54,8 @@ tips:
   - '**Næringsgær** drysset på efter bagning giver **ost-lignende** umami uden ost.'
   - 'Vegan ost: brug **ristet sesam** + salt som finish.'
 faq:
+  - question: 'Hvor længe skal grønkålschips have i airfryer?'
+    answer: 'Ved 155 °C og ét lag: typisk 11–12 minutter samlet (fx 6 min + ryst + 5–6 min) til blade er sprøde og mørkegrønne — ikke sorte. Hellere to batch end én dynge.'
   - question: 'Kan jeg bruge frossen grønkål?'
     answer: 'Helst ikke til chips — optøet kål har for meget vand. Brug frisk eller lav en anden ret med frost.'
   - question: 'Hvorfor blev mine grønkålschips sorte?'

@@ -1,10 +1,10 @@
 ---
 title: 'Popcorn i airfryer – kan det lade sig gøre? (myter og bedre metoder)'
-description: 'Popcorn i airfryer: virker det, brandfare, og hvornår gryde eller maskine er klogere? Ærlig guide med små batch, manual-tjek og bedre alternativer i airfryeren.'
+description: 'Popcorn i airfryer — virker det? Ærlig guide: mange manualer siger nej; små batch, rist og opsyn. Brandfare, olie og bedre alternativer (gryde, popcornmaskine).'
 heroImage: '/images/recipes/airfryer-popcorn.png'
 heroAlt: 'Skål fyldt med frisk popcorn på linned, saltkorn på bordet og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 3
 cookMinutes: 12
 servings: '2 små portioner (eksperiment)'
@@ -14,6 +14,7 @@ cuisine: 'International'
 temperatureC: 200
 keywords:
   - popcorn i airfryer
+  - popcorn i airfryer virker det
   - popcorn airfryer
   - kan man lave popcorn i en airfryer
   - popcorn i airfryer uden olie

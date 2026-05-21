@@ -1,10 +1,10 @@
 ---
-title: 'Dumplings og gyoza i airfryer – frosne eller friske'
-description: 'Gyoza og dumplings i airfryer med sprød bund: forvarmning, damp og olie. Sikre tider for frosne kødboller og grøntsagsdumplings.'
+title: 'Gyoza og dumplings i airfryer – sprød bund (frosne eller friske)'
+description: 'Gyoza i airfryer og dumplings: dampstart, 185–190 °C, sprød underside. Frosne dumplings i airfryer med sikkert kødfyld (75 °C). Tid og olie til små portioner.'
 heroImage: '/images/recipes/airfryer-dumplings-gyoza.png'
 heroAlt: 'Gyldne gyoza på fad med sesam, forårsløg og chili-soja, spisepinde løfter en dumpling med fyld, sort airfryer med flere dumplings i åben kurv og dip i lille skål'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 3
 cookMinutes: 14
 servings: '2 portioner (ca. 16 stk.)'
@@ -13,9 +13,9 @@ category: 'Snack'
 cuisine: 'Asiatisk'
 temperatureC: 185
 keywords:
+  - gyoza i airfryer
   - dumplings i airfryer
   - dumplings airfryer
-  - gyoza i airfryer
   - frosne gyoza i airfryer
   - rispapir dumplings i airfryer
 intro: |

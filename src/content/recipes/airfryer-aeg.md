@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer æg – røræg, blødkogte i skal, spejlæg og muffins'
-description: 'Æg i airfryer: røræg i skål (8–11 min / 160 °C med omrøring), blødkogte i skal, spejlæg og muffins. Temperatur, tider til din model og toast som tilbehør.'
+description: 'Æg i airfryer med fokus på røræg: 8–11 min / 160 °C med omrøring i skål. Blødkogte i skal, spejlæg og muffins — temperatur, tider og toast som tilbehør.'
 heroImage: '/images/recipes/airfryer-aeg.png'
 heroAlt: 'Blødkogte æg i hvide æggebægre med flydende blomme, toaststrimler og purløg på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 10
 servings: '2 personer (2 spejlæg + 4 små muffins)'

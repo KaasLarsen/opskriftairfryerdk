@@ -1,10 +1,10 @@
 ---
-title: 'Havregrød i airfryer i portionsform – cremet uden gryde'
-description: 'Havregrød i airfryer i små ildfaste skåle med mælk og kanel. Tider og forhold så grøden ikke koger over eller brænder på.'
+title: 'Havregrød i airfryer – cremet i portionsform (uden gryde)'
+description: 'Havregrød i airfryer: 18–22 min / 165 °C i små ildfaste skåle — cremet uden omrøring i gryde. Forhold, så mælk ikke bobler over. Morgenmad i airfryer på travle dage.'
 heroImage: '/images/recipes/airfryer-havregroed.png'
 heroAlt: 'Dampende havregrød i skål med blåbær, jordbær, banan, mandler og honning på træbord, honningglas og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 6
 cookMinutes: 22
 servings: '2 portioner'
@@ -16,6 +16,7 @@ keywords:
   - havregrød i airfryer
   - havregrød airfryer
   - kan man lave havregrød i airfryer
+  - havregrød i airfryer tid
   - airfryer morgenmad havre
 intro: |
   **Havregrød i airfryer** lyder usædvanligt, men fungerer som **ovn-bagt grød** i små skåle: ensartet varme uden at du skal røre ved gryden. Du får en **cremet** konsistens hvis forholdet mælk/havre stemmer og skålene **ikke fyldes til randen** — mælken bobler.

@@ -1,10 +1,10 @@
 ---
 title: 'Lammekrone i airfryer – rack med urter og rosa midte'
-description: 'Lammekrone (rack of lamb) i airfryer: forberedelse af kappe, temperaturforløb og 54–62 °C efter smag. Tider pr. vægt og FAQ vs. lammekølle og koteletter.'
+description: 'Lammekrone i airfryer (rack of lamb): 185 °C, kerne 54–62 °C, 18–22 min + hvile. Airfryer lammekrone med urter — FAQ vs. lammekølle og koteletter.'
 heroImage: '/images/recipes/airfryer-lammekrone.png'
 heroAlt: 'Saftig lammekrone tilberedt i airfryer, serveret med ovnstegte kartofler og friske krydderurter.'
 pubDate: 2026-04-06
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 20
 cookMinutes: 28
 servings: '3–4 personer (ét rack, ca. 600–800 g)'

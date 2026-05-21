@@ -4,7 +4,7 @@ description: 'Oksebøf, entrecôte og ribeye i airfryer: 4+4 min ved 200 °C til
 heroImage: '/images/recipes/airfryer-okseboef-steak.png'
 heroAlt: 'Skåret oksebøf med rosa midte, urtesmør og persille ved siden af små ristede kartofler, rosmarin og citron på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 14
 servings: '2 portioner'

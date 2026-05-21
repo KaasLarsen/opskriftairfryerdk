@@ -1,10 +1,10 @@
 ---
-title: 'Pulled chicken i airfryer – mørt og nemt til burger og salat'
-description: 'Pulled chicken fra airfryer med krydret rub og kort simretid i folie. Tider, temperatur og hvordan du undgår tør kylling – til wraps, salater og meal prep.'
+title: 'Pulled chicken i airfryer – trukket kylling til burger, wrap og salat'
+description: 'Pulled chicken i airfryer (pulled kylling): krydret rub, 190 °C derefter folie ved 175 °C, kerne 73–75 °C. Ca. 30–40 min samlet — mørt til meal prep og nachos.'
 heroImage: '/images/recipes/airfryer-pulled-chicken.png'
 heroAlt: 'Skål med trukket kylling med krydret overflade på linned, airfryer og grønt tilbehør i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 35
 servings: '4 portioner'
@@ -48,6 +48,8 @@ tips:
   - 'Uden folie-trinnet bliver pulled chicken ofte tørrere – folie simrer kødet mørt.'
   - 'Til meal prep: skær i mindre stykker før folie, så varmen trænger hurtigere igennem.'
 faq:
+  - question: 'Pulled chicken i airfryer — hvor lang tid?'
+    answer: 'Typisk 30–40 minutter i alt: farve ved 190 °C, derefter 18–25 minutter i folie ved 175 °C til kerne 73–75 °C — afhænger af lår vs. bryst og tykkelse.'
   - question: 'Kan jeg bruge frossen kylling?'
     answer: 'Helst fuldt optøet kylling for ensartede tider og fødevaresikkerhed. Frossen kylling kræver længere tid og konstant temperaturkontrol.'
   - question: 'Hvad er forskellen på pulled chicken og almindelig kylling i airfryer?'

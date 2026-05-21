@@ -1,10 +1,10 @@
 ---
-title: 'Tunbøf og tunsteak i airfryer – hurtig stegeskorpe, rosa midte'
-description: 'Tunsteak og tunbøf i airfryer med kort tid efter tykkelse. Sesam- eller paprika-rub, sikker kernetemperatur og FAQ om rå middel vs. gennemstegt tun.'
+title: 'Tunbøf i airfryer og tunsteak – 190 °C, kort tid (rosa eller 62 °C)'
+description: 'Tunbøf i airfryer og tunsteak: 3–4 min + vending, 5–8 min samlet ved 190 °C. Rub, kerne 62 °C gennemstegt — FAQ om tunsteak tid og tør tun.'
 heroImage: '/images/recipes/airfryer-tunboef-tunsteak.png'
 heroAlt: 'Sesam- og peberkrydret tunsteak med rosa midte, citronbåde og friske urter på tallerken foran airfryer.'
 pubDate: 2026-04-06
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 8
 servings: '2 portioner (2 tunbøffer à ca. 180–220 g)'
@@ -15,6 +15,7 @@ temperatureC: 190
 keywords:
   - tunbøf i airfryer
   - tunsteak i airfryer
+  - tunbøf airfryer tid
   - tun steak airfryer
   - tun i airfryer
   - gul tun airfryer
@@ -48,6 +49,8 @@ tips:
   - 'Meget tynde steaks (under 2 cm): brug 2+2 minutter ved 190 °C som udgangspunkt og tjek tidligt.'
   - 'Sesamsår skal ikke brænde — sænk 10 grader hvis skorpen mørkner før midten er varm nok.'
 faq:
+  - question: 'Tunbøf i airfryer — hvor mange minutter?'
+    answer: 'Ved 190 °C og ca. 2–2,5 cm tykkelse: ofte 5–8 minutter i alt med én vending (3–4 + 2–4). Tyndere: start med 2+2 minutter og tjek. Mål 62 °C i midten for gennemstegt.'
   - question: 'Er tunbøf og tunsteak det samme i airfryer?'
     answer: 'På dansk bruges ordene ofte om den samme tykke tunskive. Steg altid efter tykkelse og ønsket kerne — ikke efter navn på etiketten.'
   - question: 'Hvor lang tid skal tunsteak have i airfryer?'

@@ -1,10 +1,10 @@
 ---
-title: 'Pandekager i airfryer – amerikanske og tykke klatkager'
-description: 'Pandekager i airfryer i silikoneform eller små ildfaste skåle. Tider, temperatur og tip til bananpandekager og brunch uden pande.'
+title: 'Pandekager i airfryer – amerikanske tykke kager og bananpandekager'
+description: 'Pandekager i airfryer i silikone eller små skåle: 10–14 min / 175 °C, bagepulver og kærnemælk. Bananpandekager, brunch uden pande. FAQ når de bliver flade.'
 heroImage: '/images/recipes/airfryer-pandekager.png'
 heroAlt: 'Stak af tykke amerikanske pandekager med sirup, flormelis og friske bær på hvid tallerken, airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 14
 servings: '4 portioner (8 små pandekager)'
@@ -15,6 +15,7 @@ temperatureC: 175
 keywords:
   - pandekager i airfryer
   - pandekage i airfryer
+  - pandekager i airfryer tid
   - amerikanske pandekager i airfryer
   - airfryer pandekager
   - bananpandekager i airfryer

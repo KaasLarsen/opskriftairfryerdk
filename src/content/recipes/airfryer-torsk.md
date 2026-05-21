@@ -1,8 +1,8 @@
 ---
-title: 'Airfryer torsk – mør filet med citron og urter'
-description: 'Torsk i airfryer uden tør kød: moderat varme, smør og citron, drys med persille. Valgfrie små kartofler som på tallerken — klar tid og tips.'
+title: 'Torsk i airfryer – mør filet, tid og temperatur (ca. 180 °C)'
+description: 'Torsk i airfryer: typisk 6–12 min ved 180 °C efter filettykkelse. Smør, citron og persille — så undgår du tør hvid fisk. FAQ om frossen torsk og gennemstegning.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 18
 servings: '4 portioner'
@@ -13,7 +13,9 @@ temperatureC: 180
 heroImage: '/images/recipes/airfryer-torsk.png'
 heroAlt: 'To torskefileter med persille, citron og små ristede kartofler på hvid tallerken'
 keywords:
+  - torsk i airfryer
   - torsk airfryer
+  - torsk i airfryer tid
   - torskefilet airfryer
   - fisk airfryer torsk
   - torsk tid temperatur airfryer
@@ -59,6 +61,8 @@ tips:
   - 'Hvis du ikke har en form: brug foliebakke med kanter, så smør/saft ikke ryger væk.'
   - 'Skind-side: hvis du beholder skind, læg skind ned og giv lidt ekstra minut til skindet ved behov.'
 faq:
+  - question: 'Hvor længe skal torsk have i airfryer?'
+    answer: 'Ved 180 °C og fileter à ca. 2–2,5 cm: ofte 8–12 minutter i alt med 6 minutter første hold og 1–4 minutter efter tykkelse. Tynde skiver kan være færdige på 6–8 minutter. Tjek at kødet flager; brug gerne termometer omkring 52–58 °C i midten hvis du er i tvivl.'
   - question: 'Hvordan ved jeg at torsk er færdig?'
     answer: 'Kødet skal flage let og være gennemvarm uden at være gennemkogt. Brug kernetermometer hvis du er i tvivl — og tjek at den tykkeste del er ensartet.'
   - question: 'Hvorfor bliver min torsk tør?'
