@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer lammekølle (skiver) – også hel kølle med ben uden at skære før'
-description: 'Lammekølle i airfryer: skiver 13–16 min / 190 °C, eller hel kølle med ben med samme marinade — hvis den passer i kurven. Tid pr. kg, kernetemp og FAQ om lammekølle med ben.'
+title: 'Lammekølle i airfryer – skiver, hel kølle med ben og tid pr. kg'
+description: 'Lammekølle i airfryer tid: skiver 2–3 cm ofte samlet ca. 13–16 min ved 190 °C til rosa kerne (~58–60 °C). Hel lammekølle med ben i airfryer kræver længere tid pr. kg, lavere startsæt muligt ved 175–180 °C og altid måling i tykkeste kødsted — samme marinade som skiver.'
 heroImage: '/images/recipes/airfryer-lammekoelle-skiver.png'
 heroAlt: 'Skiver af saftig lammekølle med kartofler og grønne bønner på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 12
 cookMinutes: 16
 servings: '4 portioner'
@@ -22,7 +22,8 @@ keywords:
   - lammekoteletter airfryer
   - påske lam opskrift
   - airfryer påskemad
-  - kernetemperatur lam
+  - lammekølle airfryer tid
+  - hvor lang tid lammekølle airfryer
 featured: true
 intro: |
   Mange søger **hel lammekølle i airfryer** — denne guide starter med **skiver** (kortest tid, nemmest i de fleste kurve), men marinade og temperatur passer også, hvis du vil stege **hel kølle med ben**, så længe køllen passer i kurven og du steger efter kerne-temp.
@@ -57,6 +58,8 @@ tips:
   - 'Overfyld ikke kurven, ellers koger kødet i stedet for at stege.'
   - 'Har du tyndere skiver, så reducer tiden med 2-3 minutter.'
 faq:
+  - question: 'Hvor lang tid tager hel lammekølle i airfryer pr. kg?'
+    answer: 'Der er ikke én pålidelig minutliste pr. kg for hel lammekølle i kurv‑airfryer — model, placering og ben gør stor forskel. Brug kernetermometer i tykkeste kødsted uden at ramme ben: rosa cirka 58–60 °C midte, mere gennemstegt 62–65 °C. I modsætning hertil er skiver (2–3 cm) nemme at ramme rigtigt: typisk ca. 13–16 min samlet ved 190 °C som i opskriften.'
   - question: 'Lammekølle med ben i airfryer – ekstra tid?'
     answer: 'Ja. Med ben og tykkere midte skal du regne med længere tid end skiver og bruge kernetemperatur i tykkeste kød (typisk 58–65 °C efter smag). Start fx 175–180 °C til kerne nær mål, kort sidste fase for farve — vend evt. køllen hvis modellen tillader det.'
   - question: 'Hvor længe skal lam i airfryer?'

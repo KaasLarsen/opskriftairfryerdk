@@ -1,8 +1,8 @@
 ---
-title: 'Torsk i airfryer – mør filet, tid og temperatur (ca. 180 °C)'
-description: 'Torsk i airfryer: typisk 6–12 min ved 180 °C efter filettykkelse. Smør, citron og persille — så undgår du tør hvid fisk. FAQ om frossen torsk og gennemstegning.'
+title: 'Torsk i airfryer – tid i minutter, temperatur og mør filet'
+description: 'Torsk airfryer tid: ved 180 °C og filet på ca. 2–2,5 cm ofte samlet ca. 8–12 min (tyndere før). Smør og citron bevarer fugt; tjek tidligt — få minutter skiller perfekt fra tør «hø». Optø helt først ved frossen fisk.'
 pubDate: 2026-04-02
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 15
 cookMinutes: 18
 servings: '4 portioner'
@@ -20,7 +20,8 @@ keywords:
   - fisk airfryer torsk
   - torsk tid temperatur airfryer
   - hvid fisk airfryer
-  - torsk persille airfryer
+  - torsk i airfryer hvor lang tid
+  - hvor mange minutter torsk airfryer
 featured: false
 intro: |
   Torsk er mild, populær og nem at overse i airfryer: få minutter for meget, og fileten bliver tør og “hø”. Derfor arbejder vi med **moderat temperatur**, **ens tykkelse** og typisk en smule **fedt/citronsaft** for at bevare fugt.
@@ -61,6 +62,8 @@ tips:
   - 'Hvis du ikke har en form: brug foliebakke med kanter, så smør/saft ikke ryger væk.'
   - 'Skind-side: hvis du beholder skind, læg skind ned og giv lidt ekstra minut til skindet ved behov.'
 faq:
+  - question: 'Hvor mange minutter torsk i airfryer ved 180 °C?'
+    answer: 'For fileter omkring 2–2,5 cm tykke starter du ofte på 6 minutter, tjekker flagning og giver typisk 1–4 minutter mere — dvs. omkring 7–11 minutter i alt hos mange maskiner; tynde skiver kan lande ved 6–8 minutter. Brug øjne eller termometer 52–58 °C midte hvis du er i tvivl.'
   - question: 'Hvor længe skal torsk have i airfryer?'
     answer: 'Ved 180 °C og fileter à ca. 2–2,5 cm: ofte 8–12 minutter i alt med 6 minutter første hold og 1–4 minutter efter tykkelse. Tynde skiver kan være færdige på 6–8 minutter. Tjek at kødet flager; brug gerne termometer omkring 52–58 °C i midten hvis du er i tvivl.'
   - question: 'Hvordan ved jeg at torsk er færdig?'

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer oksebøf og ribeye – mør steak (ribeye, entrecôte eller yderfilet)'
-description: 'Oksebøf, entrecôte og ribeye i airfryer: 4+4 min ved 200 °C til medium-rare (ca. 2,5 cm), kernetemperatur og hvile. Plus korte råd til tykkere snit og hele ribeye-stykke.'
+description: 'Ribeye og entrecôte i airfryer: klassisk ca. 2,5 cm bøffer ofte omkring 4+4 min ved 200 °C til medium-rare — altid mål kerne før hvile. Ribeye versus entrecôte: samme teknik ud fra tykkelse og fedt — hel tyk klump kræver lavere temperatur og længere tid.'
 heroImage: '/images/recipes/airfryer-okseboef-steak.png'
 heroAlt: 'Skåret oksebøf med rosa midte, urtesmør og persille ved siden af små ristede kartofler, rosmarin og citron på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 15
 cookMinutes: 14
 servings: '2 portioner'
@@ -77,6 +77,12 @@ faq:
   - question: 'Hel ribeye steg i airfryer — hvilken kernetemperatur?'
     answer: 'Som ved andre steg: mål i tykkeste del. Rosa midte efter hvile: typisk **53–58 °C** før hvile afhængigt af præference; medium **58–62 °C** før hvile. Tyk steg stiger 3–6 grader under folie.'
 ---
+
+### Ribeye versus entrecôte — kort før du sætter uret
+
+- **Ribeye** er ofte et konkret snit med synligt intramuskulært fedt (“øjet”) — god til airfryer, fordi fedtet beskytter mod tørhed.
+- **Entrecôte** bruges uens i butikker; nogle stykker matcher ribeye, andre er magrere. Behandl **enhver** bøf ud fra **tykkelse på den tykkeste del** og **kernetermometer**, ikke ud fra etiket ordlyd alene.
+- **Yderfilet og magre bøffer** behøver ofte lidt **kortere** tid eller lidt **lavere temperatur** end klassisk ribeye-snittet beskrevet i trinlisten.
 
 ### Ribeye i airfryer (tykkelse og tid)
 

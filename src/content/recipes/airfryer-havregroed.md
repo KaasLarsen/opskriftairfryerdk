@@ -1,10 +1,10 @@
 ---
-title: 'Havregrød i airfryer – cremet i portionsform (uden gryde)'
-description: 'Havregrød i airfryer: 18–22 min / 165 °C i små ildfaste skåle — cremet uden omrøring i gryde. Forhold, så mælk ikke bobler over. Morgenmad i airfryer på travle dage.'
+title: 'Havregrød i airfryer – hvor lang tid og temperatur (cremet portionsgrød)'
+description: 'Havregrød airfryer: typisk 18–22 min ved 165 °C i ildfaste skåle (max ~70 % fyldt — ellers bobler mælken over). Grov havre og mælk/havredrik — morgenmad uden at røre gryden. Kan man lave havregrød i airfryer? Ja som ovn-grød i små forme.'
 heroImage: '/images/recipes/airfryer-havregroed.png'
 heroAlt: 'Dampende havregrød i skål med blåbær, jordbær, banan, mandler og honning på træbord, honningglas og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 6
 cookMinutes: 22
 servings: '2 portioner'
@@ -17,7 +17,8 @@ keywords:
   - havregrød airfryer
   - kan man lave havregrød i airfryer
   - havregrød i airfryer tid
-  - airfryer morgenmad havre
+  - havregrød airfryer hvor længe
+  - morgenmad airfryer havregrød
 intro: |
   **Havregrød i airfryer** lyder usædvanligt, men fungerer som **ovn-bagt grød** i små skåle: ensartet varme uden at du skal røre ved gryden. Du får en **cremet** konsistens hvis forholdet mælk/havre stemmer og skålene **ikke fyldes til randen** — mælken bobler.
 
@@ -46,9 +47,11 @@ tips:
   - 'For overnight-oat konsistens: brug lidt mindre væske og længere hvile efter bagning.'
   - 'Havregrød brænder hurtigt ved >175 °C — hold dig til 160–170 °C.'
 faq:
+  - question: 'Hvor lang tid tager havregrød i airfryer?'
+    answer: 'Som udgangspunkt 18–22 minutter ved 165 °C i to små skåler med denne havre-/mælke-ratio — første gang: bliv ved kurven første halvdel og sænk 5 °C hvis det bobler.'
   - question: 'Kan jeg bruge vand i stedet for mælk?'
     answer: 'Ja — smagen bliver mildere; tilsæt evt. en knop smør eller fløde efter bagning.'
-  - question: 'BObler mælken over i airfryer?'
+  - question: 'Bobler mælken over i airfryer?'
     answer: 'Typisk hvis skålen er fyldt for meget eller temperaturen er for høj. Sænk 5–10 grader og brug dybere skål.'
 ---
 

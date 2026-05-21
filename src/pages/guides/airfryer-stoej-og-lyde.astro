@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-stoej-og-lyde';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Min airfryer larmer: hvornår er det normalt og hvornår du bør stoppe | ${SITE_NAME}`;
+const description =
+	'Typiske lyde ved airfryer: blæser og varmelegeme, metallisk klapren, whistling eller knas fra frys — hvad der er OK, hvad du tjekker, og hvornår apparatet bør serviced.';
+
+const published = '2026-05-21T09:05:00.000Z';
+const modified = '2026-05-21T09:05:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-stoej-og-lyde.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Roligt køkken med moderne airfryer ved siden af skærebræt — tema om støj og normale lyde';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Min airfryer lyder af en vindmaskine — er det normalt?',
+		a: 'Med varmluft og aktiv blæser kan du roligt forvente støjniveau på linje med en ordentlig emhætte på mellem fart. Kraftig eller skærende lyd ud over det, der hidtil har været normalt for din model, bør undersøges.',
+	},
+	{
+		q: 'Hvorfor klaprer det metallisk når jeg ryster kurven?',
+		a: 'Kurve-rist eller indsats der sidder lidt slap kan danne metal mod metal. Sikr korrekt placering, undgå at bruge ødelagt indsats og tjek om lågene har revner.',
+	},
+	{
+		q: 'Hører jeg en fløjteton under kørsel?',
+		a: 'Nogle airflow-mønstre kan give en lys tone — især hvis aftagelige plastdele sidder lidt for løskrævet. Kontrollér placering langs forseglingen (sluk først eller køl ned), og kontakt fabrikanten, hvis det er et vedvarende, nyt symptom.',
+	},
+	{
+		q: 'Frossen mad knaser — er det sundt?',
+		a: 'Kort knitren fra krympende is eller bevægelige stykker i starten kan være normalt. Konstant slag eller raslende ting der har løsnet kræver at du åbner, stopper maden og finder løste dele før genstart.',
+	},
+	{
+		q: 'Når må jeg slukke straks?',
+		a: 'Vibrerer uhåndterligt, lugter elektrisk eller brændt plast ud over stege lugt og bruningsaroma, eller hvis gnidningslyd fortsætter efter kurven fjernes. Se også fedt og røg guiden ved røgtegn.',
+	},
+	{
+		q: 'Hjælper placering på bænk mod støj?',
+		a: 'Ja — plan stabilt underlag, ikke hængende over kant hvor vibrationslyd resoner i skabet. Luft bag maskinen kan også undgå at blæsekraften må kæmpe mod trange nicher.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Støj og lyde', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Airfryer støj og lyde — hvornår du kan være rolig og hvornår du skal tjekke',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Støj og lyde</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Sikker brug · vedligeholdelse</p>
+				<h1>Min airfryer larmer — hvornår er det normalt?</h1>
+				<p class="guide-lead">
+					Varmluft skal rundt i et lille kammer ved høj effekt, så luftmotor og airflow støjer mere end en lukket
+					ovn. Det betyder <strong>lyd er normalt op til et vist niveau</strong> — mens andre variationer kræver
+					kort tjek før du finder ro. Denne tekst erstatter ikke producentmanualen eller service; den samler den
+					mest almindelige “er det mig eller maskinen?”-logik ved siden af
+					<a href="/guides/fejlfinding-roeg-fedt-brandalarm">fedt og røg-guiden</a>.
+				</p>
+
+				<h2>Forventede lyde ved normal drift</h2>
+				<ul>
+					<li>Blæser i varierende fart når målet eller program ændres.</li>
+					<li>Hums fra varmesystem når kurven lukkes og elementet balancerer watt.</li>
+					<li>Let plast eller metal “klikk” første gang materialet udvider sig under varmeslag.</li>
+				</ul>
+
+				<h2>Tegn der fortjener kontrol før du bekymrer dig unødigt</h2>
+				<ul>
+					<li>
+						<strong>Metal på metal:</strong> tjek kurv i skinne eller lågens låsehage — måske skal indsættes
+						anden vej eller rengøres glideflade (sluk først eller kør koldt).
+					</li>
+					<li>
+						<strong>Aftagelige siliconeringe:</strong> sørg for ingen gummilist sidder falset — det kan ligne
+						anelse fløjt.
+					</li>
+					<li>
+						<strong>Ubalanceret ting i kurven:</strong> fx løstsiddende grillelement der hopper ved ryster —
+						tag kurven ud, ret op, start igen ved lavere fart kort sanity check.
+					</li>
+				</ul>
+
+				<h2>Når du bør pause og læse manualen før genstart</h2>
+				<p>
+					Én eller flere ting ad gangen ved usædvanlig kombination: elektrisk eller kemisk lugt, sort røgslør,
+					pludseligt meget slam fra motorområde, eller voldsomme vibrationer ved stativ.Stop strøm ved tvivl,
+					udluft lokalet og følg sikkerhedstrin som i <a href="/guides/fejlfinding-roeg-fedt-brandalarm">fedt-guiden</a>.
+				</p>
+
+				<h2>Reducer oplevet støj uden ombyggeri</h2>
+				<ul>
+					<li>Stil ikke maskinen ud fra bordets kant så underside resoner.</li>
+					<li>Udluft ikke ind i en lukket niche— det kan øge fart og blæsekamp.</li>
+					<li>Undgå natteløb ved fuld fart hvis lys søvn — eller brug programmer med lavere puls for små ting.</li>
+				</ul>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-stoej-og-lyde" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

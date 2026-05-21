@@ -1,4 +1,93 @@
 {
 	"description": "Ekstra 301 fra gamle URL'er der ikke følger {slug}-i-airfryer. Tilføj fra GSC/404-liste — kør derefter `node scripts/generate-vercel-redirects.mjs`.",
-	"redirects": []
+	"redirects": [
+		{
+			"source": "/guides/airfryer-fejl-og-fix",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger"
+		},
+		{
+			"source": "/guides/airfryer-fejl-og-fix.html",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger"
+		},
+		{
+			"source": "/guides/maden-bliver-ikke-sproed-10-typiske-fejl",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger"
+		},
+		{
+			"source": "/guides/maden-bliver-ikke-sproed-10-typiske-fejl.html",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger"
+		},
+		{
+			"source": "/guides/min-airfryer-larmer-er-det-normalt",
+			"destination": "/guides/airfryer-stoej-og-lyde"
+		},
+		{
+			"source": "/guides/min-airfryer-larmer-er-det-normalt.html",
+			"destination": "/guides/airfryer-stoej-og-lyde"
+		},
+		{
+			"source": "/guides/airfryer-stoerrelse-4l-5l-8l-hvor-stor-skal-du-vaelge",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide"
+		},
+		{
+			"source": "/guides/airfryer-stoerrelse-4l-5l-8l-hvor-stor-skal-du-vaelge.html",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide"
+		},
+		{
+			"source": "/guides/airfryer-rengoering",
+			"destination": "/guides/rengoering-lugt-airfryer"
+		},
+		{
+			"source": "/guides/airfryer-rengoering.html",
+			"destination": "/guides/rengoering-lugt-airfryer"
+		},
+		{
+			"source": "/guides/airfryer-energi",
+			"destination": "/guides/stroemforbrug-airfryer-vs-ovn"
+		},
+		{
+			"source": "/guides/airfryer-energi.html",
+			"destination": "/guides/stroemforbrug-airfryer-vs-ovn"
+		},
+		{
+			"source": "/guides/airfryer-tider",
+			"destination": "/guides/airfryer-tid-og-afproevning"
+		},
+		{
+			"source": "/guides/airfryer-tider.html",
+			"destination": "/guides/airfryer-tid-og-afproevning"
+		},
+		{
+			"source": "/opskrifter/brunede-kartofler-i-airfryer",
+			"destination": "/opskrifter/airfryer-brunede-kartofler"
+		},
+		{
+			"source": "/opskrifter/brunede-kartofler-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-brunede-kartofler"
+		},
+		{
+			"source": "/opskrifter/bagte-paerer-med-honning-og-noedder-i-airfryer",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder"
+		},
+		{
+			"source": "/opskrifter/bagte-paerer-med-honning-og-noedder-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder"
+		},
+		{
+			"source": "/opskrifter/kyllingefilet-i-airfryer",
+			"destination": "/opskrifter/airfryer-kyllingebryst"
+		},
+		{
+			"source": "/opskrifter/kyllingefilet-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kyllingebryst"
+		},
+		{
+			"source": "/kapacitet/8liter",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide"
+		},
+		{
+			"source": "/kapacitet/8liter/",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide"
+		}
+	]
 }

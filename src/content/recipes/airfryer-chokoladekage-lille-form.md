@@ -1,10 +1,10 @@
 ---
-title: 'Kage i airfryer: mørk chokoladekage i lille form (tid, form, muffins)'
-description: 'Kage i airfryer: mørk chokoladekage i 15–16 cm form, 160 °C og pindeprøve. Virker uden stor ovn. FAQ om muffins, kagemix og hvornår ovn er bedre til stor kage.'
+title: 'Kage i airfryer – mørk chokoladekage i lille form (tid og temperatur)'
+description: 'Kage i airfryer: lille mørk chokoladekage i 15–16 cm form — ofte 22–28 min ved 160 °C med pindeprøve; små kager går hurtigere end i stor ovn, så dæk evt. toppen de første minutter ved kraftig varme. Se pandekager og muffins i FAQ.'
 heroImage: '/images/recipes/airfryer-chokoladekage-lille-form.png'
 heroAlt: 'Lys high-key stil: lille chokoladekage på off-white tallerken, lyst træ, luftig belysning, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 15
 cookMinutes: 28
 servings: '6–8 små stykker (1 lille kage, ca. 15–16 cm)'
@@ -18,7 +18,8 @@ keywords:
   - lille kage airfryer
   - airfryer kage opskrift
   - chokoladekage lille form
-  - nem kage airfryer
+  - kage i airfryer tid
+  - chokoladekage airfryer tid temperatur
 intro: |
   Når folk søger **kage i airfryer**, er behovet ofte det samme: **én lille kage** uden at tænde **store ovn**, **hurtig dessert** til uventede gæster, eller en **børnefriendly** chokoladekage der ikke fylder hele køkkenet. Denne side er et **konkret svar**: én velafprøvet **mørk chokoladekage** i **15–16 cm form** med **blød midte**, tydelige minutter og **hvad du gør, hvis toppen bruner for hurtigt**.
 
@@ -59,6 +60,8 @@ tips:
   - 'Vil du have **marmorkage**: tag 1/3 af melet og pisk hurtigt med 1 spsk kakao + 1 spsk mælk i separat skål; marmorér med pind.'
   - 'Glasyr: pisk 50 g flormelis med 1 spsk kakaopulver og 1–1 1/2 spsk koldt vand — hæld på afkølet kage.'
 faq:
+  - question: 'Hvor længe skal chokoladekage have i airfryer?'
+    answer: 'I 15–16 cm form og 160 °C: typisk 22–28 minutter til pindeprøven har få fugtige krummer midt i — første forsøg: tjek ved 22 min og forlæng 2–3 min ad gangen. Meget små eller kraftige modeller afviger.'
   - question: 'Hvorfor sank min chokoladekage i midten?'
     answer: 'Typisk for lidt bagetid eller for megen åbning af låget tidligt — eller form for stor i forhold til dejen. Giv et par minutter ekstra næste gang og brug pindetest.'
   - question: 'Kan jeg bage kage i airfryer uden form?'

@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-tid-og-afproevning';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Airfryer-tider du kan stole på (uden at kopiere ovn blindt) | ${SITE_NAME}`;
+const description =
+	'Sådan afprøver du tid og temperatur trygt i airfryer: første forsøg, tidlig tjek, tykkelse og mængde, frost versus frisk, og hvornår det giver mest at ryste eller vende.';
+
+const published = '2026-05-21T09:15:00.000Z';
+const modified = '2026-05-21T09:15:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-tid-og-afproevning.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Køkkenskive med timer, termometer og airfryer-kurv — tema om tid, afprøvning og tjek undervejs';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Kan jeg kopiere ovnopskrifter 1:1 til airfryer?',
+		a: 'Sjældent uden tilpasning. Airfryer giver intens varmluft tæt på maden og varmer ofte små volumener hurtigt op. Start med retningslinjer for konvertering — se også vores guide fra ovn til airfryer — og juster lokalt ud fra hvor tykk og våd maden er.',
+	},
+	{
+		q: 'Hvorfor åbner mange kurven lidt før tiden er slut?',
+		a: 'Første gang med en ny ret er en kalibrering: et par minutter før sluttid kigger du på farve og mørhed. Er overfladen mørk nok før indmaden er klar ved kød, skruer du typisk ned i temperatur, giver kortere spurter — eller tyndere stykker — fremfor bare at “øge med fem minutter” og gamble med en sort skorpe.',
+	},
+	{
+		q: 'Gør forvarmning en forskel for tid?',
+		a: 'Ofte ja på korte programmer og tynde ting (pommes i ét lag). Tommelfinger: følg fabrikanten; hvis måltider konsekvent bliver for mørke i overfladen, kan kortere eller ingen forvarmning hjælpe — kombiner med lavere tempo og god luft.',
+	},
+	{
+		q: 'Frossen mad kræver altid mere tid — eller?',
+		a: 'Ofte lidt ekstra tid eller et blidere første led — afhængigt af pakke og hvor hurtigt isdamper fylder kurven. Ét luftigt lag og aftørring/afdryp før start betyder mere end en tilfældig “+7 minutter” på etiketten.',
+	},
+	{
+		q: 'Hvornår ryster eller vender det mest?',
+		a: 'Når mange flader rører hinanden eller når marinade/fugt samler på bestemte punkter — samme princip som ved pommes. Overfyldt kurv øger behov for ryst, men erstatter ikke nok luft ved start.',
+	},
+	{
+		q: 'Hvordan ved jeg at kylling eller kød er færdige på tid?',
+		a: 'Farve er ikke nok. Brug kernetemperatur eller skær et hjørne på et tykt stykke, hvis du er i tvivl — se også vores kernemål-guide.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Tid og afprøvning', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Airfryer-tider: hvordan du afprøver og justerer uden at kopiere ovn blindt',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Tid og afprøvning</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Airfryer-tider du kan stole på — uden at kopiere ovn blindt</h1>
+				<p class="guide-lead">
+					Tid i airfryer er ikke ét fast tal på displayet — den afhænger af hvor fyldt kurven er,
+					starttemperatur og tykkelse. Her får du en enkel måde at <strong>afprøve første forsøg</strong> på, så
+					du undgår både rå kerne og for mørk skorpe før du improviserer næste uge på autopilot.
+					Udgangspunkter finder du i{' '}
+					<a href="/guides/ovn-til-airfryer-tid-temperatur">fra ovn til airfryer</a>, og du supplerer med{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet og damp</a> samt{' '}
+					<a href="/guides/kernetemperatur-airfryer">kernetemperatur ved kød</a>.
+				</p>
+
+				<h2>1. Brug første forsøg som måling</h2>
+				<p>
+					Når første forsøg med en ny ret er en måling på <em>dine</em> råvarer med en <em>fornuftig</em>{' '}
+					mængde i kurven, noter du kort ned hvad virkede eller skal justeres før du forsøger igen på autopilot — så ved
+					du, om du skulle have delt bidderne anderledes eller skruet anderledes.
+				</p>
+
+				<h2>2. Tjek tidligt på korte programmer</h2>
+				<p>
+					På relativt korte programmer (under ca. et kvarter til små bidder) bipper eller kigger du ofte før
+					sluttiden. Åbn kort og vurder farve og tekstur; ved kød måler du kernetemperatur — du stoler ikke på gyldenskær alene. Risikoen ved kun at tilføje store minuttal i ét hug er mørk yderside og stadig fugtig
+					midte — temaet rundes af i{' '}
+					<a href="/guides/airfryer-typiske-fejl-og-loesninger">guiden til typiske fejl</a>.
+				</p>
+
+				<h2>3. Ovn først, så lokale faktorer</h2>
+				<p>
+					Læs først hvordan du <em>korrekt</em> kan omsætte ovn-retningslinjer i{' '}
+					<a href="/guides/ovn-til-airfryer-tid-temperatur">fra ovn til airfryer</a>. Derefter kigger du lokalt på
+					tykkelse, hvor meget marinade der sidder på overfladen, og om kurven stadig luftigt har plads på ét lag.
+				</p>
+
+				<h2>4. For meget på én gang = længere “damp-del” før sprødt</h2>
+				<p>
+					Overfyldning giver lokal fugtighed og kan gøre, at tingene tager lang tid om at komme ud af “damp-fasen”.
+					Selve displayets minutter forklarer ikke nødvendigvis det. Svaret er ofte ikke bare mere tid —
+					udtynd også kurven eller kør ekstra batch; se{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">Kapacitet, damp og batch</a>.
+				</p>
+
+				<h2>5. Ryst eller vend hvor fugt eller olie klumper</h2>
+				<p>
+					Ujævn optøning, marinade der samler sig eller bidder der overlapper vil have godt af en midtpause med ryst eller
+					vending — ligesom du kender fra manualen eller <a href="/guides/pommes-og-fritter-i-airfryer">pommes-guiden</a>.
+				</p>
+
+				<h2>6. Frost eller køleskabskoldt ændrer startfasen</h2>
+				<p>
+					Hvis maden stadig har koldt i midten (frost eller lige fra køleskab), føles programmet ofte anderledes end
+					displayets tal — først skal varmen rejse ind, før ydersiden og kernen matcher. Se principper om frost og luft{' '}
+					i <a href="/guides/frossen-mad-airfryer">Frossen mad i airfryer</a>.
+				</p>
+
+				<h2>7. Kød og fisk kræver mere end farve på kanten</h2>
+				<p>
+					Ved tyk kylling, steg eller fisk <strong>må du måle eller skære lidt op</strong> før du lukker middagen –
+					skemaerne står samlet under <a href="/guides/kernetemperatur-airfryer">kernetemperatur-guiden</a>.
+				</p>
+
+				<h2>8. Gem dine vinder-tider lokalt</h2>
+				<p>
+					Én kort bemærkning på køleskabet eller i telefonen (“grøntsagstern 185 ° · 14 min · ryst ved 8”) gør gentagelse
+					næste uge nem uden tilfældige gæt.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-tid-og-afproevning" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

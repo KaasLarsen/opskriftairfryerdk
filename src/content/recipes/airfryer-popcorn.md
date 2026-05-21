@@ -1,10 +1,10 @@
 ---
 title: 'Popcorn i airfryer – kan det lade sig gøre? (myter og bedre metoder)'
-description: 'Popcorn i airfryer — virker det? Ærlig guide: mange manualer siger nej; små batch, rist og opsyn. Brandfare, olie og bedre alternativer (gryde, popcornmaskine).'
+description: 'Kan man lave popcorn i airfryer? Ofte frarådet i manualen — læs her hvorfor, og hvordan du evt. prøver meget små batch med opsyn og olie på kernerne. Gryde eller popcornmaskine er sjældent risikofyldte alternativer.'
 heroImage: '/images/recipes/airfryer-popcorn.png'
 heroAlt: 'Skål fyldt med frisk popcorn på linned, saltkorn på bordet og airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 3
 cookMinutes: 12
 servings: '2 små portioner (eksperiment)'
@@ -45,6 +45,8 @@ tips:
   - 'Metalfolie-kugle i airfryer som “popcorn trick” frarådes ofte af producenter — følg kun dokumenterede metoder.'
   - 'Airfryer med glaslåg kan være lettere at overvåge end lukkede kurve.'
 faq:
+  - question: 'Popcorn i airfryer — er det det samme som popcornmaskine?'
+    answer: 'Nej. En popcornmaskine eller gryde med låg er bygget til kerner der hopper voldsomt; airfryer har varmluft og små huller der kan gøre løse kerner problematiske. Læs altid manualen på din model.'
   - question: 'Fungerer popcorn i alle airfryere?'
     answer: 'Nej. Nogle producenter fraråder det. Læs manualen — luftcirkulation og små løse kerner kan give brandrisiko.'
   - question: 'Popcorn uden olie i airfryer?'

@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-mealprep-og-batch';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Meal prep i airfryer: planlæg uge, fordamp og genopvarm uden slap resultat | ${SITE_NAME}`;
+const description =
+	'Sådan bruger du airfryer sundag eller hverdag til batch: nedkøling, fordampning før genopvarmning, krydre tidligt eller sent, og hvornår mikro eller ovn stadig vinder på saucer og supper.';
+
+const published = '2026-05-21T13:35:00.000Z';
+const modified = '2026-05-21T13:35:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-mealprep-og-batch.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Meal prep skåle og beholdere ved siden af airfryer med portioner klar til ugen';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Bliver mad tør eller slap efter gentagen opvarmning?',
+		a: 'Kød- og fyld-retter må ofte undvære “sprød dag ét” ved tredje gang — del saucer eller glasur til sidst eller genopvarm i airfryer i korte trin i stedet for én lang mikrobølgepulser.',
+	},
+	{
+		q: 'Kan jeg lave hele ugen på én stor batch pommes?',
+		a: 'Meget sjældent med samme crunch uden dehydrering. Til kartofler passer meal prep bedre som både eller små bidder du kort genopvarmer i airfryer — før du lover sprøde pommes fem dage på stribe, se guiden Pommes og fritter på sitet.',
+	},
+	{
+		q: 'Hvordan undgår jeg soppe i bunden ved opbevaring?',
+		a: 'Hæld aftap før du lukker beholdere og undgå at lagre marinade som en sø på bunden ved kødet. Lad maden luftigt køle af på rist før køleskab, så du minimerer kondens i boksen.',
+	},
+	{
+		q: 'Hvilke retter fungerer bedst?',
+		a: 'Kyllingetern, meatballs, grillede grøntsagsblanding uden overdrevet marinade, eller side-diske der må have små brune kanter ved gen-varm.',
+	},
+	{
+		q: 'Hvor længe holder måltidskasser på køl?',
+		a: 'Følg de sædvanlige kolde-kæde‑regler: afkøl inden lukning af bokse og spis inden for de dage du plejer ved kylling eller kød — airfryer ændrer ikke holdbarheden.',
+	},
+	{
+		q: 'Hvordan genopvarmer jeg med mindst tab af tekstur?',
+		a: 'Brug korte spurter ved moderat varme og tjek halvvejs — se vores samlede tricks i genopvarmnings-guiden (under Guides → Genopvarmning).',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Meal prep og batch', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Meal prep i airfryer og batch-plan uden slidt sprødhed',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+		mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Meal prep og batch</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Hverdag</p>
+				<h1>Meal prep og batch-arbejde i airfryer — uden at narre dig selv på sprødhed</h1>
+				<p class="guide-lead">
+					Airfryer er god til at <strong>brune og igangsætte</strong> flere måltiders proteiner og grønt på relativt kort tid — men klassisk Instagram-mealprep med “stadig fries fem dage senere som dag ét” eksisterer sjældent uden strukturtradeoffs. Denne guide hjælper dig med at booke apparatets styrker ind i en ærlig ugerytme —
+					linker også til <a href="/guides/genopvarmning-i-airfryer">genopvarmning</a>,{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet og damp</a>,{' '}
+					<a href="/guides/airfryer-tid-og-afproevning">tider og første forsøgs-kalibrering</a>{' '}
+					og <a href="/guides/kernetemperatur-airfryer">kernetemperatur ved kød</a>.
+				</p>
+
+				<h2>1. Adskil “dag ét sprødt” fra “dag tre praktisk”</h2>
+				<p>
+					Sprød yderside første gang bliver sjældent identisk efter genopvarmning. Planlæg derfor meal prep ud fra ærlige mål:
+					skiller du sauce, dressing og krydret glaze til ved servering første gang, holder kødet og tilbehørene bedre struktur ved næste opvarmning.
+				</p>
+
+				<h2>2. Afkøl før du lukker boksen</h2>
+				<p>
+					Varm mad der pakkes fugtigt i tætbundne bokse giver ekstra damp og slap tekstur næste dag. Luft af på rist eller tallerken til sikkert niveau før køl — som du alligevel ville efter klassisk kokkeri.
+				</p>
+
+				<h2>3. Batch i hold fremfor overfyldt kurv</h2>
+				<p>
+					En “hele ugen på én omgang”-kurv giver lokalt fugt før du lukker ugen. Kør hellere to luftige serier eller supplér sidste dage med en frisk sauté — principper fra{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitetsguiden</a> matcher meal prep også.
+				</p>
+
+				<h2>4. Krydderfaser</h2>
+				<p>
+					Sødt og sukkerholdige glazes kan blive bittere ved gentagen højvarme på tirsdagens portion. Pensl først til sidst, eller gem glazen koldt og fordél ved servering og kort finishing.
+				</p>
+
+				<h2>5. Gem dine egne genopvarmningsnoter</h2>
+				<p>
+					Beholdertype og model varierer — notér ét par linjer hvad der virkede ved genopvarmning af netop dine bokse, så du slipper at gætte næste søndag.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-mealprep-og-batch" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+					faqItems.map((item) => (
+						<details>
+							<summary>{item.q}</summary>
+							<p>{item.a}</p>
+						</details>
+					))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

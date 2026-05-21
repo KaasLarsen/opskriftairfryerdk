@@ -1,10 +1,10 @@
 ---
-title: 'Pandekager i airfryer – amerikanske tykke kager og bananpandekager'
-description: 'Pandekager i airfryer i silikone eller små skåle: 10–14 min / 175 °C, bagepulver og kærnemælk. Bananpandekager, brunch uden pande. FAQ når de bliver flade.'
+title: 'Pandekager i airfryer – amerikanske og bananpandekager (tid og form)'
+description: 'Pandekager i airfryer tid: amerikanske tykke pandekager som små muffins i silicone ofte 10–14 min ved 175 °C. Bananpandekager: mos banan i dejen og giv lidt ekstra tid. Tynde pandekager som på panden får du sjældent 1:1 — her er til gengæld stabil brunch uden splash.'
 heroImage: '/images/recipes/airfryer-pandekager.png'
 heroAlt: 'Stak af tykke amerikanske pandekager med sirup, flormelis og friske bær på hvid tallerken, airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 8
 cookMinutes: 14
 servings: '4 portioner (8 små pandekager)'
@@ -18,7 +18,8 @@ keywords:
   - pandekager i airfryer tid
   - amerikanske pandekager i airfryer
   - airfryer pandekager
-  - bananpandekager i airfryer
+  - pandekager i airfryer hvor længe
+  - bananpandekager airfryer tid
 intro: |
   Klassiske **tynde pandekager** som på panden får du sjældent identiske i airfryer — til gengæld er **amerikansk inspirerede**, lidt tykkere kager i **silikoneform** eller små **cocotte**-skål perfekte: ensartet gennembagning og ingen væltende dej.
 
@@ -43,12 +44,14 @@ instructions:
   - text: 'Bland mel, bagepulver, sukker og salt. Rør væde i – ikke for meget omrøring; små klumper er ok.'
   - text: 'Smør eller spray 8 små silikonemuffeforme eller små ovnfaste skåle.'
   - text: 'Forvarm airfryeren til 175 °C.'
-  - text: 'FYld formene ca. ¾ med dej. Steg 10–12 minutter til gyldne og tør pind/test kommer ren – luftfritusere varierer; tykke forme kan kræve 2 min ekstra.'
+  - text: 'Fyld formene ca. ¾ med dej. Steg 10–12 minutter til gyldne og tør pind/test kommer ren – luftfriture varierer; tykke forme kan kræve 2 min ekstra.'
   - text: 'Løs med en smal kniv og server straks.'
 tips:
   - 'Ingen silikone? Brug små portionsforme af metal med god fedtpegning — ingen teflon uden at tjekke max-temperatur.'
   - 'Til mini-amerikanere: halvér tiden hvis du bruger meget små forme.'
 faq:
+  - question: 'Pandekager i airfryer — kan man lave klassiske tynde pandekager?'
+    answer: 'Ikke ligesom på en varm pande: airfryer er bedst til små fyldte forme eller tykkere “amerikanske” pandekager. Til tynde pandekager brug stadig panden eller se vores andre brunch-opskrifter.'
   - question: 'Hvorfor bliver mine pandekager flade i airfryer?'
     answer: 'Ofte for lidt hævemiddel, for gammel bagepulver eller for langsom forvarmning. Tjek også at formen ikke er kold og våd.'
   - question: 'Bananpandekager i airfryer – justering?'

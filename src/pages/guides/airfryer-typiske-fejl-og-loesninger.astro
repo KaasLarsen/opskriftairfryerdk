@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-typiske-fejl-og-loesninger';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Mad bliver ikke sprød i airfryer? 10 typiske fejl (og hvad du gør i stedet) | ${SITE_NAME}`;
+const description =
+	'Gennemgå de mest almindelige årsager til blød mad, kedelig farve eller røg i airfryer — og de simple vaner der løser det. Til link til pommes, kapacitet og olieguides.';
+
+const published = '2026-05-21T09:00:00.000Z';
+const modified = '2026-05-21T09:00:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-typiske-fejl-og-loesninger.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Kontrast mellem bløde og sprøde pommes i airfryer-kurv – visuelt for typiske fejl og løsninger';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Hvorfor bliver min mad altid blød i airfryer?',
+		a: 'Oftest for fyldt kurv (damp i stedet for ristning), våd overflade eller for lidt luft mellem stykkerne. Start med ét lag og del i batch — se kapacitetguiden.',
+	},
+	{
+		q: 'Hjælper det at skrue 30 grader op hvis tingene er bløde?',
+		a: 'Ikke pålideligt — du kan få sort yderside og stadig fugtig midte. Reducer mængde, tør overfladen og giv luft før du skruer aggressivt op.',
+	},
+	{
+		q: 'Kan bagepapir gøre resultatet dårligere?',
+		a: 'Hvis papiret dækker hele bunden eller flyver op mod varmeelementet, kan cirkulationen blokeres eller der opstår brandfare. Brug perforeret airfryer-papir efter manualen.',
+	},
+	{
+		q: 'Hvad betyder “gylden” ift. kød og kylling?',
+		a: 'Farve lover ikke gennemstegning. Brug temperatur eller skær — se kernetemperatur-guiden til korte oversigter.',
+	},
+	{
+		q: 'Hvorfor lugter det brændt selv maden ser fin ud?',
+		a: 'Ophobet fedt på varmelegeme eller bakke, dryp fra marinade eller små krympede stykker. Rengør efter besked fra producent og undgå for meget stegefedt opsamlet i kurven.',
+	},
+	{
+		q: 'Når må jeg acceptere at airfryer ikke er optimal til netop den ret?',
+		a: 'Meget store bradepandekager, flere liter våd sauce eller retter der kræver steam uden udluftning — ovn eller komfur kan være bedre værktøj.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Typiske fejl og løsninger', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Typiske airfryer-fejl: maden bliver ikke sprød (og hvad du gør i stedet)',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Typiske fejl</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Fejlfinding</p>
+				<h1>Mad bliver ikke sprød i airfryer — 10 typiske fejl (og hvad du gør i stedet)</h1>
+				<p class="guide-lead">
+					Airfryer-loftet lyder nemt — men bag resultatet ligger lidt køkkenskik: luft mellem maden,
+					passende fugtighed og ikke mindst <strong>realistiske mængder i kurven</strong>. Denne liste er lavet
+					til alle de “hvorfor er det stadig slap?”-aftener. Den erstatter ikke manualen eller brug af
+					termometer ved kød; den supplerer vores øvrige guider om{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet</a>,
+					<a href="/guides/sproed-med-mindre-olie">sprødhed med lidt olie</a> og{' '}
+					<a href="/guides/airfryer-for-begyndere">begyndertips</a>.
+				</p>
+
+				<h2>1. Kurven er fyldt “for godt til at være sandt”</h2>
+				<p>
+					<strong>Løsning:</strong> et lag med luft eller to serier på kort tid. Længere tid i en fyldt kurv er
+					ofte <em>dampkogning</em> — ikke ekstra crunch. Trin-for-trin: batchlogik og tegn på overfyldning i{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">Kapacitet, damp og batch</a>.
+				</p>
+
+				<h2>2. Overfladen starter for våd</h2>
+				<p>
+					Marinade eller skylning uden aftørring øger damp ved start. <strong>Løsning:</strong> dup med
+					køkkenrulle, aftap marinade og brug kun det olielag ovenpå maden du reelt vil have — forklaret i{' '}
+					<a href="/guides/sproed-med-mindre-olie">Sprød med mindre olie</a>.
+				</p>
+
+				<h2>3. Du skipper ryst eller vending</h2>
+				<p>
+					Små stykker ligger i skygge for hinanden.<strong>Løsning:</strong> ryst eller vend halvvejs som på
+					<a href="/guides/pommes-og-fritter-i-airfryer">pommesguiden</a> — også relevant til grønt og
+					panerede bidder.
+				</p>
+
+				<h2>4. Fryseretter uden luft eller for kold start</h2>
+				<p>
+					Islag og hurtig fugt ved optø/defrost skal have plads —
+					<a href="/guides/frossen-mad-airfryer">Frossen mad i airfryer</a> forklarer hvorfor ét lag stadig er
+					“reglen”.
+				</p>
+
+				<h2>5. Du kopierer ovn-tid 1:1</h2>
+				<p>
+					Airfryer kan være hurtigere lokalt rundt om maden, men også give mørk yderside før indre er med.
+					Konverteringen er bedre med tommelfingerregler —
+					<a href="/guides/ovn-til-airfryer-tid-temperatur">Fra ovn til airfryer</a> —
+					kombineret med at du tjekker to minutter før sluttid og justerer næste gang.
+				</p>
+
+				<h2>6. Sauce og fyld havner som en sø på bunden</h2>
+				<p>
+					Væde der samler i bunden fordampes op i tingene eller drypper på varmere zoner —
+					<a href="/guides/fejlfinding-roeg-fedt-brandalarm">Røg- og fedt-guiden</a> beskriver både lugt og
+					faretegn ved for meget drip.
+				</p>
+
+				<h2>7. For lidt eller for meget fedt til panering/breadcrumb</h2>
+				<p>
+					<strong>Ingen fedt:</strong> tørt pulver + varmluft kan blive brusket eller bleget.
+					<strong>For meget:</strong> løber sammen eller brænder før indre er færdig. Pensel eller spraylag i
+					tynde stryg — temaet udbygges i <a href="/guides/sproed-med-mindre-olie">olie-guiden</a>.
+				</p>
+
+				<h2>8. Pizza og brød: for meget fugt øverst, for tyk bund nedenunder</h2>
+				<p>
+					Sauce-lag eller store klumper topping damper ned i dejen —
+					<a href="/guides/pizza-i-airfryer">Pizza i airfryer</a> og måske konkret opskrift{' '}
+					<a href="/opskrifter/airfryer-pizza">Mini pizza opskrift</a>.
+				</p>
+
+				<h2>9. Blind tillid til gylden farve på kylling eller kød</h2>
+				<p>
+					Brug måling eller skyl — skema i <a href="/guides/kernetemperatur-airfryer">kernetemperatur</a>.
+				</p>
+
+				<h2>10. Beskidt filter / fedt i maskinen giver “brændt” smag</h2>
+				<p>
+					Smut der os’er smitter af på næste batch. Følg <a href="/guides/rengoering-lugt-airfryer">rengøring</a>
+					så den ikke står i køen efter flere ugers stegefedt.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-typiske-fejl-og-loesninger" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

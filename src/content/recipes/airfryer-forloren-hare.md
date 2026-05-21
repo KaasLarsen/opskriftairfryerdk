@@ -1,10 +1,10 @@
 ---
 title: 'Forloren hare i airfryer – bacon, sovs og klassisk farsbrød'
-description: 'Forloren hare i airfryer: 34–42 min for 750 g fars, 170–180 °C, bacon på toppen, kernetemp ca. 72 °C. Dansk farsbrød med brun sovs — tid, temperatur og typiske fejl.'
+description: 'Forloren hare i airfryer (opskrift): 750 g fladt brød, typisk ca. 34–42 min i alt ved 170–180 °C, bacon/sprød kant og kerne omkring 72 °C. Brun sovs ved siden af — undgår tør fars ved form og fugtighed.'
 heroImage: '/images/recipes/airfryer-forloren-hare.png'
 heroAlt: 'Lys appetitlig madfoto: skiver af forloren hare med bacon på tallerken, lyst træbord, airfryer i blødt fokus i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 25
 cookMinutes: 42
 servings: '4 portioner'
@@ -18,7 +18,8 @@ keywords:
   - forloren hare i airfryer tid
   - farsbrød i airfryer
   - dansk hovedret airfryer
-  - bacon farsbrød airfryer
+  - forloren hare opskrift airfryer
+  - hvor lang tid forloren hare airfryer
 intro: |
   **Forloren hare** er dansk **farsbrød** med **bacon** på — ofte serveret med **brun sovs**, **kogte kartofler** og **tyttebær** eller syltet agurk. I airfryer får du **sprødere bacon og kant** end i fade i ovn, forudsat at brødet ikke er så højt, at det rammer varmeelementet, og at du giver **_tid til kernevarme**.
 
@@ -60,6 +61,8 @@ tips:
   - 'Bacon slipper fedt: tørk bunden af kurv mellem hold hvis du laver dobbelt portion.'
   - 'Uden termometer: midten skal være ensfarvet uden lyserød fars; saft klar — ikke rosa.'
 faq:
+  - question: 'Er forloren hare i airfryer samme opskrift som i ovn?'
+    answer: 'Fars, løg, æg, rasp og krydderi er klassisk den samme type opskrift — forskellen er varme og fugt: i airfryer skal brødet være fladere og have styr på bacon og kerne (~72 °C), og du laver gerne ekstra bouillon eller fond til brun sovs fordi sky fra maskinen kan være begrænset.'
   - question: 'Hvorfor blev min forloren hare tør?'
     answer: 'Ofte for lang tid eller for magert kød uden nok bindeled (mælk/rasp). Skru ned på slutminutter næste gang; lidt mere mælk eller ét ekstra æggeblomme kan hjælpe, uden at farsen bliver flydende.'
   - question: 'Kan jeg bruge form i airfryer?'

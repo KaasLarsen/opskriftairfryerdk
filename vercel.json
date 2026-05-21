@@ -7,6 +7,116 @@
 			"permanent": true
 		},
 		{
+			"source": "/guides/airfryer-fejl-og-fix",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-fejl-og-fix.html",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger",
+			"permanent": true
+		},
+		{
+			"source": "/guides/maden-bliver-ikke-sproed-10-typiske-fejl",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger",
+			"permanent": true
+		},
+		{
+			"source": "/guides/maden-bliver-ikke-sproed-10-typiske-fejl.html",
+			"destination": "/guides/airfryer-typiske-fejl-og-loesninger",
+			"permanent": true
+		},
+		{
+			"source": "/guides/min-airfryer-larmer-er-det-normalt",
+			"destination": "/guides/airfryer-stoej-og-lyde",
+			"permanent": true
+		},
+		{
+			"source": "/guides/min-airfryer-larmer-er-det-normalt.html",
+			"destination": "/guides/airfryer-stoej-og-lyde",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-stoerrelse-4l-5l-8l-hvor-stor-skal-du-vaelge",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-stoerrelse-4l-5l-8l-hvor-stor-skal-du-vaelge.html",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-rengoering",
+			"destination": "/guides/rengoering-lugt-airfryer",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-rengoering.html",
+			"destination": "/guides/rengoering-lugt-airfryer",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-energi",
+			"destination": "/guides/stroemforbrug-airfryer-vs-ovn",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-energi.html",
+			"destination": "/guides/stroemforbrug-airfryer-vs-ovn",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-tider",
+			"destination": "/guides/airfryer-tid-og-afproevning",
+			"permanent": true
+		},
+		{
+			"source": "/guides/airfryer-tider.html",
+			"destination": "/guides/airfryer-tid-og-afproevning",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/brunede-kartofler-i-airfryer",
+			"destination": "/opskrifter/airfryer-brunede-kartofler",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/brunede-kartofler-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-brunede-kartofler",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bagte-paerer-med-honning-og-noedder-i-airfryer",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bagte-paerer-med-honning-og-noedder-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kyllingefilet-i-airfryer",
+			"destination": "/opskrifter/airfryer-kyllingebryst",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kyllingefilet-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kyllingebryst",
+			"permanent": true
+		},
+		{
+			"source": "/kapacitet/8liter",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide",
+			"permanent": true
+		},
+		{
+			"source": "/kapacitet/8liter/",
+			"destination": "/guides/airfryer-liter-kurvstorrelse-guide",
+			"permanent": true
+		},
+		{
 			"source": "/%E2%98%80%EF%B8%8F-10-nemme-sommerretter-i-airfryer-let-laekkert-og-hurtigt-paa-varme-dage",
 			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
 			"permanent": true
@@ -1013,7 +1123,7 @@
 		},
 		{
 			"source": "/brunede-kartofler-i-airfryer",
-			"destination": "/opskrifter/airfryer-brunede-kartofler",
+			"destination": "/guides/jul-i-airfryer",
 			"permanent": true
 		},
 		{
@@ -1997,11 +2107,6 @@
 			"permanent": true
 		},
 		{
-			"source": "/opskrifter/bagte-paerer-med-honning-og-noedder-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
-			"permanent": true
-		},
-		{
 			"source": "/opskrifter/bagte-porrer-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-porre-baade-bacon",
 			"permanent": true
@@ -2648,11 +2753,6 @@
 		},
 		{
 			"source": "/opskrifter/kyllingebryst-med-bacon-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-kyllingebryst",
-			"permanent": true
-		},
-		{
-			"source": "/opskrifter/kyllingefilet-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-kyllingebryst",
 			"permanent": true
 		},
@@ -4092,6 +4192,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/bagte-paerer-honning-noedder-i-airfryer",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bagte-paerer-honning-noedder-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/bananbroed-i-airfryer",
 			"destination": "/opskrifter/airfryer-bananbroed",
 			"permanent": true
@@ -4099,6 +4209,16 @@
 		{
 			"source": "/opskrifter/bananbroed-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-bananbroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bananchips-i-airfryer",
+			"destination": "/opskrifter/airfryer-bananchips",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bananchips-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-bananchips",
 			"permanent": true
 		},
 		{
@@ -4154,11 +4274,6 @@
 		{
 			"source": "/opskrifter/brownies-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-brownies",
-			"permanent": true
-		},
-		{
-			"source": "/opskrifter/brunede-kartofler-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-brunede-kartofler",
 			"permanent": true
 		},
 		{
@@ -4534,6 +4649,16 @@
 		{
 			"source": "/opskrifter/hash-browns-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-hash-browns",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hasselback-kartofler-i-airfryer",
+			"destination": "/opskrifter/airfryer-hasselback-kartofler",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hasselback-kartofler-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-hasselback-kartofler",
 			"permanent": true
 		},
 		{

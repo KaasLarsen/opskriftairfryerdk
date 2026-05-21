@@ -1,10 +1,10 @@
 ---
-title: 'Blomkål i airfryer – med ost eller parmesan og sprøde kanter'
-description: 'Blomkål i airfryer med ost: 12–14 min / 195 °C som tilbehør; revet parmesan eller ost sidste 2 min. Sprøde kanter, FAQ om blomkål med ost og høj varme.'
+title: 'Blomkål i airfryer med ost eller parmesan – tid, temperatur og sprøde kanter'
+description: 'Blomkål i airfryer med ost: steg buketter 12–14 min ved 195 °C i ét lag; drys revet ost eller parmesan de sidste 1–2 min så den smelter uden at brænde. Blomkål med cheddar fungerer på samme måde som parmesan — tyndt lag til sidst.'
 heroImage: '/images/recipes/airfryer-blomkaal.png'
 heroAlt: 'Gyldne sprøde blomkålsbuketter med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-05-21
+updatedDate: 2026-05-22
 prepMinutes: 8
 cookMinutes: 14
 servings: '4 portioner'
@@ -20,7 +20,8 @@ keywords:
   - airfryer blomkål
   - blomkålsbuketter airfryer
   - grønt tilbehør airfryer
-  - nem blomkål opskrift
+  - blomkål med cheddar airfryer
+  - blomkål airfryer tid
 featured: true
 intro: |
   **Blomkål i airfryer** giver mere smag end kogt blomkål, fordi overfladen karamelliserer og får sprøde kanter — perfekt som hurtigt tilbehør eller som **blomkål med ost/parmesan** (revet ost på de sidste 2 minutter som i tips).
@@ -50,6 +51,8 @@ tips:
   - 'Tilføj lidt revet parmesan de sidste 2 minutter for ekstra smag.'
   - 'Brug karry eller spidskommen for variation.'
 faq:
+  - question: 'Blomkål med revet cheddar i airfryer — samme som parmesan?'
+    answer: 'Ja: steg buketter færdige som i opskriften, drys et tyndt lag revet cheddar de sidste 1–2 minutter og hold øje — kraftigere ost kan brune hurtigere end parmesan, så sænk evt. 5 °C på slutminutterne.'
   - question: 'Hvor længe skal blomkål have i airfryer?'
     answer: 'Typisk 12-14 minutter ved 195 °C afhængigt af buketstørrelse.'
   - question: 'Hvordan får jeg blomkål sprød i airfryer?'

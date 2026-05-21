@@ -65,9 +65,10 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 
 ## Prioritet: hvad vi gør først (indhold + jeres billeder)
 
-1. **Lav CTR, høj eksponering** (hurtigste gevinst): `airfryer-flaeskesteg`, `airfryer-forloren-hare`, `airfryer-popcorn`, `airfryer-leverpostej`, `airfryer-torsk` — skærp **title/description**, 1 tydeligt svar i intro, **FAQ** der matcher søgeord, og et **friskt hero** hvis billedet ikke matcher konkurrenterne.
+1. **Lav CTR, høj eksponering** (hurtigste gevinst): `airfryer-flaeskesteg`, `airfryer-forloren-hare`, `airfryer-popcorn`, `airfryer-leverpostej`, `airfryer-torsk` — skærp **title/description**, 1 tydeligt svar i intro, **FAQ** der matcher søgeord, og et **friskt hero** hvis billedet ikke matcher konkurrenterne. *(2026-05-22: title/description + FAQ/meta justeret på disse samt udvidet ribeye/entrecôte-afsnit på `airfryer-okseboef-steak`.)* **Samme dato, batch 2:** `airfryer-havregroed`, `airfryer-pandekager`, `airfryer-blomkaal`, `airfryer-chokoladekage-lille-form`, `airfryer-lammekoelle-skiver`, `airfryer-hel-kylling` — titel/description, keywords og FAQ til snippets (GSC top‑liste).
 2. **Okse/cluster**: `airfryer-okseboef-steak` dækker ribeye/entrecote — ensartet blok “Ribeye vs. entrecote” + samme struktur i FAQ.
 3. **Nye opskrifter kun når det mangler** — se `src/data/gsc-missing-recipe-urls.json` (fx brunede kartofler, bagte pærer, kyllingefilet): vurder om de skal laves som egne sider **med** `heroImage`/`heroAlt` og PNG i `public/images/recipes/`.
+   - *2026-05-21:* Dedikerede sider findes (`airfryer-brunede-kartofler`, `airfryer-bagte-paerer-honning-noedder`, `airfryer-kyllingebryst`); overrides i `recipe-legacy-redirect-overrides.json` peger `.html`/venlige slugs korrekt. `/kapacitet/8liter` → liter-guide.
 4. **klejner** er ude af top 50 i denne periode men stadig stærk side; behold ved næste gennemgang.
 
 ---
@@ -89,3 +90,5 @@ Den **liste med de 50 største forespørgsler** ovenfor kommer fra GSC-export *F
 For **guides** finder du stadig spor i **effektivitet → sider** (fx `src/data/gsc-sider.csv`): tidligere URL’er som `…/guides/airfryer-rengoering.html`, `airfryer-tider.html`, `airfryer-energi.html`, `maden-bliver-ikke-sproed…` m.fl. havde eksponeringer eller klik før de blev samlet eller redirect’et til nuværende guides (`gsc-generated-redirects.json` / `vercel.json`). Det er et godt krydstjek når du **prioriterer nye eller udbyggede guides** (rengøring, tid og strøm, sprødhed og typiske fejl).
 
 **Tip:** Udvid månedligt med et separat ark i GSC eller en kopi af *Forespørgsler* filtreret på tekst som “airfryer hvordan”, “rester”, “temperatur” osv., så guide-arbejde ikke kun styres af opskrifts-top‑50 ovenfor.
+
+**Sidst tilføjet (maj–jun 2026):** også guide om hvornår **ovn/komfur** er bedre end airfryer (`/guides/hvornaar-ovn-eller-komfur-fremfor-airfryer`); tidligere bagepapir/silikone og meal prep/batch samt redirects fra ældre venlige slugs til eksisterende opskrifter hvor dedikerede sider allerede findes (`brunede-kartofler-i-airfryer`, `bagte-paerer-…`, `kyllingefilet-i-airfryer`, `/kapacitet/8liter`).

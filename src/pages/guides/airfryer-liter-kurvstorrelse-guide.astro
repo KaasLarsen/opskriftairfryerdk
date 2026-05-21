@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-liter-kurvstorrelse-guide';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Airfryer 4 liter vs 8 liter — hvordan liter måles og hvad der passer jer | ${SITE_NAME}`;
+const description =
+	'Forstå kurvens effektive rum, målt volumen ved producent versus praktiske portioner, og hvornår dual zone eller stor enkeltkurv gør mening før køb.';
+
+const published = '2026-05-21T09:10:00.000Z';
+const modified = '2026-05-21T09:10:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-liter-kurvstorrelse-guide.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Oversigtlig sammenligning af stor og mindre airfryer-kurve med portionsskitse — kurv og liter forklaret';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Tæller alle producenter liter ens?',
+		a: 'Nej. Producenter måler volumen anderledes (med eller uden rist/håndtag, eller “samlet” ved dual-zone). Liter er grov vejviser — mål i gram og fodaftryk i køkkener betyder mest i praksis.',
+	},
+	{
+		q: 'Er “8 L familie” automatisk til fem personer?',
+		a: 'Kun hvis I laver ting der kan fyldes i ét luftigt lag eller I accepterer batch. Ét lag-reglen for sprødt gælder også store kurve — volumen hjælper bare med færre gentagelser.',
+	},
+	{
+		q: 'Hvornår giver dual zone mening fremfor en stor kurv?',
+		a: 'Når I ofte vil have forskellig tid eller temperatur samtidigt (fx grønt vs kød) uden kompromis. Kost og bordplads er typisk større end én stor kurv.',
+	},
+	{
+		q: 'Er lille kurv langsommere end stor?',
+		a: 'Effekt (watt) og design vejer tungere end volumen alene. En lille kurv ved høj effekt kan stadig levere sprødt hurtigt på små portioner — stor kurv hjælper batch-flow, ikke nødvendigvis fart pr. stk.',
+	},
+	{
+		q: 'Hvad med højglans skuffer vs ovale kurve?',
+		a: 'Form påvirker luftsti og hvor bredt ting kan ligge ud et lag. Åbn mål eller læs anmeldelser med fysiske mål før du binder dig til volumen-print på kassen.',
+	},
+	{
+		q: 'Hvor finder jeg anbefalinger til konkrete modeller?',
+		a: 'Læs vores bredere valg-framework i guiden hvilken airfryer og blandt airfryer-anmeldelser før du binder dig.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Liter og kurv', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Airfryer-liter og kurvstørrelse: 4 L, 6 L eller 8 L?',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Liter og kurv</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Køb og valg</p>
+				<h1>Airfryer-liter og kurv: hvad er forskellen på cirka 4, 6 og 8 liter?</h1>
+				<p class="guide-lead">
+					“Liter” på æsker er ikke et husbehov-nummer ligesom ovnliter — snarere en foreløbig idé om hvor
+					meget <strong>tredimensionelt rum din mad kan omgives af</strong> uden kontekst på form, watt og dine
+					vaner ved ét lag. Denne forklaring hjælper dig at matche
+					<a href="/guides/hvilken-airfryer">hvilken airfryer-guiden</a> med konkrete hverdagstal: portioner og
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet uden damp</a>.
+				</p>
+
+				<h2>Liter vs. målt fodaftryk</h2>
+				<p>
+					Én bred lav kurv fordeler mad bedre ud et lag end dyb smal kurv — selv ved “samme liter-print”. Åbn mål eller
+					læs anmeldelser med centimeter på indvendigt areal når muligt. Det slår marketing-tal ved stegeflade-behov for
+					<a href="/opskrifter/airfryer-flaeskesteg">flæskesteg</a>{' '}eller{' '}
+					<a href="/opskrifter/airfryer-kyllingebryst">store stykker kyllingebryst i ét lag</a>.
+				</p>
+
+				<h2>Hvem klarer sig oftest med omkring 4–5 L</h2>
+				<ul>
+					<li>1–2 personer der laver aftensportion ad gangen i ét eller to små lag.</li>
+					<li>Supplement til komfur/ovn: snacks, kartoflebåde, grøntsager eller genopvarmning.</li>
+					<li>Små køkkener eller hyppig opmagasinering hvor fodaftrykket må være minimalt.</li>
+				</ul>
+
+				<h2>Hvornår 6–7 L eller opefter bedst betaler sig</h2>
+				<ul>
+					<li>Familie på 3–4 der vil undgå tredje batch af pommes eller grøntsager — uden at skulle dele småhold efter småhold.</li>
+					<li>Hel kyllingesessioner eller større hakkebøffer uden klip til mindre bidder.</li>
+					<li>Mealprep med ensartede temperaturer — stadig ikke en undskyldning for dampfyldning; se kapacitetsguiden.</li>
+				</ul>
+
+				<h2>Dual zone eller en stor kurv</h2>
+				<p>
+					De løser ikke samme problem: Dual zone hjælper når du har <em>forskellig tid eller temperatur</em> i to zoner på én gang. En enkelt XL-kurv hjælper med
+					<em>flere gram pr. omgang</em> ved samme program. Tradeoffs udbygges i{' '}
+					<a href="/guides/hvilken-airfryer">hvilken airfryer</a>; se også ninja/dual-eksempler blandt{' '}
+					<a href="/anmeldelser">airfryer-anmeldelserne</a>.
+				</p>
+
+				<h2>Strøm og liter (kort)</h2>
+				<p>
+					Meget volumen ved lav watt kan frustrere — kombiner også med watt og opvarmningsadfærd før du vurderer
+					økonomi; se overslagsramme i{' '}
+					<a href="/guides/stroemforbrug-airfryer-vs-ovn">strømforbrug versus ovn</a>.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides/hvilken-airfryer">→ Til valg-guiden hvilken airfryer</a>
+				</p>
+				<p class="guide-back"><a href="/guides">← Tilbage til alle guides</a></p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-liter-kurvstorrelse-guide" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

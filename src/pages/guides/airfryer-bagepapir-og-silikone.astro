@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/airfryer-bagepapir-og-silikone';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Bagepapir og silikone i airfryer: sikkert og uden blokering af luft | ${SITE_NAME}`;
+const description =
+	'Bagepapir, perforeret airfryer-papir og silikoneforme: hvad der er forsvarligt, hvordan du holder papiret nede, og hvordan du undgår røgsæt eller tabt cirkulation.';
+
+const published = '2026-05-21T13:30:00.000Z';
+const modified = '2026-05-21T13:30:00.000Z';
+
+const heroImagePath = '/images/guides/airfryer-bagepapir-og-silikone.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Airfryer-kurv med perforated bagepapir og silikoneforme ved siden af — tema om sikkert tilbehør';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Kan jeg bruge helt almindeligt bagepapir i airfryer?',
+		a: 'Ofte ja som korte sessioner på bunden — men det skal ikke flyve op mod varmeelementet eller dække hele kurven luft-tæt. Perforeret airfryer-papir beregnet til varmluft giver klart mere fri cirkulation. Følg altid apparat og papirfabrik.',
+	},
+	{
+		q: 'Hvordan holder jeg papiret på plads?',
+		a: 'Vælg mindre stykker end kurvens bund, lad kanterne ikke stikke lodret op, og brug madens vægt (eller perforeringshuller og små lufthuller) til at stabilisere — aldrig metalliske clips der kan ødelægge nonstick eller løbe varmt.',
+	},
+	{
+		q: 'Gør bagepapir maden mere slap?',
+		a: 'Hvis papiret ligger som et stort fugtlag eller blokerer huller på risten, reduceres rist-effekten lokalt — du får langsommere bruning under bunden på netop de stykker. Brug perforeret papir eller udenpapir-zone.',
+	},
+	{
+		q: 'Hvad med silikonemåtter?',
+		a: 'Kun måtter beregnet til airfryer/ovnstemperatur med huller eller ribber der tillader luft. Flade plader uden hulmønster fungerer ofte som en “kogende” hindring under små bidder.',
+	},
+	{
+		q: 'Kan jeg lægge alufolie eller stanniol?',
+		a: 'Nogle manuals fraråder eller begrænser folie på grund af gnistrisiko og blokering af luft. Hvis apparatfabrikanten ikke tillader det, lad være. Er det udtrykkeligt tilladt — hold det småt, form det som bakke med kanter og undgå at dække hele loftet.',
+	},
+	{
+		q: 'Hvorfor blev mit papir brunt eller røglagt før maden?',
+		a: 'Ofte for stor flade ud mod varme eller olie/samlinger der drypper ned og oxideres hurtigt ved høj puls. Stop, rens og prøv med mindre papir, lavere starttemperatur eller kortere blok — eller undgå papir på akkurat dét element.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Bagepapir og silikone', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Bagepapir og silikone i airfryer — sikkert brug og bedre luft',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Bagepapir og silikone</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Bagepapir og silikone i airfryer — hvad er smart, og hvad er farligt</h1>
+				<p class="guide-lead">
+					Airfryer lever af <strong>fri luft rundt om maden</strong>. Bagepapir og silikonetilbehør kan spare rengøring — men beskæres forkert eller for stort kan de blokeres op mod varme eller gøre tingene fugtige i stedet for sprøde. Denne side samler forsvarlige tilgange og peger også på vores øvrige
+					emner om <a href="/guides/fejlfinding-roeg-fedt-brandalarm">røg og fedt</a>,
+					<a href="/guides/rengoering-lugt-airfryer">lugt fra ophobet fedt</a>,{' '}
+					<a href="/guides/airfryer-typiske-fejl-og-loesninger">typiske fejl når tingene forbliver slap</a> samt{' '}
+					<a href="/guides/tilbehoer-til-airfryer">tilbehør til airfryer</a>.
+				</p>
+
+				<h2>1. To regler før du lægger papir eller silikone i</h2>
+				<ul>
+					<li>Luften skal kunne rejse rundt langs kanter eller gennem huller — også under små bidder.</li>
+					<li>Intet løstsiddende må flyve rundt eller presse sig op hvor luften er mest koncentreret første minutter.</li>
+				</ul>
+
+				<h2>2. Almindeligt bagepapir vs perforeret airfryer-papir</h2>
+				<p>
+					Almindeligt bagepapir kan fungere på korte kørsler eller som lille måtte under marinade — men bredt ark uden huller reducerer lokalt airflow under bund-flader på kød, kager eller kartofler og kan give ujævn farve og mere damp. Luft-hullerede ark findes udtrykkeligt til maskiner med kraftige blæsere —
+					se også i <a href="/guides/kapacitet-damp-batch-airfryer">kapacitets-guiden</a> hvordan damp ælder resultater.
+				</p>
+
+				<h2>3. Silikonemåtter, skåle og muffin-huller</h2>
+				<p>
+					Silikone må være beregnet til de temperaturer du programmerer og skal stadig ikke fylde hele volumen ud uden spor til luften. Til æg, små tærter eller saftigt fjerkræ med sovs passer forme bedst når kanter holder væden og stadig ikke dækker varmlufts-hullerne i kurvens bund.
+				</p>
+
+				<h2>4. Ved røgtegn eller plastlugt midt i kørsel</h2>
+				<p>
+					<strong>Stop</strong>. Brune kanter eller stærk varm lugt ud over stege-duft kan tyde på at papiret sidder ud mod varme eller klistrer i fedt ophobet ved element. Sluk eller pause, lad køle kort kontrolleret åbnet,rens og nedjuster før genstart —
+					<a href="/guides/fejlfinding-roeg-fedt-brandalarm">fejlfindingsguiden</a> beskriver også brandalarm ved fedt-vs-damp-forveksling.
+				</p>
+
+				<h2>5. Rengøring efter papir eller silikone</h2>
+				<p>
+					Papir der har opsamlet olie kan klistre fast på nonstick eller rist — følg rengøring som fabrikanten anbefaler, så ikke belægningen slides. Flere rutiner i <a href="/guides/rengoering-lugt-airfryer">rengøringsguiden</a>.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="airfryer-bagepapir-og-silikone" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>

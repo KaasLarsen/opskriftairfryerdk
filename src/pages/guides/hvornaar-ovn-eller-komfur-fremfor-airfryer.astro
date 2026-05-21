@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GuidePriceRunnerSpotlight from '../../components/GuidePriceRunnerSpotlight.astro';
+import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
+
+const canonicalPath = '/guides/hvornaar-ovn-eller-komfur-fremfor-airfryer';
+const pageUrl = new URL(canonicalPath, SITE_URL).toString();
+const title = `Hvornår er ovn eller komfur bedre end airfryer? | ${SITE_NAME}`;
+const description =
+	'Airfryer er stærk til små portioner og sprød frakke — men ovn og komfur vinder på store bradepander, saucer, damp og ensartet kerne i tykke lag. Korte afgørelsesregler med links videre til strøm, kapacitet og tid.';
+
+const published = '2026-05-22T08:00:00.000Z';
+const modified = '2026-05-22T08:00:00.000Z';
+
+const heroImagePath = '/images/guides/hvornaar-ovn-eller-komfur-fremfor-airfryer.png';
+const heroImageWidth = 1536;
+const heroImageHeight = 1024;
+const heroAlt =
+	'Køkken med airfryer, ovn og gryde — visuelt valg mellem apparater til forskellig mad';
+const ogImage = new URL(heroImagePath, SITE_URL).toString();
+
+const faqItems = [
+	{
+		q: 'Skal jeg droppe airfryer til familiemiddage?',
+		a: 'Ikke som udgangspunkt — men når kurven ikke kan holde måltidsmængden i ét eller to luftige lag uden damp-kaos, giver ovn mere forudsigelig resultatskala. Kapacitet og damp forklares også i kapacitets-guiden på sitet.',
+	},
+	{
+		q: 'Hvorfor sagde min sauce brænde i airfryer?',
+		a: 'Lukket kurv fordampler og koncentrerer varme øverst; tynde lag sauce eller ketchup på kød kan karameliseres før kerne eller kartofler er med. Gryde eller ovnfad med låg passer bedre til lange fugtprogrammer.',
+	},
+	{
+		q: 'Er brød og kager bedst i airfryer?',
+		a: 'Små enheder eller muffins er fine. Store brød der skal hæve jævnt eller få skorpe på hele flasken udnytter tit ovn bedre på grund af rum og langsommere omsættelse af fugt.',
+	},
+	{
+		q: 'Gælder økonomi også?',
+		a: 'Ofte ja på meget store mængder eller lang lav ovntid — samme tema som vi gennemgår i guiden om strøm og ovn versus airfryer.',
+	},
+	{
+		q: 'Skal dampede grøntsager i airfryer?',
+		a: 'Airfryer er ikke dum dampkoger — vil du holde struktur ved damp uden crisp, er dampkurv eller gryde mere direkte. Vil du ha’ rist eller let bruning ovenpå fugtighed, kan airfryer stadig passe.',
+	},
+	{
+		q: 'Kan jeg bruge airfryer som “miniovn”?',
+		a: 'Til overlapsfunktion hvor måltidsdele passer i luftighed ja — til alt hvad en fuld familiefad plejer er ovn eller komfur oftere det rigtige værktøj.',
+	},
+];
+
+const breadcrumbJson = {
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Forside', item: `${SITE_URL}/` },
+		{ '@type': 'ListItem', position: 2, name: 'Guides', item: `${SITE_URL}/guides` },
+		{ '@type': 'ListItem', position: 3, name: 'Ovn og komfur vs. airfryer', item: pageUrl },
+	],
+};
+
+const webPageJson = {
+	'@type': 'WebPage',
+	'@id': `${pageUrl}#webpage`,
+	url: pageUrl,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	description,
+	inLanguage: 'da-DK',
+	isPartOf: { '@id': `${SITE_URL}/#website` },
+	datePublished: published,
+	dateModified: modified,
+};
+
+const articleJson = {
+	'@type': 'Article',
+	headline: 'Hvornår vælge ovn eller komfur i stedet for airfryer',
+	description,
+	image: ogImage,
+	inLanguage: 'da-DK',
+	datePublished: published,
+	dateModified: modified,
+	author: { '@id': `${SITE_URL}/#organization` },
+	publisher: { '@id': `${SITE_URL}/#organization` },
+	mainEntityOfPage: { '@id': `${pageUrl}#webpage` },
+};
+
+const faqJson = {
+	'@type': 'FAQPage',
+	mainEntity: faqItems.map((item) => ({
+		'@type': 'Question',
+		name: item.q,
+		acceptedAnswer: { '@type': 'Answer', text: item.a },
+	})),
+};
+
+const jsonLd = [
+	ORGANIZATION_JSON as Record<string, unknown>,
+	webPageJson,
+	articleJson,
+	breadcrumbJson,
+	faqJson,
+];
+---
+
+<BaseLayout
+	title={title}
+	{description}
+	{canonicalPath}
+	ogImage={ogImage}
+	ogImageAlt={heroAlt}
+	ogImageWidth={heroImageWidth}
+	ogImageHeight={heroImageHeight}
+	ogType="article"
+	articlePublishedTime={published}
+	articleModifiedTime={modified}
+	{jsonLd}
+>
+	<section class="section section--tight-top">
+		<div class="container">
+			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
+				<a href="/">Forside</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<a href="/guides">Guides</a>
+				<span class="recipe-breadcrumbs-sep" aria-hidden="true">/</span>
+				<span class="recipe-breadcrumbs-current">Ovn og komfur</span>
+			</nav>
+
+			<div class="guide-hero">
+				<img
+					src={heroImagePath}
+					alt={heroAlt}
+					width={heroImageWidth}
+					height={heroImageHeight}
+					loading="eager"
+					decoding="async"
+					fetchpriority="high"
+				/>
+			</div>
+
+			<article class="prose guide-prose">
+				<p class="section-kicker guide-article-kicker">Teknik</p>
+				<h1>Hvornår er ovn eller komfur bedre end airfryer?</h1>
+				<p class="guide-lead">
+					Airfryer er fremragende til <strong>små volumener</strong>, <strong>sprød yderside</strong> og <strong>kort opvarmning</strong> — men den erstatter ikke altid ovn og komfur. Denne side er en hurtig “værktøjsvælger”: hvornår du med fordel skifter tilbage til klassisk varme, og hvordan det hænger sammen med vores guider om{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitet og damp</a>,{' '}
+					<a href="/guides/stroemforbrug-airfryer-vs-ovn">strøm og ovn</a> og{' '}
+					<a href="/guides/ovn-til-airfryer-tid-temperatur">konvertering fra ovn til airfryer</a>.
+				</p>
+
+				<h2>1. Store mængder og familiemiddage</h2>
+				<p>
+					Når du skal have <em>alle</em> kartofler, kød og tilbehør færdige uden at køre fire ser efter hinanden, fylder ovnens bradepande eller flere riste mere end én airfryer-kurv realistisk kan uden at bygge damp op — se også batch-logik i{' '}
+					<a href="/guides/kapacitet-damp-batch-airfryer">kapacitetsguiden</a>.
+				</p>
+
+				<h2>2. Saucer, simre og lange fugtige forløb</h2>
+				<p>
+					Gryde med låg eller ovnfad med væske er bygget til langsom reduktion og jævn fordampning. Airfryer kan koge små mængder væske hurtigt ujævnt eller tørre overflader ud — især hvis låget åbnes sjældent.
+				</p>
+
+				<h2>3. Brød og kager der skal hæve rent</h2>
+				<p>
+					Større deje der skal have rolig, omsluttende varme uden at skorpen sætter for tidligt kan profitere på ovn. Små boller i airfryer kan være glimrende — men fuld rugbrødsform eller stor focaccia er ofte ovn-arbejde.
+				</p>
+
+				<h2>4. Ren damp uden “crisp-dagsorden”</h2>
+				<p>
+					Ønsker du grønt der primært skal dampes mørt uden at blive ristet, er dampkurv eller gryde mere ligetil end varmluft der konstant trækker fugt væk fra overfladen.
+				</p>
+
+				<h2>5. Økonomi og lang ovntid</h2>
+				<p>
+					På meget store mængder eller retter med lang, lav temperatur kan ovnens store rumstal — afhængigt af din elaftale og apparat — stadig være det naturlige valg; se overslag i{' '}
+					<a href="/guides/stroemforbrug-airfryer-vs-ovn">strømforbrugs-guiden</a>.
+				</p>
+
+				<p class="guide-back">
+					<a href="/guides">← Tilbage til alle guides</a>
+				</p>
+
+				<GuidePriceRunnerSpotlight guideId="hvornaar-ovn-eller-komfur-fremfor-airfryer" />
+
+				<h2>Ofte stillede spørgsmål</h2>
+				<div class="guide-faq">
+					{
+						faqItems.map((item) => (
+							<details>
+								<summary>{item.q}</summary>
+								<p>{item.a}</p>
+							</details>
+						))
+					}
+				</div>
+			</article>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.guide-hero {
+		max-width: 48rem;
+		margin-bottom: var(--space-8);
+		border-radius: var(--radius-xl);
+		overflow: hidden;
+		border: 1px solid rgb(0 0 0 / 6%);
+		box-shadow: var(--shadow-md);
+	}
+	.guide-hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+	.guide-prose {
+		max-width: 48rem;
+	}
+	.guide-article-kicker {
+		margin-bottom: var(--space-2);
+	}
+	.guide-lead {
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+	.guide-back {
+		margin-top: var(--space-8);
+	}
+	.guide-faq {
+		margin-top: var(--space-6);
+	}
+	.guide-faq details {
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4) var(--space-5);
+		margin-bottom: var(--space-3);
+		background: var(--color-surface);
+	}
+	.guide-faq summary {
+		font-weight: 650;
+		cursor: pointer;
+		color: var(--color-text);
+	}
+	.guide-faq details p {
+		margin: var(--space-4) 0 0;
+		color: var(--color-muted);
+		line-height: 1.65;
+	}
+</style>
