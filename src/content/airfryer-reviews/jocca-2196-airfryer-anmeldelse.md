@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/jocca-2196-airfryer-sort-5-l-1450-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1438169'
 brandLabel: 'JOCCA'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/5/4/5/9/6/2/7545962-large.jpg'
+heroAlt: 'JOCCA 2196 airfryer anmeldelse: 5 liter til budget-hverdag'
 rating: 3
 pros:
   - '5 L er en alsidig størrelse til par og mindre familier i ét lag'

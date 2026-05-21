@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/jocca-varmluftsfrituregryde-med-dobbelt-zone?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1641366'
 brandLabel: 'JOCCA'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/2/2/0/1/8/0/9220180-large.jpg'
+heroAlt: 'JOCCA airfryer med dobbelt zone anmeldelse: 8 liter i sort'
 rating: 4
 pros:
   - 'Dobbelt zone gør det lettere at køre forskellige tider eller temperaturer uden at blande alt i én kurv'

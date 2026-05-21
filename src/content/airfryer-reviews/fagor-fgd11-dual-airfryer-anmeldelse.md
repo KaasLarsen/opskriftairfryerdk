@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fagor-fgd11-varmluftsfrituregryde-sort-255-l-2800-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1564802'
 brandLabel: 'Fagor'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/8/2/2/3/0/5/3/8223053-large.jpg'
+heroAlt: 'Fagor FGD11 airfryer anmeldelse: dual-zone med to gange 5,5 liter'
 rating: 4
 pros:
   - 'To zoner á ca. 5,5 L gør det realistisk at køre forskellige retter eller tider uden at blande alt i én kurv'

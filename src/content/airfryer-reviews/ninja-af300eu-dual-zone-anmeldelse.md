@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkentilbehor/airfryer-ninja-foodi-dual-zone-af300eu-76-l-gra-1811844?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1811844'
 brandLabel: 'Ninja'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/1/0/8/6/8/9/3/0/10868930-large.jpg'
+heroAlt: 'Ninja Foodi Dual Zone AF300EU anmeldelse: 7,6 L i to zoner'
 rating: 5
 pros:
   - 'Dual Zone er Ninjas signatur: ofte nemmere end to separate maskiner'

@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/smeg-varmluftsfrituregryde-med-eu-stik?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1640285'
 brandLabel: 'Smeg'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/1/7/1/9/0/4/9171904-large.jpg'
+heroAlt: 'Smeg airfryer med EU-stik anmeldelse: designfokus og kompakt format'
 rating: 4
 pros:
   - 'Smeg er ofte valgt for æstetik og køkkenlinje – oplagt hvis airfryeren skal matche andet Smeg-udstyr'

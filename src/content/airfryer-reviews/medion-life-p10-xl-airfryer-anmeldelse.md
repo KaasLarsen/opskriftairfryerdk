@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-life-p10-xl-varmluftsfrituregryde-hvid-68-l-2150-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1438168'
 brandLabel: 'Medion'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/5/4/5/9/6/0/7545960-large.jpg'
+heroAlt: 'Medion LIFE P10 XL airfryer anmeldelse: 6,8 liter i hvid'
 rating: 4
 pros:
   - '6,8 L og 2150 W matcher godt til familien, der laver middag i ét lag'

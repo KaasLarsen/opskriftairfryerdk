@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/russell-hobbs-varmluftsfrituregryde-airfryer-med-eu-stik?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1641147'
 brandLabel: 'Russell Hobbs'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/2/1/9/2/4/5/9219245-large.jpg'
+heroAlt: 'Russell Hobbs SatisFry 27620-56 airfryer anmeldelse: 5,5 liter i sort'
 rating: 4
 pros:
   - '5,5 L er et praktisk trin op fra rene 4–5 L modeller uanset husstandsstørrelse'

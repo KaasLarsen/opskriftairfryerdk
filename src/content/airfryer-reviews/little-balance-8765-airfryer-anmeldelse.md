@@ -6,6 +6,8 @@ pubDate: 2026-04-06
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/little-balance-8765-airfryer-9-l-2460-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1415102'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/4/3/6/8/9/3/7436893-large.jpg'
+heroAlt: 'Little Balance 8765 airfryer anmeldelse: 9 liter og 2460 W'
 rating: 4
 pros:
   - '9 L giver ofte den ekstra plads, mindre maskiner mangler til familien eller meal-prep'

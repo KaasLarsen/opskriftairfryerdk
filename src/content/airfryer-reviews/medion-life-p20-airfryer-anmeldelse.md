@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-life-p20-varmluftsfriture-87-l-2-kurve-2600-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1414986'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/4/3/6/4/7/0/7436470-large.jpg'
+heroAlt: 'Medion LIFE P20 airfryer anmeldelse: 8,7 liter med to kurve'
 rating: 4
 pros:
   - 'To kurve og høj samlet kapacitet gør det nemmere at dele retter eller køre større mængder'

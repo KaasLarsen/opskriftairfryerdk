@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/ariete-airfryer-4616-sort-1300-w-26-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1094275'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/4/8/9/5/7/6/4/4895764-large.jpg'
+heroAlt: 'Ariete 4616 airfryer anmeldelse: kompakt 2,6 liter til små køkkener'
 rating: 3
 pros:
   - 'Kompakt 2,6 L – ideel hvis bordpladsen er trang eller du primært laver snacks til 1–2 personer'

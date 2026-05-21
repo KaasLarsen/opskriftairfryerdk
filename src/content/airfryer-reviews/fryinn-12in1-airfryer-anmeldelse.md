@@ -6,6 +6,8 @@ pubDate: 2026-04-05
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fryinn-12in1-varmluftsfrituregryde-med-grill-tilbehor-og-opskriftsbog-6-l-3400-w-sort-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1076992'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/4/8/2/3/7/7/6/4823776-large.jpg'
+heroAlt: 'Fryinn 12-i-1 airfryer anmeldelse: grill, tilbehør og 6 liter i ét'
 rating: 4
 pros:
   - '12-i-1-konceptet appellerer, hvis du vil samle flere funktioner omkring én maskine'

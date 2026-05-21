@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/continental-edison-varmluftsfrituregryde-9-l-sort-2400-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1407999'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/3/9/5/9/4/2/7395942-large.jpg'
+heroAlt: 'Continental Edison 9 L dual-skuffer anmeldelse: to zoner på én maskine'
 rating: 4
 pros:
   - 'To skuffer giver mulighed for forskellige retter eller temperaturer uden to maskiner'

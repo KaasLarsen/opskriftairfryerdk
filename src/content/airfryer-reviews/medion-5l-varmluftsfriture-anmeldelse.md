@@ -6,6 +6,8 @@ pubDate: 2026-04-05
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-varmluftsfrituregryde-5-l-1500-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1182866'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/5/3/1/8/6/7/8/5318678-large.jpg'
+heroAlt: 'Medion 5 L airfryer anmeldelse: diskret størrelse til hverdagen'
 rating: 4
 pros:
   - '5 L rammer bredden for par og mindre familier i hverdagen'

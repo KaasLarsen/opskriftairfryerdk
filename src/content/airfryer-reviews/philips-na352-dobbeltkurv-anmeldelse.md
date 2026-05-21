@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/philips-airfryer-na352-04-sort-9-l-dobbeltkurv-2750-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1564809'
 brandLabel: 'Philips'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/8/2/2/3/0/8/3/8223083-large.jpg'
+heroAlt: 'Philips NA352 airfryer anmeldelse: 9 L med dobbeltkurv og 2750 W'
 rating: 4
 pros:
   - 'Dobbeltkurv giver fleksibilitet til forskellige retter eller tider uden to maskiner'

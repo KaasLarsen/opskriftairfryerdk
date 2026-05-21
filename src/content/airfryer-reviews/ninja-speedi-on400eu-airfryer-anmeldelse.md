@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/ninja-speedi-varmluftsfrituregryde-57-l-gra?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1467369'
 brandLabel: 'Ninja'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/6/9/9/5/8/9/7699589-large.jpg'
+heroAlt: 'Ninja Speedi ON400EU anmeldelse: 5,7 liter i grå finish'
 rating: 4
 pros:
   - '5,7 L ligger i det populære mellemrum mellem kompakt og familiekurv'

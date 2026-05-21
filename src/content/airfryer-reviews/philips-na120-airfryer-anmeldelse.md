@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/varmluftsfrituregryde-philips-sort-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1825219'
 brandLabel: 'Philips'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/1/0/9/4/1/8/1/1/10941811-large.jpg'
+heroAlt: 'Philips NA120 airfryer anmeldelse: kompakt 4,2 L til hverdagen'
 rating: 4
 pros:
   - '4,2 L er oplagt til par, studie eller som “første Philips” uden at dominer køkkenet'

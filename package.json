@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "gsc:redirects": "node scripts/build-gsc-redirects.mjs && node scripts/generate-vercel-redirects.mjs",
-    "check:recipe-links": "node scripts/check-internal-recipe-links.mjs"
+    "check:recipe-links": "node scripts/check-internal-recipe-links.mjs",
+    "fill:review-images": "node scripts/fill-review-og-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

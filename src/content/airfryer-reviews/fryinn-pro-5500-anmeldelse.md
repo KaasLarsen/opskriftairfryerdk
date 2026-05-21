@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fryinn-pro-5500-airfryer-55-l-1700-w-sort-rustfrit-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '857718'
 brandLabel: 'Fryinn'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/3/6/1/0/6/5/7/3610657-large.jpg'
+heroAlt: 'Fryinn Pro 5500 airfryer anmeldelse: 5,5 liter i rustfri finish'
 rating: 4
 pros:
   - '5,5 L og 1700 W rammer et praktisk sweet spot til par og små husstande'

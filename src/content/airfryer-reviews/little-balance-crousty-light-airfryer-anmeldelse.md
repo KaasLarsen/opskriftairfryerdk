@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/little-balance-crousty-light-airfryer-5-l-1500-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1393217'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/3/1/6/7/8/6/7316786-large.jpg'
+heroAlt: 'Little Balance Crousty Light airfryer anmeldelse: 5 liter til hverdagen'
 rating: 4
 pros:
   - '5 L er en af de mest populære størrelser til par og små familier'

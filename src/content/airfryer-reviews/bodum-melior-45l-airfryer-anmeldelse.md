@@ -6,6 +6,8 @@ pubDate: 2026-04-06
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/bodum-melior-airfryer-sort-1500-w-45-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1272227'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/6/8/5/3/3/3/6685333-large.jpg'
+heroAlt: 'Bodum MELIOR airfryer anmeldelse: 4,5 liter (det kompakte valg)'
 rating: 4
 pros:
   - '4,5 L og 1500 W passer mange køkkener uden at dominere bordpladsen'

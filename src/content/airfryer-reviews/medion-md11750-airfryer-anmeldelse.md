@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/medion-md11750-airfryer-68-l-2150-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1438167'
 brandLabel: 'Medion'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/5/4/5/9/5/5/7545955-large.jpg'
+heroAlt: 'Medion MD11750 airfryer anmeldelse: 6,8 liter med 2150 W'
 rating: 4
 pros:
   - '6,8 L er et praktisk mellemtrin mellem standard 5 L og ægte XL'

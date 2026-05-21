@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/xiaomi-varmluftsfrituregryde-5-l-hvid?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1501628'
 brandLabel: 'Xiaomi'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/9/0/6/2/2/7/7906227-large.jpg'
+heroAlt: 'Xiaomi airfryer 5 liter anmeldelse: minimalistisk hvid til hverdagen'
 rating: 4
 pros:
   - '5 L passer mange par og mindre familier, når du arbejder i ét lag'

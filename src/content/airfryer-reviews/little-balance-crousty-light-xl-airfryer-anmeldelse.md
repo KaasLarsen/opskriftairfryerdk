@@ -6,6 +6,8 @@ pubDate: 2026-04-06
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/little-balance-crousty-light-xl-airfryer-7-l-1600-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1393264'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/3/1/6/8/7/7/7316877-large.jpg'
+heroAlt: 'Little Balance Crousty Light XL airfryer anmeldelse: 7 liter til familien'
 rating: 4
 pros:
   - '7 L giver mærkbart mere luft til større portioner end standard 5 L'

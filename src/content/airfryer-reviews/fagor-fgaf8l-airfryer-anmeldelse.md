@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fagor-fgaf8l-airfryer-8-l-1800-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1309774'
 brandLabel: 'Fagor'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/8/5/9/1/8/5/6859185-large.jpg'
+heroAlt: 'Fagor FGAF8L airfryer anmeldelse: 8 liter til større portioner'
 rating: 4
 pros:
   - '8 L giver ofte bedre plads til familien eller når du vil lave mere i ét lag'

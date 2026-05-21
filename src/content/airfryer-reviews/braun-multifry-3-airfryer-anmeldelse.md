@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/braun-varmluftsfrituregryde-sort-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1641353'
 brandLabel: 'Braun'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/2/2/0/1/2/4/9220124-large.jpg'
+heroAlt: 'Braun MultiFry 3 airfryer anmeldelse: 4,3 liter i kompakt format'
 rating: 4
 pros:
   - '4,3 L rammer mange par og små familier uden at kræve XL plads på bordet'

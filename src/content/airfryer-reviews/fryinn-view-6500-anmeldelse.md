@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fryinn-view-6500-airfryer-65-l-1700-w-sort-rustfrit-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1001998'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/4/9/5/6/4/2/6495642-large.jpg'
+heroAlt: 'Fryinn View 6500 airfryer anmeldelse: 6,5 liter med kikkert til maden'
 rating: 4
 pros:
   - 'Ca. 6,5 L giver god plads til familien eller større portioner i ét lag'

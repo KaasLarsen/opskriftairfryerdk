@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/beko-airfryer-76-l-sort-1900-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1226573'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/2/1/0/6/2/5/6210625-large.jpg'
+heroAlt: 'BEKO FRL3374B airfryer anmeldelse: 7,6 liter til den travle husstand'
 rating: 4
 pros:
   - 'Ca. 7,6 L giver ofte luft til familien uden at gå op i dual-drawer-kompleksitet'

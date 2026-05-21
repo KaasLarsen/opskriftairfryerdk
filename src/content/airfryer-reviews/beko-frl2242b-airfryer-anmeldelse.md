@@ -6,6 +6,8 @@ pubDate: 2026-04-05
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/beko-varmluftsfrituregryde-4-l-sort-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1221535'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/5/4/9/2/7/3/6/5492736-large.jpg'
+heroAlt: 'BEKO FRL2242B airfryer anmeldelse: 4 liter til det kompakte køkken'
 rating: 4
 pros:
   - '4 L er nem at finde plads til – ideelt til lejlighed, sommerhus eller supplement til ovnen'

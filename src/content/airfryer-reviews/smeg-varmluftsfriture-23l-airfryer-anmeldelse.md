@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/smeg-varmluftsfrituregryde-23-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1638986'
 brandLabel: 'Smeg'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/1/5/4/5/3/3/9154533-large.jpg'
+heroAlt: 'Smeg airfryer anmeldelse: 2,3 liter i kompakt premium-look'
 rating: 4
 pros:
   - '2,3 L er ideel til singler, par og som supplement, når plads vægter tungt'

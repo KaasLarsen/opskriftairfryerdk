@@ -6,6 +6,8 @@ pubDate: 2026-04-05
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-varmluftsfrituregryde-8-l-2850-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '888549'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/3/7/2/0/9/8/7/3720987-large.jpg'
+heroAlt: 'DOMO 8 L airfryer anmeldelse: stor kapacitet og høj effekt'
 rating: 4
 pros:
   - '8 L og 2850 W signalerer plads og kræft til familiemængder og større portioner'

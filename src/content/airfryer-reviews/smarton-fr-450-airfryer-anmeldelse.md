@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/smarton-fr-450-varmluftsfrituregryde-med-digitalt-display?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1645988'
 brandLabel: 'Smarton'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/2/8/9/2/8/4/9289284-large.jpg'
+heroAlt: 'Smarton FR 450 airfryer anmeldelse: 4,5 liter med digitalt display'
 rating: 3
 pros:
   - '4,5 L passer mange par og små husstande med ét luftigt lag'

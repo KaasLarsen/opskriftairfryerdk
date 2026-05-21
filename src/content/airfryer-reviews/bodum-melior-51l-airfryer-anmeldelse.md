@@ -6,6 +6,8 @@ pubDate: 2026-04-05
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/bodum-melior-varmluftsfrituregryde-sort-2700-w-51-l?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1297751'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/7/9/8/8/6/4/6798864-large.jpg'
+heroAlt: 'Bodum MELIOR 5,1 L airfryer anmeldelse: stil og 2700 W'
 rating: 4
 pros:
   - '2700 W giver kraftig respons – ofte mærkbar ved opvarmning og større mængder'

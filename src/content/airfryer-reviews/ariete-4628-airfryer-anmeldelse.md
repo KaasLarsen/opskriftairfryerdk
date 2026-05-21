@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/ariete-varmluftsfrituregryde-7-l-sort-stal-1800-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1133494'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/5/0/7/1/6/6/9/5071669-large.jpg'
+heroAlt: 'Ariete 4628 airfryer anmeldelse: 7 liter i sort og stål'
 rating: 4
 pros:
   - '7 L rammer en sweet spot for familier, der vil have plads uden at gå op i meget store dual-modeller'

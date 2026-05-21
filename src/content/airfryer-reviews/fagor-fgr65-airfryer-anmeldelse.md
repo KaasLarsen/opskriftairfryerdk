@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/fagor-varmluftsfrituregryde-airfryer-eu-stik?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1641009'
 brandLabel: 'Fagor'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/9/2/1/8/5/7/8/9218578-large.jpg'
+heroAlt: 'Fagor FGR65 airfryer anmeldelse: 6,5 liter i sort/grå'
 rating: 4
 pros:
   - '6,5 L rammer et sweet spot for mange husstande med én kurv'

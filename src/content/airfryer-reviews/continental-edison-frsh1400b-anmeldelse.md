@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/continental-edison-airfryer-sort-45-l-1400-w-eu-stik?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1086378'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/3/4/2/1/3/4/6342134-large.jpg'
+heroAlt: 'Continental Edison FRSH1400B anmeldelse: kompakt airfryer til små køkkener'
 rating: 3
 pros:
   - '4,5 L er ofte nok til 1–2 personer eller mindre portioner ad gangen'

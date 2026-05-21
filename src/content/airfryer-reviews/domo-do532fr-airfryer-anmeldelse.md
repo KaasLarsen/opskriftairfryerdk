@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-do532fr-airfryer-sort-4-l-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1485951'
 brandLabel: 'DOMO'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/7/8/1/5/7/7/9/7815779-large.jpg'
+heroAlt: 'DOMO DO532FR airfryer anmeldelse: kompakt 4 liter til små måltider'
 rating: 4
 pros:
   - '4 L er kompakt nok til trange køkkener og små husstande'

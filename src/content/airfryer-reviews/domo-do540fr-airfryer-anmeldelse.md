@@ -6,6 +6,8 @@ pubDate: 2026-04-04
 updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=106581&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/domo-varmluftsfrituregryde-do540fr-6-l-airfryer-1500-w?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1279560'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/6/7/1/3/9/2/7/6713927-large.jpg'
+heroAlt: 'DOMO DO540FR airfryer anmeldelse: 6 liter mellem størrelse og hverdag'
 rating: 4
 pros:
   - '6 L giver ofte mere “luft” til familiemiddage end rene 4–5 L modeller – uden at fylde som en 8 L kæmpe'

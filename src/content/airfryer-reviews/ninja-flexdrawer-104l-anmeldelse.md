@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/airfryer-ninja-foodi-flexdrawer-104-l-2470-w-sort?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1815227'
 brandLabel: 'Ninja'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/1/0/9/0/7/6/4/3/10907643-large.jpg'
+heroAlt: 'Ninja Foodi FlexDrawer 10,4 L anmeldelse: én stor skuffe, 2470 W'
 rating: 4
 pros:
   - '10,4 L og 2470 W er i den tunge ende – velegnet til store mængder og hele fade'

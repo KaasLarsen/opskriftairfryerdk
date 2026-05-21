@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkenapparater/airfryer/jocca-2193-airfryer-8-l-1800-w-stal?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1565256'
 brandLabel: 'JOCCA'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/8/2/2/4/0/2/8/8224028-large.jpg'
+heroAlt: 'JOCCA 2193 airfryer anmeldelse: 8 liter i rustfrit look'
 rating: 4
 pros:
   - '8 L giver luft til større portioner end typiske 5–6 L maskiner'

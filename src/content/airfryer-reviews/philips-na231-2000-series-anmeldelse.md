@@ -7,6 +7,8 @@ updatedDate: 2026-04-08
 shopProductUrl: 'https://www.partner-ads.com/dk/klikbanner.php?bannerid=112106&partnerid=52794&htmlurl=https://www.boligcenter.dk/hjem-og-husholdning/kokken/kokkentilbehor/airfryer-philips-2000-series-na231-62-l-1700-w-sort-solv-1809202?utm_id=1&utm_medium=affiliate&utm_campaign=product&utm_source=partnerads'
 feedProductId: '1809202'
 brandLabel: 'Philips'
+heroImage: 'https://cdn.ecdn.dk/boligcenter/img/p/1/0/8/8/0/5/1/2/10880512-large.jpg'
+heroAlt: 'Philips 2000 Series NA231 anmeldelse: 6,2 L i sort og sølv'
 rating: 4
 pros:
   - '6,2 L rammer den brede hverdagsfamilie bedre end kompakte 4 L-modeller'
