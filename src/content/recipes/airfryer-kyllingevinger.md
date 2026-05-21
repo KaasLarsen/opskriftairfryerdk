@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer kyllingevinger – crispy wings uden friture'
-description: 'Kyllingevinger i airfryer med sprød overflade og saftigt kød. Nem opskrift med tid, temperatur, krydring og sauce-idéer.'
+title: 'Kyllingevinger i airfryer – crispy wings uden friture'
+description: 'Kyllingevinger i airfryer ved 200 °C: typisk 22–25 min med vending, ét lag og tør rub for sprødhed. Hot wings, dip og sauce på sidste minut.'
 heroImage: '/images/recipes/airfryer-kyllingevinger.png'
 heroAlt: 'Sprøde krydrede kyllingevinger med dip og citron på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 24
 servings: '4 portioner'
@@ -13,8 +13,8 @@ category: 'Hovedret'
 cuisine: 'International'
 temperatureC: 200
 keywords:
-  - airfryer kyllingevinger
   - kyllingevinger i airfryer
+  - airfryer kyllingevinger
   - crispy wings airfryer
   - hot wings airfryer
   - wings tid temperatur

@@ -1,8 +1,8 @@
 ---
-title: 'Airfryer frikadeller – sprød kant og hurtig familieaftensmad'
-description: 'Frikadeller fra airfryer med sprød yderside og saftig midte. Komplet guide med tid, temperatur og gode vaner – perfekt til familieaftensmad.'
+title: 'Frikadeller i airfryer – sprød kant og hurtig familieaftensmad'
+description: 'Frikadeller i airfryer med sprød yderside: typisk 16–18 min ved 185 °C med vending. Kalv/flæsk-fars, tid og tips til saftig midte og familieaftensmad.'
 pubDate: 2025-03-05
-updatedDate: 2025-03-30
+updatedDate: 2026-05-21
 heroImage: '/images/recipes/airfryer-frikadeller.png'
 heroAlt: 'Gyldne frikadeller i airfryer-kurv med bacon, svampe og persille – kartofler og tilbehør i baggrunden'
 prepMinutes: 15
@@ -13,8 +13,9 @@ category: 'Hovedret'
 cuisine: 'Dansk'
 temperatureC: 185
 keywords:
-  - airfryer frikadeller
   - frikadeller i airfryer
+  - frikadeller tid airfryer
+  - airfryer frikadeller
   - dansk airfryer opskrift
   - familie aftensmad
   - nemme frikadeller

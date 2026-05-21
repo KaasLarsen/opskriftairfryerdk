@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer medister – saftig pølse med sprød overflade'
-description: 'Medister i airfryer med korrekt tid og temperatur, så den bliver gennemstegt og saftig. Nem dansk hverdagsopskrift.'
+title: 'Medister i airfryer – saftig pølse med sprød overflade'
+description: 'Medister i airfryer: typisk 20–24 min ved 185 °C med vending og mindst 75 °C i centrum. Saftig dansk pølse uden pande — hverdagsopskrift.'
 heroImage: '/images/recipes/airfryer-medister.png'
 heroAlt: 'Skiver af saftig medister med sovs, kartofler og rødkål på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 5
 cookMinutes: 22
 servings: '4 portioner'

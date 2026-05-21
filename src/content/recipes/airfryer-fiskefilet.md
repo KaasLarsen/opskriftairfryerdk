@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer fiskefilet – sprød panering uden friture'
-description: 'Fiskefilet i airfryer med gylden panering og saftig fisk. Nem opskrift med tid, temperatur og tips til at undgå tør fisk eller løs panering.'
+title: 'Fiskefilet i airfryer – sprød panering uden friture'
+description: 'Fiskefilet i airfryer med gylden panering og saftig fisk — typisk 10–12 min ved 190 °C (mel og æg eller panko). Tips mod tør fisk og løs panering.'
 heroImage: '/images/recipes/airfryer-fiskefilet.png'
 heroAlt: 'Sprøde panerede fiskefileter med citron og persille på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 12
 servings: '4 portioner'
@@ -13,8 +13,8 @@ category: 'Hovedret'
 cuisine: 'Nordisk'
 temperatureC: 190
 keywords:
-  - airfryer fiskefilet
   - fiskefilet i airfryer
+  - airfryer fiskefilet
   - sprød fiskefilet airfryer
   - paneret fisk i airfryer
   - nem fisk aftensmad

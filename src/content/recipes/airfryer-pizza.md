@@ -1,8 +1,8 @@
 ---
-title: 'Airfryer pizza – mini pepperoni med mozzarella og basilikum'
-description: 'Hurtig pizza i airfryer med lille bund, tomatsauce, mozzarella, pepperoni og cherrytomater. Tider til pizzadej eller tortilla — sprød kant uden brændt topping.'
+title: 'Pizza i airfryer – mini pepperoni med mozzarella og basilikum'
+description: 'Pizza i airfryer med lille bund, ost og pepperoni — ofte 9–12 min ved 200 °C (tortilla hurtigere). Tomatsauce, cherrytomater og tips mod blød midte.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 14
 cookMinutes: 11
 servings: '2 små pizzaer (1 person pr. pizza)'
@@ -13,6 +13,7 @@ temperatureC: 200
 heroImage: '/images/recipes/airfryer-pizza.png'
 heroAlt: 'Lille pepperoni-pizza med smeltet ost, cherrytomater, rødløg og frisk basilikum på træfad'
 keywords:
+  - pizza i airfryer
   - pizza airfryer
   - pepperoni pizza airfryer
   - mini pizza airfryer

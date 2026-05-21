@@ -1,10 +1,10 @@
 ---
 title: 'Klejner i airfryer – sprødere uden frityrgryde'
-description: 'Traditionelle klejner i airfryer: dej, form og tider. Mindre fedt end frityr – gode til jul og fastelavn med stegeskorpe og blød midte.'
+description: 'Klejner i airfryer ved ca. 165 °C: totalt ca. 15–18 min (to omgange med vending). Mindre fedt end frityr — jul, fastelavn og klassisk snitte-form.'
 heroImage: '/images/recipes/airfryer-klejner.png'
 heroAlt: 'Skål med gyldne klejner drysset med sukker på linned, flere klejner i åben airfryer-kurv og lille skål med sukker i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-06
+updatedDate: 2026-05-21
 prepMinutes: 40
 cookMinutes: 18
 servings: 'Ca. 24 klejner'
@@ -14,6 +14,7 @@ cuisine: 'Dansk'
 temperatureC: 165
 keywords:
   - klejner i airfryer
+  - hvor længe klejner airfryer
   - klejner airfryer
   - kan man lave klejner i airfryer
   - airfryer julebag
@@ -49,6 +50,8 @@ tips:
   - 'For mange i kurven ad gangen giver dampede klejner – del i batch.'
   - 'Meget høj temperatur bruner hurtigt uden at bage igennem.'
 faq:
+  - question: 'Hvor længe skal klejner have i airfryer?'
+    answer: 'Ved 165 °C typisk 8–9 minutter første side og 7–9 minutter efter vending — ca. 15–18 minutter i alt afhængigt af tykkelse og model. Pensl og hold ét lag.'
   - question: 'Bliver klejner lige så sprøde som i frityr?'
     answer: 'Ikke helt identisk — frityr omslutter med fedt. Airfryer giver sprød ydre og lettere krop; pensling og batch-stegning hjælper mest.'
   - question: 'Kan jeg bruge færdig klejnedeg?'

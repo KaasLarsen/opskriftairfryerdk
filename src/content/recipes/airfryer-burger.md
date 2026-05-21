@@ -1,10 +1,10 @@
 ---
-title: 'Hamburger i airfryer – saftig bøf og varm bolle'
-description: 'Hamburger og burger i airfryer: steg bøffen i kurven og giv bollerne sidste minutter med ost. Tider til oksehamburger med sprød skorpe uden meget fedt på komfur.'
+title: 'Hamburger og burger i airfryer – saftig bøf og varm bolle'
+description: 'Burger og hamburger i airfryer: oksebøffer typisk 10–12 min ved 190–200 °C med vending, derefter boller med ost. Sprød skorpe uden pande.'
 heroImage: '/images/recipes/airfryer-burger.png'
 heroAlt: 'Høj gourmet-burger med sesam-bolle, smeltet ost, salat, tomat, syltet agurk og rødløg foran airfryer med display 200 grader, ketchup og pomfritter'
 pubDate: 2026-04-03
-updatedDate: 2026-04-07
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 14
 servings: '4 burgere'
@@ -13,6 +13,7 @@ category: 'Hovedret'
 cuisine: 'International'
 temperatureC: 200
 keywords:
+  - burger i airfryer
   - hamburger i airfryer
   - airfryer hamburger
   - airfryer burger
