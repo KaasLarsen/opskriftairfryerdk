@@ -1,0 +1,15 @@
+---
+description: >-
+  Efter indhold eller kode-ændringer i dette projekt commit og push til origin
+alwaysApply: true
+---
+
+# Commit og push efter ændringer
+
+Når agenten har lavet **nye eller substantielle ændringer** (indhold, kode, config der skal ud i drift):
+
+1. Kør **`git status`** og **`git diff`** for at kontrollere, at der ikke ligger hemmeligheder (fx `.env`, credentials).
+2. **Commit** alle relevante ændringer med en klar, kort besked (hvorfor / hvilket mål — fx GSC-batch, bugfix).
+3. **Push** til `origin` på den aktuelle gren (typisk `main`), medmindre brugeren midlertidigt beder om at udsætte push.
+
+Fortsæt at følge **git-sikkerhed**: ingen `git config`-ændringer, ingen destruktive kommandoer, ingen `--no-verify` / force push til `main` medmindre brugeren udtrykkeligt beder om det.
