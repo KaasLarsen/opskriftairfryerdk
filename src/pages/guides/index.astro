@@ -4,7 +4,196 @@ import { ORGANIZATION_JSON, SITE_NAME, SITE_URL } from '../../consts';
 
 const title = `Guides | ${SITE_NAME}`;
 const description =
-	'Praktiske guides til airfryer: kom godt i gang med temperatur, tid og gode vaner – og find nemt videre til opskrifter.';
+	'Praktiske guides til airfryer: temperatur, tid, rengøring, teknik og købsvalg — med billeder og korte artikler der supplerer vores opskrifter.';
+
+type GuideCard = {
+	slug: string;
+	href: string;
+	kicker: string;
+	title: string;
+	description: string;
+	imageAlt: string;
+};
+
+const guides: GuideCard[] = [
+	{
+		slug: 'airfryer-for-begyndere',
+		href: '/guides/airfryer-for-begyndere',
+		kicker: 'Kom godt i gang',
+		title: 'Airfryer for begyndere',
+		description:
+			'Temperatur, tid, forvarmning, ét lag i kurven og typiske fejl – så du rammer godt resultat fra start.',
+		imageAlt: 'Airfryer med mad i kurven og råvarer på bordet – begynderguide',
+	},
+	{
+		slug: 'ovn-til-airfryer-tid-temperatur',
+		href: '/guides/ovn-til-airfryer-tid-temperatur',
+		kicker: 'Teknik',
+		title: 'Fra ovn til airfryer: tid og temperatur',
+		description:
+			'Konverter ovnopskrifter med fornuftige tommelfingerregler: tid, temperatur, forvarmning og hvordan du tjekker uden at brænde ydersiden.',
+		imageAlt: 'Ovn og airfryer side om side ved køkkenbord med ur og temperatur',
+	},
+	{
+		slug: 'hvad-kan-man-lave-i-en-airfryer',
+		href: '/guides/hvad-kan-man-lave-i-en-airfryer',
+		kicker: 'Inspiration',
+		title: 'Hvad kan man lave i en airfryer?',
+		description:
+			'Kategorier fra kød og fisk til grønt, vegetar, snacks og bagning — med links til konkrete opskrifter og korte tips om begrænsninger.',
+		imageAlt: 'Illustrativ oversigt over retter og ingredienser til airfryer',
+	},
+	{
+		slug: 'hvilken-airfryer',
+		href: '/guides/hvilken-airfryer',
+		kicker: 'Køb og valg',
+		title: 'Hvilken airfryer skal du vælge?',
+		description:
+			'Kurvstørrelse, familie, én kurv vs. dobbelt zone og plads på bordet – plus hvordan du bruger shop-filtrene.',
+		imageAlt: 'Flere typer airfryere og måltider – valg af model',
+	},
+	{
+		slug: 'tilbehoer-til-airfryer',
+		href: '/guides/tilbehoer-til-airfryer',
+		kicker: 'Udstyr',
+		title: 'Tilbehør til airfryer',
+		description:
+			'Papir, silikone, spray, rist og spyd: hvad der lønner sig, og hvad du roligt kan vente med.',
+		imageAlt: 'Silikoneforme, spray og tilbehør omkring en airfryer',
+	},
+	{
+		slug: 'rengoering-lugt-airfryer',
+		href: '/guides/rengoering-lugt-airfryer',
+		kicker: 'Vedligeholdelse',
+		title: 'Rengøring og lugt i airfryer',
+		description:
+			'Rutiner efter brug, grundrens af kurv og bund, filter og hvad du typisk skal undgå for at bevare belægning.',
+		imageAlt: 'Rengøring af airfryer-kurve med klud og neutrale produkter',
+	},
+	{
+		slug: 'fejlfinding-roeg-fedt-brandalarm',
+		href: '/guides/fejlfinding-roeg-fedt-brandalarm',
+		kicker: 'Sikkerhed',
+		title: 'Fejlfinding: røg, fedt og brandalarm',
+		description:
+			'Når det ryger eller alarmen reagerer: damp vs. fedt, hvad der ofte er normalt — og hvornår du skal stoppe og forebygge næste gang.',
+		imageAlt: 'Airfryer med let damp og mådehold med olie ved fejlfinding',
+	},
+	{
+		slug: 'sproed-med-mindre-olie',
+		href: '/guides/sproed-med-mindre-olie',
+		kicker: 'Teknik',
+		title: 'Sprød med mindre olie',
+		description:
+			'Spray vs. pensel, panering uden sort skorpe, og hvorfor luft og ét lag slår ekstra oliesjat.',
+		imageAlt: 'Sprødt tilbehør ved airfryer med oliemådehold',
+	},
+	{
+		slug: 'kapacitet-damp-batch-airfryer',
+		href: '/guides/kapacitet-damp-batch-airfryer',
+		kicker: 'Teknik',
+		title: 'Kapacitet, damp og batch i airfryer',
+		description:
+			'Undgå bløde pommes og panering: hvorfor overfyldt kurv giver damp, og hvordan du fordeler i to hold uden at ødelægge sprødhed.',
+		imageAlt: 'Kurv med ét lag versus overfyldning – illustration til batch-guide',
+	},
+	{
+		slug: 'kernetemperatur-airfryer',
+		href: '/guides/kernetemperatur-airfryer',
+		kicker: 'Sikker mad',
+		title: 'Kernetemperatur i airfryer',
+		description:
+			'Mål rigtigt på kylling, kød og fisk: typiske temperaturer, hviletid og hvorfor gylden farve ikke er nok.',
+		imageAlt: 'Køkkentermometer ved kylling eller kød fra airfryer',
+	},
+	{
+		slug: 'jul-i-airfryer',
+		href: '/guides/jul-i-airfryer',
+		kicker: 'Sæson',
+		title: 'Jul i airfryer',
+		description:
+			'Ovn vs. airfryer til steger, tidsplan når pladsen er trang, faldgruber med svær og fedt – plus opskrifter til julebordet.',
+		imageAlt: 'Julemad og snacks ved siden af airfryer',
+	},
+	{
+		slug: 'frossen-mad-airfryer',
+		href: '/guides/frossen-mad-airfryer',
+		kicker: 'Hverdag',
+		title: 'Frossen mad i airfryer',
+		description:
+			'Undgå damp og bløde pommes: optø, ét lag, ryst og tider der matcher frost – med links til konkrete opskrifter.',
+		imageAlt: 'Frosne pommes og snacks klar til airfryer',
+	},
+	{
+		slug: 'genopvarmning-i-airfryer',
+		href: '/guides/genopvarmning-i-airfryer',
+		kicker: 'Hverdag',
+		title: 'Genopvarmning i airfryer',
+		description:
+			'Rester og takeaway uden slat pizzabund: temperatur, korte intervaller og hvornår mikro stadig er smartest.',
+		imageAlt: 'Restemad eller pizza der genvarmes sprødt i airfryer',
+	},
+	{
+		slug: 'stroemforbrug-airfryer-vs-ovn',
+		href: '/guides/stroemforbrug-airfryer-vs-ovn',
+		kicker: 'Økonomi',
+		title: 'Strømforbrug: airfryer vs ovn',
+		description:
+			'Energi i kWh, kort vs. lang forvarmning og hvornår den lille kurv ofte slår ovnen på små portioner — ud over bare watt på etiketten.',
+		imageAlt: 'Elmåler eller elkoncept ved airfryer og traditionel ovn',
+	},
+	{
+		slug: 'pizza-i-airfryer',
+		href: '/guides/pizza-i-airfryer',
+		kicker: 'Middag',
+		title: 'Pizza i airfryer',
+		description:
+			'Tynd bund, ét lag, sauce og topping der ikke damper — og link til færdig pizzaopskrift.',
+		imageAlt: 'Lille pizza med ost og toppings ved airfryer',
+	},
+	{
+		slug: 'pommes-og-fritter-i-airfryer',
+		href: '/guides/pommes-og-fritter-i-airfryer',
+		kicker: 'Teknik',
+		title: 'Sprøde pommes og fritter',
+		description:
+			'Undgå blød kurv: tør overflade, ryst, frosne vs hjemmelavet — med opskrifter på pommes og både.',
+		imageAlt: 'Sprøde pommes og kartoffelbåde fra airfryer',
+	},
+];
+
+function kickerKey(k: string): string {
+	return k
+		.trim()
+		.replace(/æ/gi, 'ae')
+		.replace(/ø/gi, 'oe')
+		.replace(/å/gi, 'aa')
+		.replace(/é/gi, 'e')
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
+}
+
+const kickerOptions = [...new Set(guides.map((g) => g.kicker))].sort((a, b) =>
+	a.localeCompare(b, 'da', { sensitivity: 'base' }),
+);
+
+function thumbForSlug(slug: string): string {
+	return `/images/guides/${slug}.png`;
+}
+
+const itemListLd = {
+	'@type': 'ItemList',
+	'@id': `${SITE_URL}/guides#itemlist`,
+	name: title.replace(` | ${SITE_NAME}`, ''),
+	numberOfItems: guides.length,
+	itemListElement: guides.map((g, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		url: `${SITE_URL}${g.href}`,
+		name: g.title,
+	})),
+};
 
 const jsonLd = [
 	ORGANIZATION_JSON as Record<string, unknown>,
@@ -17,11 +206,12 @@ const jsonLd = [
 		inLanguage: 'da-DK',
 		isPartOf: { '@id': `${SITE_URL}/#website` },
 	},
+	itemListLd,
 ];
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/guides" jsonLd={jsonLd}>
-	<section class="section section--tight-top">
+	<section class="section section--tight-top guides-page">
 		<div class="container">
 			<nav class="recipe-breadcrumbs" aria-label="Brødkrummer">
 				<a href="/">Forside</a>
@@ -29,193 +219,271 @@ const jsonLd = [
 				<span class="recipe-breadcrumbs-current">Guides</span>
 			</nav>
 
-			<div class="section-head">
-				<p class="section-kicker">Guides</p>
-				<h1 class="recipe-title">Guides til airfryer</h1>
-				<p>
-					Korte, praktiske artikler der supplerer vores <a href="/opskrifter">opskrifter</a>: gode
-					vaner, temperatur og fejl, mange undgår første gang.
-				</p>
+			<header class="guides-page-header">
+				<div class="guides-page-head-text">
+					<p class="section-kicker">Guides</p>
+					<h1 class="recipe-title guides-page-title">Guides til airfryer</h1>
+					<p class="guides-page-lead">
+						Korte artikler om temperatur, kurv og gode vaner — som supplement til vores
+						<a href="/opskrifter">opskrifter med tider og trin</a>. Brug også
+						<a href="/anmeldelser">airfryer-anmeldelserne</a> hvis du vælger ny maskine eller
+						<a href="/shop">shoppen</a> til modeller fra feedet.
+					</p>
+				</div>
+				<div class="guides-page-stats" aria-label="Antal guides">
+					<span class="guides-page-stats-num">{guides.length}</span>
+					<span class="guides-page-stats-label">guides</span>
+				</div>
+			</header>
+
+			<div class="guides-toolbar" id="guides-toolbar">
+				<label class="guides-filter-label" for="guides-filter-kicker">Emne</label>
+				<div class="guides-filter-row">
+					<select class="guides-filter-select" id="guides-filter-kicker" data-guides-filter>
+						<option value="">Alle emner ({guides.length})</option>
+						{
+							kickerOptions.map((k) => (
+								<option value={kickerKey(k)}>{`${k}`}</option>
+							))
+						}
+					</select>
+					<button type="button" class="guides-filter-reset" data-guides-reset>
+						Nulstil filter
+					</button>
+					<p class="guides-filter-status" data-guides-status aria-live="polite" />
+				</div>
 			</div>
 
-			<ul class="guide-list" role="list">
-				<li>
-					<a class="guide-card" href="/guides/airfryer-for-begyndere">
-						<span class="guide-card-kicker">Kom godt i gang</span>
-						<span class="guide-card-title">Airfryer for begyndere</span>
-						<span class="guide-card-desc">
-							Temperatur, tid, forvarmning, ét lag i kurven og typiske fejl – så du rammer god
-							resultat fra start.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/ovn-til-airfryer-tid-temperatur">
-						<span class="guide-card-kicker">Teknik</span>
-						<span class="guide-card-title">Fra ovn til airfryer: tid og temperatur</span>
-						<span class="guide-card-desc">
-							Konverter ovnopskrifter med fornuftige tommelfingerregler: tid, temperatur, forvarmning og
-							hvordan du tjekker uden at brænde ydersiden.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/hvad-kan-man-lave-i-en-airfryer">
-						<span class="guide-card-kicker">Inspiration</span>
-						<span class="guide-card-title">Hvad kan man lave i en airfryer?</span>
-						<span class="guide-card-desc">
-							Kategorier fra kød og fisk til grønt, vegetar, snacks og bagning — med links til
-							konkrete opskrifter og korte tips om begrænsninger.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/hvilken-airfryer">
-						<span class="guide-card-kicker">Køb og valg</span>
-						<span class="guide-card-title">Hvilken airfryer skal du vælge?</span>
-						<span class="guide-card-desc">
-							Kurvstørrelse, familie, én kurv vs. dobbelt zone og plads på bordet – plus hvordan du
-							bruger shop-filtrene.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/tilbehoer-til-airfryer">
-						<span class="guide-card-kicker">Udstyr</span>
-						<span class="guide-card-title">Tilbehør til airfryer</span>
-						<span class="guide-card-desc">
-							Papir, silikone, spray, rist og spyd: hvad der lønner sig, og hvad du roligt kan vente
-							med.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/rengoering-lugt-airfryer">
-						<span class="guide-card-kicker">Vedligeholdelse</span>
-						<span class="guide-card-title">Rengøring og lugt i airfryer</span>
-						<span class="guide-card-desc">
-							Rutiner efter brug, grundrens af kurv og bund, filter og hvad du typisk skal undgå for at
-							bevare belægning.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/fejlfinding-roeg-fedt-brandalarm">
-						<span class="guide-card-kicker">Sikkerhed</span>
-						<span class="guide-card-title">Fejlfinding: røg, fedt og brandalarm</span>
-						<span class="guide-card-desc">
-							Når det ryger eller alarmen reagerer: damp vs. fedt, hvad der ofte er normalt — og hvornår du
-							skal stoppe og forebygge næste gang.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/sproed-med-mindre-olie">
-						<span class="guide-card-kicker">Teknik</span>
-						<span class="guide-card-title">Sprød med mindre olie</span>
-						<span class="guide-card-desc">
-							Spray vs. pensel, panering uden sort skorpe, og hvorfor luft og ét lag slår ekstra
-							oliesjat.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/kapacitet-damp-batch-airfryer">
-						<span class="guide-card-kicker">Teknik</span>
-						<span class="guide-card-title">Kapacitet, damp og batch i airfryer</span>
-						<span class="guide-card-desc">
-							Undgå bløde pommes og panering: hvorfor overfyldt kurv giver damp, og hvordan du fordeler i
-							to hold uden at ødelægge sprødhed.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/kernetemperatur-airfryer">
-						<span class="guide-card-kicker">Sikker mad</span>
-						<span class="guide-card-title">Kernetemperatur i airfryer</span>
-						<span class="guide-card-desc">
-							Mål rigtigt på kylling, kød og fisk: typiske temperaturer, hviletid og hvorfor gylden farve
-							ikke er nok.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/jul-i-airfryer">
-						<span class="guide-card-kicker">Sæson</span>
-						<span class="guide-card-title">Jul i airfryer</span>
-						<span class="guide-card-desc">
-							Ovn vs. airfryer til steger, tidsplan når pladsen er trang, faldgruber med svær og fedt
-							– plus opskrifter til julebordet.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/frossen-mad-airfryer">
-						<span class="guide-card-kicker">Hverdag</span>
-						<span class="guide-card-title">Frossen mad i airfryer</span>
-						<span class="guide-card-desc">
-							Undgå damp og bløde pommes: optø, ét lag, ryst og tider der matcher frost – med links til
-							konkrete opskrifter.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/genopvarmning-i-airfryer">
-						<span class="guide-card-kicker">Hverdag</span>
-						<span class="guide-card-title">Genopvarmning i airfryer</span>
-						<span class="guide-card-desc">
-							Rester og takeaway uden slat pizzabund: temperatur, korte intervaller og hvornår mikro
-							stadig er smartest.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/stroemforbrug-airfryer-vs-ovn">
-						<span class="guide-card-kicker">Økonomi</span>
-						<span class="guide-card-title">Strømforbrug: airfryer vs ovn</span>
-						<span class="guide-card-desc">
-							Energi i kWh, kort vs. lang forvarmning og hvornår den lille kurv ofte slår ovnen på små
-							portioner — ud over bare watt på etiketten.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/pizza-i-airfryer">
-						<span class="guide-card-kicker">Middag</span>
-						<span class="guide-card-title">Pizza i airfryer</span>
-						<span class="guide-card-desc">
-							Tynd bund, ét lag, sauce og topping der ikke damper — og link til færdig pizzaopskrift.
-						</span>
-					</a>
-				</li>
-				<li>
-					<a class="guide-card" href="/guides/pommes-og-fritter-i-airfryer">
-						<span class="guide-card-kicker">Teknik</span>
-						<span class="guide-card-title">Sprøde pommes og fritter</span>
-						<span class="guide-card-desc">
-							Undgå blød kurv: tør overflade, ryst, frosne vs hjemmelavet — med opskrifter på pommes og
-							både.
-						</span>
-					</a>
-				</li>
+			<ul class="guides-grid" id="guides-grid" role="list">
+				{
+					guides.map((g) => (
+						<li
+							data-guide-item
+							data-kicker={kickerKey(g.kicker)}
+						>
+							<a class="guides-card" href={g.href}>
+								<div class="guides-card-media">
+									<img
+										class="guides-card-img"
+										src={thumbForSlug(g.slug)}
+										alt={g.imageAlt}
+										width="200"
+										height="200"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
+								<div class="guides-card-body">
+									<span class="guides-card-kicker">{g.kicker}</span>
+									<span class="guides-card-title">{g.title}</span>
+									<span class="guides-card-desc">{g.description}</span>
+								</div>
+								<span class="guides-card-more" aria-hidden="true">
+									Læs guide
+								</span>
+							</a>
+						</li>
+					))
+				}
 			</ul>
+
+			<footer class="guides-page-footer">
+				<p>
+					Søger du en bestemt ret? Gå direkte til <a href="/opskrifter">alle opskrifter</a>
+					eller brug forsøgssøgning på sitet.
+				</p>
+			</footer>
 		</div>
 	</section>
 </BaseLayout>
 
+<script is:inline>
+	(function () {
+		var toolbar = document.getElementById('guides-toolbar');
+		var grid = document.getElementById('guides-grid');
+		if (!(toolbar instanceof HTMLElement) || !grid) return;
+		var sel = toolbar.querySelector('[data-guides-filter]');
+		var resetBtn = toolbar.querySelector('[data-guides-reset]');
+		var statusEl = toolbar.querySelector('[data-guides-status]');
+		if (
+			!(sel instanceof HTMLSelectElement) ||
+			!(resetBtn instanceof HTMLButtonElement) ||
+			!(statusEl instanceof HTMLElement)
+		) {
+			return;
+		}
+		function items() {
+			return Array.prototype.slice.call(grid.querySelectorAll('[data-guide-item]'));
+		}
+		function apply() {
+			var want = sel.value;
+			var all = items();
+			var shown = 0;
+			for (var i = 0; i < all.length; i++) {
+				var li = all[i];
+				var ok =
+					want === '' || (typeof li.dataset.kicker === 'string' && li.dataset.kicker === want);
+				li.hidden = !ok;
+				if (ok) shown++;
+			}
+			if (!want || shown === all.length) {
+				statusEl.textContent = '';
+			} else {
+				statusEl.textContent =
+					shown === 0
+						? 'Ingen match – prøv et andet emne.'
+						: shown + ' guide' + (shown === 1 ? '' : 's') + ' matcher.';
+			}
+		}
+		sel.addEventListener('change', apply);
+		resetBtn.addEventListener('click', function () {
+			sel.value = '';
+			apply();
+		});
+		sel.value = '';
+		apply();
+	})();
+</script>
+
 <style>
-	.guide-list {
+	.guides-page-header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: var(--space-6) var(--space-10);
+		margin-bottom: var(--space-8);
+		padding-bottom: var(--space-8);
+		border-bottom: 1px solid rgb(0 0 0 / 7%);
+	}
+	.guides-page-head-text {
+		flex: 1 1 min(100%, 36rem);
+		max-width: 44rem;
+	}
+	.guides-page-title {
+		margin-bottom: var(--space-4);
+	}
+	.guides-page-lead {
+		font-size: 1.05rem;
+		line-height: 1.62;
+		color: var(--color-muted);
+		margin: 0;
+	}
+	.guides-page-lead a {
+		color: rgb(120 53 15);
+		font-weight: 600;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 0.14em;
+	}
+	.guides-page-stats {
+		flex: 0 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-width: 6rem;
+		padding: var(--space-5) var(--space-6);
+		border-radius: var(--radius-xl);
+		border: 1px solid rgb(180 83 9 / 22%);
+		background: linear-gradient(
+			160deg,
+			rgb(255 251 235 / 92%) 0%,
+			rgb(255 255 255 / 94%) 100%
+		);
+		box-shadow: var(--shadow-xs);
+	}
+	.guides-page-stats-num {
+		font-family: var(--font-display);
+		font-size: 2.25rem;
+		font-weight: 700;
+		line-height: 1;
+		color: rgb(120 53 15);
+	}
+	.guides-page-stats-label {
+		font-size: 0.8rem;
+		font-weight: 650;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--color-muted);
+		margin-top: var(--space-2);
+	}
+	.guides-toolbar {
+		margin-bottom: var(--space-7);
+		padding: var(--space-5) var(--space-6);
+		border-radius: var(--radius-xl);
+		border: 1px solid var(--color-border);
+		background: var(--color-surface);
+		max-width: 52rem;
+	}
+	.guides-filter-label {
+		display: block;
+		font-size: 0.8125rem;
+		font-weight: 650;
+		color: var(--color-muted);
+		margin-bottom: var(--space-2);
+	}
+	.guides-filter-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-4);
+	}
+	.guides-filter-select {
+		font: inherit;
+		font-size: 0.9375rem;
+		padding: var(--space-3) var(--space-4);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-border);
+		background: var(--color-bg);
+		color: var(--color-text);
+		cursor: pointer;
+		min-width: min(100%, 16rem);
+		flex: 1 1 12rem;
+	}
+	.guides-filter-select:focus {
+		outline: 2px solid rgb(180 83 9 / 45%);
+		outline-offset: 2px;
+	}
+	.guides-filter-reset {
+		font: inherit;
+		font-size: 0.875rem;
+		font-weight: 600;
+		padding: var(--space-2) var(--space-4);
+		border-radius: var(--radius-md);
+		border: 1px solid var(--color-border);
+		background: transparent;
+		color: var(--color-text);
+		cursor: pointer;
+	}
+	.guides-filter-reset:hover {
+		border-color: rgb(180 83 9 / 35%);
+		color: rgb(120 53 15);
+	}
+	.guides-filter-status {
+		margin: 0;
+		font-size: 0.875rem;
+		color: var(--color-muted);
+		flex: 1 1 10rem;
+		min-width: 8rem;
+	}
+	.guides-grid {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		max-width: 44rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 20.5rem), 1fr));
+		gap: var(--space-5);
 	}
-	.guide-list li + li {
-		margin-top: var(--space-4);
+	@media (min-width: 900px) {
+		.guides-grid {
+			grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+		}
 	}
-	.guide-card {
-		display: block;
-		padding: var(--space-6) var(--space-7);
+	.guides-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		min-height: 100%;
 		border-radius: var(--radius-xl);
 		border: 1px solid var(--color-border);
 		background: var(--color-surface);
@@ -224,33 +492,81 @@ const jsonLd = [
 		color: inherit;
 		transition:
 			border-color 0.15s ease,
-			box-shadow 0.15s ease;
+			box-shadow 0.18s ease,
+			transform 0.18s ease;
+		overflow: hidden;
 	}
-	.guide-card:hover {
+	.guides-card:hover {
 		border-color: rgb(180 83 9 / 28%);
-		box-shadow: var(--shadow-sm);
+		box-shadow: var(--shadow-md);
+		transform: translateY(-2px);
 	}
-	.guide-card-kicker {
+	.guides-card:focus-visible {
+		outline: 2px solid rgb(180 83 9 / 55%);
+		outline-offset: 2px;
+	}
+	.guides-card-media {
+		position: relative;
+		aspect-ratio: 16 / 10;
+		background: rgb(0 0 0 / 5%);
+		border-bottom: 1px solid rgb(0 0 0 / 6%);
+	}
+	.guides-card-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		display: block;
-		font-size: 0.8125rem;
-		font-weight: 650;
-		text-transform: uppercase;
-		letter-spacing: 0.04em;
-		color: var(--color-accent-dark);
-		margin-bottom: var(--space-2);
 	}
-	.guide-card-title {
+	.guides-card-body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+		padding: var(--space-5) var(--space-6);
+		flex: 1 1 auto;
+	}
+	.guides-card-kicker {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-accent-dark);
+	}
+	.guides-card-title {
 		display: block;
 		font-family: var(--font-display);
-		font-size: 1.25rem;
-		font-weight: 600;
+		font-size: 1.15rem;
+		font-weight: 650;
+		line-height: 1.3;
 		color: var(--color-text);
-		margin-bottom: var(--space-3);
 	}
-	.guide-card-desc {
+	.guides-card-desc {
 		display: block;
-		font-size: 1.02rem;
+		font-size: 0.95rem;
+		line-height: 1.55;
+		color: var(--color-muted);
+		flex: 1 1 auto;
+	}
+	.guides-card-more {
+		display: block;
+		padding: var(--space-3) var(--space-6) var(--space-5);
+		font-size: 0.875rem;
+		font-weight: 650;
+		color: rgb(180 83 9);
+		margin-top: auto;
+		border-top: 1px dashed rgb(0 0 0 / 8%);
+	}
+	.guides-page-footer {
+		margin-top: var(--space-10);
+		padding-top: var(--space-7);
+		border-top: 1px solid rgb(0 0 0 / 7%);
+		max-width: 44rem;
+		font-size: 0.95rem;
 		line-height: 1.6;
 		color: var(--color-muted);
+	}
+	.guides-page-footer a {
+		font-weight: 600;
+		color: rgb(120 53 15);
 	}
 </style>

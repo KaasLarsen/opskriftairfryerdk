@@ -79,3 +79,13 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 3. Opdatér **øverste 50** i denne fil, eller tilføj nye rækker med dato.
 4. Prioritér: **klik > 20** eller **eksponeringer > 500** med **placering ca. 4–15** → `optimer` først (CTR-gevinst).
 5. Efter publicering: notér dato ved slug; efter 4–8 uger tjek samme forespørgsel for **CTR** og **placering** i GSC.
+
+---
+
+## Forespørgsler vs. guides (uden for top‑50‑tabellen)
+
+Den **liste med de 50 største forespørgsler** ovenfor kommer fra GSC-export *Forespørgsler* og er overvejende **konkrete retter og ingredienser**. Den dækker derfor ikke “hvordan / brug / teori”-søgning på samme måde.
+
+For **guides** finder du stadig spor i **effektivitet → sider** (fx `src/data/gsc-sider.csv`): tidligere URL’er som `…/guides/airfryer-rengoering.html`, `airfryer-tider.html`, `airfryer-energi.html`, `maden-bliver-ikke-sproed…` m.fl. havde eksponeringer eller klik før de blev samlet eller redirect’et til nuværende guides (`gsc-generated-redirects.json` / `vercel.json`). Det er et godt krydstjek når du **prioriterer nye eller udbyggede guides** (rengøring, tid og strøm, sprødhed og typiske fejl).
+
+**Tip:** Udvid månedligt med et separat ark i GSC eller en kopi af *Forespørgsler* filtreret på tekst som “airfryer hvordan”, “rester”, “temperatur” osv., så guide-arbejde ikke kun styres af opskrifts-top‑50 ovenfor.
