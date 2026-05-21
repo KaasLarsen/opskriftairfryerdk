@@ -57,4 +57,4 @@ faq:
 
 ### Dyppelse og topping
 
-**Chili-mayo**: mayo, sriracha, lime. Eller **tabasco-créme** som til [nachos](/opskrifter/airfryer-nachos).
+**Chili-mayo**: mayo, sriracha, lime. Eller **tabasco-créme** som til [nachos](/opskrifter/airfryer-nachos-kylling-jalapenos).
