@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer løgringe – sprøde uden friture'
-description: 'Løgringe i airfryer med panering der bliver gylden og sprød. Bedre end fedtbad, tydelige tider og tips så de ikke bliver bløde.'
+description: 'Løgringe i airfryer med panko-panering: typisk cirka **13–15 min ved 190–200 °C**, vend én gang — sprød snack uden fritbad.'
 heroImage: '/images/recipes/airfryer-loegringe.png'
 heroAlt: 'Skål med gyldne panerede løgringe, ketchup og hvid dip, persille og airfryer med 200 grader i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-04-03
+updatedDate: 2026-05-21
 prepMinutes: 20
 cookMinutes: 16
 servings: '4 portioner som snack'
@@ -17,6 +17,7 @@ keywords:
   - løgringe i airfryer
   - onion rings airfryer
   - sprøde løgringe
+  - løgringe air fry tid
   - snack airfryer
 featured: true
 intro: |
@@ -60,6 +61,8 @@ faq:
     answer: 'Ja – resultatet bliver ofte mindre luftigt, men stadig godt med nok olie og ens tykkelse.'
   - question: 'Fedtindhold?'
     answer: 'Langt mindre end friture; det meste fedt kommer fra æg og lidt olie til sprødhed.'
+  - question: 'Hvor længe pr. omgang i “air fry”-maskine?'
+    answer: 'Ofte **7 min + 6–8 min** ved 200 °C eller **190 °C** hvis panering bruner hurtigt — se farve og lad sidste minut give ekstra crunch.'
 ---
 
 ### Panering der sidder

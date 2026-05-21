@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kyllingelårfilet – saftig kylling med sprød kant'
-description: 'Kyllingelårfilet i airfryer med masser af smag, kort tilberedningstid og høj saftighed. Nem opskrift med temperatur, tid og kernetemperatur.'
+description: 'Kyllingelårfilet i airfryer: cirka 17–20 min ved 195 °C, vendt halvveis, **mindst 75 °C** i tykkeste del — saftig kylling på kort tid.'
 heroImage: '/images/recipes/airfryer-kyllingelaarfilet.png'
 heroAlt: 'Saftige stegte kyllingelårfileter i skiver med citron, grøn salat og dip foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - saftig kylling airfryer
   - kylling i airfryer tid
   - nem hverdagsmad
+  - kylling lårfilet luftfriture
 featured: true
 intro: |
   Kyllingelårfilet er ofte mere tilgivende end brystkød, fordi fedtindholdet er lidt højere. Derfor er det en favorit i airfryer, når du vil have saftig kylling uden at stå ved panden.

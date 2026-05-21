@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kyllingenuggets – hjemmelavede og sprøde'
-description: 'Hjemmelavede nuggets i airfryer med sprød panering og saftig kylling. Nem opskrift med tid, temperatur og børnevenlige tips.'
+description: 'Hjemmelavede kyllingenuggets i airfryer med panko: typisk **11–13 min ved 200 °C**, vend midt i — sprød panering og **min. 75 °C** midt i nugget.'
 heroImage: '/images/recipes/airfryer-kyllingenuggets.png'
 heroAlt: 'Sprøde hjemmelavede kyllingenuggets med ketchup og dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 12
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - hjemmelavede nuggets
   - sprøde nuggets airfryer
   - børnevenlig aftensmad
+  - chicken nuggets air fry dansk tid
 featured: true
 intro: |
   Hjemmelavede nuggets i airfryer er en sikker vinder til både børn og voksne. Du får sprød overflade uden friture og bedre kontrol over ingredienserne.
@@ -60,6 +61,8 @@ faq:
     answer: 'Brug panko, lidt olie og ét lag i kurven. Overfyldning giver damp og blød panering.'
   - question: 'Kan nuggets fryses?'
     answer: 'Ja, både før og efter stegning. Genopvarm i airfryer for at bevare sprødhed.'
+  - question: 'Skal luftede nuggets have samme tid som Philips/Ninja presets?'
+    answer: 'Brug presets som hint, men tjek stadig gylden panering og **75 °C** i den tykkeste nugget — kødsaft og størrelse varierer.'
 ---
 
 ### Perfekt til familier

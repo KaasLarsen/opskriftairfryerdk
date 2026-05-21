@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer grøntsagsmix – hurtigt sundt tilbehør'
-description: 'Farverigt grøntsagsmix fra airfryer med karamelliserede kanter og kort koketid. Ideelt til kød, fisk eller vegetarisk hovedret.'
+description: 'Farverigt grøntsagsmix fra airfryer: cirka 10 min + 3–6 min ved 190 °C i ét lag, ryst kurven én gang. Karamelliserede kanter uden kedeligt dampkokt.'
 heroImage: '/images/recipes/airfryer-groentsagsmix.png'
 heroAlt: 'Farverigt bagt grøntsagsmix i hvid skål med broccoli, gulerødder, peber og zucchini på rustikt træbord'
 pubDate: 2025-03-04
-updatedDate: 2025-03-30
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 14
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - sundt tilbehør airfryer
   - nemme grøntsager
   - airfryer aftensmad
+  - bagte grøntsager air fryer tid
 featured: true
 intro: |
   Et grøntsagsmix i airfryer er den hurtige vej til mere grønt på tallerkenen uden at skulle vende pande hvert andet minut. Luftcirkulationen gør, at kanterne tager farve og smag, forudsat at grøntsagerne ikke ligger i et kompakt lag og at der ikke ligger vand i bunden af kurven.

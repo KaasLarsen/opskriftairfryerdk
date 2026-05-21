@@ -1,10 +1,10 @@
 ---
 title: 'Stegte sild i airfryer – sprød panering som på panden'
-description: 'Stegte sildefileter i airfryer med mel, æg og rasp. Kortere tid end tykkere fisk, tips til salt sild og servering med citron og remoulade.'
+description: 'Panerede stegte sildefileter i airfryer: typisk **7–11 min i alt ved 185 °C** (vend halfway), tynd mel-æg-rasp og olie på overfladen — som panden med mindre fedt.'
 heroImage: '/images/recipes/airfryer-stegte-sild.png'
 heroAlt: 'Lys nordisk stil: panerede stegte sild med citron og kartoffel på tallerken, lyst træ, airfryer i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-04-11
+updatedDate: 2026-05-21
 prepMinutes: 18
 cookMinutes: 10
 servings: '4 portioner'
@@ -20,6 +20,7 @@ keywords:
   - airfryer sild
   - sildefilet airfryer
   - stegt sild uden friture
+  - herring fried air fryer dansk
 intro: |
   **Stegte sild** er en fast del af **dansk frokost- og aftenskik** — paneret og gylden med **citron** og ofte **remoulade** eller karrysalat. I airfryer får du **sprød skorpe** med **mindre fedt** end klassisk smørstege, hvis du **dupper fileterne tørre** og holder **paneringen tynd**.
 
@@ -65,6 +66,8 @@ faq:
     answer: 'Følg pakken som udgangspunkt; hjemmepaneret frisk eller afoptøet sild giver ofte bedre sprød skorpe.'
   - question: 'Hvad er klassisk til stegte sild?'
     answer: 'Rugbrød, remoulade, karrysalat, citron og dild — plus kartofler hvis det er aftensmad.'
+  - question: 'Er stegte sild i airfryer det samme som “air fry” fiskefileter?'
+    answer: 'Samme princip — **lav temperatur-ish**, ét lag og tynd olie/skindsprød effekt — men **kortere samlet tid** og mere salt-awareness end til torsk.'
 ---
 
 ### Tynd fisk kræver disciplin

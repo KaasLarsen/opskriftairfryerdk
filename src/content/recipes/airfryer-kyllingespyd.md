@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kyllingespyd – saftige spyd med hurtig marinade'
-description: 'Kyllingespyd i airfryer med saftig midte og let stegeskorpe. Nem opskrift med tid, temperatur og tips til marinering.'
+description: 'Kyllingespyd i airfryer: cirka 13–15 min ved 195 °C vendt halvveis, **mindst 75 °C** i den tykkeste terning — hurtig marinade og grillstemning.'
 heroImage: '/images/recipes/airfryer-kyllingespyd.png'
 heroAlt: 'Saftige grillede kyllingespyd med peberfrugt og rødløg på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 14
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - marineret kylling airfryer
   - nem kylling opskrift
   - grillspyd airfryer
+  - kyllingespyd air fry tid
 featured: true
 intro: |
   Kyllingespyd i airfryer er en hurtig måde at få "grill-feel" i hverdagen uden kul, grill og lang ventetid. Med en enkel marinade får du både farve og smag på kort tid.
@@ -58,6 +59,8 @@ faq:
     answer: 'Brug helst optøet kylling for jævn stegning og bedre marinadeoptag.'
   - question: 'Skal træspyd i vand først?'
     answer: 'Ja, gerne 20-30 minutter, så de ikke tørrer ud under tilberedning.'
+  - question: 'Kalder folk det “kyllingespyd air fry”?'
+    answer: 'Ja på engelske maskiner — det er stadig luft/varmluft i **airfryer**: ét lag eller roter spyd, så alle sider får luft.'
 ---
 
 ### Perfekt til hurtig hverdagsmad

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer mørbrad af svin – mør og saftig hver gang'
-description: 'Svinemørbrad i airfryer med flot stegeskorpe og saftig midte. Tydelig guide med temperatur, stegetid og hviletid.'
+description: 'Svinemørbrad i airfryer: typisk cirka **20–24 min ved 195 °C**, mål kerne til **63–65 °C** før 8 min hvile — hurtig skorpe, mindre risiko for tør hvis du stopper i tide.'
 heroImage: '/images/recipes/airfryer-moerbrad.png'
 heroAlt: 'Saftig skåret svinemørbrad med kartofler og grøn salat på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 22
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - airfryer mørbrad tid
   - saftig mørbrad
   - nem svinekød opskrift
+  - mørbrad air fry kerne temp
 featured: true
 intro: |
   Svinemørbrad er magert kød, som hurtigt bliver tørt ved for høj varme eller for lang tid. I airfryer får du en hurtig stegeskorpe, men du skal følge kernetemperaturen tæt.
@@ -58,6 +59,8 @@ faq:
     answer: 'Ja, især hvis den får for lang tid. Brug termometer og stop i tide.'
   - question: 'Hvad serverer man til mørbrad?'
     answer: 'Kartofler, grøntsager, svampesauce og syrligt tilbehør passer rigtig godt.'
+  - question: 'Mindre mørbrad end 700 g — hvad med tiden?'
+    answer: 'Mål **tidligere** ved 63 °C mål og træk 6–10 min hvile; små stykker kan være færdige 4–8 min før store.'
 ---
 
 ### Mørbrad kræver præcision

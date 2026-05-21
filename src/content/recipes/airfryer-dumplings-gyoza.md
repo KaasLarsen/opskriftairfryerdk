@@ -4,7 +4,7 @@ description: 'Gyoza i airfryer og dumplings: dampstart, 185–190 °C, sprød un
 heroImage: '/images/recipes/airfryer-dumplings-gyoza.png'
 heroAlt: 'Gyldne gyoza på fad med sesam, forårsløg og chili-soja, spisepinde løfter en dumpling med fyld, sort airfryer med flere dumplings i åben kurv og dip i lille skål'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 3
 cookMinutes: 14
 servings: '2 portioner (ca. 16 stk.)'
@@ -43,6 +43,8 @@ tips:
   - 'Rispapir-wrapper er skrøbelig — kortere tid og lavere temperatur end hvede-wrapper.'
   - 'Vegetar-dumplings er ofte færdige lidt før — mål en enkelt som probe.'
 faq:
+  - question: 'Gyoza eller dumplings i air fryer — samme temperatur som airfryer?'
+    answer: 'Ja, **air fryer** er bare den engelske betegnelse: start lavt for fyld/varme (**fx 160 °C**) og kryd op til gylden bund (**185–190 °C**) med mål på kødfyld (**mindst cirka 75 °C**) som i opskriften.'
   - question: 'Kan jeg bruge helt friske hjemmelavede dumplings?'
     answer: 'Ja — reducer starttid; kødfyld skal stadig igennem. Hold øje med at dejen ikke branker.'
   - question: 'Dumplings i airfryer vs. panden?'

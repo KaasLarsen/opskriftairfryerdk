@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer bacon – sprødt bacon på få minutter'
-description: 'Sprødt bacon i airfryer med kort tid og enkel metode. Nem guide til temperatur, stegning i hold og rengøring.'
+description: 'Bacon i airfryer: typisk cirka 7–10 min ved 190 °C ét lag til sprød skive — tilpas til tykkelse. Mindre fedtudsprøj end pande og let at lave bacon i batch til burger og brunch.'
 heroImage: '/images/recipes/airfryer-bacon.png'
 heroAlt: 'Sprøde stegte baconskiver på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-24
 prepMinutes: 3
 cookMinutes: 10
 servings: '4 portioner'
@@ -17,6 +17,7 @@ keywords:
   - airfryer bacon
   - sprødt bacon airfryer
   - bacon tid temperatur
+  - bacon air fryer tid samme airfryer
   - morgenmad airfryer
 featured: true
 intro: |
@@ -43,6 +44,8 @@ tips:
   - 'Tyk bacon kan kræve op til 11 minutter.'
   - 'Steg i hold for mest jævn sprødhed.'
 faq:
+  - question: '"Bacon air fryer" — er det anderledes?'
+    answer: 'Samme teknik på dansk **airfryer**: stadig **ét lag**, **moderat temperatur**, og åbn ikke unødigt ud over de første minutter hvor bacon sætter sig.'
   - question: 'Hvor længe skal bacon have i airfryer?'
     answer: 'Normalt 7-10 minutter ved 190 °C afhængigt af tykkelse.'
   - question: 'Skal bacon vendes i airfryer?'

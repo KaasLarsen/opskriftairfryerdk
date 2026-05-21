@@ -3,7 +3,7 @@ title: 'Hytteost brød og fladbrød i airfryer – proteinholdigt og hurtigt'
 description: 'Hytteost brød og hytteost fladbrød i airfryer: proteinrig dej, 175–178 °C, ca. 12–14 min. Hytteost i airfryer uden stor ovn — sprød kant; FAQ om fugtig midte.'
 heroImage: '/images/recipes/airfryer-hytteost-broed.png'
 pubDate: 2026-04-06
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 12
 cookMinutes: 14
 servings: '4 små fladbrød eller 6 mini-brød'
@@ -47,6 +47,8 @@ tips:
   - 'For færre kulhydrater: skift en del af melet ud med finvalsede havregryn pulver eller mandelmel — tilsæt evt. et ekstra æg hvis dejen bliver for tør.'
   - 'For sprødere kant sidste minut: skru op til 190 °C under opsyn.'
 faq:
+  - question: 'Hyttost eller cottage cheese — samme i air fryer/airfryer?'
+    answer: 'Dansk hytteost minder teksturmæssigt om cottage cheese, men fugt og protein kan variere — dræn altid før dej og justér lidt på mel eller minutter ud fra pindeprøven.'
   - question: 'Hvad er forskellen på hytteost fladbrød og hytteost brød i airfryer?'
     answer: 'Samme dej — fladbrød er fladtrykt og steger hurtigere med mere kant; “brød” er tykkere stykker i form, der ligner små boller og kræver lidt længere tid i midten.'
   - question: 'Hvorfor bliver mit hytteostbrød fugtigt indeni?'

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer hakkebøf – saftig bøf uden stegepande'
-description: 'Hakkebøf i airfryer med god stegeskorpe og saftig midte. Nem opskrift med tid, temperatur og tips til formning.'
+description: 'Hakkebøf i airfryer: typisk cirka 11–13 min ved 200 °C, vendt midvejs — saftig midte og fin stegeskorpe. Tips til fedt%, form og hakkekødstemperatur.'
 heroImage: '/images/recipes/airfryer-hakkeboef.png'
 heroAlt: 'Saftig hakkebøf med brun sovs og kartofler på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 12
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - hakket oksekød airfryer
   - nem bøf opskrift
   - dansk hverdagsmad
+  - hakkebøf temperatur luftfriture
 featured: true
 intro: |
   Hakkebøf i airfryer er en enkel løsning, når du vil have hurtig aftensmad med minimal opvask. Bøfferne får en fin stegeskorpe, hvis de formes ens og ikke presses for flade.
@@ -55,6 +56,8 @@ faq:
     answer: 'Ja, klassisk hakkebøf kan laves uden bindemiddel, når farsen formes fast.'
   - question: 'Bliver hakkebøf tør i airfryer?'
     answer: 'Ikke hvis fedtprocent og stegetid passer. Undgå overtilberedning.'
+  - question: 'Hvilken kernetemperatur bør hakket oksekød have?'
+    answer: 'Som udgangspunkt cirka **72 °C i midten** af bøffen (ingen rå rosa hakkekød). Et stegetermometer giver mest præcis kontrol.'
 ---
 
 ### Klassisk dansk hverdagsmad

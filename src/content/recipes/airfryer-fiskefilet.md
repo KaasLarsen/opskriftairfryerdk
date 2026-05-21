@@ -4,7 +4,7 @@ description: 'Fiskefilet i airfryer med gylden panering og saftig fisk — typis
 heroImage: '/images/recipes/airfryer-fiskefilet.png'
 heroAlt: 'Sprøde panerede fiskefileter med citron og persille på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 15
 cookMinutes: 12
 servings: '4 portioner'
@@ -52,6 +52,8 @@ tips:
   - 'Undgå for meget olie; et tyndt lag er nok.'
   - 'Tynde fileter bliver hurtigere tørre, så hold øje efter 9-10 minutter samlet.'
 faq:
+  - question: 'Paneret fiskefilet air fry English — samme timings?'
+    answer: '"Air fryer" er samme som airfryer her: stadig circa 190 °C og circa 10–12 min samlet med vending — men panering skal være tynd og fisk helt tør før start.'
   - question: 'Kan fiskefilet blive sprød i airfryer?'
     answer: 'Ja, især med panko og en let olietåge. Sørg for tør fisk og panering i et tyndt, jævnt lag.'
   - question: 'Hvor længe skal fiskefilet have i airfryer?'

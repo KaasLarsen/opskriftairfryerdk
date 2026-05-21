@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer loaded fries med jalapenos og ost – café-stil'
-description: 'Loaded fries i airfryer med sprøde pommes frites fra bunden, ost, jalapenos og topping. Nem metode med tid, temperatur og sprødhed.'
+description: 'Loaded fries i airfryer: steg pommes sprøde først (rå eller frosne), top med ost/jalapenos og smelt 3–5 min ved 195 °C — undgå bløde fries.'
 heroImage: '/images/recipes/airfryer-loaded-fries-jalapenos-ost.png'
 heroAlt: 'Loaded fries med smeltet ost, jalapenos, bacontern og creme på fad'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 20
 servings: '4 portioner'
@@ -60,7 +60,9 @@ faq:
   - question: 'Hvordan undgår jeg bløde fries?'
     answer: 'Steg fries først og top til sidst. Lad ikke jalapenos og sauce trække for længe ind i chipsene.'
   - question: 'Hvilke toppings passer godt?'
-    answer: 'Jalapenos, rødløg, jalapenos, salsa, pulled pork og lidt frisk koriander (valgfrit) fungerer rigtig godt.'
+    answer: 'Rødløg, jalapenos, salsa, pulled pork og frisk koriander (valgfrit) fungerer rigtig godt.'
+  - question: 'Kan det her kaldes chilli cheese fries air fry?'
+    answer: 'Ja — samme princip: **sprøde fries først**, ost/smelt derefter i korte minutter uden sauce der trækker ind i kartoflerne for tidligt.'
 ---
 
 ### Sprødhed først, topping til sidst

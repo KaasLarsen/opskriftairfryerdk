@@ -4,7 +4,7 @@ description: 'Æblechips i airfryer: tynde skiver, 135 °C og 30–38 min med ve
 heroImage: '/images/recipes/airfryer-aeblechips.png'
 heroAlt: 'Lys luftig madfoto: gyldne æblechips i skål, lyst træbord, mild kanel, airfryer i blødt fokus'
 pubDate: 2026-04-07
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 15
 cookMinutes: 35
 servings: 'Ca. 2 små skåle chips'
@@ -53,6 +53,8 @@ tips:
   - '**Dobbel portion**: aldrig prop — identisk tykkelse og ens luft er vigtigere end at spare tid.'
   - 'Små æblestumper fra udkærne kan bages som **tern** til kompot i separat skål — anden tid.'
 faq:
+  - question: '"Apple chips" eller æblechips — samme i air fryer og airfryer?'
+    answer: 'Ja — blot engelske vs danske labels: tynde æbler, langsom aftørring og små vendinger som i teksten; justér ned hvis kun 145–155 °C model.'
   - question: 'Hvor længe tager æblechips i airfryer?'
     answer: 'Ved ca. 135 °C og ét lag: typisk 30–38 minutter i alt med vending i 12+10+(8–12) min intervaller — til skiverne er krøllede og næsten knasende; sidste minutter under opsyn.'
   - question: 'Hvorfor blev mine æblechips seje?'

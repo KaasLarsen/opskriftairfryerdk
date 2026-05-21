@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer jalapeno poppers – sprøde spicy bites med ost'
-description: 'Jalapeno poppers i airfryer med sprød panering og varm ostefyld. Nem opskrift med tid, temperatur og tips til at undgå at fyldet løber.'
+description: 'Jalapeno poppers i airfryer: cirka 10–12 min ved 195 °C i ét lag, ostefyld uden at løbe ud — sprød panering og tydelig snack-tid.'
 heroImage: '/images/recipes/airfryer-jalapeno-poppers.png'
 heroAlt: 'Sprøde jalapeno poppers med ostefyld og dip'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 12
 servings: '4 portioner'
@@ -17,6 +17,7 @@ keywords:
   - spicy bites airfryer
   - ost fyldte jalapenos
   - jalapeno poppers tid
+  - jalapenos i air fryer
   - snack til airfryer
 featured: false
 intro: |
@@ -62,6 +63,8 @@ faq:
     answer: 'Ofte fordi de ikke får nok varme, eller fordi du overfylder/overlapper i kurven. Steg i ét lag og hold øje med farven.'
   - question: 'Kan jeg lave dem i forvejen?'
     answer: 'Ja. Forbered jalapenos og fyld. Panér og steg lige før servering, så de forbliver sprøde.'
+  - question: 'Virker jalapenos i “air fry”-kurv anderledes?'
+    answer: 'Nej — brug stadig ét lag og moderat høj temperatur som i en klassisk luftfriteuse, så du undgår at osten bobler ud.'
 ---
 
 ### Hvorfor airfryer virker så godt

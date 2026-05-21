@@ -4,7 +4,7 @@ description: 'Tofu i airfryer: pres, soya-marinde, majsstivelse, ca. 200 °C og 
 heroImage: '/images/recipes/airfryer-tofu.png'
 heroAlt: 'Skål med gyldne tofu-tern med glaze, sesam og forårsløg på linned, airfryer i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 25
 cookMinutes: 18
 servings: '3 portioner'
@@ -18,6 +18,7 @@ keywords:
   - tofu i airfryer opskrift
   - sprød tofu i airfryer
   - airfryer tofu tid
+  - tofu air fryer
 intro: |
   **Fast tofu** (ikke silken) kan blive gylden og lidt chewy i airfryeren — næsten som små “friterede” tern uden liter af olie. Nøglen er **pres** for at fjerne væske, **marinade** med umami og en let **stivelsestran**, så overfladen tørrer og karamelliserer.
 
@@ -48,6 +49,8 @@ tips:
   - 'For ekstra smag: dryp med hoisin eller chilimayo efter bagning — ikke før, så skorpen ikke bliver våd.'
   - 'Silketofu egner sig ikke — det falder fra hinanden.'
 faq:
+  - question: '"Tofu air fryer" vs. airfryer — samme ting?'
+    answer: 'Ja — det samme apparat og samme teknik (**pres, marinade, ét lag, typisk cirka 200 °C ved tern med stivelse**). Brug stadig ikke silken tofu.'
   - question: 'Hvor længe skal tofu have i airfryer?'
     answer: 'Ved 200 °C og ét lag: typisk 16–18 minutter med vending midtvejs — gylden og let sprød kant. Tykkere tern kan kræve 1–2 minutter mere.'
   - question: 'Hvorfor bliver min tofu våd i airfryer?'

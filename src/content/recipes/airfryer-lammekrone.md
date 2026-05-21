@@ -4,7 +4,7 @@ description: 'Lammekrone i airfryer (rack of lamb): 185 °C, kerne 54–62 °C, 
 heroImage: '/images/recipes/airfryer-lammekrone.png'
 heroAlt: 'Saftig lammekrone tilberedt i airfryer, serveret med ovnstegte kartofler og friske krydderurter.'
 pubDate: 2026-04-06
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 20
 cookMinutes: 28
 servings: '3–4 personer (ét rack, ca. 600–800 g)'

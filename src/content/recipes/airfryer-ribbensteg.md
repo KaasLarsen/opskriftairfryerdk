@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer ribbensteg – sprød svær og saftigt kød'
-description: 'Ribbensteg i airfryer med fokus på sprød svær, saftigt kød og korrekt kernetemperatur. Trin-for-trin guide.'
+description: 'Ribbensteg i airfryer med sprød svær og saftigt kød: typisk cirka 48–52 min ved 180 °C + finish 8–12 min ved 200 °C, kerne cirka 63–65 °C før hvile.'
 heroImage: '/images/recipes/airfryer-ribbensteg.png'
 heroAlt: 'Skåret ribbensteg med sprød svær, kartofler, rødkål og sovs på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 15
 cookMinutes: 60
 servings: '4-6 portioner'
@@ -18,6 +18,7 @@ keywords:
   - sprød svær ribbensteg
   - ribbensteg temperatur
   - julemad airfryer
+  - ribbensteg air fryer tid
 featured: true
 intro: |
   Ribbensteg i airfryer fungerer overraskende godt, når sværen er ridset korrekt og saltet helt ned mellem rillerne. Metoden minder om flæskesteg, men ribbensteg har lidt mere fedt og kræver ofte lidt længere tid.
@@ -56,6 +57,8 @@ faq:
     answer: 'Salt godt mellem sværene, hold stegen i vater og afslut med højere temperatur.'
   - question: 'Hvilken kernetemperatur skal ribbensteg have?'
     answer: 'Sigt efter ca. 63-65 °C før hvile, og lad den trække 10 minutter.'
+  - question: 'Kan en hel ribbensteg være for stor til min kurv?'
+    answer: 'Mål længde og bredde — ribben kan bukkes let eller deles før stegning. Undgå at presse ned i metallurvæggen; lad sværen få luft og jævn varme.'
 ---
 
 ### Weekend- og højtidsret

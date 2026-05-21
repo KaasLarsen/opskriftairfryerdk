@@ -1,10 +1,10 @@
 ---
 title: 'Karamelliseret ananas i airfryer – honning, kanel og let dessert'
-description: 'Ananas i airfryer med honning og kanel: sprød kant, sød karamel og server på 15 minutter.'
+description: 'Ananas i airfryer med honning og kanel: typisk **6 + 4–6 min ved 190 °C**, vend i ét lag — snack/dessert uden pandekaramel kaos.'
 heroImage: '/images/recipes/airfryer-karamel-ananas.png'
 heroAlt: 'Karamelliseret ananas med honningglace på desserttallerken'
 pubDate: 2026-04-09
-updatedDate: 2026-04-09
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 12
 servings: '4 portioner'
@@ -16,6 +16,8 @@ keywords:
   - ananas airfryer
   - karamelliseret ananas airfryer
   - dessert airfryer frugt
+  - frugt i air fry
+  - ananas grill airfryer tid
 featured: false
 intro: |
   Frisk ananas får koncentreret sødme i airfryeren. Honning og citron hjælper med karamel uden at brænde for hurtigt – hold alligevel øje sidste minutter.
@@ -44,7 +46,9 @@ tips:
   - 'Med brun farin: drys sparsomt sidste 2 minutter under opsyn.'
 faq:
   - question: 'Kan jeg bruge dåseananas?'
-    answer: 'Ja – dup meget tør; kortere tid (4–6 min i alt).'
+    answer: 'Ja — dup **meget** tør; kortere tid (samlet cirka **4–6 min** eller to korte omgange), ellers dampes glasuren af.'
+  - question: 'Brænder honning ved 190 °C i air fry?'
+    answer: 'Ja hvis du glemmer vending — pensl glaze i lag og åbn ikke unødigt; sidste min under opsyn eller sænk 5 °C.'
 ---
 
 ### “Gratin”

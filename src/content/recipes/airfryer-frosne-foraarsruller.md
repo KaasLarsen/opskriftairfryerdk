@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer frosne forårsruller – sprøde snack uden fritte'
-description: 'Frosne forårsruller i airfryer med sprød overflade. Nem opskrift med tid, temperatur og tips til at undgå bløde ruller.'
+description: 'Frosne forårsruller i airfryer: typisk **18–22 min** ved 190 °C (med vending), gerne sidste flush ved 200 °C — ét lag med afstand for sprød skorpe.'
 heroImage: '/images/recipes/airfryer-frosne-foraarsruller.png'
 heroAlt: 'Sprøde frosne forårsruller fra airfryer med sauce og urter på fad'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 20
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - sprøde frosne forårsruller
   - snack airfryer
   - nem aftensmad forårsruller
+  - spring rolls air fryer frost
 featured: false
 intro: |
   Frosne forårsruller i airfryer er en hurtig måde at få “restaurant-agtig” sprødhed på.
@@ -54,6 +55,8 @@ faq:
     answer: 'Oftest fordi kurven er overfyldt eller fordi de ikke får nok tid på høj varme til at fjerne fugt.'
   - question: 'Kan man genopvarme forårsruller?'
     answer: 'Ja. Brug 6-8 minutter i airfryer ved 190-200 °C, til de er sprøde igen.'
+  - question: 'Får jeg mere sprød skorpe på forårsruller end i ovn?'
+    answer: 'Ofte ja — luft omkring hver rulle giver mere knas; undgå at stable dem tæt som på en plade.'
 ---
 
 ### Sprødhed starter med afstand

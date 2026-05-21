@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer selleri – rodselleri i tern og sprøde stænger'
-description: 'Ristede knoldselleri-tern i airfryer med gyldne kanter (som på fotoet) – plus variant med selleristænger. Tid, temperatur og krydderi.'
+description: 'Knoldselleri (rodselleri) i airfryer: typisk **20–24 min samlet ved 185 °C** for tern — gyldne kanter, persille og parmesan til sidst; plus kortere selleristænger.'
 heroImage: '/images/recipes/airfryer-selleri.png'
 heroAlt: 'Hvide tallerken fyldt med gyldne ristede knoldselleri-tern drysset med frisk persille og peber'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 22
 servings: '4 portioner som tilbehør'
@@ -20,6 +20,7 @@ keywords:
   - sprød selleri
   - selleristænger grill
   - sundt tilbehør airfryer
+  - celery root air fry tid
 featured: true
 intro: |
   **Rodselleri (knoldselleri)** i airfryer bliver gyldne, let karamelliserede og med sprø kant – som på billedet – hvis du skærer **ens tern** og giver nok tid i kurven.
@@ -63,6 +64,8 @@ faq:
     answer: 'Ja, men optø og tør godt først – ellers dampes de i stedet for at blive gyldne.'
   - question: 'Er airfryer selleri sundt?'
     answer: 'Ja, rodselleri med moderat olie er fiberholdigt og relativt kalorielet som tilbehør.'
+  - question: 'Selleri rodselleri vs pastinak — samme tid?'
+    answer: 'Pastinak kan være sødere og brune hurtigere — hold samme temperatur og tjek bronering efter første **14 min** ryst.'
 ---
 
 ### Selleri på tallerken vs. stilke

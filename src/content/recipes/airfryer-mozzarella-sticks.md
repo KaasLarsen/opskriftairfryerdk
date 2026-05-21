@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer mozzarella sticks – sprød panering uden osteløb'
-description: 'Mozzarella sticks i airfryer med sprød yderside og smeltet ost. Nem to-fase opskrift der mindsker risiko for osteløb.'
+description: 'Mozzarella sticks i airfryer til sprød panering: typisk cirka 8 min ved 190 °C derefter cirka 5–6 min ved 200 °C ét lag for gylden skorpe uden stor osteløb — frosne sticks er ofte nemmest første forsøg.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-24
 prepMinutes: 10
 cookMinutes: 14
 servings: '4 portioner'
@@ -17,7 +17,7 @@ keywords:
   - ostestænger airfryer
   - sprød panering airfryer
   - mozzarella sticks tid temperatur
-  - snack opskrift airfryer
+  - frosne mozzarella sticks airfryer
 featured: false
 intro: |
   Mozzarella sticks er en af de mest populære café-snacks, fordi de er både sprøde og tilfredsstillende.
@@ -47,6 +47,8 @@ tips:
   - 'Overfyldning giver ofte blødere panering og mere osteløb.'
   - 'Top med et ekstra drys salt lige før servering for mere smag.'
 faq:
+  - question: 'Frosne mozzarella sticks fra frost — samme tid?'
+    answer: 'Start med opskriftens første/min-maks (13–15 min samlet i alt efter dine sticks) og hold øje: små eller tynde supermarket-sticks kan være før; store kan bruge +1–2 minutter ved 200 °C uden ekstra vending.'
   - question: 'Skal mozzarella sticks tøes op først?'
     answer: 'Som udgangspunkt nej. Frosne sticks giver ofte bedre kontrol. Tøning kan øge risikoen for osteløb.'
   - question: 'Hvor lang tid skal mozzarella sticks have i airfryer?'

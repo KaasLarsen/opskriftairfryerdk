@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer påskeskinke i skiver – glaseret med honning og sennep'
-description: 'Saftige skiver påskeskinke i airfryer med sød-skarp glasering. Nem opskrift med tid, temperatur og serveringsidéer til påske.'
+description: 'Glaseret påskeskinke i skiver til airfryer: cirka 16–20 min ved 185 °C, pensling i to omgange — klassisk påske smag på kort tid.'
 heroImage: '/images/recipes/airfryer-paaskeskinke.png'
 heroAlt: 'Glaseret påskeskinke i skiver på skærebræt med kartofler og cornichoner'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - skinke i airfryer
   - påskemad opskrift
   - honning sennep skinke
+  - skinkesteg skiver airfryer påske
 featured: true
 intro: |
   Påskeskinke i skiver er en nem vej til klassisk påskesmag uden lang stegetid. Airfryeren gør det enkelt at få en let karamelliseret overflade med sød-skarp glasering.
@@ -58,6 +59,8 @@ faq:
     answer: 'Pensl i to omgange: først ved start og igen efter vending. Så bygger du smag og overflade gradvist.'
   - question: 'Hvad passer til glaseret skinke?'
     answer: 'Kartofler, grønne grøntsager, syltede rødløg og en frisk salat passer rigtig godt.'
+  - question: 'Opvarmes færdigkokt påskeskinke bedst på lav eller middel temperatur?'
+    answer: 'Hold **middel (~185 °C)** og pensl glaze i etaper — for høj giver bitter karamel hurtigere end i ovn med masser fugt.'
 ---
 
 ### Påske-klassiker i hurtig version

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer quesadillas med kylling og ost – sprød tortilla'
-description: 'Quesadillas i airfryer med kylling og smeltet ost. Sprøde kanter uden pande — perfekt café-mad hjemme.'
+description: 'Quesadillas i airfryer med kylling og ost: typisk **ca. 10–12 min i alt ved 200 °C**, vend én gang — sprøde tortillas og smeltet fyld.'
 heroImage: '/images/recipes/airfryer-quesadillas-kylling-ost.png'
 heroAlt: 'Sprøde airfryer quesadillas med kylling og smeltet ost skåret i trekanter med salsa'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 10
 servings: '2 portioner'
@@ -18,6 +18,7 @@ keywords:
   - tortilla quesadilla airfryer
   - sprød tortilla airfryer
   - nem café mad
+  - quesadilla air fry tid
 featured: false
 intro: |
   Airfryer quesadillas giver det bedste fra to verdener: smeltet ost inde i tortillaen og sprød, gylden overflade uden lang stegning på pande.
@@ -59,6 +60,8 @@ faq:
     answer: 'Typisk 10-12 minutter i alt ved 200 °C, afhængigt af størrelse og fyldmængde.'
   - question: 'Hvordan undgår jeg, at quesadillas åbner sig?'
     answer: 'Brug ikke for meget fyld, og lad hvile 1 minut inden du skærer.'
+  - question: 'Kan jeg lave tortillas quesadilla i dobbeltkurv-airfryer?'
+    answer: 'Ja — placer ét lag pr. kurv eller steg skiftevis på lavere watt; undgå overlap så tortillaen ikke dampes lukket.'
 ---
 
 ### Sprød tortilla og smeltet ost

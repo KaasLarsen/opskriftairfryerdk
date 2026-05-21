@@ -4,7 +4,7 @@ description: 'Svinekoteletter i airfryer: 195 °C, ca. 14–17 min med vending, 
 heroImage: '/images/recipes/airfryer-koteletter.png'
 heroAlt: 'Saftige stegte koteletter med kartofler og sovs på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 8
 cookMinutes: 16
 servings: '4 portioner'
@@ -51,6 +51,8 @@ tips:
   - 'Steg i to omgange hvis kurven er lille.'
   - 'Lidt citron ved servering frisker smagen op.'
 faq:
+  - question: 'Nakkekoteletter i airfryer — kan opskriften bruges?'
+    answer: 'Ja ofte — nakke kan være lidt ujævn; brug kernetermometer (typisk mål cirka 68–70 °C ved svinet) og forlæng 1–2 minutter ved behov.'
   - question: 'Lammekoteletter i airfryer – samme opskrift?'
     answer: 'Lam er slankere og bliver hurtigere tør: brug samme temperatur, men kortere tid og mål kerne (fx 60–65 °C for rosa lam). Se også [lammekrone](/opskrifter/airfryer-lammekrone) til tykkere lam-stykker.'
   - question: 'Hvor længe skal koteletter have i airfryer?'

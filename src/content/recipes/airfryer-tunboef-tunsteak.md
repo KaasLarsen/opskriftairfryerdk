@@ -4,7 +4,7 @@ description: 'Tunbøf i airfryer og tunsteak: 3–4 min + vending, 5–8 min sam
 heroImage: '/images/recipes/airfryer-tunboef-tunsteak.png'
 heroAlt: 'Sesam- og peberkrydret tunsteak med rosa midte, citronbåde og friske urter på tallerken foran airfryer.'
 pubDate: 2026-04-06
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 8
 cookMinutes: 8
 servings: '2 portioner (2 tunbøffer à ca. 180–220 g)'
@@ -18,7 +18,7 @@ keywords:
   - tunbøf airfryer tid
   - tun steak airfryer
   - tun i airfryer
-  - gul tun airfryer
+  - tun steak air fryer tid
 intro: |
   **Tunbøf** og **tunsteak** er i praksis ofte samme snit: en tyk skive af **gul tun** (eller tilsvarende), som kan få pæn **stegeskorpe** i airfryeren på kort tid. Udfordringen er at undgå **overtilberedning** — tun bliver melagtig og tør, hvis midten får for meget varme.
 

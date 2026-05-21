@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer squash – hurtigt grønt tilbehør med masser af smag'
-description: 'Squash i airfryer med sprøde kanter og mør midte. Nem opskrift med tid, temperatur og krydring til hverdag og gæster.'
+description: 'Squash i airfryer: typisk **9–12 min** ved 195 °C, skiver cirka 1 cm — sprøde kanter og bid i midten uden vandgrøntsag.'
 heroImage: '/images/recipes/airfryer-squash.png'
 heroAlt: 'Skiver af squash stegt i airfryer med urter og let gylden overflade'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 6
 cookMinutes: 11
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - grøntsager airfryer
   - sundt tilbehør airfryer
   - nem squash opskrift
+  - zucchini air fry dansk
 featured: true
 intro: |
   Squash er hurtigt tilbehør i airfryer, når du vil have mere grønt uden lang tilberedning. Ved høj varme får du let ristede kanter og stadig lidt bid i midten.

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kyllingelår uden ben – saftigt kød og sprød krydring'
-description: 'Kyllingelår uden ben i airfryer med tid, temperatur og kernetemperatur. Nem hverdagsopskrift med saftigt resultat.'
+description: 'Kyllingelår uden ben i airfryer: typisk 18–22 min ved 190 °C, **mindst 75 °C** — nem udbenet lår til hverdag og wraps.'
 heroImage: '/images/recipes/airfryer-kyllingelaar-uden-ben.png'
 heroAlt: 'Saftige airfryer kyllingelår uden ben serveret med citron og grøn salat'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 20
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - kylling i airfryer tid
   - saftig kylling airfryer
   - nem kylling opskrift
+  - udbenede kyllingelår air fry tid
 featured: true
 intro: |
   Kyllingelår uden ben er et af de bedste stykker kylling til airfryer, fordi kødet har mere fedt og derfor holder sig saftigt. Samtidig bliver overfladen hurtigt gylden med en enkel krydring.

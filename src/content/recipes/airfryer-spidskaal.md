@@ -4,7 +4,7 @@ description: 'Spidskål i airfryer: 175 °C, ét lag, 12–14 min med ryst. Samm
 heroImage: '/images/recipes/airfryer-spidskaal.png'
 heroAlt: 'Strimlet spidskål med gyldne kanter på tallerken med kommen og citron, lyst køkkenlys og airfryer i baggrunden'
 pubDate: 2026-04-11
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 10
 cookMinutes: 14
 servings: '4 portioner tilbehør'

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer broccoli – sprød og grøn på 12 minutter'
-description: 'Broccoli i airfryer med let sprød kant og saftig bid. Nem tilbehørsopskrift med tid, temperatur og krydring.'
+description: 'Broccoli i airfryer ved 190 °C: typisk cirka 10–12 minutter ét lag eller ryst — sprøde toppe, stadig lidt bid midt i. Krydret eller med parmesan til sidst — hurtigt sundt tilbehør.'
 heroImage: '/images/recipes/airfryer-broccoli.png'
 heroAlt: 'Sprødstegt broccoli med dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-24
 prepMinutes: 6
 cookMinutes: 12
 servings: '4 portioner'
@@ -17,7 +17,7 @@ keywords:
   - airfryer broccoli
   - grøntsager i airfryer
   - sundt tilbehør
-  - nem broccoli opskrift
+  - broccoli airfryer tid temperatur
 featured: true
 intro: |
   Broccoli i airfryer er et hurtigt grønt tilbehør, der passer til næsten alt. Du får mere smag end kogt broccoli, fordi kanterne karamelliserer let.
@@ -47,6 +47,8 @@ tips:
   - 'Tilføj citronskal for frisk smag.'
   - 'Top med parmesan de sidste 2 minutter for ekstra umami.'
 faq:
+  - question: 'Broccoli air fryer — samme som airfryer?'
+    answer: 'Ja — engelske søgemaskiner skriver air fryer som to ord mens vi normalt samler på dansk — tid og temperatur ovenfor gælder uændret.'
   - question: 'Hvor længe skal broccoli have i airfryer?'
     answer: 'Typisk 10-12 minutter ved 190 °C.'
   - question: 'Kan broccoli blive sprød i airfryer?'

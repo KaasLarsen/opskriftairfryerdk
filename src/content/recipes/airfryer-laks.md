@@ -4,7 +4,7 @@ description: 'Laks i airfryer med skind: 180 °C, 7–10 min, 52–58 °C i midt
 heroImage: '/images/recipes/airfryer-laks.png'
 heroAlt: 'Stegt laksefilet med krydderi på hvid tallerken, citron, dild, salat og kartofler i baggrunden på træbord'
 pubDate: 2025-03-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 5
 cookMinutes: 10
 servings: '4 portioner'

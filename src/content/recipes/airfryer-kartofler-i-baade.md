@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kartofler i både – sprøde og nemme hverdagskartofler'
-description: 'Sprøde kartoflebåde uden friture – med tydelig tid og temperatur. Velegnet som tilbehør til kød, fisk og vegetariske retter.'
+description: 'Sprøde kartoflebåde uden friture: cirka 20–34 min ved 200 °C (12 min + 8–12 min) i ét lag efter hurtigt saltbad og god tørring. Til kød, fisk og vegetar.'
 heroImage: '/images/recipes/airfryer-kartofler-i-baade.png'
 heroAlt: 'Gyldne kartoflebåde i hvid skål med persille, dip og olieflaske i baggrunden på rustikt træbord'
 pubDate: 2025-03-02
-updatedDate: 2025-03-30
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 22
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - airfryer kartoflebåde
   - nemt tilbehør
   - hurtige kartofler
+  - kartoffelbåde air fry tid
 featured: true
 intro: |
   Kartoflebåde i airfryer er en af de ting, man ofte vender tilbage til: få ingredienser, minimal aktiv tid, og et resultat der ligger et sted mellem bagt og friturestegt – uden liter af olie. Nøglen er tørre kartofler, høj nok temperatur i starten, og at du ikke propper kurven så meget, at damp fylder den.

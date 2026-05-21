@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer BBQ kyllingelår – sticky glaze og sprød kant'
-description: 'BBQ kyllingelår i airfryer med karamelliseret glaze og saftigt kød. Nem opskrift med tid, temperatur og serveringsforslag.'
+description: 'BBQ kyllingelår i airfryer: først krydret steg ved 190 °C, BBQ-sauce til sidst cirka 30–34 min i alt til mindst **75 °C** — sticky glaze uden brændt sukker.'
 heroImage: '/images/recipes/airfryer-bbq-kyllingelaar.png'
 heroAlt: 'BBQ-glaserede kyllingelår med blank overflade, dip og citron på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 32
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - airfryer kyllingelår marinade
   - kyllingelår bbq
   - nem weekendmad
+  - bbq kylling air fry tid
 featured: true
 intro: |
   BBQ kyllingelår i airfryer er en stærk variant af den klassiske kyllingelårsopskrift. Du får saftigt kød, sprød kant og en klæbrig glaze uden at tænde grillen.
@@ -57,6 +58,8 @@ faq:
     answer: 'Typisk 30-34 minutter totalt ved 190 °C, inkl. glaze-fase.'
   - question: 'Kan jeg bruge færdig BBQ-sauce?'
     answer: 'Ja, færdig sauce fungerer fint. Vælg en med smag du kan lide, og justér salt efter behov.'
+  - question: 'Hvilken kernetemperatur er sikkert på kyllingelår?'
+    answer: 'Mindst **75 °C** tættest på benet eller i den tykkeste del — mål også efter glaze, da sukker giver anderledes overflade.'
 ---
 
 ### BBQ-glaze uden gril

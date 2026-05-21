@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer pomfritter – sprøde pommes frites fra kartofler'
-description: 'Hjemmelavede pomfritter i airfryer med sprød yderside og blød midte. Guide til udskæring, udvanding, tid og temperatur.'
+description: 'Hjemmelavede pomfritter i airfryer: tipisk cirka 20–24 min ved 195 °C for 1 cm stave efter forkort bad og tør. Guide til udskæring, udvanding og sprød yderside.'
 heroImage: '/images/recipes/airfryer-pomfritter.png'
 heroAlt: 'Sprøde gyldne pomfritter med ketchup og dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 20
 cookMinutes: 22
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - sprøde pomfritter airfryer
   - hjemmelavede pomfritter
   - airfryer kartoffel fritter
+  - pomfritter air fryer tid
 featured: true
 intro: |
   Pomfritter i airfryer kan blive virkelig gode, men kræver lidt forarbejde. Hemmeligheden er at fjerne overfladestivelse med koldt vand, tørre kartoflerne grundigt og stege i relativt tynde lag.
@@ -59,6 +60,8 @@ faq:
     answer: 'Melede kartofler giver ofte det bedste resultat, fordi de får en luftigere midte og sprødere yderside.'
   - question: 'Kan jeg bruge frosne pomfritter?'
     answer: 'Ja, frosne pomfritter fungerer godt i airfryer og kræver normalt lidt kortere forberedelse. Følg posens anvisning som udgangspunkt.'
+  - question: 'Er “air fry” og airfryer det samme til pommes?'
+    answer: 'Ja — det er samme varmluftsmetode på dansk **airfryer**: ét lag, ryst kurven og justér sidste minutter efter tykkelse og model.'
   - question: 'Hvor lang tid skal hjemmelavede pomfritter have i airfryer?'
     answer: 'Omkring 20-24 minutter ved ca. 195 °C for 1 cm stave, afhængigt af airfryer-model og mængde.'
 ---

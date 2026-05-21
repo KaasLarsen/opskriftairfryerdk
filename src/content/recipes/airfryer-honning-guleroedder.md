@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer honning-gulerødder – sødt og sprødt påske-tilbehør'
-description: 'Gulerødder i airfryer med honning, timian og let karamellisering. Nem opskrift til påske, hverdagsmad og gæstemenu.'
+description: 'Honning-glaserede gulerødder i airfryer: **12–15 min + sidste glaze** ved 195 °C — balanceret timian og honning til sidst så intet brænder.'
 heroImage: '/images/recipes/airfryer-honning-guleroedder.png'
 heroAlt: 'Glaserede honning-gulerødder med timian på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 8
 cookMinutes: 16
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - påske tilbehør grøntsager
   - airfryer grøntsager
   - timian gulerødder
+  - glazed carrots air fry tid
 featured: true
 intro: |
   Honning-gulerødder i airfryer er et enkelt tilbehør, der giver farve og sødme til påskebordet. Den varme luft gør overfladen let karamelliseret, mens midten stadig har bid.
@@ -59,6 +60,8 @@ faq:
     answer: 'De passer særligt godt til lam, skinke, kylling og fisk samt til klassiske kartoffelretter.'
   - question: 'Kan jeg bruge andre krydderurter end timian?'
     answer: 'Ja, rosmarin eller persille fungerer også, men timian giver en klassisk, mild dybde.'
+  - question: 'Baby gulerødder samme temperatur som stave?'
+    answer: 'Ja, men **start 3–5 min tidligere** eller sænk slut-glaze med ét minut — sukker mørkner hurtigere på små rodfrugter.'
 ---
 
 ### Grønt tilbehør med høj smagseffekt

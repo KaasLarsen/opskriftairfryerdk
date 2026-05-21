@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer frosne franske kartofler – sprøde fritter hver gang'
-description: 'Frosne franske kartofler i airfryer med korrekt tid, temperatur og mængde i kurven. Nem guide til ekstra sprøde fritter.'
+description: 'Frosne franske kartofler i airfryer: typisk 14–18 min ved 200 °C, ryst ved 6 og 11–12 min. Mindre lag = sprødere end hele posen på én gang.'
 heroImage: '/images/recipes/airfryer-frosne-franske-kartofler.png'
 heroAlt: 'Sprøde gyldne frosne franske kartofler i skål med ketchup og mayo ved siden af'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 2
 cookMinutes: 16
 servings: '3 portioner'
@@ -18,6 +18,7 @@ keywords:
   - airfryer fritter tid
   - hvor længe frosne fritter airfryer
   - sprøde fritter airfryer
+  - frosne pommes air fry tid
 featured: true
 intro: |
   Frosne franske kartofler er en af de mest søgte airfryer-opskrifter, fordi alle vil have samme resultat: sprøde fritter uden at friturestege. Hemmeligheden er at holde kurven i et moderat lag og ryste flere gange undervejs.
@@ -54,6 +55,8 @@ faq:
     answer: 'Den mest almindelige årsag er for mange fritter i kurven. Steg i mindre hold for bedre luftflow.'
   - question: 'Kan jeg lave en hel pose på én gang?'
     answer: 'Det kan lade sig gøre, men kvaliteten bliver normalt bedre i to omgange.'
+  - question: 'Betaler det sig at tale om “air fry” til frosne fritter?'
+    answer: 'Ja — mange maskiner hedder Air Fry eller Crisp fry; det er samme metode: forvarm, ét jævnt lag og flere ryst undervejs.'
 ---
 
 ### Fra pose til sprød tallerken

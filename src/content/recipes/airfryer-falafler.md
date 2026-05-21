@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer falafler – sprøde uden friture'
-description: 'Falafler i airfryer med sprød yderside og blød midte. Nem vegetarisk opskrift med tid, temperatur og tips.'
+description: 'Falafler i airfryer med sprød yderside og blød midte — typisk 13–15 min ved 195 °C vendt undervejs. Vegetar snack med udblødte kikærter og konkrete tider.'
 heroImage: '/images/recipes/airfryer-falafler.png'
 heroAlt: 'Sprøde gyldne falafler med dip og friske grøntsager på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 20
 cookMinutes: 14
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - vegetar airfryer opskrift
   - sprøde falafler
   - kikærter airfryer
+  - falafel air fryer
 featured: true
 intro: |
   Falafler i airfryer er et godt alternativ til friture, når du vil have sprødhed med mindre olie. Med korrekt konsistens i farsen får du en flot overflade og saftig midte.
@@ -60,6 +61,8 @@ faq:
     answer: 'Normalt 13-15 minutter ved 195 °C afhængigt af størrelse.'
   - question: 'Kan jeg bruge kikærter fra dåse?'
     answer: 'Ja, men resultatet bliver ofte blødere. Sørg for at dræne og tørre dem meget grundigt.'
+  - question: 'Hvad er falafler “air fry” vs. klassisk airfryer?'
+    answer: 'Det er samme apparat — brug stadig penslet olie eller spray, ét lag og vending for jævn sprødhed.'
 ---
 
 ### Vegetar med sprød skorpe

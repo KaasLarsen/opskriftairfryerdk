@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer bagekartofler – sprød skræl og blød midte'
-description: 'Bagekartofler i airfryer med perfekt tekstur. Nem guide til størrelse, tid, temperatur og fyld.'
+description: 'Store bagekartofler i airfryer: typisk **38–45 min** ved 200 °C (vend undervejs) — sprød skræl, blød midte og tydelig tid pr. stk.'
 heroImage: '/images/recipes/airfryer-bagekartofler.png'
 heroAlt: 'Fire sprøde bagekartofler med smør, cremefraiche og purløg på en tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 5
 cookMinutes: 42
 servings: '4 portioner (4 store kartofler)'
@@ -18,6 +18,7 @@ keywords:
   - bagt kartoffel airfryer
   - airfryer kartoffel tid
   - tilbehør airfryer
+  - baked potato air fryer dansk
 featured: true
 intro: |
   Bagekartofler i airfryer er en nem måde at få sprød skræl og blød, luftig midte uden lang ovntid. De fungerer som klassisk tilbehør til kød, fisk og vegetarretter.

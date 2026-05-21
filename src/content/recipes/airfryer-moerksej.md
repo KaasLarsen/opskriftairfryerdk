@@ -4,7 +4,7 @@ description: 'Mørksej i airfryer og sejfilet: 6–8 min ved 180 °C for 1,5–2
 heroImage: '/images/recipes/airfryer-moerksej.png'
 heroAlt: 'To hvide fiskefileter i ovalt fad med urter, citronskiver og let sauce, airfryer og grønt i baggrunden'
 pubDate: 2026-04-03
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 8
 cookMinutes: 10
 servings: '4 portioner'
@@ -44,6 +44,8 @@ instructions:
 tips:
   - 'Panering (panko) beskytter overfladen — se fiskefilet-opskriften på sitet.'
 faq:
+  - question: 'Er mørksej og sejfilet i airfryer den samme ret?'
+    answer: 'I Danmark overlapper ordene tit for magre hvide fileter (sej/mørksej-snitt): brug stadig samme temperatur (180 °C) og korte minutter (6–8 for cirka 1,5–2 cm) men tjek med gaffelflæk — tyndeste filet tager først.'
   - question: 'Hvor længe skal mørksej have i airfryer?'
     answer: 'Ved 180 °C og filet ca. 1,5–2 cm: typisk 6–8 minutter i ét lag. Tyndere 4–6 minutter — tjek at kødet flager, uden gennemkogt midte.'
   - question: 'Frossen mørksej i airfryer?'

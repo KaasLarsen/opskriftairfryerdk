@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer æggekage med asparges og bacon – nem påskebrunch'
-description: 'Nem æggekage i airfryer med sprød bacon og grønne asparges. Perfekt til påskefrokost eller brunch med få ingredienser.'
+description: 'Æggekage med asparges og bacon i airfryer på **170 °C**: bacon først, derefter cirka **13–16 min til sat midte**. Nem brunch og påskeret.'
 heroImage: '/images/recipes/airfryer-aeggekage-asparges-bacon.png'
 heroAlt: 'Luftig æggekage toppet med grønne asparges og sprød bacon på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - påske brunch opskrift
   - asparges bacon æg
   - nem påskefrokost
+  - æggekage luftfriteuse tid
 featured: true
 intro: |
   Æggekage i airfryer er en hurtig og stabil måde at lave brunch på, især når du vil slippe for pande og ovn samtidig. Kombinationen af bacon og asparges passer perfekt til foråret og påsken.
@@ -61,6 +62,8 @@ faq:
     answer: 'Ja, den kan laves et par timer før servering og varmes let op, men er bedst nylavet.'
   - question: 'Hvad passer til påskebrunch?'
     answer: 'Brød, røget fisk, frisk salat, frugt og små kartoffelretter giver en god balance.'
+  - question: 'Passer æggekage sammen med laks og asparges-menu?'
+    answer: 'Ja — supplér med [laks i airfryer](/opskrifter/airfryer-laks) og evt. [asparges i bacon](/opskrifter/airfryer-asparges) hvis du vil bygge en tallerken med flere elementer.'
 ---
 
 ### Påskebrunch med minimal stress

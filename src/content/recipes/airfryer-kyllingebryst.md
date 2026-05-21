@@ -4,7 +4,7 @@ description: 'Kyllingefilet i airfryer (kyllingebryst): 190 °C, ét lag, vendin
 heroImage: '/images/recipes/airfryer-kyllingebryst.png'
 heroAlt: 'Skåret kyllingebryst med krydderi på tallerken sammen med kartofler, salat, citron og timian – airfryer i baggrunden på træbord'
 pubDate: 2025-03-01
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 10
 cookMinutes: 15
 servings: '4 portioner'

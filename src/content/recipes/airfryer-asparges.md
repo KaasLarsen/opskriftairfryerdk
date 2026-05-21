@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer asparges i baconsvøb – parmesan og citron'
-description: 'Grønne asparges i baconsvøb i airfryer: sprød bacon og møre spidser. Med parmesan, citron og urter — nemt tilbehør der imponerer.'
+description: 'Asparges i baconsvøb i airfryer: cirka **6 min + 3–5 min ved 190 °C**, ét lag — sprød bacon, stadig bid i asparges; parmesan og citron til sidst.'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 12
 cookMinutes: 11
 servings: '4 portioner som tilbehør (5 bundter)'
@@ -18,6 +18,7 @@ keywords:
   - bacon asparges airfryer
   - grønne asparges airfryer
   - nemt tilbehør airfryer
+  - bacon wrapped asparagus air fry tid
 featured: false
 intro: |
   Asparges i baconsvøb er et af de mest populære airfryer-tilbehør, fordi du får både salt sprødhed fra baconen og sødme i aspargesspidserne — på få minutter og uden grill.
@@ -61,6 +62,8 @@ faq:
     answer: 'Placering tæt på varmeelement eller for høj slutvarme. Prøv 185 °C eller dæk spidserne med et lille stykke folie de sidste minutter.'
   - question: 'Passer det til hvide asparges?'
     answer: 'Ja — skræl stilken og giv lidt længere tid. Baconen fungerer på samme måde.'
+  - question: 'Hvor lang tid i alt asparges bacon airfryer?'
+    answer: 'Som udgangspunkt **9–11 min ved 190 °C** fordelt på to faser plus kort hvile før du serverer.'
 ---
 
 ### Hvorfor “bundter” fungerer i airfryer

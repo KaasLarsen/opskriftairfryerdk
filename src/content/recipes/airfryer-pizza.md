@@ -2,7 +2,7 @@
 title: 'Pizza i airfryer – mini pepperoni med mozzarella og basilikum'
 description: 'Pizza i airfryer med lille bund, ost og pepperoni — ofte 9–12 min ved 200 °C (tortilla hurtigere). Tomatsauce, cherrytomater og tips mod blød midte.'
 pubDate: 2026-04-02
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 14
 cookMinutes: 11
 servings: '2 små pizzaer (1 person pr. pizza)'
@@ -58,6 +58,8 @@ tips:
   - 'Pepperoni kan blive mørk i kanterne: ved meget tynde skiver, sænk til 190 °C de sidste minutter.'
   - 'Cherrytomater: halver dem så de afgiver mindre damp under den korte stegning.'
 faq:
+  - question: 'Hedder det pizza air fryer eller pizza i airfryer?'
+    answer: 'Det er samme ret — “air fryer” er blot engelsk. Brug stadig mini-bunde ét ad gangen, moderat sauce og luft langs sålen som i opskriften.'
   - question: 'Hvorfor bliver min pizzabund blød i midten?'
     answer: 'Oftest for meget sauce, for meget fyld på én gang eller manglende luft under/omkring pizzaen. Hold sauce og toppings moderate.'
   - question: 'Kan man undlade pepperoni?'

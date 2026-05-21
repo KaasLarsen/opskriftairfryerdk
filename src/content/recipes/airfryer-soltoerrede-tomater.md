@@ -4,7 +4,7 @@ description: 'Soltørrede tomater i airfryer og halvtørre: cherry ved 110–120
 heroImage: '/images/recipes/airfryer-soltoerrede-tomater.png'
 heroAlt: 'Glansfulde halvtørre tomater med olie, basilikum og salt, appetitlig makro-stemning på lyst træ, airfryer antydet i baggrunden'
 pubDate: 2026-04-07
-updatedDate: 2026-05-21
+updatedDate: 2026-05-24
 prepMinutes: 15
 cookMinutes: 80
 servings: 'Ca. 1–1,5 dl færdige tomater efter reduktion'
@@ -17,7 +17,7 @@ keywords:
   - tørrede tomater airfryer
   - dehydrere tomater airfryer
   - semi tørrede tomater airfryer
-  - cherrytomater airfryer tørre
+  - hvor lang tid dehydrere tomater airfryer
   - lav temperatur tomater airfryer
   - hjemmelavede soltørrede tomater
 intro: |

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer corn dogs – sprød pølse i majsdej'
-description: 'Corn dogs i airfryer med sprød majsdej og saftig pølse. Nem café-snack opskrift med tid, temperatur og tips til sprødhed.'
+description: 'Corn dogs i airfryer: typisk cirka **18–22 min** ved 200 °C, vend én gang — sprød majsdej og gennemvarm pølse uden fritte.'
 heroImage: '/images/recipes/airfryer-corn-dogs.png'
 heroAlt: 'Sprøde airfryer corn dogs med ketchup og sennep på tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-04-02
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - sprød corn dog airfryer
   - snack airfryer
   - corn dogs tid temperatur
+  - corn dogs air fry frost
 featured: false
 intro: |
   Airfryer corn dogs giver dig den klassiske café/amerikanske snack, men med langt mindre besvær end friturestegning.
@@ -54,6 +55,8 @@ faq:
     answer: 'Som regel ja, for jævn farve og sprødhed.'
   - question: 'Hvordan undgår jeg blød majsdej?'
     answer: 'Hold afstand mellem corn dogs og undgå at åbne låget for meget under stegning.'
+  - question: 'Samme teknik på “Air Fry Oven”?'
+    answer: 'Ja — brug stadig middel lag og vending; bredere ovne kan kræve 1–2 min kortere pr. side — tjek farve og varme i midten.'
 ---
 
 ### Hvorfor airfryer giver “rigtig snack” tekstur

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer søde kartofler – sprøde fries og både'
-description: 'Søde kartofler i airfryer med karamelliseret kant og blød midte. Nem opskrift med tid, temperatur og krydderiforslag.'
+description: 'Søde kartofler i airfryer: typisk **17–20 min** ved 200 °C i ét lag med ryst — karameliseret kant; mindre fedt end friture.'
 heroImage: '/images/recipes/airfryer-soede-kartofler.png'
 heroAlt: 'Sprøde søde kartoffelfritter med cremet dip på tallerken foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 18
 servings: '4 portioner'
@@ -18,6 +18,7 @@ keywords:
   - airfryer søde kartoffel fritter
   - sød kartoffel i airfryer
   - sundt tilbehør airfryer
+  - sweet potato fries air fry tid
 featured: true
 intro: |
   Søde kartofler i airfryer er et populært alternativ til klassiske fritter. De får en naturlig sødme og let karamellisering, når de steges ved høj varme i et tyndt lag.
@@ -54,6 +55,8 @@ faq:
     answer: 'For stor mængde i kurven og for lidt varmecirkulation giver damp og blød overflade.'
   - question: 'Skal søde kartofler udvandes først?'
     answer: 'Det er ikke nødvendigt som ved almindelige kartofler, men du kan teste kort udvanding hvis du ønsker.'
+  - question: 'Hvorfor er sweet potato anderledes end almindelige pommes i luftfriteuse?'
+    answer: 'Mere naturligt sukker giver hurtigere mørkfarve — steg lidt mindre fyld og hold ekstra øje sidste minutter.'
 ---
 
 ### Sødere kartoffel, kortere tid på komfuret

@@ -1,10 +1,10 @@
 ---
 title: 'Airfryer kyllingelår – sprødt skind og saftigt kød'
-description: 'Kyllingelår i airfryer med sprød overflade og saftig midte. Komplet guide med tid, temperatur, kernetemperatur og fejl du skal undgå.'
+description: 'Kyllingelår i airfryer med sprødt skind: typisk 28–32 min ved 190 °C, vend halvvejs, **mindst 75 °C** ved benet. Saftigt kød og tydelig tid.'
 heroImage: '/images/recipes/airfryer-kyllingelaar.png'
 heroAlt: 'Sprøde gyldne kyllingelår med citron og urtedip serveret foran en airfryer'
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-05-21
 prepMinutes: 10
 cookMinutes: 30
 servings: '4 portioner (4-6 kyllingelår)'
@@ -18,6 +18,7 @@ keywords:
   - sprødt skind kyllingelår
   - tid kyllingelår airfryer
   - nem aftensmad
+  - chicken thighs air fryer tid
 featured: true
 intro: |
   Kyllingelår er en af de mest stabile retter i airfryer, fordi fedtet under skindet hjælper kødet med at holde sig saftigt. Samtidig bliver skindet hurtigt gyldent, når lårene får plads i kurven og varmen kan cirkulere frit.
@@ -63,6 +64,8 @@ faq:
     answer: 'Ja, men optøede lår giver klart bedre resultat. Frosne kræver længere tid og mere kontrol for at undgå ujævn stegning.'
   - question: 'Hvad passer som tilbehør?'
     answer: 'Kartofler, coleslaw, grøn salat og grøntsagsmix fungerer godt. Du kan lave tilbehør i airfryer i hold, mens lårene hviler.'
+  - question: 'Skal temperaturen måles i skind eller kød?'
+    answer: 'Stik i **kødet tættest ved knoglen**, ikke kun i fedt/skindsiden — mål også i den tykkeste muskel ved store lår.'
 ---
 
 ### Tider du kan stole på
