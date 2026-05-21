@@ -1668,7 +1668,7 @@
 		},
 		{
 			"source": "/nem-og-laekker-koedsovs-til-spaghetti-i-airfryer-klar-paa-ingen-tid",
-			"destination": "/opskrifter/airfryer-one-pot-chili-con-carne",
+			"destination": "/opskrifter/airfryer-spaghetti-med-koedsovs",
 			"permanent": true
 		},
 		{
@@ -2084,6 +2084,11 @@
 		{
 			"source": "/opskrifter/broed-i-airfryer-lille-formbroed.html",
 			"destination": "/opskrifter/airfryer-hytteost-broed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/brunede-kartofler-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-brunede-kartofler",
 			"permanent": true
 		},
 		{
@@ -3553,7 +3558,7 @@
 		},
 		{
 			"source": "/ristet-broed-med-aeg-egg-in-a-hole-i-airfryer",
-			"destination": "/opskrifter/airfryer-toast-grillet-ost",
+			"destination": "/opskrifter/airfryer-toast-aeug-i-hul",
 			"permanent": true
 		},
 		{

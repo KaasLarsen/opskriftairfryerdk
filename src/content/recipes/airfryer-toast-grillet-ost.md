@@ -4,7 +4,7 @@ description: 'Toast og grillet ost i airfryer: klassisk toast **circa 3–5 min 
 heroImage: '/images/recipes/airfryer-toast-grillet-ost.png'
 heroAlt: 'To stablede grillede ostetoasts med gyldent brød, flydende gul ost og ketchup til dip på tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-05-26
+updatedDate: 2026-05-21
 prepMinutes: 5
 cookMinutes: 8
 servings: '2 portioner'
@@ -29,7 +29,7 @@ intro: |
 conclusion: |
   Server med ketchup, sennep eller en lille salat – klassisk café-hjem.
 
-  Til morgenmad: kombinér med [airfryer æg](/opskrifter/airfryer-aeg) og [airfryer bacon](/opskrifter/airfryer-bacon).
+  Til morgenmad: kombinér med [airfryer æg](/opskrifter/airfryer-aeg), [toast med æg i huller](/opskrifter/airfryer-toast-aeug-i-hul) og [airfryer bacon](/opskrifter/airfryer-bacon).
 
   Rester af toast bliver sjældent gode – lav kun det I spiser med det samme.
 ingredients:

@@ -1783,7 +1783,7 @@
 		},
 		{
 			"source": "/nem-og-laekker-koedsovs-til-spaghetti-i-airfryer-klar-paa-ingen-tid",
-			"destination": "/opskrifter/airfryer-one-pot-chili-con-carne",
+			"destination": "/opskrifter/airfryer-spaghetti-med-koedsovs",
 			"permanent": true
 		},
 		{
@@ -3668,7 +3668,7 @@
 		},
 		{
 			"source": "/ristet-broed-med-aeg-egg-in-a-hole-i-airfryer",
-			"destination": "/opskrifter/airfryer-toast-grillet-ost",
+			"destination": "/opskrifter/airfryer-toast-aeug-i-hul",
 			"permanent": true
 		},
 		{
@@ -5707,6 +5707,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/spaghetti-med-koedsovs-i-airfryer",
+			"destination": "/opskrifter/airfryer-spaghetti-med-koedsovs",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/spaghetti-med-koedsovs-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-spaghetti-med-koedsovs",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/spidskaal-i-airfryer",
 			"destination": "/opskrifter/airfryer-spidskaal",
 			"permanent": true
@@ -5894,6 +5904,16 @@
 		{
 			"source": "/opskrifter/tempeh-biter-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-tempeh-biter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/toast-aeug-i-hul-i-airfryer",
+			"destination": "/opskrifter/airfryer-toast-aeug-i-hul",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/toast-aeug-i-hul-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-toast-aeug-i-hul",
 			"permanent": true
 		},
 		{

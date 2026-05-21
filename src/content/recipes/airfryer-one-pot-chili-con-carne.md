@@ -27,7 +27,7 @@ intro: |
 conclusion: |
   Chili smager **bedre næste dag**. Opvarm med lidt vand og tjek krydring.
 
-  Byg menu med **[nachos med kylling](/opskrifter/airfryer-nachos-kylling-jalapenos)** eller en simpel **[guacamole](/opskrifter/airfryer-avocado-fritter)**-inspireret salat ved siden af.
+  Byg menu med **[nachos med kylling](/opskrifter/airfryer-nachos-kylling-jalapenos)**, eller prøv [spaghetti med kødsovs i fad](/opskrifter/airfryer-spaghetti-med-koedsovs) til en klassisk europæsk vinkel uden chili-bønnefokus.
 
   Fryser fint i 3 måneder.
 ingredients:
