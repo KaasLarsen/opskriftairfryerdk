@@ -917,21 +917,6 @@
 			"permanent": true
 		},
 		{
-			"source": "/author/denniskl",
-			"destination": "/",
-			"permanent": true
-		},
-		{
-			"source": "/author/denniskl/page/15",
-			"destination": "/",
-			"permanent": true
-		},
-		{
-			"source": "/author/denniskl/page/9",
-			"destination": "/",
-			"permanent": true
-		},
-		{
 			"source": "/bacon-indpakkede-dadler-i-airfryer-soed-saltet-perfektion-%F0%9F%A5%93%F0%9F%94%A5",
 			"destination": "/opskrifter/airfryer-tapas-bacon-dadler",
 			"permanent": true
@@ -1832,6 +1817,86 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/airfryer-aeggekage-asparges-bacon",
+			"destination": "/opskrifter/airfryer-aeggekage-asparges-bacon",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-bagekartofler",
+			"destination": "/opskrifter/airfryer-bagekartofler",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-blomkaal",
+			"destination": "/opskrifter/airfryer-blomkaal",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-burger",
+			"destination": "/opskrifter/airfryer-burger",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-flaeskesteg",
+			"destination": "/opskrifter/airfryer-flaeskesteg",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-forloren-hare",
+			"destination": "/opskrifter/airfryer-forloren-hare",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-frikadeller",
+			"destination": "/opskrifter/airfryer-frikadeller",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-havregroed",
+			"destination": "/opskrifter/airfryer-havregroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-hummer",
+			"destination": "/opskrifter/airfryer-hummer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-kyllingelever",
+			"destination": "/opskrifter/airfryer-kyllingelever",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-kyllingespyd",
+			"destination": "/opskrifter/airfryer-kyllingespyd",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-moerksej",
+			"destination": "/opskrifter/airfryer-moerksej",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-osso-buco",
+			"destination": "/opskrifter/airfryer-osso-buco",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-pandekager",
+			"destination": "/opskrifter/airfryer-pandekager",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-poelsehorn-frost",
+			"destination": "/opskrifter/airfryer-poelsehorn-frost",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-poelser-i-dej",
+			"destination": "/opskrifter/airfryer-poelser-i-dej",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/and-i-airfryer-hel.html",
 			"destination": "/opskrifter/airfryer-andebryst",
 			"permanent": true
@@ -2182,6 +2247,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/frikadeller-med-brun-sovs-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-frikadeller",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/fritteret-havregroedskage-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-havregroed",
 			"permanent": true
@@ -2517,6 +2587,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/kikaerter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kikaerter-roestet",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/klejner-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-klejner",
 			"permanent": true
@@ -2604,6 +2679,11 @@
 		{
 			"source": "/opskrifter/kyllingespyd-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-kyllingespyd",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kyllingevinger-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kyllingevinger",
 			"permanent": true
 		},
 		{
@@ -3818,6 +3898,11 @@
 		},
 		{
 			"source": "/vare/onyx-cookware-airfryer-dual",
+			"destination": "/shop",
+			"permanent": true
+		},
+		{
+			"source": "/vare/onyx-cookware-grill-airfryer-5l-top-betjent",
 			"destination": "/shop",
 			"permanent": true
 		},
