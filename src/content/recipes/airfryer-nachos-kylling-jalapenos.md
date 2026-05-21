@@ -1,10 +1,10 @@
 ---
-title: 'Nachos i airfryer – med kylling og jalapenos (eller uden kylling)'
-description: 'Nachos i airfryer med kylling og jalapenos: 7–9 min / 190 °C, ost mellem lag — sprøde chips. Samme fremgangsmåde i Casper airfryer og andre; FAQ om ost og glutenfri.'
+title: 'Nachos i airfryer og nachos air fryer – tid 7–9 min, kylling, jalapeños eller vegetarisk'
+description: 'Nachos i airfryer: 7–9 min ved 190 °C ét lag chips + topping; nachos air fryer bruger samme metode og tid. Jalapeños eller mildere; kylling valgfrit. Casper Sobczyk / andre kurve — hold salsa ved siden så chipsene forbliver sprøde.'
 heroImage: '/images/recipes/airfryer-nachos-kylling-jalapenos.png'
 heroAlt: 'Airfryer nachos med kylling, jalapenos og smeltet ost på bakke med creme'
 pubDate: 2026-04-02
-updatedDate: 2026-05-21
+updatedDate: 2026-05-23
 prepMinutes: 10
 cookMinutes: 12
 servings: '4 portioner'
@@ -14,6 +14,8 @@ cuisine: 'Mexicansk inspireret'
 temperatureC: 190
 keywords:
   - nachos i airfryer
+  - nachos i air fryer
+  - nachos air fryer
   - nachos i airfryer casper sobczyk
   - nachos airfryer
   - nachos uden kylling airfryer
@@ -23,11 +25,11 @@ keywords:
   - jalapenos nachos
 featured: false
 intro: |
-  Airfryer nachos er den nemme måde at få “café-nachos” hjemme: sprøde tortilla-chips, varm kylling og ost der smelter ensartet uden at chipsene bliver bløde.
+  **Nachos i airfryer** (og når folk skriver **nachos air fryer**) giver café-lignende resultat på få minutter: **typisk 7–9 minutter ved 190 °C** med chips og topping i ét jævnt lag, så osten bobler før bunden bliver slatten.
 
-  I traditionel ovn bliver nachos ofte ujævnt: nogle områder bliver hårde, mens andre bliver slatne. Airfryeren cirkulerer varmen, så du får bedre sprødhed og hurtigere smeltning.
+  I traditionel ovn bliver nachos let ujævnt; airfryerens luft hjælper både sprøde chips og mere ens smeltning. Hold **saftigt tilbehør ved siden** (fx salsa) — så forbliver tortillaene knasende.
 
-  Denne opskrift tager udgangspunkt i færdig-grillet kylling eller kylling i små stykker, så du kan lave nachos på kort tid.
+  Opskriften bruger **færdig kylling** og **jalapeños**, men FAQ viser også **vegetar eller uden kylling**.
 conclusion: |
   Servér nachos straks med salsa, cremefraiche (eller guacamole) og evt. ekstra jalapenos.
 
@@ -56,6 +58,8 @@ tips:
   - 'Er chipsene meget tynde, så start med 7 minutter og øg med 1 minut ad gangen.'
   - 'Hvis du vil have ekstra sprød kant, så steg uden ost 2 minutter før du tilføjer osten sidste omgang.'
 faq:
+  - question: 'Nachos air fryer — er det anderledes end nachos i airfryer?'
+    answer: 'Nej — det er samme ret og samme maskine (“air fryer” er bare engelsk). Brug stadig cirka **7–9 minutter ved 190 °C**, ét lag, ost mellem/fordeles jævnt; justér ét minut ned hvis din model har kraftig øverste varme og chipsene bliver mørke hurtigt.'
   - question: 'Nachos i airfryer Casper Sobczyk — samme tid?'
     answer: 'Ja, metoden er ens: forvarm hvis din manual anbefaler det, 190 °C og 7–9 minutter i ét lag. Store dobbeltkurve kan kræve at du deler i to portioner så luft når osten.'
   - question: 'Kan man lave nachos i airfryer uden forvarmning?'

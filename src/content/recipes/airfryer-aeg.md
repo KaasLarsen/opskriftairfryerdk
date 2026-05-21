@@ -1,10 +1,10 @@
 ---
-title: 'Airfryer æg – røræg, blødkogte i skal, spejlæg og muffins'
-description: 'Æg i airfryer med fokus på røræg: 8–11 min / 160 °C med omrøring i skål. Blødkogte i skal, spejlæg og muffins — temperatur, tider og toast som tilbehør.'
+title: 'Røræg i airfryer – tid 8–11 min ved 160 °C (plus blødkogte æg, spejlæg og muffins)'
+description: 'Røræg i airfryer: pisker i smurt ildfast/skål, ca. 160 °C og rør med gaffel hver 2.–3. min i typisk **8–11 min** til cremet konsistens. Samme side viser også blødkogte æg i skal, spejlæg i form og æggemuffins.'
 heroImage: '/images/recipes/airfryer-aeg.png'
 heroAlt: 'Blødkogte æg i hvide æggebægre med flydende blomme, toaststrimler og purløg på hvid tallerken'
 pubDate: 2026-04-02
-updatedDate: 2026-05-21
+updatedDate: 2026-05-23
 prepMinutes: 8
 cookMinutes: 10
 servings: '2 personer (2 spejlæg + 4 små muffins)'
@@ -13,8 +13,10 @@ category: 'Brunch'
 cuisine: 'Dansk'
 temperatureC: 165
 keywords:
-  - airfryer æg
   - røræg i airfryer
+  - hvor lang tid røræg airfryer
+  - røræg airfryer temperatur
+  - airfryer æg
   - scrambled æg i airfryer
   - blødkogte æg airfryer
   - æg i skal airfryer
@@ -24,7 +26,7 @@ keywords:
   - airfryer morgenmad
 featured: true
 intro: |
-  Æg i airfryer er praktisk, når ovnen er optaget eller du vil undgå sprøjt på komfur. **Røræg (scrambled)** er en af de mest søgte varianter: du pisker æg i en **lille smurt skål**, kører ved **ca. 160 °C** og **rører hver 2.–3. minut**, så du ender med cremet masse uden at sidde ved panden.
+  Denne side er skrevet til begge søgeord: **røræg i airfryer** (nemmest på travle morgener) og øvrige klassikere. **Røræg:** smurt skål, **ca. 160 °C**, rør hver **2.–3. minut** til **8–11 minutter** i alt — færdig når det stadig er cremet uden at slippe væske.
 
   Du kan også lave **hele æg i skal** med blød blomme – som på fotoet med æggebægre og toaststrimler – spejlæg-lignende æg i silikoneform og fyldte æggemuffins.
 
@@ -58,6 +60,8 @@ tips:
   - 'Vil du have fast blomme i form-æg, giv 1-2 minutter ekstra ved 160 °C.'
   - 'Undgå 190 °C+ til rene æg i form – de bliver hurtigt gummiagtige.'
 faq:
+  - question: 'Hvor længe skal røræg have i airfryer?'
+    answer: 'I typisk ildfast/skål (ca. 12–14 cm) og ved **155–165 °C**: cirka **8–11 minutter** i alt, med omrøring hver **2.–3. minut**. Meget stor skål eller mange æg giver hyppigere røring eller 1–2 minutter ekstra — stop mens massen stadig er lidt løbere end du ønsker på tallerken (efterbagning sker på spiseske).'
   - question: 'Kan man lave spejlæg i airfryer?'
     answer: 'Ja, i små smurte forme ved ca. 165 °C får du et resultat tæt på spejlæg; blommen kan holdes cremet ved at stoppe tidligt.'
   - question: 'Hvor længe skal æg have i airfryer?'
