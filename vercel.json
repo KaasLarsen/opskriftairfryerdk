@@ -117,6 +117,26 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/airfryer-selleri-parmesan.html",
+			"destination": "/opskrifter/airfryer-selleri",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/selleri-parmesan-i-airfryer",
+			"destination": "/opskrifter/airfryer-selleri",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/selleri-parmesan-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-selleri",
+			"permanent": true
+		},
+		{
 			"source": "/%E2%98%80%EF%B8%8F-10-nemme-sommerretter-i-airfryer-let-laekkert-og-hurtigt-paa-varme-dage",
 			"destination": "/guides/hvad-kan-man-lave-i-en-airfryer",
 			"permanent": true
@@ -2828,7 +2848,7 @@
 		},
 		{
 			"source": "/opskrifter/lammeculotte-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-lammefilet-rosmarin",
+			"destination": "/opskrifter/airfryer-lammeculotte",
 			"permanent": true
 		},
 		{
@@ -3163,7 +3183,7 @@
 		},
 		{
 			"source": "/opskrifter/roastbeef-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-culottesteg",
+			"destination": "/opskrifter/airfryer-roastbeef",
 			"permanent": true
 		},
 		{
@@ -3263,12 +3283,12 @@
 		},
 		{
 			"source": "/opskrifter/sellerifritter-i-airfryer-sproede.html",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/sellerifritter-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri",
 			"permanent": true
 		},
 		{
@@ -3333,12 +3353,12 @@
 		},
 		{
 			"source": "/opskrifter/spareribs-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-ribbensteg",
+			"destination": "/opskrifter/airfryer-spareribs",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/spejlaeg-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-aeg",
+			"destination": "/opskrifter/airfryer-spejlaeg",
 			"permanent": true
 		},
 		{
@@ -4067,6 +4087,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/aebelflaesk-i-airfryer",
+			"destination": "/opskrifter/airfryer-aebelflaesk",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/aebelflaesk-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-aebelflaesk",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/aeblechips-i-airfryer",
 			"destination": "/opskrifter/airfryer-aeblechips",
 			"permanent": true
@@ -4107,6 +4137,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/and-i-airfryer",
+			"destination": "/opskrifter/airfryer-and",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/and-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-and",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/andebryst-i-airfryer",
 			"destination": "/opskrifter/airfryer-andebryst",
 			"permanent": true
@@ -4124,6 +4164,26 @@
 		{
 			"source": "/opskrifter/arancini-mozzarella-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-arancini-mozzarella",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/artiskok-hjerter-i-airfryer",
+			"destination": "/opskrifter/airfryer-artiskok-hjerter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/artiskok-hjerter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-artiskok-hjerter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/asiatiske-kyllingebaetter-i-airfryer",
+			"destination": "/opskrifter/airfryer-asiatiske-kyllingebaetter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/asiatiske-kyllingebaetter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-asiatiske-kyllingebaetter",
 			"permanent": true
 		},
 		{
@@ -4192,6 +4252,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/bagte-aebler-kanel-i-airfryer",
+			"destination": "/opskrifter/airfryer-bagte-aebler-kanel",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/bagte-aebler-kanel-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-bagte-aebler-kanel",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/bagte-paerer-honning-noedder-i-airfryer",
 			"destination": "/opskrifter/airfryer-bagte-paerer-honning-noedder",
 			"permanent": true
@@ -4252,6 +4322,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/blomkaal-buffalo-i-airfryer",
+			"destination": "/opskrifter/airfryer-blomkaal-buffalo",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/blomkaal-buffalo-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-blomkaal-buffalo",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/blomkaal-i-airfryer",
 			"destination": "/opskrifter/airfryer-blomkaal",
 			"permanent": true
@@ -4264,6 +4344,16 @@
 		{
 			"source": "/opskrifter/broccoli-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-broccoli",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/broed-i-airfryer",
+			"destination": "/opskrifter/airfryer-broed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/broed-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-broed",
 			"permanent": true
 		},
 		{
@@ -4324,6 +4414,16 @@
 		{
 			"source": "/opskrifter/chili-ost-bidder-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-chili-ost-bidder",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/chips-i-airfryer",
+			"destination": "/opskrifter/airfryer-chips",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/chips-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-chips",
 			"permanent": true
 		},
 		{
@@ -4397,6 +4497,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/droemmekage-lille-form-i-airfryer",
+			"destination": "/opskrifter/airfryer-droemmekage-lille-form",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/droemmekage-lille-form-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-droemmekage-lille-form",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/dumplings-gyoza-i-airfryer",
 			"destination": "/opskrifter/airfryer-dumplings-gyoza",
 			"permanent": true
@@ -4427,8 +4537,28 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/farsbroed-i-airfryer",
+			"destination": "/opskrifter/airfryer-farsbroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/farsbroed-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-farsbroed",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/fasanbryst-i-airfryer",
 			"destination": "/opskrifter/airfryer-fasanbryst",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/fastelavnsboller-i-airfryer",
+			"destination": "/opskrifter/airfryer-fastelavnsboller",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/fastelavnsboller-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-fastelavnsboller",
 			"permanent": true
 		},
 		{
@@ -4504,6 +4634,16 @@
 		{
 			"source": "/opskrifter/frossen-laks-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-frossen-laks",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/fyldte-peberfrugter-i-airfryer",
+			"destination": "/opskrifter/airfryer-fyldte-peberfrugter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/fyldte-peberfrugter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-fyldte-peberfrugter",
 			"permanent": true
 		},
 		{
@@ -4589,6 +4729,16 @@
 		{
 			"source": "/opskrifter/gulerodskage-lille-form-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-gulerodskage-lille-form",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/guleroedder-i-airfryer",
+			"destination": "/opskrifter/airfryer-guleroedder",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/guleroedder-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-guleroedder",
 			"permanent": true
 		},
 		{
@@ -4852,6 +5002,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/kartoffeltaarn-rosmarin-i-airfryer",
+			"destination": "/opskrifter/airfryer-kartoffeltaarn-rosmarin",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kartoffeltaarn-rosmarin-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kartoffeltaarn-rosmarin",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/kartoffelvafler-i-airfryer",
 			"destination": "/opskrifter/airfryer-kartoffelvafler",
 			"permanent": true
@@ -5032,6 +5192,21 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/laksepakker-folie-i-airfryer",
+			"destination": "/opskrifter/airfryer-laksepakker-folie",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/laksepakker-folie-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-laksepakker-folie",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammeculotte-i-airfryer",
+			"destination": "/opskrifter/airfryer-lammeculotte",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/lammefilet-rosmarin-i-airfryer",
 			"destination": "/opskrifter/airfryer-lammefilet-rosmarin",
 			"permanent": true
@@ -5097,6 +5272,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/majs-i-airfryer",
+			"destination": "/opskrifter/airfryer-majs",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/majs-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-majs",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/majskolber-i-airfryer",
 			"destination": "/opskrifter/airfryer-majskolber",
 			"permanent": true
@@ -5127,6 +5312,26 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/middelhavs-rejer-tomat-feta-i-airfryer",
+			"destination": "/opskrifter/airfryer-middelhavs-rejer-tomat-feta",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/middelhavs-rejer-tomat-feta-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-middelhavs-rejer-tomat-feta",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/mini-clafoutis-baer-i-airfryer",
+			"destination": "/opskrifter/airfryer-mini-clafoutis-baer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/mini-clafoutis-baer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-mini-clafoutis-baer",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/mini-croissanter-fyld-i-airfryer",
 			"destination": "/opskrifter/airfryer-mini-croissanter-fyld",
 			"permanent": true
@@ -5134,6 +5339,16 @@
 		{
 			"source": "/opskrifter/mini-croissanter-fyld-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-mini-croissanter-fyld",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/mini-focaccia-rosmarin-i-airfryer",
+			"destination": "/opskrifter/airfryer-mini-focaccia-rosmarin",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/mini-focaccia-rosmarin-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-mini-focaccia-rosmarin",
 			"permanent": true
 		},
 		{
@@ -5252,6 +5467,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/oksemoerbrad-i-airfryer",
+			"destination": "/opskrifter/airfryer-oksemoerbrad",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/oksemoerbrad-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-oksemoerbrad",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/oksespidsbryst-i-airfryer",
 			"destination": "/opskrifter/airfryer-oksespidsbryst",
 			"permanent": true
@@ -5259,6 +5484,16 @@
 		{
 			"source": "/opskrifter/oksespidsbryst-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-oksespidsbryst",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/omelet-i-airfryer",
+			"destination": "/opskrifter/airfryer-omelet",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/omelet-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-omelet",
 			"permanent": true
 		},
 		{
@@ -5364,6 +5599,16 @@
 		{
 			"source": "/opskrifter/pastinak-fritter-lime-yoghurt-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-pastinak-fritter-lime-yoghurt",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/peberfrugt-i-airfryer",
+			"destination": "/opskrifter/airfryer-peberfrugt",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/peberfrugt-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-peberfrugt",
 			"permanent": true
 		},
 		{
@@ -5517,6 +5762,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/rabarber-crumble-i-airfryer",
+			"destination": "/opskrifter/airfryer-rabarber-crumble",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/rabarber-crumble-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-rabarber-crumble",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/raznjici-i-airfryer",
 			"destination": "/opskrifter/airfryer-raznjici",
 			"permanent": true
@@ -5534,6 +5789,16 @@
 		{
 			"source": "/opskrifter/rejer-hvidloegsmoer-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-rejer-hvidloegsmoer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/rejer-i-airfryer",
+			"destination": "/opskrifter/airfryer-rejer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/rejer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-rejer",
 			"permanent": true
 		},
 		{
@@ -5569,6 +5834,21 @@
 		{
 			"source": "/opskrifter/ristede-noedder-honning-rosmarin-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-ristede-noedder-honning-rosmarin",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/roastbeef-i-airfryer",
+			"destination": "/opskrifter/airfryer-roastbeef",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/rodfrugter-i-airfryer",
+			"destination": "/opskrifter/airfryer-rodfrugter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/rodfrugter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-rodfrugter",
 			"permanent": true
 		},
 		{
@@ -5627,6 +5907,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/saltmandler-i-airfryer",
+			"destination": "/opskrifter/airfryer-saltmandler",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/saltmandler-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-saltmandler",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/samosa-i-airfryer",
 			"destination": "/opskrifter/airfryer-samosa",
 			"permanent": true
@@ -5652,16 +5942,6 @@
 			"permanent": true
 		},
 		{
-			"source": "/opskrifter/selleri-parmesan-i-airfryer",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
-			"permanent": true
-		},
-		{
-			"source": "/opskrifter/selleri-parmesan-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
-			"permanent": true
-		},
-		{
 			"source": "/opskrifter/skinke-kartofler-tern-i-airfryer",
 			"destination": "/opskrifter/airfryer-skinke-kartofler-tern",
 			"permanent": true
@@ -5679,6 +5959,16 @@
 		{
 			"source": "/opskrifter/skinkemedaljoner-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-skinkemedaljoner",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/skinkeoste-snurrer-i-airfryer",
+			"destination": "/opskrifter/airfryer-skinkeoste-snurrer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/skinkeoste-snurrer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-skinkeoste-snurrer",
 			"permanent": true
 		},
 		{
@@ -5717,6 +6007,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/spareribs-i-airfryer",
+			"destination": "/opskrifter/airfryer-spareribs",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/spejlaeg-i-airfryer",
+			"destination": "/opskrifter/airfryer-spejlaeg",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/spidskaal-i-airfryer",
 			"destination": "/opskrifter/airfryer-spidskaal",
 			"permanent": true
@@ -5727,6 +6027,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/spinat-feta-snurrer-i-airfryer",
+			"destination": "/opskrifter/airfryer-spinat-feta-snurrer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/spinat-feta-snurrer-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-spinat-feta-snurrer",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/squash-i-airfryer",
 			"destination": "/opskrifter/airfryer-squash",
 			"permanent": true
@@ -5734,6 +6044,16 @@
 		{
 			"source": "/opskrifter/squash-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-squash",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/stegt-flaesk-i-airfryer",
+			"destination": "/opskrifter/airfryer-stegt-flaesk",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/stegt-flaesk-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-stegt-flaesk",
 			"permanent": true
 		},
 		{
@@ -5767,6 +6087,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/svine-schnitzel-i-airfryer",
+			"destination": "/opskrifter/airfryer-svine-schnitzel",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/svine-schnitzel-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-svine-schnitzel",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/svinebukser-sproede-i-airfryer",
 			"destination": "/opskrifter/airfryer-svinebukser-sproede",
 			"permanent": true
@@ -5794,6 +6124,16 @@
 		{
 			"source": "/opskrifter/svinekoed-teriyaki-tern-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-svinekoed-teriyaki-tern",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/tacoskal-tortilla-i-airfryer",
+			"destination": "/opskrifter/airfryer-tacoskal-tortilla",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/tacoskal-tortilla-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-tacoskal-tortilla",
 			"permanent": true
 		},
 		{
@@ -5927,6 +6267,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/toastbudding-baer-valnotter-i-airfryer",
+			"destination": "/opskrifter/airfryer-toastbudding-baer-valnotter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/toastbudding-baer-valnotter-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-toastbudding-baer-valnotter",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/tofu-i-airfryer",
 			"destination": "/opskrifter/airfryer-tofu",
 			"permanent": true
@@ -5944,6 +6294,16 @@
 		{
 			"source": "/opskrifter/torsk-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-torsk",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/torskeloins-i-airfryer",
+			"destination": "/opskrifter/airfryer-torskeloins",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/torskeloins-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-torskeloins",
 			"permanent": true
 		},
 		{

@@ -1,6 +1,6 @@
 ---
 title: 'Airfryer kyllingespyd – saftige spyd med hurtig marinade'
-description: 'Kyllingespyd i airfryer: cirka 13–15 min ved 195 °C vendt halvveis, **mindst 75 °C** i den tykkeste terning — hurtig marinade og grillstemning.'
+description: 'Kyllingespyd i airfryer med soya-ingefær-marinerede tern: cirka **13–15 min** ved **195 °C** vendt halvveis, mindst **75 °C** i den tykkeste kerne.'
 heroImage: '/images/recipes/airfryer-kyllingespyd.png'
 heroAlt: 'Saftige grillede kyllingespyd med peberfrugt og rødløg på tallerken foran en airfryer'
 pubDate: 2026-03-31
@@ -10,18 +10,18 @@ cookMinutes: 14
 servings: '4 portioner'
 calories: 'Ca. 320 kcal pr. portion'
 category: 'Hovedret'
-cuisine: 'International'
+cuisine: 'Asiatisk / hverdag'
 temperatureC: 195
 keywords:
   - airfryer kyllingespyd
   - kyllingespyd i airfryer
   - marineret kylling airfryer
-  - nem kylling opskrift
+  - kyllingespyd marinade soya honning ingefær
   - grillspyd airfryer
   - kyllingespyd air fry tid
 featured: true
 intro: |
-  Kyllingespyd i airfryer er en hurtig måde at få "grill-feel" i hverdagen uden kul, grill og lang ventetid. Med en enkel marinade får du både farve og smag på kort tid.
+  Kyllingespyd i airfryer er en hurtig måde at få “grill‑feel” i hverdagen uden kul eller lang ventetid. Her bruger vi en **lys asiatisk marinade** (soja, sesam, citrus, ingefær og honning) — tydeligt adskilt fra **Balkan‑spyd med yoghurt og paprika** som i [raznjići](/opskrifter/airfryer-raznjici).
 
   For bedst resultat bør kyllingetern være ens i størrelse, så de bliver færdige samtidig. Træspyd skal lægges i vand, så de ikke tørrer ud under varmen.
 
@@ -31,18 +31,19 @@ conclusion: |
 
   Brug rester i wraps eller bowls dagen efter for hurtig frokost.
 
-  Server fx med [airfryer bagekartofler](/opskrifter/airfryer-bagekartofler) eller grøn salat.
+  Server fx med [airfryer bagekartofler](/opskrifter/airfryer-bagekartofler), dampet ris eller grøn salat.
 ingredients:
   - text: '700 g kyllingebryst eller lårfilet i tern'
-  - text: '2 spsk olie'
-  - text: '1 spsk citronsaft'
-  - text: '1 1/2 tsk paprika'
-  - text: '1 tsk hvidløgspulver'
-  - text: '1 tsk salt'
-  - text: '1/2 tsk peber'
+  - text: '3 spsk japansk soya eller lys soya'
+  - text: '1 spsk lime- eller citronsaft'
+  - text: '1 tsk lys honning eller lys farin'
+  - text: '1 spsk neutral olie eller 1½ tsk toasted sesamolie (sesamolie smager kraftigt)'
+  - text: '2 fed hvidløg, finthakket, eller 1 tsk hvidløgspulver'
+  - text: '2 tsk frisk ingefær rivet, eller ¼ tsk tør ingefær'
+  - text: '1/4 tsk chili flakes (valgfrit)'
   - text: '8-10 træspyd (udblødt i vand)'
 instructions:
-  - text: 'Rør olie, citronsaft og krydderier sammen i en skål.'
+  - text: 'Rør soya, citrus, honning, neutral olie eller sesamolie, hvidløg, ingefær og evt. chili til en jævn marinade.'
   - text: 'Vend kyllingetern i marinaden og lad trække 10-20 minutter.'
   - text: 'Sæt kyllingen på spyd med lidt mellemrum mellem stykkerne.'
   - text: 'Forvarm airfryeren til 195 °C.'
@@ -73,4 +74,4 @@ Træspyd er nemme og billige, men skal udblødes for ikke at tørre ud i varmen.
 
 ### Marinade med mere dybde
 
-Vil du have mere smag, kan du tilføje lidt yoghurt til marinaden. Det giver en mild syre og hjælper kødet med at holde sig saftigt. Tør dog overskydende marinade af før stegning for bedre farve.
+Tilsæt 1–2 teskefulde miso eller en smule ristede sesamfrø i marinaden for mere umami — **undgå at hælde tyk våd marinade i kurven**; dup kødet relativt tørt før stegning for bedste farve.

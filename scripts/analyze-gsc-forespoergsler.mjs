@@ -139,6 +139,35 @@ function tokenizeForMatch(s) {
 		.filter((w) => w !== 'airfryer' && w !== 'air' && w !== 'fryer'); /* stadig slug indeholder kontekst */
 }
 
+/**
+ * Oversætter en GSC‑forespørgsel til et forslag til slug (`airfryer-…`).
+ * Formål: Én reel bruger‑forespørgsel → én målrettet side (ingen matrix‑kopier).
+ * Manuelt tjek før publicering — især ved brandstøj eller helt generiske søgemønstre.
+ */
+function suggestSlugFromQuery(queryRaw) {
+	let s = foldDa(String(queryRaw).trim())
+		.replace(/\bcasper\s+sobczyk\b/giu, '')
+		.replace(/\bopskrift\b/giu, '')
+		.replace(/\bluftfriteuse\b/giu, '')
+		.replace(/\bdeep\s*fry(er)?\b/giu, '');
+
+	s = s
+		.replace(/\bi\s+airfryer\b/giu, '')
+		.replace(/\bairfryer\b/giu, '')
+		.replace(/\bvarmlufts(frit)?gryde\b/giu, '')
+		.trim();
+
+	s = s
+		.replace(/[^a-z0-9]+/gu, '-')
+		.replace(/^-+|-+$/gu, '')
+		.replace(/-+/gu, '-');
+
+	if (!s) s = 'ret';
+	const maxLen = 70;
+	if (s.length > maxLen) s = s.slice(0, maxLen).replace(/-+$/gu, '');
+	return `airfryer-${s}`;
+}
+
 function scoreQueryAgainstRecipes(queryNorm, hayByRecipe) {
 	const qTokens = tokenizeForMatch(queryNorm);
 	if (qTokens.length === 0) return { bestScore: 0, bestId: null };
@@ -255,6 +284,7 @@ function main() {
 		const { query, clicks, impressions } = row;
 		if (impressions < minImp) continue;
 		const { bestScore, bestId } = scoreQueryAgainstRecipes(query, hayByRecipe);
+		const suggestedId = suggestSlugFromQuery(query);
 		analyzed.push({
 			query,
 			clicks,
@@ -262,6 +292,7 @@ function main() {
 			score: bestScore,
 			bestId,
 			isMatch: bestScore >= threshold,
+			suggestedId,
 		});
 	}
 	analyzed.sort((a, b) => b.impressions - a.impressions);
@@ -271,12 +302,29 @@ function main() {
 		'',
 		`_Genereret af \`analyze-gsc-forespoergsler.mjs\`. Min ekspon.: **${minImp}**. Match‑tærskel: **${threshold}**._`,
 		'',
-		'| Forespørgsel | Ekspon. | Klik | Match‑score | Tætteste slug | Triage |',
-		'|---|--:|--:|---:|---|---|',
+		'**Unikke opskrifter:** Lav **én målrettet side pr. reel forespørgsel eller tydeligt emne**, med egen titel/Tekst/FAQ og eget foto — ikke matrix (fx samme marinade × mange baser med copy‑paste). Brug første kolonne som **intent**.',
+		'',
+		'| Forespørgsel | Ekspon. | Klik | Match‑score | Foreslået ny slug¹ | Ny slug findes? | Tætteste slug² | Triage |',
+		'|---|--:|--:|---:|---|---|---|---|',
 	];
+	const suggestedCollision = {};
+	for (const a of analyzed) {
+		suggestedCollision[a.suggestedId] = (suggestedCollision[a.suggestedId] ?? 0) + 1;
+	}
 	for (const a of analyzed) {
 		const tri = a.isMatch ? 'Udvid/optimer eksisterende' : 'Overvej **ny opskriftside** eller kraftig udvidelse';
-		const slugCell = a.bestId ? a.bestId : '–';
+		const bestSlug = a.bestId ? a.bestId : '–';
+		const slugPath = path.join(recipesDir, `${a.suggestedId}.md`);
+		const newExists = fs.existsSync(slugPath) ? `Ja (${a.suggestedId})` : 'Nej';
+		const dupWarn =
+			(suggestedCollision[a.suggestedId] ?? 0) > 1 ? ' ⚠ flere queries→samme slug' : '';
+
+		let suggestedCell = '`' + a.suggestedId + '`' + dupWarn;
+		// Hvis eksisterende "bedste match" slug allerede dækker intent stærkt og foreslået ny er redundant
+		if (a.isMatch && a.bestId === a.suggestedId) {
+			suggestedCell += ' *(samme som tætteste)*';
+		}
+
 		lines.push(
 			'| ' +
 				a.query.replace(/\|/gu, '\\|') +
@@ -287,7 +335,11 @@ function main() {
 				' | ' +
 				a.score.toFixed(2) +
 				' | ' +
-				slugCell +
+				suggestedCell.replace(/\|/gu, '\\|') +
+				' | ' +
+				newExists.replace(/\|/gu, '\\|') +
+				' | ' +
+				String(bestSlug).replace(/\|/gu, '\\|') +
 				' | ' +
 				tri +
 				' |',
@@ -295,11 +347,15 @@ function main() {
 	}
 	lines.push(
 		'',
+		'¹ **Foreslået ny slug** er maskinelt ud fra foldning af teksten (æ→ae mv.) og fjernelse af ordet «airfryer» — ret manuelt før du opretter filen.',
+		'² **Tætteste slug** = den eksisterende side med højeste token‑overlap på forespørgslen.',
+		'',
 		'### Sådan bruger du det',
 		'',
 		'1. Sorter først på **lav match + høj eksponering**.',
-		'2. Slå kolonnen "Tætteste slug" op: dækker eksisterende side søgeordet? → titel/description/FAQ. Ellers → ny Markdown-fil under src/content/recipes/.',
-		'3. Tilpas gamle URLs i legacy-url-keyword-routes.json ved behov og kør npm run gsc:redirects + npm run vercel:redirects.',
+		'2. Ved **ny side**: brainstorm unik struktur ud fra kolonnen *Forespørgsel* og brug kun foreslået slug som **arbejdshypotese** til filnavnet `src/content/recipes/<slug>.md`.',
+		'3. Slå kolonnen "Tætteste slug" op: dækker eksisterende side søgeordet godt nok? → titel/description/FAQ. Ellers → ny Markdown med **sit eget tekstgrundlag**, ikke kopierede skabeloner.',
+		'4. Tilpas gamle URLs i legacy-url-keyword-routes.json ved behov og kør npm run gsc:redirects + npm run vercel:redirects.',
 		'',
 	);
 

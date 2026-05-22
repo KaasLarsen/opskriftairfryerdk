@@ -88,6 +88,22 @@
 		{
 			"source": "/kapacitet/8liter/",
 			"destination": "/guides/airfryer-liter-kurvstorrelse-guide"
+		},
+		{
+			"source": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri"
+		},
+		{
+			"source": "/opskrifter/airfryer-selleri-parmesan.html",
+			"destination": "/opskrifter/airfryer-selleri"
+		},
+		{
+			"source": "/opskrifter/selleri-parmesan-i-airfryer",
+			"destination": "/opskrifter/airfryer-selleri"
+		},
+		{
+			"source": "/opskrifter/selleri-parmesan-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-selleri"
 		}
 	]
 }

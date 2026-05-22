@@ -3153,12 +3153,12 @@
 		},
 		{
 			"source": "/opskrifter/sellerifritter-i-airfryer-sproede.html",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri",
 			"permanent": true
 		},
 		{
 			"source": "/opskrifter/sellerifritter-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-selleri-parmesan",
+			"destination": "/opskrifter/airfryer-selleri",
 			"permanent": true
 		},
 		{

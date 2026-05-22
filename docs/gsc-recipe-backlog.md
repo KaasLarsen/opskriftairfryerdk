@@ -8,6 +8,8 @@ Status: **findes** (dedikeret eller tæt slug), **mangler** (ny opskrift), **opt
 
 **Hero-billeder:** Ved nye opskrifter eller visuelle opdateringer: egne AI-/genererede PNG under `public/images/recipes/airfryer-<slug>.png` og `heroImage` + `heroAlt` i frontmatter (som på øvrige sider).
 
+**Ikke målrette:** ”Matrix‑opskrifter”, hvor samme tekst bare skifter ét krydderi/én råvare på mange URLs — ikke unikt indhold til GSC eller læser. Prioritér **én reel forespørgsel → én side** ud fra [`docs/gsc-ny-indhold-kandidater.generated.md`](gsc-ny-indhold-kandidater.generated.md) eller tabellen herunder, med egen struktur og eget foto.
+
 | # | Forespørgsel | GSC (klik, exp, CTR, pos) | Status | Slug / handling |
 |---|--------------|---------------------------|--------|-----------------|
 | 1 | nachos i airfryer | 1715, 6843, 25.06%, 4.44 | findes | `airfryer-nachos-kylling-jalapenos` — FAQ + CTR |

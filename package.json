@@ -14,6 +14,7 @@
     "gsc:redirects": "node scripts/build-gsc-redirects.mjs && node scripts/generate-vercel-redirects.mjs",
     "gsc:ny-indhold-kandidater": "node scripts/analyze-gsc-forespoergsler.mjs",
     "check:recipe-links": "node scripts/check-internal-recipe-links.mjs",
+    "check:recipe-junk": "bash scripts/check-recipe-no-ai-junk.sh",
     "fill:review-images": "node scripts/fill-review-og-images.mjs"
   },
   "dependencies": {

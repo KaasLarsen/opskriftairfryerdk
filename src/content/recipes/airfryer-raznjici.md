@@ -1,8 +1,8 @@
 ---
 title: 'Airfryer raznjići – kød på spyd med paprika og løg'
-description: 'Raznjići i airfryer på **200 °C**: cirka **7 min + 5–7 min**, spyd med luft rundt — mål bl.a. **kylling til 74 °C** eller tilberedt svin.'
+description: 'Raznjići i airfryer med yoghurt-paprika-marinade: **200 °C**, typisk ca. **7 min + 5–7 min** med luft omkring spyd — kylling ca. **74 °C**. Adskiller sig fra ajvar-marinerede fileter.'
 pubDate: 2026-04-02
-updatedDate: 2026-05-26
+updatedDate: 2026-05-21
 prepMinutes: 25
 cookMinutes: 14
 servings: '4 portioner (4 spyd)'
@@ -17,11 +17,11 @@ keywords:
   - kødspyd airfryer
   - balkan spyd airfryer
   - svinekød spyd airfryer
-  - paprika marinade airfryer
+  - raznjici marinade yoghurt airfryer
   - balkan kebab air fry tid
 featured: false
 intro: |
-  Raznjići (kødspyd) er en Balkan-favorit: marinerede terninger med løg og peberfrugt, der får karakter af paprika, hvidløg og citron. Airfryer giver hurtig karamellisering — hvis spydene får plads, så varmen kan cirkulere.
+  Raznjići (kødspyd) er en Balkan-favorit med **yoghurt** i marinaden: den hjælper overfladen med at ta’ krydderne uden kun at smage af “rens olie‑og‑citron”. Med **paprika**, **lidt røget paprika** og hvidløg får du grillkarakter på kort tid — også uden ajvar eller tyk peber‑spread på kødet ([kylling med ajvar](/opskrifter/airfryer-kylling-ajvar)). Airfryer giver god karamelisering hvis spydene får plads.
 
   Udfordringen er ens stykker: for store bidder tager længere tid, mens små kan blive tørre. Skær derfor relativt ens og undgå at proppe for meget på hvert spyd.
 
@@ -37,15 +37,16 @@ ingredients:
   - text: '1 rød peberfrugt, i store tern'
   - text: '1 mellemstor rødløg, i kvarte/lag'
   - text: '1 lille squash, i skiver (valgfrit — godt til kyllingespyd som på foto)'
-  - text: '3 spsk olivenolie'
-  - text: '2 spsk citronsaft'
+  - text: '3 spsk naturel yoghurt eller skyr (tynd yoghurt fungerer bedst)'
+  - text: '2 spsk olivenolie'
+  - text: '1 spsk citronsaft (+ evt. lidt finrevet skal)'
   - text: '1 tsk paprika (sød)'
+  - text: '1/2 tsk røget paprika'
   - text: '1/2 tsk salt'
   - text: '1/2 tsk peber'
   - text: '3 fed hvidløg, groft hakket'
-  - text: '1/2 tsk tørret oregano (valgfrit)'
 instructions:
-  - text: 'Bland olie, citron, paprika, salt, peber, hvidløg og oregano. Vend kød og grøntsager i marinaden og lad trække 20-60 minutter på køl.'
+  - text: 'Bland yoghurt, olie, citron, paprika, røget paprika, salt, peber og hvidløg. Vend kød og grøntsager i marinaden og lad trække 20–60 minutter på køl.'
   - text: 'Træk vekselvis kød, løg, peber og evt. squash på metalspyd (eller træspyd, gennemvædet i vand).'
   - text: 'Forvarm airfryeren til 200 °C.'
   - text: 'Læg spyd i kurven så der er luft mellem — brug evt. spydholder eller læg dem over en rist hvis din model tillader det.'
@@ -68,9 +69,9 @@ faq:
     answer: 'Typisk 12-14 minutter ved 200 °C for mellemstore kødtern — afhænger af kødtype og model.'
 ---
 
-### Balkan-marinen på få minutter
+### Hvorfor yoghurt i marinaden
 
-Syre fra citron, olie til varmefordeling og paprika til farve er en enkel triade, der giver tydelig “grillbar”-smag — også uden kul.
+Yoghurt giver lidt enzyme‑mørning på overfladen og en federe smagsfilm end ren olivenolie+citron alene — så sidder paprikaerne bedre på kødet uden du behøver en separat ajvar-marinerede filet-ret.
 
 ### Grøntsager som smagsdriver
 

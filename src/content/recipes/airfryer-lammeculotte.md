@@ -25,7 +25,7 @@ intro: |
 
   Dansk servér med urter eller myntesauce; sommer-variant med yoghurt/citron.
 conclusion: |
-  Skær i skiver efter fibrene ved servering. Kombinér fx [kartofler](/opskrifter/airfryer-bagekartofler), [selleri parmesan](/opskrifter/airfryer-selleri-parmesan) eller salat af ærte-skud.
+  Skær i skiver efter fibrene ved servering. Kombinér fx [kartofler](/opskrifter/airfryer-bagekartofler), [airfryer selleri med parmesan](/opskrifter/airfryer-selleri) eller salat af ærte-skud.
 
   Rester passer i pitabrød med tzatziki eller som salat topper.
 ingredients:

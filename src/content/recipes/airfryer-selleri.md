@@ -21,11 +21,13 @@ keywords:
   - selleristænger grill
   - sundt tilbehør airfryer
   - celery root air fry tid
+  - selleri parmesan airfryer
+  - selleristænger parmesan
 featured: true
 intro: |
   **Rodselleri (knoldselleri)** i airfryer bliver gyldne, let karamelliserede og med sprø kant – som på billedet – hvis du skærer **ens tern** og giver nok tid i kurven.
 
-  Stilke-selleri kan du lave på samme måde i **smallere pinde** (kortere tid) – se afsnittet nederst.
+  Stilke-selleri kan du lave på samme måde i **smallere pinde** (kortere tid) – se afsnittet nederst. Vil du have **selleristænger med parmesan** og citronskal (“selleri parmesan”), drys bare revet parmesan de sidste minutter som ved tern-varianten og skær i lidt grovere stænger.
 
   Med lidt olie, peber og frisk persille ved servering får du et tilbehør der matcher kød, fisk og vegetar.
 conclusion: |

@@ -25,7 +25,7 @@ Sidste kørsel (~1000 forespørgsler i CSV): se [`docs/gsc-ny-indhold-kandidater
 
 ## 3) Find huller automatisk
 
-Kør analyse (printer markdown‑tabel til stdout — gem til fil hvis ønsket):
+Kør analyse (printer markdown‑tabel til stdout — gem til fil hvis ønsket). Tabellen indeholder også **Foreslået ny slug** og om filen findes — brug første kolonne (**Forespørgsel**) til **rigtigt unikt indhold**, ikke kopierede skabeloner på tværs af mange sider.
 
 ```bash
 npm run gsc:ny-indhold-kandidater -- --threshold=0.32 --mins=120
