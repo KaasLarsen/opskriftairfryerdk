@@ -4322,6 +4322,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/blinis-dild-cremefraiche-i-airfryer",
+			"destination": "/opskrifter/airfryer-blinis-dild-cremefraiche",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/blinis-dild-cremefraiche-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-blinis-dild-cremefraiche",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/blomkaal-buffalo-i-airfryer",
 			"destination": "/opskrifter/airfryer-blomkaal-buffalo",
 			"permanent": true
@@ -4857,8 +4867,28 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/huevos-rancheros-baeger-i-airfryer",
+			"destination": "/opskrifter/airfryer-huevos-rancheros-baeger",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/huevos-rancheros-baeger-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-huevos-rancheros-baeger",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/hummer-i-airfryer",
 			"destination": "/opskrifter/airfryer-hummer",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hummus-feta-baeger-i-airfryer",
+			"destination": "/opskrifter/airfryer-hummus-feta-baeger",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hummus-feta-baeger-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-hummus-feta-baeger",
 			"permanent": true
 		},
 		{
@@ -5214,6 +5244,16 @@
 		{
 			"source": "/opskrifter/lammefilet-rosmarin-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-lammefilet-rosmarin",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammekebbe-rosmarin-i-airfryer",
+			"destination": "/opskrifter/airfryer-lammekebbe-rosmarin",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammekebbe-rosmarin-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-lammekebbe-rosmarin",
 			"permanent": true
 		},
 		{
@@ -5979,6 +6019,16 @@
 		{
 			"source": "/opskrifter/skipperlabskovs-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-skipperlabskovs",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/socca-mini-i-airfryer",
+			"destination": "/opskrifter/airfryer-socca-mini",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/socca-mini-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-socca-mini",
 			"permanent": true
 		},
 		{
