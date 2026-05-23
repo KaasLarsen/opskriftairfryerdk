@@ -1,6 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createSerializeWithLastmodFromContent } from './scripts/sitemap-content-lastmod.mjs';
+
+const repoRoot = dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +23,7 @@ export default defineConfig({
 					return true;
 				}
 			},
+			serialize: createSerializeWithLastmodFromContent(repoRoot),
 		}),
 	],
 	compressHTML: true,

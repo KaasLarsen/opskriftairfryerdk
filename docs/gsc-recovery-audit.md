@@ -98,7 +98,7 @@ Opskriftssider bygger ét samlet `@graph` i [src/pages/opskrifter/[slug].astro](
 | Fil / config | Status |
 |--------------|--------|
 | [public/robots.txt](../public/robots.txt) | `Allow: /` + sitemap-URL |
-| [astro.config.mjs](../astro.config.mjs) | Sitemap uden `/login`, `/konto`, `/auth*`, `search-index.json` |
+| [astro.config.mjs](../astro.config.mjs) | Sitemap uden `/login`, `/konto`, `/auth*`, `search-index.json`; **`lastmod` fra Markdown / sidemtimes** før flatten |
 
 ---
 

@@ -20,7 +20,9 @@ npm run build
 npm run preview
 ```
 
-`npm run build` genererer `dist/sitemap.xml` som **én flad liste** af alle offentlige URL’er (ikke et indeks), så Search Console viser det rigtige antal sider.
+`npm run build` genererer `dist/sitemap.xml` som **én flad liste** af alle offentlige URL’er (ikke et indeks), så Search Console viser det rigtige antal sider. Hver `<url>` har **`lastmod`** ud fra **`pubDate` / `updatedDate`** på opskrifter og anmeldelser (ellers kildefilens tid for statiske Astro-sider).
+
+Logikken ligger i [`scripts/sitemap-content-lastmod.mjs`](scripts/sitemap-content-lastmod.mjs) og bevares ved flatten via [`scripts/flatten-sitemap.mjs`](scripts/flatten-sitemap.mjs).
 
 ## Indhold
 
