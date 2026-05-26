@@ -44,9 +44,23 @@ Tolker tabellen groft sådan her:
 | Triage i output                             | Handling                                         |
 |-------------------------------------------|--------------------------------------------------|
 | **Udvid/optimer eksisterende**           | Titler, description, FAQ, evt. tekst‑udvidelse  |
-| **Overvej ny opskriftside**              | Opret `src/content/recipes/airfryer-<emne>.md` |
+| **Overvej ny opskriftside**              | *Kun* hvis kvaliteten nedenfor er i orden — ellers udvid eksisterende side eller lad være |
 
-Ny side kræver som minimum gyldigt frontmatter som i `src/content.config.ts`: `title`, `description`, **ingredienser/liste**, **instructions/liste**, m.m. Brug eksisterende sider som skabeloner.
+Ny side kræver som minimum gyldigt frontmatter som i `src/content.config.ts`: `title`, `description`, **ingredienser/liste**, **instructions/liste**, m.m. Brug eksisterende sider som skabeloner — men **kopier ikke** en hel side og skift ét ord; det giver ikke unikt værdi og risikerer tyndt indhold.
+
+### Kvalitet før volumen (obligatorisk tjek før ny opskrift)
+
+Målet er **én reel ret / ét tydeligt emne → én side** som en læser faktisk kan lave succesfuldt i maskinen — ikke flest mulige Markdown‑filer.
+
+- **Ikke matrix:** Samme struktur × mange sider hvor kun ét krydderi eller én protein skifter, er **ude**. Se også advarslen i [`docs/gsc-recipe-backlog.md`](gsc-recipe-backlog.md) om “Matrix‑opskrifter”.
+- **Én primær intention:** Én side skal konsekvent svare på *den* forespørgsel (fx “horn­fisk” ≠ generisk “fisk”). Hvis den tætte eksisterende side med en **tydelig udvidelse** (egen sektion + FAQ + billede) kan dække det godt → **ingen ny URL**.
+- **Konkret og airfryer‑specifikt:** Tider, temperatur‑spænd, kurv vs. fad, ét lag vs. batches, folie/ikke folie, og **hvad man tjekker** (kerne­temperatur, pindeprøve, sprødhed). Ingen vage “bag til det er færdigt” uden pejlemærker.
+- **Troværdig dansk:** Rigtige navne (ikke engelske rester), måleenheder I bruger andre steder, og sætninger der lyder som en kok — ikke fyldord eller generisk AI‑støj. Kør `npm run check:recipe-junk` før commit.
+- **Unik vinkel pr. side:** Intro og tips skal forklare *hvorfor* denne ret er særlig i airfryer (fugt, skorpe, små portioner, varmluft). Hvis den sætning kunne stå på fem andre opskrifter uden ændring → omskriv eller stop.
+- **Billede matcher:** `heroAlt` og PNG afspejler retten; undgå generiske stock‑lignende motiver der kunne være alt.
+- **Når du er i tvivl:** Prioritér **optimering** af en stærk eksisterende slug frem for en ny side med tvivlsom differens.
+
+Hvis et batch‑værktøj eller en assistent foreslår mange filer på én gang: **stop** og gennemgå hver enkelt mod listen ovenfor — ellers “kører man bare derud” uden at bygge noget læserne og søgemaskinen reelt belønner.
 
 ## 4) Gamle WP‑URL’er
 
