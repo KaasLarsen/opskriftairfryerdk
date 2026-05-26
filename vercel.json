@@ -4967,6 +4967,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/hornfisk-i-airfryer",
+			"destination": "/opskrifter/airfryer-hornfisk",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hornfisk-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-hornfisk",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/huevos-rancheros-baeger-i-airfryer",
 			"destination": "/opskrifter/airfryer-huevos-rancheros-baeger",
 			"permanent": true
@@ -5207,6 +5217,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/knaekbroed-i-airfryer",
+			"destination": "/opskrifter/airfryer-knaekbroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/knaekbroed-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-knaekbroed",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/koteletter-i-airfryer",
 			"destination": "/opskrifter/airfryer-koteletter",
 			"permanent": true
@@ -5317,6 +5337,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/kyllingefarsbroed-i-airfryer",
+			"destination": "/opskrifter/airfryer-kyllingefarsbroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kyllingefarsbroed-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kyllingefarsbroed",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/kyllingelaar-i-airfryer",
 			"destination": "/opskrifter/airfryer-kyllingelaar",
 			"permanent": true
@@ -5409,6 +5439,16 @@
 		{
 			"source": "/opskrifter/laksepakker-folie-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-laksepakker-folie",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammebov-i-airfryer",
+			"destination": "/opskrifter/airfryer-lammebov",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/lammebov-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-lammebov",
 			"permanent": true
 		},
 		{
@@ -5559,6 +5599,16 @@
 		{
 			"source": "/opskrifter/middelhavs-rejer-tomat-feta-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-middelhavs-rejer-tomat-feta",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/millionboef-i-airfryer",
+			"destination": "/opskrifter/airfryer-millionboef",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/millionboef-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-millionboef",
 			"permanent": true
 		},
 		{
