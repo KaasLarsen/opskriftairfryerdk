@@ -2473,7 +2473,7 @@
 		},
 		{
 			"source": "/opskrifter/gulerodsfritter-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-honning-guleroedder",
+			"destination": "/opskrifter/airfryer-gulerodsfritter",
 			"permanent": true
 		},
 		{
@@ -2668,7 +2668,7 @@
 		},
 		{
 			"source": "/opskrifter/kalvekoteletter-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-kalveculotte",
+			"destination": "/opskrifter/airfryer-kalvekoteletter",
 			"permanent": true
 		},
 		{
@@ -3068,7 +3068,7 @@
 		},
 		{
 			"source": "/opskrifter/porchetta-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-ribbensteg",
+			"destination": "/opskrifter/airfryer-porchetta",
 			"permanent": true
 		},
 		{
@@ -4832,6 +4832,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/gulerodsfritter-i-airfryer",
+			"destination": "/opskrifter/airfryer-gulerodsfritter",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/gulerodskage-lille-form-i-airfryer",
 			"destination": "/opskrifter/airfryer-gulerodskage-lille-form",
 			"permanent": true
@@ -5084,6 +5089,11 @@
 		{
 			"source": "/opskrifter/kalveculotte-i-airfryer",
 			"destination": "/opskrifter/airfryer-kalveculotte",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kalvekoteletter-i-airfryer",
+			"destination": "/opskrifter/airfryer-kalvekoteletter",
 			"permanent": true
 		},
 		{
@@ -6082,6 +6092,11 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/porchetta-i-airfryer",
+			"destination": "/opskrifter/airfryer-porchetta",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/porre-baade-bacon-i-airfryer",
 			"destination": "/opskrifter/airfryer-porre-baade-bacon",
 			"permanent": true
@@ -6184,6 +6199,16 @@
 		{
 			"source": "/opskrifter/ribbensteg-i-airfryer",
 			"destination": "/opskrifter/airfryer-ribbensteg",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/ribsteaks-i-airfryer",
+			"destination": "/opskrifter/airfryer-ribsteaks",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/ribsteaks-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-ribsteaks",
 			"permanent": true
 		},
 		{
@@ -6539,6 +6564,16 @@
 		{
 			"source": "/opskrifter/svinekoed-teriyaki-tern-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-svinekoed-teriyaki-tern",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/svineskank-i-airfryer",
+			"destination": "/opskrifter/airfryer-svineskank",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/svineskank-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-svineskank",
 			"permanent": true
 		},
 		{
