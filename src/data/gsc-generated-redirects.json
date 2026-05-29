@@ -1053,7 +1053,7 @@
 		},
 		{
 			"source": "/chips-paa-kartoffelskraeller-i-airfryer-en-laekker-og-baeredygtig-snack",
-			"destination": "/opskrifter/airfryer-kartoffelskind-med-ost",
+			"destination": "/opskrifter/airfryer-kartoffelskraeller",
 			"permanent": true
 		},
 		{
@@ -1433,7 +1433,7 @@
 		},
 		{
 			"source": "/karamelliserede-figner-med-honning-i-airfryer",
-			"destination": "/opskrifter/airfryer-gedeost-honning-bagt",
+			"destination": "/opskrifter/airfryer-figner-honning",
 			"permanent": true
 		},
 		{

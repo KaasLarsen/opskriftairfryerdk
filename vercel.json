@@ -1188,7 +1188,7 @@
 		},
 		{
 			"source": "/chips-paa-kartoffelskraeller-i-airfryer-en-laekker-og-baeredygtig-snack",
-			"destination": "/opskrifter/airfryer-kartoffelskind-med-ost",
+			"destination": "/opskrifter/airfryer-kartoffelskraeller",
 			"permanent": true
 		},
 		{
@@ -1568,7 +1568,7 @@
 		},
 		{
 			"source": "/karamelliserede-figner-med-honning-i-airfryer",
-			"destination": "/opskrifter/airfryer-gedeost-honning-bagt",
+			"destination": "/opskrifter/airfryer-figner-honning",
 			"permanent": true
 		},
 		{
@@ -4607,6 +4607,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/dyrekoelle-i-airfryer",
+			"destination": "/opskrifter/airfryer-dyrekoelle",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/dyrekoelle-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-dyrekoelle",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/dyreryg-sur-soed-i-airfryer",
 			"destination": "/opskrifter/airfryer-dyreryg-sur-soed",
 			"permanent": true
@@ -4672,6 +4682,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/figner-honning-i-airfryer",
+			"destination": "/opskrifter/airfryer-figner-honning",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/figner-honning-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-figner-honning",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/fiskefilet-i-airfryer",
 			"destination": "/opskrifter/airfryer-fiskefilet",
 			"permanent": true
@@ -4704,6 +4724,16 @@
 		{
 			"source": "/opskrifter/flaeskesteg-i-airfryer",
 			"destination": "/opskrifter/airfryer-flaeskesteg",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/flanksteak-i-airfryer",
+			"destination": "/opskrifter/airfryer-flanksteak",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/flanksteak-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-flanksteak",
 			"permanent": true
 		},
 		{
@@ -5202,6 +5232,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/kartoffelskraeller-i-airfryer",
+			"destination": "/opskrifter/airfryer-kartoffelskraeller",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/kartoffelskraeller-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-kartoffelskraeller",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/kartoffeltaarn-rosmarin-i-airfryer",
 			"destination": "/opskrifter/airfryer-kartoffeltaarn-rosmarin",
 			"permanent": true
@@ -5274,6 +5314,16 @@
 		{
 			"source": "/opskrifter/koteletter-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-koteletter",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/krydderkam-kylling-i-airfryer",
+			"destination": "/opskrifter/airfryer-krydderkam-kylling",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/krydderkam-kylling-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-krydderkam-kylling",
 			"permanent": true
 		},
 		{
