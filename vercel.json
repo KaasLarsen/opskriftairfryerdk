@@ -608,7 +608,7 @@
 		},
 		{
 			"source": "/%F0%9F%94%A5-airfryer-smores-den-ultimative-nemme-dessertsnack",
-			"destination": "/opskrifter/airfryer-chokoladekage-lille-form",
+			"destination": "/opskrifter/airfryer-smores",
 			"permanent": true
 		},
 		{
@@ -2218,7 +2218,7 @@
 		},
 		{
 			"source": "/opskrifter/broed-i-airfryer-lille-formbroed.html",
-			"destination": "/opskrifter/airfryer-hytteost-broed",
+			"destination": "/opskrifter/airfryer-broed",
 			"permanent": true
 		},
 		{
@@ -2833,7 +2833,7 @@
 		},
 		{
 			"source": "/opskrifter/laksefilet-i-airfryer-citron-dild.html",
-			"destination": "/opskrifter/airfryer-laks",
+			"destination": "/opskrifter/airfryer-laksefilet-citron-dild",
 			"permanent": true
 		},
 		{
@@ -3158,7 +3158,7 @@
 		},
 		{
 			"source": "/opskrifter/rejer-sproede-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-rejer-hvidloegsmoer",
+			"destination": "/opskrifter/airfryer-rejer",
 			"permanent": true
 		},
 		{
@@ -3453,7 +3453,7 @@
 		},
 		{
 			"source": "/opskrifter/tebirkes-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-aebleskiver",
+			"destination": "/opskrifter/airfryer-tebirkes",
 			"permanent": true
 		},
 		{
@@ -3763,7 +3763,7 @@
 		},
 		{
 			"source": "/smaa-pavlovaer-med-julepynt-i-airfryer",
-			"destination": "/opskrifter/airfryer-mini-hindbaertaerte",
+			"destination": "/opskrifter/airfryer-pavlova",
 			"permanent": true
 		},
 		{
@@ -4952,6 +4952,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/hjertesalat-i-airfryer",
+			"destination": "/opskrifter/airfryer-hjertesalat",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/hjertesalat-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-hjertesalat",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/hjortefilet-i-airfryer",
 			"destination": "/opskrifter/airfryer-hjortefilet",
 			"permanent": true
@@ -5942,6 +5952,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/pavlova-i-airfryer",
+			"destination": "/opskrifter/airfryer-pavlova",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/pavlova-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-pavlova",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/peberfrugt-i-airfryer",
 			"destination": "/opskrifter/airfryer-peberfrugt",
 			"permanent": true
@@ -6412,6 +6432,26 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/skumfiduser-i-airfryer",
+			"destination": "/opskrifter/airfryer-skumfiduser",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/skumfiduser-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-skumfiduser",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/smores-i-airfryer",
+			"destination": "/opskrifter/airfryer-smores",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/smores-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-smores",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/socca-mini-i-airfryer",
 			"destination": "/opskrifter/airfryer-socca-mini",
 			"permanent": true
@@ -6684,6 +6724,11 @@
 		{
 			"source": "/opskrifter/tapas-varme-oliven-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-tapas-varme-oliven",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/tebirkes-i-airfryer",
+			"destination": "/opskrifter/airfryer-tebirkes",
 			"permanent": true
 		},
 		{
