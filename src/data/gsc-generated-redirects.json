@@ -1573,7 +1573,7 @@
 		},
 		{
 			"source": "/luftigt-naanbroed-i-airfryer-perfekt-til-indiske-retter-og-mere",
-			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"destination": "/opskrifter/airfryer-naanbroed",
 			"permanent": true
 		},
 		{
@@ -2793,7 +2793,7 @@
 		},
 		{
 			"source": "/opskrifter/naanbroed-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"destination": "/opskrifter/airfryer-naanbroed",
 			"permanent": true
 		},
 		{
@@ -3308,7 +3308,7 @@
 		},
 		{
 			"source": "/opskrifter/t-bone-steak-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-okseboef-steak",
+			"destination": "/opskrifter/airfryer-t-bone-steak",
 			"permanent": true
 		},
 		{
@@ -3818,7 +3818,7 @@
 		},
 		{
 			"source": "/t-bone-steak-i-airfryer-perfekt-stegeskorpe-og-saftigt-koed",
-			"destination": "/opskrifter/airfryer-okseboef-steak",
+			"destination": "/opskrifter/airfryer-t-bone-steak",
 			"permanent": true
 		},
 		{

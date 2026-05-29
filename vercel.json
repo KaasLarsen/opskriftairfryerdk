@@ -1708,7 +1708,7 @@
 		},
 		{
 			"source": "/luftigt-naanbroed-i-airfryer-perfekt-til-indiske-retter-og-mere",
-			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"destination": "/opskrifter/airfryer-naanbroed",
 			"permanent": true
 		},
 		{
@@ -2923,7 +2923,7 @@
 		},
 		{
 			"source": "/opskrifter/naanbroed-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"destination": "/opskrifter/airfryer-naanbroed",
 			"permanent": true
 		},
 		{
@@ -3438,7 +3438,7 @@
 		},
 		{
 			"source": "/opskrifter/t-bone-steak-i-airfryer.html",
-			"destination": "/opskrifter/airfryer-okseboef-steak",
+			"destination": "/opskrifter/airfryer-t-bone-steak",
 			"permanent": true
 		},
 		{
@@ -3948,7 +3948,7 @@
 		},
 		{
 			"source": "/t-bone-steak-i-airfryer-perfekt-stegeskorpe-og-saftigt-koed",
-			"destination": "/opskrifter/airfryer-okseboef-steak",
+			"destination": "/opskrifter/airfryer-t-bone-steak",
 			"permanent": true
 		},
 		{
@@ -4199,6 +4199,16 @@
 		{
 			"source": "/opskrifter/asparges-i-airfryer",
 			"destination": "/opskrifter/airfryer-asparges",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/aspargesbroccoli-i-airfryer",
+			"destination": "/opskrifter/airfryer-aspargesbroccoli",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/aspargesbroccoli-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-aspargesbroccoli",
 			"permanent": true
 		},
 		{
@@ -5057,6 +5067,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/jordbaer-crumble-i-airfryer",
+			"destination": "/opskrifter/airfryer-jordbaer-crumble",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/jordbaer-crumble-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-jordbaer-crumble",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/jordskokke-rosmarin-citron-i-airfryer",
 			"destination": "/opskrifter/airfryer-jordskokke-rosmarin-citron",
 			"permanent": true
@@ -5739,6 +5759,11 @@
 		{
 			"source": "/opskrifter/naan-pitabroed-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-naan-pitabroed",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/naanbroed-i-airfryer",
+			"destination": "/opskrifter/airfryer-naanbroed",
 			"permanent": true
 		},
 		{
@@ -6557,6 +6582,16 @@
 			"permanent": true
 		},
 		{
+			"source": "/opskrifter/sunde-muffins-i-airfryer",
+			"destination": "/opskrifter/airfryer-sunde-muffins",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/sunde-muffins-i-airfryer.html",
+			"destination": "/opskrifter/airfryer-sunde-muffins",
+			"permanent": true
+		},
+		{
 			"source": "/opskrifter/svenske-koedboller-i-airfryer",
 			"destination": "/opskrifter/airfryer-svenske-koedboller",
 			"permanent": true
@@ -6614,6 +6649,11 @@
 		{
 			"source": "/opskrifter/svineskank-i-airfryer.html",
 			"destination": "/opskrifter/airfryer-svineskank",
+			"permanent": true
+		},
+		{
+			"source": "/opskrifter/t-bone-steak-i-airfryer",
+			"destination": "/opskrifter/airfryer-t-bone-steak",
 			"permanent": true
 		},
 		{
